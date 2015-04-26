@@ -3,5 +3,6 @@
   "config": "sandbox",
   "tetris" :  [
     { "gameBox" : "game", "scoreBox" : "score", "mappings" : ["leftMapping", "rightMapping"]}
-  ]
+  ],
+  "message" : "Enjoy you work as a combo maker"
 }

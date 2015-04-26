@@ -3,5 +3,6 @@
   "config": "",
   "tetris" :  [
     { "gameBox" : "game", "scoreBox" : "score", "mappings" : ["leftMapping", "rightMapping"]}
-  ]
+  ],
+  "message" : "Try to stay alive !"
 }

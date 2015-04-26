@@ -39,6 +39,7 @@ function Game(config, grid){
         visual[i].LinkDom(document.getElementById(config.tetris[i].gameBox));
         tobefixed.push(2);
     }
+    $("#rules").html(config.message);
 
     var render = function () {
 
