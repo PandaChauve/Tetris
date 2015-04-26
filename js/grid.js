@@ -310,3 +310,12 @@ Grid.prototype.Evaluate = function () {
     var evaluator = new GridEvaluator();
     return evaluator.Evaluate(this.container);
 };
+
+Grid.prototype.BlockCount = function(){
+    "use strict";
+    var count = 0;
+    for(var i = 0; i < this.container.length; i+= 1){
+        count += this.container[i].length - CONFIG.hiddenRowCount;
+    }
+    return count;
+};

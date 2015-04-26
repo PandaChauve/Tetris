@@ -41,8 +41,14 @@ function Game(config, grid){
     }
 
     var render = function () {
+
+        for(var i = 0; i < length; i += 1) {
+            visual[i].RenderTetris(tetris[i]);
+            $("#"+config.tetris[i].scoreBox).html(tetris[i].GetScore());
+        }
+
         var success = true;
-        for(var i = 0; i < length; i += 1){
+        for(i = 0; i < length; i += 1){
             var loc = tetris[i].OneTick(kb);
             if(!loc){
                 success = false;
@@ -55,10 +61,6 @@ function Game(config, grid){
         }
         kb.clear();
 
-        for(i = 0; i < length; i += 1) {
-            visual[i].RenderTetris(tetris[i]);
-            $("#"+config.tetris[i].scoreBox).html(tetris[i].GetScore());
-        }
 
         if(length === 2) {//FIXME
             while(tobefixed[0] < tetris[1].GetScore()/3){

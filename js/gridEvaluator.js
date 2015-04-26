@@ -3,13 +3,14 @@
  */
 GridEvaluator = function(){
     "use strict";
+    this.series = [];
 };
 
 GridEvaluator.prototype.EvaluateColumn = function(container, i) {
     "use strict";
     var colorCount = 0;
     var color = null;
-    var score = 0;
+    var serie = -1;
     for (var j = CONFIG.hiddenRowCount; j < container[i].length; j += 1) {
         if(container[i][j].state !== Block.EState.Blocked) {
             //only use fixed blocks
@@ -28,24 +29,25 @@ GridEvaluator.prototype.EvaluateColumn = function(container, i) {
                 container[i][j].SetState(Block.EState.Disappearing);
                 container[i][j - 1].SetState(Block.EState.Disappearing);
                 container[i][j - 2].SetState(Block.EState.Disappearing);
-                score += 1; //only 1 point for blocks of 3
+                this.series.push([]);
+                serie = this.series.length - 1;
+                this.series[serie].push(container[i][j].id);
+                this.series[serie].push(container[i][j-1].id);
+                this.series[serie].push(container[i][j-2].id);
             } else if (colorCount > 3) { // animationState
                 container[i][j].SetState(Block.EState.Disappearing);
-                score += 1;
+                this.series[serie].push(container[i][j].id);
             }
         }
     }
-    return score;
 };
 
 GridEvaluator.prototype.EvaluateVertical = function (container){
     "use strict";
-    var score = 0;
     //vertical check
     for (var i = 0; i < CONFIG.columnCount; i += 1) {
-        score += this.EvaluateColumn(container, i);
+        this.EvaluateColumn(container, i);
     }
-    return score;
 };
 
 GridEvaluator.prototype.FindBlockIndex = function(container, i,j) {
@@ -61,10 +63,10 @@ GridEvaluator.prototype.FindBlockIndex = function(container, i,j) {
 
 GridEvaluator.prototype.EvaluateLine = function(container, j) {
     "use strict";
-    var i, color, colorCount, score = 0, realJ = -1, realJP = -1, realJPP =-1;
-
+    var i, color, colorCount, realJ = -1, realJP = -1, realJPP =-1;
     colorCount = 0;
     color = null;
+    var serie = -1;
     for (i = 0; i < CONFIG.columnCount; i += 1) {
         //keep previous ones to avoid finding them again
         realJPP = realJP;
@@ -91,10 +93,16 @@ GridEvaluator.prototype.EvaluateLine = function(container, j) {
                 container[i][realJ].SetState(Block.EState.Disappearing);
                 container[i-1][realJP].SetState(Block.EState.Disappearing);
                 container[i-2][realJPP].SetState(Block.EState.Disappearing);
-                score +=1;
+
+                this.series.push([]);
+                serie = this.series.length - 1;
+                this.series[serie].push(container[i][realJ].id);
+                this.series[serie].push(container[i-1][realJP].id);
+                this.series[serie].push(container[i-1][realJPP].id);
+
             } else if (colorCount > 3) {
                 container[i][realJ].SetState(Block.EState.Disappearing);
-                score +=1;
+                this.series[serie].push(container[i][realJ].id);
             }
         }
         else
@@ -102,23 +110,58 @@ GridEvaluator.prototype.EvaluateLine = function(container, j) {
             colorCount = 0;
         }
     }
-    return score;
 };
 
 GridEvaluator.prototype.EvaluateHorizontal = function(container){
     "use strict";
-    var score = 0;
-
     //horizontal (this one is tricky)
     for (var j = CONFIG.hiddenRowCount; j < CONFIG.displayedRowCount + CONFIG.hiddenRowCount; j += 1) {
-        score += this.EvaluateLine(container, j);
+        this.EvaluateLine(container, j);
     }
+};
 
+GridEvaluator.prototype.GetScore = function(){
+    "use strict";
+    var multi = this.series.length;
+    var score = 0;
+    for(var i = 0; i < multi; i += 1){
+        score += (this.series[i].length -2)*multi;
+    }
     return score;
+};
+
+GridEvaluator.prototype.GetSerie = function(id, max){
+    "use strict";
+    for(var i = max-1; i >= 0; i -= 1){
+        for(var j = 0; j < this.series[i].length; j += 1){
+            if(this.series[i][j] === id){
+                return i;
+            }
+        }
+    }
+    return -1;
+};
+
+GridEvaluator.prototype.MergeSeries = function(){
+    "use strict";
+
+    for(var i = this.series.length-1; i >= 0; i -= 1){
+        for(var j = 0; j < this.series[i].length; j += 1){
+            var existingSerie = this.GetSerie(this.series[i][j], i);
+            if(existingSerie !== -1){
+                this.series[existingSerie] = this.series[existingSerie].concat(this.series[i]);
+                this.series.splice(i, 1);
+                break;
+            }
+        }
+    }
 };
 
 GridEvaluator.prototype.Evaluate = function (container) {
     'use strict';
     //vertical evaluation does not count block that start disappearing => call it before horizontal evaluation
-    return this.EvaluateVertical(container) + this.EvaluateHorizontal(container);
+    this.EvaluateVertical(container);
+    this.EvaluateHorizontal(container);
+    this.MergeSeries();
+    return this.GetScore();
 };
