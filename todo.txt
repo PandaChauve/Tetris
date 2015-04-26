@@ -7,7 +7,6 @@ index : campaign arcade
 visual : lot of work here
 visual : full screen
 campaign : do it
-game : victory conditions
 game : retry btn
 game : end popup review
 
@@ -15,6 +14,7 @@ game : end popup review
 game : global
 source control (https://github.com/duconstp/Tetris)
 score : compute bonus
+game : victory conditions
 
 25/04/14
 buttons (mobile, mousse users)

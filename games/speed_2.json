@@ -1,0 +1,11 @@
+{
+  "grid": "",
+  "config": "raining",
+  "tetris" :  [
+    { "gameBox" : "game", "scoreBox" : "score", "mappings" : ["leftMapping", "rightMapping"]}
+  ],
+  "victory" : {
+    "score" : 50
+  },
+  "message" : "Score 50 points, be careful it's raining ! "
+}
