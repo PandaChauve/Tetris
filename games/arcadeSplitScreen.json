@@ -1,0 +1,8 @@
+{
+  "grid": "",
+  "config": "",
+  "tetris" :  [
+    { "gameBox" : "gameA", "scoreBox" : "scoreA", "mappings" : ["leftMapping"]},
+    { "gameBox" : "gameB", "scoreBox" : "scoreB", "mappings" : ["rightMapping"]}
+  ]
+}

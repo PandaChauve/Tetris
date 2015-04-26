@@ -1,0 +1,11 @@
+{
+  "grid": "test",
+  "config": "fixed",
+  "tetris" :  [
+    { "gameBox" : "game", "scoreBox" : "score", "mappings" : ["leftMapping", "rightMapping"]}
+  ],
+  "victory" : {
+    "score" : 24
+  },
+  "message" : "Try to get 24 points !"
+}
