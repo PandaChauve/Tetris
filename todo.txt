@@ -11,10 +11,10 @@ campaign : do it
 game : victory conditions
 game : retry btn
 game : end popup review
-source control
 
 26/04/14
 game : global
+source control (https://github.com/duconstp/Tetris)
 
 25/04/14
 buttons (mobile, mousse users)
