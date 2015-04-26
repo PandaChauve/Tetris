@@ -5,7 +5,7 @@
     { "gameBox" : "game", "scoreBox" : "score", "mappings" : ["leftMapping", "rightMapping"]}
   ],
   "victory" : {
-    "blocks" : 48
+    "blocksLeft" : 0
   },
   "message" : "Try to clear the grid !"
 }

@@ -317,5 +317,10 @@ Grid.prototype.BlockCount = function(){
     for(var i = 0; i < this.container.length; i+= 1){
         count += this.container[i].length - CONFIG.hiddenRowCount;
     }
+    console.log(count);
+    if(count === 0)
+    {
+        console.log("now");
+    }
     return count;
 };
