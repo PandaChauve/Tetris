@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="20d21939-c8e4-49c3-84d6-1c3927d59de7" name="Default" comment="more levels">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/game.html" afterPath="$PROJECT_DIR$/game.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/game.js" afterPath="$PROJECT_DIR$/js/game.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/index.css" afterPath="$PROJECT_DIR$/css/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/threeRenderer.js" afterPath="$PROJECT_DIR$/js/threeRenderer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/todo.txt" afterPath="$PROJECT_DIR$/todo.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/victoryChecker.js" afterPath="$PROJECT_DIR$/js/victoryChecker.js" />
+    <list default="true" id="20d21939-c8e4-49c3-84d6-1c3927d59de7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Tetris.iws" />
@@ -508,7 +502,13 @@
       <option name="project" value="LOCAL" />
       <updated>1430057303953</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="new retry">
+      <created>1430071902387</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1430071902387</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -554,7 +554,8 @@
     <MESSAGE value="message display" />
     <MESSAGE value="victory for campaign" />
     <MESSAGE value="more levels" />
-    <option name="LAST_COMMIT_MESSAGE" value="more levels" />
+    <MESSAGE value="new retry" />
+    <option name="LAST_COMMIT_MESSAGE" value="new retry" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
