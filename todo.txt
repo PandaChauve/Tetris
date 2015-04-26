@@ -1,0 +1,24 @@
+ToDo
+score : compute bonus
+score : bonus display
+score : high score local
+control : config by user
+index : campaign puzzle
+index : campaign arcade
+visual : lot of work here
+visual : full screen
+campaign : do it
+game : victory conditions
+game : retry btn
+game : end popup review
+source control
+
+26/04/14
+game : global
+
+25/04/14
+buttons (mobile, mousse users)
+grid loading (json)
+
+before
+everything else :)

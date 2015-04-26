@@ -1,0 +1,86 @@
+body{
+    background: #333;
+    color: white;
+    text-align:center;
+}
+
+canvas {
+    border: 1px white solid;
+}
+
+.score{
+    font-size: 3em;
+}
+
+#keyboardLeft{
+    position:absolute;
+    left:20%;
+    top:70%;
+}
+#keyboardRight{
+    position:absolute;
+    right:20%;
+    top:70%;
+}
+
+
+/*
+ * SimpleModal Basic Modal Dialog
+ * http://simplemodal.com
+ *
+ * Copyright (c) 2013 Eric Martin - http://ericmmartin.com
+ *
+ * Licensed under the MIT license:
+ *   http://www.opensource.org/licenses/mit-license.php
+ */
+
+/* Overlay */
+#simplemodal-overlay {background-color:#000;}
+
+/* Container */
+#simplemodal-container {height:260px; width:400px; color:#bbb; background-color:#333; border:4px solid #444; padding:12px;}
+#simplemodal-container .simplemodal-data {padding:8px;}
+#simplemodal-container a {color:#ddd;}
+#simplemodal-container a.modalCloseImg {background:url(../Resources/imgs/x.png) no-repeat; width:25px; height:29px; display:inline; z-index:3200; position:absolute; top:-15px; right:-16px; cursor:pointer;}
+#simplemodal-container h3 {color:#84b8d9;}
+
+
+.moveBtn, #swapBtn{
+    width:48px;
+    height:48px;
+    line-height:48px;
+    border: 1px solid white;
+    cursor: pointer;
+    position:absolute;
+    top:0;
+    left:0;
+    float:left;
+}
+#control{
+    width:200px;
+    margin-left:-100px;
+    left:50%;
+    position:relative;
+}
+#moveUp{
+    top:0;
+    left:75px;
+}
+#moveLeft{
+    top:75px;
+    left:0px;
+}
+
+#moveRight{
+    top:75px;
+    left:150px;
+}
+#moveDown{
+    top:150px;
+    left:75px;
+}
+
+#swapBtn{
+    top:75px;
+    left:75px;
+}
