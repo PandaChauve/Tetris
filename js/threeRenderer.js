@@ -13,6 +13,14 @@ function ThreeRenderer() {
     this.offset = 0;
     this.id = String.fromCharCode(65 + Math.floor(Math.random() * 26)) + Date.now();
 }
+ThreeRenderer.prototype.clear = function(){
+    "use strict";
+    this.scene = null;
+    this.light = null;
+    this.camera = null;
+    this.cursor = null;
+    this.renderer = null;
+};
 
 ThreeRenderer.prototype.CreateLight = function () {
     "use strict";
@@ -129,7 +137,9 @@ ThreeRenderer.prototype.LinkDom = function (body) {
 ThreeRenderer.prototype.UnlinkDom = function () {
     "use strict";
     var element = document.getElementById(this.id);
-    element.parentNode.removeChild(element);
+    if(element !== null){
+        element.parentNode.removeChild(element);
+    }
 };
 
 

@@ -45,7 +45,7 @@ canvas {
 #simplemodal-container h3 {color:#84b8d9;}
 
 
-.moveBtn, #swapBtn{
+.moveBtn, #swapBtn, #retryBtn{
     width:48px;
     height:48px;
     line-height:48px;

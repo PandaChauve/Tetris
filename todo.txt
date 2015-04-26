@@ -1,4 +1,5 @@
 ToDo
+!!!! Control tick rate !!!!
 score : bonus display
 score : high score local
 control : config by user
@@ -6,8 +7,7 @@ index : campaign puzzle
 index : campaign arcade
 visual : lot of work here
 visual : full screen
-campaign : do it
-game : retry btn
+campaign : more maps
 game : end popup review
 
 26/04/14
@@ -15,6 +15,7 @@ game : global
 source control (https://github.com/duconstp/Tetris)
 score : compute bonus
 game : victory conditions
+game : retry btn
 
 25/04/14
 buttons (mobile, mousse users)

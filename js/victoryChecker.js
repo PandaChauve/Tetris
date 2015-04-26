@@ -23,6 +23,10 @@ VictoryChecker.prototype.Check = function(tetris){
 VictoryChecker.prototype.MakeComponents = function(config){
     "use strict";
     var ret = [];
+    if(config === null || config === undefined){
+        return ret;
+    }
+    
     if(config.blocksLeft !== undefined){
         ret.push(new BlockChecker(config.blocksLeft));
     }
