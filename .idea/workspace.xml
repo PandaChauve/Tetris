@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="20d21939-c8e4-49c3-84d6-1c3927d59de7" name="Default" comment="updating todo">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/game.js" afterPath="$PROJECT_DIR$/js/game.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/grid.js" afterPath="$PROJECT_DIR$/js/grid.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/gridEvaluator.js" afterPath="$PROJECT_DIR$/js/gridEvaluator.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/puzzle_1.json" afterPath="$PROJECT_DIR$/games/puzzle_1.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/puzzle_2.json" afterPath="$PROJECT_DIR$/games/puzzle_2.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/todo.txt" afterPath="$PROJECT_DIR$/todo.txt" />
+    <list default="true" id="20d21939-c8e4-49c3-84d6-1c3927d59de7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Tetris.iws" />
@@ -154,6 +147,8 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
@@ -360,7 +355,7 @@
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="recentsLimit" value="5" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../jquery-2.1.3.js" />
     <property name="js.eslint.nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
@@ -471,7 +466,13 @@
       <option name="project" value="LOCAL" />
       <updated>1430046413039</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="full score computation">
+      <created>1430050684284</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1430050684284</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -513,7 +514,8 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="updating todo" />
-    <option name="LAST_COMMIT_MESSAGE" value="updating todo" />
+    <MESSAGE value="full score computation" />
+    <option name="LAST_COMMIT_MESSAGE" value="full score computation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
