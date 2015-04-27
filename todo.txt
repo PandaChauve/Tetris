@@ -2,15 +2,15 @@ ToDo
 score : bonus display
 score : high score local
 control : config by user
-index : campaign puzzle
-index : campaign arcade
 visual : lot of work here
 visual : full screen
 campaign : more maps
 game : end popup review
+index : menu style
 
 27/04/14
-!!!! Control tick rate !!!! (not sure it works :))
+!!!! Control tick rate !!!!
+index : menu review
 
 26/04/14
 game : global
