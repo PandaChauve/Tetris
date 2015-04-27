@@ -56,7 +56,8 @@ UserInput.prototype._onKeyChange	= function(event)
     // update this.keyCodes
     var keyCode		= event.keyCode;
     this.keyCodes[keyCode]	= true;
-    if(keyCode === UserInput.ALIAS.space){
+    if(keyCode === UserInput.ALIAS.space ||
+        (keyCode >= UserInput.ALIAS.left && keyCode <= UserInput.ALIAS.down) ){ //avoid scroll from space and arrows
         event.preventDefault();
     }
 };
