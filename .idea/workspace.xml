@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20d21939-c8e4-49c3-84d6-1c3927d59de7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/todo.txt" afterPath="$PROJECT_DIR$/todo.txt" />
+      <change type="MOVED" beforePath="C:\Users\panda\WebstormProjects\Tetris\games\sandox.json" afterPath="$PROJECT_DIR$/games/sandbox.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Tetris.iws" />
@@ -79,8 +79,8 @@
       <file leaf-file-name="todo.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/todo.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.29356357">
-              <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.72056514">
+              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -484,7 +484,13 @@
       <option name="project" value="LOCAL" />
       <updated>1430156536166</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="updating todo">
+      <created>1430156586649</created>
+      <option name="number" value="00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1430156586649</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -525,7 +531,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="updating todo" />
     <MESSAGE value="full score computation" />
     <MESSAGE value="message display" />
     <MESSAGE value="victory for campaign" />
@@ -535,7 +540,8 @@
     <MESSAGE value="fast quit (useless ?)" />
     <MESSAGE value="index button" />
     <MESSAGE value="new menu  + file refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="new menu  + file refactoring" />
+    <MESSAGE value="updating todo" />
+    <option name="LAST_COMMIT_MESSAGE" value="updating todo" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -796,7 +802,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/games/sandox.json">
+    <entry file="file://$PROJECT_DIR$/games/sandbox.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.9230769">
           <caret line="6" column="46" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
@@ -979,8 +985,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/todo.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29356357">
-          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+        <state vertical-scroll-proportion="0.72056514">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding />
         </state>
       </provider>
