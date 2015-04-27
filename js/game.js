@@ -84,18 +84,16 @@ Game.prototype.render = function (timestamp) {
             if(this.victoryChecker.Check(this.tetris[i])){
                 continueGame = false;
                 this.visual[i].Freeze();
-                alert("you didn't lose !");
             }
         }
         this.kb.clear();
     }
 
-    for(i = 0; i < this.tetris.length; i+= 1){
-        this.visual[i].RenderTetris(this.tetris[i]);
-    }
-
     if(continueGame && !this.stop) {
+        for(i = 0; i < this.tetris.length; i+= 1){
+            this.visual[i].RenderTetris(this.tetris[i]);
+        }
+        this.SplitScreenQuickFix();
         this.id = requestAnimationFrame(Render);
     }
-    this.SplitScreenQuickFix();
 };
