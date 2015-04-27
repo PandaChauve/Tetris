@@ -23,28 +23,6 @@ canvas {
     top:70%;
 }
 
-
-/*
- * SimpleModal Basic Modal Dialog
- * http://simplemodal.com
- *
- * Copyright (c) 2013 Eric Martin - http://ericmmartin.com
- *
- * Licensed under the MIT license:
- *   http://www.opensource.org/licenses/mit-license.php
- */
-
-/* Overlay */
-#simplemodal-overlay {background-color:#000;}
-
-/* Container */
-#simplemodal-container {height:260px; width:400px; color:#bbb; background-color:#333; border:4px solid #444; padding:12px;}
-#simplemodal-container .simplemodal-data {padding:8px;}
-#simplemodal-container a {color:#ddd;}
-#simplemodal-container a.modalCloseImg {background:url(../Resources/imgs/x.png) no-repeat; width:25px; height:29px; display:inline; z-index:3200; position:absolute; top:-15px; right:-16px; cursor:pointer;}
-#simplemodal-container h3 {color:#84b8d9;}
-
-
 .moveBtn, #swapBtn, #retryBtn, .btn{
     width:48px;
     height:48px;
@@ -93,4 +71,51 @@ canvas {
 #swapBtn{
     top:75px;
     left:75px;
+}
+
+a{
+    color:white;
+}
+
+#mainMenu{
+    width:900px;
+    height:400px;
+    margin: 50px auto;
+    background:#111111;
+    border:2px solid grey;
+    border-radius: 25px;
+    box-shadow: lightgrey 2px 2px 0 0;
+    padding:0;
+    position:relative;
+}
+
+.menuGame{
+    float:left;
+    width:200px;
+    height:200px;
+    margin: 80px 48px;
+    padding:0;
+    background : darkslategrey;
+    border-radius: 25px;
+    border:2px solid grey;
+    line-height: 200px;
+    font-size: 2em;
+}
+
+.menuReturn{
+
+    width:50px;
+    height:50px;
+    line-height: 50px;
+    color:white;
+    border:1px solid white;
+    position:absolute;
+    right:25px;
+    bottom:25px;
+}
+
+
+.menuReturnDisabled{
+    color:black;
+    border:1px solid black;
 }

@@ -3,7 +3,7 @@
  */
 var gameName = getQueryVariable("game");
 if(gameName === ""){
-    gameName = "arcade";
+    gameName = "classic";
 }
 
 var game;
