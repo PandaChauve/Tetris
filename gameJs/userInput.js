@@ -56,6 +56,9 @@ UserInput.prototype._onKeyChange	= function(event)
     // update this.keyCodes
     var keyCode		= event.keyCode;
     this.keyCodes[keyCode]	= true;
+    if(keyCode === UserInput.ALIAS.space){
+        e.preventDefault();
+    }
 };
 
 UserInput.prototype.pressed	= function(key)

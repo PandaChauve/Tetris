@@ -100,6 +100,12 @@ a{
     border:2px solid grey;
     line-height: 200px;
     font-size: 2em;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    cursor: pointer;
 }
 
 .menuReturn{
@@ -112,10 +118,17 @@ a{
     position:absolute;
     right:25px;
     bottom:25px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    cursor: pointer;
 }
 
 
 .menuReturnDisabled{
     color:black;
     border:1px solid black;
+    cursor: no-drop;
 }

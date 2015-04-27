@@ -8,9 +8,15 @@ campaign : more maps
 game : end popup review
 index : menu style
 
+Bugs
+
+
+
+
 27/04/14
 !!!! Control tick rate !!!!
 index : menu review
+fixing spacebar issue on small screens
 
 26/04/14
 game : global
