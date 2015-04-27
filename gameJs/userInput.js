@@ -57,7 +57,7 @@ UserInput.prototype._onKeyChange	= function(event)
     var keyCode		= event.keyCode;
     this.keyCodes[keyCode]	= true;
     if(keyCode === UserInput.ALIAS.space){
-        e.preventDefault();
+        event.preventDefault();
     }
 };
 
