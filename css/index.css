@@ -45,13 +45,13 @@ canvas {
 #simplemodal-container h3 {color:#84b8d9;}
 
 
-.moveBtn, #swapBtn, #retryBtn{
+.moveBtn, #swapBtn, #retryBtn, .btn{
     width:48px;
     height:48px;
     line-height:48px;
     border: 1px solid white;
     cursor: pointer;
-    position:absolute;
+    position:relative;
     top:0;
     left:0;
     float:left;
@@ -60,6 +60,11 @@ canvas {
     -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
+    color:white;
+    text-decoration: none;
+}
+.moveBtn{
+    position:absolute;
 }
 #control{
     width:200px;
