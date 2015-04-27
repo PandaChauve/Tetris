@@ -1,5 +1,4 @@
 ToDo
-!!!! Control tick rate !!!!
 score : bonus display
 score : high score local
 control : config by user
@@ -9,6 +8,9 @@ visual : lot of work here
 visual : full screen
 campaign : more maps
 game : end popup review
+
+27/04/14
+!!!! Control tick rate !!!! (not sure it works :))
 
 26/04/14
 game : global

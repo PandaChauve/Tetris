@@ -1,50 +1,6 @@
 /**
  * Created by panda on 23/04/2015.
  */
-var gameName = getQueryVariable("game");
-if(gameName === ""){
-    gameName = "arcade";
-}
-var game;
-
-$.getJSON("games/"+gameName+".json", function(json) {
-    "use strict";
-    UseGameConfig(json);
-}).fail(function(jqxhr, textStatus, error) { console.log( textStatus + " : " + error );});
-
-
-
-$("#retryBtn").click(function(){
-
-    for(var i = 0; i < game.config.tetris.length; i+= 1) {
-     $("#"+game.config.tetris[i].gameBox).html("");
-    }
-    game.Stop()
-    var d = new Game(game.config, game.grid);
-    game = d;
-});
-
-
-function UseGameConfig(config){
-    "use strict";
-    CONFIG = GetConfig(config.config);
-    $("#rules").html(config.message);
-    if(config.grid == ""){ // jshint ignore:line
-        game = new Game(config, "");
-        game.render();
-    } else {
-        $.getJSON("grids/"+config.grid+".json", function(json) {
-            game = new Game(config, json);
-            game.render();
-        }).fail(function(jqxhr, textStatus, error) {console.log( textStatus + " : " + error );});
-    }
-}
-
-function Render(){
-    "use strict";
-    game.render();
-}
-
 
 function Game(config, grid){
     "use strict";
@@ -56,9 +12,11 @@ function Game(config, grid){
     this.victoryChecker = new VictoryChecker(config.victory);
     this.tobefixed = [2, 2];
     this.stop = false;
-    this.Init();
-    this.render();
     this.id = -1;
+    this.start = null;
+
+
+    this.Init();
 }
 Game.prototype.Stop = function(){
     "use strict";
@@ -68,6 +26,11 @@ Game.prototype.Stop = function(){
         this.visual[i].clear();
         this.visual[i] = null;
     }
+};
+
+Game.prototype.Start = function(){
+    "use strict";
+    this.id = requestAnimationFrame(Render);
 };
 
 Game.prototype.Init = function(){
@@ -97,29 +60,42 @@ Game.prototype.SplitScreenQuickFix = function () {
         }
     }
 };
-Game.prototype.render = function () {
+
+Game.prototype.render = function (timestamp) {
     "use strict";
+    var i;
+    if(this.start === null) {
+        this.start = timestamp;
+    }
+    var progress = timestamp - this.start;
+
+
     var continueGame = true;
-    for(var i = 0; i < this.tetris.length; i += 1){
-        var loc = this.tetris[i].OneTick(this.kb);
+    var count = 0;
+    while(this.tetris[0].tics < progress*60/1000 && continueGame && count < 10){ //60 tics per sec FIXME magic number
+        count += 1;
+        for(i = 0; i < this.tetris.length; i += 1){
+            var loc = this.tetris[i].OneTick(this.kb);
+            $("#"+this.config.tetris[i].scoreBox).html(this.tetris[i].GetScore());
+            if(!loc){
+                continueGame = false;
+                this.visual[i].Freeze();
+            }
+            if(this.victoryChecker.Check(this.tetris[i])){
+                continueGame = false;
+                this.visual[i].Freeze();
+                alert("you didn't lose !");
+            }
+        }
+        this.kb.clear();
+    }
+
+    for(i = 0; i < this.tetris.length; i+= 1){
         this.visual[i].RenderTetris(this.tetris[i]);
-        $("#"+this.config.tetris[i].scoreBox).html(this.tetris[i].GetScore());
-        if(!loc){
-            continueGame = false;
-            this.visual[i].Freeze();
-        }
-        if(this.victoryChecker.Check(this.tetris[i])){
-            continueGame = false;
-            this.visual[i].Freeze();
-            alert("you didn't lose !");
-        }
     }
 
     if(continueGame && !this.stop) {
         this.id = requestAnimationFrame(Render);
     }
-    this.kb.clear();
-
-
     this.SplitScreenQuickFix();
 };

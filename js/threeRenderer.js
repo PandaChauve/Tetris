@@ -173,6 +173,7 @@ ThreeRenderer.prototype.DrawCursorOn = function(x,y){
 ThreeRenderer.prototype.Freeze = function(){
     "use strict";
     this.scene.remove(this.light);
+    this.Render();
 };
 
 ThreeRenderer.prototype.RenderTetris = function(tetris){
