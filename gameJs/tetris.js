@@ -10,6 +10,7 @@ function Tetris(grid) {
     this.cursor = {x:3, y:CONFIG.hiddenRowCount};
     this.swapCount = 0;
     this.groundSpeed = CONFIG.groundSpeedPerTic;
+    this.baseGroundSpeed = CONFIG.groundSpeedPerTic;
     this.groundPos = 0;
     this.keyBoardMappings = [];
     this.tics = 0;
@@ -34,11 +35,14 @@ Tetris.prototype.OneTick = function (kb) {
     this.grid.Animate();
 
     this.groundPos += this.groundSpeed;
+    this.groundSpeed += CONFIG.groundAccelerationPerTic;
+    this.baseGroundSpeed += CONFIG.groundAccelerationPerTic;
+
     if(this.groundPos >= CONFIG.pixelPerBox ){
         this.groundPos -= CONFIG.pixelPerBox;
         this.grid.AddNewLine();
         this.cursor.y += 1;
-        this.groundSpeed = CONFIG.groundSpeedPerTic;
+        this.groundSpeed = this.baseGroundSpeed;
     }
 
     return this.grid.GetMaxFixed() < CONFIG.lostThreshold;

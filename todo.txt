@@ -7,7 +7,6 @@ visual : full screen
 campaign : more maps
 game : end popup review
 index : menu style
-arcade : speed up with time
 game : pause
 
 Bugs
@@ -17,9 +16,12 @@ Items (zfa)
 Block indestructible
 Block multicolor
 
+------------------------------------------------------------------------------------------
+
 28/04/14
 fixing retry
 retrouver le jeu pour zac / critical mass
+arcade : speed up with time
 
 27/04/14
 !!!! Control tick rate !!!!

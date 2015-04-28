@@ -11,6 +11,7 @@ function DefaultConfig(){
     this.fallSpeedPerTic = 5;
     this.groundSpeedPerTic = 0.05;
     this.groundUpSpeedPerTic = 3;
+    this.groundAccelerationPerTic = 0.03/60/60;
     this.fallPeriod = 500;
     this.lostThreshold =  ((this.displayedRowCount + this.hiddenRowCount) * this.pixelPerBox);
     this.startRows = this.displayedRowCount-4;
@@ -23,15 +24,18 @@ function GetConfig(mode){
         conf.groundSpeedPerTic = 0;
         conf.fallPeriod = 0;
         conf.startRows = conf.displayedRowCount + conf.hiddenRowCount; //FIXME move it to grid loading ?
+        conf.groundAccelerationPerTic = 0;
     }
     else if(mode === "fixed"){
         conf.groundUpSpeedPerTic = 0;
         conf.groundSpeedPerTic = 0;
         conf.fallPeriod = 0;
+        conf.groundAccelerationPerTic = 0;
     }
     else if(mode === "raining"){
         conf.groundSpeedPerTic = 0;
         conf.fallPeriod = 300;
+        conf.groundAccelerationPerTic = 0;
     }
     return conf;
 }
