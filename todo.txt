@@ -1,13 +1,12 @@
 ToDo
 score : bonus display
-score : high score local
 control : config by user
 visual : lot of work here
 visual : full screen
 campaign : more maps
 game : end popup review
 index : menu style
-game : pause
+online account
 
 Bugs
 
@@ -15,6 +14,7 @@ Features
 Items (zfa)
 Block indestructible
 Block multicolor
+achievements
 
 ------------------------------------------------------------------------------------------
 
@@ -22,6 +22,9 @@ Block multicolor
 fixing retry
 retrouver le jeu pour zac / critical mass
 arcade : speed up with time
+game : pause btn
+game : pause when leaving the window
+score : high score local
 
 27/04/14
 !!!! Control tick rate !!!!

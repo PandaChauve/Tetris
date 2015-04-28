@@ -2,7 +2,7 @@
  * Created by panda on 23/04/2015.
  */
 
-function Game(config, grid){
+function Game(config, grid, cb){
     "use strict";
     this.config = config;
     this.grid = grid;
@@ -14,10 +14,17 @@ function Game(config, grid){
     this.stop = false;
     this.id = -1;
     this.start = null;
-
-
+    this.pause = false;
+    if(cb === undefined){
+        this.callback = null;
+    }
+    else{
+        this.callback = cb;
+    }
     this.Init();
+
 }
+
 Game.prototype.Stop = function(){
     "use strict";
     window.cancelAnimationFrame(this.id);
@@ -61,11 +68,33 @@ Game.prototype.SplitScreenQuickFix = function () {
     }
 };
 
+Game.prototype.TogglePause = function(force){
+    "use strict";
+    if(force === undefined){
+        this.pause = !this.pause;
+    }
+    else{
+        this.pause = force;
+    }
+
+    if(this.pause){
+        window.cancelAnimationFrame(this.id);
+    }
+    else{
+        this.id = requestAnimationFrame(Render);
+        this.start = null;
+    }
+    return this.pause;
+
+};
+
 Game.prototype.render = function (timestamp) {
     "use strict";
     var i;
+
     if(this.start === null) {
         this.start = timestamp;
+        this.tetris[0].tics = 0;
     }
     var progress = timestamp - this.start;
 
@@ -95,5 +124,10 @@ Game.prototype.render = function (timestamp) {
         }
         this.SplitScreenQuickFix();
         this.id = requestAnimationFrame(Render);
+    }
+    else if(!continueGame){
+        if(this.callback !== null){
+            this.callback(this);
+        }
     }
 };

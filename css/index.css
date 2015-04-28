@@ -132,3 +132,17 @@ a{
     border:1px solid black;
     cursor: no-drop;
 }
+
+#highScores{
+  position:absolute;
+    right:0;
+    top:0;
+    margin:25px;
+    border:1px white solid;
+    width:200px;
+}
+#highScores span{
+    display: block;
+    line-height: 30px;
+    height: 30px;
+}

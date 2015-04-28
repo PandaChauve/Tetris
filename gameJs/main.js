@@ -20,22 +20,45 @@ $("#retryBtn").click(function(){
     for(var i = 0; i < game.config.tetris.length; i+= 1) {
         $("#"+game.config.tetris[i].gameBox).html("");
     }
-    game.Stop()
-    var d = new Game(game.config, game.grid);
+    game.Stop();
+    var d = new Game(game.config, game.grid, EndCallBack);
     game = d;
     game.Start();
 });
+
+$("#pauseBtn").click(function(){
+    "use strict";
+    var ret = game.TogglePause();
+    if(ret){
+        $("#pauseBtn").html("Unpause");
+    }
+    else{
+        $("#pauseBtn").html("Pause");
+    }
+});
+
+$(window).blur(function() {
+    "use strict";
+    game.TogglePause(true);
+    $("#pauseBtn").html("Unpause");
+});
+
+function EndCallBack(finishedGame){
+    "use strict";
+    var scores = UserHighScores.GetHighScore();
+    scores.SetArcadeScore(finishedGame.tetris[0].GetScore());
+}
 
 function UseGameConfig(config){
     "use strict";
     CONFIG = GetConfig(config.config);
     $("#rules").html(config.message);
     if(config.grid == ""){ // jshint ignore:line
-        game = new Game(config, "");
+        game = new Game(config, "", EndCallBack);
         game.Start();
     } else {
         $.getJSON("grids/"+config.grid+".json", function(json) {
-            game = new Game(config, json);
+            game = new Game(config, json, EndCallBack);
             game.Start();
         }).fail(function(jqxhr, textStatus, error) {console.log( textStatus + " : " + error );});
     }
