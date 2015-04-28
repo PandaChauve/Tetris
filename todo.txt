@@ -7,6 +7,8 @@ visual : full screen
 campaign : more maps
 game : end popup review
 index : menu style
+arcade : speed up with time
+game : pause
 
 Bugs
 
