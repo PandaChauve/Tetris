@@ -9,15 +9,17 @@ game : end popup review
 index : menu style
 arcade : speed up with time
 game : pause
-retrouver le jeu pour zac
 
 Bugs
-Retry
 
 Features
 Items (zfa)
 Block indestructible
 Block multicolor
+
+28/04/14
+fixing retry
+retrouver le jeu pour zac / critical mass
 
 27/04/14
 !!!! Control tick rate !!!!

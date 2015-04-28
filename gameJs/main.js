@@ -16,12 +16,14 @@ $.getJSON("games/"+gameName+".json", function(json) {
 
 
 $("#retryBtn").click(function(){
+    "use strict";
     for(var i = 0; i < game.config.tetris.length; i+= 1) {
         $("#"+game.config.tetris[i].gameBox).html("");
     }
     game.Stop()
     var d = new Game(game.config, game.grid);
     game = d;
+    game.Start();
 });
 
 function UseGameConfig(config){
