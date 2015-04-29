@@ -64,7 +64,7 @@ var w1m10 = new MenuElement("Map 10", world1);
 w1m10.link = "game.html?game=ta_1_10";
 
 var world2 = new MenuElement("World 2", tetrisAttack);
-var w2m1 = new MenuElement("Map 2", world2);
+var w2m1 = new MenuElement("Map 1", world2);
 w2m1.link = "game.html?game=ta_2_1";
 var w2m2 = new MenuElement("Map 2", world2);
 w2m2.link = "game.html?game=ta_2_2";
