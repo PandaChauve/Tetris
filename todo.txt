@@ -9,18 +9,19 @@ index : menu style
 online account
 
 Bugs
+pause after finish
 
 Features
 Items (zfa)
 Block indestructible
 Block multicolor
 achievements
+sound
 
 ------------------------------------------------------------------------------------------
 
 28/04/14
 fixing retry
-retrouver le jeu pour zac / critical mass
 arcade : speed up with time
 game : pause btn
 game : pause when leaving the window
