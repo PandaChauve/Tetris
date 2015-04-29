@@ -1,12 +1,13 @@
 {
-  "grid": "test",
+  "grid": "ta_1_7",
   "config": "fixed",
   "tetris" :  [
     { "gameBox" : "game", "scoreBox" : "score", "mappings" : ["leftMapping", "rightMapping"]}
   ],
   "victory" : {
-    "blocksLeft" : 0
+    "blocksLeft" : 0,
+	"swaps" : 1
   },
-  "message" : "Try to clear the grid !",
-  "next" : "puzzle_2"
+  "message" : "Try to clear the grid in 1 swap!",
+  "next" : "ta_1_8"
 }

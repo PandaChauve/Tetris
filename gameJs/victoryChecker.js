@@ -33,6 +33,9 @@ VictoryChecker.prototype.MakeComponents = function(config){
     if(config.score !== undefined){
         ret.push(new ScoreChecker(config.score));
     }
+    if(config.swaps !== undefined){
+        ret.push(new SwapChecker(config.swaps));
+    }
     return ret;
 };
 
@@ -55,4 +58,14 @@ function BlockChecker(val){
 BlockChecker.prototype.Check = function(tetris){
     "use strict";
     return tetris.grid.BlockCount() <= this.val;
+};
+
+function SwapChecker(val){
+    "use strict";
+    this.val = val;
+}
+
+SwapChecker.prototype.Check = function(tetris){
+    "use strict";
+    return tetris.swapCount <= this.val;
 };

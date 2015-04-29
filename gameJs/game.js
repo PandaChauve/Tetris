@@ -70,6 +70,9 @@ Game.prototype.SplitScreenQuickFix = function () {
 
 Game.prototype.TogglePause = function(force){
     "use strict";
+    if(this.game.stop){
+        return false;
+    }
     if(force === undefined){
         this.pause = !this.pause;
     }

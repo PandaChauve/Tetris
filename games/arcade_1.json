@@ -7,5 +7,6 @@
   "victory" : {
     "score" : 50
   },
-  "message" : "Take your time to score 50 points"
+  "message" : "Take your time to score 50 points",
+  "next" : "arcade_2"
 }

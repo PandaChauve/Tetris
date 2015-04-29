@@ -7,18 +7,20 @@ campaign : more maps
 game : end popup review
 index : menu style
 online account
+achievements
 
 Bugs
-pause after finish
 
 Features
 Items (zfa)
 Block indestructible
 Block multicolor
-achievements
 sound
 
 ------------------------------------------------------------------------------------------
+29/04/14
+Adding tetris attack world one
+pause after finish
 
 28/04/14
 fixing retry

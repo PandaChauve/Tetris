@@ -40,6 +40,28 @@ arcade2.link = "game.html?game=arcade_2";
 var arcade3 = new MenuElement("Arcade 3", arcade);
 arcade3.link = "game.html?game=arcade_3";
 
+var tetrisAttack = new MenuElement("Tetris Attack", campaign);
+var world1 = new MenuElement("World 1", tetrisAttack);
+var w1m1 = new MenuElement("Map 1", world1);
+w1m1.link = "game.html?game=ta_1_1";
+var w1m2 = new MenuElement("Map 2", world1);
+w1m2.link = "game.html?game=ta_1_2";
+var w1m3 = new MenuElement("Map 3", world1);
+w1m3.link = "game.html?game=ta_1_3";
+var w1m4 = new MenuElement("Map 4", world1);
+w1m4.link = "game.html?game=ta_1_4";
+var w1m5 = new MenuElement("Map 5", world1);
+w1m5.link = "game.html?game=ta_1_5";
+var w1m6 = new MenuElement("Map 6", world1);
+w1m6.link = "game.html?game=ta_1_6";
+var w1m7 = new MenuElement("Map 7", world1);
+w1m7.link = "game.html?game=ta_1_7";
+var w1m8 = new MenuElement("Map 8", world1);
+w1m8.link = "game.html?game=ta_1_8";
+var w1m9 = new MenuElement("Map 9", world1);
+w1m9.link = "game.html?game=ta_1_9";
+var w1m10 = new MenuElement("Map 10", world1);
+w1m10.link = "game.html?game=ta_1_10";
 
 var multi = new MenuElement("Multi Player", mainMenu);
 var split = new MenuElement("Split Screen", multi);
