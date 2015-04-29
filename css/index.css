@@ -23,23 +23,27 @@ canvas {
     top:70%;
 }
 
-.moveBtn, #swapBtn, #retryBtn, .btn{
-    width:48px;
-    height:48px;
-    line-height:48px;
-    border: 1px solid white;
+
+.moveBtn, #swapBtn, #retryBtn, .btn, .gameBtn{
     cursor: pointer;
-    position:relative;
-    top:0;
-    left:0;
-    float:left;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    color:white;
     text-decoration: none;
+}
+
+.moveBtn, #swapBtn, #retryBtn, .gameBtn{
+    width:48px;
+    height:48px;
+    line-height:48px;
+    border: 1px solid white;
+    position:relative;
+    top:0;
+    left:0;
+    float:left;
+    color:white;
 }
 .moveBtn{
     position:absolute;
@@ -145,4 +149,12 @@ a{
     display: block;
     line-height: 30px;
     height: 30px;
+}
+
+#gamePopup {
+    position: absolute;
+    width: 40%;
+    top: 0;
+    margin: 100px 30%;
+    background: darkred;
 }

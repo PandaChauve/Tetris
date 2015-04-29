@@ -6,6 +6,7 @@
 function VictoryChecker(config){
     "use strict";
     this.components = this.MakeComponents(config);
+    this.lastCheck = false;
 }
 
 VictoryChecker.prototype.Check = function(tetris){
@@ -13,11 +14,11 @@ VictoryChecker.prototype.Check = function(tetris){
     if(this.components.length === 0)
         return false;
 
-    var victory = true;
+    this.lastCheck = true;
     for(var i = 0; i < this.components.length; i+= 1){
-        victory = this.components[i].Check(tetris) && victory; //make sure we always call check for memory based components
+        this.lastCheck = this.components[i].Check(tetris) && this.lastCheck; //make sure we always call check for memory based components
     }
-    return victory;
+    return this.lastCheck;
 };
 
 VictoryChecker.prototype.MakeComponents = function(config){

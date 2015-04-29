@@ -4,7 +4,6 @@ control : config by user
 visual : lot of work here
 visual : full screen
 campaign : more maps
-game : end popup review
 index : menu style
 online account
 achievements
@@ -21,6 +20,7 @@ sound
 29/04/14
 Adding tetris attack world one
 pause after finish
+game : end popup review
 
 28/04/14
 fixing retry
