@@ -9,9 +9,9 @@ function DefaultConfig(){
     this.hiddenRowCount = 4;//MIN 1 !
     this.pixelPerBox = 50;
     this.fallSpeedPerTic = 5;
-    this.groundSpeedPerTic = 0.05;
+    this.groundSpeedPerTic = 0.07;
     this.groundUpSpeedPerTic = 3;
-    this.groundAccelerationPerTic = 0.03/60/60;
+    this.groundAccelerationPerTic = 0.02/60/60;
     this.fallPeriod = 500;
     this.lostThreshold =  ((this.displayedRowCount + this.hiddenRowCount) * this.pixelPerBox);
     this.startRows = this.displayedRowCount-4;
