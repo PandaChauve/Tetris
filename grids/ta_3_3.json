@@ -1,0 +1,10 @@
+{
+  "grid" : [
+    [{"type" : 1, "state": 1}],
+    [],
+    [{"type" : 1, "state": 1},{"type" : 2, "state": 1},{"type" : 1, "state": 1}],
+    [{"type" : 2, "state": 1},{"type" : 1, "state": 1},{"type" : 2, "state": 1}],
+    [],
+    [{"type" : 2, "state": 1}]
+  ]
+}
