@@ -1,5 +1,5 @@
 {
-  "grid": "ta_3_1",
+  "grid": "campaign/tetrisAttack/3/ta_3_1",
   "config": "fixed",
   "tetris" :  [
     { "gameBox" : "game", "scoreBox" : "score", "mappings" : ["leftMapping", "rightMapping"]}
