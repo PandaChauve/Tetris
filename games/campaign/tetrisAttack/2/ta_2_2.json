@@ -1,0 +1,13 @@
+{
+  "grid": "ta_2_2",
+  "config": "fixed",
+  "tetris" :  [
+    { "gameBox" : "game", "scoreBox" : "score", "mappings" : ["leftMapping", "rightMapping"]}
+  ],
+  "victory" : {
+    "blocksLeft" : 0,
+	"swaps" : 1
+  },
+  "message" : "Try to clear the grid in 1 swap!",
+  "next" : "campaign/tetrisAttack/2/ta_2_3"
+}

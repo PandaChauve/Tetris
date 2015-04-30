@@ -1,0 +1,12 @@
+{
+  "grid": "test",
+  "config": "fixed",
+  "tetris" :  [
+    { "gameBox" : "game", "scoreBox" : "score", "mappings" : ["leftMapping", "rightMapping"]}
+  ],
+  "victory" : {
+    "blocksLeft" : 0
+  },
+  "message" : "Try to clear the grid !",
+  "next" : "campaign/puzzle/puzzle_2"
+}
