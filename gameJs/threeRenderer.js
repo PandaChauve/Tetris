@@ -128,10 +128,14 @@ ThreeRenderer.prototype.Render = function() {
     this.renderer.render(this.scene, this.camera);
 };
 
-ThreeRenderer.prototype.LinkDom = function (body) {
+ThreeRenderer.prototype.LinkDom = function (container) {
     "use strict";
     this.renderer.domElement.setAttribute('id', this.id);
-    body.appendChild( this.renderer.domElement );
+    var node = $("#"+container+" .gamePlaceHolder");
+    if (node.length === 0){
+        node = $("#"+container+" canvas");
+    }
+    node.replaceWith($(this.renderer.domElement));
 };
 
 ThreeRenderer.prototype.UnlinkDom = function () {

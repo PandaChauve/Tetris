@@ -17,7 +17,7 @@ function Reset(){
     "use strict";
     $("#gamePopup").remove();
     for(var i = 0; i < game.config.tetris.length; i+= 1) {
-        $("#"+game.config.tetris[i].gameBox).html("");
+        $("#"+game.config.tetris[i].gameBox).html("<div class='gamePlaceHolder'></div>");
     }
     game.Stop();
     var d = new Game(game.config, game.grid, EndCallBack);

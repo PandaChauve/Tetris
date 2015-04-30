@@ -4,7 +4,14 @@ body{
     text-align:center;
 }
 
-canvas {
+.gamePlaceHolder{
+    width:400px;
+    height:600px;
+    margin:auto;
+    background:black;
+}
+
+canvas, .gamePlaceHolder {
     border: 1px white solid;
 }
 

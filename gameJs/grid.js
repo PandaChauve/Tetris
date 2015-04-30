@@ -205,32 +205,17 @@ Grid.prototype.Animate = function() {
     }
 };
 
-Grid.prototype.Debug = function(){
-    "use strict";
-    for(var i = 0; i < this.container.length; i+=1 ){
-        for(var j = 1; j < this.container[i].length; j+=1){
-            if(this.container[i][j].state !== Block.EState.SwappedLeft && this.container[i][j].state !== Block.EState.SwappedRight && this.container[i][j].type === Block.EType.PlaceHolder){
-                console.log("This programmer is quite bad...");
-                throw "Fuck it too";
-            }
-
-            if(this.container[i][j].state === Block.EState.Blocked && this.container[i][j-1].verticalPosition + CONFIG.pixelPerBox < this.container[i][j].verticalPosition)
-            {
-                console.log("This programmer is sooo bad...");
-                throw "Fuck";
-            }
-        }
-    }
-};
-
 Grid.prototype.GetMaxFixed = function () {
     'use strict';
     var i, j, max = 0;
     //vertical check
     for (i = 0; i < CONFIG.columnCount; i += 1) {
         for (j = CONFIG.hiddenRowCount; j < this.container[i].length; j += 1) {
-            if(this.container[i][j].verticalPosition > max && this.container[i][j].state === Block.EState.Blocked) {
-                max = this.container[i][j].verticalPosition;
+            if(this.container[i][j].state !== Block.EState.Blocked){
+                if(this.container[i][j].verticalPosition > max) {
+                    max = this.container[i][j].verticalPosition;
+                }
+                break;
             }
         }
     }

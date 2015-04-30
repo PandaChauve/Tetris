@@ -48,7 +48,7 @@ Game.prototype.Init = function(){
             this.tetris[i].keyBoardMappings.push(UserInput[this.config.tetris[i].mappings[j]]);
         }
         this.visual.push(new ThreeRenderer());
-        this.visual[i].LinkDom(document.getElementById(this.config.tetris[i].gameBox));
+        this.visual[i].LinkDom(this.config.tetris[i].gameBox);
         this.visual[i].RenderTetris(this.tetris[i]); //first render before loop to get everything smooth
     }
 };
