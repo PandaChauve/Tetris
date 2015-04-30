@@ -212,10 +212,10 @@ Grid.prototype.GetMaxFixed = function () {
     for (i = 0; i < CONFIG.columnCount; i += 1) {
         for (j = CONFIG.hiddenRowCount; j < this.container[i].length; j += 1) {
             if(this.container[i][j].state !== Block.EState.Blocked){
-                if(this.container[i][j].verticalPosition > max) {
-                    max = this.container[i][j].verticalPosition;
-                }
                 break;
+            }
+            if(this.container[i][j].verticalPosition > max) {
+                max = this.container[i][j].verticalPosition;
             }
         }
     }

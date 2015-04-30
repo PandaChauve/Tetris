@@ -7,21 +7,23 @@
 </head>
 <body>
 <div id="rules"></div>
-<div id="score" class="score">0</div>
-<div id="game">
-
-    <div class="gamePlaceHolder">ph</div>
-
+<div class="centralGame">
+    <div id="control">
+        <div id="moveUp" class="moveBtn">Up</div>
+        <div id="moveLeft" class="moveBtn">Left</div>
+        <div id="moveRight" class="moveBtn">Right</div>
+        <div id="moveDown" class="moveBtn">Down</div>
+        <div id="swapBtn" class="gameBtn">Swap</div>
+        <div id="gameMenu">
+            <a href="index.html" id="indexBtn" class="gameBtn">index</a>
+            <div id="retryBtn" class="gameBtn">Retry</div>
+            <div id="pauseBtn" class="gameBtn">Pause</div>
+        </div>
+    </div>
+    <div class="gameDetails"><div id="score" class="score">0</div></div>
+    <div id="game" class="gameHolder">
+        <div class="gamePlaceHolder"></div>
+    </div>
 </div>
-<div id="control">
-    <div id="moveUp" class="moveBtn">Up</div>
-    <div id="moveLeft" class="moveBtn">Left</div>
-    <div id="moveRight" class="moveBtn">Right</div>
-    <div id="moveDown" class="moveBtn">Down</div>
-    <div id="swapBtn" class="gameBtn">Swap</div>
-</div>
-<div id="retryBtn" class="gameBtn">Retry</div>
-<div id="pauseBtn" class="gameBtn">Pause</div>
-<a href="index.html" class="gameBtn">index</a>
 </body>
 </html>

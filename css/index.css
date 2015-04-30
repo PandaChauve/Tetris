@@ -3,15 +3,37 @@ body{
     color: white;
     text-align:center;
 }
-
-.gamePlaceHolder{
+.centralGame{
+    width:850px;
+    margin:auto;
+}
+.gameHolder{
     width:400px;
     height:600px;
     margin:auto;
     background:black;
 }
+#control{
+    background: #550000;
+    width: 200px;
+    height: 400px;
+    float: left;
+    border: 1px white solid;
+    position: relative;
+    top:50px;
+}
 
-canvas, .gamePlaceHolder {
+.gameDetails {
+    background: #550000;
+    width: 200px;
+    height: 400px;
+    position: relative;
+    top:50px;
+    float: right;
+    border: 1px white solid;
+}
+
+ .gameHolder {
     border: 1px white solid;
 }
 
@@ -47,19 +69,11 @@ canvas, .gamePlaceHolder {
     line-height:48px;
     border: 1px solid white;
     position:relative;
-    top:0;
-    left:0;
     float:left;
     color:white;
 }
 .moveBtn{
     position:absolute;
-}
-#control{
-    width:200px;
-    margin-left:-100px;
-    left:50%;
-    position:relative;
 }
 #moveUp{
     top:0;
@@ -69,7 +83,6 @@ canvas, .gamePlaceHolder {
     top:75px;
     left:0px;
 }
-
 #moveRight{
     top:75px;
     left:150px;
@@ -78,11 +91,19 @@ canvas, .gamePlaceHolder {
     top:150px;
     left:75px;
 }
-
 #swapBtn{
     top:75px;
     left:75px;
 }
+
+#gameMenu{
+    position: absolute;
+    bottom: 0px;
+}
+#indexBtn, #pauseBtn, #retryBtn{
+    margin: 0 8px;
+}
+
 
 a{
     color:white;
