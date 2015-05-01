@@ -2,6 +2,7 @@ body{
     background: #333;
     color: white;
     text-align:center;
+    font-family: 'Architects Daughter', cursive;
 }
 .centralGame{
     width:850px;
@@ -31,7 +32,7 @@ body{
     border: 1px white solid;
 }
 
- .gameHolder {
+.gameHolder {
     border: 1px white solid;
 }
 
@@ -175,7 +176,7 @@ a{
 }
 
 #highScores{
-  position:absolute;
+    position:absolute;
     right:0;
     top:0;
     margin:25px;
