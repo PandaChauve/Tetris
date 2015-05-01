@@ -1,0 +1,1 @@
+{"grid":"campaign/tetrisAttack/4/ta_4_9","config":"fixed","tetris":[{"gameBox":"game","scoreBox":"score","swapBox":"swaps","mappings":["leftMapping","rightMapping"]}],"victory":{"blocksLeft":0,"swaps":3},"message":"Try to clear the grid in 3 swaps!","next":"campaign/tetrisAttack/4/ta_4_10"}

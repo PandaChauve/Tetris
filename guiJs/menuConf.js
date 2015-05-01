@@ -39,9 +39,9 @@ for(var arc = 1; arc < 4; arc += 1){
 }
 
 var tetrisAttack = new MenuElement("Tetris Attack", campaign);
-for(var world = 1; world < 5; world += 1){
+for(var world = 1; world <= 5; world += 1){
     var worldi = new MenuElement("World "+ world, tetrisAttack);
-    for(var map = 1; map < 11; map+= 1){
+    for(var map = 1; map <= 10; map+= 1){
         var w1m1 = new MenuElement("Map "+map, worldi);
         w1m1.link = "game.html?game=campaign/tetrisAttack/"+world +"/ta_"+world +"_"+map;
     }
