@@ -53,6 +53,11 @@ Tetris.prototype.GetScore = function () {
     return this.score;
 };
 
+Tetris.prototype.GetSwaps = function () {
+    'use strict';
+    return this.swapCount;
+};
+
 
 function GetIntBetween(min, max){
     "use strict";

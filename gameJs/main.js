@@ -31,7 +31,7 @@ $("#pauseBtn").click(function(){
     "use strict";
     var ret = game.TogglePause();
     if(ret){
-        $("#pauseBtn").html("Unpause");
+        $("#pauseBtn").html("Play");
     }
     else{
         $("#pauseBtn").html("Pause");
@@ -41,7 +41,7 @@ $("#pauseBtn").click(function(){
 $(window).blur(function() {
     "use strict";
     game.TogglePause(true);
-    $("#pauseBtn").html("Unpause");
+    $("#pauseBtn").html("Play");
 });
 
 function EndCallBack(finishedGame){

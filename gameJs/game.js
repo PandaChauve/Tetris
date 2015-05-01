@@ -15,6 +15,7 @@ function Game(config, grid, cb){
     this.id = -1;
     this.start = null;
     this.pause = false;
+    this.tics = 0;
     if(cb === undefined){
         this.callback = null;
     }
@@ -90,25 +91,35 @@ Game.prototype.TogglePause = function(force){
     return this.pause;
 
 };
+function TimeFromTics(tics){
+    "use strict";
+    var sec = tics / 60;
+    var minutes = Math.floor( sec / 60 ) % 60;
+    var seconds = Math.floor(sec % 60);
+    tics = Math.floor((tics % 60 )/6);
 
+    return (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds < 10 ? "0" + seconds : seconds) + ":" + tics;
+}
 Game.prototype.render = function (timestamp) {
     "use strict";
     var i;
 
     if(this.start === null) {
-        this.start = timestamp;
-        this.tetris[0].tics = 0;
+        this.start = timestamp - this.tics/60*1000;
     }
     var progress = timestamp - this.start;
+    $("#time").html(TimeFromTics(this.tics));
 
 
     var continueGame = true;
     var count = 0;
-    while(this.tetris[0].tics < progress*60/1000 && continueGame && count < 10){ //60 tics per sec FIXME magic number
+    while(this.tics < progress*60/1000 && continueGame && count < 10){ //60 tics per sec FIXME magic number
         count += 1;
+        this.tics += 1;
         for(i = 0; i < this.tetris.length; i += 1){
             var loc = this.tetris[i].OneTick(this.kb);
             $("#"+this.config.tetris[i].scoreBox).html(this.tetris[i].GetScore());
+            $("#"+this.config.tetris[i].swapBox).html(this.tetris[i].GetSwaps());
             if(!loc){
                 continueGame = false;
                 this.visual[i].Freeze();

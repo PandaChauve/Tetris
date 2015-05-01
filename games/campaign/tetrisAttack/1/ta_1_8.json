@@ -2,7 +2,7 @@
   "grid": "campaign/tetrisAttack/1/ta_1_8",
   "config": "fixed",
   "tetris" :  [
-    { "gameBox" : "game", "scoreBox" : "score", "mappings" : ["leftMapping", "rightMapping"]}
+    { "gameBox" : "game", "scoreBox" : "score", "swapBox" : "swaps", "mappings" : ["leftMapping", "rightMapping"]}
   ],
   "victory" : {
     "blocksLeft" : 0,

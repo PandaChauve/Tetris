@@ -2,11 +2,11 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8" />
+    <link href='http://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <title>You will lose !</title>
 </head>
 <body>
-<div id="rules"></div>
 <div class="centralGame">
     <div id="control">
         <div id="moveUp" class="moveBtn">Up</div>
@@ -20,7 +20,24 @@
             <div id="pauseBtn" class="gameBtn">Pause</div>
         </div>
     </div>
-    <div class="gameDetails"><div id="score" class="score">0</div></div>
+    <div class="gameDetails">
+        <div class="gameDetailsElement">
+            <h3>Score</h3>
+            <span id="score">0</span>
+        </div>
+        <div class="gameDetailsElement">
+            <h3>Swaps</h3>
+            <span id="swaps">0</span>
+        </div>
+        <div class="gameDetailsElement">
+            <h3>Time</h3>
+            <span id="time"></span>
+        </div>
+        <div class="gameDetailsElement">
+            <h3>Objectives</h3>
+            <span id="rules"></span>
+        </div>
+    </div>
     <div id="game" class="gameHolder">
         <div class="gamePlaceHolder"></div>
     </div>

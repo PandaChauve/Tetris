@@ -2,6 +2,7 @@ body{
     background: #333;
     color: white;
     text-align:center;
+    font-family: 'Architects Daughter', cursive;
 }
 .centralGame{
     width:850px;
@@ -14,19 +15,17 @@ body{
     background:black;
 }
 #control{
-    background: #550000;
     width: 200px;
     height: 400px;
     float: left;
-    border: 1px white solid;
     position: relative;
     top:50px;
 }
 
 .gameDetails {
-    background: #550000;
+    background: #000000;
     width: 200px;
-    height: 400px;
+    height: 500px;
     position: relative;
     top:50px;
     float: right;
@@ -37,9 +36,20 @@ body{
     border: 1px white solid;
 }
 
-.score{
+.gameDetailsElement span{
     font-size: 3em;
+    font-family:  monospace;
 }
+#rules{
+    font-size:1em;
+}
+
+.gameDetailsElement h3{
+    font-size: 2em;
+    margin: 10px 20px 0px;
+
+}
+
 
 #keyboardLeft{
     position:absolute;
