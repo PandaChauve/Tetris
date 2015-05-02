@@ -108,7 +108,7 @@ Game.prototype.render = function (timestamp) {
         this.start = timestamp - this.tics/60*1000;
     }
     var progress = timestamp - this.start;
-    $("#time").html(TimeFromTics(this.tics));
+    $(".timeBox").html(TimeFromTics(this.tics));
 
 
     var continueGame = true;

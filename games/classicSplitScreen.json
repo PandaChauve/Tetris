@@ -2,8 +2,8 @@
   "grid": "",
   "config": "",
   "tetris" :  [
-    { "gameBox" : "gameA", "scoreBox" : "scoreA", "mappings" : ["leftMapping"]},
-    { "gameBox" : "gameB", "scoreBox" : "scoreB", "mappings" : ["rightMapping"]}
+    { "gameBox" : "gameA", "scoreBox" : "scoreA", "swapBox" : "swapsA", "mappings" : ["leftMapping"]},
+    { "gameBox" : "gameB", "scoreBox" : "scoreB", "swapBox" : "swapsB","mappings" : ["rightMapping"]}
   ],
   "message" : "Try to stay alive !"
 }

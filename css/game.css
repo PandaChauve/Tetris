@@ -9,7 +9,10 @@ body {
     width: 850px;
     margin: auto;
 }
-
+.sideGame{
+    width:810px;
+    float:right;
+}
 .gameHolder {
     width: 400px;
     height: 600px;
