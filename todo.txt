@@ -9,6 +9,7 @@ online account
 achievements
 
 Bugs
+fix split screen
 
 Features
 Items (zfa)
@@ -17,6 +18,16 @@ Block multicolor
 sound
 
 ------------------------------------------------------------------------------------------
+02/05/14
+Menu everywhere
+
+01/05/14
+a lot of campaigns
+style + swap count
+using folders to clean the mess
+time display
+new font for zfa
+
 29/04/14
 Adding tetris attack world one
 pause after finish
