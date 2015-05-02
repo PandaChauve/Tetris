@@ -21,6 +21,10 @@ Other:
 - high score with name
 - overall design review
 - Items
+- tetris attack bonus 7-12
+- puzzle campaign
+- time trial campaign
+- arcade campaign
 
 Bugs
 - fix split screen
@@ -30,6 +34,7 @@ Bugs
 Menu everywhere
 defeat conditions
 review todo
+tetris attack 6
 
 01/05/14
 a lot of campaigns

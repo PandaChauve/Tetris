@@ -2,42 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20d21939-c8e4-49c3-84d6-1c3927d59de7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_10.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/6/ta_6_10.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_2.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/6/ta_6_2.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_3.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/6/ta_6_3.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_4.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/6/ta_6_4.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_5.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/6/ta_6_5.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_6.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/6/ta_6_6.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_7.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/6/ta_6_7.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_8.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/6/ta_6_8.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_9.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/6/ta_6_9.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_10.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_10.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_4.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_4.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_5.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_5.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_6.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_6.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_7.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_7.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_8.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_8.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_9.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_9.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_1.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_1.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_10.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_10.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_2.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_2.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_3.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_3.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_4.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_4.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_5.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_5.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_6.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_6.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_7.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_7.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_8.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_8.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_9.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_9.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_1.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_1.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/guiJs/menuConf.js" afterPath="$PROJECT_DIR$/guiJs/menuConf.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/todo.txt" afterPath="$PROJECT_DIR$/todo.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Tetris.iws" />
@@ -79,20 +45,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="todo.txt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="todo.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/todo.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
+            <state vertical-scroll-proportion="0.6480938">
+              <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ta_6_6.json" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ta_6_6.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_6.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.51829267">
+            <state vertical-scroll-proportion="-13.076923">
               <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
               <folding />
             </state>
@@ -103,7 +69,7 @@
         <entry file="file://$PROJECT_DIR$/guiJs/menuConf.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="55" column="23" selection-start-line="55" selection-start-column="23" selection-end-line="55" selection-end-column="23" />
+              <caret line="32" column="57" selection-start-line="32" selection-start-column="57" selection-end-line="32" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -226,9 +192,9 @@
         <option value="$PROJECT_DIR$/games/campaign/tetrisAttack/1/ta_1_3.json" />
         <option value="$PROJECT_DIR$/css/game.css" />
         <option value="$PROJECT_DIR$/game.html" />
+        <option value="$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_6.json" />
         <option value="$PROJECT_DIR$/guiJs/menuConf.js" />
         <option value="$PROJECT_DIR$/todo.txt" />
-        <option value="$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_6.json" />
       </list>
     </option>
   </component>
@@ -797,7 +763,13 @@
       <option name="project" value="LOCAL" />
       <updated>1430590233963</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="tetris attack 6">
+      <created>1430592252757</created>
+      <option name="number" value="00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1430592252757</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -838,7 +810,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="victory for campaign" />
     <MESSAGE value="more levels" />
     <MESSAGE value="new retry" />
     <MESSAGE value="tick rate control" />
@@ -863,7 +834,8 @@
     <MESSAGE value="menu everywhere" />
     <MESSAGE value="better end condition handling" />
     <MESSAGE value="small fixes + todo review" />
-    <option name="LAST_COMMIT_MESSAGE" value="small fixes + todo review" />
+    <MESSAGE value="tetris attack 6" />
+    <option name="LAST_COMMIT_MESSAGE" value="tetris attack 6" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1264,26 +1236,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_6.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.076923">
+          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/guiJs/menuConf.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="55" column="23" selection-start-line="55" selection-start-column="23" selection-end-line="55" selection-end-column="23" />
+          <caret line="32" column="57" selection-start-line="32" selection-start-column="57" selection-end-line="32" selection-end-column="57" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/todo.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_6.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.51829267">
-          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.6480938">
+          <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
           <folding />
         </state>
       </provider>
