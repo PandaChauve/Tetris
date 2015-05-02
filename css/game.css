@@ -133,8 +133,8 @@ body {
     bottom: 0px;
 }
 
-#indexBtn, #pauseBtn, #retryBtn {
-    margin: 0 8px;
+#pauseBtn, #retryBtn {
+    margin: 0 20px 0 25px;
 }
 
 a {

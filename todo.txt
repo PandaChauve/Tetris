@@ -1,28 +1,34 @@
 ToDo
-score : bonus display
-control : config by user
-visual : lot of work here
-visual : full screen
-campaign : more maps
-index : menu style
-online account
-achievements
+In game:
+- display bonus
+- review end screen
+- swap count decrease if objective
+- sound
+
+Game type:
+- Mega game
+- Mega game coop
+- Time limit
+- Crazy arcade (indestructible, multicolor, random swap,...)
+- Online coop
+- Online duel
+
+Other:
+- achievements
+- high score for each mode / map
+- complete tetris attack maps
+- high score with name
+- overall design review
+- Items
 
 Bugs
-fix split screen
-
-Features
-Items (zfa)
-Block indestructible
-Block multicolor
-sound
-time limit
-big game coop
+- fix split screen
 
 ------------------------------------------------------------------------------------------
 02/05/14
 Menu everywhere
 defeat conditions
+review todo
 
 01/05/14
 a lot of campaigns
