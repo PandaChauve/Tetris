@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20d21939-c8e4-49c3-84d6-1c3927d59de7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/game.css" afterPath="$PROJECT_DIR$/css/game.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/game.html" afterPath="$PROJECT_DIR$/game.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/1/ta_1_3.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/1/ta_1_3.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/guiJs/menuConf.js" afterPath="$PROJECT_DIR$/guiJs/menuConf.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/todo.txt" afterPath="$PROJECT_DIR$/todo.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -50,18 +48,18 @@
       <file leaf-file-name="todo.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/todo.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5982405">
-              <caret line="24" column="18" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
+            <state vertical-scroll-proportion="0.42375368">
+              <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tetris.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gameJs/tetris.js">
+      <file leaf-file-name="menuConf.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/guiJs/menuConf.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="45" column="5" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
+              <caret line="55" column="23" selection-start-line="55" selection-start-column="23" selection-end-line="55" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -181,7 +179,6 @@
         <option value="$PROJECT_DIR$/grids/campaign/tetrisAttack/4/ta_4_10.json" />
         <option value="$PROJECT_DIR$/guiJs/homeMenu.js" />
         <option value="$PROJECT_DIR$/guiJs/lateralMenu.js" />
-        <option value="$PROJECT_DIR$/guiJs/menuConf.js" />
         <option value="$PROJECT_DIR$/testTemplate.html" />
         <option value="$PROJECT_DIR$/splitscreen.html" />
         <option value="$PROJECT_DIR$/index.html" />
@@ -196,6 +193,7 @@
         <option value="$PROJECT_DIR$/games/campaign/tetrisAttack/1/ta_1_3.json" />
         <option value="$PROJECT_DIR$/css/game.css" />
         <option value="$PROJECT_DIR$/game.html" />
+        <option value="$PROJECT_DIR$/guiJs/menuConf.js" />
         <option value="$PROJECT_DIR$/todo.txt" />
       </list>
     </option>
@@ -739,7 +737,13 @@
       <option name="project" value="LOCAL" />
       <updated>1430582303128</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="small fixes + todo review">
+      <created>1430590000870</created>
+      <option name="number" value="00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1430590000870</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -780,7 +784,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="message display" />
     <MESSAGE value="victory for campaign" />
     <MESSAGE value="more levels" />
     <MESSAGE value="new retry" />
@@ -805,7 +808,8 @@
     <MESSAGE value="more campaign" />
     <MESSAGE value="menu everywhere" />
     <MESSAGE value="better end condition handling" />
-    <option name="LAST_COMMIT_MESSAGE" value="better end condition handling" />
+    <MESSAGE value="small fixes + todo review" />
+    <option name="LAST_COMMIT_MESSAGE" value="small fixes + todo review" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1085,14 +1089,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/guiJs/menuConf.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="46" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testTemplate.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-18.692308">
@@ -1221,10 +1217,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/guiJs/menuConf.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="55" column="23" selection-start-line="55" selection-start-column="23" selection-end-line="55" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/todo.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5982405">
-          <caret line="24" column="18" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.42375368">
+          <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
           <folding />
         </state>
       </provider>

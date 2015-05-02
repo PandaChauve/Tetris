@@ -15,6 +15,7 @@ Game type:
 
 Other:
 - achievements
+- Campaign map
 - high score for each mode / map
 - complete tetris attack maps
 - high score with name

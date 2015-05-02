@@ -52,4 +52,5 @@ var multi = new MenuElement("Multi Player", mainMenu);
 var split = new MenuElement("Split Screen", multi);
 split.link = "splitscreen.html?game=classicSplitScreen";
 
-var c = new MenuElement("Configure", mainMenu);
+var todo = new MenuElement("Timeline", mainMenu);
+todo.link = "todo.txt";
