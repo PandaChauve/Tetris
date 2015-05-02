@@ -9,7 +9,7 @@ function Game(config, grid, cb){
     this.tetris = [];
     this.visual = [];
     this.kb = new UserInput();
-    this.victoryChecker = new VictoryChecker(config.victory);
+    this.stateChecker = new StateChecker(config.victory);
     this.tobefixed = [2, 2];
     this.stop = false;
     this.id = -1;
@@ -117,14 +117,15 @@ Game.prototype.render = function (timestamp) {
         count += 1;
         this.tics += 1;
         for(i = 0; i < this.tetris.length; i += 1){
-            var loc = this.tetris[i].OneTick(this.kb);
+            this.tetris[i].OneTick(this.kb);
             $("#"+this.config.tetris[i].scoreBox).html(this.tetris[i].GetScore());
             $("#"+this.config.tetris[i].swapBox).html(this.tetris[i].GetSwaps());
-            if(!loc){
+            this.stateChecker.Check(this.tetris[i]);
+            if(this.stateChecker.Defeat()){
                 continueGame = false;
                 this.visual[i].Freeze();
             }
-            if(this.victoryChecker.Check(this.tetris[i])){
+            if(this.stateChecker.Victory()){
                 continueGame = false;
                 this.visual[i].Freeze();
             }

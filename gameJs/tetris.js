@@ -44,8 +44,16 @@ Tetris.prototype.OneTick = function (kb) {
         this.cursor.y += 1;
         this.groundSpeed = this.baseGroundSpeed;
     }
+};
 
-    return this.grid.GetMaxFixed() < CONFIG.lostThreshold;
+Tetris.prototype.GetMaxFixed = function(){
+    "use strict";
+    return this.grid.GetMaxFixed();
+};
+
+Tetris.prototype.IsMoving = function(){
+    "use strict";
+    return this.grid.IsMoving();
 };
 
 Tetris.prototype.GetScore = function () {

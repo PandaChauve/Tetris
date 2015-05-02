@@ -8,6 +8,5 @@
     "blocksLeft" : 0,
 	"swaps" : 1
   },
-  "message" : "Try to clear the grid in 1 swap!",
   "next" : "campaign/tetrisAttack/1/ta_1_3"
 }

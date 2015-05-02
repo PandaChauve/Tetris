@@ -1,25 +1,28 @@
-body{
+body {
     background: #333;
     color: white;
-    text-align:center;
+    text-align: center;
     font-family: 'Architects Daughter', cursive;
 }
-.centralGame{
-    width:850px;
-    margin:auto;
+
+.centralGame {
+    width: 850px;
+    margin: auto;
 }
-.gameHolder{
-    width:400px;
-    height:600px;
-    margin:auto;
-    background:black;
+
+.gameHolder {
+    width: 400px;
+    height: 600px;
+    margin: auto;
+    background: black;
 }
-#control{
+
+#control {
     width: 200px;
     height: 400px;
     float: left;
     position: relative;
-    top:50px;
+    top: 50px;
 }
 
 .gameDetails {
@@ -27,7 +30,7 @@ body{
     width: 200px;
     height: 500px;
     position: relative;
-    top:50px;
+    top: 50px;
     float: right;
     border: 1px white solid;
 }
@@ -36,34 +39,47 @@ body{
     border: 1px white solid;
 }
 
-.gameDetailsElement span{
+.gameDetailsElement span {
     font-size: 3em;
-    font-family:  monospace;
-}
-#rules{
-    font-size:1em;
+    font-family: monospace;
 }
 
-.gameDetailsElement h3{
+#rules {
+    font-size: 1em;
+    text-align: left;
+}
+
+#rules ul {
+    margin:0;
+    padding:0;
+}
+
+#rules li {
+    list-style-type: none;
+    margin:2px 5px;
+    padding:0;
+    font-family: 'Architects Daughter', cursive;
+}
+
+.gameDetailsElement h3 {
     font-size: 2em;
     margin: 10px 20px 0px;
 
 }
 
-
-#keyboardLeft{
-    position:absolute;
-    left:20%;
-    top:70%;
-}
-#keyboardRight{
-    position:absolute;
-    right:20%;
-    top:70%;
+#keyboardLeft {
+    position: absolute;
+    left: 20%;
+    top: 70%;
 }
 
+#keyboardRight {
+    position: absolute;
+    right: 20%;
+    top: 70%;
+}
 
-.moveBtn, #swapBtn, #retryBtn, .btn, .gameBtn{
+.moveBtn, #swapBtn, #retryBtn, .btn, .gameBtn {
     cursor: pointer;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -73,73 +89,79 @@ body{
     text-decoration: none;
 }
 
-.moveBtn, #swapBtn, #retryBtn, .gameBtn{
-    width:48px;
-    height:48px;
-    line-height:48px;
+.moveBtn, #swapBtn, #retryBtn, .gameBtn {
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
     border: 1px solid white;
-    position:relative;
-    float:left;
-    color:white;
-}
-.moveBtn{
-    position:absolute;
-}
-#moveUp{
-    top:0;
-    left:75px;
-}
-#moveLeft{
-    top:75px;
-    left:0px;
-}
-#moveRight{
-    top:75px;
-    left:150px;
-}
-#moveDown{
-    top:150px;
-    left:75px;
-}
-#swapBtn{
-    top:75px;
-    left:75px;
+    position: relative;
+    float: left;
+    color: white;
 }
 
-#gameMenu{
+.moveBtn {
+    position: absolute;
+}
+
+#moveUp {
+    top: 0;
+    left: 75px;
+}
+
+#moveLeft {
+    top: 75px;
+    left: 0px;
+}
+
+#moveRight {
+    top: 75px;
+    left: 150px;
+}
+
+#moveDown {
+    top: 150px;
+    left: 75px;
+}
+
+#swapBtn {
+    top: 75px;
+    left: 75px;
+}
+
+#gameMenu {
     position: absolute;
     bottom: 0px;
 }
-#indexBtn, #pauseBtn, #retryBtn{
+
+#indexBtn, #pauseBtn, #retryBtn {
     margin: 0 8px;
 }
 
-
-a{
-    color:white;
+a {
+    color: white;
 }
 
-#mainMenu{
-    width:900px;
-    height:400px;
+#mainMenu {
+    width: 900px;
+    height: 400px;
     margin: 50px auto;
-    background:#111111;
-    border:2px solid grey;
+    background: #111111;
+    border: 2px solid grey;
     border-radius: 25px;
     box-shadow: lightgrey 2px 2px 0 0;
-    padding:0;
-    position:relative;
+    padding: 0;
+    position: relative;
 }
 
-.menuGame{
-    float:left;
-    width:200px;
-    height:200px;
+.menuGame {
+    float: left;
+    width: 200px;
+    height: 200px;
     margin: 80px 48px;
-    padding:0;
-    background : darkslategrey;
+    padding: 0;
+    background: darkslategrey;
     border-radius: 25px;
-    border:2px solid grey;
+    border: 2px solid grey;
     line-height: 200px;
     font-size: 2em;
     -webkit-touch-callout: none;
@@ -150,16 +172,16 @@ a{
     cursor: pointer;
 }
 
-.menuReturn{
+.menuReturn {
 
-    width:50px;
-    height:50px;
+    width: 50px;
+    height: 50px;
     line-height: 50px;
-    color:white;
-    border:1px solid white;
-    position:absolute;
-    right:25px;
-    bottom:25px;
+    color: white;
+    border: 1px solid white;
+    position: absolute;
+    right: 25px;
+    bottom: 25px;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -168,22 +190,22 @@ a{
     cursor: pointer;
 }
 
-
-.menuReturnDisabled{
-    color:black;
-    border:1px solid black;
+.menuReturnDisabled {
+    color: black;
+    border: 1px solid black;
     cursor: no-drop;
 }
 
-#highScores{
-    position:absolute;
-    right:0;
-    top:0;
-    margin:25px;
-    border:1px white solid;
-    width:200px;
+#highScores {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 25px;
+    border: 1px white solid;
+    width: 200px;
 }
-#highScores span{
+
+#highScores span {
     display: block;
     line-height: 30px;
     height: 30px;

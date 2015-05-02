@@ -16,10 +16,13 @@ Items (zfa)
 Block indestructible
 Block multicolor
 sound
+time limit
+big game coop
 
 ------------------------------------------------------------------------------------------
 02/05/14
 Menu everywhere
+defeat conditions
 
 01/05/14
 a lot of campaigns

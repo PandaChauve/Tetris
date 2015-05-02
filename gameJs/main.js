@@ -50,7 +50,7 @@ function EndCallBack(finishedGame){
     scores.SetArcadeScore(finishedGame.tetris[0].GetScore());
     var popup = $("<div id='gamePopup'></div>");
 
-    if(finishedGame.victoryChecker.lastCheck){
+    if(finishedGame.stateChecker.lastSuccessCheck){
         popup.html("<h1>Gratz ! You did it !</h1>");
         if(game.config.next !== undefined && game.config.next !== ""){
             popup.html(popup.html() + "<p><a href='game.html?game="+game.config.next+"'>Try the next one ?</a></p>");
@@ -70,7 +70,6 @@ function EndCallBack(finishedGame){
 function UseGameConfig(config){
     "use strict";
     CONFIG = GetConfig(config.config);
-    $("#rules").html(config.message);
     if(config.grid == ""){ // jshint ignore:line
         game = new Game(config, "", EndCallBack);
         game.Start();
