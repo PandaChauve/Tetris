@@ -1,1 +1,1 @@
-{"grid":"campaign/tetrisAttack/5/ta_5_1","config":"fixed","tetris":[{"gameBox":"game","scoreBox":"score","swapBox":"swaps","mappings":["leftMapping","rightMapping"]}],"victory":{"blocksLeft":0,"swaps":2},"message":"Try to clear the grid in 2 swaps!","next":"campaign/tetrisAttack/5/ta_5_2"}
+{"grid":"campaign/tetrisAttack/5/ta_5_1","config":"fixed","tetris":[{"gameBox":"game","scoreBox":"score","swapBox":"swaps","mappings":["leftMapping","rightMapping"]}],"victory":{"blocksLeft":0,"swaps":2},"message":null,"next":"campaign/tetrisAttack/5/ta_5_2"}
