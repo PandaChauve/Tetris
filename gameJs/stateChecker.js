@@ -56,6 +56,9 @@ StateChecker.prototype.MakeComponents = function(config){
     if(config.swaps !== undefined){
         this.defeatComponents.push(new SwapChecker(config.swaps));
     }
+    if(config.time !== undefined){
+        this.defeatComponents.push(new TimeChecker(config.time));
+    }
 };
 
 function PillarSizeChecker(){
@@ -71,7 +74,7 @@ PillarSizeChecker.prototype.Check = function(tetris){
 
 function ScoreChecker(val){
     "use strict";
-    $("#rules ul").append($("<li class='successCond'>Get "+val+"points</li>"));
+    $("#rules ul").append($("<li class='successCond'>Get "+val+" points</li>"));
     this.val = val;
 }
 
@@ -105,4 +108,15 @@ function SwapChecker(val){
 SwapChecker.prototype.Check = function(tetris){
     "use strict";
     return tetris.swapCount > this.val;
+};
+
+function TimeChecker(val){
+    "use strict";
+    $("#rules ul").append($("<li class='defeatCond'>Max "+val+" seconds</li>"));
+    this.val = val;
+}
+
+TimeChecker.prototype.Check = function(tetris){
+    "use strict";
+    return tetris.tics / 60 > this.val;
 };

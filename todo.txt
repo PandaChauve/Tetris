@@ -6,7 +6,6 @@ In game:
 - "your mom" blocks
 
 Game type:
-- Time limit
 - Crazy arcade (indestructible, multicolor, random swap,...)
 - Online coop
 - Online duel
@@ -34,6 +33,7 @@ Bugs
 Wide coop
 partial rules
 swap count decrease if its an objective
+Time limit
 
 02/05/14
 Menu everywhere

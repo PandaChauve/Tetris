@@ -40,6 +40,12 @@ for(var arc = 1; arc < 4; arc += 1){
     arcade1.link = "game.html?game=campaign/arcade/arcade_"+arc;
 }
 
+var tl = new MenuElement("TimeLimit", campaign);
+for(var tlc = 1; tlc <= 4; tlc += 1){
+    var obj = new MenuElement("TimeLimit "+tlc, tl);
+    obj.link = "game.html?game=campaign/timeLimit/timelimit_"+tlc;
+}
+
 var tetrisAttack = new MenuElement("Tetris Attack", campaign);
 for(var world = 1; world <= 6; world += 1){
     var worldi = new MenuElement("World "+ world, tetrisAttack);

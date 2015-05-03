@@ -1,0 +1,12 @@
+{
+  "grid": "",
+  "config": "sandbox",
+  "tetris" :  [
+    { "gameBox" : "game", "scoreBox" : "score", "swapBox" : "swaps", "mappings" : ["leftMapping", "rightMapping"]}
+  ],
+  "victory" : {
+    "score" : 20,
+    "time" : 60
+  },
+  "next" : "campaign/timeLimit/timeLimit_2"
+}

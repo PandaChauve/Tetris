@@ -1,0 +1,11 @@
+{
+  "grid": "",
+  "config": "sandbox",
+  "tetris" :  [
+    { "gameBox" : "game", "scoreBox" : "score", "swapBox" : "swaps", "mappings" : ["leftMapping", "rightMapping"]}
+  ],
+  "victory" : {
+    "score" : 50,
+    "time" : 60
+  }
+}

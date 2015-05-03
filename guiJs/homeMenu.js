@@ -4,6 +4,7 @@
 
 (function(){
     "use strict";
+    return; //FIXME
     CreateMenu(mainMenu);
 
     function CreateFct(node){
