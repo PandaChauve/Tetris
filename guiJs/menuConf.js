@@ -58,3 +58,6 @@ coop.link = "game.html?game=ultralargecoop";
 
 var todo = new MenuElement("Timeline", mainMenu);
 todo.link = "todo.txt";
+
+var rules = new MenuElement("Rules", mainMenu);
+rules.link = "rules.html";
