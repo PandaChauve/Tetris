@@ -22,6 +22,8 @@ var mainMenu = new MenuElement("Index", null);
 var single = new MenuElement("Single Player", mainMenu);
 var classic = new MenuElement("Classic", single);
 classic.link = "game.html?game=classic";
+var Wide = new MenuElement("Wide", single);
+Wide.link = "game.html?game=ultralarge";
 var sandbox = new MenuElement("Sandbox", single);
 sandbox.link = "game.html?game=sandbox";
 var campaign = new MenuElement("Campaign", single);
@@ -51,6 +53,8 @@ for(var world = 1; world <= 6; world += 1){
 var multi = new MenuElement("Multi Player", mainMenu);
 var split = new MenuElement("Split Screen", multi);
 split.link = "splitscreen.html?game=classicSplitScreen";
+var coop = new MenuElement("Coop", multi);
+coop.link = "game.html?game=ultralargecoop";
 
 var todo = new MenuElement("Timeline", mainMenu);
 todo.link = "todo.txt";

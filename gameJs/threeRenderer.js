@@ -3,12 +3,17 @@
  * Created by panda on 15/04/2015.
  */
 
-function ThreeRenderer() {
+function ThreeRenderer(cursors) {
     "use strict";
+    if(cursors === undefined)
+        cursors = 1;
     this.camera = this.CreateCamera();
     this.renderer = this.CreateRenderer();
     this.light = this.CreateLight();
-    this.cursor = this.CreateCursor();
+    this.cursor = [this.CreateCursor(0x008080)];
+    for(var i = 1; i < cursors; i+=1){
+        this.cursor.push(this.CreateCursor(0x800080));
+    }
     this.scene = this.CreateScene();
     this.offset = 0;
     this.id = String.fromCharCode(65 + Math.floor(Math.random() * 26)) + Date.now();
@@ -37,7 +42,9 @@ ThreeRenderer.prototype.CreateScene = function () {
     "use strict";
     var scene = new THREE.Scene();
     scene.add(this.light);
-    scene.add(this.cursor);
+    for(var i = 0; i < this.cursor.length; i+= 1) {
+        scene.add(this.cursor[i]);
+    }
 
     var geometry = new THREE.PlaneGeometry( 1000, 400 ); //FIXME magic numbers
     //now try to get everything with transparent true above this plane or your going to cry :)
@@ -147,7 +154,7 @@ ThreeRenderer.prototype.UnlinkDom = function () {
 };
 
 
-ThreeRenderer.prototype.CreateCursor = function(){
+ThreeRenderer.prototype.CreateCursor = function(color){
     "use strict";
     var trackShape = new THREE.Shape();
 
@@ -163,14 +170,16 @@ ThreeRenderer.prototype.CreateCursor = function(){
     trackShape.lineTo( 35, -20 );
 
     return new THREE.PointCloud(trackShape.createPointsGeometry(), new THREE.PointCloudMaterial({
-        color: 0x008080,
+        color: color,
         size: 4
     }));
 };
 
-ThreeRenderer.prototype.DrawCursorOn = function(x,y){
+ThreeRenderer.prototype.DrawCursorOn = function(x,y, cursorId){
     "use strict";
-    this.cursor.position.set((x - (CONFIG.columnCount)/2)*CONFIG.pixelPerBox -10  , y*(CONFIG.pixelPerBox-0.5) + this.offset +5 , 7);
+    if(cursorId === undefined)
+        cursorId = 0;
+    this.cursor[cursorId].position.set((x - (CONFIG.columnCount)/2)*CONFIG.pixelPerBox -10  , y*(CONFIG.pixelPerBox-0.5) + this.offset +5 , 7);
 
 };
 
@@ -198,6 +207,8 @@ ThreeRenderer.prototype.RenderTetris = function(tetris){
             }
         }
     }
-    this.DrawCursorOn(tetris.cursor.x,tetris.cursor.y);
+    for(i = 0; i < tetris.cursor.length; i+= 1){
+        this.DrawCursorOn(tetris.cursor[i].x,tetris.cursor[i].y,i);
+    }
     this.Render();
 };

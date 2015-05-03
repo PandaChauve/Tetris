@@ -37,6 +37,9 @@ function GetConfig(mode){
         conf.fallPeriod = 300;
         conf.groundAccelerationPerTic = 0;
     }
+    else if(mode === "large"){
+        conf.columnCount = 10;
+    }
     return conf;
 }
 

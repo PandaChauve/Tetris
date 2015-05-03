@@ -3,11 +3,18 @@
  */
 
 
-function Tetris(grid) {
+function Tetris(grid, cursors) {
     'use strict';
     this.grid = new Grid(grid);
     this.score = 0;
-    this.cursor = {x:3, y:CONFIG.hiddenRowCount};
+    this.cursor = [];
+    if(cursors === undefined) {
+        cursors = 1;
+    }
+    for(var i = 0; i < cursors; i+= 1){
+        this.cursor.push({x:2+i*2, y:CONFIG.hiddenRowCount});
+    }
+
     this.swapCount = 0;
     this.groundSpeed = CONFIG.groundSpeedPerTic;
     this.baseGroundSpeed = CONFIG.groundSpeedPerTic;
@@ -41,7 +48,9 @@ Tetris.prototype.OneTick = function (kb) {
     if(this.groundPos >= CONFIG.pixelPerBox ){
         this.groundPos -= CONFIG.pixelPerBox;
         this.grid.AddNewLine();
-        this.cursor.y += 1;
+        for(var i = 0; i < this.cursor.length; i+=1) {
+            this.cursor[i].y += 1;
+        }
         this.groundSpeed = this.baseGroundSpeed;
     }
 };
@@ -85,23 +94,23 @@ Tetris.prototype.HandleUserInput = function(kb) {
     "use strict";
 
     for(var i = 0; i < this.keyBoardMappings.length; i += 1) {
-
+        var cur = this.cursor[i % this.cursor.length];
         if (kb.pressed(this.keyBoardMappings[i].swap)) {
-            if(this.grid.Swap(this.cursor.x, this.cursor.y)){
+            if(this.grid.Swap(cur.x, cur.y)){
                 this.swapCount += 1;
             }
         }
         if (kb.pressed(this.keyBoardMappings[i].down)) {
-            this.cursor.y = Math.max(CONFIG.hiddenRowCount, this.cursor.y - 1);
+            cur.y = Math.max(CONFIG.hiddenRowCount, cur.y - 1);
         }
         if (kb.pressed(this.keyBoardMappings[i].up)) {
-            this.cursor.y = Math.min(CONFIG.hiddenRowCount + CONFIG.displayedRowCount, this.cursor.y + 1);
+            cur.y = Math.min(CONFIG.hiddenRowCount + CONFIG.displayedRowCount, cur.y + 1);
         }
         if (kb.pressed(this.keyBoardMappings[i].left)) {
-            this.cursor.x = Math.max(0, this.cursor.x - 1);
+            cur.x = Math.max(0, cur.x - 1);
         }
         if (kb.pressed(this.keyBoardMappings[i].right)) {
-            this.cursor.x = Math.min(CONFIG.columnCount - 2, this.cursor.x + 1); //-1 for zero based -1 for dual block switcher
+            cur.x = Math.min(CONFIG.columnCount - 2, cur.x + 1); //-1 for zero based -1 for dual block switcher
         }
         if (kb.pressed(this.keyBoardMappings[i].speed)) {
             this.groundSpeed = CONFIG.groundUpSpeedPerTic;

@@ -44,11 +44,11 @@ Game.prototype.Start = function(){
 Game.prototype.Init = function(){
     "use strict";
     for(var i = 0; i < this.config.tetris.length; i+= 1){
-        this.tetris.push(new Tetris(this.grid));
+        this.tetris.push(new Tetris(this.grid, this.config.tetris[i].cursors));
         for(var j = 0; j < this.config.tetris[i].mappings.length; j+=1){
             this.tetris[i].keyBoardMappings.push(UserInput[this.config.tetris[i].mappings[j]]);
         }
-        this.visual.push(new ThreeRenderer());
+        this.visual.push(new ThreeRenderer(this.config.tetris[i].cursors));
         this.visual[i].LinkDom(this.config.tetris[i].gameBox);
         this.visual[i].RenderTetris(this.tetris[i]); //first render before loop to get everything smooth
     }

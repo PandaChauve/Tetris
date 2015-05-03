@@ -4,10 +4,9 @@ In game:
 - review end screen
 - swap count decrease if objective
 - sound
+- "your mom" blocks
 
 Game type:
-- Mega game
-- Mega game coop
 - Time limit
 - Crazy arcade (indestructible, multicolor, random swap,...)
 - Online coop
@@ -26,16 +25,22 @@ Other:
 - puzzle campaign
 - time trial campaign
 - arcade campaign
+- menu > set current location
+- code cleaning
 
 Bugs
-- fix split screen
 
 ------------------------------------------------------------------------------------------
+03/05/14
+Wide coop
+
 02/05/14
 Menu everywhere
 defeat conditions
 review todo
 tetris attack 6
+Wide
+fix split screen
 
 01/05/14
 a lot of campaigns
