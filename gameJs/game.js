@@ -118,16 +118,20 @@ Game.prototype.render = function (timestamp) {
         this.tics += 1;
         for(i = 0; i < this.tetris.length; i += 1){
             this.tetris[i].OneTick(this.kb);
+
             $("#"+this.config.tetris[i].scoreBox).html(this.tetris[i].GetScore());
-            $("#"+this.config.tetris[i].swapBox).html(this.tetris[i].GetSwaps());
             this.stateChecker.Check(this.tetris[i]);
-            if(this.stateChecker.Defeat()){
+            if(this.stateChecker.Defeat() || this.stateChecker.Victory()){
                 continueGame = false;
                 this.visual[i].Freeze();
             }
-            if(this.stateChecker.Victory()){
-                continueGame = false;
-                this.visual[i].Freeze();
+            else{
+                if(this.config.victory !== undefined && this.config.victory.swaps !== undefined){
+                    $("#"+this.config.tetris[i].swapBox).html(this.config.victory.swaps - this.tetris[i].GetSwaps());
+                }
+                else {
+                    $("#"+this.config.tetris[i].swapBox).html(this.tetris[i].GetSwaps());
+                }
             }
         }
         this.kb.clear();

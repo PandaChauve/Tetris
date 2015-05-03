@@ -2,7 +2,6 @@ ToDo
 In game:
 - display bonus
 - review end screen
-- swap count decrease if objective
 - sound
 - "your mom" blocks
 
@@ -34,6 +33,7 @@ Bugs
 03/05/14
 Wide coop
 partial rules
+swap count decrease if its an objective
 
 02/05/14
 Menu everywhere
