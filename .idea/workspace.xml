@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20d21939-c8e4-49c3-84d6-1c3927d59de7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/games/campaign/timeLimit/timelimit_1.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/games/campaign/timeLimit/timelimit_2.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/games/campaign/timeLimit/timelimit_3.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/games/campaign/timeLimit/timelimit_4.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/guiJs/homeMenu.js" afterPath="$PROJECT_DIR$/guiJs/homeMenu.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/guiJs/menuConf.js" afterPath="$PROJECT_DIR$/guiJs/menuConf.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gameJs/stateChecker.js" afterPath="$PROJECT_DIR$/gameJs/stateChecker.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/todo.txt" afterPath="$PROJECT_DIR$/todo.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rules.html" afterPath="$PROJECT_DIR$/rules.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Tetris.iws" />
@@ -61,16 +54,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tetris.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gameJs/tetris.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="22" column="13" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="menuConf.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/guiJs/menuConf.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -81,11 +64,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="timelimit_4.json" pinned="false" current-in-tab="true">
+      <file leaf-file-name="timelimit_4.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/games/campaign/timeLimit/timelimit_4.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.18140244">
+            <state vertical-scroll-proportion="-4.576923">
               <caret line="7" column="15" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rules.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/rules.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.51829267">
+              <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -191,7 +184,6 @@
         <option value="$PROJECT_DIR$/guiJs/lateralMenu.js" />
         <option value="$PROJECT_DIR$/css/rules.html" />
         <option value="$PROJECT_DIR$/css/index.css" />
-        <option value="$PROJECT_DIR$/rules.html" />
         <option value="$PROJECT_DIR$/gameJs/game.js" />
         <option value="$PROJECT_DIR$/games/campaign/timeLimit/timelimit_1.json" />
         <option value="$PROJECT_DIR$/games/campaign/timeLimit/timelimit_2.json" />
@@ -201,6 +193,7 @@
         <option value="$PROJECT_DIR$/guiJs/menuConf.js" />
         <option value="$PROJECT_DIR$/games/campaign/timeLimit/timelimit_3.json" />
         <option value="$PROJECT_DIR$/games/campaign/timeLimit/timelimit_4.json" />
+        <option value="$PROJECT_DIR$/rules.html" />
       </list>
     </option>
   </component>
@@ -783,7 +776,13 @@
       <option name="project" value="LOCAL" />
       <updated>1430674719150</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="time limit">
+      <created>1430675471787</created>
+      <option name="number" value="00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1430675471787</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -824,7 +823,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="index button" />
     <MESSAGE value="new menu  + file refactoring" />
     <MESSAGE value="updating todo" />
     <MESSAGE value="fixing sandbox" />
@@ -849,7 +847,8 @@
     <MESSAGE value="coop" />
     <MESSAGE value="rules" />
     <MESSAGE value="swap count decreasing" />
-    <option name="LAST_COMMIT_MESSAGE" value="swap count decreasing" />
+    <MESSAGE value="time limit" />
+    <option name="LAST_COMMIT_MESSAGE" value="time limit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1160,14 +1159,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rules.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.769231">
-          <caret line="63" column="140" selection-start-line="63" selection-start-column="140" selection-end-line="63" selection-end-column="140" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/index.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1282,8 +1273,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/games/campaign/timeLimit/timelimit_4.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18140244">
+        <state vertical-scroll-proportion="-4.576923">
           <caret line="7" column="15" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rules.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.51829267">
+          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
           <folding />
         </state>
       </provider>
