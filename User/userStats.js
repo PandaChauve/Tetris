@@ -5,12 +5,13 @@
 function UserStats(){
     "use strict";
     this.points = {};
-    this.times = {};
+    this.timesLow = {}; //some times you want to go fast
+    this.timesHigh = {}; //some you don't
 }
 
 UserStats.SetMaxStat = function(score, map ,stat){
     "use strict";
-    var scores = UserStats.UserStats();
+    var scores = UserStats.GetUserStats();
     if(!scores[stat].hasOwnProperty(map)){
         scores[stat][map] = [score,0,0,0,0];
     }
@@ -30,7 +31,7 @@ UserStats.SetMaxStat = function(score, map ,stat){
 
 UserStats.SetMinStat = function(score, map ,stat){
     "use strict";
-    var scores = UserStats.UserStats();
+    var scores = UserStats.GetUserStats();
     if(!scores[stat].hasOwnProperty(map)){
         scores[stat][map] = [score,-1,-1,-1,-1];
     }
@@ -50,12 +51,13 @@ UserStats.SetMinStat = function(score, map ,stat){
 
 UserStats.SetHighScore = function(score, map){
     "use strict";
-    return UserStats.SetMaxStat(score, map, "points");
+    UserStats.SetMaxStat(score, map, "points");
 };
 
 UserStats.SetTime = function(score, map){
     "use strict";
-    return UserStats.SetMinStat(score, map, "times");
+    UserStats.SetMinStat(score, map, "timesLow");
+    UserStats.SetMaxStat(score, map, "timesHigh");
 };
 
 UserStats.prototype.GetHighScore = function(map) {
@@ -69,22 +71,36 @@ UserStats.prototype.GetHighScore = function(map) {
 
 UserStats.prototype.GetMinTime = function(map) {
     "use strict";
-    if(this.times.hasOwnProperty(map))
+    if(this.timesLow.hasOwnProperty(map))
     {
-        return this.times[map];
+        return this.timesLow[map];
     }
     return [-1,-1,-1,-1,-1];
 };
+UserStats.prototype.GetMaxTime = function(map) {
+    "use strict";
+    if(this.timesHigh.hasOwnProperty(map))
+    {
+        return this.timesHigh[map];
+    }
+    return [0,0,0,0,0];
+};
 
-UserStats.UserStats = function(){
+UserStats.GetUserStats = function(){
     "use strict";
     var store = UserStorage.GetStorage();
     var score = store.Get("UserStats_points"); //will only return flat data
-    var time = store.Get("UserStats_time"); //will only return flat data
+    var timesLow = store.Get("UserStats_timesLow"); //will only return flat data
+    var timesHigh = store.Get("UserStats_timesHigh"); //will only return flat data
     var ret = new UserStats();
-    if(score !== null){
+    if(score !== null) {
         ret.points = score;
-        ret.times = time;
+    }
+    if(timesLow !== null){
+        ret.timesLow = timesLow;
+    }
+    if(timesHigh !== null){
+        ret.timesHigh = timesHigh;
     }
     return ret;
 };

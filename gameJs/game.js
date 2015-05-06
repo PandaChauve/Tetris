@@ -91,15 +91,7 @@ Game.prototype.TogglePause = function(force){
     return this.pause;
 
 };
-function TimeFromTics(tics){
-    "use strict";
-    var sec = tics / 60;
-    var minutes = Math.floor( sec / 60 ) % 60;
-    var seconds = Math.floor(sec % 60);
-    tics = Math.floor((tics % 60 )/6);
 
-    return (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds < 10 ? "0" + seconds : seconds) + ":" + tics;
-}
 Game.prototype.render = function (timestamp) {
     "use strict";
     var i;
