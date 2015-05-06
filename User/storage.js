@@ -17,11 +17,17 @@ UserStorage.GetStorage = function(){
 UserStorage.prototype.Get = function(key){
     "use strict";
     var val = localStorage.getItem(key);
-    if(val === null) {
+    if(val === null || val === undefined) {
         return null;
     }
 
-    return JSON.parse(val);
+    try{
+        return JSON.parse(val);
+    }
+    catch(e){
+        console.log(e);
+    }
+    return null;
 };
 
 UserStorage.prototype.Set = function(key, value){

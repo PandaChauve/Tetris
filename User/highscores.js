@@ -4,31 +4,48 @@
 
 function UserHighScores(){
     "use strict";
-    this.arcadeScore = [0,0,0,0,0];
+    this.storage = {};
 }
 
-UserHighScores.prototype.SetArcadeScore = function(score){
+UserHighScores.SetHighScore = function(score, map){
     "use strict";
-    for(var i = 0; i < this.arcadeScore.length; i+=1){
-        if(score >= this.arcadeScore[i]){
-            this.arcadeScore.splice(i,0,score);
-            this.arcadeScore.splice(this.arcadeScore.length-1,1);
-            var stor = UserStorage.GetStorage();
-            stor.Set("UserHighScores", this);
-            break;
+    var scores = UserHighScores.GetHighScores();
+    if(!scores.storage.hasOwnProperty(map)){
+        scores.storage[map] = [score,0,0,0,0];
+    }
+    else{
+        for(var i = 0; i < scores.storage[map].length; i+=1){
+            if(score >= scores.storage[map][i]){
+                scores.storage[map].splice(i,0,score);
+                scores.storage[map].splice(scores.storage[map].length-1,1);
+                break;
+            }
         }
     }
+
+    var store = UserStorage.GetStorage();
+    store.Set("UserHighScores", scores.storage);
 };
 
-UserHighScores.GetHighScore = function(){
+UserHighScores.prototype.GetHighScore = function(map) {
     "use strict";
-    var stor = UserStorage.GetStorage();
-    var score = stor.Get("UserHighScores"); //will only return flat data
+    if(this.storage.hasOwnProperty(map))
+    {
+        return this.storage[map];
+    }
+    return [0,0,0,0,0];
+};
+
+UserHighScores.GetHighScores = function(){
+    "use strict";
+    var store = UserStorage.GetStorage();
+    var score = store.Get("UserHighScores"); //will only return flat data
     var ret = new UserHighScores();
     if(score !== null){
-        ret.arcadeScore = score.arcadeScore;
+        if(score.arcadeScore !== undefined){
+            score.storage = {classic: score.arcadeScore};
+        }
+        ret.storage = score;
     }
-
     return ret;
-
 };

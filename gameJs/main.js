@@ -46,8 +46,7 @@ $(window).blur(function() {
 
 function EndCallBack(finishedGame){
     "use strict";
-    var scores = UserHighScores.GetHighScore();
-    scores.SetArcadeScore(finishedGame.tetris[0].GetScore());
+    UserHighScores.SetHighScore(finishedGame.tetris[0].GetScore(), gameName);
     var popup = $("<div id='gamePopup'></div>");
 
     if(finishedGame.stateChecker.lastSuccessCheck){
