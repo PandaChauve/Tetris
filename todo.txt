@@ -1,7 +1,6 @@
 ToDo
 In game:
 - display bonus
-- review end screen
 - sound
 - "your mom" blocks
 
@@ -14,23 +13,23 @@ Other:
 - rules
 - achievements
 - Campaign map
-- high score for each mode / map
 - complete tetris attack maps
 - high score with name
 - overall design review
 - Items
-- tetris attack bonus 7-12
-- puzzle campaign
-- time trial campaign
-- arcade campaign
 - menu > set current location
 - code cleaning
 
 Bugs
 
 ------------------------------------------------------------------------------------------
+10/05/14
+review end screen part 1
+stats part 1
+
 06/05/14
 high score per map
+time trial campaign
 
 03/05/14
 Wide coop
