@@ -1,9 +1,10 @@
 /**
  * Created by panda on 26/04/2015.
  */
-GridEvaluator = function(){
+GridEvaluator = function(stats){
     "use strict";
     this.series = [];
+    this.stats = stats;
 };
 
 GridEvaluator.prototype.EvaluateColumn = function(container, i) {
@@ -127,6 +128,7 @@ GridEvaluator.prototype.GetScore = function(){
     for(var i = 0; i < multi; i += 1){
         score += (this.series[i].length -2)*multi;
     }
+    this.stats.AddLines(this.series, score);
     return score;
 };
 

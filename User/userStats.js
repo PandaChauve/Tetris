@@ -7,58 +7,95 @@ function UserStats(){
     this.points = {};
     this.timesLow = {}; //some times you want to go fast
     this.timesHigh = {}; //some you don't
+    this.bestGameStats = {};
+    this.totalGameStats = {};
 }
 
-UserStats.SetMaxStat = function(score, map ,stat){
+UserStats.prototype.SetMaxStat = function(score, map ,stat){
     "use strict";
-    var scores = UserStats.GetUserStats();
-    if(!scores[stat].hasOwnProperty(map)){
-        scores[stat][map] = [score,0,0,0,0];
+    if(!this[stat].hasOwnProperty(map)){
+        this[stat][map] = [score,0,0,0,0];
     }
     else{
-        for(var i = 0; i < scores[stat][map].length; i+=1){
-            if(score >= scores[stat][map][i]){
-                scores[stat][map].splice(i,0,score);
-                scores[stat][map].splice(scores[stat][map].length-1,1);
+        for(var i = 0; i < this[stat][map].length; i+=1){
+            if(score >= this[stat][map][i]){
+                this[stat][map].splice(i,0,score);
+                this[stat][map].splice(this[stat][map].length-1,1);
                 break;
             }
         }
     }
 
     var store = UserStorage.GetStorage();
-    store.Set("UserStats_"+stat, scores[stat]);
+    store.Set("UserStats_"+stat, this[stat]);
 };
 
-UserStats.SetMinStat = function(score, map ,stat){
+UserStats.prototype.SetMinStat = function(score, map ,stat){
     "use strict";
-    var scores = UserStats.GetUserStats();
-    if(!scores[stat].hasOwnProperty(map)){
-        scores[stat][map] = [score,-1,-1,-1,-1];
+    if(!this[stat].hasOwnProperty(map)){
+        this[stat][map] = [score,-1,-1,-1,-1];
     }
     else{
-        for(var i = 0; i < scores[stat][map].length; i+=1){
-            if(score <= scores[stat][map][i] || scores[stat][map][i] === -1){
-                scores[stat][map].splice(i,0,score);
-                scores[stat][map].splice(scores[stat][map].length-1,1);
+        for(var i = 0; i < this[stat][map].length; i+=1){
+            if(score <= this[stat][map][i] || this[stat][map][i] === -1){
+                this[stat][map].splice(i,0,score);
+                this[stat][map].splice(this[stat][map].length-1,1);
                 break;
             }
         }
     }
 
     var store = UserStorage.GetStorage();
-    store.Set("UserStats_"+stat, scores[stat]);
+    store.Set("UserStats_"+stat, this[stat]);
 };
 
-UserStats.SetHighScore = function(score, map){
+UserStats.prototype.AddGame = function(game, map){
     "use strict";
-    UserStats.SetMaxStat(score, map, "points");
+    var store = UserStorage.GetStorage();
+    if(!this.bestGameStats.hasOwnProperty(map)){
+        this.bestGameStats[map] = game;
+    }
+    else{
+        GameStats.KeepBest(this.bestGameStats[map], game);
+    }
+    store.Set("UserStats_bestGameStats", this.bestGameStats);
+
+    if(!this.totalGameStats.hasOwnProperty(map)){
+        this.totalGameStats[map] = game;
+    }
+    else{
+        GameStats.Append(this.totalGameStats[map], game);
+    }
+    store.Set("UserStats_totalGameStats", this.totalGameStats);
+
+    this.SetMaxStat(game.score, map, "points");
+    this.SetMinStat(game.time, map, "timesLow");
+    this.SetMaxStat(game.time, map, "timesHigh");
 };
 
-UserStats.SetTime = function(score, map){
+
+UserStats.prototype.GetBestGameStats = function(map) {
     "use strict";
-    UserStats.SetMinStat(score, map, "timesLow");
-    UserStats.SetMaxStat(score, map, "timesHigh");
+    if(this.bestGameStats.hasOwnProperty(map))
+    {
+        return this.bestGameStats[map];
+    }
+    var ret = new GameStats(map);
+    ret.gameCount = 0;
+    return ret;
 };
+
+UserStats.prototype.GetTotalGameStats = function(map) {
+    "use strict";
+    if(this.totalGameStats.hasOwnProperty(map))
+    {
+        return this.totalGameStats[map];
+    }
+    var ret = new GameStats(map);
+    ret.gameCount = 0;
+    return ret;
+};
+
 
 UserStats.prototype.GetHighScore = function(map) {
     "use strict";
@@ -77,6 +114,7 @@ UserStats.prototype.GetMinTime = function(map) {
     }
     return [-1,-1,-1,-1,-1];
 };
+
 UserStats.prototype.GetMaxTime = function(map) {
     "use strict";
     if(this.timesHigh.hasOwnProperty(map))
@@ -92,6 +130,8 @@ UserStats.GetUserStats = function(){
     var score = store.Get("UserStats_points"); //will only return flat data
     var timesLow = store.Get("UserStats_timesLow"); //will only return flat data
     var timesHigh = store.Get("UserStats_timesHigh"); //will only return flat data
+    var bestGameStats = store.Get("UserStats_bestGameStats"); //will only return flat data
+    var totalGameStats = store.Get("UserStats_totalGameStats"); //will only return flat data
     var ret = new UserStats();
     if(score !== null) {
         ret.points = score;
@@ -101,6 +141,12 @@ UserStats.GetUserStats = function(){
     }
     if(timesHigh !== null){
         ret.timesHigh = timesHigh;
+    }
+    if(bestGameStats !== null){
+        ret.bestGameStats = bestGameStats;
+    }
+    if(totalGameStats !== null){
+        ret.totalGameStats = totalGameStats;
     }
     return ret;
 };

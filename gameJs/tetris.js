@@ -3,9 +3,10 @@
  */
 
 
-function Tetris(grid, cursors) {
+function Tetris(grid, cursors, stats) {
     'use strict';
     this.grid = new Grid(grid);
+    this.stats = stats;
     this.score = 0;
     this.cursor = [];
     if(cursors === undefined) {
@@ -27,7 +28,7 @@ Tetris.prototype.OneTick = function (kb) {
     'use strict';
 
     //check if don't have new successful combo
-    this.score += this.grid.Evaluate();
+    this.score += this.grid.Evaluate(this.stats);
 
     //user input
     this.HandleUserInput(kb);

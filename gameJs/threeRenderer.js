@@ -185,7 +185,9 @@ ThreeRenderer.prototype.DrawCursorOn = function(x,y, cursorId){
 
 ThreeRenderer.prototype.Freeze = function(){
     "use strict";
-    this.scene.remove(this.light);
+    for(var i =0; i < this.cursor.length; i+=1){
+        this.scene.remove(this.cursor[i]);
+    }
     this.Render();
 };
 

@@ -46,25 +46,12 @@ $(window).blur(function() {
 
 function EndCallBack(finishedGame){
     "use strict";
-    UserStats.SetHighScore(finishedGame.tetris[0].GetScore(), gameName);
-    UserStats.SetTime(finishedGame.tetris[0].tics, gameName);
-    var popup = $("<div id='gamePopup'></div>");
-
-    if(finishedGame.stateChecker.lastSuccessCheck){
-        popup.html("<h1>Gratz ! You did it !</h1>");
-        if(game.config.next !== undefined && game.config.next !== ""){
-            popup.html(popup.html() + "<p><a href='game.html?game="+game.config.next+"'>Try the next one ?</a></p>");
-        }
-    }
-    else{
-        popup.html("<h1>Sorry, you failed !</h1>");
-        popup.html(popup.html() + "<p>At least you did : "+ finishedGame.tetris[0].GetScore()+" points.<br /><span id=\"tryAgain\" class='btn'>Do you want to try again ?</span></p>");
-    }
-
-    $('body').append(popup);
-
-    $("#tryAgain").click(Reset);
-
+    finishedGame.stats.SetTime(finishedGame.tics);
+    finishedGame.stats.SetSwaps(finishedGame.tetris[0].swapCount);
+    UserStats.GetUserStats().AddGame(finishedGame.stats, gameName);
+    var popup = new EndGameScreen(game.config, gameName);
+    popup.SetRetryCallBack(Reset);
+    popup.Display(finishedGame.stats, finishedGame.stateChecker.lastSuccessCheck);
 }
 
 function UseGameConfig(config){

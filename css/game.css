@@ -216,8 +216,35 @@ a {
 
 #gamePopup {
     position: absolute;
-    width: 40%;
+    width: 100%;
     top: 0;
-    margin: 100px 30%;
-    background: darkred;
+}
+#gamePopupContent{
+    width:300px;
+    height:400px;
+    padding:20px;
+    margin: 55px auto;
+    border:1px solid white;
+    box-shadow: black 5px 5px;
+    background: darkblue;
+    opacity:0.9;
+
+}
+#gamePopupContent table {
+    border-collapse: collapse;
+}
+#gamePopupContent tr:last-child {
+    border-bottom: 1px solid white;
+}
+#gamePopupContent th {
+    border-bottom: 1px white solid;
+}
+#gamePopupContent td {
+    border-right: 1px solid white;
+    text-align: right;
+    padding: 0px 5px;
+}
+#gamePopupContent td:first-child {
+    text-align: left;
+    border-left: 1px solid white;
 }

@@ -290,9 +290,9 @@ Grid.prototype.Load = function(content){
     }
 };
 
-Grid.prototype.Evaluate = function () {
+Grid.prototype.Evaluate = function (stats) {
     'use strict';
-    var evaluator = new GridEvaluator();
+    var evaluator = new GridEvaluator(stats);
     return evaluator.Evaluate(this.container);
 };
 

@@ -16,6 +16,7 @@ function Game(config, grid, cb){
     this.start = null;
     this.pause = false;
     this.tics = 0;
+    this.stats = new GameStats();
     if(cb === undefined){
         this.callback = null;
     }
@@ -44,7 +45,7 @@ Game.prototype.Start = function(){
 Game.prototype.Init = function(){
     "use strict";
     for(var i = 0; i < this.config.tetris.length; i+= 1){
-        this.tetris.push(new Tetris(this.grid, this.config.tetris[i].cursors));
+        this.tetris.push(new Tetris(this.grid, this.config.tetris[i].cursors, this.stats));
         for(var j = 0; j < this.config.tetris[i].mappings.length; j+=1){
             this.tetris[i].keyBoardMappings.push(UserInput[this.config.tetris[i].mappings[j]]);
         }
