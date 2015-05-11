@@ -11,7 +11,7 @@ Game type:
 
 Other:
 - rules
-- achievements
+- achievements style / text / other
 - Campaign map
 - complete tetris attack maps
 - high score with name
@@ -25,6 +25,7 @@ Bugs
 ------------------------------------------------------------------------------------------
 11/05/14
 quick high scores online to please the team
+achievements base
 
 10/05/14
 review end screen part 1
