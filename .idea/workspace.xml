@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20d21939-c8e4-49c3-84d6-1c3927d59de7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/guiJs/indexScore.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/guiJs/endGamePopup.js" afterPath="$PROJECT_DIR$/guiJs/endGamePopup.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/game.css" afterPath="$PROJECT_DIR$/css/game.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/index.css" afterPath="$PROJECT_DIR$/css/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/guiJs/indexHighScore.js" afterPath="$PROJECT_DIR$/guiJs/indexHighScore.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gameJs/main.js" afterPath="$PROJECT_DIR$/gameJs/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/todo.txt" afterPath="$PROJECT_DIR$/todo.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/game.html" afterPath="$PROJECT_DIR$/game.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Tetris.iws" />
@@ -31,10 +24,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="endGamePopup.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="endGamePopup.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/guiJs/endGamePopup.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.60117304">
+            <state vertical-scroll-proportion="0.0">
               <caret line="74" column="101" selection-start-line="74" selection-start-column="101" selection-end-line="74" selection-end-column="101" />
               <folding>
                 <element signature="n#!!doc;n#EndGameScreen#0" expanded="false" />
@@ -56,8 +49,18 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.730769">
-              <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+            <state vertical-scroll-proportion="-18.961538">
+              <caret line="29" column="67" selection-start-line="29" selection-start-column="67" selection-end-line="30" selection-end-column="70" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="game.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/game.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.8582317">
+              <caret line="69" column="4" selection-start-line="69" selection-start-column="4" selection-end-line="69" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -123,18 +126,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gameStats.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/User/gameStats.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="38" column="45" selection-start-line="38" selection-start-column="45" selection-end-line="38" selection-end-column="45" />
-              <folding>
-                <element signature="n#!!doc;n#GameStats#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -193,7 +184,6 @@
         <option value="$PROJECT_DIR$/gameJs/grid.js" />
         <option value="$PROJECT_DIR$/gameJs/gridEvaluator.js" />
         <option value="$PROJECT_DIR$/User/gameStats.js" />
-        <option value="$PROJECT_DIR$/game.html" />
         <option value="$PROJECT_DIR$/splitscreen.html" />
         <option value="$PROJECT_DIR$/gameJs/threeRenderer.js" />
         <option value="$PROJECT_DIR$/User/userStats.js" />
@@ -205,6 +195,7 @@
         <option value="$PROJECT_DIR$/gameJs/main.js" />
         <option value="$PROJECT_DIR$/todo.txt" />
         <option value="$PROJECT_DIR$/guiJs/endGamePopup.js" />
+        <option value="$PROJECT_DIR$/game.html" />
       </list>
     </option>
   </component>
@@ -523,12 +514,6 @@
       <option name="number" value="Default" />
       <updated>1428682894359</updated>
     </task>
-    <task id="LOCAL-00001" summary="updating todo">
-      <created>1430046413039</created>
-      <option name="number" value="00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1430046413039</updated>
-    </task>
     <task id="LOCAL-00002" summary="full score computation">
       <created>1430050684284</created>
       <option name="number" value="00002" />
@@ -817,7 +802,13 @@
       <option name="project" value="LOCAL" />
       <updated>1431282924216</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="quick online scores to please dhl">
+      <created>1431363088341</created>
+      <option name="number" value="00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1431363088342</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -826,6 +817,7 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1359375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2813765" sideWeight="0.29322916" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299595" sideWeight="0.49166667" order="8" side_tool="false" content_ui="tabs" />
@@ -835,7 +827,6 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2813765" sideWeight="0.70677084" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -858,7 +849,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="fixing spacebar" />
     <MESSAGE value="fixing arrows" />
     <MESSAGE value="fixing retry" />
     <MESSAGE value="speed up with time" />
@@ -883,7 +873,8 @@
     <MESSAGE value="high score per map" />
     <MESSAGE value="support saving for more stats including time" />
     <MESSAGE value="statistics part 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="statistics part 1" />
+    <MESSAGE value="quick online scores to please dhl" />
+    <option name="LAST_COMMIT_MESSAGE" value="quick online scores to please dhl" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1179,14 +1170,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/game.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.346153">
-          <caret line="67" column="67" selection-start-line="67" selection-start-column="67" selection-end-line="68" selection-end-column="71" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/splitscreen.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-20.346153">
@@ -1245,14 +1228,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.730769">
-          <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/guiJs/indexHighScore.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1295,11 +1270,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/guiJs/endGamePopup.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.60117304">
+        <state vertical-scroll-proportion="0.0">
           <caret line="74" column="101" selection-start-line="74" selection-start-column="101" selection-end-line="74" selection-end-column="101" />
           <folding>
             <element signature="n#!!doc;n#EndGameScreen#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.961538">
+          <caret line="29" column="67" selection-start-line="29" selection-start-column="67" selection-end-line="30" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/game.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8582317">
+          <caret line="69" column="4" selection-start-line="69" selection-start-column="4" selection-end-line="69" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
