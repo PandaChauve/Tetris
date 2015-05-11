@@ -23,6 +23,9 @@ Other:
 Bugs
 
 ------------------------------------------------------------------------------------------
+11/05/14
+quick high scores online to please the team
+
 10/05/14
 review end screen part 1
 stats part 1

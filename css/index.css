@@ -14,7 +14,12 @@ body {
     margin: auto;
     text-align:left;
 }
-
+.HomeScoreGrid{
+    width:90%;
+    margin:10px auto;
+    height:350px;
+    color:black;
+}
 #mainTextContent table {
     margin: auto;
 }

@@ -8,7 +8,7 @@
     }
     var scores = UserStats.GetUserStats();
 
-    var txt = "<h1>High Scores</h1><span>";
+    var txt = "<h1>Local High Scores</h1><span>";
     txt += scores.GetHighScore("classic").join("</span><span>");
     txt += "</span>";
     txt += "<h1>Highest times</h1><span>";

@@ -30,15 +30,16 @@ EndGameScreen.prototype.Display = function(stats, didWin){
     var tg = userStats.GetTotalGameStats(this.gameName);
     var popup = $("<div id='gamePopupContent'></div>");
     var head;
+    var foot = "";
     if(didWin){
         head = "<h1>Gratz ! You did it !</h1>";
         if(this.gameConfig.next !== undefined && game.config.next !== ""){
-            head += "<p><a href='game.html?game="+game.config.next+"'>Try the next one ?</a></p>";
+            foot = "<p ><a class='bigBtn' href='game.html?game="+game.config.next+"' >Try the next one ?</a></p>";
         }
     }
     else{
         head = ("<h1>Sorry, you failed !</h1>");
-        head += "<p><span id=\"tryAgain\" class='btn'>Do you want to try again ?</span></p><br /><br />";
+        foot = "<p><span id=\"tryAgain\" class='bigBtn'>Try again ?</span></p>";
     }
     popup.html(head);
     var table = $("<table>");
@@ -55,10 +56,24 @@ EndGameScreen.prototype.Display = function(stats, didWin){
     table.append(line);
 
     popup.append(table);
+    popup.append($(foot));
+
+    popup.append($("<p><span id=\"publishSimple\" class='bigBtn'>Publish your score ?</span></p>"));
 
     var p = $("<div id='gamePopup'></div>");
     p.append(popup);
     $('body').append(p);
+
+    var map = this.gameName;
+    $("#publishSimple").click(function(){
+
+        var store = UserStorage.GetStorage();
+        var name = store.Get("UserName") || "";
+
+        name = prompt("Who are you ?", name);
+        store.Set("UserName", name);
+        $.get("http://sylvain.luthana.be/api.php?add&name="+name+"&value="+stats.score+"&map="+ map);
+    });
 
     $("#tryAgain").click(Reset);
 

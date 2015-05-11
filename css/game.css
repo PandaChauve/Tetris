@@ -248,3 +248,10 @@ a {
     text-align: left;
     border-left: 1px solid white;
 }
+.bigBtn {
+    cursor: pointer;
+    border: 5px outset lightcoral;
+    padding: 15px;
+    display: inline-block;
+    background: red;
+}

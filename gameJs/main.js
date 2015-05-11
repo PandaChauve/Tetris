@@ -49,6 +49,7 @@ function EndCallBack(finishedGame){
     finishedGame.stats.SetTime(finishedGame.tics);
     finishedGame.stats.SetSwaps(finishedGame.tetris[0].swapCount);
     UserStats.GetUserStats().AddGame(finishedGame.stats, gameName);
+
     var popup = new EndGameScreen(game.config, gameName);
     popup.SetRetryCallBack(Reset);
     popup.Display(finishedGame.stats, finishedGame.stateChecker.lastSuccessCheck);
