@@ -42,7 +42,7 @@ AchievementsState.prototype.keyToScore = function(key){
     throw "What are you doing here ?";
 };
 
-AchievementsState.prototype.checkLineSize = function(key, game){
+AchievementsState.prototype.checkMultiLines = function(key, game){
     "use strict";
     var size = 0;
     switch(key){
@@ -82,7 +82,7 @@ AchievementsState.prototype.checkIndividual = function(key, game, userStats, gam
                 this.container[key] = game.score >= this.keyToScore(key);
             }
             break;
-        case AchievementsState.List.God :
+        case AchievementsState.List.Cheater :
             if(gameName === "sandbox"){
                 this.container[key] = game.score >= this.keyToScore(key);
             }
@@ -90,7 +90,7 @@ AchievementsState.prototype.checkIndividual = function(key, game, userStats, gam
         case AchievementsState.List.Ambidextrous :
         case AchievementsState.List.Psychics :
         case AchievementsState.List.Sorcerer :
-            this.container[key] = this.checkLineSize(key, game);
+            this.container[key] = this.checkMultiLines(key, game);
             break;
         case AchievementsState.List.Stubborn :
             this.container[key] = userStats.GetTotalGameStats(gameName).time > 60*60*30; //30min
@@ -132,6 +132,37 @@ AchievementsState.List.GetName = function(key){
         if (AchievementsState.List[name] === key){
             return name;
         }
+    }
+    return "";
+};
+
+
+AchievementsState.List.GetDescription = function(key){
+    "use strict";
+
+    switch(key){
+        case AchievementsState.List.Beginner :
+            return "Get 10 points in classic";
+        case AchievementsState.List.Expert :
+            return "Get 80 points in classic";
+        case AchievementsState.List.Master :
+            return "Get 160 points in classic";
+        case AchievementsState.List.God :
+            return "Get 350 points in classic";
+        case AchievementsState.List.Cheater :
+            return "Get 1000 points in sandbox";
+        case AchievementsState.List.Ambidextrous :
+            return "Get 2 series at once in any game mode";
+        case AchievementsState.List.Psychics :
+            return "Get 3 series at once in any game mode";
+        case AchievementsState.List.Sorcerer :
+            return "Get 4 series at once in any game mode";
+        case AchievementsState.List.Stubborn :
+            return "Play for 30 minutes in any game mode";
+        case AchievementsState.List.BiggerIsBetter :
+            return "Create a line of 6 blocks in any game mode";
+        case AchievementsState.List.Nostalgic :
+            return "Not working yet :)";
     }
     return "";
 };

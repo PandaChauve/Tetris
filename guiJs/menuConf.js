@@ -67,3 +67,7 @@ coop.link = "game.html?game=ultralargecoop";
 
 var rules = new MenuElement("Rules", mainMenu);
 rules.link = "rules.html";
+var stats = new MenuElement("Stats", mainMenu);
+stats.link = "stats.html";
+var achievements = new MenuElement("Achievements", mainMenu);
+achievements.link = "achievements.html";
