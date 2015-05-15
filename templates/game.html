@@ -1,0 +1,78 @@
+
+<div class="centralGame" ng-if="!config.splitScreen">
+    <div id="control">
+        <div id="moveUp" class="moveBtn">Up</div>
+        <div id="moveLeft" class="moveBtn">Left</div>
+        <div id="moveRight" class="moveBtn">Right</div>
+        <div id="moveDown" class="moveBtn">Down</div>
+        <div id="swapBtn" class="gameBtn">Swap</div>
+        <div id="gameMenu">
+            <div id="retryBtn" class="gameBtn">Retry</div>
+            <div id="pauseBtn" class="gameBtn">Pause</div>
+        </div>
+    </div>
+    <div class="gameDetails">
+        <div class="gameDetailsElement">
+            <h3>Score</h3>
+            <span id="score">0</span>
+        </div>
+        <div class="gameDetailsElement">
+            <h3>Swaps</h3>
+            <span id="swaps">0</span>
+        </div>
+        <div class="gameDetailsElement">
+            <h3>Time</h3>
+            <span id="time" class="timeBox"></span>
+        </div>
+        <div class="gameDetailsElement">
+            <h3>Objectives</h3><br />
+            <div id="rules"></div>
+        </div>
+    </div>
+    <div id="game" class="gameHolder">
+        <div class="gamePlaceHolder"></div>
+    </div>
+</div>
+
+
+<div class="sideGame" ng-if="config.splitScreen">
+    <div class="gameDetails">
+        <div class="gameDetailsElement">
+            <h3>Score</h3>
+            <span id="scoreB">0</span>
+        </div>
+        <div class="gameDetailsElement">
+            <h3>Swaps</h3>
+            <span id="swapsB">0</span>
+        </div>
+        <div class="gameDetailsElement">
+            <h3>Time</h3>
+            <span class="timeBox"></span>
+        </div>
+    </div>
+    <div id="gameB" class="gameHolder">
+        <div class="gamePlaceHolder"></div>
+    </div>
+</div>
+
+<div class="sideGame"  ng-if="config.splitScreen">
+    <div class="gameDetails">
+        <div class="gameDetailsElement">
+            <h3>Score</h3>
+            <span id="scoreA">0</span>
+        </div>
+        <div class="gameDetailsElement">
+            <h3>Swaps</h3>
+            <span id="swapsA">0</span>
+        </div>
+        <div class="gameDetailsElement">
+            <h3>Time</h3>
+            <span class="timeBox"></span>
+        </div>
+    </div>
+    <div id="gameA" class="gameHolder">
+        <div class="gamePlaceHolder"></div>
+    </div>
+</div>
+
+<div id="notificationZone"></div>

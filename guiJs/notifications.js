@@ -19,6 +19,6 @@ Notifications.prototype.notify = function(content){
         $("#"+uniqid).slideUp("slow", function(){
             $(this).remove();
         });
-    }, 15000);
+    }, 10000);
 
 };

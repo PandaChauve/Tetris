@@ -1,18 +1,31 @@
-/**
- * Created by panda on 27/04/2015.
- */
-
-var gameName = getQueryVariable("game");
-if(gameName === ""){
-    gameName = "classic";
-}
-
+//FIXME the move to angular is way too partial, some work is needed !
+var gameName;
 var game;
 
-$.getJSON("games/"+gameName+".json", function(json) {
-    "use strict";
-    UseGameConfig(json);
-}).fail(function(jqxhr, textStatus, error) { console.log( textStatus + " : " + error );});
+var gameControllers = angular.module('gameControllers', []);
+gameControllers.controller('GameCtrl', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams) {
+    gameName = $routeParams.name || "classic";
+    $scope.config = {};
+    $scope.config.splitScreen = gameName === "classicSplitScreen";
+    $http.get("games/"+gameName+".json").success(function(json) {
+        "use strict";
+        UseGameConfig(json);
+    }).error(function(data, status, headers, config) { console.log( status + " : " + data );});
+
+    $("#retryBtn").click(Reset);
+
+    $("#pauseBtn").click(function(){
+        "use strict";
+        var ret = game.TogglePause();
+        if(ret){
+            $("#pauseBtn").html("Play");
+        }
+        else{
+            $("#pauseBtn").html("Pause");
+        }
+    });
+}]);
+
 
 function Reset(){
     "use strict";
@@ -21,23 +34,10 @@ function Reset(){
         $("#"+game.config.tetris[i].gameBox).html("<div class='gamePlaceHolder'></div>");
     }
     game.Stop();
-    var d = new Game(game.config, game.grid, EndCallBack);
-    game = d;
+    game = new Game(game.config, game.grid, EndCallBack);
     game.Start();
 }
 
-$("#retryBtn").click(Reset);
-
-$("#pauseBtn").click(function(){
-    "use strict";
-    var ret = game.TogglePause();
-    if(ret){
-        $("#pauseBtn").html("Play");
-    }
-    else{
-        $("#pauseBtn").html("Pause");
-    }
-});
 
 $(window).blur(function() {
     "use strict";

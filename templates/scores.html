@@ -1,0 +1,6 @@
+<div id="mainMenu">
+    <div class="mainMenuButtons">
+        <button ng-repeat="type in scoreTypes" ng-click="getScores(type.type)">{{type.name}}</button>
+    </div>
+    <div ui-grid="{ data: scoreGridData }" class="HomeScoreGrid"></div>
+</div>
