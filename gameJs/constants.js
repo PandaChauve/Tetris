@@ -8,7 +8,8 @@ function DefaultConfig(){
     this.displayedRowCount = 10;
     this.hiddenRowCount = 4;//MIN 1 !
     this.pixelPerBox = 50;
-    this.fallSpeedPerTic = 5;
+    this.fallSpeedPerTic = 7;
+    this.disapearSpeedPerTic = 2;
     this.groundSpeedPerTic = 0.07;
     this.groundUpSpeedPerTic = 3;
     this.groundAccelerationPerTic = 0.02/60/60;

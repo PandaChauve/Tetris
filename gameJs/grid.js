@@ -137,7 +137,7 @@ Grid.prototype.AnimateBlockFall = function (i, j,block, minY) {
 
 Grid.prototype.AnimateBlockDisappear = function (i, j, block, minY) {
     "use strict";
-    block.animationState += 1;
+    block.animationState += CONFIG.disapearSpeedPerTic;
     if (block.animationState > 100 && block.id === -1) {
         //remove it
         this.container[i].splice(j, 1);
