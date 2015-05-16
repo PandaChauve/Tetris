@@ -24,6 +24,13 @@ gameControllers.controller('GameCtrl', ['$scope', '$http', '$routeParams', funct
             $("#pauseBtn").html("Pause");
         }
     });
+
+
+    $(window).blur(function() {
+        "use strict";
+        game.TogglePause(true);
+        $("#pauseBtn").html("Play");
+    });
 }]);
 
 
@@ -38,12 +45,6 @@ function Reset(){
     game.Start();
 }
 
-
-$(window).blur(function() {
-    "use strict";
-    game.TogglePause(true);
-    $("#pauseBtn").html("Play");
-});
 
 function EndCallBack(finishedGame){
     "use strict";

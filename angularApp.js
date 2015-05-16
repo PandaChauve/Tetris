@@ -4,6 +4,12 @@ var angularApp = angular.module('angularApp', [
     'statsControllers',
     'gameControllers'
 ]);
+angularApp.controller('HeaderCtrl', function($scope, $location){
+    "use strict";
+    $scope.isActive = function (viewLocation) {
+        return viewLocation === $location.path();
+    };
+});
 
 angularApp.config(['$routeProvider','$locationProvider',
     function($routeProvider, $locationProvider) {

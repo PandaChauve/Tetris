@@ -1,79 +1,112 @@
-<div id="mainTextContent">
-    <h2>The game</h2>
-    <p>It's a game !</p>
-    <h2>Keys</h2>
-    <table>
-        <tr>
-            <th>Action</th>
-            <th>Main / Player 1</th>
-            <th>Secondary / Player 2</th>
-        </tr>
-        <tr>
-            <td>Up</td>
-            <td>Z</td>
-            <td>↑</td>
-        </tr>
-        <tr>
-            <td>Down</td>
-            <td>S</td>
-            <td>↓</td>
-        </tr>
-        <tr>
-            <td>Left</td>
-            <td>Q</td>
-            <td>←</td>
-        </tr>
-        <tr>
-            <td>Right</td>
-            <td>D</td>
-            <td>↓</td>
-        </tr>
-        <tr>
-            <td>Swap</td>
-            <td>Space bar</td>
-            <td>0 (num)</td>
-        </tr>
-        <tr>
-            <td>Speed up</td>
-            <td>A</td>
-            <td>Enter</td>
-        </tr>
-    </table>
-    <h2>Score & points</h2>
-    <p>The basic unit is the line, to create one you need 3 blocks aligned.</p>
-    <p>Each line is worth one point. Each additional block on a line is 1 point (a line of 5 blocks is 3 points).</p>
-    <p>If you create a cross or a corner (an horizontal and a vertical line combined) they count as a single line and the block used to join them is counted twice. So it's a least 5 points.</p>
-    <p>Finally if you do multiple lines at the same time, you'll get the sum of each individual score multiplied by the number of lines.</p>
+<div class="container">
+
+    <div class="row">
+        <div class="page-header"><h1>WWYL : The game</h1></div>
+        <p>When Will You Lose is a game about survival in the ruthless world of falling cubes.</p>
+        <blockquote class="pull-right">
+            <p>You will lose !</p>
+            <small>Sylvain C. in <cite title="Source Title">WWYL</cite></small>
+        </blockquote>
+    </div>
+    <div class="row">
+
+        <div class="page-header"><h1>Keys</h1></div>
+        <p>There is two sets of key available. In single player game you can use a mix of each set.</p>
+        <table class="table table-striped table-hover ">
+            <thead>
+            <tr>
+                <th>Action</th>
+                <th>Main / Player 1</th>
+                <th>Secondary / Player 2</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Up</td>
+                <td>Z</td>
+                <td>↑</td>
+            </tr>
+            <tr>
+                <td>Down</td>
+                <td>S</td>
+                <td>↓</td>
+            </tr>
+            <tr>
+                <td>Left</td>
+                <td>Q</td>
+                <td>←</td>
+            </tr>
+            <tr>
+                <td>Right</td>
+                <td>D</td>
+                <td>↓</td>
+            </tr>
+            <tr>
+                <td>Swap</td>
+                <td>Space bar</td>
+                <td>0 (num)</td>
+            </tr>
+            <tr>
+                <td>Speed up</td>
+                <td>A</td>
+                <td>Enter</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="row">
+        <div class="page-header"><h1>Score & points</h1></div>
+        <p>The basic unit is the line, to create one you need 3 blocks aligned.</p>
+
+        <p>Each line is worth one point. Each additional block on a line is 1 point (a line of 5 blocks is 3
+            points).</p>
+
+        <p>If you create a cross or a corner (an horizontal and a vertical line combined) they count as a single line
+            and the block used to join them is counted twice. So it's a least 5 points.</p>
+
+        <p>Finally if you do multiple lines at the same time, you'll get the sum of each individual score multiplied by
+            the number of lines.</p>
+
+    </div>
+    <div class="row">
+        <div class="page-header">
+            <h1>Single player modes</h1>
+        </div>
+        <h2>Classic</h2>
+
+        <h2>Wide</h2>
+
+        <p>The classic mode is too easy ? Try this one, it's the same with more columns.</p>
+
+        <h2>Sandbox</h2>
+
+        <p>The ground won't move, the rain wont fall. Take your time to train your combos. You can still use the "Speed
+            up" key to add new lines to the grid.</p>
+
+        <h2>Campaign - Puzzle</h2>
+
+        <h2>Campaign - Arcade</h2>
+
+        <h2>Campaign - Time attack</h2>
+
+        <p>You have a limited time to score.</p>
+
+        <h2>Campaign - Tetris attack</h2>
+
+        <p>A clone of Tetris attack's puzzle mode.</p>
+    </div>
+    <div class="row">
+        <div class="page-header"><h1>Multiplayer modes</h1></div>
+
+        <h2>Split screen</h2>
+
+        <p>Same rules as the single player mode "Classic" with 2 players. Each time you score 3 points, some blocks will
+            fall in your partners grid.</p>
+
+        <h2>Coop</h2>
+
+        <p>Same rules as the single player mode "Wide" but you can play with a friend.</p>
 
 
-    <h2>Single player modes</h2>
-
-    <h3>Classic</h3>
-
-    <h3>Wide</h3>
-    <p>The classic mode is too easy ? Try this one, it's the same with more columns.</p>
-
-    <h3>Sandbox</h3>
-    <p>The ground won't move, the rain wont fall. Take your time to train your combos. You can still use the "Speed up" key to add new lines to the grid.</p>
-    <h3>Campaign - Puzzle</h3>
-
-    <h3>Campaign - Arcade</h3>
-
-    <h3>Campaign - Time attack</h3>
-    <p>You have a limited time to score.</p>
-    <h3>Campaign - Tetris attack</h3>
-
-    <p>A clone of Tetris attack's puzzle mode.</p>
-    <h2>Multiplayer modes</h2>
-
-    <h3>Split screen</h3>
-
-    <p>Same rules as the single player mode "Classic" with 2 players. Each time you score 3 points, some blocks will
-        fall in your partners grid.</p>
-
-    <h3>Coop</h3>
-
-    <p>Same rules as the single player mode "Wide" but you can play with a friend.</p>
-
-
+    </div>
 </div>

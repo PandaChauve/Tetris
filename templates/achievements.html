@@ -1,3 +1,12 @@
-<div id="mainMenu" >
-    <div ui-grid="{ data: achievementsGridData }" class="HomeScoreGrid"></div>
+<div class="container">
+    <div class="panel panel-default" ng-repeat="elem in achievementsGridData" ng-class="{'text-muted': !elem.Success, 'panel-primary': elem.Success}">
+        <div class="panel-heading">
+            <h3 class="panel-title">{{elem.Name}}</h3>
+        </div>
+        <div class="panel-body">
+            <img ng-src="{{elem.Picture}}" alt="{{elem.Name}}" class="img-responsive" style="float:left;margin-right:15px;" ng-if="elem.Success"/>
+            <img src="./Resources/imgs/uachievement.png" alt="{{elem.Name}}" class="img-responsive" style="float:left;margin-right:15px;" ng-if="!elem.Success"/>
+            {{elem.Description}}
+        </div>
+    </div>
 </div>

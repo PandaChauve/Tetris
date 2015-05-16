@@ -21,7 +21,7 @@ statsControllers.controller('AchievementsCtrl', ['$scope', function ($scope) {
     var as = new AchievementsState();
     $scope.achievementsGridData = [];
     for(var i = 0; i < AchievementsState.List.enumSize; i+= 1){
-        $scope.achievementsGridData.push({Name:AchievementsState.List.GetName(i), Status: as.IsWon(i)? "V" : "X", Description:AchievementsState.List.GetDescription(i)});
+        $scope.achievementsGridData.push({Picture: "./Resources/imgs/placeholder.png",Name:AchievementsState.List.GetName(i), Success: as.IsWon(i), Description:AchievementsState.List.GetDescription(i)});
     }
 }]);
 

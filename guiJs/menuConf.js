@@ -20,6 +20,7 @@ function MenuElement(name, parent) {
 var mainMenu = new MenuElement("Index", null);
 
 var single = new MenuElement("Single Player", mainMenu);
+
 var classic = new MenuElement("Classic", single);
 classic.link = "#!/game?name=classic";
 var Wide = new MenuElement("Wide", single);
