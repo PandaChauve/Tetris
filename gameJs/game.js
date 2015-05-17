@@ -37,9 +37,14 @@ Game.prototype.Stop = function(){
     }
 };
 
+Game.CreateRenderingFct = function(gam){
+    return function(timestamp){
+        gam.render(timestamp);
+    };
+};
+
 Game.prototype.Start = function(){
-    "use strict";
-    this.id = requestAnimationFrame(Render);
+    this.id = requestAnimationFrame(Game.CreateRenderingFct(this));
 };
 
 Game.prototype.Init = function(){
@@ -86,7 +91,7 @@ Game.prototype.TogglePause = function(force){
         window.cancelAnimationFrame(this.id);
     }
     else{
-        this.id = requestAnimationFrame(Render);
+        this.id = requestAnimationFrame(Game.CreateRenderingFct(this));
         this.start = null;
     }
     return this.pause;
@@ -135,7 +140,7 @@ Game.prototype.render = function (timestamp) {
             this.visual[i].RenderTetris(this.tetris[i]);
         }
         this.SplitScreenQuickFix();
-        this.id = requestAnimationFrame(Render);
+        this.id = requestAnimationFrame(Game.CreateRenderingFct(this));
     }
     else if(!continueGame){
         if(this.callback !== null){

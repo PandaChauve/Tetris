@@ -77,7 +77,7 @@ EndGameScreen.prototype.Display = function(stats, didWin){
         }
     });
 
-    $("#tryAgain").click(Reset);
+    $("#tryAgain").click(this.retryCb);
 
 };
 
