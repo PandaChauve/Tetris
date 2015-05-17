@@ -11,6 +11,10 @@ angularApp.controller('HeaderCtrl', function($scope, $location){
     };
 });
 
+angularApp.filter('ticToTime', function() {
+    return TimeFromTics;
+});
+
 angularApp.config(['$routeProvider','$locationProvider',
     function($routeProvider, $locationProvider) {
         $routeProvider.
@@ -29,9 +33,9 @@ angularApp.config(['$routeProvider','$locationProvider',
                 templateUrl: 'templates/game.html',
                 controller: 'GameCtrl'
             }).
-            when('/test', {
-                templateUrl: 'templates/game.html',
-                controller: 'TestCtrl'
+            when('/stats', {
+                templateUrl: 'templates/stats.html',
+                controller: 'StatCtrl'
             }).
             when('/', {
                 templateUrl: 'templates/scores.html',

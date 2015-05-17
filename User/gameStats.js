@@ -19,7 +19,7 @@ GameStats.prototype.AddLines = function(series, score){ //no score logic here
     this.score += score;
     var ml = series.length - 2;
     this.multilines[ml] += 1;
-    for(var i = 0; i < series.length; i+= 1){
+    for(var i = 0; i < series.length; i+= 1){ //for a given serie, remove duplicates
         var serie = [];
         $.each(series[i], function(j, el){
             if($.inArray(el, serie) === -1)

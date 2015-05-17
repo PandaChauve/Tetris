@@ -278,3 +278,29 @@ a {
     margin:0;
     padding:0;
 }
+.cube{
+    height:150px;
+    line-height:150px;
+}
+
+.circle
+{
+    height:100px;
+    line-height:100px;
+    width:100px;
+    margin:auto;
+    border-radius:50%;
+    color:#fff;
+    text-align:center;
+    background:#000;
+    font-size:30px;
+    background-image: -webkit-linear-gradient(#020202, #101112 40%, #191b1d);
+    background-image: -o-linear-gradient(#020202, #101112 40%, #191b1d);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#020202), color-stop(40%, #101112), to(#191b1d));
+    background-image: linear-gradient(#020202, #101112 40%, #191b1d);
+    background-repeat: no-repeat;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff020202', endColorstr='#ff191b1d', GradientType=0);
+    -webkit-filter: none;
+    filter: none;
+    border:2px solid black;
+}
