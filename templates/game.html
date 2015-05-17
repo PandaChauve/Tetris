@@ -7,8 +7,8 @@
         <div id="moveDown" class="moveBtn">Down</div>
         <div id="swapBtn" class="gameBtn">Swap</div>
         <div id="gameMenu">
-            <div id="retryBtn" class="gameBtn">Retry</div>
-            <div id="pauseBtn" class="gameBtn">Pause</div>
+            <div id="retryBtn" class="gameBtn" ng-click="reset()">Retry</div>
+            <div id="pauseBtn" class="gameBtn" ng-click="pause.toggle()">{{pause.message}}</div>
         </div>
     </div>
     <div class="gameDetails">

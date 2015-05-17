@@ -1,12 +1,21 @@
-var statsControllers = angular.module('statsControllers', ['ui.grid']);
+var statsControllers = angular.module('statsControllers', []);
 statsControllers.controller('ScoresCtrl', ['$scope', '$http', function ($scope, $http) {
     "use strict";
+
+    $scope.isActive = function (viewLocation) {
+        return viewLocation === $scope.type;
+    };
+    $scope.activate = function (type) {
+        $scope.type = name;
+        $scope.getScores(type);
+    };
+
     $scope.getScores = function (type) {
         $http.get("http://sylvain.luthana.be/api.php?get&map=" + type).success(function (data) {
             $scope.scoreGridData = data;
         });
     };
-    $scope.getScores("classic");
+    $scope.activate("classic");
     $scope.scoreTypes = [
         {type: "classic", name: "Classic"},
         {type: "ultralarge", name: "Wide"},
@@ -38,11 +47,11 @@ statsControllers.controller('AchievementsCtrl', ['$scope', function ($scope) {
 statsControllers.controller('StatCtrl', ['$scope', function ($scope) {
     "use strict";
     var us = UserStats.GetUserStats();
-    $scope.isActive = function (viewLocation) {
-        return viewLocation === $scope.data.active;
-    };
     $scope.isPositive = function(i){
         return i > 0;
+    };
+    $scope.isActive = function (viewLocation) {
+        return viewLocation === $scope.data.active;
     };
     $scope.activate = function (name) {
         $("#" + $scope.data.active).hide();

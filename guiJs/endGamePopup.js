@@ -71,8 +71,10 @@ EndGameScreen.prototype.Display = function(stats, didWin){
         var name = store.Get("UserName") || "";
 
         name = prompt("Who are you ?", name);
-        store.Set("UserName", name);
-        $.get("http://sylvain.luthana.be/api.php?add&name="+name+"&value="+stats.score+"&map="+ map);
+        if(name){
+            store.Set("UserName", name);
+            $.get("http://sylvain.luthana.be/api.php?add&name="+name+"&value="+stats.score+"&map="+ map);
+        }
     });
 
     $("#tryAgain").click(Reset);

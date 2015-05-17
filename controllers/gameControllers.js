@@ -12,19 +12,31 @@ gameControllers.controller('GameCtrl', ['$scope', '$http', '$routeParams', funct
         UseGameConfig(json);
     }).error(function(data, status, headers, config) { console.log( status + " : " + data );});
 
-    $("#retryBtn").click(Reset);
+    $scope.pause = {
+        toggle: function(){
+            "use strict";
+            var ret = game.TogglePause();
 
-    $("#pauseBtn").click(function(){
+            if(ret){
+                $scope.pause.message = ("Play");
+            }
+            else{
+                $scope.pause.message = ("Pause");
+            }
+        },
+        message : "Pause"
+    };
+
+    $scope.reset = function(){
         "use strict";
-        var ret = game.TogglePause();
-        if(ret){
-            $("#pauseBtn").html("Play");
+        $("#gamePopup").remove();
+        for(var i = 0; i < game.config.tetris.length; i+= 1) {
+            $("#"+game.config.tetris[i].gameBox).html("<div class='gamePlaceHolder'></div>");
         }
-        else{
-            $("#pauseBtn").html("Pause");
-        }
-    });
-
+        game.Stop();
+        game = new Game(game.config, game.grid, EndCallBack);
+        game.Start();
+    };
 
     $(window).blur(function() {
         "use strict";
@@ -32,19 +44,6 @@ gameControllers.controller('GameCtrl', ['$scope', '$http', '$routeParams', funct
         $("#pauseBtn").html("Play");
     });
 }]);
-
-
-function Reset(){
-    "use strict";
-    $("#gamePopup").remove();
-    for(var i = 0; i < game.config.tetris.length; i+= 1) {
-        $("#"+game.config.tetris[i].gameBox).html("<div class='gamePlaceHolder'></div>");
-    }
-    game.Stop();
-    game = new Game(game.config, game.grid, EndCallBack);
-    game.Start();
-}
-
 
 function EndCallBack(finishedGame){
     "use strict";
