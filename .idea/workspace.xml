@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="20d21939-c8e4-49c3-84d6-1c3927d59de7" name="Default" comment="some glue on campaign">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/modal.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/gameControllers.js" afterPath="$PROJECT_DIR$/controllers/gameControllers.js" />
+    <list default="true" id="20d21939-c8e4-49c3-84d6-1c3927d59de7" name="Default" comment="">
+      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\guiJs\endGamePopup.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Resources/ui-bootstrap-0.13.0.min.js" afterPath="$PROJECT_DIR$/Resources/ui-bootstrap-0.13.0.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Tetris.iws" />
@@ -57,20 +55,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.923077">
-              <caret line="67" column="53" selection-start-line="67" selection-start-column="53" selection-end-line="67" selection-end-column="53" />
+            <state vertical-scroll-proportion="0.6631098">
+              <caret line="82" column="67" selection-start-line="82" selection-start-column="67" selection-end-line="82" selection-end-column="67" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="modal.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="modal.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/modal.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.44054878">
+            <state vertical-scroll-proportion="-11.115385">
               <caret line="17" column="34" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
               <folding />
             </state>
@@ -195,10 +193,10 @@
         <option value="$PROJECT_DIR$/angularApp.js" />
         <option value="$PROJECT_DIR$/controllers/campaignControllers.js" />
         <option value="$PROJECT_DIR$/templates/campaign.html" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/Resources/ui-bootstrap-0.13.0.min.js" />
         <option value="$PROJECT_DIR$/controllers/gameControllers.js" />
         <option value="$PROJECT_DIR$/templates/modal.html" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -549,12 +547,6 @@
       <option name="number" value="Default" />
       <updated>1428682894359</updated>
     </task>
-    <task id="LOCAL-00013" summary="updating todo">
-      <created>1430156586649</created>
-      <option name="number" value="00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1430156586649</updated>
-    </task>
     <task id="LOCAL-00014" summary="fixing sandbox">
       <created>1430156699015</created>
       <option name="number" value="00014" />
@@ -843,7 +835,13 @@
       <option name="project" value="LOCAL" />
       <updated>1431878085974</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="switching modal tp angular">
+      <created>1431893208634</created>
+      <option name="number" value="00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1431893208634</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -884,7 +882,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="place holder for game" />
     <MESSAGE value="starting to put the block in place" />
     <MESSAGE value="highly improving the design" />
     <MESSAGE value="more campaign" />
@@ -909,7 +906,8 @@
     <MESSAGE value="bootstrap all over the place" />
     <MESSAGE value="angular all over the place (fixing stuff, still need to clean and review the scopes / responsabilities)" />
     <MESSAGE value="some glue on campaign" />
-    <option name="LAST_COMMIT_MESSAGE" value="some glue on campaign" />
+    <MESSAGE value="switching modal tp angular" />
+    <option name="LAST_COMMIT_MESSAGE" value="switching modal tp angular" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1282,24 +1280,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.923077">
-          <caret line="67" column="53" selection-start-line="67" selection-start-column="53" selection-end-line="67" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/guiJs/endGamePopup.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.77272725">
-          <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
-          <folding>
-            <element signature="n#!!doc;n#EndGameScreen#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gameJs/game.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1344,8 +1324,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/modal.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44054878">
+        <state vertical-scroll-proportion="-11.115385">
           <caret line="17" column="34" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6631098">
+          <caret line="82" column="67" selection-start-line="82" selection-start-column="67" selection-end-line="82" selection-end-column="67" />
           <folding />
         </state>
       </provider>
