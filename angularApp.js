@@ -2,7 +2,8 @@
 var angularApp = angular.module('angularApp', [
     'ngRoute',
     'statsControllers',
-    'gameControllers'
+    'gameControllers',
+    'campaignControllers'
 ]);
 angularApp.controller('HeaderCtrl', function($scope, $location){
     "use strict";
@@ -32,6 +33,10 @@ angularApp.config(['$routeProvider','$locationProvider',
             when('/game', {
                 templateUrl: 'templates/game.html',
                 controller: 'GameCtrl'
+            }).
+            when('/campaign', {
+                templateUrl: 'templates/campaign.html',
+                controller: 'CampaignCtrl'
             }).
             when('/stats', {
                 templateUrl: 'templates/stats.html',
