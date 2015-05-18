@@ -2,7 +2,7 @@ html {
     overflow-y: scroll;
 }
 .centralGame {
-    width: 850px;
+    width: 950px;
     margin: auto;
 }
 .sideGame{
@@ -11,13 +11,6 @@ html {
     margin: auto;
     text-align:left;
 }
-.HomeScoreGrid{
-    width:90%;
-    margin:10px auto;
-    height:350px;
-    color:black;
-}
-
 
 .gameHolder {
     width: 400px;
@@ -27,14 +20,22 @@ html {
 }
 
 #control {
-    width: 200px;
+    width: 260px;
     height: 400px;
     float: left;
     position: relative;
-    top: 50px;
+    top: 100px;
+    text-align:center;
 }
+#control .btn-default{
+    width:60px;
+    height: 60px;
+    margin:10px;
+}
+#control .btn:focus {outline:0;}
 
 .gameDetails {
+    font-family: 'Architects Daughter', cursive;
     background: #000000;
     width: 200px;
     height: 500px;
@@ -43,18 +44,28 @@ html {
     float: right;
     border: 1px white solid;
 }
-
-.gameHolder {
-    border: 1px white solid;
+canvas{
+    border:1px white solid;
 }
 
+.gameDetailsElement h3 {
+    font-size: 2em;
+    margin: 10px 20px 0px;
+    font-family: 'Architects Daughter', cursive;
+    clear:both;
+
+}
 .gameDetailsElement span {
     font-size: 3em;
     font-family: monospace;
+    margin-right:15px;
+    margin-bottom:15px;
+    text-align:right;
+    float:right;
 }
 
 #rules {
-    font-size: 1em;
+    font-size: 1.2em;
     text-align: left;
 }
 
@@ -65,202 +76,12 @@ html {
 
 #rules li {
     list-style-type: none;
-    margin:2px 5px;
+    margin:2px 10px;
     padding:0;
-    font-family: 'Architects Daughter', cursive;
-}
-
-.gameDetailsElement h3 {
-    font-size: 2em;
-    margin: 10px 20px 0px;
-
-}
-
-#keyboardLeft {
-    position: absolute;
-    left: 20%;
-    top: 70%;
-}
-
-#keyboardRight {
-    position: absolute;
-    right: 20%;
-    top: 70%;
-}
-
-.moveBtn, #swapBtn, #retryBtn, .btn, .gameBtn {
-    cursor: pointer;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    text-decoration: none;
-}
-
-.moveBtn, #swapBtn, #retryBtn, .gameBtn {
-    width: 48px;
-    height: 48px;
-    line-height: 48px;
-    border: 1px solid white;
-    position: relative;
-    float: left;
-    color: white;
-}
-
-.moveBtn {
-    position: absolute;
-}
-
-#moveUp {
-    top: 0;
-    left: 75px;
-}
-
-#moveLeft {
-    top: 75px;
-    left: 0px;
-}
-
-#moveRight {
-    top: 75px;
-    left: 150px;
-}
-
-#moveDown {
-    top: 150px;
-    left: 75px;
-}
-
-#swapBtn {
-    top: 75px;
-    left: 75px;
-}
-
-#gameMenu {
-    position: absolute;
-    bottom: 0px;
-}
-
-#pauseBtn, #retryBtn {
-    margin: 0 20px 0 25px;
-}
-
-a {
-    color: white;
-}
-
-#mainMenu {
-    width: 900px;
-    height: 400px;
-    margin: 50px auto;
-    background: #111111;
-    border: 2px solid grey;
-    border-radius: 25px;
-    box-shadow: lightgrey 2px 2px 0 0;
-    padding: 0;
-    position: relative;
-}
-
-.menuGame {
-    float: left;
-    width: 200px;
-    height: 200px;
-    margin: 80px 48px;
-    padding: 0;
-    background: darkslategrey;
-    border-radius: 25px;
-    border: 2px solid grey;
-    line-height: 200px;
-    font-size: 2em;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    cursor: pointer;
-}
-
-.menuReturn {
-
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    color: white;
-    border: 1px solid white;
-    position: absolute;
-    right: 25px;
-    bottom: 25px;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    cursor: pointer;
-}
-
-.menuReturnDisabled {
-    color: black;
-    border: 1px solid black;
-    cursor: no-drop;
-}
-
-#highScores {
-    position: absolute;
-    right: 0;
-    top: 0;
-    margin: 25px;
-    border: 1px white solid;
-    width: 200px;
-}
-
-#highScores span {
-    display: block;
-    line-height: 30px;
-    height: 30px;
-}
-
-#gamePopup {
-    position: absolute;
-    width: 100%;
-    top: 0;
-}
-#gamePopupContent{
-    width:300px;
-    height:400px;
-    padding:20px;
-    margin: 55px auto;
-    border:1px solid white;
-    box-shadow: black 5px 5px;
-    background: darkblue;
-    opacity:0.9;
-
-}
-#gamePopupContent table {
-    border-collapse: collapse;
-}
-#gamePopupContent tr:last-child {
-    border-bottom: 1px solid white;
-}
-#gamePopupContent th {
-    border-bottom: 1px white solid;
-}
-#gamePopupContent td {
-    border-right: 1px solid white;
     text-align: right;
-    padding: 0px 5px;
 }
-#gamePopupContent td:first-child {
-    text-align: left;
-    border-left: 1px solid white;
-}
-.bigBtn {
-    cursor: pointer;
-    border: 5px outset lightcoral;
-    padding: 15px;
-    display: inline-block;
-    background: red;
-}
+
+
 .notification{
     display:none;
     width:250px;

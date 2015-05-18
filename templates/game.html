@@ -1,14 +1,14 @@
 
 <div class="centralGame" ng-if="!config.splitScreen">
     <div id="control">
-        <div id="moveUp" class="moveBtn">Up</div>
-        <div id="moveLeft" class="moveBtn">Left</div>
-        <div id="moveRight" class="moveBtn">Right</div>
-        <div id="moveDown" class="moveBtn">Down</div>
-        <div id="swapBtn" class="gameBtn">Swap</div>
+        <button id="moveUp" type="button" class="btn btn-default">Up</button><br />
+        <button id="moveLeft" type="button" class="btn btn-default">Left</button>
+        <button id="swapBtn" type="button" class="btn btn-default">Swap</button>
+        <button id="moveRight" type="button" class="btn btn-default">Right</button><br />
+        <button id="moveDown" type="button" class="btn btn-default">Down</button><br /><br />
         <div id="gameMenu">
-            <div id="retryBtn" class="gameBtn" ng-click="reset()">Retry</div>
-            <div id="pauseBtn" class="gameBtn" ng-click="pause.toggle()">{{pause.message}}</div>
+            <button type="button" ng-click="reset()" class="btn btn-danger" style="width:80px">Retry</button>
+            <button type="button" class="btn btn-success" ng-click="pause.toggle()" style="width:80px"><span ng-if="!pause.active">Pause</span><span ng-if="pause.active">Play</span></button>
         </div>
     </div>
     <div class="gameDetails">

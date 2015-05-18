@@ -16,16 +16,9 @@ gameControllers.controller('GameCtrl', ['$scope', '$http', '$route', '$routePara
     $scope.load();
     $scope.pause = {
         toggle: function(){
-            var ret = $scope.game.TogglePause(); //use ret value as msg
-
-            if(ret){
-                $scope.pause.message = ("Play");//FIXME bool text in html
-            }
-            else{
-                $scope.pause.message = ("Pause");//FIXME bool text in html
-            }
+            $scope.pause.active =  $scope.game.TogglePause();
         },
-        message : "Pause"
+        active : false
     };
 
     $scope.reset = function(){
@@ -39,7 +32,7 @@ gameControllers.controller('GameCtrl', ['$scope', '$http', '$route', '$routePara
     angular.element($window).bind('blur', function(){
         return function () {
             if($scope.game){
-                $scope.pause.message = "Play"; //FIXME bool text in html
+                $scope.pause.active = true;
                 $scope.game.TogglePause(true);
                 $scope.$apply();//FIXME fear of god !
             }
