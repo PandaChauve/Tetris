@@ -24,9 +24,6 @@ angularApp.directive('ngEnter', function($document) {
                 var enterWatcher = function(event) {
                     if (event.which === 13) {
                         scope.ngEnter();
-                        scope.$apply();
-                        console.log('ENTER')
-                        event.preventDefault();
                         $document.unbind("keydown keypress", enterWatcher);
                     }
                 };
