@@ -5,7 +5,7 @@
 
     <div class="row">
         <ul class="nav nav-pills ">
-            <li ng-repeat="type in scoreTypes" ng-class="{ active: isActive(type.type)}">
+            <li ng-repeat="type in scoreTypes" ng-class="{ active: isActive(type.type)}" style="width:100px; text-align:center">
                 <a href=""
                    ng-click="activate(type.type)"
                    data-toggle="pill">{{type.name}}</a>
