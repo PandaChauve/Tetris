@@ -6,7 +6,7 @@ campaignControllers.controller('CampaignCtrl', ['$scope', '$http','$routeParams'
     $scope.maps = [];
     switch ($scope.campaign) {
         case 'puzzle':
-            for (i = 1; i < 5; i += 1) {
+            for (i = 1; i < 3; i += 1) {
                 $scope.maps.push('campaign/puzzle/puzzle_' + i);
             }
             break;

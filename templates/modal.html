@@ -12,9 +12,9 @@
         </tbody>
     </table>
 </div>
-<div class="modal-footer">
+<div class="modal-footer" >
     <button class="btn btn-danger" ng-click="publish()" ng-if="!published">Publish your score ?</button>
     <button class="btn btn-info disabled" ng-if="published">Score published</button>
-    <button class="btn btn-success" ng-click="continue()"><span ng-if="won">Continue</span><span ng-if="!won">Retry</span></button>
+    <button class="btn btn-success" ng-click="continue()" ng-enter="continue();"><span ng-if="won">Continue</span><span ng-if="!won">Retry</span></button>
     <button class="btn btn-warning" ng-click="stop()">Stop</button>
 </div>

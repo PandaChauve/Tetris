@@ -1,7 +1,7 @@
 //FIXME the move to angular is way too partial, some work is needed !
 
 var gameControllers = angular.module('angularApp.controllers');
-gameControllers.controller('GameCtrl', ['$scope', '$http', '$routeParams','$modal', '$window', function ($scope, $http, $routeParams, $modal, $window) {
+gameControllers.controller('GameCtrl', ['$scope', '$http', '$route', '$routeParams','$modal', '$window', function ($scope, $http, $route, $routeParams, $modal, $window) {
     "use strict";
     //FIXME directive too much in the controller
     $scope.gameName = $routeParams.name || "classic";
@@ -16,13 +16,13 @@ gameControllers.controller('GameCtrl', ['$scope', '$http', '$routeParams','$moda
     $scope.load();
     $scope.pause = {
         toggle: function(){
-            var ret = $scope.game.TogglePause();
+            var ret = $scope.game.TogglePause(); //use ret value as msg
 
             if(ret){
-                $scope.pause.message = ("Play");
+                $scope.pause.message = ("Play");//FIXME bool text in html
             }
             else{
-                $scope.pause.message = ("Pause");
+                $scope.pause.message = ("Pause");//FIXME bool text in html
             }
         },
         message : "Pause"
@@ -39,7 +39,7 @@ gameControllers.controller('GameCtrl', ['$scope', '$http', '$routeParams','$moda
     angular.element($window).bind('blur', function(){
         return function () {
             if($scope.game){
-                $scope.pause.message = "Play";
+                $scope.pause.message = "Play"; //FIXME bool text in html
                 $scope.game.TogglePause(true);
                 $scope.$apply();//FIXME fear of god !
             }
@@ -89,7 +89,9 @@ gameControllers.controller('GameCtrl', ['$scope', '$http', '$routeParams','$moda
 
         modalInstance.result.then(function () {
             if(status && $scope.game.config.next){
+
                 $scope.gameName=$scope.game.config.next;
+                $route.updateParams({name:$scope.gameName});
                 $scope.load();
             }
             else{
