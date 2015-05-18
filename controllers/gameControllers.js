@@ -20,7 +20,12 @@ gameControllers.controller('GameCtrl', ['$scope', '$http', '$route', '$routePara
         },
         active : false
     };
-
+    $scope.$on('$routeChangeStart',function() {
+        if($scope.game){
+            $scope.game.Stop();
+            $scope.game = null;
+        }
+    });
     $scope.reset = function(){
         for(var i = 0; i < $scope.game.config.tetris.length; i+= 1) {
             $("#"+$scope.game.config.tetris[i].gameBox).html("<div class='gamePlaceHolder'></div>");
