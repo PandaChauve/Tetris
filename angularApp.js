@@ -1,9 +1,9 @@
 
+angular.module('angularApp.controllers', ['ui.bootstrap']);
+
 var angularApp = angular.module('angularApp', [
     'ngRoute',
-    'statsControllers',
-    'gameControllers',
-    'campaignControllers'
+    'angularApp.controllers'
 ]);
 angularApp.controller('HeaderCtrl', function($scope, $location){
     "use strict";

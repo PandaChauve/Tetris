@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="angularApp">
+<html ng-app="angularApp" ng-controller="WindowCtrl" >
     <head lang="en">
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +10,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>When Will You Lose</title>
     </head>
-    <body>
+    <body ng-blur="blur()" >
     <nav class="navbar navbar-default" ng-controller="HeaderCtrl">
         <div class="container">
             <div class="navbar-header">
@@ -81,8 +81,9 @@
     <script src="guiJs/menuConf.js" language="JavaScript"></script>
     <script src="guiJs/notifications.js" language="JavaScript"></script>
     <script src="angularApp.js" language="JavaScript"></script>
-    <script src="controllers/statsControllers.js" language="JavaScript"></script>
     <script src="controllers/gameControllers.js" language="JavaScript"></script>
+    <script src="controllers/statsControllers.js" language="JavaScript"></script>
     <script src="controllers/campaignControllers.js" language="JavaScript"></script>
+    <script src="controllers/WindowsCtrl.js" language="JavaScript"></script>
     </body>
 </html>

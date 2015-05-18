@@ -1,4 +1,4 @@
-var campaignControllers = angular.module('campaignControllers', []);
+var campaignControllers = angular.module('angularApp.controllers');
 campaignControllers.controller('CampaignCtrl', ['$scope', '$http','$routeParams', function ($scope, $http, $routeParams) {
     "use strict";
     var i, j;

@@ -1,4 +1,4 @@
-var statsControllers = angular.module('statsControllers', []);
+var statsControllers = angular.module('angularApp.controllers');
 statsControllers.controller('ScoresCtrl', ['$scope', '$http', function ($scope, $http) {
     "use strict";
 

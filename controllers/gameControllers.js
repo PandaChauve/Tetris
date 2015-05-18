@@ -1,22 +1,21 @@
 //FIXME the move to angular is way too partial, some work is needed !
 
-var gameControllers = angular.module('gameControllers', ['ui.bootstrap']);
-gameControllers.controller('GameCtrl', ['$scope', '$http', '$routeParams','$modal', function ($scope, $http, $routeParams, $modal) {
+var gameControllers = angular.module('angularApp.controllers');
+gameControllers.controller('GameCtrl', ['$scope', '$http', '$routeParams','$modal', '$window', function ($scope, $http, $routeParams, $modal, $window) {
+    "use strict";
+    //FIXME directive too much in the controller
     $scope.gameName = $routeParams.name || "classic";
     $scope.config = {};
     $scope.game = null;
     $scope.config.splitScreen = $scope.gameName === "classicSplitScreen";
     $scope.load = function(){
-        "use strict";
         $http.get("games/"+$scope.gameName+".json").success(function(json) {
-            "use strict";
             $scope.useGameConfig(json);
         }).error(function(data, status, headers, config) { console.log( status + " : " + data );});
     };
     $scope.load();
     $scope.pause = {
         toggle: function(){
-            "use strict";
             var ret = $scope.game.TogglePause();
 
             if(ret){
@@ -30,7 +29,6 @@ gameControllers.controller('GameCtrl', ['$scope', '$http', '$routeParams','$moda
     };
 
     $scope.reset = function(){
-        "use strict";
         for(var i = 0; i < $scope.game.config.tetris.length; i+= 1) {
             $("#"+$scope.game.config.tetris[i].gameBox).html("<div class='gamePlaceHolder'></div>");
         }
@@ -38,17 +36,16 @@ gameControllers.controller('GameCtrl', ['$scope', '$http', '$routeParams','$moda
         $scope.game = new Game($scope.game.config, $scope.game.grid, $scope.endCallBack);
         $scope.game.Start();
     };
-
-    $(window).blur(function() {
-        "use strict";
-        if($scope.game){
-            $scope.pause.message = "Play";
-            $scope.game.TogglePause(true);
-        }
-    });
-
+    angular.element($window).bind('blur', function(){
+        return function () {
+            if($scope.game){
+                $scope.pause.message = "Play";
+                $scope.game.TogglePause(true);
+                $scope.$apply();//FIXME fear of god !
+            }
+        };
+    }());
     $scope.useGameConfig = function(config){
-        "use strict";
         CONFIG = GetConfig(config.config);
         if(config.grid == ""){ // jshint ignore:line
             $scope.game = new Game(config, "", $scope.endCallBack);
@@ -61,7 +58,6 @@ gameControllers.controller('GameCtrl', ['$scope', '$http', '$routeParams','$moda
         }
     };
     $scope.endCallBack = function(finishedGame){
-        "use strict";
         finishedGame.stats.SetTime(finishedGame.tics);
         finishedGame.stats.SetSwaps(finishedGame.tetris[0].swapCount);
         var userstats = UserStats.GetUserStats();
@@ -86,7 +82,6 @@ gameControllers.controller('GameCtrl', ['$scope', '$http', '$routeParams','$moda
                     return $scope.gameName;
                 },
                 stats : function(){
-                    "use strict";
                     return stats;
                 }
             }
@@ -101,7 +96,6 @@ gameControllers.controller('GameCtrl', ['$scope', '$http', '$routeParams','$moda
                 $scope.reset();
             }
         }, function () {
-            "use strict";
 
         });
     };
