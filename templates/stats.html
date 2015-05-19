@@ -5,7 +5,7 @@
 
     <div class="row">
         <ul class="nav nav-pills nav-stacked col-md-2">
-            <li ng-repeat="map in data.maps" ng-class="{ active: isActive(map.name)}">
+            <li ng-repeat="map in data.maps" ng-class="{ active: isActive(map.name)}" ng-if="map.sum.gameCount > 0">
                 <a href=""
                    ng-click="activate(map.name)"
                    data-toggle="pill">{{map.name}}</a>

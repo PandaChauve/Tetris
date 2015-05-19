@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20d21939-c8e4-49c3-84d6-1c3927d59de7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/User/gameStats.js" afterPath="$PROJECT_DIR$/User/gameStats.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/stats.html" afterPath="$PROJECT_DIR$/templates/stats.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Tetris.iws" />
@@ -24,16 +24,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="73" column="65" selection-start-line="73" selection-start-column="65" selection-end-line="73" selection-end-column="65" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="bootstrap.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/bootstrap.css">
           <provider selected="true" editor-type-id="text-editor">
@@ -99,11 +89,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gameStats.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="gameStats.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/User/gameStats.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.5142857">
+            <state vertical-scroll-proportion="0.0">
               <caret line="58" column="51" selection-start-line="58" selection-start-column="51" selection-end-line="58" selection-end-column="51" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="stats.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/stats.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.20913884">
+              <caret line="7" column="114" selection-start-line="7" selection-start-column="114" selection-end-line="7" selection-end-column="114" />
               <folding />
             </state>
           </provider>
@@ -113,7 +113,7 @@
         <entry file="file://$PROJECT_DIR$/controllers/statsControllers.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="69" column="29" selection-start-line="69" selection-start-column="29" selection-end-line="69" selection-end-column="29" />
+              <caret line="82" column="37" selection-start-line="82" selection-start-column="37" selection-end-line="82" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -181,14 +181,12 @@
         <option value="$PROJECT_DIR$/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/controllers/genericControllers.js" />
         <option value="$PROJECT_DIR$/templates/achievements.html" />
-        <option value="$PROJECT_DIR$/templates/stats.html" />
         <option value="$PROJECT_DIR$/templates/rules.html" />
         <option value="$PROJECT_DIR$/gameJs/game.js" />
         <option value="$PROJECT_DIR$/guiJs/endGamePopup.js" />
         <option value="$PROJECT_DIR$/templates/campaign.html" />
         <option value="$PROJECT_DIR$/Resources/ui-bootstrap-0.13.0.min.js" />
         <option value="$PROJECT_DIR$/controllers/WindowsCtrl.js" />
-        <option value="$PROJECT_DIR$/controllers/statsControllers.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/controllers/campaignControllers.js" />
         <option value="ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js" />
@@ -201,6 +199,8 @@
         <option value="$PROJECT_DIR$/controllers/gameControllers.js" />
         <option value="$PROJECT_DIR$/gameJs/gridEvaluator.js" />
         <option value="$PROJECT_DIR$/User/gameStats.js" />
+        <option value="$PROJECT_DIR$/controllers/statsControllers.js" />
+        <option value="$PROJECT_DIR$/templates/stats.html" />
       </list>
     </option>
   </component>
@@ -582,12 +582,6 @@
       <option name="number" value="Default" />
       <updated>1428682894359</updated>
     </task>
-    <task id="LOCAL-00023" summary="tetris attack world 2">
-      <created>1430332807379</created>
-      <option name="number" value="00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1430332807379</updated>
-    </task>
     <task id="LOCAL-00024" summary="tetris attack world 3">
       <created>1430408723189</created>
       <option name="number" value="00024" />
@@ -876,7 +870,13 @@
       <option name="project" value="LOCAL" />
       <updated>1432052436018</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="bit of cleaning">
+      <created>1432052961723</created>
+      <option name="number" value="00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1432052961723</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -917,7 +917,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="fixing split screen (for high resolutions at least)" />
     <MESSAGE value="coop" />
     <MESSAGE value="rules" />
     <MESSAGE value="swap count decreasing" />
@@ -942,7 +941,8 @@
     <MESSAGE value="stop the previous game when leaving :)" />
     <MESSAGE value="style" />
     <MESSAGE value="fixing modal score push + fixing part of the stats" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixing modal score push + fixing part of the stats" />
+    <MESSAGE value="bit of cleaning" />
+    <option name="LAST_COMMIT_MESSAGE" value="bit of cleaning" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1213,13 +1213,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/stats.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-53.03846">
-          <caret line="123" column="30" selection-start-line="123" selection-start-column="30" selection-end-line="123" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/rules.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.3076923">
@@ -1357,18 +1350,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/statsControllers.js">
+    <entry file="file://$PROJECT_DIR$/User/gameStats.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="69" column="29" selection-start-line="69" selection-start-column="29" selection-end-line="69" selection-end-column="29" />
+          <caret line="58" column="51" selection-start-line="58" selection-start-column="51" selection-end-line="58" selection-end-column="51" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/User/gameStats.js">
+    <entry file="file://$PROJECT_DIR$/controllers/statsControllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.5142857">
-          <caret line="58" column="51" selection-start-line="58" selection-start-column="51" selection-end-line="58" selection-end-column="51" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="82" column="37" selection-start-line="82" selection-start-column="37" selection-end-line="82" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/stats.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20913884">
+          <caret line="7" column="114" selection-start-line="7" selection-start-column="114" selection-end-line="7" selection-end-column="114" />
           <folding />
         </state>
       </provider>
