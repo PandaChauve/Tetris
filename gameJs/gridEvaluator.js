@@ -99,7 +99,7 @@ GridEvaluator.prototype.EvaluateLine = function(container, j) {
                 serie = this.series.length - 1;
                 this.series[serie].push(container[i][realJ].id);
                 this.series[serie].push(container[i-1][realJP].id);
-                this.series[serie].push(container[i-1][realJPP].id);
+                this.series[serie].push(container[i-2][realJPP].id);
 
             } else if (colorCount > 3) {
                 container[i][realJ].SetState(Block.EState.Disappearing);

@@ -23,9 +23,11 @@ GameStats.prototype.AddLines = function(series, score){ //no score logic here
         var serie = [];
         $.each(series[i], function(j, el){
             if($.inArray(el, serie) === -1)
+            {
                 serie.push(el);
+            }
         });
-        this.lineSizes[serie.length -2] += 1;
+        this.lineSizes[serie.length -3] += 1;
         this.blockDestroyed += serie.length;
     }
 };

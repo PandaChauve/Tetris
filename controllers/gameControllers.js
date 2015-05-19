@@ -119,7 +119,7 @@ gameControllers.controller('ModalInstanceCtrl', function ($scope, $modalInstance
             name = prompt("Who are you ?", name);
             if(name){
                 store.Set("UserName", name);
-                $.get("http://sylvain.luthana.be/api.php?add&name="+name+"&value="+stats.score+"&map="+ map);
+                $.get("http://sylvain.luthana.be/api.php?add&name="+name+"&value="+stats.score+"&map="+ gameName);
             }
             else{
                 $scope.published = false;
