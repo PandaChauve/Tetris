@@ -8,7 +8,7 @@ function GameStats(){
     this.blockDestroyed = 0;
     this.multilines = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]; //not sure of the required size
     this.lineSizes = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];//... FIXME
-    this.gameCount = 1;
+    this.gameCount = 0;
     this.swapCount = 0;
 }
 
@@ -46,14 +46,14 @@ GameStats.Append = function(base, otherGameStat){
     base.score += otherGameStat.score;
     base.time += otherGameStat.time;
     base.blockDestroyed += otherGameStat.blockDestroyed;
-    base.score += otherGameStat.score;
+    base.swapCount += otherGameStat.swapCount;
+
     for(var i = 0; i < base.multilines.length; i+= 1){
         base.multilines[i] += otherGameStat.multilines[i];
     }
     for(i = 0; i < base.lineSizes.length; i+= 1){
         base.lineSizes[i] += otherGameStat.lineSizes[i];
     }
-    base.swapCount += otherGameStat.swapCount;
 };
 
 GameStats.KeepBest = function(base, otherGameStat){
@@ -62,7 +62,7 @@ GameStats.KeepBest = function(base, otherGameStat){
     base.score = (base.score > otherGameStat.score)?base.score : otherGameStat.score;
     base.time = (base.time > otherGameStat.time)?base.time : otherGameStat.time;
     base.blockDestroyed = (base.blockDestroyed > otherGameStat.blockDestroyed)?base.blockDestroyed : otherGameStat.blockDestroyed;
-    base.score = (base.score > otherGameStat.score)?base.score : otherGameStat.score;
+    base.swapCount = (base.swapCount > otherGameStat.swapCount)?base.swapCount : otherGameStat.swapCount;
 
     for(var i = 0; i < base.multilines.length; i+= 1){
         base.multilines[i] = (base.multilines[i] > otherGameStat.multilines[i])?base.multilines[i]:otherGameStat.multilines[i];
@@ -70,5 +70,4 @@ GameStats.KeepBest = function(base, otherGameStat){
     for(i = 0; i < base.lineSizes.length; i+= 1){
         base.lineSizes[i] = (base.lineSizes[i] > otherGameStat.lineSizes[i])?base.lineSizes[i]:otherGameStat.lineSizes[i];
     }
-    base.swapCount = (base.swapCount > otherGameStat.swapCount)?base.swapCount : otherGameStat.swapCount;
 };

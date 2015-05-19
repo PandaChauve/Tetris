@@ -17,6 +17,7 @@ function Game(config, grid, cb){
     this.pause = false;
     this.tics = 0;
     this.stats = new GameStats();
+    this.stats.gameCount += 1;
     if(cb === undefined){
         this.callback = null;
     }

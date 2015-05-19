@@ -81,7 +81,6 @@ UserStats.prototype.GetBestGameStats = function(map) {
         return this.bestGameStats[map];
     }
     var ret = new GameStats(map);
-    ret.gameCount = 0;
     return ret;
 };
 
@@ -92,7 +91,6 @@ UserStats.prototype.GetTotalGameStats = function(map) {
         return this.totalGameStats[map];
     }
     var ret = new GameStats(map);
-    ret.gameCount = 0;
     return ret;
 };
 
