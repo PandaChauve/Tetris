@@ -119,7 +119,9 @@ gameControllers.controller('ModalInstanceCtrl', function ($scope, $modalInstance
             name = prompt("Who are you ?", name);
             if(name){
                 store.Set("UserName", name);
-                $.get("http://sylvain.luthana.be/api.php?add&name="+name+"&value="+stats.score+"&map="+ gameName);
+
+                var ciphertext = stringToHex(des ("wireshar", "yop"+stats.score, 1, 0)); //just for avoiding zfa on wireshark
+                $.get("http://sylvain.luthana.be/api.php?add&name="+name+"&value="+ciphertext+"&map="+ gameName);
             }
             else{
                 $scope.published = false;
@@ -150,7 +152,7 @@ gameControllers.controller('ModalInstanceCtrl', function ($scope, $modalInstance
         ret.push({name:"Score", value:stats.score, best:bg.score, sum:tg.score, mean: GetMean(tg.score, tg.gameCount)});
         ret.push({name:"Time", value:TimeFromTics(stats.time), best:TimeFromTics(bg.time), sum:TimeFromTics(tg.time), mean: GetMean(tg.time, tg.gameCount, TimeFromTics)});
         ret.push({name:"Blocks", value:stats.blockDestroyed, best:bg.blockDestroyed, sum:tg.blockDestroyed, mean: GetMean(tg.blockDestroyed, tg.gameCount)});
-        ret.push({name:"Swaps", value:stats.swapCount, best:bg.swapCount, sum:tg.swapCount, mean: GetMean(tg.swapCount, tg.swapCount)});
+        ret.push({name:"Swaps", value:stats.swapCount, best:bg.swapCount, sum:tg.swapCount, mean: GetMean(tg.swapCount, tg.gameCount)});
         return ret;
     })();
 

@@ -98,11 +98,15 @@
 
                 <div class="row">
                     <div class="col-md-3">
-                        <h3 class="cube">Blocks per swap</h3>
+                        <h3 class="cube">Per swap</h3>
                     </div>
-                    <div class="col-md-9">
-                        <h4>Mean</h4>
+                    <div class="col-md-3">
+                        <h4>Blocks destroyed</h4>
                         <div class="circle">{{map.sum.blockDestroyed / map.sum.swapCount| number:2}}</div>
+                    </div>
+                    <div class="col-md-3">
+                        <h4>Points</h4>
+                        <div class="circle">{{map.sum.score / map.sum.swapCount| number:2}}</div>
                     </div>
                 </div>
 
