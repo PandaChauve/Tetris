@@ -95,6 +95,7 @@ Game.prototype.TogglePause = function(force){
         this.id = requestAnimationFrame(Game.CreateRenderingFct(this));
         this.start = null;
     }
+    this.kb.clear();
     return this.pause;
 
 };

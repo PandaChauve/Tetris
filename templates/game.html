@@ -6,9 +6,9 @@
         <button id="swapBtn" type="button" class="btn btn-default">Swap</button>
         <button id="moveRight" type="button" class="btn btn-default">Right</button><br />
         <button id="moveDown" type="button" class="btn btn-default">Down</button><br /><br />
-        <div id="gameMenu">
-            <button type="button" ng-click="reset()" class="btn btn-danger" style="width:80px">Retry</button>
-            <button type="button" class="btn btn-success" ng-click="pause.toggle()" style="width:80px"><span ng-if="!pause.active">Pause</span><span ng-if="pause.active">Play</span></button>
+        <div id="gameMenu"> <!--FIXME why does ng-click create a focus effect on buttons and not on div ? -->
+            <div type="button" class="btn btn-danger" ng-click="reset()" style="width:80px">Retry</div>
+            <div type="button" class="btn btn-success" ng-click="pause.toggle()" style="width:80px"><span ng-if="!pause.active">Pause</span><span ng-if="pause.active">Play</span></div>
         </div>
     </div>
     <div class="gameDetails">
