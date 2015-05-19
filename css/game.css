@@ -13,18 +13,11 @@ html {
 }
 
 .gameHolder {
-    width: 400px;
-    height: 600px;
-    margin: auto;
-    background: black;
+    text-align:center;
+    min-height:600px;
 }
 
 #control {
-    width: 260px;
-    height: 400px;
-    float: left;
-    position: relative;
-    top: 100px;
     text-align:center;
 }
 #control .btn-default{
@@ -37,12 +30,10 @@ html {
 .gameDetails {
     font-family: 'Architects Daughter', cursive;
     background: #000000;
-    width: 200px;
-    height: 500px;
-    position: relative;
-    top: 50px;
-    float: right;
     border: 1px white solid;
+max-width:300px;
+    height:500px;
+    margin:10px auto;
 }
 canvas{
     border:1px white solid;
