@@ -2,37 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20d21939-c8e4-49c3-84d6-1c3927d59de7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/User/achievements.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angularApp.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gameJs/block.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controllers/campaignControllers.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/concat.bat" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gameJs/constants.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/des.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gameJs/game.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controllers/gameControllers.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/User/gameStats.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gameJs/grid.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gameJs/gridEvaluator.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/helpers.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/guiJs/menuConf.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/guiJs/notifications.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gameJs/stateChecker.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controllers/statsControllers.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/User/storage.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gameJs/tetris.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gameJs/threeRenderer.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gameJs/userInput.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/User/userStats.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
-      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\guiJs\homeMenu.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Tetris.iml" afterPath="$PROJECT_DIR$/.idea/Tetris.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/game.html" afterPath="$PROJECT_DIR$/templates/game.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/concatenated.cjs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/gameControllers.js" afterPath="$PROJECT_DIR$/controllers/gameControllers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/modal.html" afterPath="$PROJECT_DIR$/templates/modal.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Tetris.iws" />
@@ -54,11 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.67874014">
-              <caret line="60" column="38" selection-start-line="60" selection-start-column="38" selection-end-line="60" selection-end-column="38" />
+            <state vertical-scroll-proportion="-15.923077">
+              <caret line="59" column="53" selection-start-line="59" selection-start-column="53" selection-end-line="59" selection-end-column="53" />
               <folding />
             </state>
           </provider>
@@ -84,11 +56,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gameControllers.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="gameControllers.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controllers/gameControllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="156" column="0" selection-start-line="156" selection-start-column="0" selection-end-line="156" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.22844176">
+              <caret line="133" column="42" selection-start-line="133" selection-start-column="42" selection-end-line="133" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -100,11 +72,11 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding>
-                <marker date="1432150098802" expanded="true" signature="100:1718" placeholder="[...]" />
-                <marker date="1432150098802" expanded="true" signature="182:1717" placeholder="{...}" />
-                <marker date="1432150098802" expanded="true" signature="1768:3034" placeholder="[...]" />
-                <marker date="1432150098802" expanded="true" signature="1844:3033" placeholder="{...}" />
-                <marker date="1432150098802" expanded="true" signature="2266:3030" placeholder="{...}" />
+                <marker date="1432150267470" expanded="true" signature="100:1718" placeholder="[...]" />
+                <marker date="1432150267470" expanded="true" signature="182:1717" placeholder="{...}" />
+                <marker date="1432150267470" expanded="true" signature="1768:3034" placeholder="[...]" />
+                <marker date="1432150267470" expanded="true" signature="1844:3033" placeholder="{...}" />
+                <marker date="1432150267470" expanded="true" signature="2266:3030" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -178,8 +150,8 @@
         <option value="$PROJECT_DIR$/concatenated.min.js" />
         <option value="$PROJECT_DIR$/css/bootstrap.min.css" />
         <option value="$PROJECT_DIR$/concatenated.js" />
-        <option value="$PROJECT_DIR$/controllers/gameControllers.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/controllers/gameControllers.js" />
       </list>
     </option>
   </component>
@@ -884,12 +856,6 @@
       <option name="number" value="Default" />
       <updated>1428682894359</updated>
     </task>
-    <task id="LOCAL-00032" summary="more campaign">
-      <created>1430508896613</created>
-      <option name="number" value="00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1430508896613</updated>
-    </task>
     <task id="LOCAL-00033" summary="menu everywhere">
       <created>1430571376884</created>
       <option name="number" value="00033" />
@@ -1178,7 +1144,13 @@
       <option name="project" value="LOCAL" />
       <updated>1432146599446</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="concat">
+      <created>1432150221319</created>
+      <option name="number" value="00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1432150221319</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1201,7 +1173,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.46875" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32937366" sideWeight="0.49166667" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3026316" sideWeight="0.49583334" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3026316" sideWeight="0.49583334" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1228,7 +1200,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="quick online scores to please dhl" />
     <MESSAGE value="oups" />
     <MESSAGE value="achievements" />
     <MESSAGE value="moving to angular part 1" />
@@ -1253,7 +1224,8 @@
     <MESSAGE value="des for zfa (will remove it one day) + new stats" />
     <MESSAGE value="small improvements" />
     <MESSAGE value="a bit of cleaning a bit of optimisation" />
-    <option name="LAST_COMMIT_MESSAGE" value="a bit of cleaning a bit of optimisation" />
+    <MESSAGE value="concat" />
+    <option name="LAST_COMMIT_MESSAGE" value="concat" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1677,11 +1649,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding>
-            <marker date="1432150098802" expanded="true" signature="100:1718" placeholder="[...]" />
-            <marker date="1432150098802" expanded="true" signature="182:1717" placeholder="{...}" />
-            <marker date="1432150098802" expanded="true" signature="1768:3034" placeholder="[...]" />
-            <marker date="1432150098802" expanded="true" signature="1844:3033" placeholder="{...}" />
-            <marker date="1432150098802" expanded="true" signature="2266:3030" placeholder="{...}" />
+            <marker date="1432150267470" expanded="true" signature="100:1718" placeholder="[...]" />
+            <marker date="1432150267470" expanded="true" signature="182:1717" placeholder="{...}" />
+            <marker date="1432150267470" expanded="true" signature="1768:3034" placeholder="[...]" />
+            <marker date="1432150267470" expanded="true" signature="1844:3033" placeholder="{...}" />
+            <marker date="1432150267470" expanded="true" signature="2266:3030" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -1690,14 +1662,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="6" column="46" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/gameControllers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="156" column="0" selection-start-line="156" selection-start-column="0" selection-end-line="156" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1712,8 +1676,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.67874014">
-          <caret line="60" column="38" selection-start-line="60" selection-start-column="38" selection-end-line="60" selection-end-column="38" />
+        <state vertical-scroll-proportion="-15.923077">
+          <caret line="59" column="53" selection-start-line="59" selection-start-column="53" selection-end-line="59" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/gameControllers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22844176">
+          <caret line="133" column="42" selection-start-line="133" selection-start-column="42" selection-end-line="133" selection-end-column="42" />
           <folding />
         </state>
       </provider>
