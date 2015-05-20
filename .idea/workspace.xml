@@ -2,24 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20d21939-c8e4-49c3-84d6-1c3927d59de7" name="Default" comment="formating by ide">
-      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\guiJs\menuConf.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\guiJs\menuConf.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\js\stats.min.js" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\panda\WebstormProjects\Tetris\js\ui-bootstrap-0.13.0.min.js" afterPath="$PROJECT_DIR$/js/ui-bootstrap-0.13.0.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/User/achievements.js" afterPath="$PROJECT_DIR$/User/achievements.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/User/achievements.min.js" afterPath="$PROJECT_DIR$/User/achievements.min.js" />
+      <change type="MOVED" beforePath="C:\Users\panda\WebstormProjects\Tetris\js\ui-bootstrap-0.13.0.js" afterPath="$PROJECT_DIR$/js/ui-bootstrap-0.13.0.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/concatenated.cjs" afterPath="$PROJECT_DIR$/concatenated.cjs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gameJs/constants.js" afterPath="$PROJECT_DIR$/gameJs/constants.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gameJs/constants.min.js" afterPath="$PROJECT_DIR$/gameJs/constants.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gameJs/game.js" afterPath="$PROJECT_DIR$/gameJs/game.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gameJs/game.min.js" afterPath="$PROJECT_DIR$/gameJs/game.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/User/gameStats.js" afterPath="$PROJECT_DIR$/User/gameStats.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/helpers.js" afterPath="$PROJECT_DIR$/js/helpers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/helpers.min.js" afterPath="$PROJECT_DIR$/js/helpers.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gameJs/stateChecker.js" afterPath="$PROJECT_DIR$/gameJs/stateChecker.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gameJs/stateChecker.min.js" afterPath="$PROJECT_DIR$/gameJs/stateChecker.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gameJs/threeRenderer.js" afterPath="$PROJECT_DIR$/gameJs/threeRenderer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ui-bootstrap-0.13.0.min.js" afterPath="$PROJECT_DIR$/js/ui-bootstrap-0.13.0.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Tetris.iws" />
@@ -79,21 +64,31 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="3.9230769">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="-9.807693">
+              <caret line="21" column="46" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="46" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ui-bootstrap-0.13.0.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/ui-bootstrap-0.13.0.js">
+      <file leaf-file-name="ui-bootstrap-0.13.0.min.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/ui-bootstrap-0.13.0.min.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.7674417">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="9" column="10280" selection-start-line="9" selection-start-column="10271" selection-end-line="9" selection-end-column="10271" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="concatenated.cjs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/concatenated.cjs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.41396105">
+              <caret line="9" column="45" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -103,16 +98,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="helpers.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/helpers.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="18" column="51" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -167,7 +152,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/game.html" />
         <option value="$PROJECT_DIR$/splitscreen.html" />
         <option value="$PROJECT_DIR$/controllers/genericControllers.js" />
         <option value="$PROJECT_DIR$/templates/rules.html" />
@@ -210,7 +194,6 @@
         <option value="$PROJECT_DIR$/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/css/game.css" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/concatenated.cjs" />
         <option value="$PROJECT_DIR$/User/gameStats.js" />
         <option value="$PROJECT_DIR$/gameJs/game.js" />
         <option value="$PROJECT_DIR$/gameJs/stateChecker.js" />
@@ -218,6 +201,8 @@
         <option value="$PROJECT_DIR$/User/achievements.js" />
         <option value="$PROJECT_DIR$/js/helpers.js" />
         <option value="$PROJECT_DIR$/gameJs/threeRenderer.js" />
+        <option value="$PROJECT_DIR$/js/ui-bootstrap-0.13.0.min.js" />
+        <option value="$PROJECT_DIR$/concatenated.cjs" />
       </list>
     </option>
   </component>
@@ -339,24 +324,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="imgs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tetris" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tetris" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ui-bootstrap-0.13.0.js" />
-              <option name="myItemType" value="com.intellij.plugins.watcher.projectView.NestingTreeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -676,12 +643,6 @@
       <option name="number" value="Default" />
       <updated>1428682894359</updated>
     </task>
-    <task id="LOCAL-00036" summary="small fixes + todo review">
-      <created>1430590233963</created>
-      <option name="number" value="00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1430590233963</updated>
-    </task>
     <task id="LOCAL-00037" summary="tetris attack 6">
       <created>1430592252757</created>
       <option name="number" value="00037" />
@@ -970,7 +931,13 @@
       <option name="project" value="LOCAL" />
       <updated>1432157869981</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="formating by ide">
+      <created>1432158982659</created>
+      <option name="number" value="00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1432158982659</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="TodoView">
@@ -984,7 +951,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.48946258" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -994,7 +961,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32937366" sideWeight="0.49166667" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30259067" sideWeight="0.48524764" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13751318" sideWeight="0.4947994" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13751318" sideWeight="0.4947994" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.4646997" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13751318" sideWeight="0.50520056" order="2" side_tool="true" content_ui="tabs" />
@@ -1386,14 +1353,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/concatenated.cjs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/games/classic.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.9230769">
@@ -1512,19 +1471,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.9230769">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="21" column="46" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/ui-bootstrap-0.13.0.js">
+    <entry file="file://$PROJECT_DIR$/js/ui-bootstrap-0.13.0.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.7674417">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="10280" selection-start-line="9" selection-start-column="10271" selection-end-line="9" selection-end-column="10271" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/concatenated.cjs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41396105">
+          <caret line="9" column="45" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
+          <folding />
         </state>
       </provider>
     </entry>
