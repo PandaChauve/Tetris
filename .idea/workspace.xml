@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20d21939-c8e4-49c3-84d6-1c3927d59de7" name="Default" comment="formating by ide">
-      <change type="MOVED" beforePath="C:\Users\panda\WebstormProjects\Tetris\js\ui-bootstrap-0.13.0.js" afterPath="$PROJECT_DIR$/js/ui-bootstrap-0.13.0.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/concatenated.cjs" afterPath="$PROJECT_DIR$/concatenated.cjs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -71,24 +69,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ui-bootstrap-0.13.0.min.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ui-bootstrap-0.13.0.min.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/ui-bootstrap-0.13.0.min.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="10280" selection-start-line="9" selection-start-column="10271" selection-end-line="9" selection-end-column="10271" />
+            <state vertical-scroll-proportion="3.1348836">
+              <caret line="9" column="10280" selection-start-line="9" selection-start-column="10280" selection-end-line="9" selection-end-column="10280" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="concatenated.cjs" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/concatenated.cjs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.41396105">
-              <caret line="9" column="45" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -517,7 +505,7 @@
     <property name="HbShouldOpenHtmlAsHb" value="enabled" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="recentsLimit" value="5" />
-    <property name="settings.editor.selected.configurable" value="Settings.JavaScript.Templates" />
+    <property name="settings.editor.selected.configurable" value="watcher.settings" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/css/game.css" />
     <property name="js.eslint.nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
@@ -642,12 +630,6 @@
       <created>1428682894359</created>
       <option name="number" value="Default" />
       <updated>1428682894359</updated>
-    </task>
-    <task id="LOCAL-00037" summary="tetris attack 6">
-      <created>1430592252757</created>
-      <option name="number" value="00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1430592252757</updated>
     </task>
     <task id="LOCAL-00038" summary="tetris attack 6">
       <created>1430592372727</created>
@@ -937,7 +919,13 @@
       <option name="project" value="LOCAL" />
       <updated>1432158982659</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="concat issues">
+      <created>1432159403345</created>
+      <option name="number" value="00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1432159403345</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="TodoView">
@@ -990,7 +978,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="moving to angular part 1" />
     <MESSAGE value="config change" />
     <MESSAGE value="stats" />
     <MESSAGE value="bootstrap all over the place" />
@@ -1015,7 +1002,8 @@
     <MESSAGE value="concat" />
     <MESSAGE value="config ftp" />
     <MESSAGE value="formating by ide" />
-    <option name="LAST_COMMIT_MESSAGE" value="formating by ide" />
+    <MESSAGE value="concat issues" />
+    <option name="LAST_COMMIT_MESSAGE" value="concat issues" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1477,21 +1465,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/ui-bootstrap-0.13.0.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="10280" selection-start-line="9" selection-start-column="10271" selection-end-line="9" selection-end-column="10271" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/concatenated.cjs">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.41396105">
           <caret line="9" column="45" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/ui-bootstrap-0.13.0.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.1348836">
+          <caret line="9" column="10280" selection-start-line="9" selection-start-column="10280" selection-end-line="9" selection-end-column="10280" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
