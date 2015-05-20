@@ -1,12 +1,20 @@
 {
   "grid": "campaign/tetrisAttack/1/ta_1_1",
   "config": "fixed",
-  "tetris" :  [
-    { "gameBox" : "game", "scoreBox" : "score", "swapBox" : "swaps", "mappings" : ["leftMapping", "rightMapping"]}
+  "tetris": [
+    {
+      "gameBox": "game",
+      "scoreBox": "score",
+      "swapBox": "swaps",
+      "mappings": [
+        "leftMapping",
+        "rightMapping"
+      ]
+    }
   ],
-  "victory" : {
-    "blocksLeft" : 0,
-	"swaps" : 1
+  "victory": {
+    "blocksLeft": 0,
+    "swaps": 1
   },
-  "next" : "campaign/tetrisAttack/1/ta_1_2"
+  "next": "campaign/tetrisAttack/1/ta_1_2"
 }

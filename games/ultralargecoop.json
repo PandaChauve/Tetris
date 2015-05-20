@@ -1,8 +1,17 @@
 {
   "grid": "",
   "config": "large",
-  "tetris" :  [
-    { "gameBox" : "game", "scoreBox" : "score", "swapBox" : "swaps", "mappings" : ["leftMapping", "rightMapping"], "cursors" : 2}
+  "tetris": [
+    {
+      "gameBox": "game",
+      "scoreBox": "score",
+      "swapBox": "swaps",
+      "mappings": [
+        "leftMapping",
+        "rightMapping"
+      ],
+      "cursors": 2
+    }
   ],
-  "message" : "Try to stay alive !"
+  "message": "Try to stay alive !"
 }

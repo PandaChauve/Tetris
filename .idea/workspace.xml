@@ -1,23 +1,166 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="20d21939-c8e4-49c3-84d6-1c3927d59de7" name="Default" comment="concat">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/game.min.css" />
-      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\Tests\blockTests.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\Tests\gridTests.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\Tests\indexTest.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\css\bootstrap.min.css" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\panda\WebstormProjects\Tetris\Resources\des.js" afterPath="$PROJECT_DIR$/js/des.js" />
-      <change type="MOVED" beforePath="C:\Users\panda\WebstormProjects\Tetris\Resources\des.min.js" afterPath="$PROJECT_DIR$/js/des.min.js" />
-      <change type="MOVED" beforePath="C:\Users\panda\WebstormProjects\Tetris\Resources\stats.min.js" afterPath="$PROJECT_DIR$/js/stats.min.js" />
-      <change type="MOVED" beforePath="C:\Users\panda\WebstormProjects\Tetris\Resources\ui-bootstrap-0.13.0.min.js" afterPath="$PROJECT_DIR$/js/ui-bootstrap-0.13.0.min.js" />
+    <list default="true" id="20d21939-c8e4-49c3-84d6-1c3927d59de7" name="Default" comment="config ftp">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Tetris.iml" afterPath="$PROJECT_DIR$/.idea/Tetris.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/User/achievements.js" afterPath="$PROJECT_DIR$/User/achievements.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/angularApp.js" afterPath="$PROJECT_DIR$/angularApp.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/arcade/arcade_1.json" afterPath="$PROJECT_DIR$/games/campaign/arcade/arcade_1.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/arcade/arcade_2.json" afterPath="$PROJECT_DIR$/games/campaign/arcade/arcade_2.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/arcade/arcade_3.json" afterPath="$PROJECT_DIR$/games/campaign/arcade/arcade_3.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gameJs/block.js" afterPath="$PROJECT_DIR$/gameJs/block.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/bootstrap.css" afterPath="$PROJECT_DIR$/css/bootstrap.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/classic.json" afterPath="$PROJECT_DIR$/games/classic.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/classicSplitScreen.json" afterPath="$PROJECT_DIR$/games/classicSplitScreen.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/concatenated.cjs" afterPath="$PROJECT_DIR$/concatenated.cjs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gameJs/constants.js" afterPath="$PROJECT_DIR$/gameJs/constants.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/deployment.xml" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/des.js" afterPath="$PROJECT_DIR$/js/des.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/game.css" afterPath="$PROJECT_DIR$/css/game.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/game.html" afterPath="$PROJECT_DIR$/templates/game.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gameJs/game.js" afterPath="$PROJECT_DIR$/gameJs/game.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/gameControllers.js" afterPath="$PROJECT_DIR$/controllers/gameControllers.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/User/gameStats.js" afterPath="$PROJECT_DIR$/User/gameStats.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gameJs/grid.js" afterPath="$PROJECT_DIR$/gameJs/grid.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gameJs/gridEvaluator.js" afterPath="$PROJECT_DIR$/gameJs/gridEvaluator.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/helpers.js" afterPath="$PROJECT_DIR$/js/helpers.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/guiJs/menuConf.js" afterPath="$PROJECT_DIR$/guiJs/menuConf.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/modal.html" afterPath="$PROJECT_DIR$/templates/modal.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/guiJs/notifications.js" afterPath="$PROJECT_DIR$/guiJs/notifications.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/puzzle/puzzle_1.json" afterPath="$PROJECT_DIR$/games/campaign/puzzle/puzzle_1.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/puzzle/puzzle_2.json" afterPath="$PROJECT_DIR$/games/campaign/puzzle/puzzle_2.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/sandbox.json" afterPath="$PROJECT_DIR$/games/sandbox.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/scores.html" afterPath="$PROJECT_DIR$/templates/scores.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gameJs/stateChecker.js" afterPath="$PROJECT_DIR$/gameJs/stateChecker.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/stats.html" afterPath="$PROJECT_DIR$/templates/stats.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/stats.min.js" afterPath="$PROJECT_DIR$/js/stats.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/statsControllers.js" afterPath="$PROJECT_DIR$/controllers/statsControllers.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/User/storage.js" afterPath="$PROJECT_DIR$/User/storage.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/1/ta_1_1.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/1/ta_1_1.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/1/ta_1_1.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/1/ta_1_1.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/1/ta_1_10.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/1/ta_1_10.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/1/ta_1_10.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/1/ta_1_10.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/1/ta_1_2.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/1/ta_1_2.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/1/ta_1_2.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/1/ta_1_2.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/1/ta_1_3.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/1/ta_1_3.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/1/ta_1_3.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/1/ta_1_3.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/1/ta_1_4.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/1/ta_1_4.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/1/ta_1_4.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/1/ta_1_4.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/1/ta_1_5.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/1/ta_1_5.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/1/ta_1_5.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/1/ta_1_5.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/1/ta_1_6.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/1/ta_1_6.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/1/ta_1_6.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/1/ta_1_6.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/1/ta_1_7.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/1/ta_1_7.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/1/ta_1_7.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/1/ta_1_7.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/1/ta_1_8.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/1/ta_1_8.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/1/ta_1_8.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/1/ta_1_8.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/1/ta_1_9.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/1/ta_1_9.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/1/ta_1_9.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/1/ta_1_9.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_1.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_1.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/2/ta_2_1.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/2/ta_2_1.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_10.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_10.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/2/ta_2_10.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/2/ta_2_10.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_2.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_2.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/2/ta_2_2.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/2/ta_2_2.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_3.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_3.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/2/ta_2_3.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/2/ta_2_3.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_4.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_4.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/2/ta_2_4.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/2/ta_2_4.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_5.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_5.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/2/ta_2_5.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/2/ta_2_5.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_6.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_6.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/2/ta_2_6.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/2/ta_2_6.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_7.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_7.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/2/ta_2_7.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/2/ta_2_7.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_8.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_8.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/2/ta_2_8.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/2/ta_2_8.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_9.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_9.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/2/ta_2_9.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/2/ta_2_9.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_1.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_1.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/3/ta_3_1.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/3/ta_3_1.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_10.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_10.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/3/ta_3_10.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/3/ta_3_10.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_2.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_2.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/3/ta_3_2.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/3/ta_3_2.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_3.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_3.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/3/ta_3_3.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/3/ta_3_3.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_4.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_4.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/3/ta_3_4.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/3/ta_3_4.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_5.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_5.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/3/ta_3_5.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/3/ta_3_5.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_6.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_6.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/3/ta_3_6.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/3/ta_3_6.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_7.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_7.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/3/ta_3_7.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/3/ta_3_7.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_8.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_8.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/3/ta_3_8.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/3/ta_3_8.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_9.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_9.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/3/ta_3_9.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/3/ta_3_9.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_1.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_1.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/4/ta_4_1.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/4/ta_4_1.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_10.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_10.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/4/ta_4_10.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/4/ta_4_10.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_2.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_2.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/4/ta_4_2.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/4/ta_4_2.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_3.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_3.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/4/ta_4_3.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/4/ta_4_3.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_4.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_4.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/4/ta_4_4.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/4/ta_4_4.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_5.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_5.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/4/ta_4_5.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/4/ta_4_5.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_6.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_6.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/4/ta_4_6.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/4/ta_4_6.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_7.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_7.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/4/ta_4_7.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/4/ta_4_7.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_8.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_8.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/4/ta_4_8.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/4/ta_4_8.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_9.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_9.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/4/ta_4_9.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/4/ta_4_9.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_1.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_1.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/5/ta_5_1.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/5/ta_5_1.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_10.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_10.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/5/ta_5_10.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/5/ta_5_10.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_2.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_2.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/5/ta_5_2.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/5/ta_5_2.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_3.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_3.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/5/ta_5_3.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/5/ta_5_3.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_4.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_4.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/5/ta_5_4.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/5/ta_5_4.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_5.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_5.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/5/ta_5_5.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/5/ta_5_5.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_6.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_6.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/5/ta_5_6.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/5/ta_5_6.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_7.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_7.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/5/ta_5_7.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/5/ta_5_7.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_8.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_8.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/5/ta_5_8.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/5/ta_5_8.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_9.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_9.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/5/ta_5_9.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/5/ta_5_9.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_1.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_1.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/6/ta_6_1.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/6/ta_6_1.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/6/ta_6_10.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/6/ta_6_10.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/6/ta_6_2.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/6/ta_6_2.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/6/ta_6_3.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/6/ta_6_3.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/6/ta_6_4.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/6/ta_6_4.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/6/ta_6_5.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/6/ta_6_5.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/6/ta_6_6.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/6/ta_6_6.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/6/ta_6_7.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/6/ta_6_7.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/6/ta_6_8.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/6/ta_6_8.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/campaign/tetrisAttack/6/ta_6_9.json" afterPath="$PROJECT_DIR$/grids/campaign/tetrisAttack/6/ta_6_9.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grids/test.json" afterPath="$PROJECT_DIR$/grids/test.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gameJs/tetris.js" afterPath="$PROJECT_DIR$/gameJs/tetris.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gameJs/threeRenderer.js" afterPath="$PROJECT_DIR$/gameJs/threeRenderer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/timeLimit/timelimit_1.json" afterPath="$PROJECT_DIR$/games/campaign/timeLimit/timelimit_1.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/timeLimit/timelimit_2.json" afterPath="$PROJECT_DIR$/games/campaign/timeLimit/timelimit_2.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/timeLimit/timelimit_3.json" afterPath="$PROJECT_DIR$/games/campaign/timeLimit/timelimit_3.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/timeLimit/timelimit_4.json" afterPath="$PROJECT_DIR$/games/campaign/timeLimit/timelimit_4.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ui-bootstrap-0.13.0.min.js" afterPath="$PROJECT_DIR$/js/ui-bootstrap-0.13.0.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/ultralarge.json" afterPath="$PROJECT_DIR$/games/ultralarge.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/ultralargecoop.json" afterPath="$PROJECT_DIR$/games/ultralargecoop.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gameJs/userInput.js" afterPath="$PROJECT_DIR$/gameJs/userInput.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/User/userStats.js" afterPath="$PROJECT_DIR$/User/userStats.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Tetris.iws" />
@@ -42,77 +185,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.5384617">
-              <caret line="10" column="41" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="des.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/des.js">
+      <file leaf-file-name="classic.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/games/classic.json">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="190" column="35" selection-start-line="190" selection-start-column="35" selection-end-line="190" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bootstrap.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/bootstrap.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="game.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/game.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.692307">
-              <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gameControllers.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controllers/gameControllers.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="133" column="41" selection-start-line="133" selection-start-column="41" selection-end-line="133" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gameControllers.min.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controllers/gameControllers.min.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-              <folding>
-                <marker date="1432156184238" expanded="true" signature="100:1718" placeholder="[...]" />
-                <marker date="1432156184238" expanded="true" signature="182:1717" placeholder="{...}" />
-                <marker date="1432156184238" expanded="true" signature="1768:3034" placeholder="[...]" />
-                <marker date="1432156184238" expanded="true" signature="1844:3033" placeholder="{...}" />
-                <marker date="1432156184238" expanded="true" signature="2266:3030" placeholder="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="game.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/css/game.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3857791">
-              <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -137,7 +214,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/gameJs/main.js" />
         <option value="$PROJECT_DIR$/game.html" />
         <option value="$PROJECT_DIR$/splitscreen.html" />
         <option value="$PROJECT_DIR$/controllers/genericControllers.js" />
@@ -186,8 +262,9 @@
         <option value="$PROJECT_DIR$/controllers/gameControllers.js" />
         <option value="$PROJECT_DIR$/css/game.min.css" />
         <option value="$PROJECT_DIR$/css/bootstrap.css" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/css/game.css" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/concatenated.cjs" />
       </list>
     </option>
   </component>
@@ -289,20 +366,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="angularApp.js" />
-              <option name="myItemType" value="com.intellij.plugins.watcher.projectView.NestingTreeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tetris" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tetris" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -337,24 +400,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tetris" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tetris" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="helpers.js" />
-              <option name="myItemType" value="com.intellij.plugins.watcher.projectView.NestingTreeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -441,168 +486,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="campaign" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tetris" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tetris" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gameJs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="userInput.js" />
-              <option name="myItemType" value="com.intellij.plugins.watcher.projectView.NestingTreeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tetris" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tetris" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gameJs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="threeRenderer.js" />
-              <option name="myItemType" value="com.intellij.plugins.watcher.projectView.NestingTreeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tetris" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tetris" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gameJs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tetris.js" />
-              <option name="myItemType" value="com.intellij.plugins.watcher.projectView.NestingTreeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tetris" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tetris" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gameJs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stateChecker.js" />
-              <option name="myItemType" value="com.intellij.plugins.watcher.projectView.NestingTreeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tetris" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tetris" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gameJs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gridEvaluator.js" />
-              <option name="myItemType" value="com.intellij.plugins.watcher.projectView.NestingTreeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tetris" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tetris" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gameJs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="grid.js" />
-              <option name="myItemType" value="com.intellij.plugins.watcher.projectView.NestingTreeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tetris" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tetris" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gameJs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="game.js" />
-              <option name="myItemType" value="com.intellij.plugins.watcher.projectView.NestingTreeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tetris" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tetris" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gameJs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="constants.js" />
-              <option name="myItemType" value="com.intellij.plugins.watcher.projectView.NestingTreeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tetris" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tetris" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gameJs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="block.js" />
-              <option name="myItemType" value="com.intellij.plugins.watcher.projectView.NestingTreeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -801,12 +684,6 @@
       <created>1428682894359</created>
       <option name="number" value="Default" />
       <updated>1428682894359</updated>
-    </task>
-    <task id="LOCAL-00034" summary="better end condition handling">
-      <created>1430582303128</created>
-      <option name="number" value="00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1430582303128</updated>
     </task>
     <task id="LOCAL-00035" summary="small fixes + todo review">
       <created>1430590000870</created>
@@ -1096,7 +973,13 @@
       <option name="project" value="LOCAL" />
       <updated>1432150283386</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="config ftp">
+      <created>1432157019307</created>
+      <option name="number" value="00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1432157019307</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1118,7 +1001,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299595" sideWeight="0.49791667" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32937366" sideWeight="0.49166667" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3026316" sideWeight="0.49375" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3026316" sideWeight="0.49375" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1359375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.46875" order="1" side_tool="false" content_ui="tabs" />
@@ -1147,7 +1030,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="oups" />
     <MESSAGE value="achievements" />
     <MESSAGE value="moving to angular part 1" />
     <MESSAGE value="config change" />
@@ -1172,44 +1054,45 @@
     <MESSAGE value="small improvements" />
     <MESSAGE value="a bit of cleaning a bit of optimisation" />
     <MESSAGE value="concat" />
-    <option name="LAST_COMMIT_MESSAGE" value="concat" />
+    <MESSAGE value="config ftp" />
+    <option name="LAST_COMMIT_MESSAGE" value="config ftp" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/gameJs/grid.js</url>
-          <line>61</line>
+          <line>60</line>
           <option name="timeStamp" value="75" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/gameJs/grid.js</url>
-          <line>115</line>
+          <line>114</line>
           <option name="timeStamp" value="76" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/controllers/gameControllers.js</url>
-          <line>18</line>
+          <line>20</line>
           <option name="timeStamp" value="249" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/gameJs/threeRenderer.js</url>
-          <line>142</line>
+          <line>143</line>
           <option name="timeStamp" value="252" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/gameJs/threeRenderer.js</url>
-          <line>152</line>
+          <line>153</line>
           <option name="timeStamp" value="253" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/gameJs/threeRenderer.js</url>
-          <line>150</line>
+          <line>151</line>
           <option name="timeStamp" value="254" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/gameJs/threeRenderer.js</url>
-          <line>139</line>
+          <line>140</line>
           <option name="timeStamp" value="255" />
         </line-breakpoint>
       </breakpoints>
@@ -1349,8 +1232,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="147" column="2" selection-start-line="147" selection-start-column="2" selection-end-line="147" selection-end-column="2" />
           <folding>
-            <element signature="e#1200#1482#0" expanded="false" />
-            <element signature="e#2038#2315#0" expanded="false" />
+            <element signature="e#1201#1483#0" expanded="false" />
+            <element signature="e#2046#2327#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1368,7 +1251,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="112" column="5" selection-start-line="112" selection-start-column="5" selection-end-line="112" selection-end-column="5" />
           <folding>
-            <element signature="e#208#1589#0" expanded="false" />
+            <element signature="e#211#1597#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1580,11 +1463,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding>
-            <marker date="1432156184238" expanded="true" signature="100:1718" placeholder="[...]" />
-            <marker date="1432156184238" expanded="true" signature="182:1717" placeholder="{...}" />
-            <marker date="1432156184238" expanded="true" signature="1768:3034" placeholder="[...]" />
-            <marker date="1432156184238" expanded="true" signature="1844:3033" placeholder="{...}" />
-            <marker date="1432156184238" expanded="true" signature="2266:3030" placeholder="{...}" />
+            <marker date="1432157455472" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1432157455472" expanded="true" signature="-1:-1" placeholder="[...]" />
           </folding>
         </state>
       </provider>
@@ -1592,7 +1472,7 @@
     <entry file="file://$PROJECT_DIR$/controllers/gameControllers.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="133" column="41" selection-start-line="133" selection-start-column="41" selection-end-line="133" selection-end-column="41" />
+          <caret line="136" column="41" selection-start-line="136" selection-start-column="41" selection-end-line="136" selection-end-column="41" />
           <folding />
         </state>
       </provider>
@@ -1600,7 +1480,7 @@
     <entry file="file://$PROJECT_DIR$/js/des.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="190" column="35" selection-start-line="190" selection-start-column="35" selection-end-line="190" selection-end-column="35" />
+          <caret line="263" column="35" selection-start-line="263" selection-start-column="35" selection-end-line="263" selection-end-column="35" />
           <folding />
         </state>
       </provider>
@@ -1621,18 +1501,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/css/game.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.5384617">
-          <caret line="10" column="41" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/game.css">
+    <entry file="file://$PROJECT_DIR$/concatenated.cjs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3857791">
-          <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.82992125">
+          <caret line="5" column="87" selection-start-line="5" selection-start-column="87" selection-end-line="5" selection-end-column="87" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/games/classic.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

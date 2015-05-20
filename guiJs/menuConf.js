@@ -8,11 +8,11 @@ function MenuElement(name, parent) {
     this.parent = parent;
     this.childs = [];
     this.link = "";
-    if(parent !== null){
+    if (parent !== null) {
         parent.AddChild(this);
     }
 
-    this.AddChild = function(node){
+    this.AddChild = function (node) {
         this.childs.push(node);
     };
 }
@@ -36,23 +36,23 @@ var puzzle2 = new MenuElement("Puzzle 2", puzzle);
 puzzle2.link = "#!/game?name=campaign/puzzle/puzzle_2";
 
 var arcade = new MenuElement("Arcade", campaign);
-for(var arc = 1; arc < 4; arc += 1){
-    var arcade1 = new MenuElement("Arcade "+arc, arcade);
-    arcade1.link = "#!/game?name=campaign/arcade/arcade_"+arc;
+for (var arc = 1; arc < 4; arc += 1) {
+    var arcade1 = new MenuElement("Arcade " + arc, arcade);
+    arcade1.link = "#!/game?name=campaign/arcade/arcade_" + arc;
 }
 
 var tl = new MenuElement("TimeLimit", campaign);
-for(var tlc = 1; tlc <= 4; tlc += 1){
-    var obj = new MenuElement("TimeLimit "+tlc, tl);
-    obj.link = "#!/game?name=campaign/timeLimit/timelimit_"+tlc;
+for (var tlc = 1; tlc <= 4; tlc += 1) {
+    var obj = new MenuElement("TimeLimit " + tlc, tl);
+    obj.link = "#!/game?name=campaign/timeLimit/timelimit_" + tlc;
 }
 
 var tetrisAttack = new MenuElement("Tetris Attack", campaign);
-for(var world = 1; world <= 6; world += 1){
-    var worldi = new MenuElement("World "+ world, tetrisAttack);
-    for(var map = 1; map <= 10; map+= 1){
-        var w1m1 = new MenuElement("Map "+map, worldi);
-        w1m1.link = "#!/game?name=campaign/tetrisAttack/"+world +"/ta_"+world +"_"+map;
+for (var world = 1; world <= 6; world += 1) {
+    var worldi = new MenuElement("World " + world, tetrisAttack);
+    for (var map = 1; map <= 10; map += 1) {
+        var w1m1 = new MenuElement("Map " + map, worldi);
+        w1m1.link = "#!/game?name=campaign/tetrisAttack/" + world + "/ta_" + world + "_" + map;
     }
 }
 

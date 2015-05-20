@@ -1,1 +1,66 @@
-{"grid":[[],[],[{"type":0,"state":1},{"type":4,"state":1},{"type":3,"state":1},{"type":3,"state":1},{"type":2,"state":1},{"type":0,"state":1}],[{"type":4,"state":1},{"type":3,"state":1},{"type":4,"state":1},{"type":2,"state":1},{"type":0,"state":1}],[{"type":2,"state":1}],[{"type":2,"state":1}]]}
+{
+  "grid": [
+    [],
+    [],
+    [
+      {
+        "type": 0,
+        "state": 1
+      },
+      {
+        "type": 4,
+        "state": 1
+      },
+      {
+        "type": 3,
+        "state": 1
+      },
+      {
+        "type": 3,
+        "state": 1
+      },
+      {
+        "type": 2,
+        "state": 1
+      },
+      {
+        "type": 0,
+        "state": 1
+      }
+    ],
+    [
+      {
+        "type": 4,
+        "state": 1
+      },
+      {
+        "type": 3,
+        "state": 1
+      },
+      {
+        "type": 4,
+        "state": 1
+      },
+      {
+        "type": 2,
+        "state": 1
+      },
+      {
+        "type": 0,
+        "state": 1
+      }
+    ],
+    [
+      {
+        "type": 2,
+        "state": 1
+      }
+    ],
+    [
+      {
+        "type": 2,
+        "state": 1
+      }
+    ]
+  ]
+}

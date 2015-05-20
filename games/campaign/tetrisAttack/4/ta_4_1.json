@@ -1,13 +1,21 @@
 {
   "grid": "campaign/tetrisAttack/4/ta_4_1",
   "config": "fixed",
-  "tetris" :  [
-    { "gameBox" : "game", "scoreBox" : "score", "swapBox" : "swaps", "mappings" : ["leftMapping", "rightMapping"]}
+  "tetris": [
+    {
+      "gameBox": "game",
+      "scoreBox": "score",
+      "swapBox": "swaps",
+      "mappings": [
+        "leftMapping",
+        "rightMapping"
+      ]
+    }
   ],
-  "victory" : {
-    "blocksLeft" : 0,
-    "swaps" : 2
+  "victory": {
+    "blocksLeft": 0,
+    "swaps": 2
   },
-  "message" : "Try to clear the grid in 2 swaps!",
-  "next" : "campaign/tetrisAttack/4/ta_4_2"
+  "message": "Try to clear the grid in 2 swaps!",
+  "next": "campaign/tetrisAttack/4/ta_4_2"
 }

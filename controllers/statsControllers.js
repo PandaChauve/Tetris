@@ -47,7 +47,7 @@ statsControllers.controller('AchievementsCtrl', ['$scope', function ($scope) {
 statsControllers.controller('StatCtrl', ['$scope', function ($scope) {
     "use strict";
     var us = UserStats.GetUserStats();
-    $scope.isPositive = function(i){
+    $scope.isPositive = function (i) {
         return i > 0;
     };
     $scope.isActive = function (viewLocation) {
@@ -58,17 +58,17 @@ statsControllers.controller('StatCtrl', ['$scope', function ($scope) {
         $("#" + name).show();
         $scope.data.active = name;
     };
-    var CompleteData = function CompleteData(data){
+    var CompleteData = function CompleteData(data) {
         data.best = us.GetBestGameStats(data.link);
         data.sum = us.GetTotalGameStats(data.link);
         return data;
     };
-    var SumData = function SumData(){
+    var SumData = function SumData() {
         var i;
         var ret = {name: "Overall", link: ""};
         ret.best = new GameStats();
-        ret.sum =  new GameStats();
-        for(i = 0; i < $scope.data.maps.length; i+= 1){
+        ret.sum = new GameStats();
+        for (i = 0; i < $scope.data.maps.length; i += 1) {
             GameStats.KeepBest(ret.best, $scope.data.maps[i].best);
             GameStats.Append(ret.sum, $scope.data.maps[i].sum);
         }

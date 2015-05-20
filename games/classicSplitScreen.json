@@ -1,9 +1,19 @@
 {
   "grid": "",
   "config": "",
-  "tetris" :  [
-    { "gameBox" : "gameA", "scoreBox" : "scoreA", "swapBox" : "swapsA", "mappings" : ["leftMapping"]},
-    { "gameBox" : "gameB", "scoreBox" : "scoreB", "swapBox" : "swapsB","mappings" : ["rightMapping"]}
+  "tetris": [
+    {
+      "gameBox": "gameA",
+      "scoreBox": "scoreA",
+      "swapBox": "swapsA",
+      "mappings": ["leftMapping"]
+    },
+    {
+      "gameBox": "gameB",
+      "scoreBox": "scoreB",
+      "swapBox": "swapsB",
+      "mappings": ["rightMapping"]
+    }
   ],
-  "message" : "Try to stay alive !"
+  "message": "Try to stay alive !"
 }

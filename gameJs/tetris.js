@@ -9,11 +9,11 @@ function Tetris(grid, cursors, stats) {
     this.stats = stats;
     this.score = 0;
     this.cursor = [];
-    if(cursors === undefined) {
+    if (cursors === undefined) {
         cursors = 1;
     }
-    for(var i = 0; i < cursors; i+= 1){
-        this.cursor.push({x:2+i*2, y:CONFIG.hiddenRowCount});
+    for (var i = 0; i < cursors; i += 1) {
+        this.cursor.push({x: 2 + i * 2, y: CONFIG.hiddenRowCount});
     }
 
     this.swapCount = 0;
@@ -35,7 +35,7 @@ Tetris.prototype.OneTick = function (kb) {
 
     //random events
     this.tics += 1;
-    if(CONFIG.fallPeriod !== 0 && this.tics % CONFIG.fallPeriod === 0){
+    if (CONFIG.fallPeriod !== 0 && this.tics % CONFIG.fallPeriod === 0) {
         this.RandomFall();
     }
 
@@ -46,22 +46,22 @@ Tetris.prototype.OneTick = function (kb) {
     this.groundSpeed += CONFIG.groundAccelerationPerTic;
     this.baseGroundSpeed += CONFIG.groundAccelerationPerTic;
 
-    if(this.groundPos >= CONFIG.pixelPerBox ){
+    if (this.groundPos >= CONFIG.pixelPerBox) {
         this.groundPos -= CONFIG.pixelPerBox;
         this.grid.AddNewLine();
-        for(var i = 0; i < this.cursor.length; i+=1) {
+        for (var i = 0; i < this.cursor.length; i += 1) {
             this.cursor[i].y += 1;
         }
         this.groundSpeed = this.baseGroundSpeed;
     }
 };
 
-Tetris.prototype.GetMaxFixed = function(){
+Tetris.prototype.GetMaxFixed = function () {
     "use strict";
     return this.grid.GetMaxFixed();
 };
 
-Tetris.prototype.IsMoving = function(){
+Tetris.prototype.IsMoving = function () {
     "use strict";
     return this.grid.IsMoving();
 };
@@ -77,27 +77,27 @@ Tetris.prototype.GetSwaps = function () {
 };
 
 
-function GetIntBetween(min, max){
+function GetIntBetween(min, max) {
     "use strict";
-    return Math.floor(Math.random()*(max - min + 1)) + min;
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-Tetris.prototype.RandomFall = function(){
+Tetris.prototype.RandomFall = function () {
     "use strict";
     var size = 3;
     var start = GetIntBetween(0, CONFIG.columnCount - size);
-    for(var i = start; i < start + size; i += 1){
+    for (var i = start; i < start + size; i += 1) {
         this.grid.NewBlockFall(i);
     }
 };
 
-Tetris.prototype.HandleUserInput = function(kb) {
+Tetris.prototype.HandleUserInput = function (kb) {
     "use strict";
 
-    for(var i = 0; i < this.keyBoardMappings.length; i += 1) {
+    for (var i = 0; i < this.keyBoardMappings.length; i += 1) {
         var cur = this.cursor[i % this.cursor.length];
         if (kb.pressed(this.keyBoardMappings[i].swap)) {
-            if(this.grid.Swap(cur.x, cur.y)){
+            if (this.grid.Swap(cur.x, cur.y)) {
                 this.swapCount += 1;
             }
         }

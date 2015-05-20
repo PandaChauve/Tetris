@@ -1,12 +1,20 @@
 {
   "grid": "",
   "config": "sandbox",
-  "tetris" :  [
-    { "gameBox" : "game", "scoreBox" : "score", "swapBox" : "swaps", "mappings" : ["leftMapping", "rightMapping"]}
+  "tetris": [
+    {
+      "gameBox": "game",
+      "scoreBox": "score",
+      "swapBox": "swaps",
+      "mappings": [
+        "leftMapping",
+        "rightMapping"
+      ]
+    }
   ],
-  "victory" : {
-    "score" : 50
+  "victory": {
+    "score": 50
   },
-  "message" : "Take your time to score 50 points",
-  "next" : "campaign/arcade/arcade_2"
+  "message": "Take your time to score 50 points",
+  "next": "campaign/arcade/arcade_2"
 }

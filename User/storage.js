@@ -3,34 +3,34 @@
  */
 
 //one day i'll do the db accès from here
-function UserStorage(){
+function UserStorage() {
     "use strict";
 
 }
 
-UserStorage.GetStorage = function(){
+UserStorage.GetStorage = function () {
     "use strict";
     return new UserStorage();
 };
 
 
-UserStorage.prototype.Get = function(key){
+UserStorage.prototype.Get = function (key) {
     "use strict";
     var val = localStorage.getItem(key);
-    if(val === null || val === undefined) {
+    if (val === null || val === undefined) {
         return null;
     }
 
-    try{
+    try {
         return JSON.parse(val);
     }
-    catch(e){
+    catch (e) {
         console.log(e);
     }
     return null;
 };
 
-UserStorage.prototype.Set = function(key, value){
+UserStorage.prototype.Set = function (key, value) {
     "use strict";
-    localStorage.setItem(key,JSON.stringify(value));
+    localStorage.setItem(key, JSON.stringify(value));
 };

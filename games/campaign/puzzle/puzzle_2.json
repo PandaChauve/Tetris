@@ -1,11 +1,19 @@
 {
   "grid": "test",
   "config": "fixed",
-  "tetris" :  [
-    { "gameBox" : "game", "scoreBox" : "score", "swapBox" : "swaps", "mappings" : ["leftMapping", "rightMapping"]}
+  "tetris": [
+    {
+      "gameBox": "game",
+      "scoreBox": "score",
+      "swapBox": "swaps",
+      "mappings": [
+        "leftMapping",
+        "rightMapping"
+      ]
+    }
   ],
-  "victory" : {
-    "score" : 48
+  "victory": {
+    "score": 48
   },
-  "message" : "Try to get 48 points !"
+  "message": "Try to get 48 points !"
 }

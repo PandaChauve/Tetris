@@ -2,7 +2,7 @@
  * Created by panda on 28/04/2015.
  */
 
-function UserStats(){
+function UserStats() {
     "use strict";
     this.points = {};
     this.timesLow = {}; //some times you want to go fast
@@ -11,59 +11,59 @@ function UserStats(){
     this.totalGameStats = {};
 }
 
-UserStats.prototype.SetMaxStat = function(score, map ,stat){
+UserStats.prototype.SetMaxStat = function (score, map, stat) {
     "use strict";
-    if(!this[stat].hasOwnProperty(map)){
-        this[stat][map] = [score,0,0,0,0];
+    if (!this[stat].hasOwnProperty(map)) {
+        this[stat][map] = [score, 0, 0, 0, 0];
     }
-    else{
-        for(var i = 0; i < this[stat][map].length; i+=1){
-            if(score >= this[stat][map][i]){
-                this[stat][map].splice(i,0,score);
-                this[stat][map].splice(this[stat][map].length-1,1);
+    else {
+        for (var i = 0; i < this[stat][map].length; i += 1) {
+            if (score >= this[stat][map][i]) {
+                this[stat][map].splice(i, 0, score);
+                this[stat][map].splice(this[stat][map].length - 1, 1);
                 break;
             }
         }
     }
 
     var store = UserStorage.GetStorage();
-    store.Set("UserStats_"+stat, this[stat]);
+    store.Set("UserStats_" + stat, this[stat]);
 };
 
-UserStats.prototype.SetMinStat = function(score, map ,stat){
+UserStats.prototype.SetMinStat = function (score, map, stat) {
     "use strict";
-    if(!this[stat].hasOwnProperty(map)){
-        this[stat][map] = [score,-1,-1,-1,-1];
+    if (!this[stat].hasOwnProperty(map)) {
+        this[stat][map] = [score, -1, -1, -1, -1];
     }
-    else{
-        for(var i = 0; i < this[stat][map].length; i+=1){
-            if(score <= this[stat][map][i] || this[stat][map][i] === -1){
-                this[stat][map].splice(i,0,score);
-                this[stat][map].splice(this[stat][map].length-1,1);
+    else {
+        for (var i = 0; i < this[stat][map].length; i += 1) {
+            if (score <= this[stat][map][i] || this[stat][map][i] === -1) {
+                this[stat][map].splice(i, 0, score);
+                this[stat][map].splice(this[stat][map].length - 1, 1);
                 break;
             }
         }
     }
 
     var store = UserStorage.GetStorage();
-    store.Set("UserStats_"+stat, this[stat]);
+    store.Set("UserStats_" + stat, this[stat]);
 };
 
-UserStats.prototype.AddGame = function(game, map){
+UserStats.prototype.AddGame = function (game, map) {
     "use strict";
     var store = UserStorage.GetStorage();
-    if(!this.bestGameStats.hasOwnProperty(map)){
+    if (!this.bestGameStats.hasOwnProperty(map)) {
         this.bestGameStats[map] = game;
     }
-    else{
+    else {
         GameStats.KeepBest(this.bestGameStats[map], game);
     }
     store.Set("UserStats_bestGameStats", this.bestGameStats);
 
-    if(!this.totalGameStats.hasOwnProperty(map)){
+    if (!this.totalGameStats.hasOwnProperty(map)) {
         this.totalGameStats[map] = game;
     }
-    else{
+    else {
         GameStats.Append(this.totalGameStats[map], game);
     }
     store.Set("UserStats_totalGameStats", this.totalGameStats);
@@ -74,20 +74,18 @@ UserStats.prototype.AddGame = function(game, map){
 };
 
 
-UserStats.prototype.GetBestGameStats = function(map) {
+UserStats.prototype.GetBestGameStats = function (map) {
     "use strict";
-    if(this.bestGameStats.hasOwnProperty(map))
-    {
+    if (this.bestGameStats.hasOwnProperty(map)) {
         return this.bestGameStats[map];
     }
     var ret = new GameStats(map);
     return ret;
 };
 
-UserStats.prototype.GetTotalGameStats = function(map) {
+UserStats.prototype.GetTotalGameStats = function (map) {
     "use strict";
-    if(this.totalGameStats.hasOwnProperty(map))
-    {
+    if (this.totalGameStats.hasOwnProperty(map)) {
         return this.totalGameStats[map];
     }
     var ret = new GameStats(map);
@@ -95,34 +93,31 @@ UserStats.prototype.GetTotalGameStats = function(map) {
 };
 
 
-UserStats.prototype.GetHighScore = function(map) {
+UserStats.prototype.GetHighScore = function (map) {
     "use strict";
-    if(this.points.hasOwnProperty(map))
-    {
+    if (this.points.hasOwnProperty(map)) {
         return this.points[map];
     }
-    return [0,0,0,0,0];
+    return [0, 0, 0, 0, 0];
 };
 
-UserStats.prototype.GetMinTime = function(map) {
+UserStats.prototype.GetMinTime = function (map) {
     "use strict";
-    if(this.timesLow.hasOwnProperty(map))
-    {
+    if (this.timesLow.hasOwnProperty(map)) {
         return this.timesLow[map];
     }
-    return [-1,-1,-1,-1,-1];
+    return [-1, -1, -1, -1, -1];
 };
 
-UserStats.prototype.GetMaxTime = function(map) {
+UserStats.prototype.GetMaxTime = function (map) {
     "use strict";
-    if(this.timesHigh.hasOwnProperty(map))
-    {
+    if (this.timesHigh.hasOwnProperty(map)) {
         return this.timesHigh[map];
     }
-    return [0,0,0,0,0];
+    return [0, 0, 0, 0, 0];
 };
 
-UserStats.GetUserStats = function(){
+UserStats.GetUserStats = function () {
     "use strict";
     var store = UserStorage.GetStorage();
     var score = store.Get("UserStats_points"); //will only return flat data
@@ -131,19 +126,19 @@ UserStats.GetUserStats = function(){
     var bestGameStats = store.Get("UserStats_bestGameStats"); //will only return flat data
     var totalGameStats = store.Get("UserStats_totalGameStats"); //will only return flat data
     var ret = new UserStats();
-    if(score !== null) {
+    if (score !== null) {
         ret.points = score;
     }
-    if(timesLow !== null){
+    if (timesLow !== null) {
         ret.timesLow = timesLow;
     }
-    if(timesHigh !== null){
+    if (timesHigh !== null) {
         ret.timesHigh = timesHigh;
     }
-    if(bestGameStats !== null){
+    if (bestGameStats !== null) {
         ret.bestGameStats = bestGameStats;
     }
-    if(totalGameStats !== null){
+    if (totalGameStats !== null) {
         ret.totalGameStats = totalGameStats;
     }
     return ret;

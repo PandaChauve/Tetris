@@ -2,32 +2,32 @@
  * Created by panda on 11/05/2015.
  */
 
-function AchievementsState(){
+function AchievementsState() {
     "use strict";
     var store = UserStorage.GetStorage();
     this.notif = new Notifications();
     this.container = store.Get("UserAchievements") || [];
-    for(var i = this.container.length; i < AchievementsState.List.enumSize; i+= 1){
+    for (var i = this.container.length; i < AchievementsState.List.enumSize; i += 1) {
         this.container[i] = false;
     }
 }
 
-AchievementsState.prototype.IsWon = function(key){
+AchievementsState.prototype.IsWon = function (key) {
     "use strict";
     return this.container[key];
 };
 
-AchievementsState.prototype.check = function(game, userStats, gameName){
+AchievementsState.prototype.check = function (game, userStats, gameName) {
     "use strict";
-    for(var i = 0; i < AchievementsState.List.enumSize; i+= 1){
+    for (var i = 0; i < AchievementsState.List.enumSize; i += 1) {
         this.checkIndividual(i, game, userStats, gameName);
     }
     var store = UserStorage.GetStorage();
     store.Set("UserAchievements", this.container);
 };
-AchievementsState.prototype.keyToScore = function(key){
+AchievementsState.prototype.keyToScore = function (key) {
     "use strict";
-    switch(key) {
+    switch (key) {
         case AchievementsState.List.Beginner :
             return 10;
         case AchievementsState.List.Expert :
@@ -42,10 +42,10 @@ AchievementsState.prototype.keyToScore = function(key){
     throw "What are you doing here ?";
 };
 
-AchievementsState.prototype.checkMultiLines = function(key, game){
+AchievementsState.prototype.checkMultiLines = function (key, game) {
     "use strict";
     var size = 0;
-    switch(key){
+    switch (key) {
         case AchievementsState.List.Ambidextrous :
             size = 1;
             break;
@@ -58,32 +58,32 @@ AchievementsState.prototype.checkMultiLines = function(key, game){
         default:
             throw "What are you doing here ?";
     }
-    for(;size < game.multilines.length; size +=1){
-        if(game.multilines[size]){
+    for (; size < game.multilines.length; size += 1) {
+        if (game.multilines[size]) {
             return true;
         }
     }
     return false;
 };
 
-AchievementsState.prototype.checkIndividual = function(key, game, userStats, gameName){
+AchievementsState.prototype.checkIndividual = function (key, game, userStats, gameName) {
     "use strict";
     //already done
-    if(this.container[key]){
+    if (this.container[key]) {
         return;
     }
 
-    switch(key){
+    switch (key) {
         case AchievementsState.List.Beginner :
         case AchievementsState.List.Expert :
         case AchievementsState.List.Master :
         case AchievementsState.List.God :
-            if(gameName === "classic"){
+            if (gameName === "classic") {
                 this.container[key] = game.score >= this.keyToScore(key);
             }
             break;
         case AchievementsState.List.Cheater :
-            if(gameName === "sandbox"){
+            if (gameName === "sandbox") {
                 this.container[key] = game.score >= this.keyToScore(key);
             }
             break;
@@ -93,11 +93,11 @@ AchievementsState.prototype.checkIndividual = function(key, game, userStats, gam
             this.container[key] = this.checkMultiLines(key, game);
             break;
         case AchievementsState.List.Stubborn :
-            this.container[key] = userStats.GetTotalGameStats(gameName).time > 60*60*30; //30min
+            this.container[key] = userStats.GetTotalGameStats(gameName).time > 60 * 60 * 30; //30min
             break;
         case AchievementsState.List.BiggerIsBetter :
-            for(var size = 3;size < game.lineSizes.length; size +=1){
-                if(game.lineSizes[size]){
+            for (var size = 3; size < game.lineSizes.length; size += 1) {
+                if (game.lineSizes[size]) {
                     this.container[key] = true;
                     break;
                 }
@@ -106,30 +106,30 @@ AchievementsState.prototype.checkIndividual = function(key, game, userStats, gam
     }
 
     //new one => notify !
-    if(this.container[key]){
-        this.notif.notify("Gratz you unlocked : "+AchievementsState.List.GetName(key));
+    if (this.container[key]) {
+        this.notif.notify("Gratz you unlocked : " + AchievementsState.List.GetName(key));
     }
 };
 
 AchievementsState.List = {
-    Beginner : 0,
-    Expert : 1,
-    Master : 2,
-    God : 3,
-    Cheater : 4,
-    Ambidextrous : 5,
-    Psychics : 6,
-    Sorcerer : 7,
-    Stubborn : 8,
-    BiggerIsBetter : 9,
-    Nostalgic : 10, //FIXME campaign
-    enumSize : 11
+    Beginner: 0,
+    Expert: 1,
+    Master: 2,
+    God: 3,
+    Cheater: 4,
+    Ambidextrous: 5,
+    Psychics: 6,
+    Sorcerer: 7,
+    Stubborn: 8,
+    BiggerIsBetter: 9,
+    Nostalgic: 10, //FIXME campaign
+    enumSize: 11
 };
 
-AchievementsState.List.GetName = function(key){
+AchievementsState.List.GetName = function (key) {
     "use strict";
     for (var name in AchievementsState.List) {
-        if (AchievementsState.List[name] === key){
+        if (AchievementsState.List[name] === key) {
             return name;
         }
     }
@@ -137,10 +137,10 @@ AchievementsState.List.GetName = function(key){
 };
 
 
-AchievementsState.List.GetDescription = function(key){
+AchievementsState.List.GetDescription = function (key) {
     "use strict";
 
-    switch(key){
+    switch (key) {
         case AchievementsState.List.Beginner :
             return "Get 10 points in classic";
         case AchievementsState.List.Expert :

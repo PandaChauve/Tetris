@@ -1,8 +1,16 @@
 {
   "grid": "",
   "config": "sandbox",
-  "tetris" :  [
-    { "gameBox" : "game", "scoreBox" : "score", "swapBox" : "swaps", "mappings" : ["leftMapping", "rightMapping"]}
+  "tetris": [
+    {
+      "gameBox": "game",
+      "scoreBox": "score",
+      "swapBox": "swaps",
+      "mappings": [
+        "leftMapping",
+        "rightMapping"
+      ]
+    }
   ],
-  "message" : "Enjoy you work as a combo maker"
+  "message": "Enjoy you work as a combo maker"
 }

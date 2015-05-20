@@ -12,7 +12,7 @@ function Block() {
     this.id = -1;
 }
 
-Block.prototype.GetCopy = function(){
+Block.prototype.GetCopy = function () {
     "use strict";
     var ret = new Block();
     ret.type = this.type;
@@ -25,7 +25,7 @@ Block.prototype.GetCopy = function(){
 };
 
 
-Block.prototype.LoadFrom = function(cpy){
+Block.prototype.LoadFrom = function (cpy) {
     "use strict";
     this.type = cpy.type;
     this.group = cpy.group;
@@ -35,38 +35,37 @@ Block.prototype.LoadFrom = function(cpy){
     this.id = cpy.id;
 };
 
-Block.prototype.SetState = function(state){
+Block.prototype.SetState = function (state) {
     "use strict";
     this.state = state;
     this.animationState = 0;
 };
 
 Block.EState = {
-    Blocked : 1,
-    Falling : 2,
-    Disappearing : 3,
-    SwappedLeft : 4,
-    SwappedRight : 5
+    Blocked: 1,
+    Falling: 2,
+    Disappearing: 3,
+    SwappedLeft: 4,
+    SwappedRight: 5
 };
 
 Block.EType = {
-    Purple : 0,
-    Red : 1,
-    Green : 2,
-    Blue : 3,
-    Grey : 4,
-    Orange : 5,
-    PlaceHolder : 6,
-    Random : function() {
+    Purple: 0,
+    Red: 1,
+    Green: 2,
+    Blue: 3,
+    Grey: 4,
+    Orange: 5,
+    PlaceHolder: 6,
+    Random: function () {
         "use strict";
         return Math.floor(Math.random() * Block.EType.PlaceHolder);
     }
 };
 
-Block.prototype.GetHexColor = function()
-{
+Block.prototype.GetHexColor = function () {
     "use strict";
-    switch(this.type){
+    switch (this.type) {
         case Block.EType.Blue:
             return 0x000090;
         case Block.EType.Green:

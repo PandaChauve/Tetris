@@ -1,58 +1,66 @@
 html {
     overflow-y: scroll;
 }
+
 .centralGame {
     width: 950px;
     margin: auto;
 }
-.sideGame{
-    width:810px;
-    float:right;
+
+.sideGame {
+    width: 810px;
+    float: right;
     margin: auto;
-    text-align:left;
+    text-align: left;
 }
 
 .gameHolder {
-    text-align:center;
-    min-height:600px;
+    text-align: center;
+    min-height: 600px;
 }
 
 #control {
-    text-align:center;
+    text-align: center;
 }
-#control .btn-default{
-    width:60px;
+
+#control .btn-default {
+    width: 60px;
     height: 60px;
-    margin:10px;
+    margin: 10px;
 }
-#control .btn:focus {outline:0;}
+
+#control .btn:focus {
+    outline: 0;
+}
 
 .gameDetails {
     font-family: 'Architects Daughter', cursive;
     background: #000000;
     border: 1px white solid;
-max-width:300px;
-    height:500px;
-    margin:10px auto;
+    max-width: 300px;
+    height: 500px;
+    margin: 10px auto;
 }
-canvas{
-    border:1px white solid;
+
+canvas {
+    border: 1px white solid;
 }
 
 .gameDetailsElement h3 {
     font-size: 2em;
     margin: 10px 20px 0px;
     font-family: 'Architects Daughter', cursive;
-    clear:both;
+    clear: both;
 
 }
+
 .gameDetailsElement span {
     font-size: 3em;
     font-family: monospace;
-    margin-right:15px;
-    margin-bottom:15px;
-    text-align:right;
-    float:right;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    text-align: right;
+    float: right;
 }
 
 #rules {
@@ -61,51 +69,51 @@ canvas{
 }
 
 #rules ul {
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
 }
 
 #rules li {
     list-style-type: none;
-    margin:2px 10px;
-    padding:0;
+    margin: 2px 10px;
+    padding: 0;
     text-align: right;
 }
 
-
-.notification{
-    display:none;
-    width:250px;
+.notification {
+    display: none;
+    width: 250px;
     margin: 10px auto;
     border: 1px solid white;
-    height:60px;
-    padding:10px;
+    height: 60px;
+    padding: 10px;
     background: black;
     opacity: 0.8;
 }
-#notificationZone{
-    position:absolute;
-    bottom:0;
-    width:99%;
-    margin:0;
-    padding:0;
-}
-.cube{
-    height:150px;
-    line-height:150px;
+
+#notificationZone {
+    position: absolute;
+    bottom: 0;
+    width: 99%;
+    margin: 0;
+    padding: 0;
 }
 
-.circle
-{
-    height:100px;
-    line-height:100px;
-    width:100px;
-    margin:auto;
-    border-radius:50%;
-    color:#fff;
-    text-align:center;
-    background:#000;
-    font-size:30px;
+.cube {
+    height: 150px;
+    line-height: 150px;
+}
+
+.circle {
+    height: 100px;
+    line-height: 100px;
+    width: 100px;
+    margin: auto;
+    border-radius: 50%;
+    color: #fff;
+    text-align: center;
+    background: #000;
+    font-size: 30px;
     background-image: -webkit-linear-gradient(#020202, #101112 40%, #191b1d);
     background-image: -o-linear-gradient(#020202, #101112 40%, #191b1d);
     background-image: -webkit-gradient(linear, left top, left bottom, from(#020202), color-stop(40%, #101112), to(#191b1d));
@@ -114,5 +122,5 @@ canvas{
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff020202', endColorstr='#ff191b1d', GradientType=0);
     -webkit-filter: none;
     filter: none;
-    border:2px solid black;
+    border: 2px solid black;
 }
