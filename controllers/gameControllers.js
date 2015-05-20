@@ -153,6 +153,7 @@ gameControllers.controller('ModalInstanceCtrl', function ($scope, $modalInstance
         ret.push({name:"Time", value:TimeFromTics(stats.time), best:TimeFromTics(bg.time), sum:TimeFromTics(tg.time), mean: GetMean(tg.time, tg.gameCount, TimeFromTics)});
         ret.push({name:"Blocks", value:stats.blockDestroyed, best:bg.blockDestroyed, sum:tg.blockDestroyed, mean: GetMean(tg.blockDestroyed, tg.gameCount)});
         ret.push({name:"Swaps", value:stats.swapCount, best:bg.swapCount, sum:tg.swapCount, mean: GetMean(tg.swapCount, tg.gameCount)});
+        ret.push({name:"Efficiency", value:(stats.score/stats.swapCount).toFixed(2), best: "/", sum:"/", mean: (tg.score/tg.swapCount).toFixed(2)});
         return ret;
     })();
 

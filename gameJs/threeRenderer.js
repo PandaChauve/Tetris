@@ -72,8 +72,8 @@ ThreeRenderer.prototype.CreateScene = function () {
 
 ThreeRenderer.prototype.CreateCamera = function (){
     "use strict";
-    var camera = new THREE.PerspectiveCamera( 75, 0.75, 0.3, 1000 );
-    camera.position.z = 430;
+    var camera = new THREE.PerspectiveCamera( 75, 420/600, 0.3, 1000 );
+    camera.position.z = 450;
     camera.position.x = -27;
     camera.position.y = 410;
     return camera;
@@ -83,7 +83,7 @@ ThreeRenderer.prototype.CreateRenderer = function (){
     "use strict";
     var renderer = new THREE.WebGLRenderer({antialias:true});
     renderer.setClearColor(0x000000);
-    renderer.setSize( 400, 600 );
+    renderer.setSize( 420, 600 );
     renderer.shadowMapEnabled = true;
     renderer.shadowMapSoft = true;
     return renderer;
