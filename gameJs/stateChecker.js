@@ -85,7 +85,7 @@ ScoreChecker.prototype.Check = function (tetris) {
 
 
 function BlockChecker(val) {
-    "use strict";
+    "use strict"; 
     if (val === 0) {
         $("#rules ul").append($("<li class='successCond'>Destroy each block</li>"));
     } else {
