@@ -1,0 +1,57 @@
+<component name="libraryTable">
+  <library name="Generated files" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/js/helpers.min.js" />
+        <item url="file://$PROJECT_DIR$/Resources/des.min.js" />
+        <item url="file://$PROJECT_DIR$/User/achievements.min.js" />
+        <item url="file://$PROJECT_DIR$/User/gameStats.min.js" />
+        <item url="file://$PROJECT_DIR$/User/storage.min.js" />
+        <item url="file://$PROJECT_DIR$/User/userStats.min.js" />
+        <item url="file://$PROJECT_DIR$/angularApp.min.js" />
+        <item url="file://$PROJECT_DIR$/guiJs/menuConf.min.js" />
+        <item url="file://$PROJECT_DIR$/guiJs/notifications.min.js" />
+        <item url="file://$PROJECT_DIR$/concatenated.min.js" />
+        <item url="file://$PROJECT_DIR$/concatenated.min.js" />
+        <item url="file://$PROJECT_DIR$/controllers/campaignControllers.min.js" />
+        <item url="file://$PROJECT_DIR$/controllers/statsControllers.min.js" />
+        <item url="file://$PROJECT_DIR$/gameJs/block.min.js" />
+        <item url="file://$PROJECT_DIR$/gameJs/constants.min.js" />
+        <item url="file://$PROJECT_DIR$/controllers/gameControllers.min.js" />
+        <item url="file://$PROJECT_DIR$/gameJs/game.min.js" />
+        <item url="file://$PROJECT_DIR$/gameJs/grid.min.js" />
+        <item url="file://$PROJECT_DIR$/gameJs/gridEvaluator.min.js" />
+        <item url="file://$PROJECT_DIR$/gameJs/stateChecker.min.js" />
+        <item url="file://$PROJECT_DIR$/gameJs/tetris.min.js" />
+        <item url="file://$PROJECT_DIR$/gameJs/threeRenderer.min.js" />
+        <item url="file://$PROJECT_DIR$/gameJs/userInput.min.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/js/helpers.min.js" />
+      <root url="file://$PROJECT_DIR$/Resources/des.min.js" />
+      <root url="file://$PROJECT_DIR$/User/achievements.min.js" />
+      <root url="file://$PROJECT_DIR$/User/gameStats.min.js" />
+      <root url="file://$PROJECT_DIR$/User/storage.min.js" />
+      <root url="file://$PROJECT_DIR$/User/userStats.min.js" />
+      <root url="file://$PROJECT_DIR$/angularApp.min.js" />
+      <root url="file://$PROJECT_DIR$/guiJs/menuConf.min.js" />
+      <root url="file://$PROJECT_DIR$/guiJs/notifications.min.js" />
+      <root url="file://$PROJECT_DIR$/concatenated.min.js" />
+      <root url="file://$PROJECT_DIR$/concatenated.min.js" />
+      <root url="file://$PROJECT_DIR$/controllers/campaignControllers.min.js" />
+      <root url="file://$PROJECT_DIR$/controllers/statsControllers.min.js" />
+      <root url="file://$PROJECT_DIR$/gameJs/block.min.js" />
+      <root url="file://$PROJECT_DIR$/gameJs/constants.min.js" />
+      <root url="file://$PROJECT_DIR$/controllers/gameControllers.min.js" />
+      <root url="file://$PROJECT_DIR$/gameJs/game.min.js" />
+      <root url="file://$PROJECT_DIR$/gameJs/grid.min.js" />
+      <root url="file://$PROJECT_DIR$/gameJs/gridEvaluator.min.js" />
+      <root url="file://$PROJECT_DIR$/gameJs/stateChecker.min.js" />
+      <root url="file://$PROJECT_DIR$/gameJs/tetris.min.js" />
+      <root url="file://$PROJECT_DIR$/gameJs/threeRenderer.min.js" />
+      <root url="file://$PROJECT_DIR$/gameJs/userInput.min.js" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>

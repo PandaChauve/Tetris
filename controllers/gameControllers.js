@@ -76,7 +76,7 @@ gameControllers.controller('GameCtrl', ['$scope', '$http', '$route', '$routePara
                 gameName : function () {
                     return $scope.gameName;
                 },
-                stats : function(){
+                statistics : function(){
                     return stats;
                 }
             }
@@ -102,7 +102,7 @@ gameControllers.controller('GameCtrl', ['$scope', '$http', '$route', '$routePara
 // Please note that $modalInstance represents a modal window (instance) dependency.
 // It is not the same as the $modal service used above.
 
-gameControllers.controller('ModalInstanceCtrl', ['$scope', '$modalInstance', function ($scope, $modalInstance, won, gameName, stats) {
+gameControllers.controller('ModalInstanceCtrl', ['$scope', '$modalInstance', 'won', 'gameName', 'statistics', function ($scope, $modalInstance, won, gameName, statistics) {
     $scope.won = won;
     $scope.published = false;
     $scope.publish = function(){
@@ -126,7 +126,7 @@ gameControllers.controller('ModalInstanceCtrl', ['$scope', '$modalInstance', fun
         }
     };
 
-    $scope.continue = function () {
+    $scope.nextGame = function () {
         $modalInstance.close();
     };
 
