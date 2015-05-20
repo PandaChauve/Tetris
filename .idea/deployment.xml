@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" autoUpload="Always" promptOnRemoteOverwrite="CHECK_CONTENT" serverName="sylvain luthana" stopOnFirstError="true" preserveTimestamps="false" deleteMissingItems="true">
+    <serverData>
+      <paths name="sylvain luthana">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/www/sylvain/webstorm/Tetris" local="$PROJECT_DIR$" web="/webstorm/Tetris" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/controllers" />
+            <excludedPath local="true" path="$PROJECT_DIR$/gameJs" />
+            <excludedPath local="true" path="$PROJECT_DIR$/guiJs" />
+            <excludedPath local="true" path="$PROJECT_DIR$/js" />
+            <excludedPath local="true" path="$PROJECT_DIR$/User" />
+            <excludedPath local="true" path="$PROJECT_DIR$/concat.bat" />
+            <excludedPath local="true" path="$PROJECT_DIR$/angularApp.js" />
+            <excludedPath local="true" path="$PROJECT_DIR$/README.md" />
+            <excludedPath local="true" path="$PROJECT_DIR$/Tests" />
+            <excludedPath local="true" path="$PROJECT_DIR$/css" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myAutoUpload" value="ALWAYS" />
+  </component>
+</project>

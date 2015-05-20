@@ -29,7 +29,7 @@
     </properties>
     <CLASSES>
       <root url="file://$PROJECT_DIR$/js/helpers.min.js" />
-      <root url="file://$PROJECT_DIR$/Resources/des.min.js" />
+      <root url="file://$PROJECT_DIR$/js/des.min.js" />
       <root url="file://$PROJECT_DIR$/User/achievements.min.js" />
       <root url="file://$PROJECT_DIR$/User/gameStats.min.js" />
       <root url="file://$PROJECT_DIR$/User/storage.min.js" />

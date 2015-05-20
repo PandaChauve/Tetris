@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ProjectTasksOptions">
     <TaskOptions isEnabled="true">
-      <option name="arguments" value="$FileName$ -o $FileNameWithoutExtension$.min.css" />
+      <option name="arguments" value="$FileName$ -o ../$FileNameWithoutExtension$.min.css" />
       <option name="checkSyntaxErrors" value="false" />
       <option name="description" value="Compresses .css files" />
       <option name="exitCodeBehavior" value="ALWAYS" />
       <option name="fileExtension" value="css" />
       <option name="immediateSync" value="true" />
       <option name="name" value="YUI Compressor CSS" />
-      <option name="output" value="$FileNameWithoutExtension$.min.css" />
+      <option name="output" value="../$FileNameWithoutExtension$.min.css" />
       <option name="outputFilters">
         <array />
       </option>
