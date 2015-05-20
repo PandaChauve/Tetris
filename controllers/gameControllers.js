@@ -5,13 +5,13 @@ gameControllers.controller('GameCtrl', ['$scope', '$http', '$route', '$routePara
     "use strict";
     //FIXME directive too much in the controller
     $scope.gameName = $routeParams.name || "classic";
-    $scope.config = {};
+    $scope.confi = {};
     $scope.game = null;
-    $scope.config.splitScreen = $scope.gameName === "classicSplitScreen";
+    $scope.confi.splitScreen = $scope.gameName === "classicSplitScreen";
     $scope.load = function(){
-        $http.get("games/"+$scope.gameName+".json").success(function(json) {
+        $http.get("games/"+$scope.gameName+".json", { cache: false}).success(function(json) { //FIXME enable cache but i need to remove dom manipulations in jquery before
             $scope.useGameConfig(json);
-        }).error(function(data, status, headers, config) { console.log( status + " : " + data );});
+        }).error(function(data) { console.log(data);});
     };
     $scope.load();
     $scope.pause = {
@@ -27,9 +27,6 @@ gameControllers.controller('GameCtrl', ['$scope', '$http', '$route', '$routePara
         }
     });
     $scope.reset = function(){
-        for(var i = 0; i < $scope.game.config.tetris.length; i+= 1) {
-            $("#"+$scope.game.config.tetris[i].gameBox).html("<div class='gamePlaceHolder'></div>");
-        }
         $scope.game.Stop();
         $scope.game = new Game($scope.game.config, $scope.game.grid, $scope.endCallBack);
         $scope.game.Start();
@@ -49,10 +46,10 @@ gameControllers.controller('GameCtrl', ['$scope', '$http', '$route', '$routePara
             $scope.game = new Game(config, "", $scope.endCallBack);
             $scope.game.Start();
         } else {
-            $.getJSON("grids/"+config.grid+".json", function(json) {
+            $http.get("grids/"+config.grid+".json", { cache: false}).success(function(json) { //FIXME enable cache but i need to remove dom manipulations in jquery before
                 $scope.game = new Game(config, json, $scope.endCallBack);
                 $scope.game.Start();
-            }).fail(function(jqxhr, textStatus, error) {console.log( textStatus + " : " + error );});
+            }).error(function(error) {console.log(error );});
         }
     };
     $scope.endCallBack = function(finishedGame){
@@ -105,7 +102,7 @@ gameControllers.controller('GameCtrl', ['$scope', '$http', '$route', '$routePara
 // Please note that $modalInstance represents a modal window (instance) dependency.
 // It is not the same as the $modal service used above.
 
-gameControllers.controller('ModalInstanceCtrl', function ($scope, $modalInstance, won, gameName, stats) {
+gameControllers.controller('ModalInstanceCtrl', ['$scope', '$modalInstance', function ($scope, $modalInstance, won, gameName, stats) {
     $scope.won = won;
     $scope.published = false;
     $scope.publish = function(){
@@ -158,4 +155,4 @@ gameControllers.controller('ModalInstanceCtrl', function ($scope, $modalInstance
     })();
 
 
-});
+}]);

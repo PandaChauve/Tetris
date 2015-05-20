@@ -5,10 +5,10 @@
 
     <div class="row">
         <ul class="nav nav-pills ">
-            <li ng-repeat="type in scoreTypes" ng-class="{ active: isActive(type.type)}" style="width:100px; text-align:center">
+            <li ng-repeat="type in ::scoreTypes" ng-class="{ active: isActive(type.type)}" style="width:100px; text-align:center">
                 <a href=""
                    ng-click="activate(type.type)"
-                   data-toggle="pill">{{type.name}}</a>
+                   data-toggle="pill">{{::type.name}}</a>
             </li>
         </ul>
     </div>
@@ -23,9 +23,9 @@
             </thead>
             <tbody>
             <tr ng-repeat="line in scoreGridData" ng-class="{success:$index==0}">
-                <td>{{$index+1}}</td>
-                <td>{{line.name}}</td>
-                <td>{{line.score}}</td>
+                <td>{{::$index+1}}</td>
+                <td>{{::line.name}}</td>
+                <td>{{::line.score}}</td>
             </tr>
             </tbody>
         </table>

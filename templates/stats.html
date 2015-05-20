@@ -5,14 +5,14 @@
 
     <div class="row">
         <ul class="nav nav-pills nav-stacked col-md-2">
-            <li ng-repeat="map in data.maps" ng-class="{ active: isActive(map.name)}" ng-if="map.sum.gameCount > 0">
+            <li ng-repeat="map in ::data.maps" ng-class="{ active: isActive(map.name)}" ng-if="map.sum.gameCount > 0">
                 <a href=""
                    ng-click="activate(map.name)"
-                   data-toggle="pill">{{map.name}}</a>
+                   data-toggle="pill">{{::map.name}}</a>
             </li>
         </ul>
         <div class="tab-content col-md-10">
-            <div class="tab-pane" ng-repeat="map in data.maps" id="{{map.name}}"
+            <div class="tab-pane" ng-repeat="map in ::data.maps" id="{{map.name}}"
                  ng-class="{ active: isActive(map.name)}" style="text-align:center">
 
                 <div class="row">
@@ -21,7 +21,7 @@
                     </div>
                     <div class="col-md-9">
                         <h4>Total</h4>
-                        <div class="circle">{{map.sum.gameCount}}</div>
+                        <div class="circle">{{::map.sum.gameCount}}</div>
                     </div>
                 </div>
                 <div class="row">
@@ -30,15 +30,15 @@
                     </div>
                     <div class="col-md-3">
                         <h4>Best</h4>
-                        <div class="circle">{{map.best.score}}</div>
+                        <div class="circle">{{::map.best.score}}</div>
                     </div>
                     <div class="col-md-3">
                         <h4>Total</h4>
-                        <div class="circle">{{map.sum.score}}</div>
+                        <div class="circle">{{::map.sum.score}}</div>
                     </div>
                     <div class="col-md-3">
                         <h4>Mean</h4>
-                        <div class="circle">{{map.sum.score / map.sum.gameCount | number:0}}</div>
+                        <div class="circle">{{::(map.sum.score / map.sum.gameCount) | number:0}}</div>
                     </div>
                 </div>
                 <div class="row">
@@ -47,15 +47,15 @@
                     </div>
                     <div class="col-md-3">
                         <h4>Best</h4>
-                        <div class="circle" style="font-size:1.5em">{{map.best.time | ticToTime}}</div>
+                        <div class="circle" style="font-size:1.5em">{{::map.best.time | ticToTime}}</div>
                     </div>
                     <div class="col-md-3">
                         <h4>Total</h4>
-                        <div class="circle" style="font-size:1.5em">{{map.sum.time | ticToTime}}</div>
+                        <div class="circle" style="font-size:1.5em">{{::map.sum.time | ticToTime}}</div>
                     </div>
                     <div class="col-md-3">
                         <h4>Mean</h4>
-                        <div class="circle" style="font-size:1.5em">{{map.sum.time / map.sum.gameCount | ticToTime}}</div>
+                        <div class="circle" style="font-size:1.5em">{{::(map.sum.time / map.sum.gameCount) | ticToTime}}</div>
                     </div>
                 </div>
                 <div class="row">
@@ -65,17 +65,17 @@
                     <div class="col-md-3">
                         <h4>Best</h4>
 
-                        <div class="circle">{{map.best.blockDestroyed}}</div>
+                        <div class="circle">{{::map.best.blockDestroyed}}</div>
                     </div>
                     <div class="col-md-3">
                         <h4>Total</h4>
 
-                        <div class="circle">{{map.sum.blockDestroyed}}</div>
+                        <div class="circle">{{::map.sum.blockDestroyed}}</div>
                     </div>
                     <div class="col-md-3">
                         <h4>Mean</h4>
 
-                        <div class="circle">{{map.sum.blockDestroyed / map.sum.gameCount | number:0}}</div>
+                        <div class="circle">{{::(map.sum.blockDestroyed / map.sum.gameCount) | number:0}}</div>
                     </div>
                 </div>
                 <div class="row">
@@ -84,15 +84,15 @@
                     </div>
                     <div class="col-md-3">
                         <h4>Best</h4>
-                        <div class="circle">{{map.best.swapCount}}</div>
+                        <div class="circle">{{::map.best.swapCount}}</div>
                     </div>
                     <div class="col-md-3">
                         <h4>Total</h4>
-                        <div class="circle">{{map.sum.swapCount}}</div>
+                        <div class="circle">{{::map.sum.swapCount}}</div>
                     </div>
                     <div class="col-md-3">
                         <h4>Mean</h4>
-                        <div class="circle">{{map.sum.swapCount / map.sum.gameCount | number:0}}</div>
+                        <div class="circle">{{::(map.sum.swapCount / map.sum.gameCount) | number:0}}</div>
                     </div>
                 </div>
 
@@ -102,11 +102,11 @@
                     </div>
                     <div class="col-md-3">
                         <h4>Blocks destroyed</h4>
-                        <div class="circle">{{map.sum.blockDestroyed / map.sum.swapCount| number:2}}</div>
+                        <div class="circle">{{::(map.sum.blockDestroyed / map.sum.swapCount)| number:2}}</div>
                     </div>
                     <div class="col-md-3">
                         <h4>Points (Efficiency)</h4>
-                        <div class="circle">{{map.sum.score / map.sum.swapCount| number:2}}</div>
+                        <div class="circle">{{::(map.sum.score / map.sum.swapCount)| number:2}}</div>
                     </div>
                 </div>
 
@@ -115,8 +115,8 @@
                         <h3 class="cube">Lines length</h3>
                     </div>
                     <div class="col-md-3" ng-repeat="count in map.sum.lineSizes track by $index" ng-if="isPositive(count)"><!-- do not filter i'm using index-->
-                        <h4>{{$index+3}} blocks</h4>
-                        <div class="circle">{{count}}</div>
+                        <h4>{{::$index+3}} blocks</h4>
+                        <div class="circle">{{::count}}</div>
                     </div>
                 </div>
 
@@ -125,8 +125,8 @@
                         <h3 class="cube">Simultaneous lines</h3>
                     </div>
                     <div class="col-md-3" ng-repeat="count in map.sum.multilines track by $index" ng-if="isPositive(count)">
-                        <h4>{{$index+2}} lines</h4>
-                        <div class="circle">{{count}}</div>
+                        <h4>{{::$index+2}} lines</h4>
+                        <div class="circle">{{::count}}</div>
                     </div>
                 </div>
             </div>

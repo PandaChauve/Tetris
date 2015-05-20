@@ -8,7 +8,7 @@
         <tr><th></th><th>Current</th><th>Best</th><th>Total (mean)</th></tr>
         </thead>
         <tbody>
-        <tr ng-repeat="stat in ::stats"><td>{{stat.name}}</td><td>{{stat.value}}</td><td>{{stat.best}}</td><td>{{stat.sum}} ({{stat.mean}})</td></tr>
+        <tr ng-repeat="stat in ::stats"><td>{{::stat.name}}</td><td>{{::stat.value}}</td><td>{{::stat.best}}</td><td>{{::stat.sum}} ({{::stat.mean}})</td></tr>
         </tbody>
     </table>
 </div>

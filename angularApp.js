@@ -5,12 +5,16 @@ var angularApp = angular.module('angularApp', [
     'ngRoute',
     'angularApp.controllers'
 ]);
-angularApp.controller('HeaderCtrl', function($scope, $location){
+angularApp.config(['$compileProvider', function ($compileProvider) {
+    $compileProvider.debugInfoEnabled(false);
+}]);
+
+angularApp.controller('HeaderCtrl', ['$scope', '$location', function($scope, $location){
     "use strict";
     $scope.isActive = function (viewLocation) {
         return viewLocation === $location.path();
     };
-});
+}]);
 
 angularApp.filter('ticToTime', function() {
     return TimeFromTics;

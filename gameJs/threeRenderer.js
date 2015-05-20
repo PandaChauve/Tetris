@@ -140,9 +140,10 @@ ThreeRenderer.prototype.LinkDom = function (container) {
     this.renderer.domElement.setAttribute('id', this.id);
     var node = $("#"+container+" .gamePlaceHolder");
     if (node.length === 0){
-        node = $("#"+container+" canvas");
+        throw container+"missing gameplaceHolder";
     }
-    node.replaceWith($(this.renderer.domElement));
+    node.empty();
+    node.append($(this.renderer.domElement));
 };
 
 ThreeRenderer.prototype.UnlinkDom = function () {

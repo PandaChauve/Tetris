@@ -1,58 +1,68 @@
-
 <div class="container" ng-if="!config.splitScreen">
+    0
     <div class="row">
         <div id="game" class="gameHolder col-lg-5 col-lg-push-3 col-md-push-4 col-md-8 col-sm-12 col-xs-12">
             <div class="gamePlaceHolder"></div>
         </div>
 
         <div id="control" class="col-lg-3 col-lg-pull-5 col-md-pull-8 col-md-4 col-sm-12 col-xs-12 ">
-            <br />
-            <br />
-            <button id="moveUp" type="button" class="btn btn-default">Up</button><br />
+            <br/>
+            <br/>
+            <button id="moveUp" type="button" class="btn btn-default">Up</button>
+            <br/>
             <button id="moveLeft" type="button" class="btn btn-default">Left</button>
             <button id="swapBtn" type="button" class="btn btn-default">Swap</button>
-            <button id="moveRight" type="button" class="btn btn-default">Right</button><br />
-            <button id="moveDown" type="button" class="btn btn-default">Down</button><br /><br />
-            <br />
+            <button id="moveRight" type="button" class="btn btn-default">Right</button>
+            <br/>
+            <button id="moveDown" type="button" class="btn btn-default">Down</button>
+            <br/><br/>
+            <br/>
+
             <div id="gameMenu"> <!--FIXME why does ng-click create a focus effect on buttons and not on div ? -->
                 <div type="button" class="btn btn-danger" ng-click="reset()" style="width:80px">Retry</div>
-                <div type="button" class="btn btn-success" ng-click="pause.toggle()" style="width:80px"><span ng-if="!pause.active">Pause</span><span ng-if="pause.active">Play</span></div>
+                <div type="button" class="btn btn-success" ng-click="pause.toggle()" style="width:80px"><span
+                        ng-if="!pause.active">Pause</span><span ng-if="pause.active">Play</span></div>
             </div>
         </div>
 
         <div class=" col-lg-3 col-md-8 col-lg-push-0 col-md-push-4 col-sm-12 col-xs-12 ">
             <div class="gameDetails">
-            <div class="gameDetailsElement">
-                <h3>Score</h3>
-                <span id="score">0</span>
+                <div class="gameDetailsElement">
+                    <h3>Score</h3>
+                    <span id="score">0</span>
+                </div>
+                <div class="gameDetailsElement">
+                    <h3>Swaps</h3>
+                    <span id="swaps">0</span>
+                </div>
+                <div class="gameDetailsElement">
+                    <h3>Time</h3>
+                    <span id="time" class="timeBox"></span>
+                </div>
+                <div class="gameDetailsElement">
+                    <h3>Objectives</h3><br/>
+
+                    <div id="rules"></div>
+                </div>
             </div>
-            <div class="gameDetailsElement">
-                <h3>Swaps</h3>
-                <span id="swaps">0</span>
-            </div>
-            <div class="gameDetailsElement">
-                <h3>Time</h3>
-                <span id="time" class="timeBox"></span>
-            </div>
-            <div class="gameDetailsElement">
-                <h3>Objectives</h3><br />
-                <div id="rules"></div>
-            </div></div>
         </div>
     </div>
 </div>
 
+<div class="container" ng-if="config.splitScreen">
+    1
+    <div class="row">
+        <div class="sideGame col-md-6" >
+            <div id="gameB" class="gameHolder">
+                <div class="gamePlaceHolder"></div>
+            </div>
+        </div>
 
-<div class="sideGame" ng-if="config.splitScreen">
-    <div id="gameB" class="gameHolder">
-        <div class="gamePlaceHolder"></div>
+        <div class="sideGame col-md-6">
+            <div id="gameA" class="gameHolder">
+                <div class="gamePlaceHolder"></div>
+            </div>
+        </div>
     </div>
 </div>
-
-<div class="sideGame"  ng-if="config.splitScreen">
-    <div id="gameA" class="gameHolder">
-        <div class="gamePlaceHolder"></div>
-    </div>
-</div>
-
 <div id="notificationZone"></div>
