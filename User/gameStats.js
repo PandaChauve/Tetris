@@ -6,8 +6,8 @@ function GameStats() {
     this.score = 0;
     this.time = 0;
     this.blockDestroyed = 0;
-    this.multilines = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; //not sure of the required size
-    this.lineSizes = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];//... FIXME
+    this.multilines = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+    this.lineSizes = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
     this.gameCount = 0;
     this.swapCount = 0;
 }

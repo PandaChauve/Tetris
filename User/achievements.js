@@ -93,7 +93,7 @@ AchievementsState.prototype.checkIndividual = function (key, game, userStats, ga
             this.container[key] = this.checkMultiLines(key, game);
             break;
         case AchievementsState.List.Stubborn :
-            this.container[key] = userStats.GetTotalGameStats(gameName).time > 60 * 60 * 30; //30min
+            this.container[key] = userStats.GetTotalGameStats(gameName).time > TIC_PER_SEC * SEC_PER_MIN * 30; //30min
             break;
         case AchievementsState.List.BiggerIsBetter :
             for (var size = 3; size < game.lineSizes.length; size += 1) {

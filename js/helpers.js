@@ -15,9 +15,9 @@ function getQueryVariable(variable) {
 
 function TimeFromTics(totaTics) {
     "use strict";
-    var totalSec = Math.floor(totaTics / 60);
-    var minutes = Math.floor(totalSec / 60);
-    var seconds = totalSec % 60;
-    var tics = Math.floor((totaTics % 60 ) / 6);
+    var totalSec = Math.floor(totaTics / TIC_PER_SEC);
+    var minutes = Math.floor(totalSec / SEC_PER_MIN);
+    var seconds = totalSec % SEC_PER_MIN;
+    var tics = Math.floor((totaTics % TIC_PER_SEC ) / 6);
     return (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds < 10 ? "0" + seconds : seconds) + "." + tics;
 }

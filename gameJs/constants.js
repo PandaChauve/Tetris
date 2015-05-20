@@ -1,6 +1,8 @@
 /**
  * Created by panda on 10/04/2015.
  */
+var TIC_PER_SEC = 60;
+var SEC_PER_MIN = 60;
 
 function DefaultConfig() {
     "use strict";
@@ -24,7 +26,7 @@ function GetConfig(mode) {
     if (mode === "sandbox") {
         conf.groundSpeedPerTic = 0;
         conf.fallPeriod = 0;
-        conf.startRows = conf.displayedRowCount + conf.hiddenRowCount; //FIXME move it to grid loading ?
+        conf.startRows = conf.displayedRowCount + conf.hiddenRowCount;
         conf.groundAccelerationPerTic = 0;
     }
     else if (mode === "fixed") {

@@ -60,10 +60,10 @@ Game.prototype.Init = function () {
         this.visual[i].RenderTetris(this.tetris[i]); //first render before loop to get everything smooth
     }
 };
-
+//FIXME this function is a quickfix for duel
 Game.prototype.SplitScreenQuickFix = function () {
     "use strict";
-    if (this.tetris.length === 2) {//FIXME
+    if (this.tetris.length === 2) {
         while (this.tobefixed[0] < this.tetris[1].GetScore() / 3) {
             this.tobefixed[0] += 1;
             this.tetris[0].RandomFall();
@@ -105,7 +105,7 @@ Game.prototype.render = function (timestamp) {
     var i;
 
     if (this.start === null) {
-        this.start = timestamp - this.tics / 60 * 1000;
+        this.start = timestamp - this.tics / TIC_PER_SEC * 1000;
     }
     var progress = timestamp - this.start;
     $(".timeBox").html(TimeFromTics(this.tics));
@@ -113,7 +113,7 @@ Game.prototype.render = function (timestamp) {
 
     var continueGame = true;
     var count = 0;
-    while (this.tics < progress * 60 / 1000 && continueGame && count < 10) { //60 tics per sec FIXME magic number
+    while (this.tics < progress * TIC_PER_SEC / 1000 && continueGame && count < 10) {
         count += 1;
         this.tics += 1;
         for (i = 0; i < this.tetris.length; i += 1) {

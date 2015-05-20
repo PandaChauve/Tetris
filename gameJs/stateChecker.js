@@ -118,5 +118,5 @@ function TimeChecker(val) {
 
 TimeChecker.prototype.Check = function (tetris) {
     "use strict";
-    return tetris.tics / 60 > this.val;
+    return tetris.tics / TIC_PER_SEC > this.val;
 };

@@ -45,7 +45,7 @@ ThreeRenderer.prototype.CreateScene = function () {
         scene.add(this.cursor[i]);
     }
 
-    var geometry = new THREE.PlaneGeometry(1000, 400); //FIXME magic numbers
+    var geometry = new THREE.PlaneGeometry(1000, 400);
     //now try to get everything with transparent true above this plane or your going to cry :)
     var material = new THREE.MeshBasicMaterial({
         color: 0x000000,
