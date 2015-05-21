@@ -5,10 +5,9 @@
         <item url="file://$PROJECT_DIR$/js/helpers.min.js" />
         <item url="file://$PROJECT_DIR$/js/des.min.js" />
         <item url="file://$PROJECT_DIR$/User/achievements.min.js" />
-        <item url="file://$PROJECT_DIR$/js/ui-bootstrap-0.13.0.min.js" />
         <item url="file://$PROJECT_DIR$/User/gameStats.min.js" />
         <item url="file://$PROJECT_DIR$/User/storage.min.js" />
-        <item url="file://$PROJECT_DIR$/js/ui-bootstrap-0.13.0.min.min.js" />
+        <item url="file://$PROJECT_DIR$/Gruntfile.min.js" />
         <item url="file://$PROJECT_DIR$/User/userStats.min.js" />
         <item url="file://$PROJECT_DIR$/angularApp.min.js" />
         <item url="file://$PROJECT_DIR$/guiJs/notifications.min.js" />
@@ -20,6 +19,7 @@
         <item url="file://$PROJECT_DIR$/gameJs/game.min.js" />
         <item url="file://$PROJECT_DIR$/gameJs/grid.min.js" />
         <item url="file://$PROJECT_DIR$/gameJs/gridEvaluator.min.js" />
+        <item url="file://$PROJECT_DIR$/js/ui-bootstrap-0.13.0.min.js" />
         <item url="file://$PROJECT_DIR$/gameJs/stateChecker.min.js" />
         <item url="file://$PROJECT_DIR$/gameJs/tetris.min.js" />
         <item url="file://$PROJECT_DIR$/gameJs/threeRenderer.min.js" />
@@ -34,13 +34,13 @@
       <root url="file://$PROJECT_DIR$/js/stats.min.min.js" />
       <root url="file://$PROJECT_DIR$/guiJs/menuConf.min.js" />
       <root url="file://$PROJECT_DIR$/js/stats.min.min.js" />
+      <root url="file://$PROJECT_DIR$/js/ui-bootstrap-0.13.0.min.min.js" />
       <root url="file://$PROJECT_DIR$/js/helpers.min.js" />
       <root url="file://$PROJECT_DIR$/js/des.min.js" />
       <root url="file://$PROJECT_DIR$/User/achievements.min.js" />
-      <root url="file://$PROJECT_DIR$/js/ui-bootstrap-0.13.0.min.js" />
       <root url="file://$PROJECT_DIR$/User/gameStats.min.js" />
       <root url="file://$PROJECT_DIR$/User/storage.min.js" />
-      <root url="file://$PROJECT_DIR$/js/ui-bootstrap-0.13.0.min.min.js" />
+      <root url="file://$PROJECT_DIR$/Gruntfile.min.js" />
       <root url="file://$PROJECT_DIR$/User/userStats.min.js" />
       <root url="file://$PROJECT_DIR$/angularApp.min.js" />
       <root url="file://$PROJECT_DIR$/guiJs/notifications.min.js" />
@@ -52,6 +52,7 @@
       <root url="file://$PROJECT_DIR$/gameJs/game.min.js" />
       <root url="file://$PROJECT_DIR$/gameJs/grid.min.js" />
       <root url="file://$PROJECT_DIR$/gameJs/gridEvaluator.min.js" />
+      <root url="file://$PROJECT_DIR$/js/ui-bootstrap-0.13.0.min.js" />
       <root url="file://$PROJECT_DIR$/gameJs/stateChecker.min.js" />
       <root url="file://$PROJECT_DIR$/gameJs/tetris.min.js" />
       <root url="file://$PROJECT_DIR$/gameJs/threeRenderer.min.js" />

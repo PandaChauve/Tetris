@@ -120,7 +120,7 @@ gameControllers.controller('ModalInstanceCtrl', ['$scope', '$modalInstance', 'wo
             if (name) {
                 store.Set("UserName", name);
 
-                var ciphertext = stringToHex(des("wireshar", "yop" + stats.score, 1, 0)); //just for avoiding zfa on wireshark
+                var ciphertext = stringToHex(des("wireshar", "yop" + statistics.score, 1, 0)); //just for avoiding zfa on wireshark
                 $.get("http://sylvain.luthana.be/api.php?add&name=" + name + "&value=" + ciphertext + "&map=" + gameName);
             }
             else {

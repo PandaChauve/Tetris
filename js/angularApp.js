@@ -18,7 +18,7 @@ angularApp.controller('HeaderCtrl', ['$scope', '$location', function ($scope, $l
 angularApp.filter('ticToTime', function () {
     return TimeFromTics;
 });
-angularApp.directive('ngEnter', function ($document) {
+angularApp.directive('ngEnter', ['$document', function ($document) {
     return {
         scope: {
             ngEnter: "&"
@@ -33,7 +33,7 @@ angularApp.directive('ngEnter', function ($document) {
             $document.bind("keydown keypress", enterWatcher);
         }
     }
-});
+}]);
 
 angularApp.config(['$routeProvider', '$locationProvider',
         function ($routeProvider, $locationProvider) {
