@@ -1,65 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="20d21939-c8e4-49c3-84d6-1c3927d59de7" name="Default" comment="fixing popup">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Gruntfile.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/min/achievements.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/min/angularApp.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/min/block.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/min/campaignControllers.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/min/constants.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/min/des.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/min/game.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/min/gameControllers.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/min/gameStats.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/min/grid.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/min/gridEvaluator.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/min/helpers.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/index.debug.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/min/notifications.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/min/stateChecker.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/min/statsControllers.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/min/storage.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/min/tetris.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/min/threeRenderer.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/min/ui-bootstrap-0.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/min/userInput.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/min/userStats.min.js" />
-      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\User\achievements.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\User\gameStats.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\User\storage.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\User\userStats.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\angularApp.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\bootstrap.min.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\concat.bat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\concatenated.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\controllers\campaignControllers.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\controllers\gameControllers.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\controllers\statsControllers.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\game.min.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\gameJs\block.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\gameJs\constants.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\gameJs\game.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\gameJs\grid.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\gameJs\gridEvaluator.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\gameJs\stateChecker.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\gameJs\tetris.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\gameJs\threeRenderer.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\gameJs\userInput.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\guiJs\notifications.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\js\des.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\js\helpers.min.js" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\panda\WebstormProjects\Tetris\angularApp.js" afterPath="$PROJECT_DIR$/js/angularApp.js" />
+    <list default="true" id="20d21939-c8e4-49c3-84d6-1c3927d59de7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Tetris.iml" afterPath="$PROJECT_DIR$/.idea/Tetris.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gruntfile.js" afterPath="$PROJECT_DIR$/Gruntfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.min.js" afterPath="$PROJECT_DIR$/app.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/deployment.xml" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/gameControllers.js" afterPath="$PROJECT_DIR$/controllers/gameControllers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/min/gameControllers.min.js" afterPath="$PROJECT_DIR$/min/gameControllers.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/min/notifications.min.js" afterPath="$PROJECT_DIR$/min/notifications.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -105,21 +54,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
+      <file leaf-file-name="Gruntfile.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Gruntfile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="26.884615">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="notifications.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/guiJs/notifications.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.min.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app.min.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Gruntfile.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Gruntfile.js">
+      <file leaf-file-name="app.min.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app.min.css">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
+              <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -128,8 +97,18 @@
       <file leaf-file-name="gameControllers.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controllers/gameControllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3322884">
-              <caret line="59" column="26" selection-start-line="59" selection-start-column="21" selection-end-line="59" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.34415585">
+              <caret line="74" column="20" selection-start-line="74" selection-start-column="20" selection-end-line="74" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grids/test.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="52.96154">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -140,27 +119,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="35" column="2" selection-start-line="35" selection-start-column="2" selection-end-line="35" selection-end-column="2" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bootstrap.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/bootstrap.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="game.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/game.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
-              <folding />
+              <folding>
+                <marker date="1432234614059" expanded="true" signature="604:1070" placeholder="[...]" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -194,8 +155,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Resources/ui-bootstrap-0.13.0.min.js" />
-        <option value="$PROJECT_DIR$/controllers/WindowsCtrl.js" />
         <option value="ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js" />
         <option value="vm:662" />
         <option value="ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.js" />
@@ -222,7 +181,6 @@
         <option value="$PROJECT_DIR$/User/userStats.js" />
         <option value="$PROJECT_DIR$/angularApp.js" />
         <option value="$PROJECT_DIR$/guiJs/menuConf.js" />
-        <option value="$PROJECT_DIR$/guiJs/notifications.js" />
         <option value="$PROJECT_DIR$/templates/game.html" />
         <option value="$PROJECT_DIR$/concatenated.min.js" />
         <option value="$PROJECT_DIR$/css/bootstrap.min.css" />
@@ -241,9 +199,12 @@
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/css/game.css" />
-        <option value="$PROJECT_DIR$/Gruntfile.js" />
         <option value="$PROJECT_DIR$/index.debug.html" />
         <option value="$PROJECT_DIR$/js/angularApp.js" />
+        <option value="$PROJECT_DIR$/Gruntfile.js" />
+        <option value="$PROJECT_DIR$/guiJs/notifications.js" />
+        <option value="$PROJECT_DIR$/app.min.js" />
+        <option value="$PROJECT_DIR$/app.min.css" />
         <option value="$PROJECT_DIR$/controllers/gameControllers.js" />
       </list>
     </option>
@@ -274,6 +235,7 @@
     <detection-done>true</detection-done>
   </component>
   <component name="NamedScopeManager">
+    <scope name="Test" pattern="!file[Tetris]:min/*&amp;&amp;!file[Tetris]:node_modules/*&amp;&amp;!file:app.min.css&amp;&amp;!file:app.min.js&amp;&amp;!file:Gruntfile.js&amp;&amp;!file:index.debug.html&amp;&amp;!file:index.html&amp;&amp;!file:package.json&amp;&amp;!file:README.md&amp;&amp;!file:todo.txt" />
     <order />
   </component>
   <component name="ProjectFrameBounds">
@@ -362,20 +324,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="User" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tetris" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tetris" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="min" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -390,7 +338,21 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
+              <option name="myItemId" value="guiJs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tetris" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tetris" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grids" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -424,6 +386,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope">
         <subPane subId="Problems" />
         <subPane subId="Changed Files">
@@ -456,17 +419,16 @@
         </subPane>
         <subPane subId="Tests" />
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="HbShouldOpenHtmlAsHb" value="enabled" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="recentsLimit" value="5" />
     <property name="settings.editor.selected.configurable" value="watcher.settings" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/css/game.css" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="js.eslint.nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="js.eslint.eslintPackage" value="" />
     <property name="JavaScriptLanguageLevel" value="ES5" />
@@ -587,18 +549,6 @@
       <created>1428682894359</created>
       <option name="number" value="Default" />
       <updated>1428682894359</updated>
-    </task>
-    <task id="LOCAL-00041" summary="rules">
-      <created>1430650493963</created>
-      <option name="number" value="00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1430650493963</updated>
-    </task>
-    <task id="LOCAL-00042" summary="swap count decreasing">
-      <created>1430674719150</created>
-      <option name="number" value="00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1430674719150</updated>
     </task>
     <task id="LOCAL-00043" summary="time limit">
       <created>1430675471787</created>
@@ -882,7 +832,19 @@
       <option name="project" value="LOCAL" />
       <updated>1432159832048</updated>
     </task>
-    <option name="localTasksCounter" value="90" />
+    <task id="LOCAL-00090" summary="deployement review">
+      <created>1432234763325</created>
+      <option name="number" value="00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1432234763325</updated>
+    </task>
+    <task id="LOCAL-00091" summary="deployement review">
+      <created>1432237235299</created>
+      <option name="number" value="00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1432237235299</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TodoView">
@@ -896,28 +858,28 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.48946258" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5353003" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30259067" sideWeight="0.5170576" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.49791667" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32937366" sideWeight="0.49166667" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30259067" sideWeight="0.48524764" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30259067" sideWeight="0.48294243" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13751318" sideWeight="0.49182764" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942432" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1391258" sideWeight="0.49182764" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13751318" sideWeight="0.50817233" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.4646997" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13751318" sideWeight="0.50520056" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27979276" sideWeight="0.5532139" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27979276" sideWeight="0.5532139" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3299595" sideWeight="0.49791667" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -936,7 +898,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="stats" />
     <MESSAGE value="bootstrap all over the place" />
     <MESSAGE value="angular all over the place (fixing stuff, still need to clean and review the scopes / responsabilities)" />
     <MESSAGE value="some glue on campaign" />
@@ -961,7 +922,8 @@
     <MESSAGE value="formating by ide" />
     <MESSAGE value="concat issues" />
     <MESSAGE value="fixing popup" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixing popup" />
+    <MESSAGE value="deployement review" />
+    <option name="LAST_COMMIT_MESSAGE" value="deployement review" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1070,13 +1032,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/guiJs/notifications.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/des.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1180,14 +1135,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="26.884615">
@@ -1208,14 +1155,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
           <folding />
         </state>
       </provider>
@@ -1248,14 +1187,56 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="35" column="2" selection-start-line="35" selection-start-column="2" selection-end-line="35" selection-end-column="2" />
+          <folding>
+            <marker date="1432234614059" expanded="true" signature="604:1070" placeholder="[...]" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grids/test.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="52.96154">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/guiJs/notifications.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/gameControllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3322884">
-          <caret line="59" column="26" selection-start-line="59" selection-start-column="21" selection-end-line="59" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.34415585">
+          <caret line="74" column="20" selection-start-line="74" selection-start-column="20" selection-end-line="74" selection-end-column="20" />
           <folding />
         </state>
       </provider>
@@ -1265,7 +1246,7 @@
     <states>
       <state key="ScopeChooserConfigurable.UI">
         <settings>
-          <last-edited>Unnamed1</last-edited>
+          <last-edited>Test</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1273,6 +1254,9 @@
               </list>
             </option>
           </splitter-proportions>
+          <order>
+            <scope name="Test" />
+          </order>
         </settings>
       </state>
     </states>

@@ -20,6 +20,7 @@
             <excludedPath local="true" path="$PROJECT_DIR$/Gruntfile.js" />
             <excludedPath local="true" path="$PROJECT_DIR$/index.debug.html" />
             <excludedPath local="true" path="$PROJECT_DIR$/package.json" />
+            <excludedPath local="true" path="$PROJECT_DIR$/todo.txt" />
           </excludedPaths>
         </serverdata>
       </paths>
