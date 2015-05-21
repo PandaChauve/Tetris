@@ -5,6 +5,7 @@ var angularApp = angular.module('angularApp', [
     'angularApp.controllers'
 ]);
 angularApp.config(['$compileProvider', function ($compileProvider) {
+    "use strict";
     $compileProvider.debugInfoEnabled(false);
 }]);
 
@@ -16,9 +17,12 @@ angularApp.controller('HeaderCtrl', ['$scope', '$location', function ($scope, $l
 }]);
 
 angularApp.filter('ticToTime', function () {
+    "use strict";
     return TimeFromTics;
 });
+
 angularApp.directive('ngEnter', ['$document', function ($document) {
+    "use strict";
     return {
         scope: {
             ngEnter: "&"
