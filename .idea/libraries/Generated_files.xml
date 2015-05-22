@@ -3,13 +3,19 @@
     <properties>
       <sourceFilesUrls>
         <item url="file://$PROJECT_DIR$/min/notifications.min.js" />
+        <item url="file://$PROJECT_DIR$/min/campaignController.min.js" />
+        <item url="file://$PROJECT_DIR$/min/statsController.min.js" />
+        <item url="file://$PROJECT_DIR$/min/headerController.min.js" />
+        <item url="file://$PROJECT_DIR$/min/scoresController.min.js" />
+        <item url="file://$PROJECT_DIR$/min/achievementsController.min.js" />
         <item url="file://$PROJECT_DIR$/node_modules/grunt-closure-compiler/min/closure-compiler.min.js" />
         <item url="file://$PROJECT_DIR$/node_modules/grunt-closure-compiler/min/grunt-closure-compiler.min.js" />
+        <item url="file://$PROJECT_DIR$/min/gameController.min.js" />
         <item url="file://$PROJECT_DIR$/js/ui-bootstrap-0.13.0.min.js" />
         <item url="file://$PROJECT_DIR$/node_modules/min/Gruntfile.min.js" />
-        <item url="file://$PROJECT_DIR$/min/angularApp.min.js" />
         <item url="file://$PROJECT_DIR$/node_modules/grunt-closure-compiler/min/closure-compiler_test.min.js" />
-        <item url="file://$PROJECT_DIR$/min/gameControllers.min.js" />
+        <item url="file://$PROJECT_DIR$/min/angularApp.min.js" />
+        <item url="file://$PROJECT_DIR$/min/endGameModalController.min.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
@@ -63,14 +69,24 @@
       <root url="file://$PROJECT_DIR$/gameJs/tetris.min.js" />
       <root url="file://$PROJECT_DIR$/gameJs/threeRenderer.min.js" />
       <root url="file://$PROJECT_DIR$/gameJs/userInput.min.js" />
+      <root url="file://$PROJECT_DIR$/min/campaignControllers.min.js" />
+      <root url="file://$PROJECT_DIR$/min/campaignControllers.min.js" />
+      <root url="file://$PROJECT_DIR$/min/gameControllers.min.js" />
+      <root url="file://$PROJECT_DIR$/min/gameControllers.min.js" />
       <root url="file://$PROJECT_DIR$/min/notifications.min.js" />
+      <root url="file://$PROJECT_DIR$/min/campaignController.min.js" />
+      <root url="file://$PROJECT_DIR$/min/statsController.min.js" />
+      <root url="file://$PROJECT_DIR$/min/headerController.min.js" />
+      <root url="file://$PROJECT_DIR$/min/scoresController.min.js" />
+      <root url="file://$PROJECT_DIR$/min/achievementsController.min.js" />
       <root url="file://$PROJECT_DIR$/node_modules/grunt-closure-compiler/min/closure-compiler.min.js" />
       <root url="file://$PROJECT_DIR$/node_modules/grunt-closure-compiler/min/grunt-closure-compiler.min.js" />
+      <root url="file://$PROJECT_DIR$/min/gameController.min.js" />
       <root url="file://$PROJECT_DIR$/js/ui-bootstrap-0.13.0.min.js" />
       <root url="file://$PROJECT_DIR$/node_modules/min/Gruntfile.min.js" />
-      <root url="file://$PROJECT_DIR$/min/angularApp.min.js" />
       <root url="file://$PROJECT_DIR$/node_modules/grunt-closure-compiler/min/closure-compiler_test.min.js" />
-      <root url="file://$PROJECT_DIR$/min/gameControllers.min.js" />
+      <root url="file://$PROJECT_DIR$/min/angularApp.min.js" />
+      <root url="file://$PROJECT_DIR$/min/endGameModalController.min.js" />
     </CLASSES>
     <SOURCES />
   </library>

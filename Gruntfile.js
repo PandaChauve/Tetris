@@ -17,7 +17,7 @@ module.exports = function(grunt) {
                 separator: ';'
             },
             dist: {
-                src: 'min/*.js',
+                src: ['min/angularApp.min.js', 'min/*min.js', ],
                 dest: 'app.min.js'
             },
             css: {

@@ -1,48 +1,4 @@
 var statsControllers = angular.module('angularApp.controllers');
-statsControllers.controller('ScoresCtrl', ['$scope', '$http', function ($scope, $http) {
-    "use strict";
-
-    $scope.isActive = function (viewLocation) {
-        return viewLocation === $scope.type;
-    };
-    $scope.activate = function (type) {
-        $scope.type = name;
-        $scope.getScores(type);
-    };
-
-    $scope.getScores = function (type) {
-        $http.get("http://sylvain.luthana.be/api.php?get&map=" + type).success(function (data) {
-            $scope.scoreGridData = data;
-        });
-    };
-    $scope.activate("classic");
-    $scope.scoreTypes = [
-        {type: "classic", name: "Classic"},
-        {type: "ultralarge", name: "Wide"},
-        {type: "sandbox", name: "Sandbox"},
-        {type: "ultralargecoop", name: "Coop"}
-    ];
-}]);
-
-statsControllers.controller('AchievementsCtrl', ['$scope', function ($scope) {
-    "use strict";
-    var as = new AchievementsState();
-    var successCount = 0;
-    $scope.achievementsGridData = [];
-    for (var i = 0; i < AchievementsState.List.enumSize; i += 1) {
-        $scope.achievementsGridData.push({
-            Picture: "./Resources/imgs/placeholder.png",
-            Name: AchievementsState.List.GetName(i),
-            Success: as.IsWon(i),
-            Description: AchievementsState.List.GetDescription(i)
-        });
-        if (as.IsWon(i)) {
-            successCount += 1;
-        }
-    }
-    $scope.percentComplete = successCount / AchievementsState.List.enumSize * 100; //bad to put non object in the scope
-}]);
-
 
 statsControllers.controller('StatCtrl', ['$scope', function ($scope) {
     "use strict";

@@ -1,5 +1,5 @@
-var campaignControllers = angular.module('angularApp.controllers');
-campaignControllers.controller('CampaignCtrl', ['$scope', '$routeParams', function ($scope, $routeParams) {
+var campaignController = angular.module('angularApp.controllers');
+campaignController.controller('CampaignCtrl', ['$scope', '$routeParams', function ($scope, $routeParams) {
     "use strict";
     var i, j;
     $scope.campaign = $routeParams.name || "arcade";

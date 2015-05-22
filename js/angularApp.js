@@ -9,12 +9,6 @@ angularApp.config(['$compileProvider', function ($compileProvider) {
     $compileProvider.debugInfoEnabled(false);
 }]);
 
-angularApp.controller('HeaderCtrl', ['$scope', '$location', function ($scope, $location) {
-    "use strict";
-    $scope.isActive = function (viewLocation) {
-        return viewLocation === $location.path();
-    };
-}]);
 
 angularApp.filter('ticToTime', function () {
     "use strict";
@@ -36,7 +30,7 @@ angularApp.directive('ngEnter', ['$document', function ($document) {
             };
             $document.bind("keydown keypress", enterWatcher);
         }
-    }
+    };
 }]);
 
 angularApp.config(['$routeProvider', '$locationProvider',
