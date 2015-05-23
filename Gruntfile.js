@@ -5,11 +5,14 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
         uglify: {
             files: {
-                src: '*/*.js',  // source files mask
+                src: ['js/*.js','js/*/*.js' ,'js/*/*/*.js' ],  // source files mask
                 dest: 'min/',    // destination folder
                 expand: true,    // allow dynamic building
                 flatten: true,   // remove all unnecessary nesting
                 ext: '.min.js'   // replace .js to .min.js
+            },
+            options: {
+                preserveComments: false
             }
         },
         concat: {
@@ -17,25 +20,26 @@ module.exports = function(grunt) {
                 separator: ';'
             },
             dist: {
-                src: ['min/angularApp.min.js', 'min/*min.js', ],
+                src: ['min/angularApp.min.js', 'min/*min.js'],
                 dest: 'app.min.js'
             },
             css: {
                 src: 'css/*.min.css',
                 dest: 'app.min.css'
             }
-        }, processhtml: {
+        },
+        processhtml: {
             dist: {
                 files:{
                     'index.html' : ["index.debug.html"]
                 }
             }
-        }
+        },
+        clean: ["min"]
     });
+    grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-processhtml');
-    grunt.loadNpmTasks('grunt-closure-compiler');
-    grunt.registerTask('default', ['uglify','concat', 'processhtml']);
-    grunt.registerTask('build', ['concat', 'processhtml']);
+    grunt.registerTask('default', ['clean', 'uglify', 'concat', 'processhtml']);
 };

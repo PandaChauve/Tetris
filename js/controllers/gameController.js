@@ -1,7 +1,7 @@
 //FIXME the move to angular is way too partial, some work is needed !
 
-var gameController = angular.module('angularApp.controllers');
-gameController.controller('GameCtrl', ['$scope', '$http', '$route', '$routeParams', '$modal', '$window', function ($scope, $http, $route, $routeParams, $modal, $window) {
+angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$http', '$route', '$routeParams', '$modal', '$window','gameFactory', 'gameConstants', 'achievements', 'userStats',
+    function ($scope, $http, $route, $routeParams, $modal, $window, gameFactory, gameConstants, achievements, userStats) {
     "use strict";
     //FIXME directive too much in the controller
     $scope.gameName = $routeParams.name || "classic";
@@ -18,55 +18,52 @@ gameController.controller('GameCtrl', ['$scope', '$http', '$route', '$routeParam
     $scope.load();
     $scope.pause = {
         toggle: function () {
-            $scope.pause.active = $scope.game.TogglePause();
+            $scope.pause.active = $scope.game.togglePause();
         },
         active: false
     };
     $scope.$on('$routeChangeStart', function () {
         if ($scope.game) {
-            $scope.game.Stop();
+            $scope.game.stopGame();
             $scope.game = null;
         }
     });
     $scope.reset = function () {
-        $scope.game.Stop();
-        $scope.game = new Game($scope.game.config, $scope.game.grid, $scope.endCallBack);
-        $scope.game.Start();
+        var obj = $scope.game;
+        obj.init();
+        obj.stopGame();
+        $scope.game = gameFactory.newGame($scope.game.config, $scope.game.grid, $scope.endCallBack);
     };
     angular.element($window).bind('blur', function () {
         return function () {
             if ($scope.game) {
                 $scope.pause.active = true;
-                $scope.game.TogglePause(true);
+                $scope.game.togglePause(true);
                 $scope.$apply();//FIXME fear of god !
             }
         };
     }());
     $scope.useGameConfig = function (config) {
-        CONFIG = GetConfig(config.config);
+        gameConstants.load(config.config);
         if (config.grid == "") { // jshint ignore:line
-            $scope.game = new Game(config, "", $scope.endCallBack);
-            $scope.game.Start();
+            $scope.game = gameFactory.newGame(config, "", $scope.endCallBack);
         } else {
             $http.get("grids/" + config.grid + ".json", {cache: false}).success(function (json) { //FIXME enable cache but i need to remove dom manipulations in jquery before
-                $scope.game = new Game(config, json, $scope.endCallBack);
-                $scope.game.Start();
+                $scope.game = gameFactory.newGame(config, json, $scope.endCallBack);
             }).error(function (error) {
                 console.log(error);
             });
         }
     };
     $scope.endCallBack = function (finishedGame) {
-        finishedGame.stats.SetTime(finishedGame.tics);
-        finishedGame.stats.SetSwaps(finishedGame.tetris[0].swapCount);
-        var userstats = UserStats.GetUserStats();
-        userstats.AddGame(finishedGame.stats, $scope.gameName);
-        var as = new AchievementsState();
-        as.check(finishedGame.stats, userstats, $scope.gameName);
-        $scope.open(finishedGame.stateChecker.lastSuccessCheck, finishedGame.stats);
+        userStats.getCurrentGame().setTime(finishedGame.tics);
+        userStats.getCurrentGame().setSwaps(finishedGame.tetris[0].swapCount);
+        userStats.addGame(userStats.getCurrentGame(), $scope.gameName);
+        achievements.check(userStats.getCurrentGame(), $scope.gameName);
+        $scope.open();
     };
 
-    $scope.open = function (status, stats) {
+    $scope.open = function () {
 
         var modalInstance = $modal.open({
             animation: true,
@@ -74,14 +71,8 @@ gameController.controller('GameCtrl', ['$scope', '$http', '$route', '$routeParam
             controller: 'ModalInstanceCtrl',
             size: 300,
             resolve: {
-                won: function () {
-                    return status;
-                },
                 gameName: function () {
                     return $scope.gameName;
-                },
-                statistics: function () {
-                    return stats;
                 }
             }
         });

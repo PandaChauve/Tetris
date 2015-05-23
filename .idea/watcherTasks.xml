@@ -21,13 +21,13 @@
       <option name="workingDir" value="$FileDir$" />
       <envs />
     </TaskOptions>
-    <TaskOptions isEnabled="true">
+    <TaskOptions isEnabled="false">
       <option name="arguments" value="--compilation_level SIMPLE_OPTIMIZATIONS --js $FileName$" />
       <option name="checkSyntaxErrors" value="true" />
       <option name="description" value="Compiles .js files" />
       <option name="exitCodeBehavior" value="ALWAYS" />
       <option name="fileExtension" value="js" />
-      <option name="immediateSync" value="true" />
+      <option name="immediateSync" value="false" />
       <option name="name" value="Closure Compiler" />
       <option name="output" value="../min/$FileNameWithoutExtension$.min.js" />
       <option name="outputFilters">
@@ -61,13 +61,13 @@
       <option name="workingDir" value="C:\Users\panda\WebstormProjects\Tetris" />
       <envs />
     </TaskOptions>
-    <TaskOptions isEnabled="true">
+    <TaskOptions isEnabled="false">
       <option name="arguments" value="build" />
       <option name="checkSyntaxErrors" value="true" />
       <option name="description" value="" />
       <option name="exitCodeBehavior" value="ERROR" />
       <option name="fileExtension" value="*" />
-      <option name="immediateSync" value="true" />
+      <option name="immediateSync" value="false" />
       <option name="name" value="grunt.cmd build" />
       <option name="output" value="" />
       <option name="outputFilters">

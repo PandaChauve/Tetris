@@ -1,35 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="20d21939-c8e4-49c3-84d6-1c3927d59de7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Tetris_node_modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controllers/achievementsController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/min/achievementsController.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/min/campaignController.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controllers/endGameModalController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/min/endGameModalController.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/min/gameController.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controllers/headerController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/min/headerController.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controllers/scoresController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/min/scoresController.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/min/statsController.min.js" />
-      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\min\campaignControllers.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\min\gameControllers.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\min\statsControllers.min.js" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\panda\WebstormProjects\Tetris\controllers\campaignControllers.js" afterPath="$PROJECT_DIR$/controllers/campaignController.js" />
-      <change type="MOVED" beforePath="C:\Users\panda\WebstormProjects\Tetris\controllers\gameControllers.js" afterPath="$PROJECT_DIR$/controllers/gameController.js" />
-      <change type="MOVED" beforePath="C:\Users\panda\WebstormProjects\Tetris\controllers\statsControllers.js" afterPath="$PROJECT_DIR$/controllers/statsController.js" />
+    <list default="true" id="20d21939-c8e4-49c3-84d6-1c3927d59de7" name="Default" comment="one file per controller (there's no end to this refactoring i waited too long :))">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/services/user/achievements.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/services/game/blockFactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/services/constants.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/services/game/gameConstants.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/services/game/gameFactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/services/user/gameStatsFactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/services/game/gridEvaluator.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/services/game/gridFactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/controllers/headerController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/directives/ngEnter.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/services/notifications.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/services/game/stateChecker.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/services/user/storage.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/services/game/tetrisFactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/services/game/threeRendererFactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/services/game/userInput.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/services/user/userStats.js" />
+      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\User\achievements.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\User\gameStats.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\User\storage.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\User\userStats.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\controllers\headerController.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\gameJs\block.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\gameJs\constants.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\gameJs\game.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\gameJs\grid.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\gameJs\gridEvaluator.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\gameJs\stateChecker.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\gameJs\tetris.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\gameJs\threeRenderer.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\gameJs\userInput.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\guiJs\notifications.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\min\achievements.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\min\achievementsController.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\min\angularApp.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\min\block.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\min\campaignController.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\min\constants.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\min\des.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\min\endGameModalController.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\min\game.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\min\gameController.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\min\gameStats.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\min\grid.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\min\gridEvaluator.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\min\headerController.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\min\helpers.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\min\notifications.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\min\scoresController.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\min\stateChecker.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\min\statsController.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\min\storage.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\min\tetris.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\min\threeRenderer.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\min\ui-bootstrap-0.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\min\userInput.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\min\userStats.min.js" afterPath="" />
+      <change type="MOVED" beforePath="C:\Users\panda\WebstormProjects\Tetris\controllers\achievementsController.js" afterPath="$PROJECT_DIR$/js/controllers/achievementsController.js" />
+      <change type="MOVED" beforePath="C:\Users\panda\WebstormProjects\Tetris\controllers\campaignController.js" afterPath="$PROJECT_DIR$/js/controllers/campaignController.js" />
+      <change type="MOVED" beforePath="C:\Users\panda\WebstormProjects\Tetris\controllers\endGameModalController.js" afterPath="$PROJECT_DIR$/js/controllers/endGameModalController.js" />
+      <change type="MOVED" beforePath="C:\Users\panda\WebstormProjects\Tetris\controllers\gameController.js" afterPath="$PROJECT_DIR$/js/controllers/gameController.js" />
+      <change type="MOVED" beforePath="C:\Users\panda\WebstormProjects\Tetris\controllers\scoresController.js" afterPath="$PROJECT_DIR$/js/controllers/scoresController.js" />
+      <change type="MOVED" beforePath="C:\Users\panda\WebstormProjects\Tetris\controllers\statsController.js" afterPath="$PROJECT_DIR$/js/controllers/statsController.js" />
+      <change type="MOVED" beforePath="C:\Users\panda\WebstormProjects\Tetris\js\des.js" afterPath="$PROJECT_DIR$/js/externals/des.js" />
+      <change type="MOVED" beforePath="C:\Users\panda\WebstormProjects\Tetris\js\helpers.js" afterPath="$PROJECT_DIR$/js/services/helpers.js" />
+      <change type="MOVED" beforePath="C:\Users\panda\WebstormProjects\Tetris\js\ui-bootstrap-0.13.0.min.js" afterPath="$PROJECT_DIR$/js/externals/ui-bootstrap-0.13.0.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gruntfile.js" afterPath="$PROJECT_DIR$/Gruntfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Tetris.iml" afterPath="$PROJECT_DIR$/.idea/Tetris.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/angularApp.js" afterPath="$PROJECT_DIR$/js/angularApp.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/min/angularApp.min.js" afterPath="$PROJECT_DIR$/min/angularApp.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.min.js" afterPath="$PROJECT_DIR$/app.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.debug.html" afterPath="$PROJECT_DIR$/index.debug.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Tetris.iws" />
@@ -53,7 +99,60 @@
     <favorites_list name="Tetris" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="userStats.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/services/user/userStats.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="55" column="20" selection-start-line="55" selection-start-column="20" selection-end-line="55" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gameConstants.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/services/game/gameConstants.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.65789473">
+              <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
+              <folding>
+                <element signature="e#217#812#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gameStatsFactory.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/services/user/gameStatsFactory.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.8965516">
+              <caret line="43" column="16" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gridEvaluator.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/services/game/gridEvaluator.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="151" column="29" selection-start-line="151" selection-start-column="29" selection-end-line="151" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="endGameModalController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/controllers/endGameModalController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="42" column="8" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -72,57 +171,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/templates/campaign.html" />
-        <option value="$PROJECT_DIR$/templates/modal.html" />
-        <option value="$PROJECT_DIR$/controllers/gameControllers.min.js" />
-        <option value="$PROJECT_DIR$/controllers/campaignControllers.min.js" />
-        <option value="$PROJECT_DIR$/controllers/statsControllers.js" />
-        <option value="$PROJECT_DIR$/controllers/statsControllers.min.js" />
-        <option value="$PROJECT_DIR$/gameJs/block.js" />
-        <option value="$PROJECT_DIR$/gameJs/constants.min.js" />
-        <option value="$PROJECT_DIR$/gameJs/game.min.js" />
-        <option value="$PROJECT_DIR$/gameJs/grid.js" />
-        <option value="$PROJECT_DIR$/gameJs/grid.min.js" />
-        <option value="$PROJECT_DIR$/gameJs/gridEvaluator.js" />
-        <option value="$PROJECT_DIR$/gameJs/tetris.js" />
-        <option value="$PROJECT_DIR$/gameJs/userInput.js" />
-        <option value="$PROJECT_DIR$/Resources/des.js" />
-        <option value="$PROJECT_DIR$/User/storage.js" />
-        <option value="$PROJECT_DIR$/User/userStats.js" />
-        <option value="$PROJECT_DIR$/angularApp.js" />
-        <option value="$PROJECT_DIR$/guiJs/menuConf.js" />
-        <option value="$PROJECT_DIR$/templates/game.html" />
-        <option value="$PROJECT_DIR$/concatenated.min.js" />
-        <option value="$PROJECT_DIR$/css/bootstrap.min.css" />
-        <option value="$PROJECT_DIR$/concatenated.js" />
-        <option value="$PROJECT_DIR$/css/game.min.css" />
-        <option value="$PROJECT_DIR$/User/gameStats.js" />
-        <option value="$PROJECT_DIR$/gameJs/game.js" />
-        <option value="$PROJECT_DIR$/gameJs/constants.js" />
-        <option value="$PROJECT_DIR$/User/achievements.js" />
-        <option value="$PROJECT_DIR$/js/helpers.js" />
-        <option value="$PROJECT_DIR$/gameJs/threeRenderer.js" />
-        <option value="$PROJECT_DIR$/js/ui-bootstrap-0.13.0.min.js" />
-        <option value="$PROJECT_DIR$/concatenated.cjs" />
-        <option value="$PROJECT_DIR$/gameJs/stateChecker.js" />
-        <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/css/bootstrap.css" />
-        <option value="$PROJECT_DIR$/css/game.css" />
-        <option value="$PROJECT_DIR$/guiJs/notifications.js" />
-        <option value="$PROJECT_DIR$/app.min.css" />
-        <option value="$PROJECT_DIR$/controllers/gameControllers.js" />
-        <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/controllers/campaignControllers.js" />
+        <option value="$PROJECT_DIR$/min/game.min.js" />
+        <option value="ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" />
+        <option value="$PROJECT_DIR$/min/gameController.min.js" />
+        <option value="$PROJECT_DIR$/factories/game.js" />
         <option value="$PROJECT_DIR$/controllers/gameController.js" />
-        <option value="$PROJECT_DIR$/controllers/endGameModalController.js" />
         <option value="$PROJECT_DIR$/controllers/achievementsController.js" />
-        <option value="$PROJECT_DIR$/controllers/statsController.js" />
-        <option value="$PROJECT_DIR$/controllers/scoresController.js" />
+        <option value="$PROJECT_DIR$/controllers/campaignController.js" />
+        <option value="$PROJECT_DIR$/controllers/endGameModalController.js" />
         <option value="$PROJECT_DIR$/controllers/headerController.js" />
-        <option value="$PROJECT_DIR$/js/angularApp.js" />
-        <option value="$PROJECT_DIR$/index.debug.html" />
-        <option value="$PROJECT_DIR$/app.min.js" />
+        <option value="$PROJECT_DIR$/controllers/scoresController.js" />
+        <option value="$PROJECT_DIR$/controllers/statsController.js" />
+        <option value="$PROJECT_DIR$/gameJs/constants.js" />
+        <option value="$PROJECT_DIR$/factories/constants.js" />
+        <option value="$PROJECT_DIR$/factories/block.js" />
+        <option value="$PROJECT_DIR$/factories/config.js" />
+        <option value="$PROJECT_DIR$/factories/grid.js" />
+        <option value="$PROJECT_DIR$/factories/gridEvaluator.js" />
+        <option value="$PROJECT_DIR$/services/game/gameConstants.js" />
+        <option value="$PROJECT_DIR$/services/game/gridEvaluator.js" />
+        <option value="$PROJECT_DIR$/services/game/gridFactory.js" />
+        <option value="$PROJECT_DIR$/services/game/threeRenderer.js" />
+        <option value="$PROJECT_DIR$/services/game/tetris.js" />
+        <option value="$PROJECT_DIR$/services/game/stateChecker.js" />
+        <option value="$PROJECT_DIR$/services/game/userInput.js" />
+        <option value="$PROJECT_DIR$/services/user/achievements.js" />
+        <option value="$PROJECT_DIR$/services/user/gameStats.js" />
+        <option value="$PROJECT_DIR$/services/user/userStats.js" />
+        <option value="$PROJECT_DIR$/services/user/storage.js" />
+        <option value="$PROJECT_DIR$/services/notifications.js" />
+        <option value="$PROJECT_DIR$/js/services/helpers.js" />
+        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/Gruntfile.js" />
+        <option value="$PROJECT_DIR$/js/services/game/tetrisFactory.js" />
+        <option value="$PROJECT_DIR$/js/services/game/stateChecker.js" />
+        <option value="$PROJECT_DIR$/js/controllers/statsController.js" />
+        <option value="$PROJECT_DIR$/index.debug.html" />
+        <option value="$PROJECT_DIR$/js/services/constants.js" />
+        <option value="$PROJECT_DIR$/js/angularApp.js" />
+        <option value="$PROJECT_DIR$/js/services/user/achievements.js" />
+        <option value="$PROJECT_DIR$/js/controllers/achievementsController.js" />
+        <option value="$PROJECT_DIR$/js/services/game/blockFactory.js" />
+        <option value="$PROJECT_DIR$/js/services/game/threeRendererFactory.js" />
+        <option value="$PROJECT_DIR$/js/services/game/gameFactory.js" />
+        <option value="$PROJECT_DIR$/js/services/game/userInput.js" />
+        <option value="$PROJECT_DIR$/js/services/game/gridFactory.js" />
+        <option value="$PROJECT_DIR$/js/controllers/gameController.js" />
+        <option value="$PROJECT_DIR$/js/controllers/endGameModalController.js" />
+        <option value="$PROJECT_DIR$/js/services/user/gameStatsFactory.js" />
+        <option value="$PROJECT_DIR$/js/services/game/gridEvaluator.js" />
+        <option value="$PROJECT_DIR$/js/services/user/userStats.js" />
+        <option value="$PROJECT_DIR$/js/services/game/gameConstants.js" />
       </list>
     </option>
   </component>
@@ -132,16 +231,13 @@
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true">
     <gruntfile path="$PROJECT_DIR$/Gruntfile.js">
-      <alias-task name="build" info="Alias for &quot;concat&quot;, &quot;processhtml&quot; tasks." file-path="$PROJECT_DIR$/Gruntfile.js">
-        <dependency value="concat" />
-        <dependency value="processhtml" />
-      </alias-task>
-      <alias-task name="default" info="Alias for &quot;uglify&quot;, &quot;concat&quot;, &quot;processhtml&quot; tasks." file-path="$PROJECT_DIR$/Gruntfile.js">
+      <alias-task name="default" info="Alias for &quot;clean&quot;, &quot;uglify&quot;, &quot;concat&quot;, &quot;processhtml&quot; tasks." file-path="$PROJECT_DIR$/Gruntfile.js">
+        <dependency value="clean" />
         <dependency value="uglify" />
         <dependency value="concat" />
         <dependency value="processhtml" />
       </alias-task>
-      <core-task name="closure-compiler" info="Minify JS files using Closure Compiler." file-path="$PROJECT_DIR$/node_modules/grunt-closure-compiler/tasks/closure-compiler.js" multi="true" />
+      <core-task name="clean" info="Clean files and folders." file-path="$PROJECT_DIR$/node_modules/grunt-contrib-clean/tasks/clean.js" multi="true" />
       <core-task name="concat" info="Concatenate files." file-path="$PROJECT_DIR$/node_modules/grunt-contrib-concat/tasks/concat.js" multi="true">
         <target value="dist" />
         <target value="css" />
@@ -178,6 +274,9 @@
             <id>Code quality toolsJavaScript</id>
           </State>
           <State>
+            <id>GeneralJavaScript</id>
+          </State>
+          <State>
             <id>JavaScript</id>
           </State>
           <State>
@@ -186,7 +285,7 @@
         </expanded-state>
         <selected-state>
           <State>
-            <id>JSConstructorReturnsPrimitive</id>
+            <id>JSUnresolvedVariable</id>
           </State>
         </selected-state>
       </profile-state>
@@ -215,6 +314,124 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tetris" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tetris" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tetris" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tetris" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tetris" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tetris" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tetris" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="services" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tetris" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tetris" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="services" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="user" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tetris" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tetris" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="services" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tetris" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tetris" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="Scope">
         <subPane subId="Problems" />
         <subPane subId="Changed Files">
@@ -248,58 +465,6 @@
         <subPane subId="Tests" />
       </pane>
       <pane id="Scratches" />
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tetris" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tetris" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tetris" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tetris" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tetris" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="min" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tetris" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tetris" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -307,7 +472,7 @@
     <property name="HbShouldOpenHtmlAsHb" value="enabled" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="recentsLimit" value="5" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.appearance" />
+    <property name="settings.editor.selected.configurable" value="watcher.settings" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="js.eslint.nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
@@ -348,17 +513,14 @@
       <recent name="C:\Users\panda\WebstormProjects\Tetris\games" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\panda\WebstormProjects\Tetris\js\services" />
+      <recent name="C:\Users\panda\WebstormProjects\Tetris\js\externals" />
       <recent name="C:\Users\panda\WebstormProjects\Tetris\js" />
-      <recent name="C:\Users\panda\WebstormProjects\Tetris" />
-      <recent name="C:\Users\panda\WebstormProjects\Tetris\Resources" />
-      <recent name="C:\Users\panda\WebstormProjects\Tetris\controllers" />
-      <recent name="C:\Users\panda\WebstormProjects\Tetris\games" />
+      <recent name="C:\Users\panda\WebstormProjects\Tetris\services" />
+      <recent name="C:\Users\panda\WebstormProjects\Tetris\services\game" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.index.html">
-    <configuration default="false" name="index.debug.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Tetris/index.debug.html">
-      <method />
-    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <method />
     </configuration>
@@ -410,15 +572,13 @@
     <configuration default="false" name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" nameIsGenerated="true" uri="http://localhost:63342/Tetris/index.html">
       <method />
     </configuration>
+    <configuration default="false" name="index.debug.html" type="JavascriptDebugType" factoryName="JavaScript Debug" nameIsGenerated="true" uri="http://localhost:63342/Tetris/index.debug.html">
+      <method />
+    </configuration>
     <list size="2">
       <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
       <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.index.debug.html" />
     </list>
-    <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.index.debug.html" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SvnConfiguration">
@@ -430,12 +590,6 @@
       <created>1428682894359</created>
       <option name="number" value="Default" />
       <updated>1428682894359</updated>
-    </task>
-    <task id="LOCAL-00046" summary="support saving for more stats including time">
-      <created>1430936385565</created>
-      <option name="number" value="00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1430936385565</updated>
     </task>
     <task id="LOCAL-00047" summary="support saving for more stats including time">
       <created>1430937188630</created>
@@ -725,7 +879,13 @@
       <option name="project" value="LOCAL" />
       <updated>1432239540103</updated>
     </task>
-    <option name="localTasksCounter" value="95" />
+    <task id="LOCAL-00095" summary="one file per controller (there's no end to this refactoring i waited too long :))">
+      <created>1432325669607</created>
+      <option name="number" value="00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1432325669607</updated>
+    </task>
+    <option name="localTasksCounter" value="96" />
     <servers />
   </component>
   <component name="TodoView">
@@ -741,18 +901,19 @@
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942432" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14232409" sideWeight="0.4866469" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.48946258" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14232409" sideWeight="0.5133531" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30227745" sideWeight="0.52771854" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919255" sideWeight="0.5565032" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32937366" sideWeight="0.49166667" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30227745" sideWeight="0.47228146" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30227745" sideWeight="0.45309168" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919255" sideWeight="0.48933902" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942432" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14552239" sideWeight="0.59940654" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Grunt " active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14552239" sideWeight="0.40059346" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919255" sideWeight="0.4434968" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919255" sideWeight="0.4914712" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13751318" sideWeight="0.50520056" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2795031" sideWeight="0.5463753" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4099379" sideWeight="0.5271855" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -761,9 +922,32 @@
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.49791667" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3299595" sideWeight="0.49791667" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.4646997" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.48946258" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32919255" sideWeight="0.5565032" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.49791667" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3299595" sideWeight="0.49791667" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32937366" sideWeight="0.49166667" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30227745" sideWeight="0.45309168" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919255" sideWeight="0.48933902" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942432" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14552239" sideWeight="0.6064815" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14552239" sideWeight="0.3935185" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32919255" sideWeight="0.4434968" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13751318" sideWeight="0.50520056" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4099379" sideWeight="0.5271855" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -779,7 +963,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="bootstrap all over the place" />
     <MESSAGE value="angular all over the place (fixing stuff, still need to clean and review the scopes / responsabilities)" />
     <MESSAGE value="some glue on campaign" />
     <MESSAGE value="switching modal tp angular" />
@@ -804,25 +987,26 @@
     <MESSAGE value="concat issues" />
     <MESSAGE value="fixing popup" />
     <MESSAGE value="deployement review" />
-    <option name="LAST_COMMIT_MESSAGE" value="deployement review" />
+    <MESSAGE value="one file per controller (there's no end to this refactoring i waited too long :))" />
+    <option name="LAST_COMMIT_MESSAGE" value="one file per controller (there's no end to this refactoring i waited too long :))" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/gameJs/grid.js</url>
-          <line>60</line>
-          <option name="timeStamp" value="75" />
+        <line-breakpoint type="javascript">
+          <url>file://$PROJECT_DIR$/js/controllers/gameController.js</url>
+          <line>31</line>
+          <option name="timeStamp" value="262" />
+        </line-breakpoint>
+        <line-breakpoint type="javascript">
+          <url>file://$PROJECT_DIR$/js/controllers/gameController.js</url>
+          <line>46</line>
+          <option name="timeStamp" value="264" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/gameJs/grid.js</url>
-          <line>114</line>
-          <option name="timeStamp" value="76" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/controllers/gameController.js</url>
-          <line>20</line>
-          <option name="timeStamp" value="249" />
+          <url>file://$PROJECT_DIR$/js/services/game/gridFactory.js</url>
+          <line>170</line>
+          <option name="timeStamp" value="268" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -833,7 +1017,7 @@
           <properties uncaughtOnly="true" />
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="256" />
+      <option name="time" value="278" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JavascriptDebugType">
@@ -856,45 +1040,46 @@
     </PATH>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/guiJs/notifications.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/gameController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="74" column="20" selection-start-line="74" selection-start-column="20" selection-end-line="74" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grids/test.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
+    <entry file="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-route.min.js">
+      <provider selected="true" editor-type-id="httpFileEditor">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/angularApp.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
+          <caret line="1" column="43" selection-start-line="1" selection-start-column="43" selection-end-line="1" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gameJs/threeRenderer.js">
+    <entry file="file://$PROJECT_DIR$/js/controllers/gameController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js">
+      <provider selected="true" editor-type-id="httpFileEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js">
+      <provider selected="true" editor-type-id="httpFileEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/services/game/gameFactory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="31" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/services/game/threeRendererFactory.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="140" column="0" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
@@ -905,52 +1090,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.115385">
           <caret line="17" column="54" selection-start-line="17" selection-start-column="54" selection-end-line="17" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gameJs/block.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gameJs/grid.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="147" column="2" selection-start-line="147" selection-start-column="2" selection-end-line="147" selection-end-column="2" />
-          <folding>
-            <element signature="e#1201#1483#0" expanded="false" />
-            <element signature="e#2046#2327#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gameJs/tetris.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="44" column="39" selection-start-line="44" selection-start-column="39" selection-end-line="44" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/User/storage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/User/userStats.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/des.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="263" column="35" selection-start-line="263" selection-start-column="35" selection-end-line="263" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -968,66 +1107,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/User/gameStats.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/games/campaign/timeLimit/timelimit_2.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.461538">
           <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/User/achievements.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="95" column="104" selection-start-line="95" selection-start-column="104" selection-end-line="95" selection-end-column="104" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/helpers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="51" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gameJs/constants.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gameJs/game.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="115" column="85" selection-start-line="115" selection-start-column="85" selection-end-line="115" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gameJs/gridEvaluator.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gameJs/userInput.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gameJs/stateChecker.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="87" column="18" selection-start-line="87" selection-start-column="18" selection-end-line="87" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -1052,13 +1135,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gameJs/threeRenderer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="140" column="0" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grids/test.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1074,73 +1150,135 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/guiJs/notifications.js">
+    <entry file="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-route.min.js">
+      <provider selected="true" editor-type-id="httpFileEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/directives/ngEnter.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/externals/ui-bootstrap-0.13.0.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/externals/des.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="263" column="35" selection-start-line="263" selection-start-column="35" selection-end-line="263" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+        <state vertical-scroll-proportion="-6.5384617">
+          <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/campaignController.js">
+    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
+          <caret line="44" column="2" selection-start-line="44" selection-start-column="2" selection-end-line="44" selection-end-column="2" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/gameController.js">
+    <entry file="file://$USER_HOME$/.WebStorm10/system/extLibs/http_code.jquery.com_jquery-2.1.3.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="2" selection-end-column="62" />
+        <state vertical-scroll-proportion="0.2196162">
+          <caret line="5211" column="4" selection-start-line="5211" selection-start-column="4" selection-end-line="5211" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/endGameModalController.js">
+    <entry file="file://$PROJECT_DIR$/js/services/user/storage.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="11" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
+          <caret line="1" column="21" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/scoresController.js">
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript5.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.3326226">
+          <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/statsController.js">
+    <entry file="file://$PROJECT_DIR$/js/services/game/tetrisFactory.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <caret line="86" column="29" selection-start-line="86" selection-start-column="29" selection-end-line="86" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/achievementsController.js">
+    <entry file="file://$PROJECT_DIR$/js/controllers/campaignController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="64" />
+          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/headerController.js">
+    <entry file="file://$PROJECT_DIR$/js/controllers/headerController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controllers/scoresController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controllers/statsController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="50" selection-start-line="24" selection-start-column="50" selection-end-line="24" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/services/helpers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="37" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.debug.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.346154">
+          <caret line="89" column="65" selection-start-line="89" selection-start-column="65" selection-end-line="89" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/services/constants.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="27" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
           <folding />
         </state>
       </provider>
@@ -1148,96 +1286,140 @@
     <entry file="file://$PROJECT_DIR$/js/angularApp.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="32" column="6" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="6" />
+          <caret line="4" column="58" selection-start-line="4" selection-start-column="58" selection-end-line="4" selection-end-column="58" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.debug.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.1538463">
-          <caret line="66" column="28" selection-start-line="66" selection-start-column="28" selection-end-line="66" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/min/angularApp.min.js">
+    <entry file="file://$PROJECT_DIR$/js/services/notifications.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="25" column="35" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.055105347">
-          <caret line="0" column="494" selection-start-line="0" selection-start-column="494" selection-end-line="0" selection-end-column="494" />
-          <folding />
-        </state>
+    <entry file="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js">
+      <provider selected="true" editor-type-id="httpFileEditor">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5">
-          <caret line="19" column="56" selection-start-line="19" selection-start-column="56" selection-end-line="19" selection-end-column="56" />
-          <folding />
-        </state>
+    <entry file="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js">
+      <provider selected="true" editor-type-id="httpFileEditor">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/min/achievementsController.min.js">
+    <entry file="file://$PROJECT_DIR$/js/services/user/achievements.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="160" column="70" selection-start-line="160" selection-start-column="70" selection-end-line="160" selection-end-column="70" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/min/campaignController.min.js">
+    <entry file="file://$PROJECT_DIR$/js/controllers/achievementsController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="16" column="56" selection-start-line="16" selection-start-column="56" selection-end-line="16" selection-end-column="56" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/min/endGameModalController.min.js">
+    <entry file="file://$PROJECT_DIR$/js/services/game/threeRendererFactory.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="20.672413">
+          <caret line="116" column="44" selection-start-line="116" selection-start-column="44" selection-end-line="116" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/min/gameController.min.js">
+    <entry file="file://$PROJECT_DIR$/js/services/game/blockFactory.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="81" column="31" selection-start-line="81" selection-start-column="31" selection-end-line="81" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/min/headerController.min.js">
+    <entry file="file://$PROJECT_DIR$/js/services/game/userInput.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="71" column="20" selection-start-line="71" selection-start-column="20" selection-end-line="71" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/min/scoresController.min.js">
+    <entry file="file://$PROJECT_DIR$/js/services/game/gridFactory.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="-5.8965516">
+          <caret line="266" column="8" selection-start-line="266" selection-start-column="8" selection-end-line="266" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/min/statsController.min.js">
+    <entry file="file://$PROJECT_DIR$/js/services/game/gameFactory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-35.86207">
+          <caret line="139" column="29" selection-start-line="139" selection-start-column="29" selection-end-line="139" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/services/game/stateChecker.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="22" column="38" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="38" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controllers/gameController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="58" column="17" selection-start-line="58" selection-start-column="17" selection-end-line="58" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/services/game/gridEvaluator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="151" column="29" selection-start-line="151" selection-start-column="29" selection-end-line="151" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controllers/endGameModalController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="42" column="8" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/services/user/gameStatsFactory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.8965516">
+          <caret line="43" column="16" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/services/user/userStats.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="55" column="20" selection-start-line="55" selection-start-column="20" selection-end-line="55" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/services/game/gameConstants.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.65789473">
+          <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
+          <folding>
+            <element signature="e#217#812#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

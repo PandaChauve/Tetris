@@ -1,8 +1,15 @@
-angular.module('angularApp.controllers', ['ui.bootstrap']);
+
+angular.module('angularApp.base', []);
+angular.module('angularApp.factories', ['angularApp.base']);
+angular.module('angularApp.controllers', ['ui.bootstrap', 'angularApp.factories']);
+angular.module('angularApp.directives', ['angularApp.base']);
 
 var angularApp = angular.module('angularApp', [
     'ngRoute',
-    'angularApp.controllers'
+    'angularApp.base',
+    'angularApp.factories',
+    'angularApp.controllers',
+    'angularApp.directives'
 ]);
 angularApp.config(['$compileProvider', function ($compileProvider) {
     "use strict";
@@ -10,27 +17,9 @@ angularApp.config(['$compileProvider', function ($compileProvider) {
 }]);
 
 
-angularApp.filter('ticToTime', function () {
+angularApp.filter('ticToTime', ['helpers', function (helpers) {
     "use strict";
-    return TimeFromTics;
-});
-
-angularApp.directive('ngEnter', ['$document', function ($document) {
-    "use strict";
-    return {
-        scope: {
-            ngEnter: "&"
-        },
-        link: function (scope, element, attrs) {
-            var enterWatcher = function (event) {
-                if (event.which === 13) {
-                    scope.ngEnter();
-                    $document.unbind("keydown keypress", enterWatcher);
-                }
-            };
-            $document.bind("keydown keypress", enterWatcher);
-        }
-    };
+    return helpers.timeFromTics;
 }]);
 
 angularApp.config(['$routeProvider', '$locationProvider',

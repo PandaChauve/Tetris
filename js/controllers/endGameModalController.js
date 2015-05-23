@@ -1,20 +1,19 @@
-
-var angularAppC = angular.module('angularApp.controllers');
-angularAppC.controller('ModalInstanceCtrl', ['$scope', '$modalInstance', 'won', 'gameName', 'statistics', function ($scope, $modalInstance, won, gameName, statistics) {
-    $scope.won = won;
+angular.module('angularApp.controllers')
+    .controller('ModalInstanceCtrl', ['$scope', '$modalInstance', 'gameName', 'userStats', 'stateChecker', 'helpers', 'storage',
+        function ($scope, $modalInstance, gameName, userStats, stateChecker,  helpers, storage) {
+        "use strict";
+    $scope.won = stateChecker.victory();
     $scope.published = false;
     $scope.publish = function () {
-        "use strict";
         if (!$scope.published) {
             $scope.published = true;
-            var store = UserStorage.GetStorage();
-            var name = store.Get("UserName") || "";
+            var name = storage.Get("UserName") || "";
 
             name = prompt("Who are you ?", name);
             if (name) {
-                store.Set("UserName", name);
+                storage.Set("UserName", name);
 
-                var ciphertext = stringToHex(des("wireshar", "yop" + statistics.score, 1, 0)); //just for avoiding zfa on wireshark
+                var ciphertext = stringToHex(des("wireshar", "yop" + userStats.getCurrentGame().score, 1, 0)); //just for avoiding zfa on wireshark
                 $.get("http://sylvain.luthana.be/api.php?add&name=" + name + "&value=" + ciphertext + "&map=" + gameName);
             }
             else {
@@ -32,49 +31,48 @@ angularAppC.controller('ModalInstanceCtrl', ['$scope', '$modalInstance', 'won', 
     };
 
     $scope.stats = (function () {
-        "use strict";
-        function GetMean(val, count, formater) {
+        function getMean(val, count, formater) {
             if (formater === undefined) {
                 formater = Math.floor;
             }
             return formater(val / count);
         }
 
-        var userStats = UserStats.GetUserStats();
-        var bg = userStats.GetBestGameStats(gameName);
-        var tg = userStats.GetTotalGameStats(gameName);
+        var bg = userStats.getBestGameStats(gameName);
+        var tg = userStats.getTotalGameStats(gameName);
+        var cu = userStats.getCurrentGame();
         var ret = [];
         ret.push({
             name: "Score",
-            value: statistics.score,
+            value: cu.score,
             best: bg.score,
             sum: tg.score,
-            mean: GetMean(tg.score, tg.gameCount)
+            mean: getMean(tg.score, tg.gameCount)
         });
         ret.push({
             name: "Time",
-            value: TimeFromTics(statistics.time),
-            best: TimeFromTics(bg.time),
-            sum: TimeFromTics(tg.time),
-            mean: GetMean(tg.time, tg.gameCount, TimeFromTics)
+            value: helpers.timeFromTics(cu.time),
+            best: helpers.timeFromTics(bg.time),
+            sum: helpers.timeFromTics(tg.time),
+            mean: getMean(tg.time, tg.gameCount, helpers.timeFromTics)
         });
         ret.push({
             name: "Blocks",
-            value: statistics.blockDestroyed,
+            value: cu.blockDestroyed,
             best: bg.blockDestroyed,
             sum: tg.blockDestroyed,
-            mean: GetMean(tg.blockDestroyed, tg.gameCount)
+            mean: getMean(tg.blockDestroyed, tg.gameCount)
         });
         ret.push({
             name: "Swaps",
-            value: statistics.swapCount,
+            value: cu.swapCount,
             best: bg.swapCount,
             sum: tg.swapCount,
-            mean: GetMean(tg.swapCount, tg.gameCount)
+            mean: getMean(tg.swapCount, tg.gameCount)
         });
         ret.push({
             name: "Efficiency",
-            value: (statistics.score / statistics.swapCount).toFixed(2),
+            value: (cu.score / cu.swapCount).toFixed(2),
             best: "/",
             sum: "/",
             mean: (tg.score / tg.swapCount).toFixed(2)
