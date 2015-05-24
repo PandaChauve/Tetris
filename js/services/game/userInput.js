@@ -5,32 +5,21 @@ angular.module('angularApp.factories')
 
         var UserInput = function () {
             // to store the current state
-            var that = this;
             this.keyCodes = {};
 
             // create callback to bind/unbind keyboard events
-            var self = this;
-            this._onKeyDown = function (event) {
-                self._onKeyChange(event);
+            var that = this;
+            this.onKeyDown = function (event) {
+                that.onKeyChange(event);
             };
 
             // bind keyEvents
-            document.addEventListener("keydown", this._onKeyDown, false);
-
-            function onClick(event) //FIXME ng click
-            {
-                that.keyCodes[event.data.key] = true;
-            }
-            $("#moveUp").click({obj: this, key: UserInput.ALIAS.up}, onClick);
-            $("#moveDown").click({obj: this, key: UserInput.ALIAS.down}, onClick);
-            $("#moveLeft").click({obj: this, key: UserInput.ALIAS.left}, onClick);
-            $("#moveRight").click({obj: this, key: UserInput.ALIAS.right}, onClick);
-            $("#swapBtn").click({obj: this, key: UserInput.ALIAS.space}, onClick);
+            document.addEventListener("keydown", this.onKeyDown, false);
         };
 
         UserInput.prototype.destroy = function () {
             // unbind keyEvents
-            document.removeEventListener("keydown", this._onKeyDown, false);
+            document.removeEventListener("keydown", this.onKeyDown, false);
         };
 
         UserInput.ALIAS = {
@@ -50,7 +39,7 @@ angular.module('angularApp.factories')
         };
 
 
-        UserInput.prototype._onKeyChange = function (event) {
+        UserInput.prototype.onKeyChange = function (event) {
             // update this.keyCodes
             var keyCode = event.keyCode;
             this.keyCodes[keyCode] = true;
@@ -58,6 +47,10 @@ angular.module('angularApp.factories')
                 (keyCode >= UserInput.ALIAS.left && keyCode <= UserInput.ALIAS.down)) { //avoid scroll from space and arrows
                 event.preventDefault();
             }
+        };
+
+        UserInput.prototype.press = function (key) {
+            this.keyCodes[key] = true;
         };
 
         UserInput.prototype.pressed = function (key) {
@@ -69,7 +62,7 @@ angular.module('angularApp.factories')
         };
 
         UserInput.leftMapping = {
-            swap: 32,
+            swap: 32, //space
             down: 83, //s
             up: 90, //z
             left: 81, //q

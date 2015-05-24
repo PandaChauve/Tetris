@@ -5,16 +5,16 @@
             <div class="gamePlaceHolder"></div>
         </div>
 
-        <div id="control" class="col-lg-3 col-lg-pull-5 col-md-pull-8 col-md-4 col-sm-12 col-xs-12 ">
+        <div id="control" ng-controller="ClickInputCtrl" class="col-lg-3 col-lg-pull-5 col-md-pull-8 col-md-4 col-sm-12 col-xs-12 ">
             <br/>
             <br/>
-            <button id="moveUp" type="button" class="btn btn-default">Up</button>
+            <button id="moveUp" type="button" class="btn btn-default" ng-click="fireKey(90)">Up</button>
             <br/>
-            <button id="moveLeft" type="button" class="btn btn-default">Left</button>
-            <button id="swapBtn" type="button" class="btn btn-default">Swap</button>
-            <button id="moveRight" type="button" class="btn btn-default">Right</button>
+            <button id="moveLeft" type="button" class="btn btn-default" ng-click="fireKey(81)">Left</button>
+            <button id="swapBtn" type="button" class="btn btn-default" ng-click="fireKey(32)">Swap</button>
+            <button id="moveRight" type="button" class="btn btn-default" ng-click="fireKey(68)">Right</button>
             <br/>
-            <button id="moveDown" type="button" class="btn btn-default">Down</button>
+            <button id="moveDown" type="button" class="btn btn-default" ng-click="fireKey(83)">Down</button>
             <br/><br/>
             <br/>
 
@@ -53,13 +53,13 @@
 
     <div class="row">
         <div class="sideGame col-md-6">
-            <div id="gameB" class="gameHolder">
+            <div id="gameB">
                 <div class="gamePlaceHolder"></div>
             </div>
         </div>
 
         <div class="sideGame col-md-6">
-            <div id="gameA" class="gameHolder">
+            <div id="gameA" >
                 <div class="gamePlaceHolder"></div>
             </div>
         </div>

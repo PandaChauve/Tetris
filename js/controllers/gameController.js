@@ -5,9 +5,9 @@ angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$htt
     "use strict";
     //FIXME directive too much in the controller
     $scope.gameName = $routeParams.name || "classic";
-    $scope.confi = {};
+    $scope.config = {};
     $scope.game = null;
-    $scope.confi.splitScreen = $scope.gameName === "classicSplitScreen";
+    $scope.config.splitScreen = $scope.gameName === "classicSplitScreen";
     $scope.load = function () {
         $http.get("games/" + $scope.gameName + ".json", {cache: false}).success(function (json) { //FIXME enable cache but i need to remove dom manipulations in jquery before
             $scope.useGameConfig(json);
@@ -62,7 +62,6 @@ angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$htt
         achievements.check(userStats.getCurrentGame(), $scope.gameName);
         $scope.open();
     };
-
     $scope.open = function () {
 
         var modalInstance = $modal.open({

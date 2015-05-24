@@ -6,19 +6,9 @@ html {
     width: 950px;
     margin: auto;
 }
-
-.sideGame {
-    width: 810px;
-    float: right;
-    margin: auto;
-    text-align: left;
+.sideGame .gameHolder{
+    margin:auto;
 }
-
-.gameHolder {
-    text-align: center;
-    min-height: 600px;
-}
-
 #control {
     text-align: center;
 }

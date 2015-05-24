@@ -134,7 +134,7 @@ angular.module('angularApp.factories')
             this.renderer.domElement.setAttribute('id', this.id);
             var node = $("#" + container + " .gamePlaceHolder");
             if (node.length === 0) {
-                throw container + "missing gameplaceHolder";
+                throw container + " missing gameplaceHolder";
             }
             node.empty();
             node.append($(this.renderer.domElement));
