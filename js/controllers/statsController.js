@@ -8,8 +8,6 @@ angular.module('angularApp.controllers')
         return viewLocation === $scope.data.active;
     };
     $scope.activate = function (name) {
-        $("#" + $scope.data.active).hide();
-        $("#" + name).show();
         $scope.data.active = name;
     };
     var CompleteData = function CompleteData(data) {

@@ -41,8 +41,11 @@
                 </div>
                 <div class="gameDetailsElement">
                     <h3>Objectives</h3><br/>
-
-                    <div id="rules"></div>
+                    <div id="rules">
+                        <ul>
+                            <li ng-repeat="rule in rules" ng-class="successCond: rule.success, defeatCond: !rule.sucess">{{rule.message}}</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

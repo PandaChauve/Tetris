@@ -1,5 +1,5 @@
 
-
+//FIXME use a directive and a service
 angular.module('angularApp.factories')
     .factory('notifications', [function notificationsFactory() {
         "use strict";

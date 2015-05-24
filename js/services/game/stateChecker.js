@@ -40,9 +40,7 @@ angular.module('angularApp.factories')
         };
 
         StateChecker.prototype.makeComponents = function (gconfig) {
-            $("#rules").html("<ul />");
-            if (gconfig === null || gconfig === undefined) {
-                $("#rules ul").append($("<li class='succesCond'>Try to stay alive !</li>"));
+            if (!gconfig) {
                 return;
             }
 
@@ -61,7 +59,6 @@ angular.module('angularApp.factories')
         };
 
         function PillarSizeChecker() {
-            $("#rules ul").append($("<li class='defeatCond'></li>"));
         }
 
         PillarSizeChecker.prototype.check = function (tetris) {
@@ -70,7 +67,6 @@ angular.module('angularApp.factories')
 
 
         function ScoreChecker(val) {
-            $("#rules ul").append($("<li class='successCond'>Get " + val + " points</li>"));
             this.val = val;
         }
 
@@ -80,11 +76,6 @@ angular.module('angularApp.factories')
 
 
         function BlockChecker(val) {
-            if (val === 0) {
-                $("#rules ul").append($("<li class='successCond'>Destroy each block</li>"));
-            } else {
-                $("#rules ul").append($("<li class='successCond'>Reduce the block count to " + val + "</li>"));
-            }
             this.val = val;
         }
 
@@ -93,7 +84,6 @@ angular.module('angularApp.factories')
         };
 
         function SwapChecker(val) {
-            $("#rules ul").append($("<li class='defeatCond'>Max " + val + " swaps</li>"));
             this.val = val;
         }
 
@@ -102,7 +92,6 @@ angular.module('angularApp.factories')
         };
 
         function TimeChecker(val) {
-            $("#rules ul").append($("<li class='defeatCond'>Max " + val + " seconds</li>"));
             this.val = val;
         }
 
