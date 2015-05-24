@@ -122,7 +122,9 @@ angular.module('angularApp.factories')
                     }
                     userInput.clear();
                 }
-
+                if(count > 1) {
+                    console.log("frame droped : " + (count - 1));
+                }
                 if (continueGame && !this.stop) {
                     for (i = 0; i < this.tetris.length; i += 1) {
                         this.visual[i].renderTetris(this.tetris[i]);
