@@ -32,7 +32,7 @@ angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$htt
         var obj = $scope.game;
         obj.init();
         obj.stopGame();
-        $scope.game = gameFactory.newGame($scope.game.config, $scope.game.grid, $scope.endCallBack);
+        $scope.game = gameFactory.newGame($scope.game.config, $scope.game.grid, $scope.endCallBack, $scope);
     };
     angular.element($window).bind('blur', function () {
         return function () {
@@ -43,14 +43,15 @@ angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$htt
             }
         };
     }());
+
     $scope.useGameConfig = function (config) {
         gameConstants.load(config.config);
-        $scope.rules = createRuleSet(config.victory);
+        $scope.$broadcast("newRulesSet", config.victory);
         if (config.grid == "") { // jshint ignore:line
-            $scope.game = gameFactory.newGame(config, "", $scope.endCallBack);
+            $scope.game = gameFactory.newGame(config, "", $scope.endCallBack, $scope);
         } else {
             $http.get("grids/" + config.grid + ".json", {cache: false}).success(function (json) { //FIXME enable cache but i need to remove dom manipulations in jquery before
-                $scope.game = gameFactory.newGame(config, json, $scope.endCallBack);
+                $scope.game = gameFactory.newGame(config, json, $scope.endCallBack, $scope);
             }).error(function (error) {
                 console.log(error);
             });
@@ -91,29 +92,4 @@ angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$htt
 
         });
     };
-    $scope.rules = [];
-        function createRuleSet(gconfig){
-            var ret = [];
-            if (!gconfig) {
-                ret.push({success: true, message:'Try to stay alive !'});
-                return ret;
-            }
-            if (gconfig.blocksLeft !== undefined) {
-                if (gconfig.blocksLeft === 0) {
-                    ret.push({success: true, message:"Destroy each block"});
-                } else {
-                    ret.push({success: true, message:"Reduce the block count to " + gconfig.blocksLeft});
-                }
-            }
-            if (gconfig.score !== undefined) {
-                ret.push({success: true, message:"Get " + gconfig.score + " points"});
-            }
-            if (gconfig.swaps !== undefined) {
-                ret.push({success: false, message:"Max " + gconfig.swaps + " swaps"});
-            }
-            if (gconfig.time !== undefined) {
-                ret.push({success: false, message:"Max " + gconfig.time + " seconds"});
-            }
-            return ret;
-        }
 }]);

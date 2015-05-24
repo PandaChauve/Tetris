@@ -26,24 +26,24 @@
         </div>
 
         <div class=" col-lg-3 col-md-8 col-lg-push-0 col-md-push-4 col-sm-12 col-xs-12 ">
-            <div class="gameDetails">
+            <div class="gameDetails" ng-controller="GameStateCtrl">
                 <div class="gameDetailsElement">
                     <h3>Score</h3>
-                    <span id="score">0</span>
+                    <span id="score">{{state.score}}</span>
                 </div>
                 <div class="gameDetailsElement">
                     <h3>Swaps</h3>
-                    <span id="swaps">0</span>
+                    <span id="swaps">{{state.swaps}}</span>
                 </div>
                 <div class="gameDetailsElement">
                     <h3>Time</h3>
-                    <span id="time" class="timeBox"></span>
+                    <span id="time" class="timeBox">{{state.time | ticToTime}}</span>
                 </div>
                 <div class="gameDetailsElement">
                     <h3>Objectives</h3><br/>
                     <div id="rules">
                         <ul>
-                            <li ng-repeat="rule in rules" ng-class="successCond: rule.success, defeatCond: !rule.sucess">{{rule.message}}</li>
+                            <li ng-repeat="rule in state.rules" class="defeatCond" ng-class="{successCond: rule.success}">{{rule.message}}</li>
                         </ul>
                     </div>
                 </div>

@@ -4,7 +4,8 @@ angular.module('angularApp.factories')
     .factory('gameFactory', ['helpers', 'userInput', 'userStats', 'stateChecker', 'threeRendererFactory', 'tetrisFactory', 'TIC_PER_SEC',
         function gameFactoryCreator(helpers, userInput, userStats, stateChecker, threeRendererFactory, tetrisFactory, TIC_PER_SEC) {
             "use strict";
-            function Game(config, grid, cb) {
+            function Game(config, grid, cb, scope) {
+                this.scope = scope;
                 this.config = config;
                 this.grid = grid;
                 this.tetris = [];
@@ -100,7 +101,7 @@ angular.module('angularApp.factories')
                     this.start = timestamp - this.tics / TIC_PER_SEC * 1000;
                 }
                 var progress = timestamp - this.start;
-                $(".timeBox").html(helpers.timeFromTics(this.tics)); //FIXME middle of nowhere jquery
+                this.scope.$broadcast('newTime', this.tics);
 
                 var continueGame = true;
                 var count = 0;
@@ -109,20 +110,14 @@ angular.module('angularApp.factories')
                     this.tics += 1;
                     for (i = 0; i < this.tetris.length; i += 1) {
                         this.tetris[i].oneTick();
-
-                        $("#" + this.config.tetris[i].scoreBox).html(this.tetris[i].getScore());
+                        this.scope.$broadcast('newScore', this.tetris[i].getScore()); //FIXME broadcast the game id
                         stateChecker.check(this.tetris[i]);
                         if (stateChecker.defeat() || stateChecker.victory()) {
                             continueGame = false;
                             this.visual[i].freezeGame();
                         }
                         else {
-                            if (this.config.victory !== undefined && this.config.victory.swaps !== undefined) {
-                                $("#" + this.config.tetris[i].swapBox).html(this.config.victory.swaps - this.tetris[i].getSwaps());
-                            }
-                            else {
-                                $("#" + this.config.tetris[i].swapBox).html(this.tetris[i].getSwaps());
-                            }
+                            this.scope.$broadcast('newSwaps', this.tetris[i].getSwaps());
                         }
                     }
                     userInput.clear();
@@ -143,8 +138,8 @@ angular.module('angularApp.factories')
             };
 
             return {
-                newGame: function (config, grid, cb) {
-                    return new Game(config, grid, cb);
+                newGame: function (config, grid, cb, scope) {
+                    return new Game(config, grid, cb, scope);
                 }
             };
         }]);
