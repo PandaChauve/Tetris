@@ -19,7 +19,7 @@ angular.module('angularApp.factories')
             };
 
             AchievementsState.prototype.check = function (game, gameName) {
-                for (var key = 0; i < AchievementsState.List.enumSize; i += 1) {
+                for (var key = 0; key < AchievementsState.List.enumSize; key += 1) {
                     if (!this.container[key]) {
                         this.checkIndividual(key, game, gameName);
 

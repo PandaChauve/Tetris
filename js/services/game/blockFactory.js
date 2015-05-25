@@ -8,6 +8,7 @@ angular.module('angularApp.factories')
             this.verticalPosition = 0;
             this.animationState = 0;
             this.id = -1;
+            this.wasFalling = false;
         }
 
         Block.prototype.clone = function () {

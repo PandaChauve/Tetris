@@ -121,7 +121,10 @@ angular.module('angularApp.factories')
             if (block.verticalPosition < minY) {
                 block.verticalPosition = minY;
                 if (this.container[i][j - 1].state !== blockFactory.EState.Falling) //by sliding it can be stoping the fall without being lower
-                {block.setState(blockFactory.EState.Blocked);}
+                {
+                    block.setState(blockFactory.EState.Blocked);
+                    block.wasFalling = true;
+                }
             }
             return {min: block.verticalPosition + gameConstants.pixelPerBox, deltaY: 0};
         };
@@ -157,6 +160,7 @@ angular.module('angularApp.factories')
 
         Grid.prototype.animateBlock = function (i, j, minY) {
             var block = this.container[i][j];
+            block.wasFalling = false;
             switch (block.state) {
                 case blockFactory.EState.Blocked:
                     return {min: block.verticalPosition + gameConstants.pixelPerBox, deltaY: 0};
