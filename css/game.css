@@ -70,25 +70,6 @@ canvas {
     text-align: right;
 }
 
-.notification {
-    display: none;
-    width: 250px;
-    margin: 10px auto;
-    border: 1px solid white;
-    height: 60px;
-    padding: 10px;
-    background: black;
-    opacity: 0.8;
-}
-
-#notificationZone {
-    position: absolute;
-    bottom: 0;
-    width: 99%;
-    margin: 0;
-    padding: 0;
-}
-
 .cube {
     height: 150px;
     line-height: 150px;
@@ -113,4 +94,24 @@ canvas {
     -webkit-filter: none;
     filter: none;
     border: 2px solid black;
+}
+
+.notification{
+    cursor:pointer;
+    width: 400px;
+    margin-left: -200px;
+    background:#7A8288;
+    border:black;
+
+}
+.notification img{
+    float:left;
+    border: 1px solid grey;
+    width:60px;
+}
+.notification div span{
+    color:white;
+    font-size:1.5em;
+    line-height: 60px;
+
 }

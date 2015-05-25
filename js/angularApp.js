@@ -1,5 +1,5 @@
 
-angular.module('angularApp.base', []);
+angular.module('angularApp.base', ['cgNotify']);
 angular.module('angularApp.factories', ['angularApp.base']);
 angular.module('angularApp.controllers', ['ui.bootstrap', 'angularApp.factories']);
 angular.module('angularApp.directives', ['angularApp.base', 'angularApp.factories']);
@@ -57,3 +57,11 @@ angularApp.config(['$routeProvider', '$locationProvider',
             $locationProvider.hashPrefix('!');
         }]
 );
+
+angularApp.run(['notify', function (notify) {
+    "use strict";
+    notify.config({
+        templateUrl: "templates/notification.html",
+        duration : 5000,
+    });
+}]);

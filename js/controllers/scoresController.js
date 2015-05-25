@@ -1,7 +1,6 @@
 angular.module('angularApp.controllers')
     .controller('ScoresCtrl', ['$scope', '$http', function ($scope, $http) {
     "use strict";
-
     $scope.isActive = function (viewLocation) {
         return viewLocation === $scope.type;
     };

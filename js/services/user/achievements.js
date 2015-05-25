@@ -3,8 +3,8 @@
  */
 
 angular.module('angularApp.factories')
-    .factory('achievements', ['storage', 'TIC_PER_SEC', 'SEC_PER_MIN', 'userStats', 'notifications',
-        function achievementsFactory(storage, TIC_PER_SEC, SEC_PER_MIN, userStats, notifications) {
+    .factory('achievements', ['$rootScope', 'storage', 'TIC_PER_SEC', 'SEC_PER_MIN', 'userStats', 'notify',
+        function achievementsFactory($rootScope, storage, TIC_PER_SEC, SEC_PER_MIN, userStats, notify) {
             'use strict';
 
             function AchievementsState() {
@@ -19,11 +19,27 @@ angular.module('angularApp.factories')
             };
 
             AchievementsState.prototype.check = function (game, gameName) {
-                for (var i = 0; i < AchievementsState.List.enumSize; i += 1) {
-                    this.checkIndividual(i, game, gameName);
+                for (var key = 0; i < AchievementsState.List.enumSize; i += 1) {
+                    if (!this.container[key]) {
+                        this.checkIndividual(key, game, gameName);
+
+                        //new one => notify !
+                        if (this.container[key]) {
+                            var sc = $rootScope.$new(true);
+                            sc.picture = {
+                                src: "Resources/imgs/placeholder.png",
+                                alt: "Success !"
+                            };
+                            notify({
+                                message: "Success unlocked : " + AchievementsState.List.getName(key),
+                                scope: sc
+                            });
+                        }
+                    }
                 }
                 storage.Set("UserAchievements", this.container);
             };
+
             AchievementsState.prototype.keyToScore = function (key) {
                 switch (key) {
                     case AchievementsState.List.Beginner :
@@ -34,6 +50,8 @@ angular.module('angularApp.factories')
                         return 160;
                     case AchievementsState.List.God :
                         return 350;
+                    case AchievementsState.List.Titan :
+                        return 500;
                     case AchievementsState.List.Cheater :
                         return 1000;
                 }
@@ -44,13 +62,13 @@ angular.module('angularApp.factories')
                 var size = 0;
                 switch (key) {
                     case AchievementsState.List.Ambidextrous :
+                        size = 0;
+                        break;
+                    case AchievementsState.List.Psychic :
                         size = 1;
                         break;
-                    case AchievementsState.List.Psychics :
-                        size = 2;
-                        break;
                     case AchievementsState.List.Sorcerer :
-                        size = 3;
+                        size = 2;
                         break;
                     default:
                         throw "What are you doing here ?";
@@ -65,15 +83,12 @@ angular.module('angularApp.factories')
 
             AchievementsState.prototype.checkIndividual = function (key, game, gameName) {
                 //already done
-                if (this.container[key]) {
-                    return;
-                }
-
                 switch (key) {
                     case AchievementsState.List.Beginner :
                     case AchievementsState.List.Expert :
                     case AchievementsState.List.Master :
                     case AchievementsState.List.God :
+                    case AchievementsState.List.Titan :
                         if (gameName === "classic") {
                             this.container[key] = game.score >= this.keyToScore(key);
                         }
@@ -84,7 +99,7 @@ angular.module('angularApp.factories')
                         }
                         break;
                     case AchievementsState.List.Ambidextrous :
-                    case AchievementsState.List.Psychics :
+                    case AchievementsState.List.Psychic :
                     case AchievementsState.List.Sorcerer :
                         this.container[key] = this.checkMultiLines(key, game);
                         break;
@@ -101,10 +116,6 @@ angular.module('angularApp.factories')
                         break;
                 }
 
-                //new one => notify !
-                if (this.container[key]) {
-                    notifications.notify("Gratz you unlocked : " + AchievementsState.List.getName(key));
-                }
             };
 
             AchievementsState.List = {
@@ -112,14 +123,15 @@ angular.module('angularApp.factories')
                 Expert: 1,
                 Master: 2,
                 God: 3,
-                Cheater: 4,
-                Ambidextrous: 5,
-                Psychics: 6,
-                Sorcerer: 7,
-                Stubborn: 8,
-                BiggerIsBetter: 9,
-                Nostalgic: 10, //FIXME campaign
-                enumSize: 11
+                Titan: 4,
+                Cheater: 5,
+                Ambidextrous: 6,
+                Psychic: 7,
+                Sorcerer: 8,
+                Stubborn: 9,
+                BiggerIsBetter: 10,
+                Nostalgic: 11, //FIXME campaign
+                enumSize: 12
             };
 
             AchievementsState.List.getName = function (key) {
@@ -141,11 +153,13 @@ angular.module('angularApp.factories')
                         return "Get 160 points in classic";
                     case AchievementsState.List.God :
                         return "Get 350 points in classic";
+                    case AchievementsState.List.Titan :
+                        return "An original God";
                     case AchievementsState.List.Cheater :
                         return "Get 1000 points in sandbox";
                     case AchievementsState.List.Ambidextrous :
                         return "Get 2 series at once in any game mode";
-                    case AchievementsState.List.Psychics :
+                    case AchievementsState.List.Psychic :
                         return "Get 3 series at once in any game mode";
                     case AchievementsState.List.Sorcerer :
                         return "Get 4 series at once in any game mode";
