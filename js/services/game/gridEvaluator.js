@@ -56,10 +56,10 @@ angular.module('angularApp.factories')
         };
 
         GridEvaluator.prototype.findBlockIndex = function (container, i, j) {
-            var index;
-            for (index in container[i]) {
-                if (container[i].hasOwnProperty(index) && container[i][index].verticalPosition === gameConstants.pixelPerBox * j) {
-                    return parseInt(index);
+            var target = gameConstants.pixelPerBox * j;
+            for (var z = gameConstants.hiddenRowCount; z < container[i].length; z+=1) {
+                if (container[i][z].verticalPosition === target) {
+                    return z;
                 }
             }
             return -1;
@@ -129,8 +129,6 @@ angular.module('angularApp.factories')
 
         GridEvaluator.prototype.getScore = function () {
             var multi = this.series.length + this.falling;
-            if(this.falling)
-                console.log(this.falling);
             var score = 0;
             for (var i = 0; i < this.series.length; i += 1) {
                 score += (this.series[i].length - 2) * multi;

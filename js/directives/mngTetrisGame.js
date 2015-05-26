@@ -1,0 +1,13 @@
+
+angular.module('angularApp.directives').directive("mngTetrisGame", ['game', function(game){
+    return {
+        restrict: "A",
+        link: function(scope, element, attrs){
+            game.linkToDom(element[0],attrs.mngTetrisGame);
+
+            scope.$on('$destroy', function() {
+                game.unlinkToDom(element[0],attrs.mngTetrisGame);
+            });
+        }
+    };
+}]);

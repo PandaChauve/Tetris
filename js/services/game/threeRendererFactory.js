@@ -9,7 +9,6 @@ angular.module('angularApp.factories')
                 cursors = 1;
             }
             this.camera = this.createCamera();
-            this.renderer = this.createRenderer();
             this.light = this.createLight();
             this.cursor = [this.createCursor(0x008080)];
             for (var i = 1; i < cursors; i += 1) {
@@ -18,6 +17,8 @@ angular.module('angularApp.factories')
             this.scene = this.createScene();
             this.offset = 0;
             this.id = String.fromCharCode(65 + Math.floor(Math.random() * 26)) + Date.now();
+
+            this.colors = [];
         }
 
         ThreeRenderer.prototype.clear = function () {
@@ -45,22 +46,8 @@ angular.module('angularApp.factories')
                 scene.add(this.cursor[i]);
             }
 
-            var geometry = new THREE.PlaneGeometry(1000, 400);
-            //now try to get everything with transparent true above this plane or your going to cry :)
-            var material = new THREE.MeshBasicMaterial({
-                color: 0x000000,
-                side: THREE.DoubleSide,
-                transparent: true,
-                opacity: 0.5
-            });
-            var cube = new THREE.Mesh(geometry, material);
-            cube.rotation.x += 1.62;
-            cube.position.setY(gameConstants.hiddenRowCount * gameConstants.pixelPerBox - gameConstants.pixelPerBox / 2);
-            cube.renderDepth = 1;
-            scene.add(cube);
-
-            geometry = new THREE.BoxGeometry(1000, 3, 3);
-            material = new THREE.MeshPhongMaterial({color: 0x330000, emissive: 0x990000});
+            var geometry = new THREE.BoxGeometry(1000, 3, 3);
+            var material = new THREE.MeshPhongMaterial({color: 0x330000, emissive: 0x990000});
             var line = new THREE.Mesh(geometry, material);
             line.position.set(0, (gameConstants.hiddenRowCount + gameConstants.displayedRowCount) * gameConstants.pixelPerBox, 10);
             scene.add(line);
@@ -82,8 +69,8 @@ angular.module('angularApp.factories')
             return camera;
         };
 
-        ThreeRenderer.prototype.createRenderer = function () {
-            var renderer = new THREE.WebGLRenderer({antialias: true});
+        ThreeRenderer.prototype.createRenderer = function (canvas) {
+            var renderer = new THREE.WebGLRenderer({canvas: canvas, antialias: true});
             renderer.setClearColor(0x000000);
             renderer.setSize(420, 600);
             renderer.shadowMapEnabled = true;
@@ -91,12 +78,11 @@ angular.module('angularApp.factories')
             return renderer;
         };
 
-        ThreeRenderer.prototype.addCube = function (color) {
+        ThreeRenderer.prototype.createCube = function (color) {
             var geometry = new THREE.BoxGeometry(gameConstants.pixelPerBox * 0.7, gameConstants.pixelPerBox * 0.7, gameConstants.pixelPerBox / 4);
             var material = new THREE.MeshPhongMaterial({color: color, emissive: 0x111111});
             var newCube = new THREE.Mesh(geometry, material);
-            this.scene.add(newCube);
-            return newCube.id;
+            return newCube;
         };
 
         function CalculateX(block, x) {
@@ -108,12 +94,20 @@ angular.module('angularApp.factories')
             }
             return x;
         }
-
+        ThreeRenderer.prototype.getColor = function getColor(c){
+            if(!this.colors[c]){
+                this.colors[c] = new THREE.Color(c);
+            }
+            return this.colors[c];
+        };
         ThreeRenderer.prototype.updateCube = function (x, block) {
-            var cube = this.scene.getObjectById(block.id);
+            var cube = block.threeObject;
+            if(cube == null){
+                throw "yeahhhh";
+            }
             cube.position.setY(block.verticalPosition + this.offset);
             cube.position.setX(CalculateX(block, x));
-            cube.material.color = new THREE.Color(block.getHexColor()); //no need for math and allocation each time :)
+            cube.material.color = this.getColor(block.getHexColor());
             if (block.state === blockFactory.EState.Disappearing) {
                 cube.material.opacity = Math.max(1 - block.animationState / 100, 0);
                 cube.material.transparent = true;
@@ -122,6 +116,7 @@ angular.module('angularApp.factories')
             if (cube.material.opacity === 0) {
                 this.scene.remove(cube);
                 block.id = -1;
+                block.threeObject = null;
             }
         };
 
@@ -130,21 +125,12 @@ angular.module('angularApp.factories')
             this.renderer.render(this.scene, this.camera);
         };
 
-        ThreeRenderer.prototype.linkDom = function (container) {
-            this.renderer.domElement.setAttribute('id', this.id);
-            var node = $("#" + container + " .gamePlaceHolder");
-            if (node.length === 0) {
-                throw container + " missing gameplaceHolder";
-            }
-            node.empty();
-            node.append($(this.renderer.domElement));
+        ThreeRenderer.prototype.linkDom = function (canvas) {
+            this.renderer = this.createRenderer(canvas);
         };
 
         ThreeRenderer.prototype.unlinkDom = function () {
-            var element = document.getElementById(this.id);
-            if (element !== null) {
-                element.parentNode.removeChild(element);
-            }
+            this.renderer = null;
         };
 
         ThreeRenderer.prototype.createCursor = function (color) {
@@ -189,7 +175,9 @@ angular.module('angularApp.factories')
                     block = tetris.grid.container[i][j];
                     if (block.type !== blockFactory.EType.PlaceHolder) {
                         if (block.id === -1) {
-                            block.id = this.addCube(block.getHexColor());
+                            block.threeObject = this.createCube(block.getHexColor())
+                            this.scene.add(block.threeObject);
+                            block.id = block.threeObject.id;
                         }
                         this.updateCube((i - gameConstants.columnCount / 2) * gameConstants.pixelPerBox, block);
                     }

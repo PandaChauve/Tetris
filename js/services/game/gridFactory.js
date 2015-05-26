@@ -141,7 +141,7 @@ angular.module('angularApp.factories')
         };
 
         Grid.prototype.animateSwapped = function (i, j, block, minY) {
-            block.animationState += 15;
+            block.animationState += gameConstants.swapPerTic;
             if (block.animationState > 100) {
                 if (block.type === blockFactory.EType.PlaceHolder) {
                     this.removeBlockFixed(i, j); //remove this block in particular

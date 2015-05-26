@@ -13,7 +13,6 @@ angular.module('angularApp.controllers').controller('GameStateCtrl', ['$scope',
         ///!\ to avoid too much apply it's the time in charge (about 10 per sec...)
         $scope.$on("newScore", function(event, m){
             $scope.state.score = m;
-            event.preventDefault();
         });
         $scope.$on("newSwaps", function(event, m){
 
@@ -26,7 +25,7 @@ angular.module('angularApp.controllers').controller('GameStateCtrl', ['$scope',
             event.preventDefault();
         });
         $scope.$on("newTime", function(event, m){
-            if(m >= $scope.state.time + 6) //FIXME magic number
+            if(m >= $scope.state.time / 6) //FIXME magic number  tictime / 10
             {
                 $scope.state.time = m;
                 $scope.$apply();

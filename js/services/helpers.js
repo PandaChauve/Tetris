@@ -17,7 +17,7 @@ angular.module('angularApp.factories')
             var totalSec = Math.floor(totaTics / TIC_PER_SEC);
             var minutes = Math.floor(totalSec / SEC_PER_MIN);
             var seconds = totalSec % SEC_PER_MIN;
-            var tics = Math.floor((totaTics % TIC_PER_SEC ) / 6);
+            var tics = Math.floor((totaTics % TIC_PER_SEC ) / (TIC_PER_SEC/10));
             return (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds < 10 ? "0" + seconds : seconds) + "." + tics;
         }
 

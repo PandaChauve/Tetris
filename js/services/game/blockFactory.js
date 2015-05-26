@@ -8,6 +8,7 @@ angular.module('angularApp.factories')
             this.verticalPosition = 0;
             this.animationState = 0;
             this.id = -1;
+            this.threeObject = null; //optimisation required to avoid the lookup in the scene
             this.wasFalling = false;
         }
 
@@ -24,6 +25,7 @@ angular.module('angularApp.factories')
             this.verticalPosition = cpy.verticalPosition;
             this.animationState = cpy.animationState;
             this.id = cpy.id;
+            this.threeObject = cpy.threeObject;
         };
 
         Block.prototype.setState = function (state) {

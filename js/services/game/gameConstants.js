@@ -8,12 +8,13 @@ angular.module('angularApp.factories')
             this.displayedRowCount = 10;
             this.hiddenRowCount = 4;//MIN 1 !
             this.pixelPerBox = 50;
-            this.fallSpeedPerTic = 7;
-            this.disapearSpeedPerTic = 2;
-            this.groundSpeedPerTic = 0.07;
-            this.groundUpSpeedPerTic = 3;
+            this.swapPerTic = 15 *60/TIC_PER_SEC;
+            this.fallSpeedPerTic = 7*60/TIC_PER_SEC;
+            this.disapearSpeedPerTic = 2*60/TIC_PER_SEC;
+            this.groundSpeedPerTic = 0.07*60/TIC_PER_SEC;
+            this.groundUpSpeedPerTic = 3*60/TIC_PER_SEC;
             this.groundAccelerationPerTic = 0.02 / TIC_PER_SEC / 60;
-            this.fallPeriod = 500;
+            this.fallPeriod = 500*60/TIC_PER_SEC;
             this.lostThreshold = ((this.displayedRowCount + this.hiddenRowCount) * this.pixelPerBox);
             this.startRows = this.displayedRowCount - 4;
         };
@@ -34,7 +35,7 @@ angular.module('angularApp.factories')
             }
             else if (mode === "raining") {
                 this.groundSpeedPerTic = 0;
-                this.fallPeriod = 300;
+                this.fallPeriod = 300*60/TIC_PER_SEC;
                 this.groundAccelerationPerTic = 0;
             }
             else if (mode === "large") {
