@@ -40,7 +40,7 @@ angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$htt
         }());
 
         $scope.useGameConfig = function (config) {
-            gameConstants.load(config.config);
+            gameConstants.load(config.rules);
             $scope.$broadcast("newRulesSet", config.victory);
             if (config.grid == "") { // jshint ignore:line
                 game.setConfiguration(config, "", $scope.endCallBack, $scope);
