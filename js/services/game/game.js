@@ -3,11 +3,33 @@ angular.module('angularApp.factories')
     .factory('game', ['userInput', 'userStats', 'stateChecker', 'threeRendererFactory', 'tetrisFactory', 'TIC_PER_SEC',
         function gameFactory( userInput, userStats, stateChecker, threeRendererFactory, tetrisFactory, TIC_PER_SEC) {
             "use strict";
+            function Score(){
+                this.current = 0;
+                this.scoreList = [];
+                this.addTics = function (count){
+                    for(var i = 0; i < this.scoreList.length; i+= 1){
+                        this.scoreList[i].opacity -= count/4;
+                    }
+                };
+                this.addScore = function (s){
+                    if(s === this.current){
+                        return;
+                    }
+                    this.scoreList.push({
+                        opacity : 100,
+                        value : (s - this.current),
+                        object : null
+                    });
+                    this.current = s;
+                };
+            }
+
             function Game() {
                 this.availableGrids = [];
                 this.started = false;
                 this.gridCount = 0;
                 this.reset();
+                this.scoreHandler = new Score();
             }
 
             Game.prototype.setConfiguration = function(config, grid, cb, scope){
@@ -34,6 +56,7 @@ angular.module('angularApp.factories')
                 this.startTime = null;
                 this.pause = false;
                 this.tics = 0;
+                this.scoreHandler = new Score();
             };
 
             Game.prototype.startNewGame = function startNewGame(){
@@ -58,7 +81,7 @@ angular.module('angularApp.factories')
                     }
                     this.visual.push(threeRendererFactory.newRenderer(this.config.tetris[i].cursors));
                     this.visual[i].linkDom(findDom(this.availableGrids, i));
-                    this.visual[i].renderTetris(this.tetris[i]); //first render before loop to get everything smooth
+                    this.visual[i].renderTetris(this.tetris[i], []); //first render before loop to get everything smooth
                 }
                 this.id = requestAnimationFrame(this.createRenderingFct());
 
@@ -161,38 +184,35 @@ angular.module('angularApp.factories')
                 this.scope.$broadcast('newTime', this.tics);
 
                 var continueGame = true;
-                //var count = 0;
+                var count = 0;
                 while (this.tics < progress * TIC_PER_SEC / 1000 && continueGame) {
-                    //count += 1;
+                    count += 1;
                     this.tics += 1;
                     for (i = 0; i < this.tetris.length; i += 1) {
                         this.tetris[i].oneTick();
-                        this.scope.$broadcast('newScore', this.tetris[i].getScore()); //FIXME broadcast the game id
                         stateChecker.check(this.tetris[i]);
                         if (stateChecker.defeat() || stateChecker.victory()) {
                             continueGame = false;
                             this.visual[i].freezeGame();
                         }
-                        else {
-                            this.scope.$broadcast('newSwaps', this.tetris[i].getSwaps());
-                        }
                     }
                     userInput.clear();
-                }/*
-                if(count > 1) {
-                    console.log("frame droped : " + (count - 1));
-                }*/
+                }
+
+                this.scope.$broadcast('newScore', this.tetris[0].getScore());
+                this.scope.$broadcast('newSwaps', this.tetris[0].getSwaps());
+                this.scoreHandler.addScore(this.tetris[0].getScore());
+                this.scoreHandler.addTics(count);
+
                 if (continueGame) {
                     for (i = 0; i < this.tetris.length; i += 1) {
-                        this.visual[i].renderTetris(this.tetris[i]);
+                        this.visual[i].renderTetris(this.tetris[i], this.scoreHandler.scoreList);
                     }
                     this.splitScreenQuickFix();
                     this.id = requestAnimationFrame(this.createRenderingFct(this));
                 }
-                else if (!continueGame) {
-                    if (this.callback !== null) {
-                        this.callback(this);
-                    }
+                else if (this.callback !== null) {
+                    this.callback(this);
                 }
             };
 

@@ -1,19 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="20d21939-c8e4-49c3-84d6-1c3927d59de7" name="Default" comment="bug fix + bonus for falling block">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/directives/mngTetrisGame.js" />
-      <change type="MOVED" beforePath="C:\Users\panda\WebstormProjects\Tetris\js\services\game\gameFactory.js" afterPath="$PROJECT_DIR$/js/services/game/game.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.min.css" afterPath="$PROJECT_DIR$/app.min.css" />
+    <list default="true" id="20d21939-c8e4-49c3-84d6-1c3927d59de7" name="Default" comment="">
+      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\Resources\imgs\keyboardLeft.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\Resources\imgs\keyboardRight.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.min.js" afterPath="$PROJECT_DIR$/app.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/services/game/blockFactory.js" afterPath="$PROJECT_DIR$/js/services/game/blockFactory.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/game.html" afterPath="$PROJECT_DIR$/templates/game.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/services/game/gameConstants.js" afterPath="$PROJECT_DIR$/js/services/game/gameConstants.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers/gameController.js" afterPath="$PROJECT_DIR$/js/controllers/gameController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers/gameStateController.js" afterPath="$PROJECT_DIR$/js/controllers/gameStateController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/services/game/gridEvaluator.js" afterPath="$PROJECT_DIR$/js/services/game/gridEvaluator.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/services/game/gridFactory.js" afterPath="$PROJECT_DIR$/js/services/game/gridFactory.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/services/helpers.js" afterPath="$PROJECT_DIR$/js/services/helpers.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/services/game/game.js" afterPath="$PROJECT_DIR$/js/services/game/game.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.debug.html" afterPath="$PROJECT_DIR$/index.debug.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/services/game/threeRendererFactory.js" afterPath="$PROJECT_DIR$/js/services/game/threeRendererFactory.js" />
@@ -45,9 +37,26 @@
         <entry file="file://$PROJECT_DIR$/js/services/game/game.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="168" column="27" selection-start-line="168" selection-start-column="27" selection-end-line="168" selection-end-column="27" />
+              <caret line="10" column="60" selection-start-line="10" selection-start-column="60" selection-end-line="10" selection-end-column="60" />
               <folding />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.debug.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.debug.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.807693">
+              <caret line="70" column="110" selection-start-line="70" selection-start-column="110" selection-end-line="70" selection-end-column="110" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="three.js" pinned="false" current-in-tab="false">
+        <entry file="https://cdnjs.cloudflare.com/ajax/libs/three.js/r71/three.js">
+          <provider selected="true" editor-type-id="httpFileEditor">
+            <state />
           </provider>
         </entry>
       </file>
@@ -71,31 +80,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.debug.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.debug.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.23077">
-              <caret line="68" column="73" selection-start-line="68" selection-start-column="73" selection-end-line="68" selection-end-column="73" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="threeRendererFactory.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="threeRendererFactory.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/services/game/threeRendererFactory.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.103448">
-              <caret line="174" column="56" selection-start-line="174" selection-start-column="56" selection-end-line="174" selection-end-column="56" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gameConstants.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/services/game/gameConstants.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="49" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
+            <state vertical-scroll-proportion="0.93217665">
+              <caret line="217" column="17" selection-start-line="217" selection-start-column="17" selection-end-line="217" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -111,10 +100,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gridEvaluator.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="gridEvaluator.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/services/game/gridEvaluator.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2503771">
+            <state vertical-scroll-proportion="0.0">
               <caret line="130" column="58" selection-start-line="130" selection-start-column="58" selection-end-line="130" selection-end-column="58" />
               <folding />
             </state>
@@ -160,7 +149,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/factories/gridEvaluator.js" />
         <option value="$PROJECT_DIR$/services/game/gameConstants.js" />
         <option value="$PROJECT_DIR$/services/game/gridEvaluator.js" />
         <option value="$PROJECT_DIR$/services/game/gridFactory.js" />
@@ -201,16 +189,17 @@
         <option value="$PROJECT_DIR$/js/directives/mngTetrisGame.js" />
         <option value="$PROJECT_DIR$/js/services/helpers.js" />
         <option value="ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js" />
-        <option value="$PROJECT_DIR$/index.debug.html" />
         <option value="$PROJECT_DIR$/js/services/game/gridFactory.js" />
         <option value="$PROJECT_DIR$/js/services/game/gameConstants.js" />
-        <option value="$PROJECT_DIR$/js/services/game/threeRendererFactory.js" />
         <option value="$PROJECT_DIR$/js/services/game/blockFactory.js" />
         <option value="$PROJECT_DIR$/js/controllers/gameStateController.js" />
         <option value="$PROJECT_DIR$/js/services/constants.js" />
         <option value="$PROJECT_DIR$/js/controllers/gameController.js" />
-        <option value="$PROJECT_DIR$/js/services/game/game.js" />
         <option value="$PROJECT_DIR$/js/services/game/gridEvaluator.js" />
+        <option value="cdnjs.cloudflare.com/ajax/libs/three.js/r71/three.js" />
+        <option value="$PROJECT_DIR$/index.debug.html" />
+        <option value="$PROJECT_DIR$/js/services/game/game.js" />
+        <option value="$PROJECT_DIR$/js/services/game/threeRendererFactory.js" />
       </list>
     </option>
   </component>
@@ -724,12 +713,6 @@
       <option name="number" value="Default" />
       <updated>1428682894359</updated>
     </task>
-    <task id="LOCAL-00057" summary="stats">
-      <created>1431861970552</created>
-      <option name="number" value="00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1431861970553</updated>
-    </task>
     <task id="LOCAL-00058" summary="stats">
       <created>1431862091922</created>
       <option name="number" value="00058" />
@@ -1018,7 +1001,13 @@
       <option name="project" value="LOCAL" />
       <updated>1432564487243</updated>
     </task>
-    <option name="localTasksCounter" value="106" />
+    <task id="LOCAL-00106" summary="full angular + optimisation (need more refactoring sadly)">
+      <created>1432638286888</created>
+      <option name="number" value="00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1432638286889</updated>
+    </task>
+    <option name="localTasksCounter" value="107" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1032,11 +1021,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.48946258" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919255" sideWeight="0.5565032" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.49791667" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32937366" sideWeight="0.49166667" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3006073" sideWeight="0.45309168" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919255" sideWeight="0.48933902" order="10" side_tool="false" content_ui="tabs" />
@@ -1048,11 +1039,9 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13751318" sideWeight="0.50520056" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36336032" sideWeight="0.5271855" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.49791667" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3299595" sideWeight="0.49791667" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1096,7 +1085,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="stop the previous game when leaving :)" />
     <MESSAGE value="style" />
     <MESSAGE value="fixing modal score push + fixing part of the stats" />
     <MESSAGE value="bit of cleaning" />
@@ -1121,26 +1109,20 @@
     <MESSAGE value="display droped frame" />
     <MESSAGE value="new notification engine :)" />
     <MESSAGE value="bug fix + bonus for falling block" />
-    <option name="LAST_COMMIT_MESSAGE" value="bug fix + bonus for falling block" />
+    <MESSAGE value="full angular + optimisation (need more refactoring sadly)" />
+    <option name="LAST_COMMIT_MESSAGE" value="full angular + optimisation (need more refactoring sadly)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/js/services/game/threeRendererFactory.js</url>
-          <line>105</line>
-          <option name="timeStamp" value="306" />
-        </line-breakpoint>
-      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
       <default-breakpoints>
-        <breakpoint enabled="true" log-message="true" type="javascript-exception">
+        <breakpoint log-message="true" type="javascript-exception">
           <properties uncaughtOnly="true" />
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="309" />
+      <option name="time" value="314" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JavascriptDebugType">
@@ -1163,13 +1145,6 @@
     </PATH>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/externals/ui-bootstrap-0.13.0.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/externals/des.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1461,26 +1436,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.debug.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.23077">
-          <caret line="68" column="73" selection-start-line="68" selection-start-column="73" selection-end-line="68" selection-end-column="73" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/services/game/gameConstants.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="49" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/services/game/threeRendererFactory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.103448">
-          <caret line="174" column="56" selection-start-line="174" selection-start-column="56" selection-end-line="174" selection-end-column="56" />
           <folding />
         </state>
       </provider>
@@ -1509,22 +1468,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/services/constants.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="30" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/services/game/game.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="168" column="27" selection-start-line="168" selection-start-column="27" selection-end-line="168" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/controllers/gameController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1535,8 +1478,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/services/game/gridEvaluator.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2503771">
+        <state vertical-scroll-proportion="0.0">
           <caret line="130" column="58" selection-start-line="130" selection-start-column="58" selection-end-line="130" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/services/constants.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="30" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="https://cdnjs.cloudflare.com/ajax/libs/three.js/r71/three.js">
+      <provider selected="true" editor-type-id="httpFileEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.debug.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="70" column="110" selection-start-line="70" selection-start-column="110" selection-end-line="70" selection-end-column="110" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/services/game/game.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="60" selection-start-line="10" selection-start-column="60" selection-end-line="10" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/services/game/threeRendererFactory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.93217665">
+          <caret line="217" column="17" selection-start-line="217" selection-start-column="17" selection-end-line="217" selection-end-column="17" />
           <folding />
         </state>
       </provider>

@@ -100,6 +100,23 @@ angular.module('angularApp.factories')
             }
             return this.colors[c];
         };
+
+        ThreeRenderer.prototype.createScore = function createScore(v){
+            var text3d = new THREE.TextGeometry( v, {
+                size: 30,
+                height: 2,
+                curveSegments: 2,
+                font: "helvetiker"
+            });
+            var textMaterial = new THREE.MeshBasicMaterial( { color: Math.random() * 0xffffff } );
+            var ret = new THREE.Mesh( text3d, textMaterial);
+            var rad = Math.floor(Math.random()*12) ;
+            ret.position.setX((rad%2)?-240 : 150);
+            ret.position.setY(200 + 90*(Math.floor(rad/2)%6));
+            return ret;
+        };
+
+
         ThreeRenderer.prototype.updateCube = function (x, block) {
             var cube = block.threeObject;
             if(cube == null){
@@ -167,7 +184,7 @@ angular.module('angularApp.factories')
             this.render();
         };
 
-        ThreeRenderer.prototype.renderTetris = function (tetris) {
+        ThreeRenderer.prototype.renderTetris = function (tetris, points) {
             this.offset = tetris.groundPos;
             var block;
             for (var i = 0; i < gameConstants.columnCount; i += 1) {
@@ -175,11 +192,28 @@ angular.module('angularApp.factories')
                     block = tetris.grid.container[i][j];
                     if (block.type !== blockFactory.EType.PlaceHolder) {
                         if (block.id === -1) {
-                            block.threeObject = this.createCube(block.getHexColor())
+                            block.threeObject = this.createCube(block.getHexColor());
                             this.scene.add(block.threeObject);
                             block.id = block.threeObject.id;
                         }
                         this.updateCube((i - gameConstants.columnCount / 2) * gameConstants.pixelPerBox, block);
+                    }
+                }
+            }
+            if(gameConstants.columnCount <= 6){
+                for(i=0;i<points.length;i+=1){
+                    if(!points[i].threeObject){
+                        points[i].threeObject = this.createScore(points[i].value);
+                        this.scene.add(points[i].threeObject);
+                    }
+                    if(points[i].opacity <= 0){
+                        this.scene.remove(points[i].threeObject);
+                        points.splice(i,1);
+                        i-=1;
+                    }
+                    else{
+                        points[i].threeObject.material.transparent = true;
+                        points[i].threeObject.material.opacity = points[i].opacity /100;
                     }
                 }
             }
