@@ -1,11 +1,8 @@
 {
   "grid": "test",
-  "config": "fixed",
+  "rules": "fixed",
   "tetris": [
     {
-      "gameBox": "game",
-      "scoreBox": "score",
-      "swapBox": "swaps",
       "mappings": [
         "leftMapping",
         "rightMapping"
@@ -15,5 +12,6 @@
   "victory": {
     "score": 48
   },
-  "message": "Try to get 48 points !"
+  "next": "@puzzleMenu",
+  "require": "campaign/puzzle/puzzle_1"
 }

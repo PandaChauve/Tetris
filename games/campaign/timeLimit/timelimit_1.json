@@ -1,11 +1,8 @@
 {
   "grid": "",
-  "config": "sandbox",
+  "rules": "sandbox",
   "tetris": [
     {
-      "gameBox": "game",
-      "scoreBox": "score",
-      "swapBox": "swaps",
       "mappings": [
         "leftMapping",
         "rightMapping"

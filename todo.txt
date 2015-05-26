@@ -1,6 +1,5 @@
 ToDo
 In game:
-- display bonus
 - sound
 - "your mom" blocks
 
@@ -11,7 +10,7 @@ Game type:
 
 Other:
 - rules
-- achievements style / text / other
+- achievements
 - Campaign map
 - complete tetris attack maps
 - Items

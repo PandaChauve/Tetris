@@ -1,11 +1,8 @@
 {
   "grid": "",
-  "config": "sandbox",
+  "rules": "sandbox",
   "tetris": [
     {
-      "gameBox": "game",
-      "scoreBox": "score",
-      "swapBox": "swaps",
       "mappings": [
         "leftMapping",
         "rightMapping"
@@ -16,5 +13,6 @@
     "score": 40,
     "time": 60
   },
+  "require": "campaign/timeLimit/timeLimit_2",
   "next": "campaign/timeLimit/timeLimit_4"
 }

@@ -3,9 +3,9 @@
   "config": "",
   "tetris": [
     {
-      "gameBox": "game",
-      "scoreBox": "score",
-      "swapBox": "swaps",
+
+
+
       "mappings": [
         "leftMapping",
         "rightMapping"

@@ -1,11 +1,8 @@
 {
   "grid": "campaign/tetrisAttack/2/ta_2_4",
-  "config": "fixed",
+  "rules": "fixed",
   "tetris": [
     {
-      "gameBox": "game",
-      "scoreBox": "score",
-      "swapBox": "swaps",
       "mappings": [
         "leftMapping",
         "rightMapping"
@@ -16,6 +13,6 @@
     "blocksLeft": 0,
     "swaps": 2
   },
-  "message": "Try to clear the grid in 2 swaps!",
+  "require": "campaign/tetrisAttack/2/ta_2_3",
   "next": "campaign/tetrisAttack/2/ta_2_5"
 }

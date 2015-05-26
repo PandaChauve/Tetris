@@ -1,11 +1,8 @@
 {
   "grid": "campaign/tetrisAttack/4/ta_4_8",
-  "config": "fixed",
+  "rules": "fixed",
   "tetris": [
     {
-      "gameBox": "game",
-      "scoreBox": "score",
-      "swapBox": "swaps",
       "mappings": [
         "leftMapping",
         "rightMapping"
@@ -16,6 +13,6 @@
     "blocksLeft": 0,
     "swaps": 3
   },
-  "message": null,
+  "require": "campaign/tetrisAttack/4/ta_4_7",
   "next": "campaign/tetrisAttack/4/ta_4_9"
 }

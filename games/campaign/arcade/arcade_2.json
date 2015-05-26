@@ -1,11 +1,8 @@
 {
   "grid": "",
-  "config": "raining",
+  "rules": "raining",
   "tetris": [
     {
-      "gameBox": "game",
-      "scoreBox": "score",
-      "swapBox": "swaps",
       "mappings": [
         "leftMapping",
         "rightMapping"
@@ -15,6 +12,6 @@
   "victory": {
     "score": 50
   },
-  "message": "Score 50 points, be careful it's raining ! ",
-  "next": "campaign/arcade/arcade_3"
+  "next": "campaign/arcade/arcade_3",
+  "require": "campaign/arcade/arcade_1"
 }

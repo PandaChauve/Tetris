@@ -2,13 +2,80 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20d21939-c8e4-49c3-84d6-1c3927d59de7" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\Resources\imgs\keyboardLeft.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\panda\WebstormProjects\Tetris\Resources\imgs\keyboardRight.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.min.js" afterPath="$PROJECT_DIR$/app.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/services/game/game.js" afterPath="$PROJECT_DIR$/js/services/game/game.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.debug.html" afterPath="$PROJECT_DIR$/index.debug.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/services/game/threeRendererFactory.js" afterPath="$PROJECT_DIR$/js/services/game/threeRendererFactory.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/arcade/arcade_1.json" afterPath="$PROJECT_DIR$/games/campaign/arcade/arcade_1.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/arcade/arcade_2.json" afterPath="$PROJECT_DIR$/games/campaign/arcade/arcade_2.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/arcade/arcade_3.json" afterPath="$PROJECT_DIR$/games/campaign/arcade/arcade_3.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/classic.json" afterPath="$PROJECT_DIR$/games/classic.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/puzzle/puzzle_1.json" afterPath="$PROJECT_DIR$/games/campaign/puzzle/puzzle_1.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/puzzle/puzzle_2.json" afterPath="$PROJECT_DIR$/games/campaign/puzzle/puzzle_2.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/sandbox.json" afterPath="$PROJECT_DIR$/games/sandbox.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/1/ta_1_1.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/1/ta_1_1.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/1/ta_1_10.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/1/ta_1_10.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/1/ta_1_2.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/1/ta_1_2.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/1/ta_1_3.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/1/ta_1_3.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/1/ta_1_4.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/1/ta_1_4.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/1/ta_1_5.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/1/ta_1_5.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/1/ta_1_6.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/1/ta_1_6.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/1/ta_1_7.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/1/ta_1_7.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/1/ta_1_8.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/1/ta_1_8.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/1/ta_1_9.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/1/ta_1_9.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_1.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_1.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_10.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_10.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_2.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_2.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_3.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_3.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_4.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_4.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_5.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_5.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_6.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_6.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_7.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_7.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_8.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_8.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_9.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_9.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_1.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_1.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_10.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_10.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_2.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_2.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_3.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_3.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_4.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_4.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_5.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_5.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_6.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_6.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_7.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_7.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_8.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_8.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_9.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_9.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_1.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_1.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_10.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_10.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_2.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_2.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_3.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_3.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_4.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_4.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_5.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_5.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_6.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_6.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_7.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_7.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_8.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_8.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_9.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_9.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_1.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_1.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_10.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_10.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_2.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_2.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_3.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_3.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_4.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_4.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_5.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_5.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_6.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_6.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_7.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_7.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_8.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_8.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_9.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_9.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_1.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_1.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_10.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_10.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_2.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_2.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_3.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_3.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_4.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_4.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_5.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_5.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_6.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_6.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_7.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_7.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_8.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_8.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_9.json" afterPath="$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_9.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/timeLimit/timelimit_1.json" afterPath="$PROJECT_DIR$/games/campaign/timeLimit/timelimit_1.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/timeLimit/timelimit_2.json" afterPath="$PROJECT_DIR$/games/campaign/timeLimit/timelimit_2.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/timeLimit/timelimit_3.json" afterPath="$PROJECT_DIR$/games/campaign/timeLimit/timelimit_3.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/campaign/timeLimit/timelimit_4.json" afterPath="$PROJECT_DIR$/games/campaign/timeLimit/timelimit_4.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/todo.txt" afterPath="$PROJECT_DIR$/todo.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/ultralarge.json" afterPath="$PROJECT_DIR$/games/ultralarge.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/games/ultralargecoop.json" afterPath="$PROJECT_DIR$/games/ultralargecoop.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Tetris.iws" />
@@ -33,98 +100,101 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="game.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/services/game/game.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="60" selection-start-line="10" selection-start-column="60" selection-end-line="10" selection-end-column="60" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.debug.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.debug.html">
+      <file leaf-file-name="ta_6_4.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_4.json">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-9.807693">
-              <caret line="70" column="110" selection-start-line="70" selection-start-column="110" selection-end-line="70" selection-end-column="110" />
+              <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="three.js" pinned="false" current-in-tab="false">
-        <entry file="https://cdnjs.cloudflare.com/ajax/libs/three.js/r71/three.js">
-          <provider selected="true" editor-type-id="httpFileEditor">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gridFactory.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/services/game/gridFactory.js">
+      <file leaf-file-name="ta_6_5.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_5.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="249" column="44" selection-start-line="249" selection-start-column="44" selection-end-line="249" selection-end-column="44" />
+            <state vertical-scroll-proportion="-9.807693">
+              <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gameStateController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/controllers/gameStateController.js">
+      <file leaf-file-name="ta_6_6.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_6.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="30" column="16" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
+            <state vertical-scroll-proportion="-9.807693">
+              <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="threeRendererFactory.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/services/game/threeRendererFactory.js">
+      <file leaf-file-name="ta_6_7.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_7.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.93217665">
-              <caret line="217" column="17" selection-start-line="217" selection-start-column="17" selection-end-line="217" selection-end-column="17" />
+            <state vertical-scroll-proportion="-9.807693">
+              <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gameController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/controllers/gameController.js">
+      <file leaf-file-name="ta_6_8.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_8.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="48" column="49" selection-start-line="48" selection-start-column="49" selection-end-line="48" selection-end-column="49" />
+            <state vertical-scroll-proportion="-9.807693">
+              <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gridEvaluator.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/services/game/gridEvaluator.js">
+      <file leaf-file-name="ta_6_9.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_9.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="130" column="58" selection-start-line="130" selection-start-column="58" selection-end-line="130" selection-end-column="58" />
+            <state vertical-scroll-proportion="-9.807693">
+              <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="constants.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/services/constants.js">
+      <file leaf-file-name="ta_6_10.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_10.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="1" column="30" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
+            <state vertical-scroll-proportion="-9.807693">
+              <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="blockFactory.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/services/game/blockFactory.js">
+      <file leaf-file-name="timelimit_2.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/games/campaign/timeLimit/timelimit_2.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.827586">
-              <caret line="27" column="47" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
+            <state vertical-scroll-proportion="-9.153846">
+              <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="15" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="timelimit_3.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/games/campaign/timeLimit/timelimit_3.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.807693">
+              <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="timelimit_4.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/games/campaign/timeLimit/timelimit_4.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.27301928">
+              <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -149,57 +219,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/services/game/gameConstants.js" />
-        <option value="$PROJECT_DIR$/services/game/gridEvaluator.js" />
-        <option value="$PROJECT_DIR$/services/game/gridFactory.js" />
-        <option value="$PROJECT_DIR$/services/game/threeRenderer.js" />
-        <option value="$PROJECT_DIR$/services/game/tetris.js" />
-        <option value="$PROJECT_DIR$/services/game/stateChecker.js" />
-        <option value="$PROJECT_DIR$/services/game/userInput.js" />
-        <option value="$PROJECT_DIR$/services/user/achievements.js" />
-        <option value="$PROJECT_DIR$/services/user/gameStats.js" />
-        <option value="$PROJECT_DIR$/services/user/userStats.js" />
-        <option value="$PROJECT_DIR$/services/user/storage.js" />
-        <option value="$PROJECT_DIR$/services/notifications.js" />
-        <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/Gruntfile.js" />
-        <option value="$PROJECT_DIR$/js/services/game/tetrisFactory.js" />
-        <option value="$PROJECT_DIR$/js/controllers/achievementsController.js" />
-        <option value="$PROJECT_DIR$/js/controllers/endGameModalController.js" />
-        <option value="$PROJECT_DIR$/js/services/user/gameStatsFactory.js" />
-        <option value="$PROJECT_DIR$/js/services/user/userStats.js" />
-        <option value="$PROJECT_DIR$/js/directives/appNgKeyEmulator.js" />
-        <option value="$PROJECT_DIR$/js/controllers/clickInputController.js" />
-        <option value="$PROJECT_DIR$/js/services/game/userInput.js" />
-        <option value="$PROJECT_DIR$/todo.txt" />
-        <option value="$PROJECT_DIR$/js/controllers/statsController.js" />
-        <option value="$PROJECT_DIR$/js/services/notifications.js" />
-        <option value="$PROJECT_DIR$/js/services/game/stateChecker.js" />
-        <option value="ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" />
-        <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/js/externals/angular-notify.js" />
-        <option value="$PROJECT_DIR$/templates/notification.html" />
-        <option value="$PROJECT_DIR$/css/game.css" />
-        <option value="$PROJECT_DIR$/js/controllers/scoresController.js" />
-        <option value="$PROJECT_DIR$/js/angularApp.js" />
-        <option value="$PROJECT_DIR$/js/services/user/achievements.js" />
-        <option value="$PROJECT_DIR$/templates/rules.html" />
-        <option value="$PROJECT_DIR$/templates/game.html" />
-        <option value="$PROJECT_DIR$/js/services/game/gameFactory.js" />
-        <option value="$PROJECT_DIR$/js/directives/mngTetrisGame.js" />
-        <option value="$PROJECT_DIR$/js/services/helpers.js" />
-        <option value="ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js" />
-        <option value="$PROJECT_DIR$/js/services/game/gridFactory.js" />
-        <option value="$PROJECT_DIR$/js/services/game/gameConstants.js" />
-        <option value="$PROJECT_DIR$/js/services/game/blockFactory.js" />
-        <option value="$PROJECT_DIR$/js/controllers/gameStateController.js" />
-        <option value="$PROJECT_DIR$/js/services/constants.js" />
-        <option value="$PROJECT_DIR$/js/controllers/gameController.js" />
-        <option value="$PROJECT_DIR$/js/services/game/gridEvaluator.js" />
-        <option value="cdnjs.cloudflare.com/ajax/libs/three.js/r71/three.js" />
-        <option value="$PROJECT_DIR$/index.debug.html" />
-        <option value="$PROJECT_DIR$/js/services/game/game.js" />
-        <option value="$PROJECT_DIR$/js/services/game/threeRendererFactory.js" />
+        <option value="$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_1.json" />
+        <option value="$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_2.json" />
+        <option value="$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_3.json" />
+        <option value="$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_4.json" />
+        <option value="$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_5.json" />
+        <option value="$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_6.json" />
+        <option value="$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_7.json" />
+        <option value="$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_8.json" />
+        <option value="$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_9.json" />
+        <option value="$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_10.json" />
+        <option value="$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_2.json" />
+        <option value="$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_3.json" />
+        <option value="$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_4.json" />
+        <option value="$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_5.json" />
+        <option value="$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_6.json" />
+        <option value="$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_7.json" />
+        <option value="$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_8.json" />
+        <option value="$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_9.json" />
+        <option value="$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_10.json" />
+        <option value="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_2.json" />
+        <option value="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_3.json" />
+        <option value="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_4.json" />
+        <option value="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_5.json" />
+        <option value="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_6.json" />
+        <option value="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_7.json" />
+        <option value="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_8.json" />
+        <option value="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_9.json" />
+        <option value="$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_10.json" />
+        <option value="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_1.json" />
+        <option value="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_2.json" />
+        <option value="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_3.json" />
+        <option value="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_4.json" />
+        <option value="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_5.json" />
+        <option value="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_6.json" />
+        <option value="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_7.json" />
+        <option value="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_8.json" />
+        <option value="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_9.json" />
+        <option value="$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_10.json" />
+        <option value="$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_1.json" />
+        <option value="$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_2.json" />
+        <option value="$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_3.json" />
+        <option value="$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_4.json" />
+        <option value="$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_5.json" />
+        <option value="$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_6.json" />
+        <option value="$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_7.json" />
+        <option value="$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_8.json" />
+        <option value="$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_9.json" />
+        <option value="$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_10.json" />
+        <option value="$PROJECT_DIR$/games/campaign/timeLimit/timelimit_2.json" />
+        <option value="$PROJECT_DIR$/games/campaign/timeLimit/timelimit_3.json" />
+        <option value="$PROJECT_DIR$/games/campaign/timeLimit/timelimit_4.json" />
       </list>
     </option>
   </component>
@@ -236,8 +306,8 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="-15" />
+    <option name="y" value="4" />
     <option name="width" value="1936" />
     <option name="height" value="1096" />
   </component>
@@ -540,6 +610,166 @@
               <option name="myItemId" value="campaign" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="timeLimit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tetris" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tetris" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="games" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="campaign" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tetrisAttack" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="6" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tetris" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tetris" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="games" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="campaign" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tetrisAttack" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tetris" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tetris" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="games" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="campaign" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tetrisAttack" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="4" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tetris" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tetris" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="games" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="campaign" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tetrisAttack" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tetris" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tetris" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="games" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="campaign" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tetrisAttack" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tetris" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tetris" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="games" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="campaign" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tetrisAttack" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -560,6 +790,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="puzzle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tetris" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tetris" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="games" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="campaign" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="arcade" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -703,6 +955,11 @@
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="StructuralSearchPlugin">
+    <replaceConfiguration name="user defined" created="1432656755382" text="&quot;,&#10;  &quot;config&quot;: &quot;" recursive="false" caseInsensitive="true" type="XML" reformatAccordingToStyle="true" shortenFQN="true" useStaticImport="true" replacement="&quot;,&#10;  &quot;rules&quot;: &quot;" history="1">
+      <constraint name="__context__" target="true" within="" contains="" />
+    </replaceConfiguration>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -712,12 +969,6 @@
       <created>1428682894359</created>
       <option name="number" value="Default" />
       <updated>1428682894359</updated>
-    </task>
-    <task id="LOCAL-00058" summary="stats">
-      <created>1431862091922</created>
-      <option name="number" value="00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1431862091922</updated>
     </task>
     <task id="LOCAL-00059" summary="bootstrap all over the place">
       <created>1431873375702</created>
@@ -1007,7 +1258,13 @@
       <option name="project" value="LOCAL" />
       <updated>1432638286889</updated>
     </task>
-    <option name="localTasksCounter" value="107" />
+    <task id="LOCAL-00107" summary="score display">
+      <created>1432642143938</created>
+      <option name="number" value="00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1432642143938</updated>
+    </task>
+    <option name="localTasksCounter" value="108" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1020,7 +1277,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <frame x="-15" y="4" width="1936" height="1096" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.48946258" order="6" side_tool="false" content_ui="tabs" />
@@ -1029,11 +1286,11 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.49791667" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32937366" sideWeight="0.49166667" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3006073" sideWeight="0.45309168" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3006073" sideWeight="0.45309168" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919255" sideWeight="0.48933902" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942432" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16458334" sideWeight="0.7626628" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16458334" sideWeight="0.23733719" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16458334" sideWeight="0.7651822" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16458334" sideWeight="0.23481782" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2611336" sideWeight="0.4434968" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13751318" sideWeight="0.50520056" order="2" side_tool="true" content_ui="tabs" />
@@ -1085,7 +1342,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="style" />
     <MESSAGE value="fixing modal score push + fixing part of the stats" />
     <MESSAGE value="bit of cleaning" />
     <MESSAGE value="don't display stats if no games have been played" />
@@ -1110,7 +1366,8 @@
     <MESSAGE value="new notification engine :)" />
     <MESSAGE value="bug fix + bonus for falling block" />
     <MESSAGE value="full angular + optimisation (need more refactoring sadly)" />
-    <option name="LAST_COMMIT_MESSAGE" value="full angular + optimisation (need more refactoring sadly)" />
+    <MESSAGE value="score display" />
+    <option name="LAST_COMMIT_MESSAGE" value="score display" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1145,378 +1402,410 @@
     </PATH>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/externals/des.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="263" column="35" selection-start-line="263" selection-start-column="35" selection-end-line="263" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.5384617">
-          <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.WebStorm10/system/extLibs/http_code.jquery.com_jquery-2.1.3.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2196162">
-          <caret line="5211" column="4" selection-start-line="5211" selection-start-column="4" selection-end-line="5211" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript5.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3326226">
-          <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/controllers/headerController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/controllers/achievementsController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="56" selection-start-line="16" selection-start-column="56" selection-end-line="16" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/controllers/endGameModalController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="42" column="8" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/services/user/gameStatsFactory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="43" column="16" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/services/user/userStats.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="55" column="20" selection-start-line="55" selection-start-column="20" selection-end-line="55" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/controllers/campaignController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/controllers/clickInputController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/services/game/userInput.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="64" column="29" selection-start-line="64" selection-start-column="29" selection-end-line="64" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/todo.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/services/game/stateChecker.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5612903">
-          <caret line="93" column="35" selection-start-line="93" selection-start-column="35" selection-end-line="93" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/stats.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="54" column="97" selection-start-line="54" selection-start-column="88" selection-end-line="54" selection-end-column="97" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js">
-      <provider selected="true" editor-type-id="httpFileEditor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/angular-notify.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/achievements.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="44" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="30" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="10" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/controllers/scoresController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/externals/angular-notify.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="50" selection-start-line="25" selection-start-column="50" selection-end-line="25" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/game.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7253635">
-          <caret line="113" column="17" selection-start-line="113" selection-start-column="17" selection-end-line="113" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/angularApp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.75282717">
-          <caret line="64" column="23" selection-start-line="64" selection-start-column="23" selection-end-line="64" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/services/user/storage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16478191">
-          <caret line="6" column="34" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="40" column="21" selection-start-line="40" selection-start-column="21" selection-end-line="40" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/services/game/tetrisFactory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.2689211">
-          <caret line="32" column="21" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/services/user/achievements.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5748792">
-          <caret line="21" column="76" selection-start-line="21" selection-start-column="76" selection-end-line="21" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/notification.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08571429">
-          <caret line="3" column="103" selection-start-line="3" selection-start-column="103" selection-end-line="3" selection-end-column="103" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/rules.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.74285716">
-          <caret line="65" column="100" selection-start-line="65" selection-start-column="100" selection-end-line="65" selection-end-column="100" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/controllers/statsController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="50" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/directives/ngEnter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="56" selection-start-line="0" selection-start-column="56" selection-end-line="1" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/games/ultralarge.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/games/sandbox.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/games/classic.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/games/campaign/puzzle/puzzle_1.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/game.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.461538">
-          <caret line="62" column="38" selection-start-line="62" selection-start-column="38" selection-end-line="62" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/directives/mngTetrisGame.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js">
-      <provider selected="true" editor-type-id="httpFileEditor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/services/helpers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/services/game/gameConstants.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="49" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/services/game/gridFactory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="249" column="44" selection-start-line="249" selection-start-column="44" selection-end-line="249" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/services/game/blockFactory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.827586">
-          <caret line="27" column="47" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/controllers/gameStateController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="16" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/controllers/gameController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="48" column="49" selection-start-line="48" selection-start-column="49" selection-end-line="48" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/services/game/gridEvaluator.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="130" column="58" selection-start-line="130" selection-start-column="58" selection-end-line="130" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/services/constants.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="30" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="https://cdnjs.cloudflare.com/ajax/libs/three.js/r71/three.js">
-      <provider selected="true" editor-type-id="httpFileEditor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.debug.html">
+    <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_2.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.807693">
-          <caret line="70" column="110" selection-start-line="70" selection-start-column="110" selection-end-line="70" selection-end-column="110" />
+          <caret line="15" column="46" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/services/game/game.js">
+    <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_3.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="60" selection-start-line="10" selection-start-column="60" selection-end-line="10" selection-end-column="60" />
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/services/game/threeRendererFactory.js">
+    <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_4.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.93217665">
-          <caret line="217" column="17" selection-start-line="217" selection-start-column="17" selection-end-line="217" selection-end-column="17" />
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_5.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_6.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_7.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_8.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_9.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/2/ta_2_10.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.461538">
+          <caret line="16" column="45" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/1/ta_1_10.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_2.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.153846">
+          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="15" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_3.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_4.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_5.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_6.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_7.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_8.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_9.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/3/ta_3_10.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.153846">
+          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="15" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_2.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.153846">
+          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="15" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_3.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_4.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_5.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_6.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_7.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_8.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_9.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/4/ta_4_10.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_1.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.153846">
+          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_2.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="15" column="46" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_3.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_4.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_5.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_6.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_7.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_8.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_9.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/5/ta_5_10.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_1.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.153846">
+          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_2.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.153846">
+          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="15" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_3.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_4.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_5.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_6.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_7.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_8.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_9.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/games/campaign/tetrisAttack/6/ta_6_10.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/games/campaign/timeLimit/timelimit_2.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.153846">
+          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="15" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/games/campaign/timeLimit/timelimit_3.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/games/campaign/timeLimit/timelimit_4.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27301928">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
           <folding />
         </state>
       </provider>
