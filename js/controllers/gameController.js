@@ -1,7 +1,7 @@
 //FIXME the move to angular is way too partial, some work is needed !
 
-angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$http', '$route', '$routeParams', '$modal', '$window', 'game', 'gameConstants', 'achievements', 'userStats',
-    function ($scope, $http, $route, $routeParams, $modal, $window, game, gameConstants, achievements, userStats) {
+angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$http', '$route', '$routeParams', '$modal', '$window', 'game', 'gameConstants', 'achievements', 'userStats','storage', 'stateChecker',
+    function ($scope, $http, $route, $routeParams, $modal, $window, game, gameConstants, achievements, userStats, storage, stateChecker) {
         "use strict";
         //FIXME directive too much in the controller
         $scope.gameName = $routeParams.name || "classic";
@@ -53,16 +53,19 @@ angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$htt
             }
         };
         $scope.endCallBack = function (finishedGame) {
+            if(stateChecker.victory()){
+                storage.set("UserMap"+$scope.gameName, true);
+            }
             userStats.getCurrentGame().setTime(finishedGame.tics);
             userStats.getCurrentGame().setSwaps(finishedGame.tetris[0].swapCount);
             userStats.addGame(userStats.getCurrentGame(), $scope.gameName);
             achievements.check(userStats.getCurrentGame(), $scope.gameName);
-            $scope.open();
+            $scope.openModal();
         };
         $scope.reset = function(){
             game.startNewGame();
         };
-        $scope.open = function () {
+        $scope.openModal = function () {
 
             var modalInstance = $modal.open({
                 animation: true,
@@ -77,7 +80,10 @@ angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$htt
             });
 
             modalInstance.result.then(function () {
-                if (status && $scope.config.gameConfig.next) {
+                if (stateChecker.victory() && $scope.config.gameConfig.next) {
+                    if($scope.config.gameConfig.next[0] === '@'){
+                        alert("not implemented sry"); //FIXME update all the route
+                    }
                     $scope.gameName = $scope.config.gameConfig.next;
                     $route.updateParams({name: $scope.gameName});
                     $scope.load();

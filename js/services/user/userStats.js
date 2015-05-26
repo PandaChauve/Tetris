@@ -28,7 +28,7 @@ angular.module('angularApp.factories')
                 }
             }
 
-            storage.Set("UserStats_" + stat, this[stat]);
+            storage.set("UserStats_" + stat, this[stat]);
         };
 
         UserStats.prototype.setMinStat = function (score, map, stat) {
@@ -45,7 +45,7 @@ angular.module('angularApp.factories')
                 }
             }
 
-            storage.Set("UserStats_" + stat, this[stat]);
+            storage.set("UserStats_" + stat, this[stat]);
         };
 
         UserStats.prototype.addGame = function (game, map) {
@@ -55,7 +55,7 @@ angular.module('angularApp.factories')
             else {
                 this.bestGameStats[map].keepBest(game);
             }
-            storage.Set("UserStats_bestGameStats", this.bestGameStats);
+            storage.set("UserStats_bestGameStats", this.bestGameStats);
 
             if (!this.totalGameStats.hasOwnProperty(map)) {
                 this.totalGameStats[map] = game;
@@ -63,7 +63,7 @@ angular.module('angularApp.factories')
             else {
                 this.totalGameStats[map].append(game);
             }
-            storage.Set("UserStats_totalGameStats", this.totalGameStats);
+            storage.set("UserStats_totalGameStats", this.totalGameStats);
 
             this.setMaxStat(game.score, map, "points");
         };
@@ -90,9 +90,9 @@ angular.module('angularApp.factories')
         };
 
         UserStats.GetUserStats = function () {
-            var score = storage.Get("UserStats_points"); //will only return flat data
-            var bestGameStats = storage.Get("UserStats_bestGameStats"); //will only return flat data
-            var totalGameStats = storage.Get("UserStats_totalGameStats"); //will only return flat data
+            var score = storage.get("UserStats_points"); //will only return flat data
+            var bestGameStats = storage.get("UserStats_bestGameStats"); //will only return flat data
+            var totalGameStats = storage.get("UserStats_totalGameStats"); //will only return flat data
             var ret = new UserStats();
             if (score !== null) {
                 ret.points = score;

@@ -3,7 +3,7 @@ angular.module('angularApp.factories')
         "use strict";
         function UserStorage() {}
 
-        UserStorage.prototype.Get = function (key) {
+        UserStorage.prototype.get = function (key) {
             var val = localStorage.getItem(key);
             if (val === null || val === undefined) {
                 return null;
@@ -18,7 +18,7 @@ angular.module('angularApp.factories')
             return null;
         };
 
-        UserStorage.prototype.Set = function (key, value) {
+        UserStorage.prototype.set = function (key, value) {
             localStorage.setItem(key, JSON.stringify(value));
         };
         return new UserStorage();

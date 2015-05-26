@@ -8,7 +8,7 @@ angular.module('angularApp.factories')
             'use strict';
 
             function AchievementsState() {
-                this.container = storage.Get("UserAchievements") || [];
+                this.container = storage.get("UserAchievements") || [];
                 for (var i = this.container.length; i < AchievementsState.List.enumSize; i += 1) {
                     this.container[i] = false;
                 }
@@ -37,7 +37,7 @@ angular.module('angularApp.factories')
                         }
                     }
                 }
-                storage.Set("UserAchievements", this.container);
+                storage.set("UserAchievements", this.container);
             };
 
             AchievementsState.prototype.keyToScore = function (key) {

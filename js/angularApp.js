@@ -44,6 +44,10 @@ angularApp.config(['$routeProvider', '$locationProvider',
                     templateUrl: 'templates/campaign.html',
                     controller: 'CampaignCtrl'
                 }).
+                when('/tetrisCampaign', {
+                    templateUrl: 'templates/tetrisCampaign.html',
+                    controller: 'tetrisCampaignCtrl'
+                }).
                 when('/stats', {
                     templateUrl: 'templates/stats.html',
                     controller: 'StatCtrl'

@@ -7,11 +7,11 @@ angular.module('angularApp.controllers')
     $scope.publish = function () {
         if (!$scope.published) {
             $scope.published = true;
-            var name = storage.Get("UserName") || "";
+            var name = storage.get("UserName") || "";
 
             name = prompt("Who are you ?", name);
             if (name) {
-                storage.Set("UserName", name);
+                storage.set("UserName", name);
 
                 var ciphertext = stringToHex(des("wireshar", "yop" + userStats.getCurrentGame().score, 1, 0)); //just for avoiding zfa on wireshark
                 $.get("http://sylvain.luthana.be/api.php?add&name=" + name + "&value=" + ciphertext + "&map=" + gameName);
