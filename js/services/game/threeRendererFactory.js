@@ -111,8 +111,8 @@ angular.module('angularApp.factories')
             var textMaterial = new THREE.MeshBasicMaterial( { color: Math.random() * 0xffffff } );
             var ret = new THREE.Mesh( text3d, textMaterial);
             var rad = Math.floor(Math.random()*12) ;
-            ret.position.setX((rad%2)?-240 : 150);
-            ret.position.setY(200 + 90*(Math.floor(rad/2)%6));
+            ret.position.setX(((rad%2)?-240 : 150) +25 -50*Math.random());
+            ret.position.setY(220 + 85*(Math.floor(rad/2)%6) +40 -80*Math.random());
             return ret;
         };
 
