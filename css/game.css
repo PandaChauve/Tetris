@@ -125,8 +125,79 @@ canvas {
     fill:#0066ff;
 }
 .mapNodeActive_2{
+    fill:#008000;
+}
+.mapNodeActive_3{
+    fill:#800080;
+}
+.mapNodeActive_4{
+    fill:#ff0000;
+}
+.mapNodeActive_5{
     fill:#ff00ff;
+}
+.mapNodeActive_6{
+    fill:#00f000;
+}
+.mapNodeActive_7{
+    fill:#008080;
+}
+.mapNodeActive_8{
+    fill:#8b0000;
+}
+.mapNodeActive_9{
+    fill:#000080;
 }
 .mapNodeDisabled{
     fill:#000000;
+}
+.campaignButton{
+    stroke:#000000;
+    stroke-width:1;
+    stroke-opacity:1;
+    cursor:pointer;
+    transform-origin: 50% 50%;
+    animation: rotateOut 0.5s;
+}
+.campaignButton:hover{
+    animation: rotateIn 1.5s;
+}
+
+@-webkit-keyframes rotateIn {
+    from{ transform: rotate(0deg)}
+    to{ transform: rotate(45deg)}
+}
+
+@-webkit-keyframes rotateOut {
+    from{ transform: rotate(45deg)}
+    to{ transform: rotate(0deg)}
+}
+.campaignEnable_1{
+    fill:#000080;
+}
+.campaignEnable_2{
+    fill:#008000;
+}
+.campaignEnable_3{
+    fill:#8b0000;
+}
+.campaignEnable_4{
+    fill:#008080;
+}
+
+.campaignEnable_5{
+    fill:#ff0000;
+}
+.campaignEnable_6{
+    fill:#800080;
+}
+
+.campaignDisable{
+    fill:#000000;
+    cursor:default;
+    animation: none;
+}
+
+.campaignDisable:hover{
+    animation: none;
 }

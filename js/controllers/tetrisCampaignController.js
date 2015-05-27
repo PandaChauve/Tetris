@@ -1,11 +1,18 @@
 angular.module('angularApp.controllers')
-    .controller('tetrisCampaignCtrl', ['$scope', '$routeParams', 'storage', function ($scope, $routeParams, storage) {
+    .controller('tetrisCampaignCtrl', ['$scope', '$routeParams','$window', 'storage', function ($scope, $routeParams, $window, storage) {
         "use strict";
 
-        $scope.pages = ['campaign?name=tetris&count=1'];
+        $scope.startCampaign = function (i) {
+            $window.location.href=('#!/campaign?name=tetris&count=' + i);
+        };
+        $scope.campaigns = [{
+            link : '1',
+            active : true
+        }];
         for(var i = 2; i < 7; i+= 1) {
-            if(storage.get('UserMapcampaign/tetrisAttack/' + (i-1) + '/ta_' + (i-1) + '_10')) {
-                $scope.pages.push('campaign?name=tetris&count='+i);
-            }
+            $scope.campaigns.push({
+                link: i,
+               active: storage.get('UserMapcampaign/tetrisAttack/' + (i-1) + '/ta_' + (i-1) + '_10')
+            });
         }
     }]);

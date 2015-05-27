@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" promptOnRemoteOverwrite="CHECK_CONTENT" serverName="sylvain luthana" stopOnFirstError="true" preserveTimestamps="false" deleteMissingItems="true" traceLevel="DETAILS">
+  <component name="PublishConfigData" serverName="sylvain luthana" stopOnFirstError="true" preserveTimestamps="false" deleteMissingItems="true" traceLevel="DETAILS">
     <serverData>
       <paths name="sylvain luthana">
         <serverdata>
