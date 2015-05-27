@@ -1,5 +1,15 @@
-Place holder
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+        <svg xmlns="http://www.w3.org/2000/svg"
+              style="margin:auto; width:400px; height:400px; display:block">
 
-<div ng-repeat="map in ::maps">
-    <a ng-href="#!/game?name={{::map}}">{{::map}}</a>
+            <circle ng-class="getClass($index, map.active)" ng-cx="{{($index+1)*30}}"
+                    ng-cy="{{($index+1)*30}}" r="15" ng-click="map.active && startMap(map.name)" ng-repeat="map in ::maps"/>
+
+
+        </svg>
+        </div>
+    </div>
 </div>
+

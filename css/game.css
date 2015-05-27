@@ -115,3 +115,18 @@ canvas {
     line-height: 60px;
 
 }
+.mapNode{
+    cursor: pointer;
+}
+.mapNodeActive_0{
+    fill:#ff6600;
+}
+.mapNodeActive_1{
+    fill:#0066ff;
+}
+.mapNodeActive_2{
+    fill:#ff00ff;
+}
+.mapNodeDisabled{
+    fill:#000000;
+}
