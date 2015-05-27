@@ -102,7 +102,7 @@ angular.module('angularApp.factories')
                         this.series[serie].push(container[i][realJ].id);
                         this.series[serie].push(container[i - 1][realJP].id);
                         this.series[serie].push(container[i - 2][realJPP].id);
-                        if(container[i][realJ].wasFalling || container[i][realJP].wasFalling || container[i][realJPP].wasFalling ){
+                        if(container[i][realJ].wasFalling || container[i-1][realJP].wasFalling || container[i-2][realJPP].wasFalling ){
                             this.falling += 1;
                         }
 
