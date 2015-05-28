@@ -53,8 +53,7 @@ angularApp.config(['$routeProvider', '$locationProvider',
                     controller: 'StatCtrl'
                 }).
                 when('/', {
-                    templateUrl: 'templates/scores.html',
-                    controller: 'ScoresCtrl'
+                    templateUrl: 'templates/index.html'
                 });
 
             $locationProvider.html5Mode(false);

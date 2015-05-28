@@ -3,7 +3,7 @@ angular.module('angularApp.factories')
         "use strict";
         function MyAudio(){
             this.audiochannels = [];
-            this.ext = (document.createElement('audio').canPlayType('audio/mpeg;'))?'.mp3':'.wav';
+            this.ext = (document.createElement('audio').canPlayType('audio/mpeg;'))?'mp3':'wav';
         }
         MyAudio.prototype.play = function(sound){
             var thistime = new Date();
@@ -30,12 +30,17 @@ angular.module('angularApp.factories')
             this.audiochannels.push(audio);
             console.log("audio "+this.audiochannels.length);
         };
-
+/*
         MyAudio.prototype.ESounds = {
-            swap : {path:'audio/jump', duration:1000},
-            score : {path:'audio/pop', duration:1000},
-            end : {path:'audio/shotgun', duration:2000}
+            swap : {path:'audio/jump.', duration:1000},
+            score : {path:'audio/pop.', duration:1000},
+            end : {path:'audio/shotgun.', duration:2000}
         };
-
+*/
+        MyAudio.prototype.ESounds = {
+            swap : {path:'http://soundbible.com/grab.php?id=1898&type=', duration:1000},
+            score : {path:'http://soundbible.com/grab.php?id=1405&type=', duration:1000},
+            end : {path:'http://soundbible.com/grab.php?id=1262&type=', duration:2000}
+        };
         return new MyAudio();
     }]);
