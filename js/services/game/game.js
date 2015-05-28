@@ -1,30 +1,30 @@
-
 angular.module('angularApp.factories')
     .factory('game', ['userInput', 'userStats', 'stateChecker', 'threeRendererFactory', 'tetrisFactory', 'TIC_PER_SEC',
-        function gameFactory( userInput, userStats, stateChecker, threeRendererFactory, tetrisFactory, TIC_PER_SEC) {
+        function gameFactory(userInput, userStats, stateChecker, threeRendererFactory, tetrisFactory, TIC_PER_SEC) {
             "use strict";
-            function Score(){
+            function Score() {
                 this.current = 0;
                 this.scoreList = [];
-                this.addTics = function (count){
-                    for(var i = 0; i < this.scoreList.length; i+= 1){
-                        this.scoreList[i].opacity -= count/4;
+                this.addTics = function (count) {
+                    for (var i = 0; i < this.scoreList.length; i += 1) {
+                        this.scoreList[i].opacity -= count / 4;
                     }
                 };
-                this.addScore = function (s){
-                    if(s === this.current){
+                this.addScore = function (s) {
+                    if (s === this.current) {
                         return;
                     }
                     this.scoreList.push({
-                        opacity : 100,
-                        value : (s - this.current),
-                        object : null
+                        opacity: 100,
+                        value: (s - this.current),
+                        object: null
                     });
                     this.current = s;
                 };
             }
 
             function Game() {
+                this.last = {swaps:0, score:0};
                 this.availableGrids = [];
                 this.started = false;
                 this.gridCount = 0;
@@ -32,7 +32,7 @@ angular.module('angularApp.factories')
                 this.scoreHandler = new Score();
             }
 
-            Game.prototype.setConfiguration = function(config, grid, cb, scope){
+            Game.prototype.setConfiguration = function (config, grid, cb, scope) {
                 this.config = config;
                 this.grid = grid;
                 this.scope = scope;
@@ -48,7 +48,7 @@ angular.module('angularApp.factories')
                 this.tryToStart();
             };
 
-            Game.prototype.reset = function(){
+            Game.prototype.reset = function () {
                 this.started = false;
                 this.tetris = [];
                 this.visual = [];
@@ -59,22 +59,22 @@ angular.module('angularApp.factories')
                 this.scoreHandler = new Score();
             };
 
-            Game.prototype.startNewGame = function startNewGame(){
-                function findDom(a, n){
-                    for(var idx = 0; idx < a.length; idx+=1){
-                        if(a[idx].id == n)
-                        {
+            Game.prototype.startNewGame = function startNewGame() {
+                function findDom(a, n) {
+                    for (var idx = 0; idx < a.length; idx += 1) {
+                        if (a[idx].id == n) {
                             return a[idx].node;
                         }
                     }
                 }
+
                 this.stopGame();
                 this.reset();
                 this.started = true;
                 userStats.getCurrentGame().reset();
                 userStats.getCurrentGame().gameCount += 1;
 
-                for(var i = 0; i < this.gridCount; i+= 1){
+                for (var i = 0; i < this.gridCount; i += 1) {
                     this.tetris.push(tetrisFactory.newTetris(this.grid, this.config.tetris[i].cursors, this.stats));
                     for (var j = 0; j < this.config.tetris[i].mappings.length; j += 1) {
                         this.tetris[i].keyBoardMappings.push(userInput.getMapping(this.config.tetris[i].mappings[j]));
@@ -91,7 +91,7 @@ angular.module('angularApp.factories')
                 this.started = false;
                 window.cancelAnimationFrame(this.id);
                 for (var i = 0; i < this.visual.length; i += 1) {
-                    if(this.visual[i]){
+                    if (this.visual[i]) {
                         this.visual[i].clear();
                     }
                     this.visual[i] = null;
@@ -106,18 +106,16 @@ angular.module('angularApp.factories')
                 };
             };
 
-            Game.prototype.tryToStart = function() {
-                if(!this.started || this.gridCount > this.availableGrids.length)
-                {
+            Game.prototype.tryToStart = function () {
+                if (!this.started || this.gridCount > this.availableGrids.length) {
                     return;
                 }
                 this.startNewGame();
             };
 
-            Game.prototype.linkToDom = function linkToDom(node, id)
-            {
+            Game.prototype.linkToDom = function linkToDom(node, id) {
                 this.availableGrids.push({
-                    id : id,
+                    id: id,
                     node: node
                 });
 
@@ -125,12 +123,11 @@ angular.module('angularApp.factories')
 
             };
 
-            Game.prototype.unlinkToDom = function unlinkToDom(node, id)
-            {
+            Game.prototype.unlinkToDom = function unlinkToDom(node, id) {
                 this.started = false;
-                for(var i = 0; i < this.availableGrids.length; i+=1){
-                    if(this.availableGrids[i].id === id){
-                        if(this.visual[id]){
+                for (var i = 0; i < this.availableGrids.length; i += 1) {
+                    if (this.availableGrids[i].id === id) {
+                        if (this.visual[id]) {
                             this.visual[id].clear();
                             this.visual[id] = null;
                         }
@@ -199,8 +196,14 @@ angular.module('angularApp.factories')
                     userInput.clear();
                 }
 
-                this.scope.$broadcast('newScore', this.tetris[0].getScore());
-                this.scope.$broadcast('newSwaps', this.tetris[0].getSwaps());
+                if(this.last.score < this.tetris[0].getScore()){ //avoid useless broadcast
+                    this.last.score = this.tetris[0].getScore();
+                    this.scope.$broadcast('newScore', this.last.score);
+                }
+                if(this.last.swaps < this.tetris[0].getSwaps()){//avoid useless broadcast
+                    this.last.swaps = this.tetris[0].getSwaps();
+                    this.scope.$broadcast('newSwaps', this.last.swaps);
+                }
                 this.scoreHandler.addScore(this.tetris[0].getScore());
                 this.scoreHandler.addTics(count);
 
@@ -216,5 +219,5 @@ angular.module('angularApp.factories')
                 }
             };
 
-            return  new Game();
+            return new Game();
         }]);

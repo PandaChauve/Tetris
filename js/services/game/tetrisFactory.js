@@ -3,7 +3,7 @@
  */
 
 angular.module('angularApp.factories')
-    .factory('tetrisFactory', ['gameConstants', 'userInput', 'gridFactory', function tetrisFactoryCreator(gameConstants, userInput, gridFactory) {
+    .factory('tetrisFactory', ['gameConstants', 'userInput', 'gridFactory', 'audio', function tetrisFactoryCreator(gameConstants, userInput, gridFactory, audio) {
         'use strict';
 
         function Tetris(grid, cursors) {
