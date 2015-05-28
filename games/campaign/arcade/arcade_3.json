@@ -12,6 +12,6 @@
   "victory": {
     "score": 50
   },
-  "next": "@arcadeMenu",
+  "next": "#!/campaign?name=arcade",
   "require": "campaign/arcade/arcade_2"
 }

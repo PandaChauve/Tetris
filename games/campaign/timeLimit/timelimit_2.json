@@ -13,6 +13,6 @@
     "score": 30,
     "time": 60
   },
-  "require": "campaign/timeLimit/timeLimit_1",
-  "next": "campaign/timeLimit/timeLimit_3"
+  "require": "campaign/timeLimit/timelimit_1",
+  "next": "campaign/timeLimit/timelimit_3"
 }

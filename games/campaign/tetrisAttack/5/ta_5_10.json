@@ -14,5 +14,5 @@
     "swaps": 3
   },
   "require": "campaign/tetrisAttack/5/ta_5_9",
-  "next": "@taMenu"
+  "next": "#!/tetrisCampaign"
 }

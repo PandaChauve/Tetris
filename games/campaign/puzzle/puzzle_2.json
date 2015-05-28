@@ -12,6 +12,6 @@
   "victory": {
     "score": 48
   },
-  "next": "@puzzleMenu",
+  "next": "#!/campaign?name=puzzle",
   "require": "campaign/puzzle/puzzle_1"
 }

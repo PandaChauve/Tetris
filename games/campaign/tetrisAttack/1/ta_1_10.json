@@ -13,6 +13,6 @@
     "blocksLeft": 0,
     "swaps": 3
   },
-  "next": "@taMenu",
+  "next": "#!/tetrisCampaign",
   "require": "campaign/tetrisAttack/1/ta_1_9"
 }

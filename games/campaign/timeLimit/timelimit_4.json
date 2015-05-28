@@ -13,6 +13,6 @@
     "score": 50,
     "time": 60
   },
-  "require": "campaign/timeLimit/timeLimit_3",
-  "next": "@timeMenu"
+  "require": "campaign/timeLimit/timelimit_3",
+  "next": "#!/campaign?name=timelimit"
 }

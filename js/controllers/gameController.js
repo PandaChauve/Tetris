@@ -81,8 +81,8 @@ angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$htt
 
             modalInstance.result.then(function () {
                 if (stateChecker.victory() && $scope.config.gameConfig.next) {
-                    if($scope.config.gameConfig.next[0] === '@'){
-                        alert("not implemented sry"); //FIXME update all the route
+                    if($scope.config.gameConfig.next[0] === '#'){
+                        $window.location.href=($scope.config.gameConfig.next);
                     }
                     $scope.gameName = $scope.config.gameConfig.next;
                     $route.updateParams({name: $scope.gameName});
