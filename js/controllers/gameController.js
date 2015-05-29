@@ -63,6 +63,7 @@ angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$htt
             $scope.openModal();
         };
         $scope.reset = function(){
+            $scope.$broadcast('newGame', true);
             game.startNewGame();
         };
         $scope.openModal = function () {

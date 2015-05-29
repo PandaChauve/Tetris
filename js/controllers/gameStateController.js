@@ -3,7 +3,7 @@ angular.module('angularApp.controllers').controller('GameStateCtrl', ['$scope',
     function ($scope) {
         "use strict";
         var upwardSwapCount = true;
-        var targetSwapCounts = -1;
+        var targetSwapCounts = 0;
         $scope.state = {
             rules : [],
             score : 0,
@@ -14,15 +14,17 @@ angular.module('angularApp.controllers').controller('GameStateCtrl', ['$scope',
         $scope.$on("newScore", function(event, m){
             $scope.state.score = m;
         });
+        $scope.$on('newGame', function(){
+            $scope.state.swaps = targetSwapCounts;
+            $scope.state.score = 0;
+        });
         $scope.$on("newSwaps", function(event, m){
-
             if(upwardSwapCount){
                 $scope.state.swaps = m;
             }
             else{
                 $scope.state.swaps = targetSwapCounts - m;
             }
-            event.preventDefault();
         });
         $scope.$on("newTime", function(event, m){
             if(m >= $scope.state.time / 6) //FIXME magic number  tictime / 10
@@ -30,15 +32,14 @@ angular.module('angularApp.controllers').controller('GameStateCtrl', ['$scope',
                 $scope.state.time = m;
                 $scope.$apply();
             }
-            event.preventDefault();
         });
         $scope.$on("newRulesSet", function(event, m){
             upwardSwapCount = !m || !m.swaps;
             if(!upwardSwapCount){
                 targetSwapCounts = m.swaps;
+                $scope.state.swaps = m.swaps;
             }
             $scope.state.rules = createRuleSet(m);
-            event.preventDefault();
         });
 
         function createRuleSet(gconfig){

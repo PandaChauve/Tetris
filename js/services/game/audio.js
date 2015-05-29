@@ -3,8 +3,26 @@ angular.module('angularApp.factories')
         "use strict";
         function MyAudio(){
             this.audiochannels = [];
-            this.ext = (document.createElement('audio').canPlayType('audio/mpeg;'))?'mp3':'wav';
+            this.ext = !(document.createElement('audio').canPlayType('audio/mpeg;'))?'wav':'mp3';
+            this.preloaded = this.preload(); //canplaythrough on each element to check if finished
         }
+
+        MyAudio.prototype.preload = function(){
+            var ret = [];
+            var tmp;
+            for (var prop in MyAudio.ESounds) {
+                if( MyAudio.ESounds.hasOwnProperty( prop ) ) {
+                    tmp = new Audio();
+                    tmp.src = MyAudio.ESounds[prop].path + this.ext;
+                    tmp.oncanplaythrough = function(){
+                        console.log("audio loaded : "+ this.src);
+                    };
+                    ret.push(tmp);
+                }
+            }
+            return ret;
+        };
+
         MyAudio.prototype.play = function(sound){
             var thistime = new Date();
             for (var i = 0; i < this.audiochannels.length; i += 1) {
@@ -28,19 +46,14 @@ angular.module('angularApp.factories')
             audio.channel.load();
             audio.channel.play();
             this.audiochannels.push(audio);
-            console.log("audio "+this.audiochannels.length);
+            console.log("simultaneous audio : "+this.audiochannels.length);
         };
-/*
-        MyAudio.prototype.ESounds = {
-            swap : {path:'audio/jump.', duration:1000},
-            score : {path:'audio/pop.', duration:1000},
-            end : {path:'audio/shotgun.', duration:2000}
-        };
-*/
-        MyAudio.prototype.ESounds = {
+
+        MyAudio.ESounds = {
             swap : {path:'http://soundbible.com/grab.php?id=1898&type=', duration:1000},
             score : {path:'http://soundbible.com/grab.php?id=1405&type=', duration:1000},
             end : {path:'http://soundbible.com/grab.php?id=1262&type=', duration:2000}
         };
+        MyAudio.prototype.ESounds = MyAudio.ESounds;
         return new MyAudio();
     }]);

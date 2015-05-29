@@ -57,6 +57,7 @@ angular.module('angularApp.factories')
                 this.pause = false;
                 this.tics = 0;
                 this.scoreHandler = new Score();
+                this.last = {swaps:0, score:0};
             };
 
             Game.prototype.startNewGame = function startNewGame() {

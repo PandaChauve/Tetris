@@ -8,11 +8,7 @@
             <mapping deploy="/www/sylvain/webstorm/Tetris" local="$PROJECT_DIR$" web="/webstorm/Tetris" />
           </mappings>
           <excludedPaths>
-            <excludedPath local="true" path="$PROJECT_DIR$/controllers" />
-            <excludedPath local="true" path="$PROJECT_DIR$/gameJs" />
-            <excludedPath local="true" path="$PROJECT_DIR$/guiJs" />
             <excludedPath local="true" path="$PROJECT_DIR$/js" />
-            <excludedPath local="true" path="$PROJECT_DIR$/User" />
             <excludedPath local="true" path="$PROJECT_DIR$/README.md" />
             <excludedPath local="true" path="$PROJECT_DIR$/css" />
             <excludedPath local="true" path="$PROJECT_DIR$/min" />

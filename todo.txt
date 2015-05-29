@@ -17,4 +17,6 @@ Other:
 - login
 - stats compared to friends
 - code cleaning
+- tuto
+- facebook publication
 
