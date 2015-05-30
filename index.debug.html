@@ -55,9 +55,11 @@
                 <li><a ng-class="{ active: isActive('/rules')}" href="#!/rules">Rules</a></li>
                 <li><a ng-class="{ active: isActive('/scores')}" href="#!/scores">Rankings</a></li>
             </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li ng-class="{ active: isActive('/achievements')}"><a href="#!/achievements">Success</a></li>
-                <li ng-class="{ active: isActive('/stats')}"><a href="#!/stats">Statistics</a></li>
+            <ul class="nav navbar-nav navbar-right" ng-controller="UserMenuCtrl">
+                <li ng-if="registered" ng-class="{ active: isActive('/achievements')}"><a href="#!/achievements">Success</a></li>
+                <li ng-if="registered" ng-class="{ active: isActive('/stats')}"><a href="#!/stats">Statistics</a></li>
+                <li ng-if="registered" ng-click="logout()" ><a style="cursor:pointer">Logout</a></li>
+                <li ng-if="!registered" ng-click="loginPopup()" ><a style="cursor:pointer">Login</a></li>
             </ul>
         </div>
     </div>
@@ -77,6 +79,9 @@
 <script language="JavaScript" src="js/externals/ui-bootstrap-0.13.0.min.js"></script>
 <script language="JavaScript" src="js/externals/des.js"></script>
 <script language="JavaScript" src="js/angularApp.js"></script>
+<script language="JavaScript" src="js/controllers/loginFormController.js"></script>
+<script language="JavaScript" src="js/controllers/IndexController.js"></script>
+<script language="JavaScript" src="js/controllers/userMenuController.js"></script>
 <script language="JavaScript" src="js/controllers/campaignController.js"></script>
 <script language="JavaScript" src="js/controllers/tetrisCampaignController.js"></script>
 <script language="JavaScript" src="js/controllers/gameController.js" ></script>
@@ -90,6 +95,7 @@
 <script language="JavaScript" src="js/directives/ngEnter.js"></script>
 <script language="JavaScript" src="js/directives/mngTetrisGame.js"></script>
 <script language="JavaScript" src="js/directives/ngSvg.js"></script>
+<script language="JavaScript" src="js/directives/mngCompareTo.js"></script>
 <script language="JavaScript" src="js/services/game/blockFactory.js"></script>
 <script language="JavaScript" src="js/services/game/audio.js"></script>
 <script language="JavaScript" src="js/services/game/game.js"></script>
@@ -106,6 +112,7 @@
 <script language="JavaScript" src="js/services/user/storage.js"></script>
 <script language="JavaScript" src="js/services/user/userStats.js"></script>
 <script language="JavaScript" src="js/services/user/gameStatsFactory.js"></script>
+<script language="JavaScript" src="js/services/user/user.js"></script>
 <!-- /build -->
 </body>
 </html>

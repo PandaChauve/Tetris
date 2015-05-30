@@ -1,7 +1,7 @@
 //FIXME the move to angular is way too partial, some work is needed !
 
-angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$http', '$route', '$routeParams', '$modal', '$window', 'game', 'gameConstants', 'achievements', 'userStats','storage', 'stateChecker',
-    function ($scope, $http, $route, $routeParams, $modal, $window, game, gameConstants, achievements, userStats, storage, stateChecker) {
+angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$http', '$route', '$routeParams', '$modal', '$window', 'game', 'gameConstants', 'achievements', 'userStats','storage', 'stateChecker','userAccount',
+    function ($scope, $http, $route, $routeParams, $modal, $window, game, gameConstants, achievements, userStats, storage, stateChecker, userAccount) {
         "use strict";
         //FIXME directive too much in the controller
         $scope.gameName = $routeParams.name || "classic";
@@ -60,7 +60,34 @@ angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$htt
             userStats.getCurrentGame().setSwaps(finishedGame.tetris[0].swapCount);
             userStats.addGame(userStats.getCurrentGame(), $scope.gameName);
             achievements.check(userStats.getCurrentGame(), $scope.gameName);
+            if(userAccount.isRegistered()){
+                var ciphertext = stringToHex(des("wireshar", "yop" + userStats.getCurrentGame().score, 1, 0)); //just for avoiding zfa on wireshark
+                $.get("http://sylvain.luthana.be/tetrisApi.php?add&user_id=" + userAccount.id + "&value=" + ciphertext + "&map=" + $scope.gameName).success(function(result) {
+                    console.log(result);
+                }).
+                error(function(e){
+                    console.log(e);
+                });
+            }
             $scope.openModal();
+
+
+
+            $scope.publish = function () {
+                if (!$scope.published) {
+                    $scope.published = true;
+                    var name = storage.get("UserName") || "";
+
+                    name = prompt("Who are you ?", name);
+                    if (name) {
+                        storage.set("UserName", name);
+
+                    }
+                    else {
+                        $scope.published = false;
+                    }
+                }
+            };
         };
         $scope.reset = function(){
             $scope.$broadcast('newGame', true);
@@ -70,7 +97,7 @@ angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$htt
 
             var modalInstance = $modal.open({
                 animation: true,
-                templateUrl: 'templates/modal.html',
+                templateUrl: 'templates/endGameModal.html',
                 controller: 'ModalInstanceCtrl',
                 size: 300,
                 resolve: {

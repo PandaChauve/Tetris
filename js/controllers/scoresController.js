@@ -10,8 +10,11 @@ angular.module('angularApp.controllers')
     };
 
     $scope.getScores = function (type) {
-        $http.get("http://sylvain.luthana.be/api.php?get&map=" + type).success(function (data) {
+        $http.get("http://sylvain.luthana.be/tetrisApi.php?get&map=" + type).success(function (data) {
             $scope.scoreGridData = data;
+            console.log(data);
+        }).error(function(e){
+            console.log(e);
         });
     };
     $scope.activate("classic");

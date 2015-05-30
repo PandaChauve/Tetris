@@ -1,0 +1,96 @@
+<div class="row">
+    <div class="col-md-6">
+        <div class="modal-header">
+            <h3 class="modal-title">Login</h3>
+        </div>
+        <div class="modal-body">
+            <form novalidate class="simple-form" name="signForm">
+                <div class="form-group"
+                     ng-class="{'has-error': signForm.$submitted && signForm.login.$invalid, 'has-success': signForm.$submitted && !signForm.login.$invalid}">
+                    <label for="login">Username</label>
+                    <input type="text" class="form-control" id="login" name="login" placeholder="Username"
+                           ng-model="user.login" ng-pattern="/^[a-zA-Z0-9]*$/" required/>
+
+                    <p ng-show="signForm.$submitted && signForm.login.$error.required" class="help-block">Login is
+                        required.</p>
+
+                    <p ng-show="signForm.$submitted && signForm.login.$error.pattern" class="help-block">A login is
+                        made of letters and numbers only.</p>
+
+                </div>
+                <div class="form-group"
+                     ng-class="{'has-error': signForm.$submitted && signForm.password.$invalid, 'has-success': signForm.$submitted && !signForm.password.$invalid}">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="******"
+                           ng-model="user.password" required/>
+
+                    <p ng-show="signForm.$submitted && signForm.password.$error.required" class="help-block">
+                        Password is required.</p>
+
+                </div>
+
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" ng-model="user.remember" name="remember" id="remember"/>
+                        Remember me
+                    </label>
+                </div>
+
+                <button type="submit" ng-click="login()" class="btn btn-default" ngDisabled="!submitEnabled">Login</button>
+            </form>
+        </div>
+    </div>
+    <div class="col-md-6" style="text-align:right">
+        <div class="modal-header">
+            <h3 class="modal-title">Register</h3>
+        </div>
+        <div class="modal-body">
+            <form novalidate class="simple-form" name="registerForm">
+                <div class="form-group"
+                     ng-class="{'has-error': registerForm.$submitted && registerForm.rlogin.$invalid, 'has-success': registerForm.$submitted && !registerForm.rlogin.$invalid}">
+                    <label for="rlogin">Username</label>
+                    <input type="text" class="form-control" id="rlogin" name="rlogin" placeholder="Username"
+                           ng-model="register.login" ng-pattern="/^[a-zA-Z0-9]*$/" ng-minlength="3" required/>
+
+                    <p ng-show="registerForm.$submitted && registerForm.rlogin.$error.required" class="help-block">
+                        Login is required.</p>
+                    <p ng-show="registerForm.$submitted && registerForm.rlogin.$error.pattern" class="help-block">
+                        Login must be letters and numbers only.</p>
+                    <p ng-show="registerForm.$submitted && registerForm.rlogin.$error.minlength" class="help-block">
+                        Login must be at least 3 characters.</p>
+                </div>
+                <div class="form-group"
+                     ng-class="{'has-error': registerForm.$submitted && registerForm.rpassword.$invalid, 'has-success': registerForm.$submitted && !registerForm.rpassword.$invalid}">
+                    <label for="rpassword">Password</label>
+                    <input type="password" class="form-control" id="rpassword" name="rpassword" placeholder="******"
+                           ng-model="register.password" ng-minlength="8" required/>
+
+                    <p ng-show="registerForm.$submitted && registerForm.rpassword.$error.required"
+                       class="help-block">
+                        Password is required.</p>
+
+                    <p ng-show="registerForm.$submitted && registerForm.rpassword.$error.minlength"
+                       class="help-block">
+                        Password must be at least 8 characters.</p>
+                </div>
+
+                <div class="form-group"
+                     ng-class="{'has-error': registerForm.$submitted && registerForm.rpasswordc.$invalid, 'has-success': registerForm.$submitted && !registerForm.rpasswordc.$invalid}">
+                    <label for="rpasswordc">Password confirm</label>
+                    <input type="password" class="form-control" id="rpasswordc" name="rpasswordc"
+                           placeholder="******" ng-model="register.passwordConfirm"  mng-compare-to="register.password"/>
+
+                    <p ng-show="registerForm.$submitted && registerForm.rpasswordc.$error.$invalid" class="help-block">
+                        Password different.</p>
+                </div>
+
+                <button type="submit" ng-click="register()" class="btn btn-default" ngDisabled="!submitEnabled">Register</button>
+            </form>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <p class="has-error">
+            {{message}}
+        </p>
+    </div>
+</div>

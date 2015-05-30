@@ -53,7 +53,8 @@ angularApp.config(['$routeProvider', '$locationProvider',
                     controller: 'StatCtrl'
                 }).
                 when('/', {
-                    templateUrl: 'templates/index.html'
+                    templateUrl: 'templates/index.html',
+                    controller: 'IndexCtrl'
                 });
 
             $locationProvider.html5Mode(false);
@@ -65,6 +66,6 @@ angularApp.run(['notify', function (notify) {
     "use strict";
     notify.config({
         templateUrl: "templates/notification.html",
-        duration : 5000,
+        duration : 5000
     });
 }]);

@@ -5,23 +5,6 @@ angular.module('angularApp.controllers')
             audio.play(audio.ESounds.end);
             $scope.won = stateChecker.victory();
             $scope.published = false;
-            $scope.publish = function () {
-                if (!$scope.published) {
-                    $scope.published = true;
-                    var name = storage.get("UserName") || "";
-
-                    name = prompt("Who are you ?", name);
-                    if (name) {
-                        storage.set("UserName", name);
-
-                        var ciphertext = stringToHex(des("wireshar", "yop" + userStats.getCurrentGame().score, 1, 0)); //just for avoiding zfa on wireshark
-                        $.get("http://sylvain.luthana.be/api.php?add&name=" + name + "&value=" + ciphertext + "&map=" + gameName);
-                    }
-                    else {
-                        $scope.published = false;
-                    }
-                }
-            };
 
             $scope.nextGame = function () {
                 $modalInstance.close();
