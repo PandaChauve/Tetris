@@ -19,12 +19,14 @@ angular.module('angularApp.factories')
             };
 
             AchievementsState.prototype.check = function (game, gameName) {
+                var newOne = false;
                 for (var key = 0; key < AchievementsState.List.enumSize; key += 1) {
                     if (!this.container[key]) {
                         this.checkIndividual(key, game, gameName);
 
                         //new one => notify !
                         if (this.container[key]) {
+                            newOne = true;
                             var sc = $rootScope.$new(true);
                             sc.picture = {
                                 src: "Resources/imgs/placeholder.png",
@@ -37,7 +39,9 @@ angular.module('angularApp.factories')
                         }
                     }
                 }
-                storage.set("UserAchievements", this.container);
+                if(newOne){
+                    storage.set("UserAchievements", this.container);
+                }
             };
 
             AchievementsState.prototype.keyToScore = function (key) {

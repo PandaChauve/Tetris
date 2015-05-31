@@ -54,7 +54,7 @@ angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$htt
         };
         $scope.endCallBack = function (finishedGame) {
             if(stateChecker.victory()){
-                storage.set("UserMap"+$scope.gameName, true);
+                storage.set("UserMap"+$scope.gameName, true, false);
             }
             userStats.getCurrentGame().setTime(finishedGame.tics);
             userStats.getCurrentGame().setSwaps(finishedGame.tetris[0].swapCount);
@@ -70,22 +70,6 @@ angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$htt
                 });
             }
             $scope.openModal();
-
-            $scope.publish = function () {
-                if (!$scope.published) {
-                    $scope.published = true;
-                    var name = storage.get("UserName") || "";
-
-                    name = prompt("Who are you ?", name);
-                    if (name) {
-                        storage.set("UserName", name);
-
-                    }
-                    else {
-                        $scope.published = false;
-                    }
-                }
-            };
         };
         $scope.reset = function(){
             $scope.$broadcast('newGame', true);

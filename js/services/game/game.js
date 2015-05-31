@@ -63,7 +63,7 @@ angular.module('angularApp.factories')
             Game.prototype.startNewGame = function startNewGame() {
                 function findDom(a, n) {
                     for (var idx = 0; idx < a.length; idx += 1) {
-                        if (a[idx].id == n) {
+                        if (a[idx].id == n) { //yes ==
                             return a[idx].node;
                         }
                     }

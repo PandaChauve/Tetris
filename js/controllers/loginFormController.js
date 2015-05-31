@@ -4,12 +4,12 @@ angular.module('angularApp.controllers')
             "use strict";
             $scope.submitEnabled = true;
             $scope.message = "";
-            $scope.user = {login: "", password: "", remember: true};
+            $scope.user = {login: "", password: ""};
             $scope.register = {login: "", password: ""};
             $scope.login = function () {
                 if ($scope.signForm.$valid) {
                     $scope.submitEnabled = false;
-                    userAccount.logIn($scope.user.login, $scope.user.password, $scope.user.remember, function (success) {
+                    userAccount.logIn($scope.user.login, $scope.user.password, function (success) {
                         if (success) {
                             $modalInstance.close();
                         }

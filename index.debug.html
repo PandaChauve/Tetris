@@ -56,10 +56,10 @@
                 <li><a ng-class="{ active: isActive('/scores')}" href="#!/scores">Rankings</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right" ng-controller="UserMenuCtrl">
-                <li ng-if="registered" ng-class="{ active: isActive('/achievements')}"><a href="#!/achievements">Success</a></li>
-                <li ng-if="registered" ng-class="{ active: isActive('/stats')}"><a href="#!/stats">Statistics</a></li>
-                <li ng-if="registered" ng-click="logout()" ><a style="cursor:pointer">Logout</a></li>
-                <li ng-if="!registered" ng-click="loginPopup()" ><a style="cursor:pointer">Login</a></li>
+                <li ng-cloak ng-if="registered" ng-class="{ active: isActive('/achievements')}"><a href="#!/achievements">Success</a></li>
+                <li ng-cloak ng-if="registered" ng-class="{ active: isActive('/stats')}"><a href="#!/stats">Statistics</a></li>
+                <li ng-cloak ng-if="registered" ng-click="logout()" ><a style="cursor:pointer">Logout</a></li>
+                <li ng-cloak ng-if="!registered" ng-click="loginPopup()" ><a style="cursor:pointer">Login</a></li>
             </ul>
         </div>
     </div>

@@ -14,7 +14,7 @@ angular.module('angularApp.factories')
         };
 
 
-        UserStats.prototype.setMaxStat = function (score, map, stat) {
+        UserStats.prototype.setMaxStat = function (score, map, stat, publish) {
             if (!this[stat].hasOwnProperty(map)) {
                 this[stat][map] = [score, 0, 0, 0, 0];
             }
@@ -28,24 +28,7 @@ angular.module('angularApp.factories')
                 }
             }
 
-            storage.set("UserStats_" + stat, this[stat]);
-        };
-
-        UserStats.prototype.setMinStat = function (score, map, stat) {
-            if (!this[stat].hasOwnProperty(map)) {
-                this[stat][map] = [score, -1, -1, -1, -1];
-            }
-            else {
-                for (var i = 0; i < this[stat][map].length; i += 1) {
-                    if (score <= this[stat][map][i] || this[stat][map][i] === -1) {
-                        this[stat][map].splice(i, 0, score);
-                        this[stat][map].splice(this[stat][map].length - 1, 1);
-                        break;
-                    }
-                }
-            }
-
-            storage.set("UserStats_" + stat, this[stat]);
+            storage.set("UserStats_" + stat, this[stat],publish);
         };
 
         UserStats.prototype.addGame = function (game, map) {
@@ -55,7 +38,7 @@ angular.module('angularApp.factories')
             else {
                 this.bestGameStats[map].keepBest(game);
             }
-            storage.set("UserStats_bestGameStats", this.bestGameStats);
+            storage.set("UserStats_bestGameStats", this.bestGameStats, false);
 
             if (!this.totalGameStats.hasOwnProperty(map)) {
                 this.totalGameStats[map] = game;
@@ -63,9 +46,10 @@ angular.module('angularApp.factories')
             else {
                 this.totalGameStats[map].append(game);
             }
-            storage.set("UserStats_totalGameStats", this.totalGameStats);
+            this.setMaxStat(game.score, map, "points", false);
+            //only publish the third set
+            storage.set("UserStats_totalGameStats", this.totalGameStats, true);
 
-            this.setMaxStat(game.score, map, "points");
         };
 
         UserStats.prototype.getBestGameStats = function (map) {
