@@ -44,6 +44,14 @@ angularApp.config(['$routeProvider', '$locationProvider',
                     templateUrl: 'templates/campaign.html',
                     controller: 'CampaignCtrl'
                 }).
+                when('/campaign/:campaignName', {
+                    templateUrl: 'templates/campaign.html',
+                    controller: 'CampaignCtrl'
+                }).
+                when('/campaign/:campaignName/:subCampaignId', {
+                    templateUrl: 'templates/campaign.html',
+                    controller: 'CampaignCtrl'
+                }).
                 when('/tetrisCampaign', {
                     templateUrl: 'templates/tetrisCampaign.html',
                     controller: 'tetrisCampaignCtrl'
@@ -51,6 +59,9 @@ angularApp.config(['$routeProvider', '$locationProvider',
                 when('/stats', {
                     templateUrl: 'templates/stats.html',
                     controller: 'StatCtrl'
+                }).
+                when('/about', {
+                    templateUrl: 'templates/about.html'
                 }).
                 when('/', {
                     templateUrl: 'templates/index.html',

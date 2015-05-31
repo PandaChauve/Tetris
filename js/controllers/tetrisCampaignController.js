@@ -3,7 +3,7 @@ angular.module('angularApp.controllers')
         "use strict";
 
         $scope.startCampaign = function (i) {
-            $window.location.href=('#!/campaign?name=tetris&count=' + i);
+            $window.location.href=('#!/campaign/tetris/count=' + i);
         };
         $scope.campaigns = [{
             link : '1',
