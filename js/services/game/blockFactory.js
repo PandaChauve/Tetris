@@ -54,23 +54,6 @@ angular.module('angularApp.factories')
             }
         };
 
-        Block.prototype.getHexColor = function () {
-            switch (this.type) {
-                case Block.EType.Blue:
-                    return 0x000090;
-                case Block.EType.Green:
-                    return 0x009000;
-                case Block.EType.Grey:
-                    return 0x505050;
-                case Block.EType.Red:
-                    return 0x900000;
-                case Block.EType.Orange:
-                    return 0xdc6e13;
-                case Block.EType.Purple:
-                    return 0x582a72;
-            }
-            return 0x000000;
-        };
 
         return {
             newBlock : function(){

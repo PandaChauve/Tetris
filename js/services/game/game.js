@@ -84,6 +84,7 @@ angular.module('angularApp.factories')
                     this.visual[i].linkDom(findDom(this.availableGrids, i));
                     this.visual[i].renderTetris(this.tetris[i], []); //first render before loop to get everything smooth
                 }
+                userInput.clear();
                 this.id = requestAnimationFrame(this.createRenderingFct());
 
             };

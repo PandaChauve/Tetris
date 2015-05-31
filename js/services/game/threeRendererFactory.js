@@ -4,7 +4,14 @@
 angular.module('angularApp.factories')
     .factory('threeRendererFactory', ['gameConstants', 'blockFactory', function threeRendererFactoryCreator(gameConstants, blockFactory) {
         "use strict";
+        function ItemsCache(){
+            this.geometries = {cube:{}};
+            this.textures = {};
+            this.mode = Math.floor(Math.random() *5);
+        }
+
         function ThreeRenderer(cursors) {
+            this.cache = new ItemsCache();
             if (cursors === undefined) {
                 cursors = 1;
             }
@@ -30,12 +37,8 @@ angular.module('angularApp.factories')
         };
 
         ThreeRenderer.prototype.createLight = function () {
-            var dLight = new THREE.DirectionalLight(0xcccccc);
-            dLight.position.set(500, 1000, 2000);
-            dLight.castShadow = true;
-            dLight.shadowCameraVisible = false;
-            dLight.shadowDarkness = 0.2;
-            dLight.shadowMapWidth = dLight.shadowMapHeight = 1000;
+            var dLight = new THREE.PointLight( 0xffffff, 0.5 );
+            dLight.position.set(0, 100, 800);
             return dLight;
         };
 
@@ -78,11 +81,61 @@ angular.module('angularApp.factories')
             return renderer;
         };
 
+         function getHexColor(type) {
+            switch (type) {
+                case 0:
+                    return 0x000040;
+                case 1:
+                    return 0x004000;
+                case 2:
+                    return 0x202020;
+                case 3:
+                    return 0x400000;
+                case 4:
+                    return 0x7c3e03;
+                case 5:
+                    return 0x281a42;
+            }
+            return 0x000000;
+        }
+
         ThreeRenderer.prototype.createCube = function (color) {
-            var geometry = new THREE.BoxGeometry(gameConstants.pixelPerBox * 0.7, gameConstants.pixelPerBox * 0.7, gameConstants.pixelPerBox / 4);
-            var material = new THREE.MeshPhongMaterial({color: color, emissive: 0x111111});
-            var newCube = new THREE.Mesh(geometry, material);
-            return newCube;
+            if(!this.cache.geometries.cube[color]){
+                switch(this.cache.mode){
+                    case 0:
+                        var size = gameConstants.pixelPerBox*(0.7);
+                        this.cache.geometries.cube[color] = new THREE.BoxGeometry(size, size, gameConstants.pixelPerBox/5);
+                        var m = new THREE.SubdivisionModifier( 0 );
+                        m.modify(this.cache.geometries.cube[color]);
+                        break;
+                    case 1:
+                        size = gameConstants.pixelPerBox;
+                        this.cache.geometries.cube[color] = new THREE.BoxGeometry(size, size, gameConstants.pixelPerBox/5);
+                         m = new THREE.SubdivisionModifier( 2 );
+                        m.modify(this.cache.geometries.cube[color]);
+                        break;
+                    case 2:
+                        size = gameConstants.pixelPerBox*((color%3)?1:0.7);
+                        this.cache.geometries.cube[color] = new THREE.BoxGeometry(size, size, gameConstants.pixelPerBox/5);
+                        m = new THREE.SubdivisionModifier( color%3 );
+                        m.modify(this.cache.geometries.cube[color]);
+                        break;
+                    case 3:
+                         size = gameConstants.pixelPerBox*(0.7);
+                        this.cache.geometries.cube[color] = new THREE.BoxGeometry(size, size, gameConstants.pixelPerBox/5);
+                        break;
+                    case 4:
+                        size = gameConstants.pixelPerBox*(1);
+                        this.cache.geometries.cube[color] = new THREE.BoxGeometry(size, size, gameConstants.pixelPerBox/5);
+                        m = new THREE.SubdivisionModifier( 1 );
+                        m.modify(this.cache.geometries.cube[color]);
+                        break;
+                }
+            }
+            if(!this.cache.textures[color]){
+                this.cache.textures[color] = new THREE.MeshPhongMaterial({color: getHexColor(color), emissive: getHexColor(color)});
+            }
+            return new THREE.Mesh(this.cache.geometries.cube[color].clone(), this.cache.textures[color].clone());
         };
 
         function CalculateX(block, x) {
@@ -96,7 +149,7 @@ angular.module('angularApp.factories')
         }
         ThreeRenderer.prototype.getColor = function getColor(c){
             if(!this.colors[c]){
-                this.colors[c] = new THREE.Color(c);
+                this.colors[c] = new THREE.Color(getHexColor(c));
             }
             return this.colors[c];
         };
@@ -119,12 +172,9 @@ angular.module('angularApp.factories')
 
         ThreeRenderer.prototype.updateCube = function (x, block) {
             var cube = block.threeObject;
-            if(cube == null){
-                throw "yeahhhh";
-            }
             cube.position.setY(block.verticalPosition + this.offset);
             cube.position.setX(CalculateX(block, x));
-            cube.material.color = this.getColor(block.getHexColor());
+            cube.material.color = this.getColor(block.type);
             if (block.state === blockFactory.EState.Disappearing) {
                 cube.material.opacity = Math.max(1 - block.animationState / 100, 0);
                 cube.material.transparent = true;
@@ -138,7 +188,7 @@ angular.module('angularApp.factories')
         };
 
         ThreeRenderer.prototype.render = function () {
-            this.light.position.setY(1000 + this.offset);
+            this.light.position.setY(100 + this.offset);
             this.renderer.render(this.scene, this.camera);
         };
 
@@ -192,7 +242,7 @@ angular.module('angularApp.factories')
                     block = tetris.grid.container[i][j];
                     if (block.type !== blockFactory.EType.PlaceHolder) {
                         if (block.id === -1) {
-                            block.threeObject = this.createCube(block.getHexColor());
+                            block.threeObject = this.createCube(block.type);
                             this.scene.add(block.threeObject);
                             block.id = block.threeObject.id;
                         }

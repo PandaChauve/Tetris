@@ -71,8 +71,6 @@ angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$htt
             }
             $scope.openModal();
 
-
-
             $scope.publish = function () {
                 if (!$scope.published) {
                     $scope.published = true;
