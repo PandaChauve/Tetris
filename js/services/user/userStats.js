@@ -33,7 +33,7 @@ angular.module('angularApp.factories')
 
         UserStats.prototype.addGame = function (game, map) {
             if (!this.bestGameStats.hasOwnProperty(map)) {
-                this.bestGameStats[map] = game;
+                this.bestGameStats[map] = gameStatsFactory.newGameStatsFrom(game);
             }
             else {
                 this.bestGameStats[map].keepBest(game);
@@ -41,7 +41,7 @@ angular.module('angularApp.factories')
             storage.set("UserStats_bestGameStats", this.bestGameStats, false);
 
             if (!this.totalGameStats.hasOwnProperty(map)) {
-                this.totalGameStats[map] = game;
+                this.totalGameStats[map] = gameStatsFactory.newGameStatsFrom(game);
             }
             else {
                 this.totalGameStats[map].append(game);
