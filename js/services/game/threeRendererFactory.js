@@ -85,15 +85,15 @@ angular.module('angularApp.factories')
          function getHexColor(type) {
             switch (type) {
                 case 0:
-                    return 0x000060;
+                    return 0x000080;
                 case 1:
-                    return 0x004000;
+                    return 0x005000;
                 case 2:
-                    return 0x202020;
+                    return 0x404040;
                 case 3:
-                    return 0x400000;
+                    return 0x601010;
                 case 4:
-                    return 0xba2e03;
+                    return 0x9c3e03;
                 case 5:
                     return 0x281a42;
             }

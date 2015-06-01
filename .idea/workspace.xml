@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20d21939-c8e4-49c3-84d6-1c3927d59de7" name="Default" comment="">
+      <change type="MOVED" beforePath="C:\Users\panda\WebstormProjects\Tetris\js\services\user\user.js" afterPath="$PROJECT_DIR$/js/services/user/userAccount.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.debug.html" afterPath="$PROJECT_DIR$/index.debug.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/scores.html" afterPath="$PROJECT_DIR$/templates/scores.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers/scoresController.js" afterPath="$PROJECT_DIR$/js/controllers/scoresController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/services/game/threeRendererFactory.js" afterPath="$PROJECT_DIR$/js/services/game/threeRendererFactory.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -16,7 +20,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CreatePatchCommitExecutor">
-    <option name="PATCH_PATH" value="" />
+    <option name="PATCH_PATH" value="C:\Users\panda\WebstormProjects\Tetris" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="ExportToHTMLSettings">
@@ -27,16 +31,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="gameController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/controllers/gameController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="59" column="21" selection-start-line="59" selection-start-column="21" selection-end-line="59" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="gameStatsFactory.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/services/user/gameStatsFactory.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -47,11 +41,53 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="threeRendererFactory.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="threeRendererFactory.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/services/game/threeRendererFactory.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.52641165">
-              <caret line="95" column="32" selection-start-line="95" selection-start-column="32" selection-end-line="95" selection-end-column="32" />
+            <state vertical-scroll-proportion="-8.793103">
+              <caret line="93" column="34" selection-start-line="93" selection-start-column="34" selection-end-line="93" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="scores.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/scores.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.7083333">
+              <caret line="23" column="20" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.debug.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.debug.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-17.653847">
+              <caret line="115" column="63" selection-start-line="115" selection-start-column="63" selection-end-line="115" selection-end-column="63" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="scoresController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/controllers/scoresController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="userAccount.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/services/user/userAccount.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="5" column="22" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -74,13 +110,6 @@
               <caret line="169" column="42" selection-start-line="169" selection-start-column="42" selection-end-line="169" selection-end-column="42" />
               <folding />
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="angular.min.js" pinned="false" current-in-tab="false">
-        <entry file="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js">
-          <provider selected="true" editor-type-id="httpFileEditor">
-            <state />
           </provider>
         </entry>
       </file>
@@ -123,7 +152,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/games/classic.json" />
         <option value="$PROJECT_DIR$/games/classicSplitScreen.json" />
         <option value="$PROJECT_DIR$/css/angular-notify.css" />
         <option value="$PROJECT_DIR$/css/bootstrap.css" />
@@ -152,7 +180,6 @@
         <option value="$PROJECT_DIR$/js/controllers/gameStateController.js" />
         <option value="$PROJECT_DIR$/js/directives/mngCompareTo.js" />
         <option value="$PROJECT_DIR$/templates/endGameModal.html" />
-        <option value="$PROJECT_DIR$/js/controllers/scoresController.js" />
         <option value="$PROJECT_DIR$/js/controllers/IndexController.js" />
         <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/js/services/game/blockFactory.js" />
@@ -163,7 +190,6 @@
         <option value="$PROJECT_DIR$/js/services/user/storage.js" />
         <option value="$PROJECT_DIR$/js/controllers/gameController.js" />
         <option value="$PROJECT_DIR$/js/services/user/achievements.js" />
-        <option value="$PROJECT_DIR$/index.debug.html" />
         <option value="$PROJECT_DIR$/js/controllers/campaignController.js" />
         <option value="$PROJECT_DIR$/js/controllers/tetrisCampaignController.js" />
         <option value="$PROJECT_DIR$/js/angularApp.js" />
@@ -174,6 +200,9 @@
         <option value="$PROJECT_DIR$/js/services/user/userStats.js" />
         <option value="$PROJECT_DIR$/js/services/user/gameStatsFactory.js" />
         <option value="$PROJECT_DIR$/js/services/game/threeRendererFactory.js" />
+        <option value="$PROJECT_DIR$/index.debug.html" />
+        <option value="$PROJECT_DIR$/js/controllers/scoresController.js" />
+        <option value="$PROJECT_DIR$/templates/scores.html" />
       </list>
     </option>
   </component>
@@ -588,18 +617,6 @@
       <option name="number" value="Default" />
       <updated>1428682894359</updated>
     </task>
-    <task id="LOCAL-00077" summary="setting some bootstrap magic to game">
-      <created>1432061268575</created>
-      <option name="number" value="00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1432061268575</updated>
-    </task>
-    <task id="LOCAL-00078" summary="des for zfa (will remove it one day) + new stats">
-      <created>1432062859986</created>
-      <option name="number" value="00078" />
-      <option name="project" value="LOCAL" />
-      <updated>1432062859986</updated>
-    </task>
     <task id="LOCAL-00079" summary="small improvements">
       <created>1432141846449</created>
       <option name="number" value="00079" />
@@ -882,7 +899,19 @@
       <option name="project" value="LOCAL" />
       <updated>1433177714598</updated>
     </task>
-    <option name="localTasksCounter" value="126" />
+    <task id="LOCAL-00126" summary="upgrading colors ?">
+      <created>1433178363330</created>
+      <option name="number" value="00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1433178363330</updated>
+    </task>
+    <task id="LOCAL-00127" summary="compiling">
+      <created>1433178389980</created>
+      <option name="number" value="00127" />
+      <option name="project" value="LOCAL" />
+      <updated>1433178389980</updated>
+    </task>
+    <option name="localTasksCounter" value="128" />
     <servers />
   </component>
   <component name="TodoView">
@@ -902,8 +931,9 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919255" sideWeight="0.5565032" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284974" sideWeight="0.49791667" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32937366" sideWeight="0.49166667" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30020705" sideWeight="0.45309168" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29948187" sideWeight="0.45309168" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919255" sideWeight="0.48933902" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942432" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17004265" sideWeight="0.65346533" order="0" side_tool="false" content_ui="combo" />
@@ -916,7 +946,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284974" sideWeight="0.49791667" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3299595" sideWeight="0.49791667" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -960,8 +989,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="one file per controller (there's no end to this refactoring i waited too long :))" />
-    <MESSAGE value="heavy angular refactoring" />
     <MESSAGE value="using ng click for input buttons" />
     <MESSAGE value="no more dom manipulation in state checker" />
     <MESSAGE value="no more dom manipulation in game" />
@@ -985,7 +1012,9 @@
     <MESSAGE value="better routing" />
     <MESSAGE value="fix for double scores" />
     <MESSAGE value="routing" />
-    <option name="LAST_COMMIT_MESSAGE" value="routing" />
+    <MESSAGE value="upgrading colors ?" />
+    <MESSAGE value="compiling" />
+    <option name="LAST_COMMIT_MESSAGE" value="compiling" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -997,11 +1026,12 @@
           <properties uncaughtOnly="true" />
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="384" />
+      <option name="time" value="386" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JavascriptDebugType">
         <watch expression="userStats.currentGame.gameCount" />
+        <watch expression="n === userAccount.login" language="JavaScript" />
       </configuration>
     </watches-manager>
   </component>
@@ -1018,13 +1048,6 @@
     </PATH>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/games/campaign/timeLimit/timelimit_1.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.807693">
-          <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/games/campaign/timeLimit/timelimit_2.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.461538">
@@ -1180,13 +1203,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/controllers/scoresController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1230,6 +1246,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="6" column="50" selection-start-line="6" selection-start-column="50" selection-end-line="6" selection-end-column="50" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1245,13 +1262,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/services/user/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="37" column="39" selection-start-line="37" selection-start-column="39" selection-end-line="37" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1281,14 +1292,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="42" column="68" selection-start-line="42" selection-start-column="68" selection-end-line="42" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.debug.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="38" column="50" selection-start-line="38" selection-start-column="50" selection-end-line="38" selection-end-column="50" />
           <folding />
         </state>
       </provider>
@@ -1378,6 +1381,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/services/game/threeRendererFactory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.793103">
+          <caret line="93" column="34" selection-start-line="93" selection-start-column="34" selection-end-line="93" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/services/user/gameStatsFactory.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1386,11 +1397,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/services/game/threeRendererFactory.js">
+    <entry file="file://$PROJECT_DIR$/index.debug.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.52641165">
-          <caret line="95" column="32" selection-start-line="95" selection-start-column="32" selection-end-line="95" selection-end-column="32" />
+        <state vertical-scroll-proportion="-17.653847">
+          <caret line="115" column="63" selection-start-line="115" selection-start-column="63" selection-end-line="115" selection-end-column="63" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/services/user/userAccount.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="22" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controllers/scoresController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/scores.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7083333">
+          <caret line="23" column="20" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
