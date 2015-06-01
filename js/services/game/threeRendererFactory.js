@@ -16,7 +16,6 @@ angular.module('angularApp.factories')
                 cursors = 1;
             }
             this.camera = this.createCamera();
-            this.light = this.createLight();
             this.cursor = [this.createCursor(0x008080)];
             for (var i = 1; i < cursors; i += 1) {
                 this.cursor.push(this.createCursor(0x800080));
@@ -30,21 +29,23 @@ angular.module('angularApp.factories')
 
         ThreeRenderer.prototype.clear = function () {
             this.scene = null;
-            this.light = null;
             this.camera = null;
             this.cursor = null;
             this.renderer = null;
         };
 
-        ThreeRenderer.prototype.createLight = function () {
-            var dLight = new THREE.PointLight( 0xffffff, 0.5 );
-            dLight.position.set(0, 100, 800);
-            return dLight;
-        };
 
         ThreeRenderer.prototype.createScene = function () {
             var scene = new THREE.Scene();
-            scene.add(this.light);
+
+            var dLight = new THREE.PointLight( 0xffffff, 0.5 );
+            dLight.position.set(0, 100, 800);
+            scene.add(dLight);
+
+            var dLight2 = new THREE.PointLight( 0xffffff, 0.5 );
+            dLight2.position.set(600, -100, 800);
+            scene.add(dLight2);
+
             for (var i = 0; i < this.cursor.length; i += 1) {
                 scene.add(this.cursor[i]);
             }
@@ -84,7 +85,7 @@ angular.module('angularApp.factories')
          function getHexColor(type) {
             switch (type) {
                 case 0:
-                    return 0x000040;
+                    return 0x000060;
                 case 1:
                     return 0x004000;
                 case 2:
@@ -92,7 +93,7 @@ angular.module('angularApp.factories')
                 case 3:
                     return 0x400000;
                 case 4:
-                    return 0x7c3e03;
+                    return 0xba2e03;
                 case 5:
                     return 0x281a42;
             }
@@ -188,7 +189,6 @@ angular.module('angularApp.factories')
         };
 
         ThreeRenderer.prototype.render = function () {
-            this.light.position.setY(100 + this.offset);
             this.renderer.render(this.scene, this.camera);
         };
 
