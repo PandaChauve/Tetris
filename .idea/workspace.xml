@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20d21939-c8e4-49c3-84d6-1c3927d59de7" name="Default" comment="">
-      <change type="MOVED" beforePath="C:\Users\panda\WebstormProjects\Tetris\js\services\user\user.js" afterPath="$PROJECT_DIR$/js/services/user/userAccount.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.debug.html" afterPath="$PROJECT_DIR$/index.debug.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/scores.html" afterPath="$PROJECT_DIR$/templates/scores.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers/scoresController.js" afterPath="$PROJECT_DIR$/js/controllers/scoresController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/services/game/threeRendererFactory.js" afterPath="$PROJECT_DIR$/js/services/game/threeRendererFactory.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.min.js" afterPath="$PROJECT_DIR$/app.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Tetris.iws" />
@@ -54,8 +50,8 @@
       <file leaf-file-name="scores.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/scores.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7083333">
-              <caret line="23" column="20" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.76527333">
+              <caret line="28" column="41" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="41" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -617,12 +613,6 @@
       <option name="number" value="Default" />
       <updated>1428682894359</updated>
     </task>
-    <task id="LOCAL-00079" summary="small improvements">
-      <created>1432141846449</created>
-      <option name="number" value="00079" />
-      <option name="project" value="LOCAL" />
-      <updated>1432141846450</updated>
-    </task>
     <task id="LOCAL-00080" summary="a bit of cleaning a bit of optimisation">
       <created>1432146599446</created>
       <option name="number" value="00080" />
@@ -911,7 +901,13 @@
       <option name="project" value="LOCAL" />
       <updated>1433178389980</updated>
     </task>
-    <option name="localTasksCounter" value="128" />
+    <task id="LOCAL-00128" summary="highligh user's score">
+      <created>1433186275383</created>
+      <option name="number" value="00128" />
+      <option name="project" value="LOCAL" />
+      <updated>1433186275383</updated>
+    </task>
+    <option name="localTasksCounter" value="129" />
     <servers />
   </component>
   <component name="TodoView">
@@ -933,15 +929,15 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284974" sideWeight="0.49791667" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32937366" sideWeight="0.49166667" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29948187" sideWeight="0.45309168" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29948187" sideWeight="0.45309168" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919255" sideWeight="0.48933902" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942432" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17004265" sideWeight="0.65346533" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17004265" sideWeight="0.34653464" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17004265" sideWeight="0.6553255" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17004265" sideWeight="0.34467456" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25879917" sideWeight="0.4434968" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13751318" sideWeight="0.50520056" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37202072" sideWeight="0.5271855" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37202072" sideWeight="0.5271855" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -989,7 +985,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="using ng click for input buttons" />
     <MESSAGE value="no more dom manipulation in state checker" />
     <MESSAGE value="no more dom manipulation in game" />
     <MESSAGE value="display droped frame" />
@@ -1014,7 +1009,8 @@
     <MESSAGE value="routing" />
     <MESSAGE value="upgrading colors ?" />
     <MESSAGE value="compiling" />
-    <option name="LAST_COMMIT_MESSAGE" value="compiling" />
+    <MESSAGE value="highligh user's score" />
+    <option name="LAST_COMMIT_MESSAGE" value="highligh user's score" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1423,8 +1419,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/scores.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7083333">
-          <caret line="23" column="20" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.76527333">
+          <caret line="28" column="41" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="41" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
           </folding>
