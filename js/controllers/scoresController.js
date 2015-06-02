@@ -1,5 +1,5 @@
 angular.module('angularApp.controllers')
-    .controller('ScoresCtrl', ['$scope', '$http','userAccount', function ($scope, $http, userAccount) {
+    .controller('ScoresCtrl', ['$scope', '$http','$timeout','userAccount', function ($scope, $http, $timeout, userAccount) {
         "use strict";
         $scope.isActive = function (viewLocation) {
             return viewLocation === $scope.type;
@@ -8,9 +8,14 @@ angular.module('angularApp.controllers')
             $scope.type = name;
             $scope.getScores(type);
         };
-
+        $scope.currentName = userAccount.username;
+        userAccount.registerToEvent($scope, function(e){
+            $timeout(function() {
+                $scope.currentName = e;
+            }, 0);
+        });
         $scope.isUser = function(n){
-            return n === userAccount.login;
+            return n === $scope.currentName;
         };
         $scope.getScores = function (type) {
             $http.get("http://sylvain.luthana.be/tetrisApi.php?get&map=" + type).success(function (data) {

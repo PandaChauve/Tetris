@@ -50,9 +50,9 @@ angular.module('angularApp.factories')
         };
 
         MyAudio.ESounds = {
-            swap : {path:'http://soundbible.com/grab.php?id=1898&type=', duration:1000},
-            score : {path:'http://soundbible.com/grab.php?id=1405&type=', duration:1000},
-            end : {path:'http://soundbible.com/grab.php?id=1262&type=', duration:2000}
+            swap : {path:'Resources/audio/jump.', duration:1000},
+            score : {path:'Resources/audio/pop.', duration:1000},
+            end : {path:'Resources/audio/shotgun.', duration:2000}
         };
         MyAudio.prototype.ESounds = MyAudio.ESounds;
         return new MyAudio();
