@@ -4,12 +4,15 @@ angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$htt
     function ($scope, $http, $route, $routeParams, $modal, $window, game, gameConstants, achievements, userStats, storage, stateChecker, userAccount) {
         "use strict";
         //FIXME directive too much in the controller
+        var gameFinished = false;
         $scope.gameName = $routeParams.name || "classic";
         $scope.config = {};
         $scope.config.splitScreen = $scope.gameName === "classicSplitScreen";
         $scope.pause = {
             toggle: function () {
-                $scope.pause.active = game.togglePause();
+                if(!gameFinished){
+                    $scope.pause.active = game.togglePause();
+                }
             },
             active: false
         };
@@ -53,6 +56,7 @@ angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$htt
             }
         };
         $scope.endCallBack = function (finishedGame) {
+            gameFinished = true;
             if(stateChecker.victory()){
                 storage.set("UserMap"+$scope.gameName, true, false);
             }
@@ -73,6 +77,7 @@ angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$htt
         };
         $scope.reset = function(){
             $scope.$broadcast('newGame', true);
+            gameFinished = false;
             game.startNewGame();
         };
         $scope.openModal = function () {
