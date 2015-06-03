@@ -4,8 +4,9 @@ angular.module('angularApp.controllers').controller('GameStateCtrl', ['$scope',
         "use strict";
         var upwardSwapCount = true;
         var targetSwapCounts = 0;
+
         $scope.state = {
-            rules : [],
+            rules : createRuleSet($scope.$parent.$parent.gameConditions),//FIXME
             score : 0,
             time : 0,
             swaps : 0

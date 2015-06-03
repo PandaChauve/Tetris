@@ -4,7 +4,6 @@ angular.module('angularApp.factories')
         function UserStorage() {
             this.storage = {};
             this.userId = -1;
-            this.ready = true;
             this.inSave = false;
             this.waitingToSave = false;
             this.eventHandler = [];
@@ -33,16 +32,19 @@ angular.module('angularApp.factories')
             this.userId = -1;
             var that = this;
             $http.get("http://sylvain.luthana.be/tetrisApi.php?userdata=storage&user_id=" + userid).success(function (data) {
-                try {
-                    if (!data)
-                        that.storage = {};
-                    else
-                        that.storage = data;
-                    that.userId = userid;
-                }
-                catch (e) {
-                    console.log(e);
-                }
+                setTimeout(function(){ //FIXME remove this debug code once all the async cache issue answered
+                    try {
+                        if (!data)
+                            that.storage = {};
+                        else
+                            that.storage = data;
+                        that.userId = userid;
+                        that.broadcast();
+                    }
+                    catch (e) {
+                        console.log(e);
+                    }
+                }, 0);
             })
                 .error(function (e) {
                     console.log(e);

@@ -5,7 +5,7 @@
               style="margin:auto; width:400px; height:400px; display:block">
 
             <circle ng-class="getClass($index, map.active)" ng-cx="{{($index+1)*30}}"
-                    ng-cy="{{($index+1)*30}}" r="15" ng-click="map.active && startMap(map.name)" ng-repeat="map in ::maps"/>
+                    ng-cy="{{($index+1)*30}}" r="15" ng-click="map.active && startMap(map.name)" ng-repeat="map in maps"/>
 
 
         </svg>

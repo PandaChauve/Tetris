@@ -1,6 +1,6 @@
 angular.module('angularApp.controllers')
-    .controller('ModalInstanceCtrl', ['$scope', '$modalInstance', 'gameName', 'userStats', 'stateChecker', 'helpers', 'storage', 'audio',
-        function ($scope, $modalInstance, gameName, userStats, stateChecker, helpers, storage, audio) {
+    .controller('ModalInstanceCtrl', ['$scope', '$modalInstance', 'gameName', 'userStats', 'stateChecker', 'helpers', 'audio',
+        function ($scope, $modalInstance, gameName, userStats, stateChecker, helpers, audio) {
             "use strict";
             audio.play(audio.ESounds.end);
             $scope.won = stateChecker.victory();

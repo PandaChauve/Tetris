@@ -13,59 +13,68 @@ angular.module('angularApp.controllers')
         };
         $scope.campaign = $routeParams.campaignName || "arcade";
         var count = $routeParams.subCampaignId || 1;
-        $scope.maps = [];
-        switch ($scope.campaign) {
-            case 'puzzle':
-                $scope.maps.push({
-                    name: 'campaign/puzzle/puzzle_1',
-                    active: true
-                });
-                for (i = 2; i < 3; i += 1) {
+        updateScope(true);
+        storage.registerToEvent(this, updateScope); //not sure the storage is ready
+        function updateScope(sync){
+            $scope.maps = [];
+            switch ($scope.campaign) {
+                case 'puzzle':
                     $scope.maps.push({
-                        name: 'campaign/puzzle/puzzle_' + i,
-                        active: storage.get('UserMapcampaign/puzzle/puzzle_' + (i - 1))
+                        name: 'campaign/puzzle/puzzle_1',
+                        active: true
                     });
-                }
-                break;
-            case 'timelimit':
-                $scope.maps.push({
-                    name: 'campaign/timeLimit/timelimit_1',
-                    active: true
-                });
-                for (i = 2; i < 3; i += 1) {
+                    for (i = 2; i < 3; i += 1) {
+                        $scope.maps.push({
+                            name: 'campaign/puzzle/puzzle_' + i,
+                            active: storage.get('UserMapcampaign/puzzle/puzzle_' + (i - 1))
+                        });
+                    }
+                    break;
+                case 'timelimit':
                     $scope.maps.push({
-                        name: 'campaign/timeLimit/timelimit_' + i,
-                        active: storage.get('UserMapcampaign/timeLimit/timelimit_' + (i - 1))
+                        name: 'campaign/timeLimit/timelimit_1',
+                        active: true
                     });
-                }
-                break;
-            case 'tetris':
-                i = count; //str
-                j = 1;
-                $scope.maps.push({
-                    name: 'campaign/tetrisAttack/' + i + '/ta_' + i + '_' + j,
-                    active: (i == 1 || storage.get('UserMapcampaign/tetrisAttack/' + (i - 1) + '/ta_' + (i - 1) + '_10'))
-                });
-
-                for (j = 2; j < 11; j += 1) {
+                    for (i = 2; i < 3; i += 1) {
+                        $scope.maps.push({
+                            name: 'campaign/timeLimit/timelimit_' + i,
+                            active: storage.get('UserMapcampaign/timeLimit/timelimit_' + (i - 1))
+                        });
+                    }
+                    break;
+                case 'tetris':
+                    i = count; //str
+                    j = 1;
                     $scope.maps.push({
                         name: 'campaign/tetrisAttack/' + i + '/ta_' + i + '_' + j,
-                        active: (storage.get('UserMapcampaign/tetrisAttack/' + i + '/ta_' + i + '_' + (j - 1)))
+                        active: (i == 1 || storage.get('UserMapcampaign/tetrisAttack/' + (i - 1) + '/ta_' + (i - 1) + '_10'))
                     });
-                }
-                break;
-            default:
-                $scope.maps.push({
-                    name: 'campaign/arcade/arcade_1',
-                    active: true
-                });
-                for (i = 2; i < 4; i += 1) {
+
+                    for (j = 2; j < 11; j += 1) {
+                        $scope.maps.push({
+                            name: 'campaign/tetrisAttack/' + i + '/ta_' + i + '_' + j,
+                            active: (storage.get('UserMapcampaign/tetrisAttack/' + i + '/ta_' + i + '_' + (j - 1)))
+                        });
+                    }
+                    break;
+                default:
                     $scope.maps.push({
-                        name: 'campaign/arcade/arcade_' + i,
-                        active: storage.get('UserMapcampaign/arcade/arcade_' + (i - 1))
+                        name: 'campaign/arcade/arcade_1',
+                        active: true
                     });
-                }
-                break;
-        }
+                    for (i = 2; i < 4; i += 1) {
+                        $scope.maps.push({
+                            name: 'campaign/arcade/arcade_' + i,
+                            active: storage.get('UserMapcampaign/arcade/arcade_' + (i - 1))
+                        });
+                    }
+                    break;
+            }
+
+            if(!sync){
+                $scope.$apply(); //FIXME really need to learn how i should do that
+            }
+        };
+
 
     }]);

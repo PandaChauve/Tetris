@@ -8,6 +8,7 @@ angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$htt
         $scope.gameName = $routeParams.name || "classic";
         $scope.config = {};
         $scope.config.splitScreen = $scope.gameName === "classicSplitScreen";
+        $scope.gameConditions = null;
         $scope.pause = {
             toggle: function () {
                 if(!gameFinished){
@@ -44,6 +45,7 @@ angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$htt
 
         $scope.useGameConfig = function (config) {
             gameConstants.load(config.rules);
+            $scope.gameConditions = config.victory;
             $scope.$broadcast("newRulesSet", config.victory);
             if (config.grid == "") { // jshint ignore:line
                 game.setConfiguration(config, "", $scope.endCallBack, $scope);

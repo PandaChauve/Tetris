@@ -73,6 +73,7 @@ angular.module('angularApp.factories')
             return [0, 0, 0, 0, 0];
         };
 
+        //FIXME storage state :///
         UserStats.GetUserStats = function () {
             var score = storage.get("UserStats_points"); //will only return flat data
             var bestGameStats = storage.get("UserStats_bestGameStats"); //will only return flat data

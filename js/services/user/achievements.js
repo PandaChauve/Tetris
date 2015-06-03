@@ -7,25 +7,31 @@ angular.module('angularApp.factories')
         function achievementsFactory($rootScope, storage, TIC_PER_SEC, SEC_PER_MIN, userStats, notify) {
             'use strict';
 
-            function AchievementsState() {
-                this.container = storage.get("UserAchievements") || [];
-                for (var i = this.container.length; i < AchievementsState.List.enumSize; i += 1) {
-                    this.container[i] = false;
+            function getContainer(){
+                var r = storage.get("UserAchievements") || [];
+                for (var i = r.length; i < AchievementsState.List.enumSize; i += 1) {
+                    r[i] = false;
                 }
+                return r;
             }
 
+            function AchievementsState() {
+            }
+
+
             AchievementsState.prototype.isWon = function (key) {
-                return this.container[key];
+                return getContainer()[key];
             };
 
             AchievementsState.prototype.check = function (game, gameName) {
                 var newOne = false;
+                var container = getContainer();
                 for (var key = 0; key < AchievementsState.List.enumSize; key += 1) {
-                    if (!this.container[key]) {
-                        this.checkIndividual(key, game, gameName);
+                    if (!container[key]) {
+                        this.checkIndividual(key, game, gameName, container);
 
                         //new one => notify !
-                        if (this.container[key]) {
+                        if (container[key]) {
                             newOne = true;
                             var sc = $rootScope.$new(true);
                             sc.picture = {
@@ -40,7 +46,7 @@ angular.module('angularApp.factories')
                     }
                 }
                 if(newOne){
-                    storage.set("UserAchievements", this.container);
+                    storage.set("UserAchievements", container);
                 }
             };
 
@@ -85,7 +91,7 @@ angular.module('angularApp.factories')
                 return false;
             };
 
-            AchievementsState.prototype.checkIndividual = function (key, game, gameName) {
+            AchievementsState.prototype.checkIndividual = function (key, game, gameName, container) {
                 //already done
                 switch (key) {
                     case AchievementsState.List.Beginner :
@@ -94,26 +100,26 @@ angular.module('angularApp.factories')
                     case AchievementsState.List.God :
                     case AchievementsState.List.Titan :
                         if (gameName === "classic") {
-                            this.container[key] = game.score >= this.keyToScore(key);
+                            container[key] = game.score >= this.keyToScore(key);
                         }
                         break;
                     case AchievementsState.List.Cheater :
                         if (gameName === "sandbox") {
-                            this.container[key] = game.score >= this.keyToScore(key);
+                            container[key] = game.score >= this.keyToScore(key);
                         }
                         break;
                     case AchievementsState.List.Ambidextrous :
                     case AchievementsState.List.Psychic :
                     case AchievementsState.List.Sorcerer :
-                        this.container[key] = this.checkMultiLines(key, game);
+                        container[key] = this.checkMultiLines(key, game);
                         break;
                     case AchievementsState.List.Stubborn :
-                        this.container[key] = userStats.getTotalGameStats(gameName).time > TIC_PER_SEC * SEC_PER_MIN * 30; //30min
+                        container[key] = userStats.getTotalGameStats(gameName).time > TIC_PER_SEC * SEC_PER_MIN * 30; //30min
                         break;
                     case AchievementsState.List.BiggerIsBetter :
                         for (var size = 3; size < game.lineSizes.length; size += 1) {
                             if (game.lineSizes[size]) {
-                                this.container[key] = true;
+                                container[key] = true;
                                 break;
                             }
                         }
