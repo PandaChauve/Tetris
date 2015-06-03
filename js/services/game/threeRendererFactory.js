@@ -7,7 +7,12 @@ angular.module('angularApp.factories')
         function ItemsCache(){
             this.geometries = {cube:{}};
             this.textures = {};
-            this.mode = Math.floor(Math.random() *5);
+            if(localStorage.getItem("gridStyle")){
+                this.mode = +localStorage.getItem("gridStyle");
+            }
+            else{
+                this.mode = Math.floor(Math.random() *6);
+            }
         }
 
         function ThreeRenderer(cursors) {
@@ -129,6 +134,12 @@ angular.module('angularApp.factories')
                         size = gameConstants.pixelPerBox*(1);
                         this.cache.geometries.cube[color] = new THREE.BoxGeometry(size, size, gameConstants.pixelPerBox/5);
                         m = new THREE.SubdivisionModifier( 1 );
+                        m.modify(this.cache.geometries.cube[color]);
+                        break;
+                    case 5:
+                        size = gameConstants.pixelPerBox;
+                        this.cache.geometries.cube[color] = new THREE.BoxGeometry(size, size, gameConstants.pixelPerBox/5);
+                        m = new THREE.SubdivisionModifier( 3 );
                         m.modify(this.cache.geometries.cube[color]);
                         break;
                 }
