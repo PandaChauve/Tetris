@@ -47,7 +47,7 @@ angular.module('angularApp.factories')
             AchievementsState.prototype.keyToScore = function (key) {
                 switch (key) {
                     case AchievementsState.List.Beginner :
-                        return 10;
+                        return 30;
                     case AchievementsState.List.Expert :
                         return 80;
                     case AchievementsState.List.Master :
@@ -150,7 +150,7 @@ angular.module('angularApp.factories')
             AchievementsState.List.getDescription = function (key) {
                 switch (key) {
                     case AchievementsState.List.Beginner :
-                        return "Get 10 points in classic";
+                        return "Get 30 points in classic";
                     case AchievementsState.List.Expert :
                         return "Get 80 points in classic";
                     case AchievementsState.List.Master :
