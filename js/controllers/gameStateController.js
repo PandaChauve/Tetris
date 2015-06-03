@@ -17,6 +17,7 @@ angular.module('angularApp.controllers').controller('GameStateCtrl', ['$scope',
         $scope.$on('newGame', function(){
             $scope.state.swaps = targetSwapCounts;
             $scope.state.score = 0;
+            $scope.state.time = 0;
         });
         $scope.$on("newSwaps", function(event, m){
             if(upwardSwapCount){
