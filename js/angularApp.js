@@ -27,45 +27,111 @@ angularApp.config(['$routeProvider', '$locationProvider',
             $routeProvider.
                 when('/scores', {
                     templateUrl: 'templates/scores.html',
-                    controller: 'ScoresCtrl'
+                    controller: 'ScoresCtrl',
+                    resolve: {
+                        user : ['userAccount', function(userAccount){
+                            "use strict";
+                            return userAccount.start();
+                        }]
+                    }
                 }).
                 when('/achievements', {
                     templateUrl: 'templates/achievements.html',
-                    controller: 'AchievementsCtrl'
+                    controller: 'AchievementsCtrl',
+                    resolve: {
+                        user : ['userAccount', function(userAccount){
+                            "use strict";
+                            return userAccount.start();
+                        }]
+                    }
                 }).
                 when('/rules', {
-                    templateUrl: 'templates/rules.html'
+                    templateUrl: 'templates/rules.html',
+                    resolve: {
+                        user : ['userAccount', function(userAccount){
+                            "use strict";
+                            return userAccount.start();
+                        }]
+                    }
                 }).
                 when('/game', {
                     templateUrl: 'templates/game.html',
-                    controller: 'GameCtrl'
+                    controller: 'GameCtrl',
+                    resolve: {
+                        user : ['userAccount', function(userAccount){
+                            "use strict";
+                            return userAccount.start();
+                        }]
+                    }
                 }).
                 when('/campaign', {
                     templateUrl: 'templates/campaign.html',
-                    controller: 'CampaignCtrl'
+                    controller: 'CampaignCtrl',
+                    resolve: {
+                        user : ['userAccount', function(userAccount){
+                            "use strict";
+                            return userAccount.start();
+                        }]
+                    }
                 }).
                 when('/campaign/:campaignName', {
                     templateUrl: 'templates/campaign.html',
-                    controller: 'CampaignCtrl'
+                    controller: 'CampaignCtrl',
+                    resolve: {
+                        user : ['userAccount', function(userAccount){
+                            "use strict";
+                            return userAccount.start();
+                        }]
+                    }
                 }).
                 when('/campaign/:campaignName/:subCampaignId', {
                     templateUrl: 'templates/campaign.html',
-                    controller: 'CampaignCtrl'
+                    controller: 'CampaignCtrl',
+                    resolve: {
+                        user : ['userAccount', function(userAccount){
+                            "use strict";
+                            return userAccount.start();
+                        }]
+                    }
                 }).
                 when('/tetrisCampaign', {
                     templateUrl: 'templates/tetrisCampaign.html',
-                    controller: 'tetrisCampaignCtrl'
+                    controller: 'tetrisCampaignCtrl',
+                    resolve: {
+                        user : ['userAccount', function(userAccount){
+                            "use strict";
+                            return userAccount.start();
+                        }]
+                    }
                 }).
                 when('/stats', {
                     templateUrl: 'templates/stats.html',
-                    controller: 'StatCtrl'
+                    controller: 'StatCtrl',
+                    resolve: {
+                        user : ['userAccount', function(userAccount){
+                            "use strict";
+                            return userAccount.start();
+                        }]
+                    }
                 }).
                 when('/about', {
-                    templateUrl: 'templates/about.html'
+                    templateUrl: 'templates/about.html',
+                    resolve: {
+                        user : ['userAccount', function(userAccount){
+                            "use strict";
+                            return userAccount.start();
+                        }]
+                    }
                 }).
                 when('/', {
                     templateUrl: 'templates/index.html',
-                    controller: 'IndexCtrl'
+                    controller: 'IndexCtrl',
+                    resolve: {
+                        user : ['userAccount', function(userAccount){
+                            "use strict";
+                            return userAccount.start();
+                        }]
+                    }
                 });
 
             $locationProvider.html5Mode(false);

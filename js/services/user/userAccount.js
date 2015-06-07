@@ -1,47 +1,61 @@
 
 angular.module('angularApp.factories')
-    .factory('userAccount', ['$http', '$rootScope', '$route', '$window', '$timeout', 'storage', function userFactory($http, $rootScope, $route, $window, $timeout, storage) {
+    .factory('userAccount', ['$q', '$rootScope', '$route', '$window', '$timeout', 'storage', 'api', function userFactory($q,$rootScope, $route, $window, $timeout, storage, api) {
         "use strict";
         function User() {
             this.eventHandler = [];
             this.username = null;
             this.id = -1;
-            if (localStorage.getItem("Usr_LastUser") && localStorage.getItem("Usr_hash")) {
-                var that = this;
-                $http.get('http://sylvain.luthana.be/tetrisApi.php?login=' + localStorage.getItem("Usr_LastUser") + '&hash=' + localStorage.getItem("Usr_hash")).success(function (data) {
+            this.started = false;
+        }
+
+        User.prototype.start = function(){
+            var that = this;
+            return $q(function(resolve, reject){ //never reject, you can play offline !
+                if(that.started){
+                    resolve(that.username);
+                    return;
+                }
+                if (!localStorage.getItem("Usr_LastUserId") || !localStorage.getItem("Usr_hash")) {
+                    resolve(null);
+                    return;
+                }
+                api.loadUserId(localStorage.getItem("Usr_LastUserId"), localStorage.getItem("Usr_hash")).success(function (data) {
                     if (data.success) {
-                        that.username = localStorage.getItem("Usr_LastUser");
+                        that.started = true;
+                        that.username = data.name;
                         that.id = data.id;
+                        that.hash = data.hash;
                         that.broadcast();
-                        storage.load(that.id);
+                        storage.load(data.data, that.id, that.hash);
+                        resolve(that.username);
                     }
                     else {
-                        localStorage.setItem("Usr_hash", null);
+                        localStorage.removeItem("Usr_hash");
+                        localStorage.removeItem("Usr_LastUserId");
+                        resolve(null);
                     }
+                }).error(function(e){
+                    localStorage.removeItem("Usr_hash");
+                    localStorage.removeItem("Usr_LastUserId");
+                    resolve(null);
                 });
-            }
-        }
+            });
+        };
 
         User.prototype.registerToEvent = function(obj, fct){
             this.eventHandler.push({objet: obj, callback: fct});
         };
 
-        User.prototype.unregister = function(obj){
-            for(var i = 0; i < this.eventHandler.length; i+= 1){
-                if(this.eventHandler[i].objet === obj)
-                {
-                    this.eventHandler = this.eventHandler.splice(i, 1);
-                    break;
-                }
-            }
-        };
-
         User.prototype.createUser = function createUser(login, password, cb){
             var that = this;
-            $http.get('http://sylvain.luthana.be/tetrisApi.php?add&user='+login+'&pswd='+password).success(function(data){
+            api.createUser(login, password).success(function(data){
                 if(data.success){
                     that.username = login;
                     that.logIn(login, password, cb);
+                }
+                else{
+                    cb(false);
                 }
             });
         };
@@ -51,7 +65,8 @@ angular.module('angularApp.factories')
             }
         };
         User.prototype.logout = function logout(){
-            localStorage.setItem("Usr_hash", "");
+            localStorage.removeItem("Usr_hash");
+            localStorage.removeItem("Usr_LastUserId");
             this.login = null;
             storage.unload();
             this.broadcast();
@@ -64,16 +79,17 @@ angular.module('angularApp.factories')
         };
 
         User.prototype.logIn = function login(user, password, cb){
-            var s = 'http://sylvain.luthana.be/tetrisApi.php?login='+user+'&password='+password;
             var that = this;
-            $http.get(s).success(function(data){
+            api.loadUser(user, password).success(function(data){
                 if(data.success){
-                    localStorage.setItem("Usr_LastUser", user);
+                    localStorage.setItem("Usr_LastUserId", data.id);
                     localStorage.setItem("Usr_hash", data.hash);
                     that.username = user;
                     that.id = data.id;
-                    storage.load(that.id);
+                    that.hash = data.hash;
+                    storage.load(data.data, that.id, that.hash);
                     that.broadcast();
+                    $route.reload();
                     cb(true);
                 }
                 else{

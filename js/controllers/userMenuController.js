@@ -19,7 +19,7 @@ angular.module('angularApp.controllers')
         $scope.logout = function logout(){
             userAccount.logout();
         };
-        userAccount.registerToEvent($scope, $scope.resetState);
+        userAccount.registerToEvent($scope, $scope.resetState); //FIXME unregister on destroy !
 
 
     }]);

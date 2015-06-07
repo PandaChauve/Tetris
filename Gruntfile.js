@@ -24,7 +24,7 @@ module.exports = function(grunt) {
                 dest: 'app.min.js'
             },
             css: {
-                src: 'css/*.min.css',
+                src: 'css/*.css',
                 dest: 'app.min.css'
             }
         },

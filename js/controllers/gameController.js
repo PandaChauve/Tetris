@@ -1,7 +1,7 @@
 //FIXME the move to angular is way too partial, some work is needed !
 
-angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$http', '$route', '$routeParams', '$modal', '$window', 'game', 'gameConstants', 'achievements', 'userStats','storage', 'stateChecker','userAccount',
-    function ($scope, $http, $route, $routeParams, $modal, $window, game, gameConstants, achievements, userStats, storage, stateChecker, userAccount) {
+angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$http', '$route', '$routeParams', '$modal', '$window', 'game', 'gameConstants', 'achievements', 'userStats','storage', 'stateChecker','userAccount','api',
+    function ($scope, $http, $route, $routeParams, $modal, $window, game, gameConstants, achievements, userStats, storage, stateChecker, userAccount, api) {
         "use strict";
         //FIXME directive too much in the controller
         var gameFinished = false;
@@ -67,8 +67,7 @@ angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$htt
             userStats.addGame(userStats.getCurrentGame(), $scope.gameName);
             achievements.check(userStats.getCurrentGame(), $scope.gameName);
             if(userAccount.isRegistered()){
-                var ciphertext = stringToHex(des("wireshar", "yop" + userStats.getCurrentGame().score, 1, 0)); //just for avoiding zfa on wireshark
-                $.get("http://sylvain.luthana.be/tetrisApi.php?add&user_id=" + userAccount.id + "&value=" + ciphertext + "&map=" + $scope.gameName).success(function(result) {
+                api.addScore(userAccount.id, userStats.getCurrentGame().score, $scope.gameName).success(function(result) {
                     console.log(result);
                 }).
                 error(function(e){

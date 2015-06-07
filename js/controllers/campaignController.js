@@ -13,9 +13,8 @@ angular.module('angularApp.controllers')
         };
         $scope.campaign = $routeParams.campaignName || "arcade";
         var count = $routeParams.subCampaignId || 1;
-        updateScope(true);
-        storage.registerToEvent(this, updateScope); //not sure the storage is ready
-        function updateScope(sync){
+        updateScope();
+        function updateScope(){
             $scope.maps = [];
             switch ($scope.campaign) {
                 case 'puzzle':
@@ -70,11 +69,5 @@ angular.module('angularApp.controllers')
                     }
                     break;
             }
-
-            if(!sync){
-                $scope.$apply(); //FIXME really need to learn how i should do that
-            }
         };
-
-
     }]);

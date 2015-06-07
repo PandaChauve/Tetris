@@ -5,9 +5,8 @@ angular.module('angularApp.controllers')
         $scope.startCampaign = function (i) {
             $window.location.href=('#!/campaign/tetris/' + i);
         };
-        updateScope(true);
-        storage.registerToEvent(this, updateScope); //not sure the storage is ready
-        function updateScope(sync){
+        updateScope();
+        function updateScope(){
 
             $scope.campaigns = [{
                 link : '1',
@@ -18,9 +17,6 @@ angular.module('angularApp.controllers')
                     link: i,
                     active: storage.get('UserMapcampaign/tetrisAttack/' + (i-1) + '/ta_' + (i-1) + '_10')
                 });
-            }
-            if(!sync){
-                $scope.$apply();
             }
         }
     }]);
