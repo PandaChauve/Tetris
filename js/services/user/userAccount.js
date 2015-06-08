@@ -6,6 +6,7 @@ angular.module('angularApp.factories')
             this.eventHandler = [];
             this.username = null;
             this.id = -1;
+            this.hash = null;
             this.started = false;
         }
 
@@ -59,6 +60,22 @@ angular.module('angularApp.factories')
                 }
             });
         };
+
+        User.prototype.updateUser = function updateUser(login, password, cb){
+            var that = this;
+            api.updateUser(this.id, this.hash, null, login, password).success(function(data){
+                if(data.success){
+                    that.username = login;
+                    that.id = data.id;
+                    that.hash = data.hash;
+                    that.logIn(login, password, cb);
+                }
+                else{
+                    cb(false);
+                }
+            });
+        };
+
         User.prototype.broadcast = function(){
             for(var i = 0; i < this.eventHandler.length; i+= 1) {
                 this.eventHandler[i].callback.apply(this.eventHandler[i].objet, [this.username]);

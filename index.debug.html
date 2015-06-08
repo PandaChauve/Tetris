@@ -58,7 +58,14 @@
             <ul class="nav navbar-nav navbar-right" ng-controller="UserMenuCtrl">
                 <li ng-cloak ng-if="registered" ng-class="{ active: isActive('/achievements')}"><a href="#!/achievements">Success</a></li>
                 <li ng-cloak ng-if="registered" ng-class="{ active: isActive('/stats')}"><a href="#!/stats">Statistics</a></li>
-                <li ng-cloak ng-if="registered" ng-click="logout()" ><a style="cursor:pointer">Logout</a></li>
+                <li ng-cloak ng-if="registered" class="dropdown">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{userName}}
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#!/user">My account</a></li>
+                        <li ng-click="logout()" ><a  >Logout</a></li>
+                    </ul>
+                </li>
                 <li ng-cloak ng-if="!registered" ng-click="loginPopup()" ><a style="cursor:pointer">Login</a></li>
             </ul>
         </div>
@@ -92,6 +99,7 @@
 <script language="JavaScript" src="js/controllers/endGameModalController.js"></script>
 <script language="JavaScript" src="js/controllers/achievementsController.js"></script>
 <script language="JavaScript" src="js/controllers/clickInputController.js"></script>
+<script language="JavaScript" src="js/controllers/userAccountController.js"></script>
 <script language="JavaScript" src="js/directives/ngEnter.js"></script>
 <script language="JavaScript" src="js/directives/mngTetrisGame.js"></script>
 <script language="JavaScript" src="js/directives/ngSvg.js"></script>

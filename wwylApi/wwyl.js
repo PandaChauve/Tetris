@@ -76,17 +76,7 @@ router.route('/users').post(function (req, res) {
     });
 });
 
-router.route('/users/:userid/:hash').put(function (req, res) {
-    db.run("UPDATE users set data=$data where user_id=$userId and hash=$hash", {
-        $hash: req.params.hash,
-        $userId: req.params.userid,
-        $data: req.body.data
-    });
-    res.json({
-        success: true,
-        message: "user updated"
-    });
-}).get(function (req, res) {
+function GetUser(req, res) {
     db.get("SELECT * from users where user_id=$userId and hash=$hash", {
         $hash: req.params.hash,
         $userId: req.params.userid
@@ -106,13 +96,60 @@ router.route('/users/:userid/:hash').put(function (req, res) {
             });
         }
     });
+}
+
+router.route('/users/:userid/:hash').put(function (req, res) {
+    db.get("SELECT * from users where user_id=$userId and hash=$hash", {
+        $userId: req.params.userid,
+        $hash: req.params.hash
+    }, function (err, row) {
+        if (err || !row) {
+            res.json({
+                success: false, message: "Invalid User"
+            });
+            return;
+        }
+        var hash = req.params.hash;
+        if(req.body.password) {
+            var shasum = crypto.createHash('sha512');
+            shasum.update(row.salt + req.body.password);
+            hash = shasum.digest('hex');
+        }
+        var name = row.name;
+        if(req.body.name){
+            name = req.body.name;
+        }
+        var data = row.data;
+        if(req.body.data){
+            data = req.body.data;
+        }
+        db.run("UPDATE users set data=$data, hash=$newHash, name=$name where user_id=$userId and hash=$hash", {
+            $hash: req.params.hash,
+            $userId: req.params.userid,
+            $newHash: hash,
+            $data: data,
+            $name: name
+        }, function(err){
+            if(err){
+                res.json({
+                    success: false, message: "Invalid User"
+                });
+                return;
+            }
+        });
+
+        req.params.hash = hash;
+        GetUser(req, res);
+    });
+}).get(function (req, res) {
+    GetUser(req, res);
 });
 
 router.route('/users/validate').post(function (req, res) {
     db.get("SELECT * FROM users WHERE name = $name", {
         $name: req.body.name
     }, function (err, row) {
-        if (err) {
+        if (err || !row) {
             res.json({
                 success: false,
                 message: "can't fin user"
@@ -145,5 +182,4 @@ router.route('/users/validate').post(function (req, res) {
 app.use('/wwylApi', router);
 app.listen(1337);
 
-console.log("wwyl to http://localhost:1337/wwylApi");
-
+console.log("started");
