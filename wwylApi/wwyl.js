@@ -108,9 +108,9 @@ router.route('/users/:userid/:hash').put(function (req, res) {
     });
 });
 
-router.route('/users/validate/:name/:password').get(function (req, res) {
+router.route('/users/validate').post(function (req, res) {
     db.get("SELECT * FROM users WHERE name = $name", {
-        $name: req.params.name
+        $name: req.body.name
     }, function (err, row) {
         if (err) {
             res.json({
@@ -120,7 +120,7 @@ router.route('/users/validate/:name/:password').get(function (req, res) {
         }
         else {
             var shasum = crypto.createHash('sha512');
-            shasum.update(row.salt + req.params.password);
+            shasum.update(row.salt + req.body.password);
             var hash = shasum.digest('hex');
             if (hash != row.hash) {
                 res.json({
