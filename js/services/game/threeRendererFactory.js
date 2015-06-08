@@ -4,19 +4,14 @@
 angular.module('angularApp.factories')
     .factory('threeRendererFactory', ['gameConstants', 'blockFactory', function threeRendererFactoryCreator(gameConstants, blockFactory) {
         "use strict";
-        function ItemsCache(){
+        function ItemsCache(type){
             this.geometries = {cube:{}};
             this.textures = {};
-            if(localStorage.getItem("gridStyle")){
-                this.mode = +localStorage.getItem("gridStyle");
-            }
-            else{
-                this.mode = Math.floor(Math.random() *6);
-            }
+            this.mode = +type;
         }
 
-        function ThreeRenderer(cursors) {
-            this.cache = new ItemsCache();
+        function ThreeRenderer(cursors, type) {
+            this.cache = new ItemsCache(type);
             if (cursors === undefined) {
                 cursors = 1;
             }
@@ -111,35 +106,35 @@ angular.module('angularApp.factories')
                     case 0:
                         var size = gameConstants.pixelPerBox*(0.7);
                         this.cache.geometries.cube[color] = new THREE.BoxGeometry(size, size, gameConstants.pixelPerBox/5);
+                        break;
+                    case 1:
+                        size = gameConstants.pixelPerBox*(0.7);
+                        this.cache.geometries.cube[color] = new THREE.BoxGeometry(size, size, gameConstants.pixelPerBox/5);
                         var m = new THREE.SubdivisionModifier( 0 );
                         m.modify(this.cache.geometries.cube[color]);
                         break;
-                    case 1:
+                    case 2:
+                        size = gameConstants.pixelPerBox;
+                        this.cache.geometries.cube[color] = new THREE.BoxGeometry(size, size, gameConstants.pixelPerBox/5);
+                        m = new THREE.SubdivisionModifier( 1 );
+                        m.modify(this.cache.geometries.cube[color]);
+                        break;
+                    case 3:
                         size = gameConstants.pixelPerBox;
                         this.cache.geometries.cube[color] = new THREE.BoxGeometry(size, size, gameConstants.pixelPerBox/5);
                          m = new THREE.SubdivisionModifier( 2 );
                         m.modify(this.cache.geometries.cube[color]);
                         break;
-                    case 2:
-                        size = gameConstants.pixelPerBox*((color%3)?1:0.7);
-                        this.cache.geometries.cube[color] = new THREE.BoxGeometry(size, size, gameConstants.pixelPerBox/5);
-                        m = new THREE.SubdivisionModifier( color%3 );
-                        m.modify(this.cache.geometries.cube[color]);
-                        break;
-                    case 3:
-                         size = gameConstants.pixelPerBox*(0.7);
-                        this.cache.geometries.cube[color] = new THREE.BoxGeometry(size, size, gameConstants.pixelPerBox/5);
-                        break;
                     case 4:
-                        size = gameConstants.pixelPerBox*(1);
-                        this.cache.geometries.cube[color] = new THREE.BoxGeometry(size, size, gameConstants.pixelPerBox/5);
-                        m = new THREE.SubdivisionModifier( 1 );
-                        m.modify(this.cache.geometries.cube[color]);
-                        break;
-                    case 5:
                         size = gameConstants.pixelPerBox;
                         this.cache.geometries.cube[color] = new THREE.BoxGeometry(size, size, gameConstants.pixelPerBox/5);
                         m = new THREE.SubdivisionModifier( 3 );
+                        m.modify(this.cache.geometries.cube[color]);
+                        break;
+                    case 5:
+                        size = gameConstants.pixelPerBox*((color%3)?1:0.7);
+                        this.cache.geometries.cube[color] = new THREE.BoxGeometry(size, size, gameConstants.pixelPerBox/5);
+                        m = new THREE.SubdivisionModifier( color%3 );
                         m.modify(this.cache.geometries.cube[color]);
                         break;
                 }
@@ -285,8 +280,8 @@ angular.module('angularApp.factories')
         };
 
         return {
-            newRenderer: function newRenderer(cursorsCount) {
-                return new ThreeRenderer(cursorsCount);
+            newRenderer: function newRenderer(cursorsCount, type) {
+                return new ThreeRenderer(cursorsCount, type);
             }
         };
     }]);

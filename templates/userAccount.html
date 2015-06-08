@@ -13,8 +13,10 @@
 
                         <p ng-show="updateForm.$submitted && updateForm.name.$error.required" class="help-block">
                             Username is required.</p>
+
                         <p ng-show="updateForm.$submitted && updateForm.name.$error.pattern" class="help-block">
                             Username must be letters and numbers only.</p>
+
                         <p ng-show="updateForm.$submitted && updateForm.name.$error.minlength" class="help-block">
                             Username must be at least 3 characters.</p>
                     </div>
@@ -37,17 +39,43 @@
                          ng-class="{'has-error': updateForm.$submitted && updateForm.passwordc.$invalid, 'has-success': updateForm.$submitted && !updateForm.passwordc.$invalid}">
                         <label for="rpasswordc">Password confirm</label>
                         <input type="password" class="form-control" id="rpasswordc" name="rpasswordc"
-                               placeholder="******" ng-model="user.passwordConfirm"  mng-compare-to="user.password"/>
+                               placeholder="******" ng-model="user.passwordConfirm" mng-compare-to="user.password"/>
 
                         <p ng-show="updateForm.$submitted && updateForm.passwordc.$error.$invalid" class="help-block">
                             Password different.</p>
                     </div>
 
-                    <button type="submit" ng-click="updateRegistration()" class="btn btn-default" ngDisabled="!submitEnabled">Update</button>
+                    <button type="submit" ng-click="updateRegistration()" class="btn btn-default"
+                            ngDisabled="!submitEnabled">Update
+                    </button>
                 </form>
             </div>
             <div class="panel-footer">
                 {{message}}
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<div class="container">
+    <div class="row">
+
+        <div class="panel panel-info" style="max-width:600px; margin:auto">
+            <div class="panel-heading">
+                <h3 class="panel-title">Style</h3></div>
+            <div class="panel-body">
+                <div class="col-xs-4" ng-repeat="elem in themes">
+                    <div class=" panel panel-default"
+                         ng-class="{'panel-primary': cubeType == $index}" ng-click='updateStyle($index)'>
+                        <div class="panel-heading">
+                            <h3 class="panel-title">{{::elem.Name}}</h3>
+                        </div>
+                        <div class="panel-body">
+                            <img ng-src="{{::elem.Picture}}" alt="{{::elem.Name}}" class="img-responsive"
+                                 style="float:left;margin-right:15px;" />
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

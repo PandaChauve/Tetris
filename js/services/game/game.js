@@ -1,6 +1,6 @@
 angular.module('angularApp.factories')
-    .factory('game', ['userInput', 'userStats', 'stateChecker', 'threeRendererFactory', 'tetrisFactory', 'TIC_PER_SEC',
-        function gameFactory(userInput, userStats, stateChecker, threeRendererFactory, tetrisFactory, TIC_PER_SEC) {
+    .factory('game', ['userInput', 'userStats', 'stateChecker', 'threeRendererFactory', 'tetrisFactory', 'TIC_PER_SEC','storage',
+        function gameFactory(userInput, userStats, stateChecker, threeRendererFactory, tetrisFactory, TIC_PER_SEC, storage) {
             "use strict";
             function Score() {
                 this.current = 0;
@@ -80,7 +80,7 @@ angular.module('angularApp.factories')
                     for (var j = 0; j < this.config.tetris[i].mappings.length; j += 1) {
                         this.tetris[i].keyBoardMappings.push(userInput.getMapping(this.config.tetris[i].mappings[j]));
                     }
-                    this.visual.push(threeRendererFactory.newRenderer(this.config.tetris[i].cursors));
+                    this.visual.push(threeRendererFactory.newRenderer(this.config.tetris[i].cursors, storage.get("UserCubeTheme")));
                     this.visual[i].linkDom(findDom(this.availableGrids, i));
                     this.visual[i].renderTetris(this.tetris[i], []); //first render before loop to get everything smooth
                 }

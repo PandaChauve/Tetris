@@ -2,7 +2,7 @@
 angular.module('angularApp.factories')
     .factory('api', ['$http', function apiFactory($http) {
         "use strict";
-        var root = "http://localhost:1337/wwylApi/";
+        var root = "http://whenwillyoulose.com:1337/wwylApi/";
         function Api() {}
         Api.prototype.addScore = function(userId, score, map){
             return $http.post(root+'scores', {score: score, user: userId, map:map});
