@@ -2,7 +2,7 @@
  * Created by panda on 15/04/2015.
  */
 angular.module('angularApp.factories')
-    .factory('threeRendererFactory', ['gameConstants', 'blockFactory','cubeRendererFactory', function threeRendererFactoryCreator(gameConstants, blockFactory, cubeRendererFactory) {
+    .factory('threeRendererFactory', ['gameConstants', 'blockFactory', 'cubeRendererFactory', function threeRendererFactoryCreator(gameConstants, blockFactory, cubeRendererFactory) {
         "use strict";
 
         function ThreeRenderer(cursors, type) {
@@ -29,15 +29,14 @@ angular.module('angularApp.factories')
             this.renderer = null;
         };
 
-
         ThreeRenderer.prototype.createScene = function () {
             var scene = new THREE.Scene();
 
-            var dLight = new THREE.PointLight( 0xffffff, 0.5 );
+            var dLight = new THREE.PointLight(0xffffff, 0.5);
             dLight.position.set(0, 100, 800);
             scene.add(dLight);
 
-            var dLight2 = new THREE.PointLight( 0xffffff, 0.5 );
+            var dLight2 = new THREE.PointLight(0xffffff, 0.5);
             dLight2.position.set(600, -100, 800);
             scene.add(dLight2);
 
@@ -61,7 +60,7 @@ angular.module('angularApp.factories')
         };
 
         ThreeRenderer.prototype.createCamera = function () {
-            var camera = new THREE.PerspectiveCamera( 75, 420 / 600, 0.3, 1000 );
+            var camera = new THREE.PerspectiveCamera(75, 420 / 600, 0.3, 1000);
             camera.position.z = 450;
             camera.position.x = -27;
             camera.position.y = 410;
@@ -69,7 +68,7 @@ angular.module('angularApp.factories')
         };
 
         ThreeRenderer.prototype.createRenderer = function (canvas) {
-            var renderer = new THREE.WebGLRenderer({canvas: canvas, antialias:true});
+            var renderer = new THREE.WebGLRenderer({canvas: canvas, antialias: true});
             renderer.setClearColor(0x000000);
             renderer.setSize(420, 600);
             renderer.shadowMapEnabled = true;
@@ -86,44 +85,42 @@ angular.module('angularApp.factories')
             }
             return x;
         }
+
         function computeZ(block) {
             var ret = 0;
             if (block.state === blockFactory.EState.SwappedLeft
-            || block.state === blockFactory.EState.SwappedRight) {
-                if(block.animationState < 51)
-                {
-                    ret = 2500-(50-block.animationState)*(50-block.animationState);
+                || block.state === blockFactory.EState.SwappedRight) {
+                if (block.animationState < 51) {
+                    ret = 2500 - (50 - block.animationState) * (50 - block.animationState);
                 }
-                else
-                {
-                    ret = 2500-(block.animationState-50)*(block.animationState-50);
+                else {
+                    ret = 2500 - (block.animationState - 50) * (block.animationState - 50);
                 }
                 ret = ret /= 80;
                 if (block.state === blockFactory.EState.SwappedRight) {
                     ret = -ret;
                 }
             }
-            else if(block.state === blockFactory.EState.Disappearing){
-                ret = -block.animationState ;
+            else if (block.state === blockFactory.EState.Disappearing) {
+                ret = -block.animationState;
             }
             return ret;
         }
 
-        ThreeRenderer.prototype.createScore = function createScore(v){
-            var text3d = new THREE.TextGeometry( v, {
+        ThreeRenderer.prototype.createScore = function createScore(v) {
+            var text3d = new THREE.TextGeometry(v, {
                 size: 30,
                 height: 2,
                 curveSegments: 2,
                 font: "helvetiker"
             });
-            var textMaterial = new THREE.MeshBasicMaterial( { color: Math.random() * 0xffffff } );
-            var ret = new THREE.Mesh( text3d, textMaterial);
-            var rad = Math.floor(Math.random()*12) ;
-            ret.position.setX(((rad%2)?-240 : 150) +25 -50*Math.random());
-            ret.position.setY(220 + 85*(Math.floor(rad/2)%6) +40 -80*Math.random());
+            var textMaterial = new THREE.MeshBasicMaterial({color: Math.random() * 0xffffff});
+            var ret = new THREE.Mesh(text3d, textMaterial);
+            var rad = Math.floor(Math.random() * 12);
+            ret.position.setX(((rad % 2) ? -240 : 150) + 25 - 50 * Math.random());
+            ret.position.setY(220 + 85 * (Math.floor(rad / 2) % 6) + 40 - 80 * Math.random());
             return ret;
         };
-
 
         ThreeRenderer.prototype.updateCube = function (x, block) {
             var cube = block.threeObject;
@@ -132,7 +129,7 @@ angular.module('angularApp.factories')
             cube.position.setZ(computeZ(block));
             this.cubeFactory.updateCubeDisplay(block);
 
-            if ( block.animationState > 100) {
+            if (block.animationState > 100) {
                 this.scene.remove(cube);
                 block.id = -1;
                 block.threeObject = null;
@@ -172,7 +169,7 @@ angular.module('angularApp.factories')
         };
 
         ThreeRenderer.prototype.drawCursorOn = function (x, y, cursorId) {
-            if (cursorId === undefined){
+            if (cursorId === undefined) {
                 cursorId = 0;
             }
             this.cursor[cursorId].position.set((x - (gameConstants.columnCount) / 2) * gameConstants.pixelPerBox - 10, y * (gameConstants.pixelPerBox - 0.5) + this.offset + 5, 7);
@@ -202,20 +199,20 @@ angular.module('angularApp.factories')
                     }
                 }
             }
-            if(gameConstants.columnCount <= 6){
-                for(i=0;i<points.length;i+=1){
-                    if(!points[i].threeObject){
+            if (gameConstants.columnCount <= 6) {
+                for (i = 0; i < points.length; i += 1) {
+                    if (!points[i].threeObject) {
                         points[i].threeObject = this.createScore(points[i].value);
                         this.scene.add(points[i].threeObject);
                     }
-                    if(points[i].opacity <= 0){
+                    if (points[i].opacity <= 0) {
                         this.scene.remove(points[i].threeObject);
-                        points.splice(i,1);
-                        i-=1;
+                        points.splice(i, 1);
+                        i -= 1;
                     }
-                    else{
+                    else {
                         points[i].threeObject.material.transparent = true;
-                        points[i].threeObject.material.opacity = points[i].opacity /100;
+                        points[i].threeObject.material.opacity = points[i].opacity / 100;
                     }
                 }
             }
