@@ -8,7 +8,7 @@ angular.module('angularApp.factories')
             this.displayedRowCount = 10;
             this.hiddenRowCount = 4;//MIN 1 !
             this.pixelPerBox = 50;
-            this.swapPerTic = 15 *60/TIC_PER_SEC;
+            this.swapPerTic = 12 *60/TIC_PER_SEC;
             this.fallSpeedPerTic = 7*60/TIC_PER_SEC;
             this.disapearSpeedPerTic = 2*60/TIC_PER_SEC;
             this.groundSpeedPerTic = 0.07*60/TIC_PER_SEC;

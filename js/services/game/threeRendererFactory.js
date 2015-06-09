@@ -4,14 +4,14 @@
 angular.module('angularApp.factories')
     .factory('threeRendererFactory', ['gameConstants', 'blockFactory', function threeRendererFactoryCreator(gameConstants, blockFactory) {
         "use strict";
-        function ItemsCache(type){
+        function ItemsCache(){
             this.geometries = {cube:{}};
             this.textures = {};
-            this.mode = +type;
         }
 
         function ThreeRenderer(cursors, type) {
-            this.cache = new ItemsCache(type);
+            this.cache = new ItemsCache();
+            this.mode = +type;
             if (cursors === undefined) {
                 cursors = 1;
             }
@@ -102,7 +102,7 @@ angular.module('angularApp.factories')
 
         ThreeRenderer.prototype.createCube = function (color) {
             if(!this.cache.geometries.cube[color]){
-                switch(this.cache.mode){
+                switch(this.mode){
                     case 0:
                         var size = gameConstants.pixelPerBox*(0.7);
                         this.cache.geometries.cube[color] = new THREE.BoxGeometry(size, size, gameConstants.pixelPerBox/5);
@@ -145,7 +145,7 @@ angular.module('angularApp.factories')
             return new THREE.Mesh(this.cache.geometries.cube[color].clone(), this.cache.textures[color].clone());
         };
 
-        function CalculateX(block, x) {
+        function computeX(block, x) {
             if (block.state === blockFactory.EState.SwappedLeft) {
                 return x + gameConstants.pixelPerBox / 100 * (100 - block.animationState);
             }
@@ -153,6 +153,25 @@ angular.module('angularApp.factories')
                 return x - gameConstants.pixelPerBox / 100 * (100 - block.animationState);
             }
             return x;
+        }
+        function computeZ(block) {
+            var ret = 0;
+            if (block.state === blockFactory.EState.SwappedLeft
+            || block.state === blockFactory.EState.SwappedRight) {
+                if(block.animationState < 51)
+                {
+                    ret = 2500-(50-block.animationState)*(50-block.animationState);
+                }
+                else
+                {
+                    ret = 2500-(block.animationState-50)*(block.animationState-50);
+                }
+            }
+            ret = ret /= 80;
+            if (block.state === blockFactory.EState.SwappedRight) {
+                ret = -ret;
+            }
+            return ret;
         }
         ThreeRenderer.prototype.getColor = function getColor(c){
             if(!this.colors[c]){
@@ -180,7 +199,8 @@ angular.module('angularApp.factories')
         ThreeRenderer.prototype.updateCube = function (x, block) {
             var cube = block.threeObject;
             cube.position.setY(block.verticalPosition + this.offset);
-            cube.position.setX(CalculateX(block, x));
+            cube.position.setX(computeX(block, x));
+            cube.position.setZ(computeZ(block));
             cube.material.color = this.getColor(block.type);
             if (block.state === blockFactory.EState.Disappearing) {
                 cube.material.opacity = Math.max(1 - block.animationState / 100, 0);
