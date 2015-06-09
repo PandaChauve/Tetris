@@ -35,6 +35,10 @@ angular.module('angularApp.controllers')
                     Picture: "./Resources/imgs/placeholder.png",
                     Name: "Smash bross"
                 }
+                ,{
+                    Picture: "./Resources/imgs/placeholder.png",
+                    Name: "Lights"
+                }
             ];
             $scope.updateRegistration = function(){
                 if ($scope.updateForm.$valid) {
