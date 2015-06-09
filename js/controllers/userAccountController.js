@@ -33,7 +33,7 @@ angular.module('angularApp.controllers')
                 }
                 ,{
                     Picture: "./Resources/imgs/placeholder.png",
-                    Name: "Smash bross"
+                    Name: "Smash bros"
                 }
                 ,{
                     Picture: "./Resources/imgs/placeholder.png",

@@ -4,6 +4,99 @@
 angular.module('angularApp.factories')
     .factory('threeRendererFactory', ['gameConstants', 'blockFactory', 'cubeRendererFactory', function threeRendererFactoryCreator(gameConstants, blockFactory, cubeRendererFactory) {
         "use strict";
+        function ScoreElement(){
+            this.mesh = null;
+            this.particles = null;
+        };
+        ScoreElement.prototype.animate = function(percentLeft){
+            var pc = percentLeft / 100;
+            this.mesh.material.transparent = true;
+            this.mesh.material.opacity = pc;
+            if(this.particles){
+                pc*=0.7;
+                var att = this.particles.material.attributes;
+                var time = Date.now() * 0.01;
+                for (var i = 0; i < att.size.value.length; i++) {
+                    att.size.value[i] = (12 + 12 * Math.sin(i + time))*pc*pc;
+                }
+                att.size.needsUpdate = true;
+            }
+        };
+
+        ScoreElement.prototype.createScore = function createScore(v) {
+            var text3d = new THREE.TextGeometry(v, {
+                size: 30,
+                height: 2,
+                curveSegments: 2,
+                font: "helvetiker"
+            });
+            var color = Math.random() * 0xffffff;
+            var textMaterial = new THREE.MeshBasicMaterial({color: color});
+            var ret = new THREE.Mesh(text3d, textMaterial);
+            var rad = Math.floor(Math.random() * 12);
+            var y = 220 + 85 * (Math.floor(rad / 2) % 6) + 40 - 80 * Math.random();
+            var x = ((rad % 2) ? -225 : 175)- 50 * Math.random();
+
+            ret.position.setX(x);
+            ret.position.setY(y);
+            ret.position.setZ(-5);
+
+            y = 220 + 80 * Math.random();
+            x = -250 + 500 * Math.random();
+
+            this.createParticles(x,y,color);
+            this.mesh = ret;
+        };
+
+        ScoreElement.prototype.createParticles = function(x,y,color){
+            console.log(x);
+            var attributes = {
+                size: {type: 'f', value: []},
+                customColor: {type: 'c', value: []}
+            };
+            var shaderMaterial = new THREE.ShaderMaterial({
+                uniforms: {
+                    amplitude: {type: "f", value: 1.0},
+                    color: {type: "c", value: new THREE.Color(0xffffff)},
+                    texture: {type: "t", value: THREE.ImageUtils.loadTexture("Resources/imgs/spark.png")}
+                },
+                attributes: attributes,
+                vertexShader: document.getElementById('vertexshader').textContent,
+                fragmentShader: document.getElementById('fragmentshader').textContent,
+                blending: THREE.AdditiveBlending,
+                depthTest: false,
+                transparent: true
+            });
+
+            var geometry = new THREE.Geometry();
+
+            for (var i = 0; i < 200; i++) {
+                var vertex = new THREE.Vector3();
+                do{
+                    vertex.x = Math.random()*2-1;
+                    vertex.y = Math.random()*2-1;
+                }
+                while(vertex.x*vertex.x+vertex.y*vertex.y>1);
+                vertex.multiplyScalar(70);
+                vertex.z = -1;
+                geometry.vertices.push(vertex);
+            }
+            this.particles = new THREE.PointCloud(geometry, shaderMaterial);
+
+            this.particles.position.setX(x);
+            this.particles.position.setY(y);
+
+            this.particles.attributes = attributes;
+            var vertices = this.particles.geometry.vertices;
+            var values_size = attributes.size.value;
+            var values_color = attributes.customColor.value;
+            var c = new THREE.Color(color);
+            for (var v = 0; v < vertices.length; v += 1) {
+                values_size[v] = 8;
+                values_color[v] = c ;
+            }
+        };
+
 
         function ThreeRenderer(cursors, type) {
             this.mode = +type;
@@ -202,17 +295,19 @@ angular.module('angularApp.factories')
             if (gameConstants.columnCount <= 6) {
                 for (i = 0; i < points.length; i += 1) {
                     if (!points[i].threeObject) {
-                        points[i].threeObject = this.createScore(points[i].value);
-                        this.scene.add(points[i].threeObject);
+                        points[i].threeObject = new ScoreElement();
+                        points[i].threeObject.createScore(points[i].value);
+                        this.scene.add(points[i].threeObject.mesh);
+                        this.scene.add(points[i].threeObject.particles);
                     }
                     if (points[i].opacity <= 0) {
-                        this.scene.remove(points[i].threeObject);
+                        this.scene.remove(points[i].threeObject.mesh);
+                        this.scene.remove(points[i].threeObject.particles);
                         points.splice(i, 1);
                         i -= 1;
                     }
                     else {
-                        points[i].threeObject.material.transparent = true;
-                        points[i].threeObject.material.opacity = points[i].opacity / 100;
+                        points[i].threeObject.animate(points[i].opacity);
                     }
                 }
             }
