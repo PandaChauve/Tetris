@@ -14,5 +14,5 @@
     "time": 60
   },
   "require": "campaign/timeLimit/timelimit_3",
-  "next": "#!/campaign?name=timelimit"
+  "next": "#!/campaign/timelimit"
 }
