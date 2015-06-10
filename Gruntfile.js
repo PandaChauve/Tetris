@@ -5,7 +5,7 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
         uglify: {
             files: {
-                src: ['js/*.js','js/*/*.js' ,'js/*/*/*.js' ],  // source files mask
+                src: ['js/*.js','js/*/*.js' ,'js/*/*/*.js' ,'js/*/*/*/*.js' ],  // source files mask
                 dest: 'min/',    // destination folder
                 expand: true,    // allow dynamic building
                 flatten: true,   // remove all unnecessary nesting

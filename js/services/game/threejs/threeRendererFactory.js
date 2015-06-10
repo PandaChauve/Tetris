@@ -1,8 +1,5 @@
-/**
- * Created by panda on 15/04/2015.
- */
 angular.module('angularApp.factories')
-    .factory('threeRendererFactory', ['gameConstants', 'blockFactory', 'cubeRenderElementFactory','scoreRenderElementFactory',
+    .factory('threeRendererFactory', ['gameConstants', 'blockFactory', 'cubeRenderElementFactory', 'scoreRenderElementFactory',
         function threeRendererFactoryCreator(gameConstants, blockFactory, cubeRenderElementFactory, scoreRenderElementFactory) {
             "use strict";
 

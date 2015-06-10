@@ -79,7 +79,7 @@ angular.module('angularApp.factories')
             return this.cube.clone();
         };
 
-        function RandomCubeRenderer(i) {
+        function RandomCubeRenderer() {
             this.cubes = {};
         }
 
