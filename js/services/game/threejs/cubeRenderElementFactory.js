@@ -1,5 +1,5 @@
 angular.module('angularApp.factories')
-    .factory('cubeRendererFactory', ['gameConstants', 'blockFactory', function cubeRendererFactoryCreator(gameConstants, blockFactory) {
+    .factory('cubeRenderElementFactory', ['gameConstants', 'blockFactory', function cubeRenderElementFactoryCreator(gameConstants, blockFactory) {
         "use strict";
 
         function CubeRenderer() {
@@ -153,7 +153,7 @@ angular.module('angularApp.factories')
         };
 
         return {
-            create: function cubeRendererFactory(type) {
+            createFactory: function cubeRenderElementFactory(type) {
                 switch (type) {
                     case 0:
                         return new CubeRenderer();

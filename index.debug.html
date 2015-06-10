@@ -62,7 +62,9 @@
                     <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{userName}}
                         <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="#!/user">My account</a></li>
+                        <li><a href="#!/user/account">My account</a></li>
+                        <li><a href="#!/user/config">Configuration</a></li>
+                        <li class="divider "></li>
                         <li ng-click="logout()" ><a  >Logout</a></li>
                     </ul>
                 </li>
@@ -100,6 +102,7 @@
 <script language="JavaScript" src="js/controllers/achievementsController.js"></script>
 <script language="JavaScript" src="js/controllers/clickInputController.js"></script>
 <script language="JavaScript" src="js/controllers/userAccountController.js"></script>
+<script language="JavaScript" src="js/controllers/userConfigController.js"></script>
 <script language="JavaScript" src="js/directives/ngEnter.js"></script>
 <script language="JavaScript" src="js/directives/mngTetrisGame.js"></script>
 <script language="JavaScript" src="js/directives/ngSvg.js"></script>
@@ -113,8 +116,9 @@
 <script language="JavaScript" src="js/services/game/stateChecker.js"></script>
 <script language="JavaScript" src="js/services/game/userInput.js"></script>
 <script language="JavaScript" src="js/services/game/tetrisFactory.js"></script>
-<script language="JavaScript" src="js/services/game/threeRendererFactory.js"></script>
-<script language="JavaScript" src="js/services/game/cubeRendererFactory.js"></script>
+<script language="JavaScript" src="js/services/game/threejs/threeRendererFactory.js"></script>
+<script language="JavaScript" src="js/services/game/threejs/cubeRenderElementFactory.js"></script>
+<script language="JavaScript" src="js/services/game/threejs/scoreRenderElementFactory.js"></script>
 <script language="JavaScript" src="js/services/api.js"></script>
 <script language="JavaScript" src="js/services/helpers.js"></script>
 <script language="JavaScript" src="js/services/constants.js"></script>
