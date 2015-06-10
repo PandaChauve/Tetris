@@ -4,8 +4,7 @@
 angular.module('angularApp.factories')
     .factory('threeRendererFactory', ['gameConstants', 'blockFactory', 'cubeRenderElementFactory','scoreRenderElementFactory',
         function threeRendererFactoryCreator(gameConstants, blockFactory, cubeRenderElementFactory, scoreRenderElementFactory) {
-        "use strict";
-
+            "use strict";
 
         function ThreeRenderer(cursors, type) {
             this.mode = +type;
