@@ -39,7 +39,7 @@ angular.module('angularApp.factories')
                                 alt: "Success !"
                             };
                             notify({
-                                message: "Success unlocked : " + AchievementsState.List.getName(key),
+                                message: "New Success: " + AchievementsState.List.getName(key),
                                 scope: sc
                             });
                         }
@@ -91,6 +91,23 @@ angular.module('angularApp.factories')
                 return false;
             };
 
+            AchievementsState.prototype.keyToMap = function(key){
+                switch(key){
+                    case AchievementsState.List.Nostalgic :
+                        return "campaign/tetrisAttack/1/ta_1_10";
+                    case AchievementsState.List.RetroGamer :
+                        return "campaign/tetrisAttack/3/ta_3_10";
+                    case AchievementsState.List.Dinosaur :
+                        return "campaign/tetrisAttack/6/ta_6_10";
+                    case AchievementsState.List.Flash :
+                        return "campaign/timeLimit/timelimit_10";
+                    case AchievementsState.List.Pacman :
+                        return "campaign/arcade/arcade_10";
+                    case AchievementsState.List.Sherlock :
+                        return "campaign/puzzle/puzzle_10";
+                }
+            };
+
             AchievementsState.prototype.checkIndividual = function (key, game, gameName, container) {
                 //already done
                 switch (key) {
@@ -124,24 +141,37 @@ angular.module('angularApp.factories')
                             }
                         }
                         break;
+                    case AchievementsState.List.Nostalgic :
+                    case AchievementsState.List.RetroGamer :
+                    case AchievementsState.List.Dinosaur :
+                    case AchievementsState.List.Flash :
+                    case AchievementsState.List.Pacman :
+                    case AchievementsState.List.Sherlock :
+                        container[key] = storage.get("UserMap"+this.keyToMap(key));
+                        break;
                 }
 
             };
 
             AchievementsState.List = {
-                Beginner: 0,
-                Expert: 1,
-                Master: 2,
-                God: 3,
-                Titan: 4,
-                Cheater: 5,
-                Ambidextrous: 6,
-                Psychic: 7,
-                Sorcerer: 8,
-                Stubborn: 9,
-                BiggerIsBetter: 10,
-                Nostalgic: 11, //FIXME campaign
-                enumSize: 12
+                Beginner: 0, //points
+                Expert: 1, //points
+                Master: 2, //points
+                God: 3,//points
+                Titan: 4,//points
+                Cheater: 5,//points
+                Ambidextrous: 6,//lines
+                Psychic: 7,//lines
+                Sorcerer: 8,//lines
+                Stubborn: 9,//time
+                BiggerIsBetter: 10, //length
+                Nostalgic: 11, //ta 1
+                RetroGamer: 12, //ta 3
+                Dinosaur: 13, //ta 6
+                Flash : 14, // time attack
+                Pacman: 15, //arcade
+                Sherlock: 16, //puzzle
+                enumSize: 17
             };
 
             AchievementsState.List.getName = function (key) {
@@ -178,7 +208,17 @@ angular.module('angularApp.factories')
                     case AchievementsState.List.BiggerIsBetter :
                         return "Create a line of 6 blocks in any game mode";
                     case AchievementsState.List.Nostalgic :
-                        return "Not working yet :)";
+                        return "Finish the first Tetris Attack campaign";
+                    case AchievementsState.List.RetroGamer :
+                        return "Finish the third Tetris Attack campaign";
+                    case AchievementsState.List.Dinosaur :
+                        return "Finish the last Tetris Attack campaign";
+                    case AchievementsState.List.Flash :
+                        return "Finish the time attack campaign";
+                    case AchievementsState.List.Pacman :
+                        return "Finish the arcade campaign";
+                    case AchievementsState.List.Sherlock :
+                        return "Finish the puzzle campaign";
                 }
                 return "";
             };
