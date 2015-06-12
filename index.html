@@ -29,9 +29,9 @@
                         <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li class="dropdown-header">Arcade</li>
-                        <li><a href="#!/game?name=classic">Classic</a></li>
-                        <li><a href="#!/game?name=ultralarge">Wide</a></li>
-                        <li><a href="#!/game?name=sandbox">Sandbox</a></li>
+                        <li><a href="#!/game/classic">Classic</a></li>
+                        <li><a href="#!/game/ultralarge">Wide</a></li>
+                        <li><a href="#!/game/sandbox">Sandbox</a></li>
                         <li class="divider "></li>
                         <li class="dropdown-header">Campaign</li>
                         <li><a href="#!/campaign/puzzle">Puzzle</a></li>
@@ -70,8 +70,9 @@
     </div>
 </nav>
 <div ng-view></div>
-<div style="position:fixed; bottom:0; height:25px; line-height:25px; text-align:center; color:black;background:orangered; width:100%">This site is still in alpha stage ! Please report any bug <a href="https://github.com/duconstp/Tetris/issues">here</a></div>
+<div style="position:fixed; bottom:0; height:25px; line-height:25px; text-align:center; color:black;background:orangered; width:100%">This site is still in alpha stage ! Please report any bug <a href="https://github.com/PandaChauve/Tetris/issues">here</a></div>
 
+<!-- fixme merge that and put licenses in a separate file -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" language="JavaScript"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js" language="JavaScript"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-route.min.js" language="JavaScript"></script>
@@ -79,6 +80,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <script src="http://threejs.org/examples/fonts/helvetiker_regular.typeface.js"></script><!-- fixme use mine-->
 <script src="http://threejs.org/examples/js/modifiers/SubdivisionModifier.js"></script>
+<script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
 
 <script src="app.min.js"></script>
 </body>

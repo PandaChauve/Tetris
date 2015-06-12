@@ -1,11 +1,12 @@
 //FIXME the move to angular is way too partial, some work is needed !
 
-angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$http', '$route', '$routeParams', '$modal', '$window', 'game', 'gameConstants', 'achievements', 'userStats','storage', 'stateChecker','userAccount','api',
-    function ($scope, $http, $route, $routeParams, $modal, $window, game, gameConstants, achievements, userStats, storage, stateChecker, userAccount, api) {
+angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$http', '$route', '$routeParams', '$modal', '$window', 'game', 'gameConstants', 'achievements', 'userStats','storage', 'stateChecker','userAccount','api','map_hash',
+    function ($scope, $http, $route, $routeParams, $modal, $window, game, gameConstants, achievements, userStats, storage, stateChecker, userAccount, api, map_hash) {
         "use strict";
         //FIXME directive too much in the controller
         var gameFinished = false;
-        $scope.gameName = $routeParams.name || "classic";
+        $scope.gameName = map_hash[$routeParams.hash] || $routeParams.hash || "classic";
+
         $scope.config = {};
         $scope.config.splitScreen = $scope.gameName === "classicSplitScreen";
         $scope.gameConditions = null;
@@ -101,7 +102,7 @@ angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$htt
                         $window.location.href=($scope.config.gameConfig.next);
                     }
                     $scope.gameName = $scope.config.gameConfig.next;
-                    $route.updateParams({name: $scope.gameName});
+                    $route.updateParams({hash: CryptoJS.MD5($scope.gameName)});
                     $scope.load();
                 }
                 else {

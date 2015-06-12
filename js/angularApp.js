@@ -54,7 +54,7 @@ angularApp.config(['$routeProvider', '$locationProvider',
                         }]
                     }
                 }).
-                when('/game', {
+                when('/game/:hash', {
                     templateUrl: 'templates/game.html',
                     controller: 'GameCtrl',
                     resolve: {

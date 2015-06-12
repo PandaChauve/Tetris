@@ -3,7 +3,7 @@ angular.module('angularApp.controllers')
         "use strict";
         var i, j;
         $scope.startMap = function (i) {
-            $window.location.href=('#!/game?name=' + i);
+            $window.location.href=('#!/game/' + i);
         };
         $scope.getClass = function (i, active) {
             if (!active) {
@@ -19,24 +19,24 @@ angular.module('angularApp.controllers')
             switch ($scope.campaign) {
                 case 'puzzle':
                     $scope.maps.push({
-                        name: 'campaign/puzzle/puzzle_1',
+                        name: CryptoJS.MD5('campaign/puzzle/puzzle_1'),
                         active: true
                     });
                     for (i = 2; i < 3; i += 1) {
                         $scope.maps.push({
-                            name: 'campaign/puzzle/puzzle_' + i,
+                            name: CryptoJS.MD5('campaign/puzzle/puzzle_' + i),
                             active: storage.get('UserMapcampaign/puzzle/puzzle_' + (i - 1))
                         });
                     }
                     break;
                 case 'timelimit':
                     $scope.maps.push({
-                        name: 'campaign/timeLimit/timelimit_1',
+                        name: CryptoJS.MD5('campaign/timeLimit/timelimit_1'),
                         active: true
                     });
                     for (i = 2; i < 3; i += 1) {
                         $scope.maps.push({
-                            name: 'campaign/timeLimit/timelimit_' + i,
+                            name: CryptoJS.MD5('campaign/timeLimit/timelimit_' + i),
                             active: storage.get('UserMapcampaign/timeLimit/timelimit_' + (i - 1))
                         });
                     }
@@ -45,25 +45,25 @@ angular.module('angularApp.controllers')
                     i = count; //str
                     j = 1;
                     $scope.maps.push({
-                        name: 'campaign/tetrisAttack/' + i + '/ta_' + i + '_' + j,
+                        name: CryptoJS.MD5('campaign/tetrisAttack/' + i + '/ta_' + i + '_' + j),
                         active: (i == 1 || storage.get('UserMapcampaign/tetrisAttack/' + (i - 1) + '/ta_' + (i - 1) + '_10'))
                     });
 
                     for (j = 2; j < 11; j += 1) {
                         $scope.maps.push({
-                            name: 'campaign/tetrisAttack/' + i + '/ta_' + i + '_' + j,
+                            name: CryptoJS.MD5('campaign/tetrisAttack/' + i + '/ta_' + i + '_' + j),
                             active: (storage.get('UserMapcampaign/tetrisAttack/' + i + '/ta_' + i + '_' + (j - 1)))
                         });
                     }
                     break;
                 default:
                     $scope.maps.push({
-                        name: 'campaign/arcade/arcade_1',
+                        name: CryptoJS.MD5('campaign/arcade/arcade_1'),
                         active: true
                     });
                     for (i = 2; i < 4; i += 1) {
                         $scope.maps.push({
-                            name: 'campaign/arcade/arcade_' + i,
+                            name: CryptoJS.MD5('campaign/arcade/arcade_' + i),
                             active: storage.get('UserMapcampaign/arcade/arcade_' + (i - 1))
                         });
                     }
