@@ -1,17 +1,17 @@
 angular.module('angularApp.controllers')
-    .controller('UserConfigCtrl', ['$scope', 'userAccount', 'storage',
-        function ($scope, userAccount, storage) {
+    .controller('UserConfigCtrl', ['$scope', '$http', 'userAccount', 'storage',
+        function ($scope, $http, userAccount, storage) {
             "use strict";
-            if(storage.get("scoreEffect") == null){
+            if (storage.get("scoreEffect") == null) {
                 storage.set("scoreEffect", false);
                 storage.set("soundEffect", false);
                 storage.set("explosionEffect", false);
             }
             console.log(storage.get("scoreEffect"));
             $scope.effects = {
-                scoreEffect : storage.get("scoreEffect"),
-                soundEffect : storage.get("soundEffect"),
-                explosionEffect : storage.get("explosionEffect")
+                scoreEffect: storage.get("scoreEffect"),
+                soundEffect: storage.get("soundEffect"),
+                explosionEffect: storage.get("explosionEffect")
             };
 
             $scope.updateCheckBox = function (name) {
@@ -25,6 +25,21 @@ angular.module('angularApp.controllers')
             if (!$scope.cubeType) {
                 $scope.updateStyle(0);
             }
+
+
+            $scope.selectedCss = storage.get("UserTheme") || "Slate";
+            $scope.cssThemes = [$scope.selectedCss];
+
+            $http.get("http://api.bootswatch.com/3/").success(function (data) {
+                var themes = data.themes;
+                for(var i =0; i < themes.length; i+= 1){
+                    if(themes[i].name != $scope.cssThemes[0]){
+                        $scope.cssThemes.push(themes[i].name);
+                    }
+                }
+            });
+
+
             $scope.themes = [
                 {
                     Picture: "./Resources/imgs/placeholder.png",
@@ -52,4 +67,8 @@ angular.module('angularApp.controllers')
                     Name: "Lights"
                 }
             ];
+
+            $scope.loadStyle = function (style) {
+                userAccount.setTheme(style);
+            }
         }]);

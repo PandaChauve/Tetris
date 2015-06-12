@@ -25,10 +25,9 @@
 
 <div class="container">
     <div class="row">
-
         <div class="panel panel-default" style="max-width:600px; margin:auto">
             <div class="panel-heading">
-                <h3 class="panel-title">Style</h3></div>
+                <h3 class="panel-title">Block Style</h3></div>
             <div class="panel-body">
                 <div class="col-md-4 col-xs-6" ng-repeat="elem in themes">
                     <div class=" panel panel-default"  style="cursor:pointer"
@@ -45,4 +44,16 @@
             </div>
         </div>
     </div>
+</div><br /><br />
+<div class="container">
+    <div class="row">
+        <div class="panel panel-default" style="max-width:600px; margin:auto">
+            <div class="panel-heading">
+                <h3 class="panel-title">Global Theme</h3></div>
+            <div class="panel-body">
+                <select ng-options="a for a in cssThemes" ng-model="selectedCss"  ng-change="loadStyle(selectedCss)" class="form-control"></select>
+            </div>
+        </div>
+    </div>
 </div>
+</div><br /><br />

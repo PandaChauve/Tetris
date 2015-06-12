@@ -27,8 +27,9 @@ angular.module('angularApp.factories')
                         that.username = data.name;
                         that.id = data.id;
                         that.hash = data.hash;
-                        that.broadcast();
                         storage.load(data.data, that.id, that.hash);
+                        that.loadTheme();
+                        that.broadcast();
                         resolve(that.username);
                     }
                     else {
@@ -86,6 +87,7 @@ angular.module('angularApp.factories')
             localStorage.removeItem("Usr_LastUserId");
             this.login = null;
             storage.unload();
+            this.loadTheme();
             this.broadcast();
             $window.location.href = "#!/";
             $window.location.reload();
@@ -93,6 +95,15 @@ angular.module('angularApp.factories')
 
         User.prototype.isRegistered = function isRegistered() {
             return this.username !== null;
+        };
+        User.prototype.loadTheme = function(){
+            var t = storage.get("UserTheme") || "slate";
+            $("#switchableTheme").attr("href", "http://bootswatch.com/"+ t.toLowerCase()+"/bootstrap.min.css");
+        };
+
+        User.prototype.setTheme = function(style){
+            storage.set("UserTheme", style);
+            this.loadTheme();
         };
 
         User.prototype.logIn = function login(user, password, cb){
@@ -106,6 +117,7 @@ angular.module('angularApp.factories')
                     that.hash = data.hash;
                     storage.load(data.data, that.id, that.hash);
                     that.broadcast();
+                    that.loadTheme();
                     $route.reload();
                     cb(true);
                 }
