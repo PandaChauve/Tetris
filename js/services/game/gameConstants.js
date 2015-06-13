@@ -27,6 +27,13 @@ angular.module('angularApp.factories')
                 this.startRows = this.displayedRowCount + this.hiddenRowCount;
                 this.groundAccelerationPerTic = 0;
             }
+            if (mode === "sandboxSmall") {
+                this.groundSpeedPerTic = 0;
+                this.fallPeriod = 0;
+                this.columnCount = 4;
+                this.startRows = this.displayedRowCount + this.hiddenRowCount;
+                this.groundAccelerationPerTic = 0;
+            }
             else if (mode === "fixed") {
                 this.groundSpeedPerTic = 0;
                 this.fallPeriod = 0;
@@ -35,6 +42,9 @@ angular.module('angularApp.factories')
             }
             else if (mode === "large") {
                 this.columnCount = 10;
+            }
+            else if (mode === "small") {
+                this.columnCount = 4;
             }
             else if (mode === "arcade_1") { //fixed
                 this.groundSpeedPerTic = 0;

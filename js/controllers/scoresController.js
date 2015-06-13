@@ -23,6 +23,7 @@ angular.module('angularApp.controllers')
         $scope.scoreTypes = [
             {type: "classic", name: "Classic"},
             {type: "ultralarge", name: "Wide"},
+            {type: "small", name: "Narrow"},
             {type: "sandbox", name: "Sandbox"},
             {type: "ultralargecoop", name: "Coop"}
         ];

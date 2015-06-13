@@ -1,0 +1,18 @@
+{
+  "grid": "",
+  "rules": "",
+  "tetris": [
+    {
+      "mappings": [
+        "leftMapping",
+        "rightMapping"
+      ]
+    }
+  ],
+  "victory": {
+    "score": 130,
+    "time": 180
+  },
+  "require": "campaign/timeLimit/timelimit_8",
+  "next": "campaign/timeLimit/timelimit_10"
+}

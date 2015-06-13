@@ -10,9 +10,9 @@
     }
   ],
   "victory": {
-    "score": 30,
-    "time": 60
+    "score": 85,
+    "time": 120
   },
-  "require": "campaign/timeLimit/timelimit_2",
-  "next": "campaign/timeLimit/timelimit_4"
+  "require": "campaign/timeLimit/timelimit_9",
+  "next": "#!/campaign/timelimit"
 }
