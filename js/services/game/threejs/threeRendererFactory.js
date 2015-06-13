@@ -58,7 +58,7 @@ angular.module('angularApp.factories')
         };
 
         ThreeRenderer.prototype.createCamera = function () {
-            var camera = new THREE.PerspectiveCamera(75, 420 / 600, 0.3, 1000);
+            var camera = new THREE.PerspectiveCamera(75, 448 / 600, 0.3, 1000);
             camera.position.z = 450;
             camera.position.x = -27;
             camera.position.y = 410;
@@ -68,7 +68,7 @@ angular.module('angularApp.factories')
         ThreeRenderer.prototype.createRenderer = function (canvas) {
             var renderer = new THREE.WebGLRenderer({canvas: canvas, antialias: true});
             renderer.setClearColor(0x000000);
-            renderer.setSize(420, 600);
+            renderer.setSize(448, 600);
             renderer.shadowMapEnabled = true;
             renderer.shadowMapSoft = true;
             return renderer;

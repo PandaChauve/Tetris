@@ -1,7 +1,7 @@
 <div class="container" ng-if="!config.splitScreen">
 
     <div class="row">
-        <div id="game" class="gameHolder col-lg-5 col-lg-push-3 col-md-push-4 col-md-8 col-sm-12 col-xs-12">
+        <div id="game" class="gameHolder well col-lg-5 col-lg-push-3 col-md-push-4 col-md-8 col-sm-12 col-xs-12">
             <canvas mng-tetris-game="0"></canvas>
         </div>
 
@@ -26,7 +26,7 @@
         </div>
 
         <div class=" col-lg-3 col-md-8 col-lg-push-0 col-md-push-4 col-sm-12 col-xs-12 ">
-            <div class="gameDetails" ng-controller="GameStateCtrl">
+            <div class="gameDetails jumbotron" ng-controller="GameStateCtrl">
                 <div class="gameDetailsElement">
                     <h3>Score</h3>
                     <span id="score">{{state.score}}</span>
@@ -55,11 +55,11 @@
 <div class="container" ng-if="config.splitScreen">
 
     <div class="row">
-        <div class="sideGame col-md-6">
+        <div class="sideGame well col-lg-5 col-md-6">
             <canvas mng-tetris-game="0"></canvas>
         </div>
 
-        <div class="sideGame col-md-6">
+        <div class="sideGame well col-lg-5 col-lg-push-2  col-md-6">
             <canvas mng-tetris-game="1"></canvas>
         </div>
     </div>

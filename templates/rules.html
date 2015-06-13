@@ -1,7 +1,12 @@
-<div class="container">
+<div class="container col-md-6 col-md-offset-3">
     <div class="row">
-        <div class="page-header"><h1>When Will You Lose</h1></div>
-        <p>WWYL is a game about survival in the ruthless world of falling cubes.</p>
+        <div class="page-header">
+            <h1>When Will You Lose</h1>
+        </div>
+        <p>WWYL is a game about survival in the ruthless world of falling blocks.</p>
+
+        <p>The concept is quite simple, you can swap blocks horizontaly, when 3 or more blocks of a same color are
+            aligned (verticaly or horizontaly) they're destroyed.</p>
         <blockquote class="pull-right">
             <p>You will lose !</p>
             <small>Sylvain C. in <cite title="Source Title">WWYL</cite></small>
@@ -9,7 +14,9 @@
     </div>
     <div class="row">
 
-        <div class="page-header"><h1>Keys</h1></div>
+        <div class="page-header">
+            <h1>Keys</h1>
+        </div>
         <p>There is two sets of key available. In single player game you can use a mix of each set.</p>
         <table class="table table-striped table-hover ">
             <thead>
@@ -22,33 +29,33 @@
             <tbody>
             <tr>
                 <td>Up</td>
-                <td>Z</td>
-                <td>↑</td>
+                <td><kbd>Z</kbd></td>
+                <td><kbd>↑</kbd></td>
             </tr>
             <tr>
                 <td>Down</td>
-                <td>S</td>
-                <td>↓</td>
+                <td><kbd>S</kbd></td>
+                <td><kbd>↓</kbd></td>
             </tr>
             <tr>
                 <td>Left</td>
-                <td>Q</td>
-                <td>←</td>
+                <td><kbd>Q</kbd></td>
+                <td><kbd>←</kbd></td>
             </tr>
             <tr>
                 <td>Right</td>
-                <td>D</td>
-                <td>↓</td>
+                <td><kbd>D</kbd></td>
+                <td><kbd>↓</kbd></td>
             </tr>
             <tr>
                 <td>Swap</td>
-                <td>Space bar</td>
-                <td>0 (num)</td>
+                <td><kbd>Space bar</kbd></td>
+                <td><kbd>0 (num)</kbd></td>
             </tr>
             <tr>
                 <td>Speed up</td>
-                <td>A</td>
-                <td>Enter</td>
+                <td><kbd>A</kbd></td>
+                <td><kbd>Enter</kbd></td>
             </tr>
             </tbody>
         </table>
@@ -62,6 +69,7 @@
 
         <p>If you create a cross or a corner (an horizontal and a vertical line combined) they count as a single line
             and the block used to join them is counted twice. So it's a least 5 points.</p>
+
         <p>Finally if you do multiple lines at the same time, you'll get the sum of each individual score multiplied by
             the number of lines. The same effect is applied if you create lines with falling blocks.</p>
 
@@ -70,28 +78,53 @@
         <div class="page-header">
             <h1>Single player modes</h1>
         </div>
-        <h2>Classic</h2>
+        <h2>Arcade</h2>
 
-        <h2>Wide</h2>
+        <h3>Classic</h3>
 
-        <p>The classic mode is too easy ? Try this one, it's the same with more columns.</p>
+        <p>The classic mode is a survival game in a 6X10 grid. Blocks will fall from the top and the grid is going
+            up at an increasing speed. The more you play, the harder it gets !</p>
 
-        <h2>Sandbox</h2>
+        <p>Tips : at the beginning the game is slow, it's easier to create big combinations. You should use the
+            speed key to insure a sufficient block pool for your combos. When the game start to be too fast for you,
+            focus on destroying small blocks, the more you play the more you score !</p>
 
-        <p>The ground won't move, the rain wont fall. Take your time to train your combos. You can still use the "Speed
+        <h3>Wide</h3>
+
+        <p>The classic mode is too easy ? Try this one, it's the same in a 10x10 grid.</p>
+
+        <h3>Crazy</h3>
+
+        <p>Not yet implemented, come back later :)</p>
+
+        <h3>Sandbox</h3>
+
+        <p>The ground won't move, the blocks wont fall. Take your time to train your combos. You can still use the
+            "Speed
             up" key to add new lines to the grid.</p>
 
-        <h2>Campaign - Puzzle</h2>
+        <h2>Campaign</h2>
 
-        <h2>Campaign - Arcade</h2>
+        <h3>Puzzle</h3>
 
-        <h2>Campaign - Time attack</h2>
+        <p>No falling blocks, no moving ground, just some objectives and constraints. Reach a score, destroy all the
+            blocks, destroy only one color, keep only a color,... You'll need your brain.</p>
 
-        <p>You have a limited time to score.</p>
+        <h3>Arcade</h3>
 
-        <h2>Campaign - Tetris attack</h2>
+        <p>Do you remember the arcade modes (classic, wide, crazy) ? It's them with a chance to win ! Stay in game long
+            enough !</p>
 
-        <p>A clone of Tetris attack's puzzle mode.</p>
+        <h3>Time attack</h3>
+
+        <p>You have a limited time to score a certain amount of points. Some grids are randomly generated, other are not
+            !</p>
+
+        <h3>Tetris attack</h3>
+
+        <p>You have a limited amount of swaps to destroy all the blocks. This is a clone of Tetris Attack's puzzle mode,
+            60 levels of increasing difficulty. All the levels can be completed with 5 sec between each swap, you don't
+            need to try skillful moves.</p>
     </div>
     <div class="row">
         <div class="page-header"><h1>Multiplayer modes</h1></div>
@@ -99,12 +132,12 @@
         <h2>Split screen</h2>
 
         <p>Same rules as the single player mode "Classic" with 2 players. Each time you score 3 points, some blocks will
-            fall in your partners grid.</p>
+            fall in your partners grid. Show that you're the best</p>
 
         <h2>Coop</h2>
 
         <p>Same rules as the single player mode "Wide" but you can play with a friend.</p>
-
-
     </div>
+    <br />
+
 </div>

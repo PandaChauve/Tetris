@@ -23,20 +23,18 @@ html {
     outline: 0;
 }
 
-.gameDetails {
+.row .gameDetails {
     font-family: 'Architects Daughter', cursive;
-    background: #000000;
-    border: 1px white solid;
     max-width: 300px;
     height: 500px;
     margin: 10px auto;
+    padding:0;
 }
 
 canvas {
-    border: 1px white solid;
-    background:black;
-    width:420px;
+    width:448px;
     height:600px;
+    border-radius:3px;
 }
 
 .gameDetailsElement h3 {
@@ -84,19 +82,8 @@ canvas {
     width: 100px;
     margin: auto;
     border-radius: 50%;
-    color: #fff;
     text-align: center;
-    background: #000;
     font-size: 30px;
-    background-image: -webkit-linear-gradient(#020202, #101112 40%, #191b1d);
-    background-image: -o-linear-gradient(#020202, #101112 40%, #191b1d);
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#020202), color-stop(40%, #101112), to(#191b1d));
-    background-image: linear-gradient(#020202, #101112 40%, #191b1d);
-    background-repeat: no-repeat;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff020202', endColorstr='#ff191b1d', GradientType=0);
-    -webkit-filter: none;
-    filter: none;
-    border: 2px solid black;
 }
 
 .notification{

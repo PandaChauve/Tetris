@@ -13,7 +13,7 @@
     </div>
     <div class="row">
         <div class="col-md-6" ng-repeat="elem in ::achievementsGridData">
-            <div class=" panel panel-default" ng-class="{'text-muted': !elem.Success, 'panel-primary': elem.Success}">
+            <div class=" panel " ng-class="{'text-muted': !elem.Success, 'panel-primary': elem.Success, 'panel-default': !elem.Success}">
                 <div class="panel-heading">
                     <h3 class="panel-title">{{::elem.Name}}</h3>
                 </div>
