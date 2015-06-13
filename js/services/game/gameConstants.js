@@ -28,17 +28,55 @@ angular.module('angularApp.factories')
                 this.groundAccelerationPerTic = 0;
             }
             else if (mode === "fixed") {
+                this.groundSpeedPerTic = 0;
+                this.fallPeriod = 0;
+                this.groundAccelerationPerTic = 0;
                 this.groundUpSpeedPerTic = 0;
+            }
+            else if (mode === "large") {
+                this.columnCount = 10;
+            }
+            else if (mode === "arcade_1") { //fixed
                 this.groundSpeedPerTic = 0;
                 this.fallPeriod = 0;
                 this.groundAccelerationPerTic = 0;
             }
-            else if (mode === "raining") {
+            else if (mode === "arcade_2") { //rain
                 this.groundSpeedPerTic = 0;
                 this.fallPeriod = 300*60/TIC_PER_SEC;
                 this.groundAccelerationPerTic = 0;
             }
-            else if (mode === "large") {
+            else if (mode === "arcade_3") { //rain large
+                this.groundSpeedPerTic = 0;
+                this.fallPeriod = 300*60/TIC_PER_SEC;
+                this.groundAccelerationPerTic = 0;
+                this.columnCount = 10;
+            }
+            else if (mode === "arcade_4") { //normal a bit fast
+                this.groundSpeedPerTic *= 1.5;
+                this.fallPeriod = 200*60/TIC_PER_SEC;
+            }
+            else if (mode === "arcade_5") { //wide a bit fast
+                this.groundSpeedPerTic *= 1.5;
+                this.columnCount = 10;
+            }
+            else if (mode === "arcade_6") { //fast acceleration
+                this.fallPeriod = 0;
+                this.groundAccelerationPerTic = 1/100/TIC_PER_SEC;
+            }
+            else if (mode === "arcade_7") { //fast acceleration and rain
+                this.groundAccelerationPerTic = 1/100/TIC_PER_SEC;
+            }
+            else if (mode === "arcade_8") { //fast acceleration and rain
+                this.groundAccelerationPerTic = 1/100/TIC_PER_SEC;
+                this.columnCount = 10;
+            }
+            else if (mode === "arcade_9") { //not wide
+                this.columnCount = 4;
+            }
+            else if (mode === "arcade_10") { //not wide
+                this.fallPeriod = 150*60/TIC_PER_SEC;
+                this.groundAccelerationPerTic = 0;
                 this.columnCount = 10;
             }
         };

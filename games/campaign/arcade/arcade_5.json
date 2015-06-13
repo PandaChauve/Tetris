@@ -1,6 +1,6 @@
 {
   "grid": "",
-  "rules": "arcade_3",
+  "rules": "arcade_5",
   "tetris": [
     {
       "mappings": [
@@ -12,6 +12,6 @@
   "victory": {
     "score": 50
   },
-  "next": "campaign/arcade/arcade_4",
-  "require": "campaign/arcade/arcade_2"
+  "next": "campaign/arcade/arcade_6",
+  "require": "campaign/arcade/arcade_4"
 }

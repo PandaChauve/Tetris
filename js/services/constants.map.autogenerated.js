@@ -72,6 +72,13 @@ angular.module('angularApp.base').constant('map_hash', {
 	"ab6f418a2e0607cb488f7499981215d4": "campaign/puzzle/puzzle_1",
 	"090c08f5bd14d49adc73ae947142bc79": "campaign/puzzle/puzzle_2",
 	"d2652ac1d0de107460e4d06e5e5e864d": "campaign/arcade/arcade_1",
+	"eacf1fc992485bbd48a934758c7a9ba6": "campaign/arcade/arcade_10",
 	"0be0c4c3d1ea6eccbbc537804802a6db": "campaign/arcade/arcade_2",
 	"0cfcfdaff103f2815bce39307d95ca6d": "campaign/arcade/arcade_3",
+	"5ae2d2faa749fe48a6e0e73ed704286e": "campaign/arcade/arcade_4",
+	"351f7c939eda4865c75ce31575e65888": "campaign/arcade/arcade_5",
+	"4267466af1df978832097565a13269b7": "campaign/arcade/arcade_6",
+	"7ab1925a5fbba6f350feef725ee01300": "campaign/arcade/arcade_7",
+	"d9d3e4aa93ee4a51ae92a83f52bf4603": "campaign/arcade/arcade_8",
+	"ef5854730828db3e8592dfe8785b0851": "campaign/arcade/arcade_9",
 });

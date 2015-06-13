@@ -61,7 +61,7 @@ angular.module('angularApp.controllers')
                         name: CryptoJS.MD5('campaign/arcade/arcade_1'),
                         active: true
                     });
-                    for (i = 2; i < 4; i += 1) {
+                    for (i = 2; i < 11; i += 1) {
                         $scope.maps.push({
                             name: CryptoJS.MD5('campaign/arcade/arcade_' + i),
                             active: storage.get('UserMapcampaign/arcade/arcade_' + (i - 1))
