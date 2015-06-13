@@ -36,7 +36,7 @@ angularApp.config(['$routeProvider', '$locationProvider',
                     }
                 }).
                 when('/achievements', {
-                    templateUrl: 'templates/achievements.html',
+                    templateUrl: 'templates/user/achievements.html',
                     controller: 'AchievementsCtrl',
                     resolve: {
                         user : ['userAccount', function(userAccount){
@@ -105,7 +105,7 @@ angularApp.config(['$routeProvider', '$locationProvider',
                     }
                 }).
                 when('/stats', {
-                    templateUrl: 'templates/stats.html',
+                    templateUrl: 'templates/user/stats.html',
                     controller: 'StatCtrl',
                     resolve: {
                         user : ['userAccount', function(userAccount){

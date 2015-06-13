@@ -298,3 +298,9 @@ canvas {
 .carousel-inner{
     background: #7a8288;
 }
+.disabledPanel{
+    cursor:not-allowed;
+}
+.enabledPanel{
+    cursor:pointer;
+}

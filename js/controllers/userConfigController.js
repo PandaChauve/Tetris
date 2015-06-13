@@ -1,6 +1,6 @@
 angular.module('angularApp.controllers')
-    .controller('UserConfigCtrl', ['$scope', '$http', 'userAccount', 'storage',
-        function ($scope, $http, userAccount, storage) {
+    .controller('UserConfigCtrl', ['$scope', '$http', '$timeout', 'userAccount', 'storage','achievements',
+        function ($scope, $http, $timeout, userAccount, storage, achievements) {
             "use strict";
             if (storage.get("scoreEffect") == null) {
                 storage.set("scoreEffect", false);
@@ -18,8 +18,10 @@ angular.module('angularApp.controllers')
                 storage.set(name, !$scope.effects[name]);
             };
             $scope.updateStyle = function (integer) {
-                $scope.cubeType = integer;
-                storage.set("UserCubeTheme", $scope.cubeType);
+                if($scope.requireStatus($scope.themes[integer].Require)){
+                    $scope.cubeType = integer;
+                    storage.set("UserCubeTheme", $scope.cubeType);
+                }
             };
             $scope.cubeType = storage.get("UserCubeTheme");
             if (!$scope.cubeType) {
@@ -39,36 +41,55 @@ angular.module('angularApp.controllers')
                 }
             });
 
-
+            $scope.requireText = function(key){
+                if(!$scope.requireStatus(key)){
+                    return "Unlocked by success : "+ achievements.List.getName(key);
+                }
+                return "";
+            };
+            $scope.requireStatus = function(key){
+                if(key === -1)
+                    return true;
+                return achievements.isWon(key);
+            };
             $scope.themes = [
                 {
                     Picture: "./Resources/imgs/placeholder.png",
-                    Name: "Plain cubes"
+                    Name: "Plain cubes",
+                    Require : -1
                 }, {
                     Picture: "./Resources/imgs/placeholder.png",
-                    Name: "Fancy cubes"
+                    Name: "Fancy cubes",
+                    Require : achievements.List.Beginner
                 }, {
                     Picture: "./Resources/imgs/placeholder.png",
-                    Name: "Mines"
+                    Name: "Mines",
+                    Require : achievements.List.Nostalgic
                 }, {
                     Picture: "./Resources/imgs/placeholder.png",
-                    Name: "Candy"
+                    Name: "Candy",
+                    Require : achievements.List.RetroGamer
                 }
                 , {
                     Picture: "./Resources/imgs/placeholder.png",
-                    Name: "Candy HD"
+                    Name: "Candy HD",
+                    Require : achievements.List.Sherlock
                 }
                 , {
                     Picture: "./Resources/imgs/placeholder.png",
-                    Name: "Smash bros"
+                    Name: "Smash bros",
+                    Require : achievements.List.Flash
                 }
                 , {
                     Picture: "./Resources/imgs/placeholder.png",
-                    Name: "Lights"
+                    Name: "Lights",
+                    Require : achievements.List.Pacman
                 }
             ];
 
             $scope.loadStyle = function (style) {
                 userAccount.setTheme(style);
-            }
+            };
+            $timeout(function () {$('[data-toggle="tooltip"]').tooltip();}, 0);
+
         }]);
