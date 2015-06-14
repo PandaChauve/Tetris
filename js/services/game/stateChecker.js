@@ -50,11 +50,17 @@ angular.module('angularApp.factories')
             if (gconfig.score !== undefined) {
                 this.succesComponents.push(new ScoreChecker(gconfig.score));
             }
+            if (gconfig.destroy !== undefined) {
+                this.succesComponents.push(new ColorDestroyChecker(gconfig.destroy));
+            }
             if (gconfig.swaps !== undefined) {
                 this.defeatComponents.push(new SwapChecker(gconfig.swaps));
             }
             if (gconfig.time !== undefined) {
                 this.defeatComponents.push(new TimeChecker(gconfig.time));
+            }
+            if (gconfig.keep !== undefined) {
+                this.defeatComponents.push(new ColorKeepChecker(gconfig.keep));
             }
         };
 
@@ -83,6 +89,19 @@ angular.module('angularApp.factories')
             return tetris.grid.blockCount() <= this.val;
         };
 
+        function ColorDestroyChecker(val) { //FIXME always 1 for destroy, 3 for keep
+            this.val = val;
+        }
+
+        ColorDestroyChecker.prototype.check = function (tetris) {
+            return tetris.grid.contains(1) <= this.val;
+        };
+        function ColorKeepChecker(val) { //FIXME always 1 for destroy, 3 for keep
+            this.val = val;
+        }
+        ColorKeepChecker.prototype.check = function (tetris) {
+            return tetris.grid.contains(3) < this.val;
+        };
         function SwapChecker(val) {
             this.val = val;
         }

@@ -29,6 +29,7 @@ angular.module('angularApp.factories')
                         this.container[i][j].verticalPosition = j * gameConstants.pixelPerBox;
                     }
                 }
+                //this.save();//debug only
             }
             else {
                 this.load(content);
@@ -255,6 +256,21 @@ angular.module('angularApp.factories')
             right.setState(blockFactory.EState.SwappedRight);
         };
 
+        Grid.prototype.save = function(){
+            var ret = {"grid":[]};
+            for(var i = 0; i < this.container.length; i+=1){
+                ret.grid.push([]);
+                for(var j = gameConstants.hiddenRowCount; j < this.container[i].length; j += 1){
+                    if(this.container[i][j].type !== blockFactory.EType.PlaceHolder){
+                        ret.grid[i].push({
+                            state: this.container[i][j].state,
+                            type: this.container[i][j].type
+                        })
+                    }
+                }
+            }
+            console.log(JSON.stringify(ret));
+        };
         Grid.prototype.load = function (content) {
             var i, j;
             for (i = 0; i < content.grid.length; i += 1) {
@@ -280,6 +296,16 @@ angular.module('angularApp.factories')
             return count;
         };
 
+        Grid.prototype.contains = function (color) {
+            var count = 0;
+            for (var i = 0; i < this.container.length; i += 1) {
+                for (var j = gameConstants.hiddenRowCount; j < this.container[i].length; j += 1) {
+                    if(this.container[i][j].type === color)
+                        count += 1;
+                }
+            }
+            return count;
+        };
         return {
             newGrid : function newGrid(content){
                 return new Grid(content);
