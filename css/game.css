@@ -90,20 +90,14 @@ canvas {
     cursor:pointer;
     width: 400px;
     margin-left: -200px;
-    background:#7A8288;
-    border:black;
-
 }
 .notification img{
     float:left;
-    border: 1px solid grey;
     width:60px;
 }
 .notification div span{
-    color:white;
     font-size:1.5em;
     line-height: 60px;
-
 }
 .mapNode{
     cursor: pointer;
