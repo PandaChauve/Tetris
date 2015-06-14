@@ -10,7 +10,7 @@
     }
   ],
   "victory": {
-    "blocksLeft": 0
+    "score": 80
   },
   "message": "Try to clear the grid !",
   "next": "campaign/puzzle/puzzle_2"

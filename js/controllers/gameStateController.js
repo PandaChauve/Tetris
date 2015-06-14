@@ -50,6 +50,12 @@ angular.module('angularApp.controllers').controller('GameStateCtrl', ['$scope',
                 ret.push({success: true, message:'Try to stay alive !'});
                 return ret;
             }
+            if(gconfig.destroy !== undefined){
+                ret.push({success: true, message:"Destroy all the green blocks"});
+            }
+            if(gconfig.keep !== undefined){
+                ret.push({success: false, message:"Keep all the red blocks"});
+            }
             if (gconfig.blocksLeft !== undefined) {
                 if (gconfig.blocksLeft === 0) {
                     ret.push({success: true, message:"Destroy each block"});

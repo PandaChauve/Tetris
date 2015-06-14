@@ -1,5 +1,5 @@
 {
-  "grid": "campaign/puzzle/puzzle_2",
+  "grid": "campaign/puzzle/puzzle_3",
   "rules": "fixed",
   "tetris": [
     {
@@ -11,8 +11,9 @@
   ],
   "victory": {
     "destroy": 0,
-    "keep":9
+    "keep":8,
+    "score": 20
   },
-  "next": "campaign/puzzle/puzzle_3",
-  "require": "campaign/puzzle/puzzle_1"
+  "next": "campaign/puzzle/puzzle_4",
+  "require": "campaign/puzzle/puzzle_2"
 }

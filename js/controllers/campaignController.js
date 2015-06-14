@@ -17,12 +17,12 @@ angular.module('angularApp.controllers')
         function updateScope(){
             $scope.maps = [];
             switch ($scope.campaign) {
-                case 'puzzle':
+                case 'challenges':
                     $scope.maps.push({
                         name: CryptoJS.MD5('campaign/puzzle/puzzle_1'),
                         active: true
                     });
-                    for (i = 2; i < 3; i += 1) {
+                    for (i = 2; i < 11; i += 1) {
                         $scope.maps.push({
                             name: CryptoJS.MD5('campaign/puzzle/puzzle_' + i),
                             active: storage.get('UserMapcampaign/puzzle/puzzle_' + (i - 1))
