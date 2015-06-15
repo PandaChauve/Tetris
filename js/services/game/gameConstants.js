@@ -40,6 +40,13 @@ angular.module('angularApp.factories')
                 this.groundAccelerationPerTic = 0;
                 this.groundUpSpeedPerTic = 0;
             }
+            else if (mode === "fixedLarge") {
+                this.groundSpeedPerTic = 0;
+                this.fallPeriod = 0;
+                this.groundAccelerationPerTic = 0;
+                this.groundUpSpeedPerTic = 0;
+                this.columnCount = 10;
+            }
             else if (mode === "large") {
                 this.columnCount = 10;
             }

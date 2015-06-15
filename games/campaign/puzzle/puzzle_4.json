@@ -1,0 +1,19 @@
+{
+  "grid": "campaign/puzzle/puzzle_4",
+  "rules": "fixedLarge",
+  "tetris": [
+    {
+      "mappings": [
+        "leftMapping",
+        "rightMapping"
+      ]
+    }
+  ],
+  "victory": {
+    "destroy": 0,
+    "keep":12,
+    "score": 35
+  },
+  "next": "campaign/puzzle/puzzle_5",
+  "require": "campaign/puzzle/puzzle_3"
+}

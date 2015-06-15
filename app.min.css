@@ -289,3 +289,7 @@ canvas {
 .enabledPanel{
     cursor:pointer;
 }
+.themeSample{
+    border:5px black solid;
+    border-radius: 5px;
+}
