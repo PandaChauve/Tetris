@@ -54,7 +54,7 @@ angular.module('angularApp.controllers').controller('GameStateCtrl', ['$scope',
                 ret.push({success: true, message:"Destroy all the green blocks"});
             }
             if(gconfig.keep !== undefined){
-                ret.push({success: false, message:"Keep all the red blocks"});
+                ret.push({success: false, message:"Don't destroy any red block before your last swap"});
             }
             if (gconfig.blocksLeft !== undefined) {
                 if (gconfig.blocksLeft === 0) {
