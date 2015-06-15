@@ -60,7 +60,7 @@ angular.module('angularApp.controllers').controller('GameStateCtrl', ['$scope',
                 if (gconfig.blocksLeft === 0) {
                     ret.push({success: true, message:"Destroy each block"});
                 } else {
-                    ret.push({success: true, message:"Reduce the block count to " + gconfig.blocksLeft});
+                    ret.push({success: true, message:"Reduce the blocks to " + gconfig.blocksLeft});
                 }
             }
             if (gconfig.score !== undefined) {

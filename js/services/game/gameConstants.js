@@ -47,11 +47,23 @@ angular.module('angularApp.factories')
                 this.groundUpSpeedPerTic = 0;
                 this.columnCount = 10;
             }
+            else if (mode === "fixedNarrow") {
+                this.groundSpeedPerTic = 0;
+                this.fallPeriod = 0;
+                this.groundAccelerationPerTic = 0;
+                this.groundUpSpeedPerTic = 0;
+                this.columnCount = 4;
+            }
             else if (mode === "large") {
                 this.columnCount = 10;
             }
             else if (mode === "small") {
                 this.columnCount = 4;
+            }
+            if (mode === "puzzle_8") {
+                this.fallPeriod = 0;
+                this.startRows = this.displayedRowCount + this.hiddenRowCount-1;
+                this.groundAccelerationPerTic = 0;
             }
             else if (mode === "arcade_1") { //fixed
                 this.groundSpeedPerTic = 0;

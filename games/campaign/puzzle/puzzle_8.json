@@ -1,0 +1,17 @@
+{
+  "grid": "",
+  "rules": "puzzle_8",
+  "tetris": [
+    {
+      "mappings": [
+        "leftMapping",
+        "rightMapping"
+      ]
+    }
+  ],
+  "victory": {
+    "blocksLeft": 3
+  },
+  "next": "campaign/puzzle/puzzle_9",
+  "require": "campaign/puzzle/puzzle_7"
+}
