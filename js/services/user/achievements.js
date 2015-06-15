@@ -133,6 +133,9 @@ angular.module('angularApp.factories')
                     case AchievementsState.List.Stubborn :
                         container[key] = userStats.getTotalGameStats(gameName).time > TIC_PER_SEC * SEC_PER_MIN * 30; //30min
                         break;
+                    case AchievementsState.List.Tenacious :
+                        container[key] = userStats.getTotalGameStats(gameName).time > TIC_PER_SEC * SEC_PER_MIN * 180; //3h
+                        break;
                     case AchievementsState.List.BiggerIsBetter :
                         for (var size = 3; size < game.lineSizes.length; size += 1) {
                             if (game.lineSizes[size]) {
@@ -171,7 +174,8 @@ angular.module('angularApp.factories')
                 Flash : 14, // time attack
                 Pacman: 15, //arcade
                 Sherlock: 16, //puzzle
-                enumSize: 17
+                Tenacious: 17, //time
+                enumSize: 18
             };
 
             AchievementsState.List.getName = function (key) {
@@ -205,6 +209,8 @@ angular.module('angularApp.factories')
                         return "Get 4 series at once in any game mode";
                     case AchievementsState.List.Stubborn :
                         return "Play for 30 minutes in any game mode";
+                    case AchievementsState.List.Tenacious :
+                        return "Play for 3 hours in any game mode";
                     case AchievementsState.List.BiggerIsBetter :
                         return "Create a line of 6 blocks in any game mode";
                     case AchievementsState.List.Nostalgic :
