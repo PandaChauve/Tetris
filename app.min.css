@@ -290,6 +290,6 @@ canvas {
     cursor:pointer;
 }
 .themeSample{
-    border:5px black solid;
+    border:5px black solid; /*game background color to fit the screenshots*/
     border-radius: 5px;
 }

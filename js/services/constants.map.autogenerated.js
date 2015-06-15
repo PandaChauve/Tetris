@@ -84,6 +84,7 @@ angular.module('angularApp.base').constant('map_hash', {
 	"ee17a9619c7056eb88da4c506c177e76": "campaign/puzzle/puzzle_6",
 	"e6be5107ea1935870b8fbecc5d7a3a92": "campaign/puzzle/puzzle_7",
 	"7f923267fb3c0a87c6398f72d9642317": "campaign/puzzle/puzzle_8",
+	"a94b3157be95a56b46d34516e0e42777": "campaign/puzzle/puzzle_9",
 	"d2652ac1d0de107460e4d06e5e5e864d": "campaign/arcade/arcade_1",
 	"eacf1fc992485bbd48a934758c7a9ba6": "campaign/arcade/arcade_10",
 	"0be0c4c3d1ea6eccbbc537804802a6db": "campaign/arcade/arcade_2",

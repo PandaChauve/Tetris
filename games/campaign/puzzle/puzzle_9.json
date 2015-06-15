@@ -1,0 +1,17 @@
+{
+  "grid": "campaign/tetrisAttack/6/ta_6_10",
+  "rules": "fixed",
+  "tetris": [
+    {
+      "mappings": [
+        "leftMapping",
+        "rightMapping"
+      ]
+    }
+  ],
+  "victory": {
+    "blocksLeft": 0
+  },
+  "next": "campaign/puzzle/puzzle_10",
+  "require": "campaign/puzzle/puzzle_8"
+}
