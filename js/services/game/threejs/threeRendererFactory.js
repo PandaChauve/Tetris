@@ -21,6 +21,23 @@ angular.module('angularApp.factories')
         }
 
         ThreeRenderer.prototype.clear = function () {
+            for(var i = this.scene.children.length -1; i >= 0; i-=1){
+                if(this.scene.children[i].customObject){
+                    var obj = this.scene.children[i];
+                    this.scene.remove(obj);
+                    if(obj.geometry)
+                    {
+                        obj.geometry.dispose();
+                    }
+                    if(obj.material){
+                        if(obj.material.map){
+                            obj.material.map.dispose();
+                        }
+                        obj.material.dispose();
+                    }
+                    obj.dispatchEvent({type:"dispose"});
+                }
+            }
             this.scene = null;
             this.camera = null;
             this.cursor = null;

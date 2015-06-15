@@ -5,7 +5,7 @@ angular.module('angularApp.controllers')
     $scope.achievementsGridData = [];
     for (var i = 0; i < achievements.List.enumSize; i += 1) {
         $scope.achievementsGridData.push({
-            Picture: "./Resources/imgs/placeholder.png",
+            Picture: "./resources/imgs/placeholder.png",
             Name: achievements.List.getName(i),
             Success: achievements.isWon(i),
             Description: achievements.List.getDescription(i)

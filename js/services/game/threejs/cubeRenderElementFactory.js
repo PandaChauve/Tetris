@@ -61,7 +61,9 @@ angular.module('angularApp.factories')
         };
 
         CubeRenderer.prototype.createCube = function (color) {
-            return new THREE.Mesh(this.createGeometry(color).clone(), this.createTexture(color).clone());
+            var r = new THREE.Mesh(this.createGeometry(color).clone(), this.createTexture(color).clone());
+            r.customObject = true;
+            return r;
         };
 
         function SubDivisionCubeRenderer(i) {
@@ -118,7 +120,7 @@ angular.module('angularApp.factories')
                     uniforms: {
                         amplitude: {type: "f", value: 1.0},
                         color: {type: "c", value: new THREE.Color(0xffffff)},
-                        texture: {type: "t", value: THREE.ImageUtils.loadTexture("Resources/imgs/spark.png")}
+                        texture: {type: "t", value: THREE.ImageUtils.loadTexture("resources/imgs/spark.png")}
                     },
                     attributes: attributes,
                     vertexShader: document.getElementById('vertexshader').textContent,

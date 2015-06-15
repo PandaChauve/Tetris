@@ -67,7 +67,7 @@ angular.module('angularApp.factories')
                 uniforms: {
                     amplitude: {type: "f", value: 1.0},
                     color: {type: "c", value: new THREE.Color(0xffffff)},
-                    texture: {type: "t", value: THREE.ImageUtils.loadTexture("Resources/imgs/spark.png")}
+                    texture: {type: "t", value: THREE.ImageUtils.loadTexture("resources/imgs/spark.png")}
                 },
                 attributes: attributes,
                 vertexShader: document.getElementById('vertexshader').textContent,

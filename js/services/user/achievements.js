@@ -35,7 +35,7 @@ angular.module('angularApp.factories')
                             newOne = true;
                             var sc = $rootScope.$new(true);
                             sc.picture = {
-                                src: "Resources/imgs/placeholder.png",
+                                src: "resources/imgs/placeholder.png",
                                 alt: "Success !"
                             };
                             notify({

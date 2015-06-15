@@ -13,34 +13,34 @@ angular.module('angularApp.controllers')
 
             $scope.themes = [
                 {
-                    Picture: "./Resources/imgs/placeholder.png",
+                    Picture: "./resources/imgs/themes/plain.png",
                     Name: "Plain cubes",
                     Require : -1
                 }, {
-                    Picture: "./Resources/imgs/placeholder.png",
+                    Picture: "./resources/imgs/themes/fancy.png",
                     Name: "Fancy cubes",
                     Require : achievements.List.Beginner
                 }, {
-                    Picture: "./Resources/imgs/placeholder.png",
+                    Picture: "resources/imgs/themes/mines.png",
                     Name: "Mines",
                     Require : achievements.List.Nostalgic
                 }, {
-                    Picture: "./Resources/imgs/placeholder.png",
+                    Picture: "resources/imgs/themes/candy.png",
                     Name: "Candy",
                     Require : achievements.List.RetroGamer
                 }
                 , {
-                    Picture: "./Resources/imgs/placeholder.png",
+                    Picture: "resources/imgs/themes/candy.png",
                     Name: "Candy HD",
                     Require : achievements.List.Sherlock
                 }
                 , {
-                    Picture: "./Resources/imgs/placeholder.png",
+                    Picture: "resources/imgs/themes/smash.png",
                     Name: "Smash bros",
                     Require : achievements.List.Flash
                 }
                 , {
-                    Picture: "./Resources/imgs/placeholder.png",
+                    Picture: "resources/imgs/themes/light.png",
                     Name: "Lights",
                     Require : achievements.List.Pacman
                 }
