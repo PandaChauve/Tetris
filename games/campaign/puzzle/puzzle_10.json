@@ -1,0 +1,19 @@
+{
+  "grid": "campaign/puzzle/puzzle_10",
+  "rules": "fixedLarge",
+  "tetris": [
+    {
+      "mappings": [
+        "leftMapping",
+        "rightMapping"
+      ]
+    }
+  ],
+  "victory": {
+    "blocksLeft": 17,
+    "keep":12,
+    "score": 40
+  },
+  "next": "#!/campaign/challenges",
+  "require": "campaign/puzzle/puzzle_9"
+}

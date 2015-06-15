@@ -77,6 +77,7 @@ angular.module('angularApp.base').constant('map_hash', {
 	"e93a1b76159aec2ed94c6ef75f465ce1": "campaign/tetrisAttack/1/ta_1_8",
 	"669e64124b28b6c748cf0173457135b5": "campaign/tetrisAttack/1/ta_1_9",
 	"ab6f418a2e0607cb488f7499981215d4": "campaign/puzzle/puzzle_1",
+	"cc5fbbd28a282761cc20f3f0b345ef51": "campaign/puzzle/puzzle_10",
 	"090c08f5bd14d49adc73ae947142bc79": "campaign/puzzle/puzzle_2",
 	"f98f59378760c53236be72914517a510": "campaign/puzzle/puzzle_3",
 	"9b15e6c59843c92810b1621831e117ee": "campaign/puzzle/puzzle_4",
