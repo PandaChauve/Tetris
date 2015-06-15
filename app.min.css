@@ -173,20 +173,14 @@ canvas {
     cursor:pointer;
     width: 400px;
     margin-left: -200px;
-    background:#7A8288;
-    border:black;
-
 }
 .notification img{
     float:left;
-    border: 1px solid grey;
     width:60px;
 }
 .notification div span{
-    color:white;
     font-size:1.5em;
     line-height: 60px;
-
 }
 .mapNode{
     cursor: pointer;
@@ -279,24 +273,15 @@ canvas {
     margin:150px auto;
     height:150px;
 }
-.mycarousel h1{
-    color:white;
-}
 .mycarousel p{
     text-align: left;
-    color:white;
 }
 .carousel-control.left{
-    background-image: linear-gradient(to left, #7a8288 0px, rgb(39, 43, 48) 100%);
     cursor:pointer;
 }
 
 .carousel-control.right{
-    background-image: linear-gradient(to right, #7a8288 0px, rgb(39, 43, 48) 100%);
     cursor:pointer;
-}
-.carousel-inner{
-    background: #7a8288;
 }
 .disabledPanel{
     cursor:not-allowed;

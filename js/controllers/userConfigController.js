@@ -8,6 +8,9 @@ angular.module('angularApp.controllers')
                 storage.set("explosionEffect", false);
             }
 
+            $scope.cubeType = storage.get("UserCubeTheme") || 0;
+            $scope.selectedCss = storage.get("UserTheme") || "Slate";
+
             $scope.themes = [
                 {
                     Picture: "./Resources/imgs/placeholder.png",
@@ -65,10 +68,8 @@ angular.module('angularApp.controllers')
                 }
             };
 
-            $scope.cubeType = storage.get("UserCubeTheme");
 
 
-            $scope.selectedCss = storage.get("UserTheme") || "Slate";
             $scope.cssThemes = [$scope.selectedCss];
 
             $http.get("http://api.bootswatch.com/3/").success(function (data) {
@@ -92,7 +93,4 @@ angular.module('angularApp.controllers')
             };
             $timeout(function () {$('[data-toggle="tooltip"]').tooltip();}, 0);
 
-            if (!$scope.cubeType) {
-                $scope.updateStyle(0);
-            }
         }]);

@@ -228,7 +228,7 @@ angular.module('angularApp.factories')
 
         return {
             newRenderer: function newRenderer(cursorsCount, type) {
-                return new ThreeRenderer(cursorsCount, type);
+                return new ThreeRenderer(cursorsCount, type || 0);
             }
         };
     }]);
