@@ -7,51 +7,7 @@ angular.module('angularApp.controllers')
                 storage.set("soundEffect", false);
                 storage.set("explosionEffect", false);
             }
-            console.log(storage.get("scoreEffect"));
-            $scope.effects = {
-                scoreEffect: storage.get("scoreEffect"),
-                soundEffect: storage.get("soundEffect"),
-                explosionEffect: storage.get("explosionEffect")
-            };
 
-            $scope.updateCheckBox = function (name) {
-                storage.set(name, !$scope.effects[name]);
-            };
-            $scope.updateStyle = function (integer) {
-                if($scope.requireStatus($scope.themes[integer].Require)){
-                    $scope.cubeType = integer;
-                    storage.set("UserCubeTheme", $scope.cubeType);
-                }
-            };
-            $scope.cubeType = storage.get("UserCubeTheme");
-            if (!$scope.cubeType) {
-                $scope.updateStyle(0);
-            }
-
-
-            $scope.selectedCss = storage.get("UserTheme") || "Slate";
-            $scope.cssThemes = [$scope.selectedCss];
-
-            $http.get("http://api.bootswatch.com/3/").success(function (data) {
-                var themes = data.themes;
-                for(var i =0; i < themes.length; i+= 1){
-                    if(themes[i].name != $scope.cssThemes[0]){
-                        $scope.cssThemes.push(themes[i].name);
-                    }
-                }
-            });
-
-            $scope.requireText = function(key){
-                if(!$scope.requireStatus(key)){
-                    return "Unlocked by success : "+ achievements.List.getName(key);
-                }
-                return "";
-            };
-            $scope.requireStatus = function(key){
-                if(key === -1)
-                    return true;
-                return achievements.isWon(key);
-            };
             $scope.themes = [
                 {
                     Picture: "./Resources/imgs/placeholder.png",
@@ -86,10 +42,57 @@ angular.module('angularApp.controllers')
                     Require : achievements.List.Pacman
                 }
             ];
+            $scope.effects = {
+                scoreEffect: storage.get("scoreEffect"),
+                soundEffect: storage.get("soundEffect"),
+                explosionEffect: storage.get("explosionEffect")
+            };
+
+            $scope.updateCheckBox = function (name) {
+                storage.set(name, !$scope.effects[name]);
+            };
+
+            $scope.requireStatus = function(key){
+                if(key === -1)
+                    return true;
+                return achievements.isWon(key);
+            };
+
+            $scope.updateStyle = function (integer) {
+                if($scope.requireStatus($scope.themes[integer].Require)){
+                    $scope.cubeType = integer;
+                    storage.set("UserCubeTheme", $scope.cubeType);
+                }
+            };
+
+            $scope.cubeType = storage.get("UserCubeTheme");
+
+
+            $scope.selectedCss = storage.get("UserTheme") || "Slate";
+            $scope.cssThemes = [$scope.selectedCss];
+
+            $http.get("http://api.bootswatch.com/3/").success(function (data) {
+                var themes = data.themes;
+                for(var i =0; i < themes.length; i+= 1){
+                    if(themes[i].name != $scope.cssThemes[0]){
+                        $scope.cssThemes.push(themes[i].name);
+                    }
+                }
+            });
+
+            $scope.requireText = function(key){
+                if(!$scope.requireStatus(key)){
+                    return "Unlocked by success : "+ achievements.List.getName(key);
+                }
+                return "";
+            };
 
             $scope.loadStyle = function (style) {
                 userAccount.setTheme(style);
             };
             $timeout(function () {$('[data-toggle="tooltip"]').tooltip();}, 0);
 
+            if (!$scope.cubeType) {
+                $scope.updateStyle(0);
+            }
         }]);
