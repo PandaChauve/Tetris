@@ -33,6 +33,7 @@ angular.module('angularApp.factories')
             var y = 220 + 85 * (Math.floor(rad / 2) % 6) + 40 - 80 * Math.random();
             var x = ((rad % 2) ? -225 : 175)- 50 * Math.random();
 
+            var color = Math.random() * 0xffffff;
             if(!storage.get("scoreEffect")){
 
                 var text3d = new THREE.TextGeometry(v, {
@@ -41,7 +42,6 @@ angular.module('angularApp.factories')
                     curveSegments: 2,
                     font: "helvetiker"
                 });
-                var color = Math.random() * 0xffffff;
                 var textMaterial = new THREE.MeshBasicMaterial({color: color});
                 var ret = new THREE.Mesh(text3d, textMaterial);
 

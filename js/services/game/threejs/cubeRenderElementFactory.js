@@ -1,11 +1,11 @@
 angular.module('angularApp.factories')
     .factory('cubeRenderElementFactory', ['gameConstants', 'blockFactory', function cubeRenderElementFactoryCreator(gameConstants, blockFactory) {
         "use strict";
-
         function CubeRenderer() {
             this.cube = null;
             this.textures = {};
             this.colors = [];
+            this.cache = {'0':[],'1':[],'2':[],'3':[],'4':[],'5':[],'6':[]};
         }
 
         CubeRenderer.prototype.getHexColor = function getHexColor(type) {
@@ -34,7 +34,10 @@ angular.module('angularApp.factories')
         };
         CubeRenderer.prototype.updateCubeDisplay = function updateCubeDisplay(block) {
             var cube = block.threeObject;
-            cube.material.color = this.getColor(block.type);
+            if(block.type != cube.customColor){
+                cube.material.color = this.getColor(block.type);
+                cube.customColor = block.type;
+            }
             if (block.state === blockFactory.EState.Disappearing) {
                 cube.material.opacity = Math.max(1 - block.animationState / 100, 0);
                 cube.material.transparent = true;
@@ -49,7 +52,7 @@ angular.module('angularApp.factories')
                     emissive: this.getHexColor(color)
                 });
             }
-            return this.textures[color].clone();
+            return this.textures[color];
         };
 
         CubeRenderer.prototype.createGeometry = function (color) {
@@ -57,16 +60,24 @@ angular.module('angularApp.factories')
                 var size = gameConstants.pixelPerBox * (0.7);
                 this.cube = new THREE.BoxGeometry(size, size, gameConstants.pixelPerBox / 5);
             }
-            return this.cube.clone();
+            return this.cube;
         };
-
+        CubeRenderer.prototype.releaseCube = function(cube){
+            cube.material.opacity = 1;
+            this.cache[cube.customColor].push(cube);
+        };
         CubeRenderer.prototype.createCube = function (color) {
-            var r = new THREE.Mesh(this.createGeometry(color).clone(), this.createTexture(color).clone());
+            if(this.cache[color].length > 0 ){
+                return this.cache[color].pop();
+            }
+            var r = new THREE.Mesh(this.createGeometry(color), this.createTexture(color).clone());
             r.customObject = true;
+            r.customColor = color;
             return r;
         };
 
         function SubDivisionCubeRenderer(i) {
+            CubeRenderer.call( this );
             this.divisions = i;
         }
 
@@ -78,10 +89,11 @@ angular.module('angularApp.factories')
                 var m = new THREE.SubdivisionModifier(this.divisions);
                 m.modify(this.cube);
             }
-            return this.cube.clone();
+            return this.cube;
         };
 
         function RandomCubeRenderer() {
+            CubeRenderer.call( this );
             this.cubes = {};
         }
 
@@ -94,10 +106,11 @@ angular.module('angularApp.factories')
                 m.modify(this.cubes[color]);
             }
 
-            return this.cubes[color].clone();
+            return this.cubes[color];
         };
 
         function LightCubeRenderer() {
+            CubeRenderer.call( this );
             this.cubes = {};
         }
 
@@ -110,7 +123,14 @@ angular.module('angularApp.factories')
             }
             att.size.needsUpdate = true;
         };
+        LightCubeRenderer.prototype.releaseCube = function(cube){
+            cube.material.opacity = 1;
+            this.cache[cube.customColor].push(cube);
+        };
         LightCubeRenderer.prototype.createCube = function (color) {
+            if(this.cache[color].length > 0){
+                return this.cache[color].pop();
+            }
             if (!this.cubes[color]) {
                 var attributes = {
                     size: {type: 'f', value: []},
@@ -151,7 +171,10 @@ angular.module('angularApp.factories')
                     values_color[v] = this.getColor(color);
                 }
             }
-            return this.cubes[color].clone();
+            var ret = this.cubes[color].clone();
+            ret.customObject = true;
+            ret.customColor = color;
+            return ret;
         };
 
         return {

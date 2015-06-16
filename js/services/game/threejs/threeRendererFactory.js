@@ -17,7 +17,8 @@ angular.module('angularApp.factories')
             this.id = String.fromCharCode(65 + Math.floor(Math.random() * 26)) + Date.now();
 
             this.scene = this.createScene();
-            this.cubeFactory = cubeRenderElementFactory.createFactory(type);
+            this.type = type;
+            this.cubeFactory = cubeRenderElementFactory.createFactory(this.type);
         }
 
         ThreeRenderer.prototype.clear = function () {
@@ -25,22 +26,12 @@ angular.module('angularApp.factories')
                 if(this.scene.children[i].customObject){
                     var obj = this.scene.children[i];
                     this.scene.remove(obj);
-                    if(obj.geometry)
-                    {
-                        obj.geometry.dispose();
-                    }
-                    if(obj.material){
-                        if(obj.material.map){
-                            obj.material.map.dispose();
-                        }
-                        obj.material.dispose();
-                    }
-                    obj.dispatchEvent({type:"dispose"});
+                    this.cubeFactory.releaseCube(obj);
                 }
             }
+            this.cubeFactory = cubeRenderElementFactory.createFactory(this.type);
             this.scene = null;
             this.camera = null;
-            this.cursor = null;
             this.renderer = null;
         };
 
@@ -146,6 +137,7 @@ angular.module('angularApp.factories')
 
             if (block.animationState > 100) {
                 this.scene.remove(cube);
+                this.cubeFactory.releaseCube(cube);
                 block.id = -1;
                 block.threeObject = null;
             }
