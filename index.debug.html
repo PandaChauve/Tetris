@@ -76,8 +76,11 @@
     </div>
 </nav>
 <div ng-view></div>
-<div style="position:fixed; bottom:0; height:25px; line-height:25px; text-align:center; color:black;background:orangered; width:100%">This site is still in alpha stage ! Please report any bug <a href="https://github.com/PandaChauve/Tetris/issues">here</a></div>
-
+<footer class="well" id="footer">
+    <div class="container">
+        <p>BETA VERSION <a href="https://github.com/PandaChauve/Tetris/issues">Bug/Request</a> <a>Contact</a> <a href="#!/about">About</a></p>
+    </div>
+</footer>
 <!-- fixme merge that and put licenses in a separate file -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" language="JavaScript"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js" language="JavaScript"></script>
@@ -105,6 +108,7 @@
 <script language="JavaScript" src="js/controllers/endGameModalController.js"></script>
 <script language="JavaScript" src="js/controllers/achievementsController.js"></script>
 <script language="JavaScript" src="js/controllers/clickInputController.js"></script>
+<script language="JavaScript" src="js/controllers/rulesController.js"></script>
 <script language="JavaScript" src="js/controllers/userAccountController.js"></script>
 <script language="JavaScript" src="js/controllers/userConfigController.js"></script>
 <script language="JavaScript" src="js/directives/ngEnter.js"></script>

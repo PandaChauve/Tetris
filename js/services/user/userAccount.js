@@ -97,7 +97,11 @@ angular.module('angularApp.factories')
         };
         User.prototype.loadTheme = function(){
             var t = storage.get("UserTheme") || "slate";
-            $("#switchableTheme").attr("href", "http://bootswatch.com/"+ t.toLowerCase()+"/bootstrap.min.css");
+            var cur = $("#switchableTheme").attr("href");
+            if(cur !== "http://bootswatch.com/"+ t.toLowerCase()+"/bootstrap.min.css")
+            {
+                $("#switchableTheme").attr("href", "http://bootswatch.com/"+ t.toLowerCase()+"/bootstrap.min.css");
+            }
         };
 
         User.prototype.setTheme = function(style){

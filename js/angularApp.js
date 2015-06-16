@@ -47,6 +47,7 @@ angularApp.config(['$routeProvider', '$locationProvider',
                 }).
                 when('/rules', {
                     templateUrl: 'templates/rules.html',
+                    controller: 'RulesCtrl',
                     resolve: {
                         user : ['userAccount', function(userAccount){
                             "use strict";
