@@ -30,7 +30,7 @@ angular.module('angularApp.controllers')
                     Require : achievements.List.RetroGamer
                 }
                 , {
-                    Picture: "resources/imgs/themes/candy.png",
+                    Picture: "resources/imgs/themes/candyhd.png",
                     Name: "Candy HD",
                     Require : achievements.List.Sherlock
                 }
