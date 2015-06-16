@@ -87,7 +87,6 @@ angular.module('angularApp.factories')
             localStorage.removeItem("Usr_LastUserId");
             this.login = null;
             storage.unload();
-            this.loadTheme();
             this.broadcast();
             $window.location.href = "#!/";
             $window.location.reload();
