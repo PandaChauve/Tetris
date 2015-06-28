@@ -2,7 +2,7 @@
 angular.module('angularApp.base', ['cgNotify']);
 angular.module('angularApp.factories', ['angularApp.base']);
 angular.module('angularApp.controllers', ['ui.bootstrap', 'angularApp.factories']);
-angular.module('angularApp.directives', ['angularApp.base', 'angularApp.factories']);
+angular.module('angularApp.directives', ['ngTouch', 'angularApp.base', 'angularApp.factories']);
 
 var angularApp = angular.module('angularApp', [
     'ngRoute',

@@ -1,5 +1,5 @@
 angular.module('angularApp.controllers')
-    .controller('UserConfigCtrl', ['$scope', '$http', '$timeout', 'userAccount', 'storage','achievements',
+.controller('UserConfigCtrl', ['$scope', '$http', '$timeout', 'userAccount', 'storage','achievements',
         function ($scope, $http, $timeout, userAccount, storage, achievements) {
             "use strict";
             if (storage.get("scoreEffect") == null) {
@@ -68,18 +68,31 @@ angular.module('angularApp.controllers')
                 }
             };
 
-
-
+            var themes = [
+                "Cerulean",
+                "Cosmo",
+                "Cyborg",
+                "Darkly",
+                "Flatly",
+                "Journal",
+                "Lumen",
+                "Paper",
+                "Readable",
+                "Sandstone",
+                "Simplex",
+                "Slate",
+                "Spacelab",
+                "Superhero",
+                "United",
+                "Yeti"
+            ];
             $scope.cssThemes = [$scope.selectedCss];
-
-            $http.get("http://api.bootswatch.com/3/").success(function (data) {
-                var themes = data.themes;
-                for(var i =0; i < themes.length; i+= 1){
-                    if(themes[i].name != $scope.cssThemes[0]){
-                        $scope.cssThemes.push(themes[i].name);
-                    }
+            for(var i =0; i < themes.length; i+= 1){
+                if(themes[i] != $scope.cssThemes[0]){
+                    $scope.cssThemes.push(themes[i]);
                 }
-            });
+            }
+
 
             $scope.requireText = function(key){
                 if(!$scope.requireStatus(key)){

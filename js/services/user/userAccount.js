@@ -97,11 +97,8 @@ angular.module('angularApp.factories')
         };
         User.prototype.loadTheme = function(){
             var t = storage.get("UserTheme") || "slate";
-            var cur = $("#switchableTheme").attr("href");
-            if(cur !== "http://bootswatch.com/"+ t.toLowerCase()+"/bootstrap.min.css")
-            {
-                $("#switchableTheme").attr("href", "http://bootswatch.com/"+ t.toLowerCase()+"/bootstrap.min.css");
-            }
+            $("#switchableTheme").attr("href", "bootswatch/"+ t.toLowerCase()+".min.css");
+
         };
 
         User.prototype.setTheme = function(style){
