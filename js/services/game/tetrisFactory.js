@@ -14,7 +14,7 @@ angular.module('angularApp.factories')
                 cursors = 1;
             }
             for (var i = 0; i < cursors; i += 1) {
-                this.cursor.push({x: 2 + i * 2, y: gameConstants.hiddenRowCount});
+                this.cursor.push({x: 2 + i * 2, y: gameConstants.hiddenRowCount + gameConstants.displayedRowCount/2});
             }
 
             this.swapCount = 0;
