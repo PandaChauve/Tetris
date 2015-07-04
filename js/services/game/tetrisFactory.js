@@ -25,6 +25,38 @@ angular.module('angularApp.factories')
             this.tics = 0;
         }
 
+        Tetris.prototype.slide = function(startX, startY, endX, endY) {
+        //FIXME this is related to the rendering cause pixelperbox is not the displayed value :/
+            var that = this;
+            function findStartingBlockI(startX){
+                //this is for a size 10 grid
+                startX -= 10; //left margin
+                startX = startX / 43; //about 43 per block
+                startX -= (10 - gameConstants.columnCount) / 2;
+                return Math.floor(startX); //math inf float
+            }
+
+            function findStartingBlockJ(startY){
+                startY -= 95;
+                startY -= that.groundPos/gameConstants.pixelPerBox*43;
+                startY = startY / 43;
+                startY += gameConstants.hiddenRowCount;
+                return Math.floor(startY);
+            }
+
+            var i = findStartingBlockI(startX);
+            var j = findStartingBlockJ(startY);
+            if(startX > endX){ //always swap the left one
+                i = i - 1;
+            }
+            if(i < 0 || j < gameConstants.hiddenRowCount){
+                return;
+            }
+            if (this.grid.swap(i, j)) {
+                this.swapCount += 1;
+            }
+        };
+
         Tetris.prototype.oneTick = function () {
 
             //check if don't have new successful combo

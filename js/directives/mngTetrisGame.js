@@ -4,12 +4,19 @@ angular.module('angularApp.directives').directive("mngTetrisGame", ['$swipe', 'g
     return {
         restrict: "A",
         link: function(scope, element, attrs){
+            var startX, startY, endX, endY;
+
             $swipe.bind(element, {
                 'start': function(coords) {
-                    console.log(coords);
+                    var bound = element[0].getBoundingClientRect();
+                    startX = coords.x - bound.left;
+                    startY = coords.y - bound.top;
                 },
                 'end': function(coords) {
-                    console.log(coords);
+                    var bound = element[0].getBoundingClientRect();
+                    endX = coords.x - bound.left;
+                    endY = coords.y - bound.top;
+                    game.slide(startX, 600 - startY, endX, 600 - endY); //FIXME 600 is canvas height
                 }
             });
             game.linkToDom(element[0], attrs.mngTetrisGame);

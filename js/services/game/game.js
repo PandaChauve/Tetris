@@ -221,5 +221,12 @@ angular.module('angularApp.factories')
                 }
             };
 
+            Game.prototype.slide = function(startX, startY, endX, endY){
+                if(this.tetris.length != 1){
+                    return;
+                }
+                this.tetris[0].slide(startX, startY, endX, endY);
+            };
+
             return new Game();
         }]);
