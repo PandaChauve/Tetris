@@ -1,32 +1,14 @@
 <div class="container" ng-if="!config.splitScreen">
 
     <div class="row">
-        <div id="game" class="gameHolder well col-lg-5 col-lg-push-3 col-md-push-4 col-md-8 col-sm-12 col-xs-12">
-            <canvas mng-tetris-game="0" ></canvas>
-        </div>
-
-        <div id="control" ng-controller="ClickInputCtrl" class="col-lg-3 col-lg-pull-5 col-md-pull-8 col-md-4 col-sm-12 col-xs-12 ">
-            <br/>
-            <br/>
-            <button id="moveUp" type="button" class="btn btn-default" ng-click="fireKey(90)">Up</button>
-            <br/>
-            <button id="moveLeft" type="button" class="btn btn-default" ng-click="fireKey(81)">Left</button>
-            <button id="swapBtn" type="button" class="btn btn-default" ng-click="fireKey(32)">Swap</button>
-            <button id="moveRight" type="button" class="btn btn-default" ng-click="fireKey(68)">Right</button>
-            <br/>
-            <button id="moveDown" type="button" class="btn btn-default" ng-click="fireKey(83)">Down</button>
-            <br/><br/>
-            <br/>
-
-            <div id="gameMenu"> <!--FIXME why does ng-click create a focus effect on buttons and not on div ? -->
-                <div type="button" class="btn btn-danger" ng-click="reset()" style="width:80px">Retry</div>
-                <div type="button" class="btn btn-success" ng-click="pause.toggle()" style="width:80px"><span
-                        ng-if="!pause.active">Pause</span><span ng-if="pause.active">Play</span></div>
+        <div class="col-md-8 col-sm-12" style="text-align:center">
+            <div id="game" class="well gameHolder">
+                <canvas mng-tetris-game="0" ></canvas>
             </div>
         </div>
-
-        <div class=" col-lg-3 col-md-8 col-lg-push-0 col-md-push-4 col-sm-12 col-xs-12 ">
+        <div class="col-md-4 col-sm-12 ">
             <div class="gameDetails jumbotron" ng-controller="GameStateCtrl">
+                <br />
                 <div class="gameDetailsElement">
                     <h3>Score</h3>
                     <span id="score">{{state.score}}</span>
@@ -47,6 +29,11 @@
                         </ul>
                     </div>
                 </div>
+            </div>
+            <div id="gameMenu"> <!--FIXME why does ng-click create a focus effect on buttons and not on div ? -->
+                <div type="button" class="btn btn-danger" ng-click="reset()" style="width:80px">Retry</div>
+                <div type="button" class="btn btn-success" ng-click="pause.toggle()" style="width:80px"><span
+                        ng-if="!pause.active">Pause</span><span ng-if="pause.active">Play</span></div>
             </div>
         </div>
     </div>
