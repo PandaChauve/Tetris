@@ -3,7 +3,8 @@ angular.module('angularApp.factories')
         function threeRendererFactoryCreator(gameConstants, blockFactory, cubeRenderElementFactory, scoreRenderElementFactory) {
             "use strict";
 
-        function ThreeRenderer(cursors, type) {
+        function ThreeRenderer(cursors, type, scale) {
+            this.scale = +scale;
             this.mode = +type;
             if (cursors === undefined) {
                 cursors = 1;
@@ -66,7 +67,7 @@ angular.module('angularApp.factories')
         };
 
         ThreeRenderer.prototype.createCamera = function () {
-            var camera = new THREE.PerspectiveCamera(75, 448 / 600, 0.3, 1000);
+            var camera = new THREE.PerspectiveCamera(75, 448*this.scale / 600, 0.3, 1000);
             camera.position.z = 450;
             camera.position.x = -27;
             camera.position.y = 410;
@@ -76,7 +77,7 @@ angular.module('angularApp.factories')
         ThreeRenderer.prototype.createRenderer = function (canvas) {
             var renderer = new THREE.WebGLRenderer({canvas: canvas, antialias: true});
             renderer.setClearColor(0x000000);
-            renderer.setSize(448, 600);
+            renderer.setSize(448*this.scale, 600);
             renderer.shadowMapEnabled = true;
             renderer.shadowMapSoft = true;
             return renderer;
@@ -236,8 +237,8 @@ angular.module('angularApp.factories')
         };
 
         return {
-            newRenderer: function newRenderer(cursorsCount, type) {
-                return new ThreeRenderer(cursorsCount, type || 0);
+            newRenderer: function newRenderer(cursorsCount, type, scale) {
+                return new ThreeRenderer(cursorsCount, type || 0, scale || 1);
             }
         };
     }]);

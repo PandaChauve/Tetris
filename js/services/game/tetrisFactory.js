@@ -60,7 +60,7 @@ angular.module('angularApp.factories')
         Tetris.prototype.oneTick = function () {
 
             //check if don't have new successful combo
-            this.score += this.grid.evaluate(this.stats);
+            this.score += this.grid.evaluate();
 
             //user input
             this.handleUserInput();
@@ -144,8 +144,8 @@ angular.module('angularApp.factories')
         };
 
         return {
-            newTetris : function(grid, cursors, stats){
-                return new Tetris(grid, cursors, stats);
+            newTetris : function(grid, cursors){
+                return new Tetris(grid, cursors);
             }
         };
     }]);

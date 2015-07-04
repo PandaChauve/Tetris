@@ -76,11 +76,11 @@ angular.module('angularApp.factories')
                 userStats.getCurrentGame().gameCount += 1;
 
                 for (var i = 0; i < this.gridCount; i += 1) {
-                    this.tetris.push(tetrisFactory.newTetris(this.grid, this.config.tetris[i].cursors, this.stats));
+                    this.tetris.push(tetrisFactory.newTetris(this.grid, this.config.tetris[i].cursors));
                     for (var j = 0; j < this.config.tetris[i].mappings.length; j += 1) {
                         this.tetris[i].keyBoardMappings.push(userInput.getMapping(this.config.tetris[i].mappings[j]));
                     }
-                    this.visual.push(threeRendererFactory.newRenderer(this.config.tetris[i].cursors, storage.get("UserCubeTheme")));
+                    this.visual.push(threeRendererFactory.newRenderer(this.config.tetris[i].cursors, storage.get("UserCubeTheme"), this.availableGrids[0].scale)); //FIXME [0]
                     this.visual[i].linkDom(findDom(this.availableGrids, i));
                     this.visual[i].renderTetris(this.tetris[i], []); //first render before loop to get everything smooth
                 }
@@ -115,10 +115,11 @@ angular.module('angularApp.factories')
                 this.startNewGame();
             };
 
-            Game.prototype.linkToDom = function linkToDom(node, id) {
+            Game.prototype.linkToDom = function linkToDom(node, id, scale) {
                 this.availableGrids.push({
                     id: id,
-                    node: node
+                    node: node,
+                    scale: scale
                 });
 
                 this.tryToStart();
