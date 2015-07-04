@@ -20,7 +20,7 @@ module.exports = function(grunt) {
                 separator: ';'
             },
             dist: {
-                src: ['min/angularApp.min.js', 'min/*min.js'],
+                src: ['min/ext-jquery*.min.js','min/ext-three*.min.js','min/ext-angular-*.min.js','min/ext-*.min.js', 'min/angularApp.min.js', 'min/*.min.js'],
                 dest: 'app.min.js'
             },
             css: {

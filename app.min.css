@@ -81,7 +81,14 @@
     clip: rect(0,0,0,0);
     border: 0;
 }
-;html {
+;@font-face {
+    font-family: 'Architects Daughter';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Architects Daughter'), local('ArchitectsDaughter'), url(http://fonts.gstatic.com/s/architectsdaughter/v6/RXTgOOQ9AAtaVOHxx0IUBM3t7GjCYufj5TXV5VnA2p8.woff2) format('woff2'), url(http://fonts.gstatic.com/s/architectsdaughter/v6/RXTgOOQ9AAtaVOHxx0IUBOkI_DLF4EgbZt3mhU8gQFo.woff) format('woff');
+}
+
+html {
     overflow-y: scroll;
 }
 
