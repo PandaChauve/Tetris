@@ -49,7 +49,7 @@ angular.module('angularApp.factories')
             if(startX > endX){ //always swap the left one
                 i = i - 1;
             }
-            if(i < 0 || j < gameConstants.hiddenRowCount){
+            if(i < 0 || j < gameConstants.hiddenRowCount || i >= gameConstants.columnCount){
                 return;
             }
             if (this.grid.swap(i, j)) {

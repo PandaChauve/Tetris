@@ -1,12 +1,21 @@
 
-angular.module('angularApp.directives').directive("mngTetrisGame", ['$swipe', 'game','audio', function($swipe, game, audio){
+angular.module('angularApp.directives').directive("mngTetrisGame", ['$swipe', 'game','audio', 'userInput', function($swipe, game, audio, userInput){
     "use strict";
     return {
         restrict: "A",
         link: function(scope, element, attrs){
             var startX, startY, endX, endY;
             var scale = 1;
-            var width = 448;
+            var lastClick = -1;
+
+            var tap = function(){
+                var current = new Date().getTime();
+                if(current - lastClick < 300){
+                    userInput.press(13);
+                }
+                lastClick = current;
+            };
+            element.bind('click', tap);
 
             if(document.documentElement.clientWidth < 448)//FIXME magic number
             {
@@ -23,7 +32,9 @@ angular.module('angularApp.directives').directive("mngTetrisGame", ['$swipe', 'g
                     var bound = element[0].getBoundingClientRect();
                     endX = coords.x - bound.left;
                     endY = coords.y - bound.top;
-                    game.slide(startX/scale, 600 - startY, endX/scale, 600 - endY); //FIXME 600 is canvas height
+                    if(Math.abs(startX - endX)/scale > 30){
+                        game.slide(startX/scale, 600 - startY, endX/scale, 600 - endY); //FIXME 600 is canvas height
+                    }
                 }
             });
             game.linkToDom(element[0], attrs.mngTetrisGame, scale);
