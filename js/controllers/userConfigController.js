@@ -8,6 +8,10 @@ angular.module('angularApp.controllers')
                 storage.set("explosionEffect", false);
             }
 
+            if (storage.get("UserZoomConfig") == null) {
+                storage.set("UserZoomConfig", 2);
+            }
+            $scope.zoom = storage.get("UserZoomConfig");
             $scope.cubeType = storage.get("UserCubeTheme") || 0;
             $scope.selectedCss = storage.get("UserTheme") || "Slate";
 
@@ -99,6 +103,11 @@ angular.module('angularApp.controllers')
                     return "Unlocked by success : "+ achievements.List.getName(key);
                 }
                 return "";
+            };
+
+            $scope.updateZoom = function(val){
+                $scope.zoom = val;
+                storage.set("UserZoomConfig", $scope.zoom);
             };
 
             $scope.loadStyle = function (style) {

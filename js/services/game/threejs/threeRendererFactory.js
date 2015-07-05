@@ -3,9 +3,10 @@ angular.module('angularApp.factories')
         function threeRendererFactoryCreator(gameConstants, blockFactory, cubeRenderElementFactory, scoreRenderElementFactory) {
             "use strict";
 
-        function ThreeRenderer(cursors, type, scale) {
+        function ThreeRenderer(cursors, type, scale, zoom) {
             this.scale = +scale;
             this.mode = +type;
+            this.zoom = zoom;
             if (cursors === undefined) {
                 cursors = 1;
             }
@@ -54,7 +55,7 @@ angular.module('angularApp.factories')
             var geometry = new THREE.BoxGeometry(1000, 3, 3);
             var material = new THREE.MeshPhongMaterial({color: 0x330000, emissive: 0x990000});
             var line = new THREE.Mesh(geometry, material);
-            line.position.set(0, (gameConstants.hiddenRowCount + gameConstants.displayedRowCount) * gameConstants.pixelPerBox, 10);
+            line.position.set(0, (gameConstants.hiddenRowCount + gameConstants.displayedRowCount) * gameConstants.pixelPerBox -27, 10);
             scene.add(line);
 
             geometry = new THREE.BoxGeometry(1000, 3, 3);
@@ -67,10 +68,10 @@ angular.module('angularApp.factories')
         };
 
         ThreeRenderer.prototype.createCamera = function () {
-            var camera = new THREE.PerspectiveCamera(75, 448*this.scale / 600, 0.3, 1000);
+            var camera = new THREE.PerspectiveCamera(this.zoom ? 65 : 75, 448*this.scale / 600, 0.3, 1000);
             camera.position.z = 450;
             camera.position.x = -27;
-            camera.position.y = 410;
+            camera.position.y = this.zoom ? 440: 410;
             return camera;
         };
 
@@ -237,8 +238,9 @@ angular.module('angularApp.factories')
         };
 
         return {
-            newRenderer: function newRenderer(cursorsCount, type, scale) {
-                return new ThreeRenderer(cursorsCount, type || 0, scale || 1);
+            newRenderer: function newRenderer(cursorsCount, type, scale, zoom) {
+                var z = (zoom === 1 || (zoom === 2 && document.documentElement.clientWidth < 970)); // 0 never , 1 always, 2 auto //FIXME magic 800
+                return new ThreeRenderer(cursorsCount, type || 0, scale || 1, gameConstants.columnCount < 8 && z);
             }
         };
     }]);

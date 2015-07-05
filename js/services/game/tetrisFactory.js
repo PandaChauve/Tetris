@@ -3,10 +3,13 @@
  */
 
 angular.module('angularApp.factories')
-    .factory('tetrisFactory', ['gameConstants', 'userInput', 'gridFactory', function tetrisFactoryCreator(gameConstants, userInput, gridFactory) {
+    .factory('tetrisFactory', ['gameConstants', 'userInput', 'gridFactory', 'storage', function tetrisFactoryCreator(gameConstants, userInput, gridFactory, storage) {
         'use strict';
 
         function Tetris(grid, cursors) {
+            var zoom = storage.get("UserZoomConfig") || 2;
+            zoom = gameConstants.columnCount < 8 && (zoom === 1 || (zoom === 2 && document.documentElement.clientWidth < 970)); // 0 never , 1 always, 2 auto //FIXME magic 800
+            this.zoom = zoom;
             this.grid = gridFactory.newGrid(grid);
             this.score = 0;
             this.cursor = [];
@@ -29,17 +32,30 @@ angular.module('angularApp.factories')
         //FIXME this is related to the rendering cause pixelperbox is not the displayed value :/
             var that = this;
             function findStartingBlockI(startX){
-                //this is for a size 10 grid
-                startX -= 10; //left margin
-                startX = startX / 43; //about 43 per block
-                startX -= (10 - gameConstants.columnCount) / 2;
+                if(that.zoom){ //this is for a size 6 grid zoomed
+                    startX -= 73; //left margin
+                    startX = startX / 50; //about 43 per block
+                    startX -= (6 - gameConstants.columnCount) / 2;
+                }
+                else{ //this is for a size 10 grid
+                    startX -= 10; //left margin
+                    startX = startX / 43; //about 43 per block
+                    startX -= (10 - gameConstants.columnCount) / 2;
+                }
                 return Math.floor(startX); //math inf float
             }
 
             function findStartingBlockJ(startY){
-                startY -= 95;
-                startY -= that.groundPos/gameConstants.pixelPerBox*43;
-                startY = startY / 43;
+                if(that.zoom){
+                    startY -= 25;
+                    startY -= that.groundPos/gameConstants.pixelPerBox*50;
+                    startY = startY / 50;
+                }
+                else{
+                    startY -= 95;
+                    startY -= that.groundPos/gameConstants.pixelPerBox*43;
+                    startY = startY / 43;
+                }
                 startY += gameConstants.hiddenRowCount;
                 return Math.floor(startY);
             }
