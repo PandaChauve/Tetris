@@ -9,21 +9,42 @@
 
             <p>The concept is quite simple, you can swap blocks horizontaly, when 3 or more blocks of a same color are
                 aligned (verticaly or horizontaly) they're destroyed.</p>
-            <blockquote class="pull-right">
+
+
+            <blockquote class="">
                 <p>You will lose !</p>
                 <small>Sylvain C. in <cite title="Source Title">WWYL</cite></small>
             </blockquote>
+
+            <div class="well clear" style="text-align: center; width:440px; margin:auto">
+                <video id="example_video_1" poster="resources/imgs/basicDemo.png" class="video-js vjs-default-skin"
+                       controls preload="none" width="400"
+                       height="330"
+                       data-setup='{ "controlBar": { "muteToggle": false, "VolumeLevel": false } } '>
+                    <source src="resources/video/basicDemo.mp4" type='video/mp4'/>
+                    <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web
+                        browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5
+                            video</a></p>
+                </video>
+                <br/>
+
+                <p class="text-muted">Basic concept overview - Theme Slate - Plain cubes</p>
+            </div>
         </div>
         <div class="row">
 
             <h1 class="page-header" id="keys">Keys</h1>
+
             <p>There is two sets of key available. In single player game you can use a mix of each set.</p>
+
+            <p>Mobile users can swap the blocks by draging them left or right.</p>
             <table class="table table-striped table-hover ">
                 <thead>
                 <tr>
                     <th>Action</th>
                     <th>Main / Player 1</th>
                     <th>Secondary / Player 2</th>
+                    <th>Mobile / Mouse</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -31,37 +52,44 @@
                     <td>Up</td>
                     <td><kbd>Z</kbd></td>
                     <td><kbd>↑</kbd></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>Down</td>
                     <td><kbd>S</kbd></td>
                     <td><kbd>↓</kbd></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>Left</td>
                     <td><kbd>Q</kbd></td>
                     <td><kbd>←</kbd></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>Right</td>
                     <td><kbd>D</kbd></td>
                     <td><kbd>↓</kbd></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>Swap</td>
                     <td><kbd>Space bar</kbd></td>
                     <td><kbd>0 (num)</kbd></td>
+                    <td>Drag</td>
                 </tr>
                 <tr>
                     <td>Speed up</td>
                     <td><kbd>A</kbd></td>
                     <td><kbd>Enter</kbd></td>
+                    <td>Double tap</td>
                 </tr>
                 </tbody>
             </table>
         </div>
         <div class="row">
             <h1 class="page-header" id="scores">Score & points</h1>
+
             <p>The basic unit is the line, to create one you need 3 blocks aligned.</p>
 
             <p>Each line is worth one point. Each additional block on a line is 1 point (a line of 5 blocks is 3
@@ -75,11 +103,26 @@
                 by
                 the number of lines. The same effect is applied if you create lines with falling blocks.</p>
 
+            <div class="well clear" style="text-align: center; width:440px; margin:auto">
+                <video id="example_video_1" poster="resources/imgs/scores.png" class="video-js vjs-default-skin"
+                       controls preload="none" width="400"
+                       height="330"
+                       data-setup='{ "controlBar": { "muteToggle": false, "VolumeLevel": false } } '>
+                    <source src="resources/video/scores.mp4" type='video/mp4'/>
+                    <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web
+                        browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5
+                            video</a></p>
+                </video>
+                <br/>
+
+                <p class="text-muted">Scores in practice - Theme Unity - Candy HD</p>
+            </div>
         </div>
         <div class="row">
             <h1 class="page-header" id="single">
                 Single player modes
             </h1>
+
             <h2>Arcade</h2>
 
             <h3>Classic</h3>
@@ -91,10 +134,23 @@
                 speed key to insure a sufficient block pool for your combos. When the game start to be too fast for you,
                 focus on destroying small blocks, the more you play the more you score !</p>
 
+            <div class="well clear" style="text-align: center; width:440px; margin:auto">
+                <img src="resources/imgs/modes/classic.png"/>
+
+                <p class="text-muted">Classic - Theme Superhero - Mines</p>
+            </div>
             <h3>Wide/Narrow</h3>
 
             <p>The classic mode is too easy ? Try one of these one, it's the same in a different grid.</p>
 
+            <div class="well clear" style="text-align: center; width:440px; margin:auto">
+                <img src="resources/imgs/modes/wide.png"/>
+
+                <p class="text-muted">Wide - Theme Cyborg - Fancy cubes</p>
+                <img src="resources/imgs/modes/narrow.png"/>
+
+                <p class="text-muted">Narrow - Theme Flatly - Smash bros</p>
+            </div>
             <h3>Crazy</h3>
 
             <p>Not yet implemented, come back later :)</p>
@@ -105,6 +161,11 @@
                 "Speed
                 up" key to add new lines to the grid.</p>
 
+            <div class="well clear" style="text-align: center; width:440px; margin:auto">
+                <img src="resources/imgs/modes/sandbox.png"/>
+
+                <p class="text-muted">Sandbox - Theme Simplex - Lights</p>
+            </div>
             <h2>Campaign</h2>
 
             <h3>Challenges</h3>
@@ -134,7 +195,7 @@
         </div>
         <div class="row">
             <h1 class="page-header" id="multi">Multiplayer modes</h1>
-
+            <p class="text-muted">You can't play them on mobile device.</p>
             <h2>Split screen</h2>
 
             <p>Same rules as the single player mode "Classic" with 2 players. Each time you score 3 points, some blocks
@@ -149,7 +210,7 @@
 
     </div>
     <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top col-md-3 col-md-offset-1">
-        <ul class="nav"  style="position: fixed; top:100px">
+        <ul class="nav" style="position: fixed; top:100px">
             <li class="">
                 <a href="" ng-click="gotoAnchor('WWYL')">WWYL</a>
             </li>
@@ -169,3 +230,8 @@
 
     </nav>
 </div>
+
+<script src="video-js/video.js"></script>
+<script>
+    videojs.options.flash.swf = "video-js/video-js.swf";
+</script>
