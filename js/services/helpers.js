@@ -14,6 +14,10 @@ angular.module('angularApp.factories')
         }
 
         function timeFromTics(totaTics) {
+            if(isNaN(totaTics))
+            {
+                return "";
+            }
             var totalSec = Math.floor(totaTics / TIC_PER_SEC);
             var minutes = Math.floor(totalSec / SEC_PER_MIN);
             var seconds = totalSec % SEC_PER_MIN;
