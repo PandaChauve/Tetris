@@ -68,7 +68,7 @@ angular.module('angularApp.factories')
         };
 
         ThreeRenderer.prototype.createCamera = function () {
-            var camera = new THREE.PerspectiveCamera(this.zoom ? 65 : 75, 448*this.scale / 600, 0.3, 1000);
+            var camera = new THREE.PerspectiveCamera(this.zoom ? 65 : 75, 448 / 600, 0.3, 1000);
             camera.position.z = 450;
             camera.position.x = -27;
             camera.position.y = this.zoom ? 440: 410;
