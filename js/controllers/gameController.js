@@ -64,7 +64,7 @@ angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$htt
                 storage.set("UserMap"+$scope.gameName, true, false);
             }
             userStats.getCurrentGame().setTime(finishedGame.tics);
-            userStats.getCurrentGame().setSwaps(finishedGame.tetris[0].swapCount);
+            userStats.getCurrentGame().setSwaps(finishedGame.tetris[0].counters.swap);
             userStats.addGame(userStats.getCurrentGame(), $scope.gameName);
             achievements.check(userStats.getCurrentGame(), $scope.gameName);
             if(userAccount.isRegistered()){

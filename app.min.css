@@ -113,7 +113,7 @@
 .row .gameDetails {
     font-family: 'Architects Daughter', cursive;
     max-width: 300px;
-    height: 500px;
+    min-height: 500px;
     margin: 10px auto;
     padding:0;
 }

@@ -20,7 +20,7 @@ angular.module('angularApp.factories')
                 this.cursor.push({x: 2 + i * 2, y: gameConstants.hiddenRowCount + gameConstants.displayedRowCount/2});
             }
 
-            this.swapCount = 0;
+            this.counters = {swap : 0, move: 0, speed : 0} ;
             this.groundSpeed = gameConstants.groundSpeedPerTic;
             this.baseGroundSpeed = gameConstants.groundSpeedPerTic;
             this.groundPos = 0;
@@ -69,7 +69,7 @@ angular.module('angularApp.factories')
                 return;
             }
             if (this.grid.swap(i, j)) {
-                this.swapCount += 1;
+                this.counters.swap += 1;
             }
         };
 
@@ -117,7 +117,10 @@ angular.module('angularApp.factories')
         };
 
         Tetris.prototype.getSwaps = function () {
-            return this.swapCount;
+            return this.counters.swap;
+        };
+        Tetris.prototype.getActions = function () {
+            return this.counters.swap + this.counters.move + this.counters.speed ;
         };
 
         function getIntBetween(min, max) {
@@ -136,9 +139,11 @@ angular.module('angularApp.factories')
 
             for (var i = 0; i < this.keyBoardMappings.length; i += 1) {
                 var cur = this.cursor[i % this.cursor.length];
+                var x = cur.x;
+                var y = cur.y;
                 if (userInput.pressed(this.keyBoardMappings[i].swap)) {
                     if (this.grid.swap(cur.x, cur.y)) {
-                        this.swapCount += 1;
+                        this.counters.swap += 1;
                     }
                 }
                 if (userInput.pressed(this.keyBoardMappings[i].down)) {
@@ -153,7 +158,13 @@ angular.module('angularApp.factories')
                 if (userInput.pressed(this.keyBoardMappings[i].right)) {
                     cur.x = Math.min(gameConstants.columnCount - 2, cur.x + 1); //-1 for zero based -1 for dual block switcher
                 }
+                if(y != cur.y || cur.x != x){
+                    this.counters.move += 1;
+                }
                 if (userInput.pressed(this.keyBoardMappings[i].speed)) {
+                    if(this.groundSpeed != gameConstants.groundUpSpeedPerTic){
+                        this.counters.speed += 1;
+                    }
                     this.groundSpeed = gameConstants.groundUpSpeedPerTic;
                 }
             }

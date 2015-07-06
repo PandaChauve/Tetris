@@ -24,7 +24,7 @@ angular.module('angularApp.factories')
             }
 
             function Game() {
-                this.last = {swaps:0, score:0};
+                this.last = {swaps:0, score:0, actions: 0};
                 this.availableGrids = [];
                 this.started = false;
                 this.gridCount = 0;
@@ -57,7 +57,7 @@ angular.module('angularApp.factories')
                 this.pause = false;
                 this.tics = 0;
                 this.scoreHandler = new Score();
-                this.last = {swaps:0, score:0};
+                this.last = {swaps:0, score:0, actions:0};
             };
 
             Game.prototype.startNewGame = function startNewGame() {
@@ -206,6 +206,10 @@ angular.module('angularApp.factories')
                 if(this.last.swaps < this.tetris[0].getSwaps()){//avoid useless broadcast
                     this.last.swaps = this.tetris[0].getSwaps();
                     this.scope.$broadcast('newSwaps', this.last.swaps);
+                }
+                if(this.last.actions < this.tetris[0].getActions()){//avoid useless broadcast
+                    this.last.actions = this.tetris[0].getActions();
+                    this.scope.$broadcast('newActions', this.last.actions);
                 }
                 this.scoreHandler.addScore(this.tetris[0].getScore());
                 this.scoreHandler.addTics(count);
