@@ -38,7 +38,7 @@ angular.module('angularApp.directives').directive("mngTetrisGame", ['$swipe', 'g
                     endX = coords.x - bound.left;
                     endY = coords.y - bound.top;
                     if(Math.abs(startX - endX)/scaleX > 30){
-                        game.slide(startX/scaleX, (600 - startY)/scaleY, endX/scaleX, (600 - endY)/scaleY); //FIXME 600 is canvas height
+                        game.slide(startX/scaleX, 600 - startY/scaleY, endX/scaleX, 600 - endY/scaleY); //FIXME 600 is canvas height
                     }
                 }
             });
