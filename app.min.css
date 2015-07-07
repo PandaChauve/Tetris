@@ -81,7 +81,10 @@
     clip: rect(0,0,0,0);
     border: 0;
 }
-;html {
+
+
+ 
+html{
     overflow-y: scroll;
     height:100%;
 }
@@ -106,7 +109,7 @@ body{
     display: inline-block;
 }
 .well.gameHolder{
-    border:0px;
+    border:0;
     padding:0;
 }
 
@@ -139,7 +142,7 @@ canvas {
 
 .gameDetailsElement h3 {
     font-size: 2em;
-    margin: 10px 20px 0px;
+    margin: 10px 20px 0;
     font-family: 'Architects Daughter', cursive;
     clear: both;
 
@@ -324,7 +327,7 @@ canvas {
     text-align: right;
 }
 #footer p {margin:0}
-;/*!
+ /*!
 Video.js Default Styles (http://videojs.com)
 Version 4.12.7
 Create your own skin at http://designer.videojs.com

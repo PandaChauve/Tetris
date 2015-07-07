@@ -1,4 +1,5 @@
-html {
+
+html{
     overflow-y: scroll;
     height:100%;
 }
@@ -23,7 +24,7 @@ body{
     display: inline-block;
 }
 .well.gameHolder{
-    border:0px;
+    border:0;
     padding:0;
 }
 
@@ -56,7 +57,7 @@ canvas {
 
 .gameDetailsElement h3 {
     font-size: 2em;
-    margin: 10px 20px 0px;
+    margin: 10px 20px 0;
     font-family: 'Architects Daughter', cursive;
     clear: both;
 
