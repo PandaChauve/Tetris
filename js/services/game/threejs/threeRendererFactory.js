@@ -3,8 +3,8 @@ angular.module('angularApp.factories')
         function threeRendererFactoryCreator(gameConstants, blockFactory, cubeRenderElementFactory, scoreRenderElementFactory) {
             "use strict";
 
-        function ThreeRenderer(cursors, type, scale, zoom) {
-            this.scale = +scale;
+        function ThreeRenderer(cursors, type, scaleX, scaleY, zoom) {
+            this.scale = {x : +scaleX, y : +scaleY};
             this.mode = +type;
             this.zoom = zoom;
             if (cursors === undefined) {
@@ -68,7 +68,7 @@ angular.module('angularApp.factories')
         };
 
         ThreeRenderer.prototype.createCamera = function () {
-            var camera = new THREE.PerspectiveCamera(this.zoom ? 65 : 75, 448 / 600, 0.3, 1000);
+            var camera = new THREE.PerspectiveCamera(this.zoom ? 62 : 75, this.zoom ? 448 / 750 : 448 / 600, 0.3, 1000);
             camera.position.z = 450;
             camera.position.x = -27;
             camera.position.y = this.zoom ? 440: 410;
@@ -78,7 +78,7 @@ angular.module('angularApp.factories')
         ThreeRenderer.prototype.createRenderer = function (canvas) {
             var renderer = new THREE.WebGLRenderer({canvas: canvas, antialias: true});
             renderer.setClearColor(0x000000);
-            renderer.setSize(448*this.scale, 600);
+            renderer.setSize(448*this.scale.x, 600*this.scale.y);
             renderer.shadowMapEnabled = true;
             renderer.shadowMapSoft = true;
             return renderer;
@@ -238,9 +238,9 @@ angular.module('angularApp.factories')
         };
 
         return {
-            newRenderer: function newRenderer(cursorsCount, type, scale, zoom) {
+            newRenderer: function newRenderer(cursorsCount, type, scaleX, scaleY, zoom) {
                 var z = (zoom === 1 || (zoom === 2 && document.documentElement.clientWidth < 970)); // 0 never , 1 always, 2 auto //FIXME magic 800
-                return new ThreeRenderer(cursorsCount, type || 0, scale || 1, gameConstants.columnCount < 8 && z);
+                return new ThreeRenderer(cursorsCount, type || 0, scaleX || 1, scaleY || 1, gameConstants.columnCount < 8 && z);
             }
         };
     }]);

@@ -16,6 +16,7 @@
     <title>When Will You Lose</title>
 </head>
 <body ng-blur="blur()">
+<div class="body">
 <nav class="navbar navbar-default" ng-controller="HeaderCtrl">
     <div class="container">
         <div class="navbar-header">
@@ -77,12 +78,13 @@
         </div>
     </div>
 </nav>
-<div ng-view style="margin-bottom: 25px"></div>
+<div ng-view style="padding-bottom: 25px"></div>
 <footer class="well" id="footer">
     <div class="container">
         <p><a href="https://github.com/PandaChauve/Tetris/issues">Bug - Request</a> | <a href="#!/about">About - Contact</a> | BETA VERSION</p>
     </div>
 </footer>
+</div>
 <!-- All the external libs used are available in www.whenwhillyouloose.com/js/externals/ with their respective license -->
 <!-- build:js app.min.js -->
 <script language="JavaScript"src="js/externals/ext-jquery-2.1.4.js" ></script>

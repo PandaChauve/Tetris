@@ -96,16 +96,20 @@
     text-align: center;
     display: inline-block;
 }
+.well.gameHolder{
+    border:0px;
+    padding:0;
+}
+
 #gameMenu{
     text-align: center;
 }
 
 
-@media (max-device-width: 510px) {
-    /* define mobile specific styles come here */
-    .gameHolder{
-        border:0;
-        padding:0;
+@media (min-device-width: 510px) {
+    .well.gameHolder{
+        border:1px;
+        padding:19px;
     }
 }
 
