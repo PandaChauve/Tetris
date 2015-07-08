@@ -2,6 +2,7 @@
 angular.module('angularApp.factories')
     .factory('userInput', [function userInputFactory() {
         "use strict";
+        var gamePadApiAvailable = 'GamepadEvent' in window;
 
         var UserInput = function () {
             // to store the current state
@@ -12,6 +13,67 @@ angular.module('angularApp.factories')
             this.onKeyDown = function (event) {
                 that.onKeyChange(event);
             };
+
+            if(gamePadApiAvailable){
+                this.gamePads = {};/*
+                this.addGP = function(event){
+                    that.gamePads[event.gamepad.index] = {'0':false, '1':false, '12':false, '13' : false, '14':false, '15':false};
+                };
+
+                this.removeGP = function(event){
+                    delete that.gamePads[event.gamepad.index];
+                };
+*/
+                this.checkGP = function(){
+                    function pressed(val){
+                        if (typeof(val) == "object") {
+                            return val.pressed;
+                        }
+                        else{
+                            return  val == 1.0;
+                        }
+                    }
+
+                    function action(controller, state,  btnId, keycode){
+                        var btn = pressed(controller.buttons[btnId]);
+                        if( btn != state[btnId]){
+                            state[btnId] = btn;
+                            if(state[btnId]) //on press
+                            {
+                                that.keyCodes[keycode] = true;
+                            }
+                        }
+                    }
+
+                    var map;
+                    var gp = navigator.getGamepads ? navigator.getGamepads() : (navigator.webkitGetGamepads ? navigator.webkitGetGamepads() : []);
+                    for (var j = 0; j < gp.length; ++j) {
+                        if(!gp[j])
+                            continue;
+                        if(!that.gamePads[gp[j].index]){
+                            that.gamePads[gp[j].index] = {'0':false, '1':false, '12':false, '13' : false, '14':false, '15':false};
+                        }
+                        if(j != 1){
+                            map = UserInput.leftMapping;
+                        }
+                        else{
+                            map = UserInput.rightMapping;
+                        }
+                        var controller = gp[j];
+                        action(controller, that.gamePads[controller.index], 0, map.swap);
+                        action(controller, that.gamePads[controller.index],1, map.speed);
+                        action(controller, that.gamePads[controller.index],12, map.up);
+                        action(controller, that.gamePads[controller.index],14, map.left);
+                        action(controller, that.gamePads[controller.index],15, map.right);
+                        action(controller, that.gamePads[controller.index],13, map.down);
+                    }
+                    window.requestAnimationFrame(that.checkGP);
+                };
+/*
+                window.addEventListener("gamepadconnected", this.addGP);
+                window.addEventListener("gamepaddisconnected", this.removeGP);*/
+                window.requestAnimationFrame(this.checkGP);
+            }
 
             // bind keyEvents
             document.addEventListener("keydown", this.onKeyDown, false);
