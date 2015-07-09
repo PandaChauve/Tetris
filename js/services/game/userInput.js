@@ -15,6 +15,7 @@ angular.module('angularApp.factories')
             };
 
             if(gamePadApiAvailable){
+                //https://developer.mozilla.org/en-US/docs/Web/Guide/API/Gamepad
                 this.gamePads = {};/*
                 this.addGP = function(event){
                     that.gamePads[event.gamepad.index] = {'0':false, '1':false, '12':false, '13' : false, '14':false, '15':false};
@@ -34,7 +35,7 @@ angular.module('angularApp.factories')
                         }
                     }
 
-                    function action(controller, state,  btnId, keycode){
+                    function btnAction(controller, state,  btnId, keycode){
                         var btn = pressed(controller.buttons[btnId]);
                         if( btn != state[btnId]){
                             state[btnId] = btn;
@@ -44,6 +45,22 @@ angular.module('angularApp.factories')
                             }
                         }
                     }
+                    function handleAxe(axe, state, lowerCode, higherCode){
+                        if(axe <= -0.5 && state[0] >= 7) {
+                            that.keyCodes[lowerCode] = true;
+                            state[0] = 0;
+                        }
+                        else if(axe >= 0.5 && state[1] >= 7)
+                        {
+                            that.keyCodes[higherCode] = true;
+                            state[1] = 0;
+                        }
+                        else
+                        {
+                            state[0]+= 1;
+                            state[1]+= 1;
+                        }
+                    }
 
                     var map;
                     var gp = navigator.getGamepads ? navigator.getGamepads() : (navigator.webkitGetGamepads ? navigator.webkitGetGamepads() : []);
@@ -51,7 +68,7 @@ angular.module('angularApp.factories')
                         if(!gp[j])
                             continue;
                         if(!that.gamePads[gp[j].index]){
-                            that.gamePads[gp[j].index] = {'0':false, '1':false, '12':false, '13' : false, '14':false, '15':false};
+                            that.gamePads[gp[j].index] = {'0':false, '1':false, '4' : false,'5' : false,'6' : false,'7' : false, '12':false, '13' : false, '14':false, '15':false, 'axe' : [[0, 0], [0, 0], [0, 0], [0, 0]] };
                         }
                         if(j != 1){
                             map = UserInput.leftMapping;
@@ -60,12 +77,22 @@ angular.module('angularApp.factories')
                             map = UserInput.rightMapping;
                         }
                         var controller = gp[j];
-                        action(controller, that.gamePads[controller.index], 0, map.swap);
-                        action(controller, that.gamePads[controller.index],1, map.speed);
-                        action(controller, that.gamePads[controller.index],12, map.up);
-                        action(controller, that.gamePads[controller.index],14, map.left);
-                        action(controller, that.gamePads[controller.index],15, map.right);
-                        action(controller, that.gamePads[controller.index],13, map.down);
+                        btnAction(controller, that.gamePads[controller.index], 0, map.swap);
+                        btnAction(controller, that.gamePads[controller.index], 4, map.swap);
+                        btnAction(controller, that.gamePads[controller.index], 5, map.swap);
+                        btnAction(controller, that.gamePads[controller.index], 6, map.swap);
+                        btnAction(controller, that.gamePads[controller.index], 7, map.swap);
+                        btnAction(controller, that.gamePads[controller.index], 1, map.speed);
+                        btnAction(controller, that.gamePads[controller.index], 12, map.up);
+                        btnAction(controller, that.gamePads[controller.index], 14, map.left);
+                        btnAction(controller, that.gamePads[controller.index], 15, map.right);
+                        btnAction(controller, that.gamePads[controller.index], 13, map.down);
+
+
+                        for(var z = 0; z < controller.axes.length  && z < 4; ++z){
+                            handleAxe(controller.axes[z], that.gamePads[controller.index].axe[z], (z%2)? map.up:map.left, (z%2)? map.down:map.right);
+                        }
+
                     }
                     window.requestAnimationFrame(that.checkGP);
                 };
