@@ -35,13 +35,13 @@ angular.module('angularApp.factories')
                         this.series[serie].push(container[i][j - 1].id);
                         this.series[serie].push(container[i][j - 2].id);
                         if(container[i][j].wasFalling || container[i][j-1].wasFalling || container[i][j-2].wasFalling ){
-                            this.falling += 1;
+                            this.series[serie].falling = true;
                         }
                     } else if (colorCount > 3) { // animationState
                         container[i][j].setState(blockFactory.EState.Disappearing);
                         this.series[serie].push(container[i][j].id);
                         if(container[i][j].wasFalling){
-                            this.falling += 1;
+                            this.series[serie].falling = true;
                         }
                     }
                 }
@@ -103,14 +103,14 @@ angular.module('angularApp.factories')
                         this.series[serie].push(container[i - 1][realJP].id);
                         this.series[serie].push(container[i - 2][realJPP].id);
                         if(container[i][realJ].wasFalling || container[i-1][realJP].wasFalling || container[i-2][realJPP].wasFalling ){
-                            this.falling += 1;
+                            this.series[serie].falling = true;
                         }
 
                     } else if (colorCount > 3) {
                         container[i][realJ].setState(blockFactory.EState.Disappearing);
                         this.series[serie].push(container[i][realJ].id);
                         if(container[i][realJ].wasFalling){
-                            this.falling += 1;
+                            this.series[serie].falling = true;
                         }
                     }
                 }
@@ -128,12 +128,13 @@ angular.module('angularApp.factories')
         };
 
         GridEvaluator.prototype.getScore = function () {
-            var multi = this.series.length + this.falling;
+            var multi = this.series.length ;
             var score = 0;
             for (var i = 0; i < this.series.length; i += 1) {
-                score += (this.series[i].length - 2) * multi;
+
+                score += Math.ceil(Math.pow(this.series[i].length - 2, 1.5)*(this.series[i].falling ? 1.5 : 1));
             }
-            return score;
+            return Math.floor(score*(0.5 + Math.pow(multi, 1.5)/2));
         };
 
         GridEvaluator.prototype.getSerie = function (id, max) {
@@ -152,7 +153,9 @@ angular.module('angularApp.factories')
                 for (var j = 0; j < this.series[i].length; j += 1) {
                     var existingSerie = this.getSerie(this.series[i][j], i);
                     if (existingSerie !== -1) {
+                        var fall = this.series[existingSerie].falling || this.series[i].falling;
                         this.series[existingSerie] = this.series[existingSerie].concat(this.series[i]);
+                        this.series[existingSerie].falling = fall;
                         this.series.splice(i, 1);
                         break;
                     }
@@ -163,7 +166,6 @@ angular.module('angularApp.factories')
         GridEvaluator.prototype.evaluate = function (container) {
             //vertical evaluation does not count block that start disappearing => call it before horizontal evaluation
             this.series = [];
-            this.falling = 0;
             this.evaluateVertical(container);
             this.evaluateHorizontal(container);
             this.mergeSeries();

@@ -4,13 +4,13 @@ angular.module('angularApp.controllers').controller('GameStateCtrl', ['$scope','
         "use strict";
         var upwardSwapCount = true;
         var targetSwapCounts = 0;
-        var actions = 0;
         $scope.state = {
             rules : createRuleSet($scope.$parent.$parent.gameConditions),//FIXME
             score : 0,
             time : 0,
             apm : 0,
-            swaps : 0
+            swaps : 0,
+            actions : 0
         };
         ///!\ to avoid too much apply it's the time in charge (about 10 per sec...)
         $scope.$on("newScore", function(event, m){
@@ -20,6 +20,8 @@ angular.module('angularApp.controllers').controller('GameStateCtrl', ['$scope','
             $scope.state.swaps = targetSwapCounts;
             $scope.state.score = 0;
             $scope.state.time = 0;
+            $scope.state.actions = 0;
+            $scope.state.apm = 0;
         });
         $scope.$on("newSwaps", function(event, m){
             if(upwardSwapCount){
@@ -30,14 +32,14 @@ angular.module('angularApp.controllers').controller('GameStateCtrl', ['$scope','
             }
         });
         $scope.$on("newActions", function(event, m){
-            actions = m;
+            $scope.state.actions = m;
         });
         $scope.$on("newTime", function(event, m){
             if(m >= $scope.state.time / 6) //FIXME magic number  tictime / 10
             {
                 $scope.state.time = m;
                 var t = Math.max(10*TIC_PER_SEC, $scope.state.time); //10 sec min
-                $scope.state.apm = Math.floor(actions*TIC_PER_SEC*60/t); //limit the apm computation
+                $scope.state.apm = Math.floor($scope.state.actions*TIC_PER_SEC*60/t); //limit the apm computation
                 $scope.$apply();
             }
         });

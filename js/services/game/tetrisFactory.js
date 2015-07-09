@@ -83,7 +83,7 @@ angular.module('angularApp.factories')
 
             //random events
             this.tics += 1;
-            if (gameConstants.fallPeriod !== 0 && this.tics % gameConstants.fallPeriod === 0) {
+            if (gameConstants.fallPeriod !== 0 && this.tics % gameConstants.fallPeriod === 0 && gameConstants.gracePeriod < this.tics) {
                 this.randomFall();
             }
 
