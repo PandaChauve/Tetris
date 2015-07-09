@@ -36,7 +36,8 @@ angular.module('angularApp.controllers').controller('GameStateCtrl', ['$scope','
             if(m >= $scope.state.time / 6) //FIXME magic number  tictime / 10
             {
                 $scope.state.time = m;
-                $scope.state.apm = Math.floor(actions*TIC_PER_SEC*60/$scope.state.time); //limit the apm computation
+                var t = Math.max(10*TIC_PER_SEC, $scope.state.time); //10 sec min
+                $scope.state.apm = Math.floor(actions*TIC_PER_SEC*60/t); //limit the apm computation
                 $scope.$apply();
             }
         });
