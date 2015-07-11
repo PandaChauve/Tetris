@@ -9,31 +9,21 @@
 
             <p>The concept is quite simple, you can swap blocks horizontaly, when 3 or more blocks of a same color are
                 aligned (verticaly or horizontaly) they're destroyed.</p>
+            <p>The ground is going up, slowly at start but the speed is steadily increasing. After one minute, blocks are starting to fall randomly.</p>
+            <p>The instant a non falling block go completely past the red line, you lose !</p>
 
 
-            <blockquote class="">
+            <div class="well clear" style="text-align: center; width:620px; margin:auto">
+
+                <a href="resources/imgs/guituto.png"><img src="resources/imgs/guituto.png" width="580"/></a>
+
+                <p>The Gui - Theme Slate - Plain cubes</p>
+            </div><br />
+            <blockquote class="blockquote-reverse">
                 <p>You will lose !</p>
                 <small>Sylvain C. in <cite title="Source Title">WWYL</cite></small>
             </blockquote>
 
-            <div class="well clear" style="text-align: center; width:440px; margin:auto">
-
-                <a href="resources/imgs/guituto.png"><img src="resources/imgs/guituto.png" width="400"/></a>
-                <p class="text-muted">The Gui</p>
-<br />
-                <video id="example_video_1" poster="resources/imgs/basicDemo.png" class="video-js vjs-default-skin"
-                       controls preload="none" width="400"
-                       height="330"
-                       data-setup='{ "controlBar": { "muteToggle": false, "VolumeLevel": false } } '>
-                    <source src="resources/video/basicDemo.mp4" type='video/mp4'/>
-                    <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web
-                        browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5
-                            video</a></p>
-                </video>
-                <br/>
-
-                <p class="text-muted">Basic concept overview - Theme Slate - Plain cubes</p>
-            </div>
         </div>
         <div class="row">
 
@@ -41,7 +31,8 @@
 
             <p>There is two sets of key available. In single player game you can use a mix of each set.</p>
 
-            <p>Mobile users can swap the blocks by draging them left or right. If you own a Xbox 360 controller you can try it on firefox or chrome.</p>
+            <p>Mobile users can swap the blocks by draging them left or right. If you own a Xbox 360 controller you can
+                try it on firefox or chrome.</p>
             <table class="table table-striped table-hover ">
                 <thead>
                 <tr>
@@ -100,26 +91,29 @@
                 points).</p>
 
             <p>If you create a cross or a corner (an horizontal and a vertical line combined) they count as a single
-                line
-                and the block used to join them is counted twice. So it's a least 5 points.</p>
+                line. The block used to join them is counted twice. </p>
 
-            <p>Finally if you do multiple lines at the same time, you'll get the sum of each individual score multiplied
-                by
-                the number of lines. The same effect is applied if you create lines with falling blocks.</p>
+            <p>You'll get bonus points for creating lines with falling blocks or for doing multiple lines at once.</p>
 
-            <div class="well clear" style="text-align: center; width:440px; margin:auto">
-                <video id="example_video_2" poster="resources/imgs/scores.png" class="video-js vjs-default-skin"
-                       controls preload="none" width="400"
-                       height="330"
+            <p>The complete formula is :</p>
+            <!-- \lceil(\sum((LineSize - 2)^{1.5}*fall))*(0.5 + 0.5*SimultaneousLines^{1.5})\rceil -->
+            <div class="well" style="background:white; text-align: center">
+                <img src="resources/imgs/formula.png" />
+            </div>
+            <br />
+            <div class="well clear" style="text-align: center; width:500px; margin:auto">
+                <video id="example_video_2" poster="resources/imgs/full_game_510.png" class="video-js vjs-default-skin"
+                       controls preload="none" width="448"
+                       height="600"
                        data-setup='{ "controlBar": { "muteToggle": false, "VolumeLevel": false } } '>
-                    <source src="resources/video/scores.mp4" type='video/mp4'/>
+                    <source src="resources/video/full_game_510.mp4" type='video/mp4'/>
                     <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web
                         browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5
                             video</a></p>
                 </video>
                 <br/>
 
-                <p class="text-muted">Scores in practice - Theme Unity - Candy HD</p>
+                <p>Scores in practice - Speed X2</p>
             </div>
         </div>
         <div class="row">
@@ -141,7 +135,7 @@
             <div class="well clear" style="text-align: center; width:440px; margin:auto">
                 <img src="resources/imgs/modes/classic.png"/>
 
-                <p class="text-muted">Classic - Theme Superhero - Mines</p>
+                <p>Classic - Theme Superhero - Mines</p>
             </div>
             <h3>Wide/Narrow</h3>
 
@@ -150,10 +144,10 @@
             <div class="well clear" style="text-align: center; width:440px; margin:auto">
                 <img src="resources/imgs/modes/wide.png"/>
 
-                <p class="text-muted">Wide - Theme Cyborg - Fancy cubes</p>
+                <p>Wide - Theme Cyborg - Fancy cubes</p>
                 <img src="resources/imgs/modes/narrow.png"/>
 
-                <p class="text-muted">Narrow - Theme Flatly - Smash bros</p>
+                <p>Narrow - Theme Flatly - Smash bros</p>
             </div>
             <h3>Crazy</h3>
 
@@ -168,7 +162,7 @@
             <div class="well clear" style="text-align: center; width:440px; margin:auto">
                 <img src="resources/imgs/modes/sandbox.png"/>
 
-                <p class="text-muted">Sandbox - Theme Simplex - Lights</p>
+                <p>Sandbox - Theme Simplex - Lights</p>
             </div>
             <h2>Campaign</h2>
 
@@ -199,7 +193,9 @@
         </div>
         <div class="row">
             <h1 class="page-header" id="multi">Multiplayer modes</h1>
-            <p class="text-muted">You can't play them on mobile device.</p>
+
+            <p>You can't play them on mobile device.</p>
+
             <h2>Split screen</h2>
 
             <p>Same rules as the single player mode "Classic" with 2 players. Each time you score 3 points, some blocks
@@ -235,7 +231,6 @@
     </nav>
 </div>
 
-<script src="video-js/video.js"></script>
 <script>
     videojs.options.flash.swf = "video-js/video-js.swf";
 </script>

@@ -200,6 +200,14 @@ angular.module('angularApp.factories')
                     userInput.clear();
                 }
 
+                /* use that with the capture server
+                // renderer set preserveDrawingBuffer : true
+                // add this js <script src="https://cdn.socket.io/socket.io-1.3.5.js"></script>
+                var canvas = document.getElementsByTagName('canvas')[0];
+                var dataUrl = canvas.toDataURL();
+                var socket = io.connect('http://localhost');
+                socket.emit('image', dataUrl);
+                */
                 if(this.last.score < this.tetris[0].getScore()){ //avoid useless broadcast
                     this.last.score = this.tetris[0].getScore();
                     this.scope.$broadcast('newScore', this.last.score);

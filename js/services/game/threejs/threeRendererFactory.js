@@ -76,7 +76,7 @@ angular.module('angularApp.factories')
         };
 
         ThreeRenderer.prototype.createRenderer = function (canvas) {
-            var renderer = new THREE.WebGLRenderer({canvas: canvas, antialias: true});
+            var renderer = new THREE.WebGLRenderer({canvas: canvas, antialias: true/*, preserveDrawingBuffer : true*/});
             renderer.setClearColor(0x000000);
             renderer.setSize(448*this.scale.x, 600*this.scale.y);
             renderer.shadowMapEnabled = true;

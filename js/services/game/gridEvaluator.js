@@ -132,9 +132,9 @@ angular.module('angularApp.factories')
             var score = 0;
             for (var i = 0; i < this.series.length; i += 1) {
 
-                score += Math.ceil(Math.pow(this.series[i].length - 2, 1.5)*(this.series[i].falling ? 1.5 : 1));
+                score += Math.pow(this.series[i].length - 2, 1.5)*(this.series[i].falling ? 1.5 : 1);
             }
-            return Math.floor(score*(0.5 + Math.pow(multi, 1.5)/2));
+            return Math.ceil(score*(0.5 + Math.pow(multi, 1.5)/2));
         };
 
         GridEvaluator.prototype.getSerie = function (id, max) {
