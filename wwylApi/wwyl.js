@@ -30,7 +30,18 @@ router.route('/scores').post(function (req, res) {
         $map: req.body.map
     });
 
-    res.json({message: 'New score'});
+    res.json({success: true, message: 'New score'});
+
+    db.run("DELETE FROM scores WHERE map = $map  and score < (SELECT score FROM scores WHERE map = $map order by score DESC LIMIT 1 OFFSET 50 )", {
+        $map: req.body.map
+    }, function(err){
+        if(err){
+            res.json({
+                success: false, message: "Can't clean db"
+            });
+            return;
+        }
+    });
 });
 
 router.route('/scores/:map').get(function (req, res) {
