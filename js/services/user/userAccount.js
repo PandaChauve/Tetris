@@ -98,7 +98,6 @@ angular.module('angularApp.factories')
         User.prototype.loadTheme = function(){
             var t = storage.get("UserTheme") || "slate";
             $("#switchableTheme").attr("href", "bootswatch/"+ t.toLowerCase()+".min.css");
-
         };
 
         User.prototype.setTheme = function(style){

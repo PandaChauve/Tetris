@@ -14,5 +14,7 @@ angular.module('angularApp.controllers')
             successCount += 1;
         }
     }
+
     $scope.percentComplete = successCount / achievements.List.enumSize * 100; //bad to put non object in the scope
+    $scope.ieStyle = {'width':$scope.percentComplete+"%", 'min-width': '2em'};
 }]);

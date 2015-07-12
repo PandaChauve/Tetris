@@ -32,9 +32,9 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li class="dropdown">
-                    <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">SinglePlayer
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" id="menuSP">SinglePlayer
                         <span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="menuSP">
                         <li class="dropdown-header">Arcade</li>
                         <li><a href="#!/game/classic">Classic</a></li>
                         <li class="hidden-xs"><a href="#!/game/ultralarge">Wide</a></li>
@@ -49,9 +49,9 @@
                     </ul>
                 </li>
                 <li class="dropdown hidden-xs hidden-sm">
-                    <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">TwoPlayers
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" id="menuMP">TwoPlayers
                         <span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="menuMP">
                         <li><a href="#!/game/classicSplitScreen">SplitScreen</a></li>
                         <li><a href="#!/game/ultralargecoop">Coop</a></li>
                     </ul>
@@ -61,9 +61,9 @@
             </ul>
             <ul class="nav navbar-nav navbar-right" ng-controller="UserMenuCtrl">
                 <li ng-cloak ng-if="registered" class="dropdown">
-                    <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{userName}}
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" id="menuUsr">{{userName}}
                         <span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
+                    <ul class="dropdown-menu" role="menu"  aria-labelledby="menuUsr">
                         <li><a href="#!/user/account">My account</a></li>
                         <li><a href="#!/user/config">Configuration</a></li>
                         <li class="divider "></li>
