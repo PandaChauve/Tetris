@@ -1,8 +1,10 @@
 angular.module('angularApp.controllers')
-    .controller('IndexCtrl', ['$scope', '$modal', function ($scope, $modal, userAccount) {
+    .controller('IndexCtrl', ['$scope', '$modal', 'userAccount', function ($scope, $modal, userAccount) {
         "use strict";
+        $scope.registered = (userAccount.username !== null);
+        $scope.username = userAccount.username;
         $scope.loginPopup = function(){
-            var modalInstance = $modal.open({
+            $modal.open({
                 animation: true,
                 templateUrl: 'templates/user/login.html',
                 controller: 'LoginFormCtrl',

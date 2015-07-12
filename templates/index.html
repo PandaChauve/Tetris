@@ -1,44 +1,38 @@
-<div class="container">
-    <carousel interval="5000">
-        <slide>
+<div class="jumbotron" style="background-image: url('resources/imgs/jumbotron.png'); text-align: center">
+    <div class="container">
+        <h1 style="color:white">Play for free !</h1>
+        <br/>
+        <br/>
+        <br/>
 
-            <div class="mycarousel">
-                <h1>Register</h1>
+        <p><a class="btn btn-primary btn-lg" href="#!/game/classic" role="button">Classic Game</a></p>
+    </div>
+</div>
 
-                <p>It's free ! You only need a username and a password !</p>
+<div class="container" style="text-align: left">
+    <div class="col-md-10 col-md-offset-1">
+        <!-- Example row of columns -->
+        <div class="row">
+            <div class="col-md-5 well">
+                <h2>Learn</h2>
 
-                <p>It will grant you access to success, statistics, online ranking.</p>
+                <p>Everything you have to know about the game is here. Videos of real games, hint on how to be better or
+                    just basic rules and explanations on how to play.</p>
 
-                <p>Show your mastery to the world !</p>
-                <br/>
+                <p>You can always be a better player !</p>
 
-                <a class="btn btn-lg btn-info"
-                      ng-click="loginPopup()"
-                      role="button">Sign up today</a>
+                <p style="text-align: right"><a class="btn btn-default" href="#!/rules" role="button">View details »</a></p>
             </div>
-        </slide>
-        <slide>
-            <div class="mycarousel">
-                <h1>Learn the game</h1>
+            <div class="col-md-5 col-md-offset-2 well" ng-if="!registered">
+                <h2>Register</h2>
 
-                <p>You're new and you want to learn fast ?</p>
-                <br/>
+                <p>No email required ! By registering you'll get access to a lor of cool things.</p>
 
-                <a class="btn btn-lg btn-info"
-                      href="#!/rules#WWYL"
-                      role="button">Watch a tutorial</a>
+                <p>The online ranking, game and site customisation, campaign progression, statistics, achievements and
+                    more.</p>
+
+                <p style="text-align: right"><a class="btn btn-default" href="" ng-click="loginPopup()" role="button">Register »</a></p>
             </div>
-        </slide>
-        <slide>
-            <div class="mycarousel">
-                <h1>Recent features</h1>
-
-                <p>User account</p>
-                <p>Sound !</p>
-                <p>In game score alerts</p>
-                <p>Campaign menu</p>
-                <p>Bonus for falling block combos</p>
-            </div>
-        </slide>
-    </carousel>
+        </div>
+    </div>
 </div>
