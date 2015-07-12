@@ -337,6 +337,10 @@ canvas {
     font-size: 35px;
     opacity: 0.5;
 }
+
+.btn-custom.active {
+    text-decoration: underline;
+}
  /*!
 Video.js Default Styles (http://videojs.com)
 Version 4.12.7

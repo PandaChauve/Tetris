@@ -254,3 +254,7 @@ canvas {
     font-size: 35px;
     opacity: 0.5;
 }
+
+.btn-custom.active {
+    text-decoration: underline;
+}
