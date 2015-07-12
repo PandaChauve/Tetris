@@ -242,3 +242,15 @@ canvas {
     text-align: right;
 }
 #footer p {margin:0}
+
+.pauseShadow {
+    font-family: 'Architects Daughter', cursive;
+    position: absolute;
+    width: 448px;
+    text-align: center;
+    background: black;
+    height: 600px;
+    padding-top: 200px;
+    font-size: 35px;
+    opacity: 0.5;
+}
