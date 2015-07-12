@@ -1,11 +1,11 @@
 
-angular.module('angularApp.controllers').controller('GameStateCtrl', ['$scope','TIC_PER_SEC',
-    function ($scope, TIC_PER_SEC) {
+angular.module('angularApp.controllers').controller('GameStateCtrl', ['$scope','TIC_PER_SEC','stateChecker',
+    function ($scope, TIC_PER_SEC, stateChecker) {
         "use strict";
         var upwardSwapCount = true;
         var targetSwapCounts = 0;
         $scope.state = {
-            rules : createRuleSet($scope.$parent.$parent.gameConditions),//FIXME
+            rules : stateChecker.createRuleSet($scope.$parent.$parent.gameConditions),
             score : 0,
             time : 0,
             apm : 0,
@@ -51,36 +51,5 @@ angular.module('angularApp.controllers').controller('GameStateCtrl', ['$scope','
             }
             $scope.state.rules = createRuleSet(m);
         });
-
-        function createRuleSet(gconfig){
-            var ret = [];
-            if (!gconfig) {
-                ret.push({success: true, message:'Try to stay alive !'});
-                return ret;
-            }
-            if(gconfig.destroy !== undefined){
-                ret.push({success: true, message:"Destroy all the green blocks"});
-            }
-            if(gconfig.keep !== undefined){
-                ret.push({success: false, message:"Don't destroy any red block before your last swap"});
-            }
-            if (gconfig.blocksLeft !== undefined) {
-                if (gconfig.blocksLeft === 0) {
-                    ret.push({success: true, message:"Destroy each block"});
-                } else {
-                    ret.push({success: true, message:"Reduce the blocks to " + gconfig.blocksLeft});
-                }
-            }
-            if (gconfig.score !== undefined) {
-                ret.push({success: true, message:"Get " + gconfig.score + " points"});
-            }
-            if (gconfig.swaps !== undefined) {
-                ret.push({success: false, message:"Max " + gconfig.swaps + " swaps"});
-            }
-            if (gconfig.time !== undefined) {
-                ret.push({success: false, message:"Max " + gconfig.time + " seconds"});
-            }
-            return ret;
-        }
 
     }]);

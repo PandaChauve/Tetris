@@ -26,7 +26,6 @@ angular.module('angularApp.directives').directive("mngTetrisGame", ['$swipe', 'g
             {
                 scaleY = document.documentElement.clientHeight / 600;
             }
-
             $swipe.bind(element, {
                 'start': function(coords) {
                     var bound = element[0].getBoundingClientRect();

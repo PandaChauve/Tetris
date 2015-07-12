@@ -118,5 +118,36 @@ angular.module('angularApp.factories')
             return tetris.tics / TIC_PER_SEC > this.val;
         };
 
+        StateChecker.prototype.createRuleSet = function(gconfig){
+            var ret = [];
+            if (!gconfig) {
+                ret.push({success: true, message:'Try to stay alive !'});
+                return ret;
+            }
+            if(gconfig.destroy !== undefined){
+                ret.push({success: true, message:"Destroy all the green blocks"});
+            }
+            if(gconfig.keep !== undefined){
+                ret.push({success: false, message:"Don't destroy any red block before your last swap"});
+            }
+            if (gconfig.blocksLeft !== undefined) {
+                if (gconfig.blocksLeft === 0) {
+                    ret.push({success: true, message:"Destroy each block"});
+                } else {
+                    ret.push({success: true, message:"Reduce the blocks to " + gconfig.blocksLeft});
+                }
+            }
+            if (gconfig.score !== undefined) {
+                ret.push({success: true, message:"Get " + gconfig.score + " points"});
+            }
+            if (gconfig.swaps !== undefined) {
+                ret.push({success: false, message:"Max " + gconfig.swaps + " swaps"});
+            }
+            if (gconfig.time !== undefined) {
+                ret.push({success: false, message:"Max " + gconfig.time + " seconds"});
+            }
+            return ret;
+        }
+
         return new StateChecker();
     }]);

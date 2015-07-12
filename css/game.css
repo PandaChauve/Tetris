@@ -255,6 +255,19 @@ canvas {
     opacity: 0.5;
 }
 
+@media (max-width: 510px) {
+    .pauseShadow{
+        width: 250px;
+        height:400px;
+        margin:auto;
+        padding:19px;
+    }
+}
+
 .btn-custom.active {
     text-decoration: underline;
+}
+
+.modal-300{
+    max-width: 300px;
 }

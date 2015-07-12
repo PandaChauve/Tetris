@@ -6,7 +6,7 @@ angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$htt
         //FIXME directive too much in the controller
         var gameFinished = false;
         $scope.gameName = map_hash[$routeParams.hash] || $routeParams.hash || "classic";
-
+        var campaign = $scope.gameName.indexOf("campaign") > -1;
         $scope.config = {};
         $scope.config.splitScreen = $scope.gameName === "classicSplitScreen";
         $scope.gameConditions = null;
@@ -22,6 +22,9 @@ angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$htt
         $scope.load = function () {
             $http.get("games/" + $scope.gameName + ".json", {cache: true}).success(function (json) {
                 $scope.config.gameConfig = json;
+                if(campaign){
+                    $scope.openCampaignModal(json);
+                }
                 $scope.useGameConfig(json);
             }).error(function (data) {
                 console.log(data);
@@ -67,7 +70,7 @@ angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$htt
             userStats.getCurrentGame().setSwaps(finishedGame.tetris[0].counters.swap);
             userStats.addGame(userStats.getCurrentGame(), $scope.gameName);
             achievements.check(userStats.getCurrentGame(), $scope.gameName);
-            if(userAccount.isRegistered() && $scope.gameName.indexOf("campaign") === -1){
+            if(userAccount.isRegistered() && !campaign){
                 api.addScore(userAccount.id, userStats.getCurrentGame().score, $scope.gameName).success(function(e) {
                     console.log(e + e.message);
                 }).
@@ -82,13 +85,12 @@ angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$htt
             gameFinished = false;
             game.startNewGame();
         };
-        $scope.openModal = function () {
 
+        $scope.openModal = function () {
             var modalInstance = $modal.open({
                 animation: true,
                 templateUrl: 'templates/endGameModal.html',
                 controller: 'ModalInstanceCtrl',
-                size: 300,
                 resolve: {
                     gameName: function () {
                         return $scope.gameName;
@@ -102,6 +104,7 @@ angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$htt
                         $window.location.href=($scope.config.gameConfig.next);
                     }
                     $scope.gameName = $scope.config.gameConfig.next;
+                    campaign = $scope.gameName.indexOf("campaign") > -1;
                     $route.updateParams({hash: CryptoJS.MD5($scope.gameName)});
                     $scope.load();
                 }
@@ -110,6 +113,23 @@ angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$htt
                 }
             }, function () {
 
+            });
+        };
+
+        $scope.openCampaignModal = function (json) {
+            $modal.open({
+                animation: true,
+                templateUrl: 'templates/objectivesModal.html',
+                controller: 'ObjectivesModalCtrl',
+                size: 300,
+                resolve: {
+                    gameName: function () {
+                        return $scope.gameName;
+                    },
+                    gameConfig: function () {
+                        return json;
+                    }
+                }
             });
         };
     }]);

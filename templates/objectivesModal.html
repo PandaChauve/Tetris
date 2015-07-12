@@ -1,0 +1,13 @@
+<div class="modal-header">
+    <h3 class="modal-title">Objectives</h3>
+</div>
+<div class="modal-body">
+    <div id="rules">
+        <ul>
+            <li ng-repeat="rule in rules" class="defeatCond" ng-class="{successCond: rule.success}">{{rule.message}}</li>
+        </ul>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-warning" ng-click="continue()" ng-enter="continue()">Continue</button>
+</div>
