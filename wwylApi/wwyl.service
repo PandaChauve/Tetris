@@ -1,0 +1,13 @@
+[Service]
+#http://blog.mdda.net/oss/2015/02/16/forever-node-service-systemd/
+ExecStart=/usr/bin/node /var/www/api/wwyl.js
+Restart=always
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=wwyl
+User=panda
+Group=panda
+Environment=NODE_ENV=production
+WorkingDirectory=/var/www/api/
+[Install]
+WantedBy=multi-user.target

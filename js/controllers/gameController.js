@@ -69,10 +69,10 @@ angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$htt
             achievements.check(userStats.getCurrentGame(), $scope.gameName);
             if(userAccount.isRegistered() && $scope.gameName.indexOf("campaign") === -1){
                 api.addScore(userAccount.id, userStats.getCurrentGame().score, $scope.gameName).success(function(e) {
-                    console.log(e);
+                    console.log(e + e.message);
                 }).
                 error(function(e){
-                    console.log(e);
+                    console.log(e + e.message);
                 });
             }
             $scope.openModal();
