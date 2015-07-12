@@ -4,7 +4,7 @@ angular.module('angularApp.factories')
         function MyAudio(){
             this.audiochannels = [];
             this.ext = !(document.createElement('audio').canPlayType('audio/mpeg;'))?'wav':'mp3';
-            this.preloaded = this.preload(); //canplaythrough on each element to check if finished
+            this.preload(); //canplaythrough on each element to check if finished
         }
 
         MyAudio.prototype.preload = function(){
@@ -47,7 +47,6 @@ angular.module('angularApp.factories')
             audio.channel.load();
             audio.channel.play();
             this.audiochannels.push(audio);
-            console.log("simultaneous audio : "+this.audiochannels.length);
         };
 
         MyAudio.ESounds = {

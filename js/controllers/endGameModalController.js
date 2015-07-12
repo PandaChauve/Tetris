@@ -2,6 +2,7 @@ angular.module('angularApp.controllers')
     .controller('ModalInstanceCtrl', ['$scope', '$modalInstance', 'gameName', 'userStats', 'stateChecker', 'helpers', 'audio',
         function ($scope, $modalInstance, gameName, userStats, stateChecker, helpers, audio) {
             "use strict";
+            $scope.isCampaign = gameName.indexOf("campaign") > -1;
             audio.play(audio.ESounds.end);
             $scope.won = stateChecker.victory();
             $scope.published = false;

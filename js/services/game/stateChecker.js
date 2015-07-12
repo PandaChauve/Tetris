@@ -107,7 +107,7 @@ angular.module('angularApp.factories')
         }
 
         SwapChecker.prototype.check = function (tetris) {
-            return tetris.swapCount > this.val;
+            return tetris.getSwaps() > this.val;
         };
 
         function TimeChecker(val) {

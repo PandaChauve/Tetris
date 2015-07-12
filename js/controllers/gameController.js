@@ -67,11 +67,8 @@ angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$htt
             userStats.getCurrentGame().setSwaps(finishedGame.tetris[0].counters.swap);
             userStats.addGame(userStats.getCurrentGame(), $scope.gameName);
             achievements.check(userStats.getCurrentGame(), $scope.gameName);
-            if(userAccount.isRegistered()){
-                api.addScore(userAccount.id, userStats.getCurrentGame().score, $scope.gameName).success(function(result) {
-                    console.log(result);
-                }).
-                error(function(e){
+            if(userAccount.isRegistered() && $scope.gameName.indexOf("campaign") === -1){
+                api.addScore(userAccount.id, userStats.getCurrentGame().score, $scope.gameName).error(function(e){
                     console.log(e);
                 });
             }

@@ -10,7 +10,7 @@
             <th></th>
             <th>Current</th>
             <th>Best</th>
-            <th>Total (mean)</th>
+            <th ng-if="!isCampaign">Total (mean)</th>
         </tr>
         </thead>
         <tbody>
@@ -18,7 +18,7 @@
             <td>{{::stat.name}}</td>
             <td>{{::stat.value}}</td>
             <td>{{::stat.best}}</td>
-            <td>{{::stat.sum}} ({{::stat.mean}})</td>
+            <td  ng-if="!isCampaign">{{::stat.sum}} ({{::stat.mean}})</td>
         </tr>
         </tbody>
     </table>
