@@ -37,11 +37,11 @@
         "state": 1
       },
       {
-        "type": 0,
+        "type": 3,
         "state": 1
       },
       {
-        "type": 3,
+        "type": 0,
         "state": 1
       }
     ],

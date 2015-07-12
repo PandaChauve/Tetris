@@ -35,7 +35,7 @@ angular.module('angularApp.factories')
                             newOne = true;
                             var sc = $rootScope.$new(true);
                             sc.picture = {
-                                src: "resources/imgs/placeholder.png",
+                                src: "./resources/imgs/achievements/"+AchievementsState.List.getName(key)+".png",
                                 alt: "Success !"
                             };
                             notify({
@@ -59,6 +59,8 @@ angular.module('angularApp.factories')
                     case AchievementsState.List.Master :
                         return 160;
                     case AchievementsState.List.God :
+                    case AchievementsState.List.XXS :
+                    case AchievementsState.List.XXL :
                         return 350;
                     case AchievementsState.List.Titan :
                         return 500;
@@ -125,6 +127,16 @@ angular.module('angularApp.factories')
                             container[key] = game.score >= this.keyToScore(key);
                         }
                         break;
+                    case AchievementsState.List.XXL :
+                        if (gameName === "ultralarge") {
+                            container[key] = game.score >= this.keyToScore(key);
+                        }
+                        break;
+                    case AchievementsState.List.XXS :
+                        if (gameName === "small") {
+                            container[key] = game.score >= this.keyToScore(key);
+                        }
+                        break;
                     case AchievementsState.List.Ambidextrous :
                     case AchievementsState.List.Psychic :
                     case AchievementsState.List.Sorcerer :
@@ -175,7 +187,9 @@ angular.module('angularApp.factories')
                 Pacman: 15, //arcade
                 Sherlock: 16, //puzzle
                 Tenacious: 17, //time
-                enumSize: 18
+                XXL: 18, //points
+                XXS: 19, //points
+                enumSize: 20
             };
 
             AchievementsState.List.getName = function (key) {
@@ -197,6 +211,10 @@ angular.module('angularApp.factories')
                         return "Get 160 points in classic";
                     case AchievementsState.List.God :
                         return "Get 350 points in classic";
+                    case AchievementsState.List.XXL :
+                        return "Get 350 points in wide";
+                    case AchievementsState.List.XXS :
+                        return "Get 350 points in narrow";
                     case AchievementsState.List.Titan :
                         return "An original God";
                     case AchievementsState.List.Cheater :
