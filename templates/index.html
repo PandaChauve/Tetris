@@ -13,7 +13,7 @@
     <div class="col-md-10 col-md-offset-1">
         <!-- Example row of columns -->
         <div class="row">
-            <div class="col-md-5 well">
+            <div class="col-md-6">
                 <h2>Learn</h2>
 
                 <p>Everything you have to know about the game is here. Videos of real games, hint on how to be better or
@@ -21,9 +21,10 @@
 
                 <p>You can always be a better player !</p>
 
-                <p style="text-align: right"><a class="btn btn-default" href="#!/rules" role="button">View details »</a></p>
+                <p style="text-align: right"><a class="btn btn-default" href="#!/rules" role="button">View details »</a>
+                </p>
             </div>
-            <div class="col-md-5 col-md-offset-2 well" ng-if="!registered">
+            <div class="col-md-6" ng-if="!registered">
                 <h2>Register</h2>
 
                 <p>No email required ! By registering you'll get access to a lor of cool things.</p>
@@ -31,7 +32,17 @@
                 <p>The online ranking, game and site customisation, campaign progression, statistics, achievements and
                     more.</p>
 
-                <p style="text-align: right"><a class="btn btn-default" href="" ng-click="loginPopup()" role="button">Register »</a></p>
+                <p style="text-align: right"><a class="btn btn-default" href="" ng-click="loginPopup()" role="button">Register
+                    »</a></p>
+            </div>
+            <div class="col-md-6">
+                <h2>Multi plateforme</h2>
+
+                <p>You only need a recent we browser to play. You can play using a computer, a smartphone, a tablet or
+                    any device able to render a "HTML5 Canvas".</p>
+
+                <p>Multiples controls are available, keyboard, mouse, touch screen, Xbox 360 controller.</p>
+
             </div>
         </div>
     </div>
