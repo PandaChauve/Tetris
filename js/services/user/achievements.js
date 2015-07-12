@@ -63,6 +63,7 @@ angular.module('angularApp.factories')
                     case AchievementsState.List.XXL :
                         return 350;
                     case AchievementsState.List.Titan :
+                    case AchievementsState.List.SuperTeam :
                         return 500;
                     case AchievementsState.List.Cheater :
                         return 1000;
@@ -137,6 +138,11 @@ angular.module('angularApp.factories')
                             container[key] = game.score >= this.keyToScore(key);
                         }
                         break;
+                    case AchievementsState.List.SuperTeam :
+                        if (gameName === "coop") {
+                            container[key] = game.score >= this.keyToScore(key);
+                        }
+                        break;
                     case AchievementsState.List.Ambidextrous :
                     case AchievementsState.List.Psychic :
                     case AchievementsState.List.Sorcerer :
@@ -189,7 +195,8 @@ angular.module('angularApp.factories')
                 Tenacious: 17, //time
                 XXL: 18, //points
                 XXS: 19, //points
-                enumSize: 20
+                SuperTeam: 20, //points
+                enumSize: 21
             };
 
             AchievementsState.List.getName = function (key) {
@@ -215,6 +222,8 @@ angular.module('angularApp.factories')
                         return "Get 350 points in wide";
                     case AchievementsState.List.XXS :
                         return "Get 350 points in narrow";
+                    case AchievementsState.List.SuperTeam :
+                        return "Get 500 points in coop";
                     case AchievementsState.List.Titan :
                         return "An original God";
                     case AchievementsState.List.Cheater :
