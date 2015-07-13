@@ -43,12 +43,12 @@ app.use(function (req, res, next) {
             var data = JSON.parse(row.data);
             if(data){
                 delete data["UserStats_points"];
-                data.rename("ZoomConfig", "ZoomConfig");
-                data.rename("CubeTheme", "CubeTheme");
-                data.rename("WebTheme", "WebTheme");
-                data.rename("Achievements", "Achievements");
-                data.rename("BestGameStats", "BestGameStats");
-                data.rename("TotalGameStats", "TotalGameStats");
+                data.rename("UserZoomConfig", "ZoomConfig");
+                data.rename("UserCubeTheme", "CubeTheme");
+                data.rename("UserTheme", "WebTheme");
+                data.rename("UserAchievements", "Achievements");
+                data.rename("UserStats_bestGameStats", "BestGameStats");
+                data.rename("UserStats_totalGameStats", "TotalGameStats");
             }
             db.run("UPDATE users set data = $data where user_id = $id", {
                 $data : JSON.stringify(data),
