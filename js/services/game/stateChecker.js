@@ -147,7 +147,7 @@ angular.module('angularApp.factories')
                 ret.push({success: false, message:"Max " + gconfig.time + " seconds"});
             }
             return ret;
-        }
+        };
 
         return new StateChecker();
     }]);

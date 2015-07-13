@@ -49,7 +49,7 @@ angular.module('angularApp.controllers').controller('GameStateCtrl', ['$scope','
                 targetSwapCounts = m.swaps;
                 $scope.state.swaps = m.swaps;
             }
-            $scope.state.rules = createRuleSet(m);
+            $scope.state.rules = stateChecker.createRuleSet(m);
         });
 
     }]);

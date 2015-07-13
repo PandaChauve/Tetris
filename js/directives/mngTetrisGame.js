@@ -5,8 +5,7 @@ angular.module('angularApp.directives').directive("mngTetrisGame", ['$swipe', 'g
         restrict: "A",
         link: function(scope, element, attrs){
             var startX, startY, endX, endY;
-            var scaleX = 1;
-            var scaleY = 1;
+            var scale = 1;
             var lastClick = -1;
 
             var tap = function(){
@@ -20,11 +19,11 @@ angular.module('angularApp.directives').directive("mngTetrisGame", ['$swipe', 'g
 
             if(document.documentElement.clientWidth < 448)//FIXME magic number
             {
-                scaleX = document.documentElement.clientWidth / 448;
+                scale = document.documentElement.clientWidth / 448;
             }
-            if(document.documentElement.clientHeight < 600)//FIXME magic number
+            if(document.documentElement.clientHeight < 600 && document.documentElement.clientHeight / 600 < scale)//FIXME magic number
             {
-                scaleY = document.documentElement.clientHeight / 600;
+                scale = document.documentElement.clientHeight / 600;
             }
             $swipe.bind(element, {
                 'start': function(coords) {
@@ -36,12 +35,12 @@ angular.module('angularApp.directives').directive("mngTetrisGame", ['$swipe', 'g
                     var bound = element[0].getBoundingClientRect();
                     endX = coords.x - bound.left;
                     endY = coords.y - bound.top;
-                    if(Math.abs(startX - endX)/scaleX > 30){
-                        game.slide(startX/scaleX, 600 - startY/scaleY, endX/scaleX, 600 - endY/scaleY); //FIXME 600 is canvas height
+                    if(Math.abs(startX - endX)/scale > 30){
+                        game.slide(startX/scale, 600 - startY/scale, endX/scale, 600 - endY/scale); //FIXME 600 is canvas height
                     }
                 }
             });
-            game.linkToDom(element[0], attrs.mngTetrisGame, scaleX, scaleY);
+            game.linkToDom(element[0], attrs.mngTetrisGame, scale, scale);
 
             scope.$on('$destroy', function() {
                 game.unlinkToDom(element[0],attrs.mngTetrisGame);

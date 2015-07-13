@@ -33,8 +33,8 @@ angular.module('angularApp.factories')
             var that = this;
             function findStartingBlockI(startX){
                 if(that.zoom){ //this is for a size 6 grid zoomed
-                    startX -= 28; //left margin
-                    startX = startX / 68; //about 72 per block
+                    startX -= 45; //left margin
+                    startX = startX / 60; //about  per block
                     startX -= (6 - gameConstants.columnCount) / 2;
                 }
                 else{ //this is for a size 10 grid
