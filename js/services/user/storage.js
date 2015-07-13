@@ -87,12 +87,12 @@ angular.module('angularApp.factories')
             scoreEffect :"scoreEffect",
             soundEffect :"soundEffect",
             explosionEffect :"explosionEffect",
-            UserZoomConfig :"UserZoomConfig",
-            UserCubeTheme :"UserCubeTheme",
-            UserTheme :"UserTheme",
-            UserAchievements :"UserAchievements",
-            UserStats_bestGameStats :"UserStats_bestGameStats",
-            UserStats_totalGameStats :"UserStats_totalGameStats"
+            ZoomConfig :"ZoomConfig",
+            CubeTheme :"CubeTheme",
+            WebTheme :"WebTheme",
+            Achievements :"Achievements",
+            BestGameStats :"BestGameStats",
+            TotalGameStats :"TotalGameStats"
         };
 
         UserStorage.prototype.MKeys = {

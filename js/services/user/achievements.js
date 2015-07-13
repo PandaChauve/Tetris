@@ -8,7 +8,7 @@ angular.module('angularApp.factories')
             'use strict';
 
             function getContainer(){
-                var r = storage.get(storage.Keys.UserAchievements) || [];
+                var r = storage.get(storage.Keys.Achievements) || [];
                 for (var i = r.length; i < AchievementsState.List.enumSize; i += 1) {
                     r[i] = false;
                 }
@@ -46,7 +46,7 @@ angular.module('angularApp.factories')
                     }
                 }
                 if(newOne){
-                    storage.set(storage.Keys.UserAchievements, container);
+                    storage.set(storage.Keys.Achievements, container);
                 }
             };
 

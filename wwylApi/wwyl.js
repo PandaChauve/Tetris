@@ -1,4 +1,4 @@
-var sqlite3 = require('sqlite3').verbose();
+var sqlite3 = require('sqlite3');
 var db = new sqlite3.Database('tetrisApi.sqlite');
 
 var express = require('express');
@@ -17,10 +17,54 @@ app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, OPTIONS');
     next();
 });
+//upgrade
+{
+    Object.prototype.rename = function (oldName, newName) {
+        // Do nothing if the names are the same
+        if (oldName == newName) {
+            return this;
+        }
+        // Check for the old property name to avoid a ReferenceError in strict mode.
+        if (this.hasOwnProperty(oldName)) {
+            this[newName] = this[oldName];
+            delete this[oldName];
+        }
+        return this;
+    };
+
+    db.all("SELECT * from users", {}, function(err, rows){
+        "use strict";
+        if(err || !rows){
+            console.log("can't update db " + err.message );
+            return;
+        }
+        for(var i = 0; i < rows.length; i++){
+            var row = rows[i];
+            var data = JSON.parse(row.data);
+            if(data){
+                delete data["UserStats_points"];
+                data.rename("ZoomConfig", "ZoomConfig");
+                data.rename("CubeTheme", "CubeTheme");
+                data.rename("WebTheme", "WebTheme");
+                data.rename("Achievements", "Achievements");
+                data.rename("BestGameStats", "BestGameStats");
+                data.rename("TotalGameStats", "TotalGameStats");
+            }
+            db.run("UPDATE users set data = $data where user_id = $id", {
+                $data : JSON.stringify(data),
+                $id: row.user_id
+            }, function(err){
+                if(err){
+                    console.log("can't update db field" + err.message );
+                }
+            })
+        }
+    })
+}
 
 var router = express.Router();
 router.get('/', function (req, res) {
-    res.json({message: 'Sorry this is the api'});
+    res.json({success: false, message: 'Sorry this is the api'});
 });
 
 router.route('/scores').post(function (req, res) {
@@ -28,29 +72,36 @@ router.route('/scores').post(function (req, res) {
         $score: req.body.score,
         $user: req.body.user,
         $map: req.body.map
-    });
-
-    //res.json({success: true, message: 'New score, db not cleaned'});
-
-    db.run("DELETE FROM scores WHERE map = $map and user_id = $user and score < (SELECT score FROM scores WHERE map = $map and user_id = $user order by score DESC LIMIT 1 OFFSET 2 )", {
-        $user: req.body.user,
-        $map: req.body.map
     }, function(err){
+        "use strict";
         if(err){
-            res.json({
-                success: false, message: "Can't clean db " + err.message
-            });
+            res.json(CreateError("can't add score", err));
         }
         else{
-            res.json({success: true, message: 'New score, db cleaned'});
+            db.run("DELETE FROM scores WHERE map = $map and user_id = $user and score < (SELECT score FROM scores WHERE map = $map and user_id = $user order by score DESC LIMIT 1 OFFSET 2 )", {
+                $user: req.body.user,
+                $map: req.body.map
+            }, function(err){
+                if(err){
+                    res.json(CreateError("Can't clean db", err));
+                }
+                else{
+                    res.json({success: true, message: 'New score, db cleaned'});
+                }
+            });
         }
     });
-
 });
 
 router.route('/scores/:map').get(function (req, res) {
-    db.all("SELECT s.score, u.name FROM scores as s, users as u WHERE s.user_id = u.rowid and s.map=$map ORDER BY score DESC limit 50", {$map: req.params.map}, function (err, rows) {
-        res.json(rows);
+    db.all("SELECT s.score, u.name FROM scores as s, users as u WHERE s.user_id = u.rowid and s.map=$map ORDER BY score DESC limit 50", {$map: req.params.map},
+        function (err, rows) {
+            if(err){
+                res.json(CreateError("can't read scores ...", err));
+            }
+            else{
+                res.json(rows);
+            }
     });
 });
 
@@ -73,20 +124,15 @@ router.route('/users').post(function (req, res) {
         $userName: req.body.userName,
         $hash: hash,
         $salt: salt
-    }, function (error) {
-        if (error === null) {
+    }, function (err) {
+        if (err === null) {
             res.json({
                 success: true,
                 message: "user created"
             });
         }
         else {
-            console.log(error);
-            res.json({
-                success: false,
-                message: "can't create user, already exists ?",
-                error: error.message
-            });
+            res.json(CreateError("can't create user, already exists ?", err));
 
         }
     });
@@ -98,9 +144,7 @@ function GetUser(req, res) {
         $userId: req.params.userid
     }, function (err, row) {
         if (err || !row) {
-            res.json({
-                success: false, message: "Invalid User"
-            });
+            res.json(CreateError("Invalid user", err));
         }
         else {
             res.json({
@@ -119,9 +163,7 @@ router.route('/users/:userid').get(function (req, res) {
         $userId: req.params.userid
     }, function (err, row) {
         if (err || !row) {
-            res.json({
-                success: false, message: "Invalid User"
-            });
+            res.json(CreateError("Invalid user", err));
         }
         else {
             res.json({
@@ -143,9 +185,7 @@ router.route('/users/:userid/:hash').put(function (req, res) {
         $hash: req.params.hash
     }, function (err, row) {
         if (err || !row) {
-            res.json({
-                success: false, message: "Invalid User"
-            });
+            res.json(CreateError("Invalid user", err));
             return;
         }
         var hash = req.params.hash;
@@ -170,15 +210,15 @@ router.route('/users/:userid/:hash').put(function (req, res) {
             $name: name
         }, function(err){
             if(err){
-                res.json({
-                    success: false, message: "Invalid User"
-                });
+                res.json(CreateError("Invalid user", err));
                 return;
+            }
+            else{
+                req.params.hash = hash;
+                GetUser(req, res);
             }
         });
 
-        req.params.hash = hash;
-        GetUser(req, res);
     });
 }).get(function (req, res) {
     GetUser(req, res);
@@ -189,20 +229,14 @@ router.route('/users/validate').post(function (req, res) {
         $name: req.body.name
     }, function (err, row) {
         if (err || !row) {
-            res.json({
-                success: false,
-                message: "can't fin user"
-            });
+            res.json(CreateError("can't find user", err));
         }
         else {
             var shasum = crypto.createHash('sha512');
             shasum.update(row.salt + req.body.password);
             var hash = shasum.digest('hex');
             if (hash != row.hash) {
-                res.json({
-                    success: false,
-                    message: "invalid password"
-                });
+                res.json(CreateError("invalid password", null));
             }
             else {
                 res.json({
@@ -217,6 +251,18 @@ router.route('/users/validate').post(function (req, res) {
         }
     });
 });
+
+function CreateError(msg, err){
+    "use strict";
+    if(err){
+        console.log(msg + " " +err+ " "+ err.message );
+        return { success: false, message: msg, error: err.message};
+    }
+    else{
+        console.log(msg + " " + err );
+        return { success: false, message: msg, error: err};
+    }
+}
 
 app.use('/wwylApi', router);
 app.listen(1337);

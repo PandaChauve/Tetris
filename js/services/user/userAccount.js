@@ -97,12 +97,12 @@ angular.module('angularApp.factories')
             return this.username !== null;
         };
         User.prototype.loadTheme = function(){
-            var t = storage.get(storage.Keys.UserTheme) || "slate";
+            var t = storage.get(storage.Keys.WebTheme) || "slate";
             $("#switchableTheme").attr("href", "bootswatch/"+ t.toLowerCase()+".min.css");
         };
 
         User.prototype.setTheme = function(style){
-            storage.set(storage.Keys.UserTheme, style);
+            storage.set(storage.Keys.WebTheme, style);
             this.loadTheme();
         };
 
@@ -119,11 +119,14 @@ angular.module('angularApp.factories')
                     that.broadcast();
                     that.loadTheme();
                     $route.reload();
-                    cb(true);
+                    cb(true, data.message);
                 }
                 else{
-                    cb(false);
+                    console.log(data.message);
+                    cb(false, data.message);
                 }
+            }).error(function(err){
+              console.log(err + err.message);
             });
         };
         return new User();

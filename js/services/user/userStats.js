@@ -22,7 +22,7 @@ angular.module('angularApp.factories')
             else {
                 this.bestGameStats[map].keepBest(game);
             }
-            storage.set(storage.Keys.UserStats_bestGameStats, this.bestGameStats, isCampaign);
+            storage.set(storage.Keys.BestGameStats, this.bestGameStats, isCampaign);
             if(isCampaign){
                 if (!this.totalGameStats.hasOwnProperty(map)) {
                     this.totalGameStats[map] = gameStatsFactory.newGameStatsFrom(game);
@@ -30,7 +30,7 @@ angular.module('angularApp.factories')
                 else {
                     this.totalGameStats[map].append(game);
                 }
-                storage.set(storage.Keys.UserStats_totalGameStats, this.totalGameStats, true);
+                storage.set(storage.Keys.TotalGameStats, this.totalGameStats, true);
             }
 
         };
@@ -51,8 +51,8 @@ angular.module('angularApp.factories')
 
 
         UserStats.prototype.reload = function () {
-            var bestGameStats = storage.get(storage.Keys.UserStats_bestGameStats); //will only return flat data
-            var totalGameStats = storage.get(storage.Keys.UserStats_totalGameStats); //will only return flat data
+            var bestGameStats = storage.get(storage.Keys.BestGameStats); //will only return flat data
+            var totalGameStats = storage.get(storage.Keys.TotalGameStats); //will only return flat data
             if (bestGameStats !== null) {
                 for(var idx in bestGameStats){
                     if (bestGameStats.hasOwnProperty(idx)) {

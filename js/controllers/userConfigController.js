@@ -8,12 +8,12 @@ angular.module('angularApp.controllers')
                 storage.set(storage.Keys.explosionEffect, false);
             }
 
-            if (storage.get(storage.Keys.UserZoomConfig) == null) {
-                storage.set(storage.Keys.UserZoomConfig, 2);
+            if (storage.get(storage.Keys.ZoomConfig) == null) {
+                storage.set(storage.Keys.ZoomConfig, 2);
             }
-            $scope.zoom = storage.get(storage.Keys.UserZoomConfig);
-            $scope.cubeType = storage.get(storage.Keys.UserCubeTheme) || 0;
-            $scope.selectedCss = storage.get(storage.Keys.UserTheme) || "Slate";
+            $scope.zoom = storage.get(storage.Keys.ZoomConfig);
+            $scope.cubeType = storage.get(storage.Keys.CubeTheme) || 0;
+            $scope.selectedCss = storage.get(storage.Keys.WebTheme) || "Slate";
 
             $scope.themes = [
                 {
@@ -68,7 +68,7 @@ angular.module('angularApp.controllers')
             $scope.updateStyle = function (integer) {
                 if($scope.requireStatus($scope.themes[integer].Require)){
                     $scope.cubeType = integer;
-                    storage.set(storage.Keys.UserCubeTheme, $scope.cubeType);
+                    storage.set(storage.Keys.CubeTheme, $scope.cubeType);
                 }
             };
 
@@ -107,7 +107,7 @@ angular.module('angularApp.controllers')
 
             $scope.updateZoom = function(val){
                 $scope.zoom = val;
-                storage.set(storage.Keys.UserZoomConfig, $scope.zoom);
+                storage.set(storage.Keys.ZoomConfig, $scope.zoom);
             };
 
             $scope.loadStyle = function (style) {
