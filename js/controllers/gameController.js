@@ -64,7 +64,7 @@ angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$htt
         $scope.endCallBack = function (finishedGame) {
             gameFinished = true;
             if(stateChecker.victory()){
-                storage.set("UserMap"+$scope.gameName, true, false);
+                storage.set(storage.MKeys.UserMap+$scope.gameName, true, false);
             }
             userStats.getCurrentGame().setTime(finishedGame.tics);
             userStats.getCurrentGame().setSwaps(finishedGame.tetris[0].counters.swap);

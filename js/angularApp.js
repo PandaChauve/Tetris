@@ -45,6 +45,16 @@ angularApp.config(['$routeProvider', '$locationProvider',
                         }]
                     }
                 }).
+                when('/achievements/:userid', {
+                    templateUrl: 'templates/user/achievements.html',
+                    controller: 'AchievementsCtrl',
+                    resolve: {
+                        user : ['userAccount', function(userAccount){
+                            "use strict";
+                            return userAccount.start();
+                        }]
+                    }
+                }).
                 when('/rules', {
                     templateUrl: 'templates/rules.html',
                     controller: 'RulesCtrl',
@@ -106,6 +116,16 @@ angularApp.config(['$routeProvider', '$locationProvider',
                     }
                 }).
                 when('/stats', {
+                    templateUrl: 'templates/user/stats.html',
+                    controller: 'StatCtrl',
+                    resolve: {
+                        user : ['userAccount', function(userAccount){
+                            "use strict";
+                            return userAccount.start();
+                        }]
+                    }
+                }).
+                when('/stats/:userid', {
                     templateUrl: 'templates/user/stats.html',
                     controller: 'StatCtrl',
                     resolve: {

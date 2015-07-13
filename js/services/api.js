@@ -3,6 +3,7 @@ angular.module('angularApp.factories')
     .factory('api', ['$http', function apiFactory($http) {
         "use strict";
         var root = "http://whenwillyoulose.com:1337/wwylApi/";
+        //root = "http://localhost:1337/wwylApi/";
         function Api() {}
         Api.prototype.addScore = function(userId, score, map){
             return $http.post(root+'scores', {score: score, user: userId, map:map});
@@ -25,6 +26,9 @@ angular.module('angularApp.factories')
         };
         Api.prototype.loadUserId = function(userId, hash){
             return $http.get(root+'users/'+userId+'/'+hash);
+        };
+        Api.prototype.loadExternalUser = function(userId){
+            return $http.get(root+'users/'+userId);
         };
         return new Api();
     }]);

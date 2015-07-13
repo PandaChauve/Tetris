@@ -24,7 +24,7 @@ angular.module('angularApp.factories')
         };
 
         MyAudio.prototype.play = function(sound){
-            if(storage.get("soundEffect")){ return;}
+            if(storage.get(storage.Keys.soundEffect)){ return;}
             var thistime = new Date();
             for (var i = 0; i < this.audiochannels.length; i += 1) {
                 if (this.audiochannels[i].endTime < thistime.getTime()) {

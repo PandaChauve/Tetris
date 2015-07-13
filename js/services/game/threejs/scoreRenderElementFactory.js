@@ -34,7 +34,7 @@ angular.module('angularApp.factories')
             var x = ((rad % 2) ? -225 : 175)- 50 * Math.random();
 
             var color = Math.random() * 0xffffff;
-            if(!storage.get("scoreEffect")){
+            if(!storage.get(storage.Keys.scoreEffect)){
 
                 var text3d = new THREE.TextGeometry(v, {
                     size: 30,
@@ -58,7 +58,7 @@ angular.module('angularApp.factories')
         };
 
         ScoreElement.prototype.createParticles = function(x,y,color, value){
-            if(storage.get("explosionEffect")){ return;}
+            if(storage.get(storage.Keys.explosionEffect)){ return;}
             var attributes = {
                 size: {type: 'f', value: []},
                 customColor: {type: 'c', value: []}

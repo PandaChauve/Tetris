@@ -2,18 +2,18 @@ angular.module('angularApp.controllers')
 .controller('UserConfigCtrl', ['$scope', '$http', '$timeout', 'userAccount', 'storage','achievements',
         function ($scope, $http, $timeout, userAccount, storage, achievements) {
             "use strict";
-            if (storage.get("scoreEffect") == null) {
-                storage.set("scoreEffect", false);
-                storage.set("soundEffect", false);
-                storage.set("explosionEffect", false);
+            if (storage.get(storage.Keys.scoreEffect) == null) {
+                storage.set(storage.Keys.scoreEffect, false);
+                storage.set(storage.Keys.soundEffect, false);
+                storage.set(storage.Keys.explosionEffect, false);
             }
 
-            if (storage.get("UserZoomConfig") == null) {
-                storage.set("UserZoomConfig", 2);
+            if (storage.get(storage.Keys.UserZoomConfig) == null) {
+                storage.set(storage.Keys.UserZoomConfig, 2);
             }
-            $scope.zoom = storage.get("UserZoomConfig");
-            $scope.cubeType = storage.get("UserCubeTheme") || 0;
-            $scope.selectedCss = storage.get("UserTheme") || "Slate";
+            $scope.zoom = storage.get(storage.Keys.UserZoomConfig);
+            $scope.cubeType = storage.get(storage.Keys.UserCubeTheme) || 0;
+            $scope.selectedCss = storage.get(storage.Keys.UserTheme) || "Slate";
 
             $scope.themes = [
                 {
@@ -50,9 +50,9 @@ angular.module('angularApp.controllers')
                 }
             ];
             $scope.effects = {
-                scoreEffect: storage.get("scoreEffect"),
-                soundEffect: storage.get("soundEffect"),
-                explosionEffect: storage.get("explosionEffect")
+                scoreEffect: storage.get(storage.Keys.scoreEffect),
+                soundEffect: storage.get(storage.Keys.soundEffect),
+                explosionEffect: storage.get(storage.Keys.explosionEffect)
             };
 
             $scope.updateCheckBox = function (name) {
@@ -68,7 +68,7 @@ angular.module('angularApp.controllers')
             $scope.updateStyle = function (integer) {
                 if($scope.requireStatus($scope.themes[integer].Require)){
                     $scope.cubeType = integer;
-                    storage.set("UserCubeTheme", $scope.cubeType);
+                    storage.set(storage.Keys.UserCubeTheme, $scope.cubeType);
                 }
             };
 
@@ -107,7 +107,7 @@ angular.module('angularApp.controllers')
 
             $scope.updateZoom = function(val){
                 $scope.zoom = val;
-                storage.set("UserZoomConfig", $scope.zoom);
+                storage.set(storage.Keys.UserZoomConfig, $scope.zoom);
             };
 
             $scope.loadStyle = function (style) {

@@ -69,7 +69,7 @@ router.route('/users').post(function (req, res) {
     var shasum = crypto.createHash('sha512');
     shasum.update(salt + req.body.password);
     var hash = shasum.digest('hex');
-    db.run("INSERT INTO users VALUES(NULL, $userName, $hash, $salt, NULL)", {
+    db.run("INSERT INTO users VALUES(NULL, $userName, $hash, $salt, NULL, NULL)", {
         $userName: req.body.userName,
         $hash: hash,
         $salt: salt
@@ -84,7 +84,8 @@ router.route('/users').post(function (req, res) {
             console.log(error);
             res.json({
                 success: false,
-                message: "can't create user, already exists ?"
+                message: "can't create user, already exists ?",
+                error: error.message
             });
 
         }
@@ -105,6 +106,7 @@ function GetUser(req, res) {
             res.json({
                 id: row.user_id,
                 name: row.name,
+                email: row.email,
                 hash: row.hash,
                 data: row.data,
                 success: true
@@ -112,6 +114,28 @@ function GetUser(req, res) {
         }
     });
 }
+router.route('/users/:userid').get(function (req, res) {
+    db.get("SELECT * from users where user_id=$userId", {
+        $userId: req.params.userid
+    }, function (err, row) {
+        if (err || !row) {
+            res.json({
+                success: false, message: "Invalid User"
+            });
+        }
+        else {
+            res.json({
+                id: row.user_id,
+                name: row.name,
+                email: "INVALID CREDENTIALS",
+                hash: "INVALID CREDENTIALS",
+                data: row.data,
+                success: true
+            });
+        }
+    });
+});
+
 
 router.route('/users/:userid/:hash').put(function (req, res) {
     db.get("SELECT * from users where user_id=$userId and hash=$hash", {

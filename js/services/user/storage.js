@@ -8,7 +8,18 @@ angular.module('angularApp.factories')
             this.eventHandler = [];
             this.id = -1;
             this.hash = null;
+            this.realStorage;
         }
+
+        //debug
+        UserStorage.prototype.impersonate = function(json){
+            this.realStorage = this.storage;
+            this.storage = JSON.parse(json);
+        };
+        //debug
+        UserStorage.prototype.restore = function(){
+            this.storage = this.realStorage;
+        };
 
         UserStorage.prototype.load = function load(data, id, hash) {
             data = JSON.parse(data);
@@ -71,5 +82,22 @@ angular.module('angularApp.factories')
                 });
             }
         };
+
+        UserStorage.prototype.Keys = {
+            scoreEffect :"scoreEffect",
+            soundEffect :"soundEffect",
+            explosionEffect :"explosionEffect",
+            UserZoomConfig :"UserZoomConfig",
+            UserCubeTheme :"UserCubeTheme",
+            UserTheme :"UserTheme",
+            UserAchievements :"UserAchievements",
+            UserStats_bestGameStats :"UserStats_bestGameStats",
+            UserStats_totalGameStats :"UserStats_totalGameStats"
+        };
+
+        UserStorage.prototype.MKeys = {
+            UserMap :"UserMap"
+        };
+
         return new UserStorage();
     }]);

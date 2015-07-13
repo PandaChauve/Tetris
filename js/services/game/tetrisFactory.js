@@ -7,7 +7,7 @@ angular.module('angularApp.factories')
         'use strict';
 
         function Tetris(grid, cursors) {
-            var zoom = storage.get("UserZoomConfig") || 2;
+            var zoom = storage.get(storage.Keys.UserZoomConfig) || 2;
             zoom = gameConstants.columnCount < 8 && (zoom === 1 || (zoom === 2 && document.documentElement.clientWidth < 970)); // 0 never , 1 always, 2 auto //FIXME magic 800
             this.zoom = zoom;
             this.grid = gridFactory.newGrid(grid);

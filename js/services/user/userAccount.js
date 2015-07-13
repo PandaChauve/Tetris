@@ -57,6 +57,7 @@ angular.module('angularApp.factories')
                     that.logIn(login, password, cb);
                 }
                 else{
+                    console.log(data.message);
                     cb(false);
                 }
             });
@@ -96,12 +97,12 @@ angular.module('angularApp.factories')
             return this.username !== null;
         };
         User.prototype.loadTheme = function(){
-            var t = storage.get("UserTheme") || "slate";
+            var t = storage.get(storage.Keys.UserTheme) || "slate";
             $("#switchableTheme").attr("href", "bootswatch/"+ t.toLowerCase()+".min.css");
         };
 
         User.prototype.setTheme = function(style){
-            storage.set("UserTheme", style);
+            storage.set(storage.Keys.UserTheme, style);
             this.loadTheme();
         };
 

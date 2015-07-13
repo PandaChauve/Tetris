@@ -8,7 +8,7 @@ angular.module('angularApp.factories')
             'use strict';
 
             function getContainer(){
-                var r = storage.get("UserAchievements") || [];
+                var r = storage.get(storage.Keys.UserAchievements) || [];
                 for (var i = r.length; i < AchievementsState.List.enumSize; i += 1) {
                     r[i] = false;
                 }
@@ -46,7 +46,7 @@ angular.module('angularApp.factories')
                     }
                 }
                 if(newOne){
-                    storage.set("UserAchievements", container);
+                    storage.set(storage.Keys.UserAchievements, container);
                 }
             };
 
@@ -168,7 +168,7 @@ angular.module('angularApp.factories')
                     case AchievementsState.List.Flash :
                     case AchievementsState.List.Pacman :
                     case AchievementsState.List.Sherlock :
-                        container[key] = storage.get("UserMap"+this.keyToMap(key));
+                        container[key] = storage.get(storage.MKeys.UserMap+this.keyToMap(key));
                         break;
                 }
 

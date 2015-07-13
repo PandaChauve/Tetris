@@ -3,7 +3,6 @@ angular.module('angularApp.factories')
     .factory('userStats', ['storage', 'gameStatsFactory', function userStatsFactory(storage, gameStatsFactory) {
         "use strict";
         function UserStats() {
-            this.points = {};
             this.bestGameStats = {};
             this.totalGameStats = {};
             this.currentGame = gameStatsFactory.newGameStats();
@@ -14,41 +13,25 @@ angular.module('angularApp.factories')
         };
 
 
-        UserStats.prototype.setMaxStat = function (score, map, stat, publish) {
-            if (!this[stat].hasOwnProperty(map)) {
-                this[stat][map] = [score, 0, 0, 0, 0];
-            }
-            else {
-                for (var i = 0; i < this[stat][map].length; i += 1) {
-                    if (score >= this[stat][map][i]) {
-                        this[stat][map].splice(i, 0, score);
-                        this[stat][map].splice(this[stat][map].length - 1, 1);
-                        break;
-                    }
-                }
-            }
-
-            storage.set("UserStats_" + stat, this[stat],publish);
-        };
 
         UserStats.prototype.addGame = function (game, map) {
+            var isCampaign = map.indexOf("campaign") > -1;
             if (!this.bestGameStats.hasOwnProperty(map)) {
                 this.bestGameStats[map] = gameStatsFactory.newGameStatsFrom(game);
             }
             else {
                 this.bestGameStats[map].keepBest(game);
             }
-            storage.set("UserStats_bestGameStats", this.bestGameStats, false);
-
-            if (!this.totalGameStats.hasOwnProperty(map)) {
-                this.totalGameStats[map] = gameStatsFactory.newGameStatsFrom(game);
+            storage.set(storage.Keys.UserStats_bestGameStats, this.bestGameStats, isCampaign);
+            if(isCampaign){
+                if (!this.totalGameStats.hasOwnProperty(map)) {
+                    this.totalGameStats[map] = gameStatsFactory.newGameStatsFrom(game);
+                }
+                else {
+                    this.totalGameStats[map].append(game);
+                }
+                storage.set(storage.Keys.UserStats_totalGameStats, this.totalGameStats, true);
             }
-            else {
-                this.totalGameStats[map].append(game);
-            }
-            this.setMaxStat(game.score, map, "points", false);
-            //only publish the third set
-            storage.set("UserStats_totalGameStats", this.totalGameStats, true);
 
         };
 
@@ -66,38 +49,26 @@ angular.module('angularApp.factories')
             return gameStatsFactory.newGameStats();
         };
 
-        UserStats.prototype.getHighScore = function (map) {
-            if (this.points.hasOwnProperty(map)) {
-                return this.points[map];
-            }
-            return [0, 0, 0, 0, 0];
-        };
 
-        //FIXME storage state :///
-        UserStats.GetUserStats = function () {
-            var score = storage.get("UserStats_points"); //will only return flat data
-            var bestGameStats = storage.get("UserStats_bestGameStats"); //will only return flat data
-            var totalGameStats = storage.get("UserStats_totalGameStats"); //will only return flat data
-            var ret = new UserStats();
-            if (score !== null) {
-                ret.points = score;
-            }
+        UserStats.prototype.reload = function () {
+            var bestGameStats = storage.get(storage.Keys.UserStats_bestGameStats); //will only return flat data
+            var totalGameStats = storage.get(storage.Keys.UserStats_totalGameStats); //will only return flat data
             if (bestGameStats !== null) {
                 for(var idx in bestGameStats){
                     if (bestGameStats.hasOwnProperty(idx)) {
-                        ret.bestGameStats[idx] = gameStatsFactory.newGameStatsFrom(bestGameStats[idx]);
+                        this.bestGameStats[idx] = gameStatsFactory.newGameStatsFrom(bestGameStats[idx]);
                     }
                 }
             }
             if (totalGameStats !== null) {
                 for(idx in totalGameStats){
                     if (totalGameStats.hasOwnProperty(idx)) {
-                        ret.totalGameStats[idx] = gameStatsFactory.newGameStatsFrom(totalGameStats[idx]);
+                        this.totalGameStats[idx] = gameStatsFactory.newGameStatsFrom(totalGameStats[idx]);
                     }
                 }
             }
-            return ret;
+            return this;
         };
-
-        return UserStats.GetUserStats();
+        var ret = new UserStats();
+        return ret.reload();
     }]);
