@@ -1,4 +1,4 @@
-var sqlite3 = require('sqlite3');
+var sqlite3 = require('sqlite3').verbose();
 var db = new sqlite3.Database('tetrisApi.sqlite');
 
 var express = require('express');
@@ -30,18 +30,22 @@ router.route('/scores').post(function (req, res) {
         $map: req.body.map
     });
 
-    res.json({success: true, message: 'New score'});
+    //res.json({success: true, message: 'New score, db not cleaned'});
 
-    db.run("DELETE FROM scores WHERE map = $map and user_id = $user and score < (SELECT score FROM scores WHERE map = $map and user_id = $user order by score DESC LIMIT 100 OFFSET 3 )", {
+    db.run("DELETE FROM scores WHERE map = $map and user_id = $user and score < (SELECT score FROM scores WHERE map = $map and user_id = $user order by score DESC LIMIT 1 OFFSET 2 )", {
+        $user: req.body.user,
         $map: req.body.map
     }, function(err){
         if(err){
             res.json({
-                success: false, message: "Can't clean db"
+                success: false, message: "Can't clean db " + err.message
             });
-            return;
+        }
+        else{
+            res.json({success: true, message: 'New score, db cleaned'});
         }
     });
+
 });
 
 router.route('/scores/:map').get(function (req, res) {

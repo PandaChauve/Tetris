@@ -83,6 +83,11 @@ angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$htt
         $scope.reset = function(){
             $scope.$broadcast('newGame', true);
             gameFinished = false;
+
+            $scope.pause.active = false;
+            if (game.pause) {
+                game.togglePause();
+            }
             game.startNewGame();
         };
 
