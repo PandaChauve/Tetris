@@ -22,6 +22,7 @@ body{
     margin:auto;
     text-align: center;
     display: inline-block;
+    position:relative;
 }
 .well.gameHolder{
     border:0;
@@ -32,13 +33,6 @@ body{
     text-align: center;
 }
 
-
-@media (min-width: 510px) {
-    .well.gameHolder{
-        border:1px;
-        padding:19px;
-    }
-}
 
 
 .row .gameDetails {
@@ -245,23 +239,18 @@ canvas {
 
 .pauseShadow {
     font-family: 'Architects Daughter', cursive;
-    position: absolute;
-    width: 448px;
+   position: absolute;
+    width: 100%;
+    height: 100%;
     text-align: center;
     background: black;
-    height: 600px;
     padding-top: 200px;
     font-size: 35px;
     opacity: 0.5;
+    margin: 0px;
 }
 
 @media (max-width: 510px) {
-    .pauseShadow{
-        width: 250px;
-        height:400px;
-        margin:auto;
-        padding:19px;
-    }
 }
 
 .btn-custom.active {
@@ -270,4 +259,14 @@ canvas {
 
 .modal-300{
     max-width: 300px;
+}
+
+@media (min-width: 510px) {
+    .well.gameHolder{
+        border:1px;
+        padding:19px;
+    }
+    .pauseShadow{
+        margin:-19px;
+    }
 }
