@@ -32,7 +32,7 @@ router.route('/scores').post(function (req, res) {
 
     res.json({success: true, message: 'New score'});
 
-    db.run("DELETE FROM scores WHERE map = $map  and score < (SELECT score FROM scores WHERE map = $map order by score DESC LIMIT 1 OFFSET 50 )", {
+    db.run("DELETE FROM scores WHERE map = $map and user_id = $user and score < (SELECT score FROM scores WHERE map = $map and user_id = $user order by score DESC LIMIT 100 OFFSET 3 )", {
         $map: req.body.map
     }, function(err){
         if(err){
