@@ -9,8 +9,8 @@ angular.module('angularApp.factories')
             this.score = 0;
             this.time = 0;
             this.blockDestroyed = 0;
-            this.multilines = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-            this.lineSizes = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            this.multilines = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+            this.lineSizes = [0, 0, 0, 0, 0, 0, 0, 0, 0];
             this.gameCount = 0;
             this.swapCount = 0;
         };
@@ -18,6 +18,9 @@ angular.module('angularApp.factories')
         GameStats.prototype.addLines = function (series, score) { //no score logic here
             this.score += score;
             var ml = series.length - 2;
+            if(ml >= this.multilines.length){
+                ml = this.multilines.length -1;
+            }
             this.multilines[ml] += 1;
             for (var i = 0; i < series.length; i += 1) { //for a given serie, remove duplicates
                 var serie = [];
@@ -26,7 +29,11 @@ angular.module('angularApp.factories')
                         serie.push(el);
                     }
                 });
-                this.lineSizes[serie.length - 3] += 1;
+                var idx = serie.length - 3;
+                if(idx >= this.lineSizes.length){
+                    idx = this.lineSizes.length -1;
+                }
+                this.lineSizes[idx] += 1;
                 this.blockDestroyed += serie.length;
             }
         };
