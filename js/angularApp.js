@@ -1,5 +1,5 @@
 
-angular.module('angularApp.base', ['cgNotify']);
+angular.module('angularApp.base', ['cgNotify', 'color.picker']);
 angular.module('angularApp.factories', ['angularApp.base']);
 angular.module('angularApp.controllers', ['ui.bootstrap', 'angularApp.factories']);
 angular.module('angularApp.directives', ['ngTouch', 'angularApp.base', 'angularApp.factories']);

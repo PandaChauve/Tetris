@@ -1,29 +1,17 @@
 angular.module('angularApp.factories')
-    .factory('cubeRenderElementFactory', ['gameConstants', 'blockFactory', function cubeRenderElementFactoryCreator(gameConstants, blockFactory) {
+    .factory('cubeRenderElementFactory', ['gameConstants', 'blockFactory', 'storage',  function cubeRenderElementFactoryCreator(gameConstants, blockFactory, storage) {
         "use strict";
         function CubeRenderer() {
             this.cube = null;
             this.textures = {};
             this.colors = [];
             this.cache = {'0':[],'1':[],'2':[],'3':[],'4':[],'5':[],'6':[]};
+
+            this.hexColors = storage.get(storage.Keys.HexKeyColors) || [0x000080,0x005000, 0x404040, 0x601010, 0x9c3e03, 0x281a42];
         }
 
         CubeRenderer.prototype.getHexColor = function getHexColor(type) {
-            switch (type) {
-                case 0:
-                    return 0x000080;
-                case 1:
-                    return 0x005000;
-                case 2:
-                    return 0x404040;
-                case 3:
-                    return 0x601010;
-                case 4:
-                    return 0x9c3e03;
-                case 5:
-                    return 0x281a42;
-            }
-            return 0x000000;
+            return this.hexColors[type];
         };
 
         CubeRenderer.prototype.getColor = function getColor(c) {

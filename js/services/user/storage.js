@@ -97,7 +97,8 @@ angular.module('angularApp.factories')
             ZoomConfig :"ZoomConfig",
             CubeTheme :"CubeTheme",
             WebTheme :"WebTheme",
-            Achievements :"Achievements"
+            Achievements :"Achievements",
+            HexKeyColors :"HexKeyColors"
         };
 
         UserStorage.prototype.MKeys = {

@@ -15,7 +15,6 @@ angular.module('angularApp.factories')
             if(id < 0){
                 throw "not registered";
             }
-
             return $http.put(root+'users/'+id+'/'+hash,{data: data, name: name, password: password});
         };
         Api.prototype.createUser = function(name, password){
