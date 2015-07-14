@@ -56,10 +56,17 @@ angular.module('angularApp.factories')
                 flush = true;
             }
             this.storage[key] = JSON.stringify(value);
-            if (this.id !== -1 && flush) {
+            if (flush) {
+                this.flush();
+            }
+        };
+
+        UserStorage.prototype.flush = function(){
+            if (this.id !== -1 ) {
                 this.save();
             }
         };
+
         UserStorage.prototype.save = function () {
             if(this.inSave){
                 this.waitingToSave = true;
@@ -90,13 +97,13 @@ angular.module('angularApp.factories')
             ZoomConfig :"ZoomConfig",
             CubeTheme :"CubeTheme",
             WebTheme :"WebTheme",
-            Achievements :"Achievements",
-            BestGameStats :"BestGameStats",
-            TotalGameStats :"TotalGameStats"
+            Achievements :"Achievements"
         };
 
         UserStorage.prototype.MKeys = {
-            UserMap :"UserMap"
+            UserMap :"UserMap",
+            BestGameStats :"BestGameStats",
+            TotalGameStats :"TotalGameStats"
         };
 
         return new UserStorage();

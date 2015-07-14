@@ -19,19 +19,6 @@ app.use(function (req, res, next) {
 });
 //upgrade
 {
-    Object.prototype.rename = function (oldName, newName) {
-        // Do nothing if the names are the same
-        if (oldName == newName) {
-            return this;
-        }
-        // Check for the old property name to avoid a ReferenceError in strict mode.
-        if (this.hasOwnProperty(oldName)) {
-            this[newName] = this[oldName];
-            delete this[oldName];
-        }
-        return this;
-    };
-
     db.all("SELECT * from users", {}, function(err, rows){
         "use strict";
         if(err || !rows){
@@ -42,13 +29,18 @@ app.use(function (req, res, next) {
             var row = rows[i];
             var data = JSON.parse(row.data);
             if(data){
-                delete data["UserStats_points"];
-                data.rename("UserZoomConfig", "ZoomConfig");
-                data.rename("UserCubeTheme", "CubeTheme");
-                data.rename("UserTheme", "WebTheme");
-                data.rename("UserAchievements", "Achievements");
-                data.rename("UserStats_bestGameStats", "BestGameStats");
-                data.rename("UserStats_totalGameStats", "TotalGameStats");
+                var best = JSON.parse(data["BestGameStats"]);
+                for(var i in best){
+                    data["BestGameStats"+i] = JSON.stringify(best[i]);
+                }
+                delete data["BestGameStats"];
+
+                var total = JSON.parse(data["TotalGameStats"]);
+                for(var i in total){
+                    if(i.indexOf("campaign") == -1)
+                        data["TotalGameStats"+i] = JSON.stringify(total[i]);
+                }
+                delete data["TotalGameStats"];
             }
             db.run("UPDATE users set data = $data where user_id = $id", {
                 $data : JSON.stringify(data),

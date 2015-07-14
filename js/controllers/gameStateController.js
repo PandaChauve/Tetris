@@ -35,7 +35,6 @@ angular.module('angularApp.controllers').controller('GameStateCtrl', ['$scope','
         });
         $scope.$on("newCombos", function(event, m){
             $scope.state.combo = m;
-            console.log(m);
         });
         $scope.$on("newActions", function(event, m){
             $scope.state.actions = m;
