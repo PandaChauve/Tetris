@@ -5,6 +5,8 @@ angular.module('angularApp.factories')
         var GridEvaluator = function () {
             this.series = [];
             this.falling = 0;
+            this.lastTriger = 0;
+            this.combo = 1;
         };
 
         GridEvaluator.prototype.evaluateColumn = function (container, i) {
@@ -165,12 +167,26 @@ angular.module('angularApp.factories')
 
         GridEvaluator.prototype.evaluate = function (container) {
             //vertical evaluation does not count block that start disappearing => call it before horizontal evaluation
+            this.lastTriger-= 1;
+            if(this.lastTriger <= 0){
+                this.combo = 1;
+            }
             this.series = [];
             this.evaluateVertical(container);
             this.evaluateHorizontal(container);
             this.mergeSeries();
-            userStats.getCurrentGame().addLines(this.series, this.getScore()); //FIXME will do but i'dl like an event system
-            return this.getScore();
+            var score = this.getScore();
+            var scoreCpy = score;
+            score *= this.combo;
+
+            if(scoreCpy >= this.combo ){
+                this.lastTriger = 120; //FIXME magic number
+            }
+            if(scoreCpy > this.combo){
+                this.combo += 1;
+            }
+            userStats.getCurrentGame().addLines(this.series, score); //FIXME will do but i'd like an event system
+            return {score: score, combo: this.combo};
         };
 
         return new GridEvaluator();

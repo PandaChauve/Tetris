@@ -12,7 +12,7 @@
                 <br />
                 <div class="gameDetailsElement">
                     <h3>Score</h3>
-                    <span id="score">{{state.score}}</span>
+                    <span id="score">{{state.score}} <b ng-if="state.combo > 1">(X{{state.combo}})</b></span>
                 </div>
                 <div class="gameDetailsElement">
                     <h3>Swaps</h3>

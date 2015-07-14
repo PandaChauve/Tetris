@@ -24,7 +24,7 @@ angular.module('angularApp.factories')
             }
 
             function Game() {
-                this.last = {swaps:0, score:0, actions: 0};
+                this.last = {swaps:0, score:0, actions: 0, combo: 1};
                 this.availableGrids = [];
                 this.started = false;
                 this.gridCount = 0;
@@ -57,7 +57,7 @@ angular.module('angularApp.factories')
                 this.pause = false;
                 this.tics = 0;
                 this.scoreHandler = new Score();
-                this.last = {swaps:0, score:0, actions:0};
+                this.last = {swaps:0, score:0, actions:0, combo:1};
             };
 
             Game.prototype.startNewGame = function startNewGame() {
@@ -186,11 +186,12 @@ angular.module('angularApp.factories')
 
                 var continueGame = true;
                 var count = 0;
+                var tickret = [];
                 while (this.tics < progress * TIC_PER_SEC / 1000 && continueGame) {
                     count += 1;
                     this.tics += 1;
                     for (i = 0; i < this.tetris.length; i += 1) {
-                        this.tetris[i].oneTick();
+                        tickret.push(this.tetris[i].oneTick());
                         stateChecker.check(this.tetris[i]);
                         if (stateChecker.defeat() || stateChecker.victory()) {
                             continueGame = false;
@@ -198,6 +199,11 @@ angular.module('angularApp.factories')
                         }
                     }
                     userInput.clear();
+
+                    if(this.last.combo !=  tickret[0].combo){//avoid useless broadcast
+                        this.last.combo =  tickret[0].combo;
+                        this.scope.$broadcast('newCombos', this.last.combo);
+                    }
                 }
 
                 /* use that with the capture server
@@ -208,7 +214,9 @@ angular.module('angularApp.factories')
                 var socket = io.connect('http://localhost');
                 socket.emit('image', dataUrl);
                 */
-                if(this.last.score < this.tetris[0].getScore()){ //avoid useless broadcast
+
+                //FIXME merge the 4 broadcast
+                if(this.last.score != this.tetris[0].getScore()){ //avoid useless broadcast
                     this.last.score = this.tetris[0].getScore();
                     this.scope.$broadcast('newScore', this.last.score);
                 }

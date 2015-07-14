@@ -76,7 +76,8 @@ angular.module('angularApp.factories')
         Tetris.prototype.oneTick = function () {
 
             //check if don't have new successful combo
-            this.score += this.grid.evaluate();
+            var evaluation = this.grid.evaluate();
+            this.score += evaluation.score;
 
             //user input
             this.handleUserInput();
@@ -102,6 +103,8 @@ angular.module('angularApp.factories')
                 }
                 this.groundSpeed = this.baseGroundSpeed;
             }
+
+            return evaluation;
         };
 
         Tetris.prototype.getMaxFixed = function () {

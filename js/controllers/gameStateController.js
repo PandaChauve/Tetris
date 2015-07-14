@@ -10,7 +10,8 @@ angular.module('angularApp.controllers').controller('GameStateCtrl', ['$scope','
             time : 0,
             apm : 0,
             swaps : 0,
-            actions : 0
+            actions : 0,
+            combo: 1
         };
         ///!\ to avoid too much apply it's the time in charge (about 10 per sec...)
         $scope.$on("newScore", function(event, m){
@@ -22,6 +23,7 @@ angular.module('angularApp.controllers').controller('GameStateCtrl', ['$scope','
             $scope.state.time = 0;
             $scope.state.actions = 0;
             $scope.state.apm = 0;
+            $scope.state.combo = 1;
         });
         $scope.$on("newSwaps", function(event, m){
             if(upwardSwapCount){
@@ -30,6 +32,10 @@ angular.module('angularApp.controllers').controller('GameStateCtrl', ['$scope','
             else{
                 $scope.state.swaps = targetSwapCounts - m;
             }
+        });
+        $scope.$on("newCombos", function(event, m){
+            $scope.state.combo = m;
+            console.log(m);
         });
         $scope.$on("newActions", function(event, m){
             $scope.state.actions = m;
