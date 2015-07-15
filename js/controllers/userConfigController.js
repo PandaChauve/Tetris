@@ -122,33 +122,31 @@ angular.module('angularApp.controllers')
             $timeout(function () {$('[data-toggle="tooltip"]').tooltip();}, 0);
 
 
-            $scope.resetColors = function(){
-                var array = storage.get(storage.Keys.HexKeyColors)  || [0x000080,0x005000, 0x404040, 0x601010, 0x9c3e03, 0x281a42];
+            $scope.resetColors = function(data){
+                var array = data || storage.get(storage.Keys.HexKeyColors);
                 for(var i = 0; i < 6; ++i){
-                    $scope['cube_color_'+i] = '#'+('000000'+ array[i].toString(16)).slice(-6);;
+                    $("#picker_"+i).spectrum({
+                        color: '#'+('000000'+ array[i].toString(16)).slice(-6),
+                        flat: false,
+                        showInput: false,
+                        showAlpha: false,
+                        showButtons: false
+                    });
                 }
+
             };
             $scope.saveColors = function(){
                 var colors = [];
-                colors.push(parseInt($scope.cube_color_0.slice(-6), 16));
-                colors.push(parseInt($scope.cube_color_1.slice(-6), 16));
-                colors.push(parseInt($scope.cube_color_2.slice(-6), 16));
-                colors.push(parseInt($scope.cube_color_3.slice(-6), 16));
-                colors.push(parseInt($scope.cube_color_4.slice(-6), 16));
-                colors.push(parseInt($scope.cube_color_5.slice(-6), 16));
+                for(var i = 0; i < 6; ++i){
+                    colors.push(parseInt($("#picker_"+i).spectrum("get").toHex(), 16));
+                }
                 storage.set(storage.Keys.HexKeyColors, colors);
                 $scope.resetColors();
             };
             $scope.defaultColors = function(){
-                $scope.cube_color_0 = '#000080';
-                $scope.cube_color_1 = '#005000';
-                $scope.cube_color_2 = '#404040';
-                $scope.cube_color_3 = '#601010';
-                $scope.cube_color_4 = '#9c3e03';
-                $scope.cube_color_5 = '#281a42';
+                $scope.resetColors([0x000080,0x005000, 0x404040, 0x601010, 0x9c3e03, 0x281a42]);
                 $scope.saveColors();
             };
-            $scope.resetColors();
-
+            $scope.resetColors([0x000080,0x005000, 0x404040, 0x601010, 0x9c3e03, 0x281a42]);
 
         }]);

@@ -51,44 +51,40 @@
 <br/><br/>
 <div class="container">
     <div class="row">
-        <div class="panel panel-default" style="max-width:600px; margin:auto">
+        <div class="panel panel-default" style="max-width:600px; margin:auto; ">
             <div class="panel-heading">
                 <h3 class="panel-title">Block colors</h3></div>
-            <div class="panel-body">
-                <div class="col-xs-1">
-                    <color-picker ng-model="cube_color_0" color-picker-alpha="false" color-picker-format="'hex'"
-                                  color-picker-swatch-only="true" color-picker-swatch-pos="'right'"></color-picker>
-                </div>
-                <div class="col-xs-1">
-                    <color-picker ng-model="cube_color_1" color-picker-alpha="false" color-picker-format="'hex'"
-                                  color-picker-swatch-only="true"></color-picker>
-                </div>
-                <div class="col-xs-1">
-                    <color-picker ng-model="cube_color_2" color-picker-alpha="false" color-picker-format="'hex'"
-                                  color-picker-swatch-only="true"></color-picker>
-                </div>
-                <div class="col-xs-1">
-                    <color-picker ng-model="cube_color_3" color-picker-alpha="false" color-picker-format="'hex'"
-                                  color-picker-swatch-only="true"></color-picker>
-                </div>
-                <div class="col-xs-1">
-                    <color-picker ng-model="cube_color_4" color-picker-alpha="false" color-picker-format="'hex'"
-                                  color-picker-swatch-only="true"></color-picker>
-                </div>
-                <div class="col-xs-1">
-                    <color-picker ng-model="cube_color_5" color-picker-alpha="false" color-picker-format="'hex'"
-                                  color-picker-swatch-only="true"></color-picker>
-                </div>
-                <div class="col-xs-6" style="text-align: center">
-                    <button type="button" class="btn btn-default btn-custom"
-                            ng-click="saveColors()">Save
-                    </button>
-                    <button type="button" class="btn btn-default btn-custom"
-                            ng-click="resetColors()">Reset
-                    </button>
-                    <button type="button" class="btn btn-default btn-custom"
-                            ng-click="defaultColors()">Default
-                    </button>
+            <div class="panel-body" style="text-align: center">
+                <div class="row">
+                    <div class="col-xs-2">
+                        <input type='text' id="picker_0"/>
+                    </div>
+                    <div class="col-xs-2">
+                        <input type='text' id="picker_1"/>
+                    </div>
+                    <div class="col-xs-2">
+                        <input type='text' id="picker_2"/>
+                    </div>
+                    <div class="col-xs-2">
+                        <input type='text' id="picker_3"/>
+                    </div>
+                    <div class="col-xs-2">
+                        <input type='text' id="picker_4"/>
+                    </div>
+                    <div class="col-xs-2">
+                        <input type='text' id="picker_5"/>
+                    </div><hr />
+                    <div class="col-xs-12" >
+                        <button type="button" class="btn btn-default btn-custom"
+                                ng-click="saveColors()">Save
+                        </button>
+                        <button type="button" class="btn btn-default btn-custom"
+                                ng-click="resetColors()">Reset
+                        </button>
+                        <button type="button" class="btn btn-default btn-custom"
+                                ng-click="defaultColors()">Default
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
