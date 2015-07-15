@@ -38,24 +38,14 @@ angular.module('angularApp.factories')
         };
         UserStorage.prototype.get = function (key) {
             var val = this.storage[key];
-            if (val == null) {
-                return null;
-            }
-
-            try {
-                return JSON.parse(val);
-            }
-            catch (e) {
-                console.log(e);
-            }
-            return null;
+            return val;
         };
 
         UserStorage.prototype.set = function (key, value, flush) {
             if (flush === undefined) {
                 flush = true;
             }
-            this.storage[key] = JSON.stringify(value);
+            this.storage[key] = value;
             if (flush) {
                 this.flush();
             }

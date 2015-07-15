@@ -13,7 +13,8 @@ angular.module('angularApp.controllers').controller('GameStateCtrl', ['$scope','
             actions : 0,
             combo: 1
         };
-        ///!\ to avoid too much apply it's the time in charge (about 10 per sec...)
+        ///!\ to avoid too much apply it's the time in charge of the refresh (about 10 per sec...)
+        //FIXME use a custom event set to avoid broadcasts !
         $scope.$on("newScore", function(event, m){
             $scope.state.score = m;
         });

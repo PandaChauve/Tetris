@@ -17,42 +17,7 @@ app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, OPTIONS');
     next();
 });
-//upgrade
-{
-    db.all("SELECT * from users", {}, function(err, rows){
-        "use strict";
-        if(err || !rows){
-            console.log("can't update db " + err.message );
-            return;
-        }
-        for(var i = 0; i < rows.length; i++){
-            var row = rows[i];
-            var data = JSON.parse(row.data);
-            if(data){
-                var best = JSON.parse(data["BestGameStats"]);
-                for(var i in best){
-                    data["BestGameStats"+i] = JSON.stringify(best[i]);
-                }
-                delete data["BestGameStats"];
 
-                var total = JSON.parse(data["TotalGameStats"]);
-                for(var i in total){
-                    if(i.indexOf("campaign") == -1)
-                        data["TotalGameStats"+i] = JSON.stringify(total[i]);
-                }
-                delete data["TotalGameStats"];
-            }
-            db.run("UPDATE users set data = $data where user_id = $id", {
-                $data : JSON.stringify(data),
-                $id: row.user_id
-            }, function(err){
-                if(err){
-                    console.log("can't update db field" + err.message );
-                }
-            })
-        }
-    })
-}
 
 var router = express.Router();
 router.get('/', function (req, res) {

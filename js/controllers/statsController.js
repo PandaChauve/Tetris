@@ -6,7 +6,6 @@ angular.module('angularApp.controllers')
             api.loadExternalUser($routeParams.userid).success(function(data){
                 console.log("loading data from : "+ data.name);
                 storage.impersonate(data.data);
-                userStats.reload();
                 try{
                     load();
                 }
@@ -14,7 +13,6 @@ angular.module('angularApp.controllers')
                     console.log(e);
                 }
                 storage.restore();
-                userStats.reload();
             });
         }
         else{
