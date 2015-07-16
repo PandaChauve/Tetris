@@ -100,6 +100,15 @@
             <div class="well" style="background:white; text-align: center">
                 <img src="resources/imgs/formula.png" />
             </div>
+            <p>Since it's seems so simple, why not adding a small layer of complexity with combos. Each time you do more than one point with the formula, you increase the combo counter. After 2 seconds without increasing it, it's reset to 1. Each points you do is multiplied by this combo counter !.</p>
+            <p>It's always easier with an example :</p>
+            <ul>
+<li>You do a line of 4, the counter is now 2.</li>
+                <li>Less than 2 seconds before you do a new line of 4, you get 2 points X counter => 4. The counter is now 3.</li>
+                <li>Less than 2 seconds after the second line of 4, you do a line of 3, you get 1 points X counter => 3. The counter isn't changed.</li>
+                <li>More than 2 seconds after the second line of 4, you do a line of 3, the counter is back to 1, you only get 1 points.</li>
+            </ul>
+            <p>You should always try to chain your moves !</p>
             <br />
             <div class="well clear" style="text-align: center; width:500px; margin:auto">
                 <video id="example_video_2" poster="resources/imgs/full_game_510.png" class="video-js vjs-default-skin"
