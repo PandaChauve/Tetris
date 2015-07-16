@@ -11,6 +11,15 @@ body{
     min-height:100%;
     position: relative;
 }
+.leftToMiddle{
+    text-align: center;
+}
+@media (min-width: 992px) {
+    .leftToMiddle{
+        text-align: right;
+    }
+}
+
 .noPadding{
     padding : 0;
 }

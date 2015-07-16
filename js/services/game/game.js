@@ -3,7 +3,6 @@ angular.module('angularApp.factories')
         function gameFactory(userInput, userStats, stateChecker, threeRendererFactory, tetrisFactory, TIC_PER_SEC, storage) {
             "use strict";
             function Score() {
-                this.current = 0;
                 this.scoreList = [];
                 this.addTics = function (count) {
                     for (var i = 0; i < this.scoreList.length; i += 1) {
@@ -11,15 +10,14 @@ angular.module('angularApp.factories')
                     }
                 };
                 this.addScore = function (s) {
-                    if (s === this.current) {
+                    if (s < 1) {
                         return;
                     }
                     this.scoreList.push({
                         opacity: 100,
-                        value: (s - this.current),
+                        value: s,
                         object: null
                     });
-                    this.current = s;
                 };
             }
 
@@ -210,6 +208,7 @@ angular.module('angularApp.factories')
                         this.last.actions = this.tetris[0].getActions();
                         this.scope.$broadcast('gameState', this.last);
                     }
+                    this.scoreHandler.addScore(tickret[0].score);
                 }
                 if(count > 1){
                     console.log("frame dropped : " + (count -1));
@@ -224,7 +223,6 @@ angular.module('angularApp.factories')
                 socket.emit('image', dataUrl);
                 */
 
-                this.scoreHandler.addScore(this.tetris[0].getScore());
                 this.scoreHandler.addTics(count);
 
                 if (continueGame) {

@@ -63,6 +63,18 @@ angular.module('angularApp.factories')
             r.customColor = color;
             return r;
         };
+        function GlacesRenderer(i) {
+            CubeRenderer.call( this );
+        }
+
+        GlacesRenderer.prototype = new CubeRenderer();
+        GlacesRenderer.prototype.createGeometry = function (color) {
+            if (!this.cube) {
+                this.cube = new THREE.CylinderGeometry( gameConstants.pixelPerBox/2, gameConstants.pixelPerBox/3, gameConstants.pixelPerBox*0.8, 16 );
+
+            }
+            return this.cube;
+        };
 
         function SubDivisionCubeRenderer(i) {
             CubeRenderer.call( this );
@@ -179,6 +191,8 @@ angular.module('angularApp.factories')
                         return new RandomCubeRenderer();
                     case 6:
                         return new LightCubeRenderer();
+                    case 7:
+                        return new GlacesRenderer();
                 }
                 return new CubeRenderer();
             }
