@@ -1,5 +1,5 @@
 
-angular.module('angularApp.directives').directive("mngTetrisGame", ['$swipe', 'game','audio', 'userInput', function($swipe, game, userInput){
+angular.module('angularApp.directives').directive("mngTetrisGame", ['$swipe', 'game', 'userInput', function($swipe, game, userInput){
     "use strict";
     return {
         restrict: "A",

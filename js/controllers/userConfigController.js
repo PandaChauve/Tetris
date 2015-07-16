@@ -59,6 +59,11 @@ angular.module('angularApp.controllers')
                     Name: "Thirsty",
                     Require : achievements.List.BiggerIsBetter
                 }
+                , {
+                    Picture: "resources/imgs/themes/cup.png",
+                    Name: "Cup",
+                    Require : achievements.List.God
+                }
             ];
             $scope.effects = {
                 scoreEffect: storage.get(storage.Keys.scoreEffect),
