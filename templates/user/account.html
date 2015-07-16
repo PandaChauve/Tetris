@@ -44,7 +44,16 @@
                         <p ng-show="updateForm.$submitted && updateForm.passwordc.$error.$invalid" class="help-block">
                             Password different.</p>
                     </div>
+                    <div class="form-group"
+                         ng-class="{'has-error': updateForm.$submitted && updateForm.email.$invalid, 'has-success': updateForm.$submitted && !updateForm.email.$invalid}">
+                        <label for="email">Email (optional, it will only be use for password recovery and nothing else)</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="myemail@wwyl.com"
+                               ng-model="user.email" />
 
+                        <p ng-show="updateForm.$submitted && updateForm.email.$invalid" class="help-block">
+                            This email address is invalid.</p>
+
+                    </div>
                     <button type="submit" ng-click="updateRegistration()" class="btn btn-default"
                             ngDisabled="!submitEnabled">Update
                     </button>

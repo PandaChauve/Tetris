@@ -8,6 +8,7 @@ angular.module('angularApp.factories')
             this.id = -1;
             this.hash = null;
             this.started = false;
+            this.email = null;
         }
 
         User.prototype.start = function(){
@@ -25,6 +26,7 @@ angular.module('angularApp.factories')
                     if (data.success) {
                         that.started = true;
                         that.username = data.name;
+                        that.email = data.email;
                         that.id = data.id;
                         that.hash = data.hash;
                         storage.load(data.data, that.id, that.hash);
@@ -63,17 +65,19 @@ angular.module('angularApp.factories')
             });
         };
 
-        User.prototype.updateUser = function updateUser(login, password, cb){
+        User.prototype.updateUser = function updateUser(login, password, email, cb){
             var that = this;
-            api.updateUser(this.id, this.hash, null, login, password).success(function(data){
+            api.updateUser(this.id, this.hash, null, login, password, email).success(function(data){
                 if(data.success){
                     that.username = login;
                     that.id = data.id;
                     that.hash = data.hash;
                     that.logIn(login, password, cb);
+                    that.email = data.email;
                 }
                 else{
                     cb(false);
+                    console.log(data.error);
                 }
             });
         };

@@ -159,12 +159,17 @@ router.route('/users/:userid/:hash').put(function (req, res) {
         if(req.body.data){
             data = req.body.data;
         }
-        db.run("UPDATE users set data=$data, hash=$newHash, name=$name where user_id=$userId and hash=$hash", {
+        var email = row.email;
+        if(req.body.email){
+            email = req.body.email;
+        }
+        db.run("UPDATE users set data=$data, hash=$newHash, name=$name, email=$email where user_id=$userId and hash=$hash", {
             $hash: req.params.hash,
             $userId: req.params.userid,
             $newHash: hash,
             $data: data,
-            $name: name
+            $name: name,
+            $email: email
         }, function(err){
             if(err){
                 res.json(CreateError("Invalid user", err));

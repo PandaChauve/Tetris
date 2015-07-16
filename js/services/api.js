@@ -11,11 +11,11 @@ angular.module('angularApp.factories')
         Api.prototype.getScores = function(map){
             return $http.get(root+'scores/'+map);
         };
-        Api.prototype.updateUser = function(id, hash, data, name, password){
+        Api.prototype.updateUser = function(id, hash, data, name, password, email){
             if(id < 0){
                 throw "not registered";
             }
-            return $http.put(root+'users/'+id+'/'+hash,{data: data, name: name, password: password});
+            return $http.put(root+'users/'+id+'/'+hash,{data: data, name: name, password: password, email:email});
         };
         Api.prototype.createUser = function(name, password){
             return $http.post(root+'users', {userName: name, password: password});
