@@ -1,12 +1,12 @@
 angular.module('angularApp.controllers')
     .controller('ScoresCtrl', ['$scope', '$http','$timeout','userAccount','api', function ($scope, $http, $timeout, userAccount, api) {
         "use strict";
+        $scope.activate = function (type) {
+            $scope.type = type;
+            $scope.getScores(type);
+        };
         $scope.isActive = function (viewLocation) {
             return viewLocation === $scope.type;
-        };
-        $scope.activate = function (type) {
-            $scope.type = name;
-            $scope.getScores(type);
         };
         $scope.currentName = userAccount.username;
         $scope.isUser = function(n){
@@ -19,12 +19,12 @@ angular.module('angularApp.controllers')
                 console.log(e);
             });
         };
-        $scope.activate("classic");
         $scope.scoreTypes = [
             {type: "classic", name: "Classic"},
-            {type: "ultralarge", name: "Wide"},
             {type: "small", name: "Narrow"},
-            {type: "sandbox", name: "Sandbox"},
-            {type: "ultralargecoop", name: "Coop"}
+            {type: "ultralarge", name: "Wide"},
+            {type: "sandbox", name: "Sandbox"}
         ];
+        $scope.activate("classic");
+
     }]);

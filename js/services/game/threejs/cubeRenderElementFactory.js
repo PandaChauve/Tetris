@@ -88,7 +88,8 @@ angular.module('angularApp.factories')
                     points.push( new THREE.Vector3( Math.sin( i * 0.2 ) * Math.sin( i * 0.1 ) * 5.5 +15, 0, ( i - 5 ) * 0.7 ) );
                 }
                 this.cube = new THREE.LatheGeometry( points);
-            }THREE.GeometryUtils.center( this.cube );
+            }
+            this.cube.center();
             return this.cube;
         };
 
