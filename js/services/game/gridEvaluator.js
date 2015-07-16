@@ -181,8 +181,6 @@ angular.module('angularApp.factories')
 
             if(scoreCpy >= this.combo ){
                 this.lastTriger = 120; //FIXME magic number
-            }
-            if(scoreCpy > this.combo){
                 this.combo += 1;
             }
             userStats.getCurrentGame().addLines(this.series, score); //FIXME will do but i'd like an event system
