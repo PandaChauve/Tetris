@@ -53,18 +53,17 @@ angular.module('angularApp.factories')
             AchievementsState.prototype.keyToScore = function (key) {
                 switch (key) {
                     case AchievementsState.List.Beginner :
-                        return 30;
+                        return 60;
                     case AchievementsState.List.Expert :
-                        return 80;
-                    case AchievementsState.List.Master :
                         return 160;
+                    case AchievementsState.List.Master :
+                        return 300;
                     case AchievementsState.List.God :
                     case AchievementsState.List.XXS :
                     case AchievementsState.List.XXL :
-                        return 350;
+                        return 500;
                     case AchievementsState.List.Titan :
                     case AchievementsState.List.SuperTeam :
-                        return 500;
                     case AchievementsState.List.Cheater :
                         return 1000;
                 }
@@ -211,19 +210,19 @@ angular.module('angularApp.factories')
             AchievementsState.List.getDescription = function (key) {
                 switch (key) {
                     case AchievementsState.List.Beginner :
-                        return "Get 30 points in classic";
+                        return "Get 60 points in classic";
                     case AchievementsState.List.Expert :
-                        return "Get 80 points in classic";
-                    case AchievementsState.List.Master :
                         return "Get 160 points in classic";
+                    case AchievementsState.List.Master :
+                        return "Get 300 points in classic";
                     case AchievementsState.List.God :
-                        return "Get 350 points in classic";
+                        return "Get 500 points in classic";
                     case AchievementsState.List.XXL :
-                        return "Get 350 points in wide";
+                        return "Get 500 points in wide";
                     case AchievementsState.List.XXS :
-                        return "Get 350 points in narrow";
+                        return "Get 500 points in narrow";
                     case AchievementsState.List.SuperTeam :
-                        return "Get 500 points in coop";
+                        return "Get 1000 points in coop";
                     case AchievementsState.List.Titan :
                         return "An original God";
                     case AchievementsState.List.Cheater :
