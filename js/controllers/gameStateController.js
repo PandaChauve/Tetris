@@ -15,8 +15,16 @@ angular.module('angularApp.controllers').controller('GameStateCtrl', ['$scope','
         };
         ///!\ to avoid too much apply it's the time in charge of the refresh (about 10 per sec...)
         //FIXME use a custom event set to avoid broadcasts !
-        $scope.$on("newScore", function(event, m){
-            $scope.state.score = m;
+        $scope.$on("gameState", function(event, m){
+            $scope.state.score = m.score;
+            if(upwardSwapCount){
+                $scope.state.swaps = m.swaps;
+            }
+            else{
+                $scope.state.swaps = targetSwapCounts - m.swaps;
+            }
+            $scope.state.actions = m.actions;
+            $scope.state.combo = m.combo;
         });
         $scope.$on('newGame', function(){
             $scope.state.swaps = targetSwapCounts;
@@ -26,20 +34,7 @@ angular.module('angularApp.controllers').controller('GameStateCtrl', ['$scope','
             $scope.state.apm = 0;
             $scope.state.combo = 1;
         });
-        $scope.$on("newSwaps", function(event, m){
-            if(upwardSwapCount){
-                $scope.state.swaps = m;
-            }
-            else{
-                $scope.state.swaps = targetSwapCounts - m;
-            }
-        });
-        $scope.$on("newCombos", function(event, m){
-            $scope.state.combo = m;
-        });
-        $scope.$on("newActions", function(event, m){
-            $scope.state.actions = m;
-        });
+
         $scope.$on("newTime", function(event, m){
             if(m >= $scope.state.time / 6) //FIXME magic number  tictime / 10
             {

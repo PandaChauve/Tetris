@@ -3,7 +3,7 @@
  */
 
 angular.module('angularApp.factories')
-    .factory('tetrisFactory', ['gameConstants', 'userInput', 'gridFactory', 'storage', function tetrisFactoryCreator(gameConstants, userInput, gridFactory, storage) {
+    .factory('tetrisFactory', ['gameConstants', 'userInput', 'gridFactory', 'storage', 'audio', function tetrisFactoryCreator(gameConstants, userInput, gridFactory, storage, audio) {
         'use strict';
 
         function Tetris(grid, cursors) {
@@ -68,9 +68,7 @@ angular.module('angularApp.factories')
             if(i < 0 || j < gameConstants.hiddenRowCount || i >= gameConstants.columnCount -1){
                 return;
             }
-            if (this.grid.swap(i, j)) {
-                this.counters.swap += 1;
-            }
+            this.swap(i, j);
         };
 
         Tetris.prototype.oneTick = function () {
@@ -78,6 +76,11 @@ angular.module('angularApp.factories')
             //check if don't have new successful combo
             var evaluation = this.grid.evaluate();
             this.score += evaluation.score;
+
+
+            if(evaluation.score > 0){ //can get points without scoring ^^
+                audio.play(audio.ESounds.score);
+            }
 
             //user input
             this.handleUserInput();
@@ -137,6 +140,14 @@ angular.module('angularApp.factories')
                 this.grid.newBlockFall(i);
             }
         };
+        Tetris.prototype.swap = function swap(i, j){
+            var ret = this.grid.swap(i, j);
+            if(ret){
+                this.counters.swap += 1;
+                audio.play(audio.ESounds.swap);
+            }
+            return ret;
+        };
 
         Tetris.prototype.handleUserInput = function () {
 
@@ -145,9 +156,7 @@ angular.module('angularApp.factories')
                 var x = cur.x;
                 var y = cur.y;
                 if (userInput.pressed(this.keyBoardMappings[i].swap)) {
-                    if (this.grid.swap(cur.x, cur.y)) {
-                        this.counters.swap += 1;
-                    }
+                   this.swap(cur.x, cur.y);
                 }
                 if (userInput.pressed(this.keyBoardMappings[i].down)) {
                     cur.y = Math.max(gameConstants.hiddenRowCount, cur.y - 1);

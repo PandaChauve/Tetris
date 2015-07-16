@@ -200,10 +200,19 @@ angular.module('angularApp.factories')
                     }
                     userInput.clear();
 
-                    if(this.last.combo !=  tickret[0].combo){//avoid useless broadcast
+                    if(this.last.actions < this.tetris[0].getActions() //action is a swap
+                    ||tickret[0].score != 0
+                    ||this.last.combo !=  tickret[0].combo
+                    ){//avoid useless broadcast
                         this.last.combo =  tickret[0].combo;
-                        this.scope.$broadcast('newCombos', this.last.combo);
+                        this.last.score += tickret[0].score;
+                        this.last.swaps = this.tetris[0].getSwaps();
+                        this.last.actions = this.tetris[0].getActions();
+                        this.scope.$broadcast('gameState', this.last);
                     }
+                }
+                if(count > 1){
+                    console.log("frame dropped : " + (count -1));
                 }
 
                 /* use that with the capture server
@@ -215,19 +224,6 @@ angular.module('angularApp.factories')
                 socket.emit('image', dataUrl);
                 */
 
-                //FIXME merge the 4 broadcast
-                if(this.last.score != this.tetris[0].getScore()){ //avoid useless broadcast
-                    this.last.score = this.tetris[0].getScore();
-                    this.scope.$broadcast('newScore', this.last.score);
-                }
-                if(this.last.swaps < this.tetris[0].getSwaps()){//avoid useless broadcast
-                    this.last.swaps = this.tetris[0].getSwaps();
-                    this.scope.$broadcast('newSwaps', this.last.swaps);
-                }
-                if(this.last.actions < this.tetris[0].getActions()){//avoid useless broadcast
-                    this.last.actions = this.tetris[0].getActions();
-                    this.scope.$broadcast('newActions', this.last.actions);
-                }
                 this.scoreHandler.addScore(this.tetris[0].getScore());
                 this.scoreHandler.addTics(count);
 

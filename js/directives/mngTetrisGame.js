@@ -1,5 +1,5 @@
 
-angular.module('angularApp.directives').directive("mngTetrisGame", ['$swipe', 'game','audio', 'userInput', function($swipe, game, audio, userInput){
+angular.module('angularApp.directives').directive("mngTetrisGame", ['$swipe', 'game','audio', 'userInput', function($swipe, game, userInput){
     "use strict";
     return {
         restrict: "A",
@@ -45,12 +45,7 @@ angular.module('angularApp.directives').directive("mngTetrisGame", ['$swipe', 'g
             scope.$on('$destroy', function() {
                 game.unlinkToDom(element[0],attrs.mngTetrisGame);
             });
-            scope.$on('newSwaps', function() {
-                audio.play(audio.ESounds.swap);
-            });
-            scope.$on('newScore', function() {
-                audio.play(audio.ESounds.score);
-            });
+
             scope.test = function(e){
                 console.log(e);
             };
