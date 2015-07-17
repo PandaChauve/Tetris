@@ -1,11 +1,14 @@
 var sqlite3 = require('sqlite3');
 var db = new sqlite3.Database('tetrisApi.sqlite');
-
+var mail = require('./mailModule.js');
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 
 var crypto = require('crypto');
+
+mail.send("WWYL Api restarted", "Check if it's normal !", "sylvain.chevremont@gmail.com"); //test the mail system and alert me for api restart
+
 
 // configure app to use bodyParser()
 // this will let us get the data from a POST
