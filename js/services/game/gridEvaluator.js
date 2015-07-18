@@ -179,7 +179,7 @@ angular.module('angularApp.factories')
             var scoreCpy = score;
             score *= this.combo;
 
-            if(scoreCpy >= this.combo ){
+            if(scoreCpy >= this.combo){
                 this.lastTriger = 120; //FIXME magic number
                 this.combo += 1;
             }

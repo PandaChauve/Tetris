@@ -7,15 +7,10 @@ angular.module('angularApp.factories')
             this.particles = null;
         }
 
-        var sin = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9 ]; //a sin is better but math intensive
         ScoreElement.prototype.updateAttributes = function(att, pc) {
-            var time = (Date.now() * 0.01) %20;
-            for (var i = time; i < att.value.length; i++) {
-                att.value[i] = sin[(i + time)%20]*pc;
-            }
+            //sin based element size variation removed due to performances issues
         };
         ScoreElement.prototype.updateVert = function(temp){
-
             for(var i = 0; i < temp.length; i+= 1){
                 temp[i].multiplyScalar(1.02);
             }

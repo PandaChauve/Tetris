@@ -27,8 +27,8 @@ angular.module('angularApp.factories')
                 cube.customColor = block.type;
             }
             if (block.state === blockFactory.EState.Disappearing) {
-                cube.material.opacity = Math.max(1 - block.animationState / 100, 0);
-                cube.material.transparent = true;
+                var scale = 1/ (1+block.animationState*block.animationState*block.animationState/100000);
+                cube.scale.set( scale, scale, scale);
             }
 
         };
@@ -47,18 +47,19 @@ angular.module('angularApp.factories')
             if (!this.cube) {
                 var size = gameConstants.pixelPerBox * (0.7);
                 this.cube = new THREE.BoxGeometry(size, size, gameConstants.pixelPerBox / 5);
+                this.cube.center();
             }
             return this.cube;
         };
         CubeRenderer.prototype.releaseCube = function(cube){
-            cube.material.opacity = 1;
+            cube.scale.set( 1, 1, 1);
             this.cache[cube.customColor].push(cube);
         };
         CubeRenderer.prototype.createCube = function (color) {
             if(this.cache[color].length > 0 ){
                 return this.cache[color].pop();
             }
-            var r = new THREE.Mesh(this.createGeometry(color), this.createTexture(color).clone());
+            var r = new THREE.Mesh(this.createGeometry(color), this.createTexture(color));
             r.customObject = true;
             r.customColor = color;
             return r;
@@ -150,7 +151,6 @@ angular.module('angularApp.factories')
             att.size.needsUpdate = true;
         };
         LightCubeRenderer.prototype.releaseCube = function(cube){
-            cube.material.opacity = 1;
             this.cache[cube.customColor].push(cube);
         };
         LightCubeRenderer.prototype.createCube = function (color) {
