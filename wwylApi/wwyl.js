@@ -121,7 +121,7 @@ function GetUser(req, res) {
 var resets = {
 };
 
-router.route('/users/confirmreset/:username/:key').get(function (req, res) {
+router.route('/user/confirmreset/:username/:key').get(function (req, res) {
     "use strict";
     var state = resets[req.params.username];
     var d = new Date();
@@ -156,7 +156,7 @@ router.route('/users/confirmreset/:username/:key').get(function (req, res) {
     }
 });
 
-router.route('/users/reset/:username').get(function (req, res) {
+router.route('/user/reset/:username').get(function (req, res) {
     "use strict";
     db.get("SELECT * from users where name=$userId or email=$userId", {
         $userId: req.params.username
@@ -192,7 +192,7 @@ router.route('/users/reset/:username').get(function (req, res) {
                     mail.send("WhenWillYouLose - Reset your password", "Hi "+ row.name+ ",\r\n" +
                         "Someone requested a new password for your account, if it's not you please ignore this email. \r\n\r\n" +
                         "You can go to this url to generate a new password (valid 2 hours): \r\n\r\n" +
-                        "http://whenwillyoulose.com:1337/wwylApi/users/confirmreset/"+row.name+"/"+resets[row.name].key +
+                        "http://whenwillyoulose.com:1337/wwylApi/user/confirmreset/"+row.name+"/"+resets[row.name].key +
                         "\r\n\r\n\r\nHave a nice day.",
                         row.email);
 

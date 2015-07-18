@@ -11,6 +11,10 @@ angular.module('angularApp.factories')
         Api.prototype.getScores = function(map){
             return $http.get(root+'scores/'+map);
         };
+        Api.prototype.resetPassword = function resetPassword(id){
+            return $http.get(root+'user/reset/'+id);
+        };
+
         Api.prototype.updateUser = function(id, hash, data, name, password, email){
             if(!password){
                 password = null;

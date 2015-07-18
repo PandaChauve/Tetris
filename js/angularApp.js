@@ -164,6 +164,16 @@ angularApp.config(['$routeProvider', '$locationProvider',
                         }]
                     }
                 }).
+                when('/user/recovery', {
+                    templateUrl: 'templates/user/passwordRecovery.html',
+                    controller: 'PasswordRecoveryCtrl',
+                    resolve: {
+                        user : ['userAccount', function(userAccount){
+                            "use strict";
+                            return userAccount.start();
+                        }]
+                    }
+                }).
                 when('/newpassword', {
                     templateUrl: 'templates/user/newpassword.html',
                     resolve: {

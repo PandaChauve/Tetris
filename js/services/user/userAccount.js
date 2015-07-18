@@ -1,16 +1,16 @@
-
 angular.module('angularApp.factories')
-    .factory('userAccount', ['$q', '$rootScope', '$route', '$window', '$timeout', 'storage', 'api', function userFactory($q,$rootScope, $route, $window, $timeout, storage, api) {
+    .factory('userAccount', ['$q', '$rootScope', '$route', '$window', '$timeout', 'storage', 'api', function userFactory($q, $rootScope, $route, $window, $timeout, storage, api) {
         "use strict";
-        function createCookie(name,value,days) {
+        function createCookie(name, value, days) {
             if (days) {
                 var date = new Date();
-                date.setTime(date.getTime()+(days*24*60*60*1000));
-                var expires = "; expires="+date.toGMTString();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                var expires = "; expires=" + date.toGMTString();
             }
             else var expires = "";
-            document.cookie = name+"="+value+expires+"; path=/";
+            document.cookie = name + "=" + value + expires + "; path=/";
         }
+
         function getCookie(name) {
             var value = "; " + document.cookie;
             var parts = value.split("; " + name + "=");
@@ -27,10 +27,10 @@ angular.module('angularApp.factories')
             this.email = null;
         }
 
-        User.prototype.start = function(){
+        User.prototype.start = function () {
             var that = this;
-            return $q(function(resolve, reject){ //never reject, you can play offline !
-                if(that.started){
+            return $q(function (resolve, reject) { //never reject, you can play offline !
+                if (that.started) {
                     resolve(that.username);
                     return;
                 }
@@ -55,7 +55,7 @@ angular.module('angularApp.factories')
                         localStorage.removeItem("Usr_LastUserId");
                         resolve(null);
                     }
-                }).error(function(e){
+                }).error(function (e) {
                     localStorage.removeItem("Usr_hash");
                     localStorage.removeItem("Usr_LastUserId");
                     resolve(null);
@@ -63,52 +63,73 @@ angular.module('angularApp.factories')
             });
         };
 
-        User.prototype.registerToEvent = function(obj, fct){
+        User.prototype.registerToEvent = function (obj, fct) {
             this.eventHandler.push({objet: obj, callback: fct});
         };
 
-        User.prototype.createUser = function createUser(login, password, cb){
+        User.prototype.createUser = function createUser(login, password, cb) {
             var that = this;
-            api.createUser(login, password).success(function(data){
-                if(data.success){
+            api.createUser(login, password).success(function (data) {
+                if (data.success) {
                     that.username = login;
                     that.logIn(login, password, cb);
                 }
-                else{
+                else {
                     console.log(data.message);
                     cb(false);
                 }
-            }).error(function(err){
-                if(err){
+            }).error(function (err) {
+                if (err) {
                     console.log(err + err.message);
                 }
                 cb(false, "An error occurred while contacting our server, please retry later.");
             });
         };
 
-        User.prototype.updateUser = function updateUser(login, password, email, cb){
+        User.prototype.resetPassword = function resetPassword(id, cb) {
             var that = this;
-            api.updateUser(this.id, this.hash, null, login, password, email).success(function(data){
-                if(data.success){
+            api.resetPassword(id)
+                .success(function (data) {
+                    if(data.success)
+                    {
+                        cb("An email as been sent to your account, it may go in your spam.");
+                    }
+                    else{
+                        cb(data.message);
+                        console.log(data);
+                    }
+
+                }).error(function (err) {
+                    if (err) {
+                        console.log(err + err.message);
+                    }
+                    cb("An error occurred while contacting our server, please retry later.");
+                });
+        };
+
+        User.prototype.updateUser = function updateUser(login, password, email, cb) {
+            var that = this;
+            api.updateUser(this.id, this.hash, null, login, password, email).success(function (data) {
+                if (data.success) {
                     that.username = login;
                     that.id = data.id;
                     that.hash = data.hash;
                     that.logIn(login, password, cb);
                     that.email = data.email;
                 }
-                else{
+                else {
                     cb(false);
                     console.log(data.error);
                 }
             });
         };
 
-        User.prototype.broadcast = function(){
-            for(var i = 0; i < this.eventHandler.length; i+= 1) {
+        User.prototype.broadcast = function () {
+            for (var i = 0; i < this.eventHandler.length; i += 1) {
                 this.eventHandler[i].callback.apply(this.eventHandler[i].objet, [this.username]);
             }
         };
-        User.prototype.logout = function logout(){
+        User.prototype.logout = function logout() {
             localStorage.removeItem("Usr_hash");
             localStorage.removeItem("Usr_LastUserId");
             this.login = null;
@@ -121,26 +142,26 @@ angular.module('angularApp.factories')
         User.prototype.isRegistered = function isRegistered() {
             return this.username !== null;
         };
-        User.prototype.loadTheme = function(){
+        User.prototype.loadTheme = function () {
 
             var t = storage.get(storage.Keys.WebTheme) || "slate";
             t = t.toLowerCase();
             var s = getCookie("csstheme");
             createCookie("csstheme", t, 365);
-            if(s != t){ //already good don't reload
-                $("#switchableTheme").attr("href", "bootswatch/"+ t+".min.css");
+            if (s != t) { //already good don't reload
+                $("#switchableTheme").attr("href", "bootswatch/" + t + ".min.css");
             }
         };
 
-        User.prototype.setTheme = function(style){
+        User.prototype.setTheme = function (style) {
             storage.set(storage.Keys.WebTheme, style);
             this.loadTheme();
         };
 
-        User.prototype.logIn = function login(user, password, cb){
+        User.prototype.logIn = function login(user, password, cb) {
             var that = this;
-            api.loadUser(user, password).success(function(data){
-                if(data.success){
+            api.loadUser(user, password).success(function (data) {
+                if (data.success) {
                     localStorage.setItem("Usr_LastUserId", data.id);
                     localStorage.setItem("Usr_hash", data.hash);
                     that.username = user;
@@ -152,12 +173,12 @@ angular.module('angularApp.factories')
                     $route.reload();
                     cb(true, data.message);
                 }
-                else{
+                else {
                     console.log(data.message);
                     cb(false);
                 }
-            }).error(function(err){
-                if(err){
+            }).error(function (err) {
+                if (err) {
                     console.log(err + err.message);
                 }
                 cb(false, "An error occurred while contacting our server, please retry later.");
