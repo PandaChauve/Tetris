@@ -123,12 +123,12 @@ var resets = {
 
 router.route('/users/confirmreset/:username/:key').get(function (req, res) {
     "use strict";
-    var state = resets[req.username];
+    var state = resets[req.params.username];
     var d = new Date();
     var d2 = new Date();
     d2.setMinutes(d.getMinutes() - 120);
 
-    if(!state || state.last < d2 || state.key != req.key){
+    if(!state || state.last < d2 || state.key != req.params.key){
         res.json("Invalid reset configuration : please retry");
     }
     else{
@@ -138,16 +138,21 @@ router.route('/users/confirmreset/:username/:key').get(function (req, res) {
         var hash = shasum.digest('hex');
 
         db.run("UPDATE users set hash=$hash where name=$name", {
-            $hash: req.params.hash,
-            $name: name
+            $hash: hash,
+            $name: req.params.username
+        }, function(err) {
+            if (err) {
+                res.json(CreateError("???????", err));
+                return;
+            }
+            mail.send("WhenWillYouLose - Reset your password", "Hi "+ state.name+ ",\r\n" +
+                "Your new password is :\r\n" +
+                pswd +
+                "\r\n\r\n\r\nHave a nice day.",
+                state.email);
+            delete resets[req.params.username];
+            res.redirect('http://www.whenwillyoulose.com/#!/newpassword');
         });
-
-        mail.send("WhenWillYouLose - Reset your password", "Hi "+ state.name+ ",\r\n" +
-            "Your new password is :\r\n" +
-            pswd +
-            "\r\n\r\n\r\n Have a nice day.",
-            state.email);
-        res.redirect('http://www.whenwillyouloose.com/#!/newpassword');
     }
 });
 
@@ -177,7 +182,7 @@ router.route('/users/reset/:username').get(function (req, res) {
                     var shasum = crypto.createHash('sha256');
                     shasum.update(row.salt+"regenpassword"+row.name); //serverside + requestsalt + uniqueness
                     resets[row.name] = {
-                        last : d2,
+                        last : d,
                         key: shasum.digest('hex'),
                         email : row.email,
                         name: row.name,
@@ -185,10 +190,10 @@ router.route('/users/reset/:username').get(function (req, res) {
                     };
 
                     mail.send("WhenWillYouLose - Reset your password", "Hi "+ row.name+ ",\r\n" +
-                        "Someone requested a new password for your account, if it's not you please ignore this email. \r\n" +
-                        "You can go to this url to generate a new password (valid 2 hours): \r\n" +
+                        "Someone requested a new password for your account, if it's not you please ignore this email. \r\n\r\n" +
+                        "You can go to this url to generate a new password (valid 2 hours): \r\n\r\n" +
                         "http://whenwillyoulose.com:1337/wwylApi/users/confirmreset/"+row.name+"/"+resets[row.name].key +
-                        "\r\n\r\n\r\n Have a nice day.",
+                        "\r\n\r\n\r\nHave a nice day.",
                         row.email);
 
                     res.json({
