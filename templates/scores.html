@@ -22,12 +22,19 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="line in scoreGridData" ng-class="{info:isUser(line.name) && $index!=0, success:$index==0}">
-                <td>{{::$index+1}}</td>
-                <td>{{::line.name}}</td>
-                <td>{{::line.score}}</td>
+            <tr ng-repeat="line in scoreGridData" ng-class="{info:isUser(line.name) && $index!=0, success:line.position==1}">
+                <td>{{line.position}}</td>
+                <td>{{line.name}}</td>
+                <td>{{line.score}}</td>
             </tr>
             </tbody>
         </table>
+        <nav style="text-align:center">
+            <ul class="pagination">
+                <li ng-class="{disabled: pagination.current == 1}"><a aria-label="Previous" ng-click="pagination.paginate(pagination.current-1)" href=""><span aria-hidden="true">&laquo;</span></a></li>
+                <li ng-repeat="page in pagination.pages" ng-class="{active: pagination.current == page}"><a ng-click="pagination.paginate({{page}})" href="">{{page}} </a></li>
+                <li ng-class="{disabled: pagination.current == pagination.last}"><a aria-label="Next" ng-click="pagination.paginate(pagination.current+1)" href=""><span aria-hidden="true">&raquo;</span></a></li>
+            </ul>
+        </nav>
     </div>
 </div>
