@@ -14,6 +14,7 @@ angular.module('angularApp.controllers')
 
         function loadPage(){
             $scope.scoreGridData = scores.slice(($scope.pagination.current-1)*perPage, $scope.pagination.current*perPage);
+
         }
 
         function createPagination(){
@@ -45,10 +46,15 @@ angular.module('angularApp.controllers')
             return n === $scope.currentName;
         };
         var scores;
+        $scope.userScores = [];
         $scope.getScores = function (type) {
             api.getScores(type).success(function (data) {
+                $scope.userScores = [];
                 for (var i = 0; i < data.length; i++) {
                     data[i].position = i + 1;
+                    if(data[i].name === $scope.currentName){
+                        $scope.userScores.push(data[i]);
+                    }
                 }
                 scores = data;
                 createPagination();
