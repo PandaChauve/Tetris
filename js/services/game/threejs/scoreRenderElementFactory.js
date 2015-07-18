@@ -6,6 +6,21 @@ angular.module('angularApp.factories')
             this.mesh = null;
             this.particles = null;
         }
+
+        var sin = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9 ]; //a sin is better but math intensive
+        ScoreElement.prototype.updateAttributes = function(att, pc) {
+            var time = (Date.now() * 0.01) %20;
+            for (var i = time; i < att.value.length; i++) {
+                att.value[i] = sin[(i + time)%20]*pc;
+            }
+        };
+        ScoreElement.prototype.updateVert = function(temp){
+
+            for(var i = 0; i < temp.length; i+= 1){
+                temp[i].multiplyScalar(1.02);
+            }
+        };
+
         ScoreElement.prototype.animate = function(percentLeft){
             var pc = percentLeft / 100;
             if(this.mesh){
@@ -13,16 +28,12 @@ angular.module('angularApp.factories')
                 this.mesh.material.opacity = pc;
             }
             if(this.particles){
-                pc*=0.7;
+                pc*=0.7*12;
                 var att = this.particles.material.attributes.size;
-                var time = Date.now() * 0.01;
-                for (var i = 0; i < att.value.length; i++) {
-                    att.value[i] = (12 + 12 * Math.sin(i + time))*pc;
-                }
+                this.updateAttributes(att, pc);
+
                 var temp = this.particles.geometry.vertices;
-                for(i = 0; i < temp.length; i+= 1){
-                    temp[i].multiplyScalar(1.02);
-                }
+                this.updateVert(temp);
                 this.particles.geometry.verticesNeedUpdate = true;
                 att.needsUpdate = true;
             }
