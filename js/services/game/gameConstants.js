@@ -6,7 +6,7 @@ angular.module('angularApp.factories')
         config.reset = function reset(){
             this.columnCount = 6;
             this.displayedRowCount = 10;
-            this.hiddenRowCount = 4;//MIN 1 !
+            this.hiddenRowCount = 3;//MIN 1 or dump !
             this.pixelPerBox = 50;
             this.swapPerTic = 12 *60/TIC_PER_SEC;
             this.fallSpeedPerTic = 8*60/TIC_PER_SEC;

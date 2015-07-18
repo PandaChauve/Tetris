@@ -71,7 +71,7 @@ angular.module('angularApp.factories')
             var camera = new THREE.PerspectiveCamera(this.zoom ? 62 : 75, this.zoom ? 448 / 650 : 448 / 600, 0.3, 1000);
             camera.position.z = 450;
             camera.position.x = -27;
-            camera.position.y = this.zoom ? 440: 410;
+            camera.position.y = this.zoom ? 390: 360;
             return camera;
         };
 
