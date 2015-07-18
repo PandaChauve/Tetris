@@ -12,6 +12,9 @@ angular.module('angularApp.factories')
             return $http.get(root+'scores/'+map);
         };
         Api.prototype.updateUser = function(id, hash, data, name, password, email){
+            if(!password){
+                password = null;
+            }
             if(id < 0){
                 throw "not registered";
             }

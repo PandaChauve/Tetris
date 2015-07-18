@@ -24,11 +24,7 @@
                          ng-class="{'has-error': updateForm.$submitted && updateForm.password.$invalid, 'has-success': updateForm.$submitted && !updateForm.password.$invalid}">
                         <label for="password">Password</label>
                         <input type="password" class="form-control" id="password" name="password" placeholder="******"
-                               ng-model="user.password" ng-minlength="8" required/>
-
-                        <p ng-show="updateForm.$submitted && updateForm.password.$error.required"
-                           class="help-block">
-                            Password is required.</p>
+                               ng-model="user.password" ng-minlength="8" />
 
                         <p ng-show="updateForm.$submitted && updateForm.password.$error.minlength"
                            class="help-block">
