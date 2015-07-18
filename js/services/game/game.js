@@ -22,7 +22,7 @@ angular.module('angularApp.factories')
             }
 
             function Game() {
-                this.last = {swaps:0, score:0, actions: 0, combo: 1};
+                this.last = {swaps:0, score:0, actions: 0, combo: 1, tics: 0};
                 this.availableGrids = [];
                 this.started = false;
                 this.gridCount = 0;
@@ -53,9 +53,8 @@ angular.module('angularApp.factories')
                 this.tobefixed = [2, 2];
                 this.startTime = null;
                 this.pause = false;
-                this.tics = 0;
                 this.scoreHandler = new Score();
-                this.last = {swaps:0, score:0, actions:0, combo:1};
+                this.last = {swaps:0, score:0, actions:0, combo:1, tics: 0};
             };
 
             Game.prototype.startNewGame = function startNewGame() {
@@ -177,17 +176,16 @@ angular.module('angularApp.factories')
                 var i;
 
                 if (this.startTime === null) {
-                    this.startTime = timestamp - this.tics / TIC_PER_SEC * 1000;
+                    this.startTime = timestamp - this.last.tics / TIC_PER_SEC * 1000;
                 }
                 var progress = timestamp - this.startTime;
-                this.scope.$broadcast('newTime', this.tics);
 
                 var continueGame = true;
                 var count = 0;
                 var tickret = [];
-                while (this.tics < progress * TIC_PER_SEC / 1000 && continueGame) {
+                while (this.last.tics < progress * TIC_PER_SEC / 1000 && continueGame) {
                     count += 1;
-                    this.tics += 1;
+                    this.last.tics += 1;
                     for (i = 0; i < this.tetris.length; i += 1) {
                         tickret.push(this.tetris[i].oneTick());
                         stateChecker.check(this.tetris[i]);
@@ -198,18 +196,16 @@ angular.module('angularApp.factories')
                     }
                     userInput.clear();
 
-                    if(this.last.actions < this.tetris[0].getActions() //action is a swap
-                    ||tickret[0].score != 0
-                    ||this.last.combo !=  tickret[0].combo
-                    ){//avoid useless broadcast
-                        this.last.combo =  tickret[0].combo;
+                    if(tickret[0].score != 0 ||this.last.combo !=  tickret[0].combo ){//avoid useless broadcast
                         this.last.score += tickret[0].score;
-                        this.last.swaps = this.tetris[0].getSwaps();
-                        this.last.actions = this.tetris[0].getActions();
-                        this.scope.$broadcast('gameState', this.last);
+                        this.last.combo =  tickret[0].combo;
                     }
                     this.scoreHandler.addScore(tickret[0].score);
                 }
+
+                this.last.swaps = this.tetris[0].getSwaps();
+                this.last.actions = this.tetris[0].getActions();
+                this.scope.$broadcast('newTick', this.last);
                 if(count > 1){
                     console.log("frame dropped : " + (count -1));
                 }

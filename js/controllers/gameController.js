@@ -66,8 +66,8 @@ angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$htt
             if(stateChecker.victory()){
                 storage.set(storage.MKeys.UserMap+$scope.gameName, true, false);
             }
-            userStats.getCurrentGame().setTime(finishedGame.tics);
-            userStats.getCurrentGame().setSwaps(finishedGame.tetris[0].counters.swap);
+            userStats.getCurrentGame().setTime(finishedGame.last.tics); //FIXME accessor
+            userStats.getCurrentGame().setSwaps(finishedGame.tetris[0].counters.swap); //FIXME accessor
             userStats.addGame(userStats.getCurrentGame(), $scope.gameName);
             achievements.check(userStats.getCurrentGame(), $scope.gameName);
             if(userAccount.isRegistered() && !campaign){
