@@ -9,13 +9,13 @@ angular.module('angularApp.controllers')
             $scope.login = function () {
                 if ($scope.signForm.$valid) {
                     $scope.submitEnabled = false;
-                    userAccount.logIn($scope.user.login, $scope.user.password, function (success) {
+                    userAccount.logIn($scope.user.login, $scope.user.password, function (success, msg) {
                         if (success) {
                             $modalInstance.close();
                         }
-                        else {
+                        else{
                             $scope.submitEnabled = true;
-                            $scope.message = "Login failed : check your password !";
+                            $scope.message = msg ? msg : "Login failed : check your password !";
                         }
                     });
                 }
@@ -23,13 +23,13 @@ angular.module('angularApp.controllers')
             $scope.register = function () {
                 if ($scope.registerForm.$valid) {
                     $scope.submitEnabled = false;
-                    userAccount.createUser($scope.register.login, $scope.register.password, function (success) {
+                    userAccount.createUser($scope.register.login, $scope.register.password, function (success, msg) {
                         if (success) {
                             $modalInstance.close();
                         }
                         else {
                             $scope.submitEnabled = true;
-                            $scope.message = "Can't create user.";
+                            $scope.message = msg ? msg : "Can't create user.";
                         }
                     });
                 }

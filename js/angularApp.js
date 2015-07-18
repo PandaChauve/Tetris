@@ -164,6 +164,15 @@ angularApp.config(['$routeProvider', '$locationProvider',
                         }]
                     }
                 }).
+                when('/newpassword', {
+                    templateUrl: 'templates/user/newpassword.html',
+                    resolve: {
+                        user : ['userAccount', function(userAccount){
+                            "use strict";
+                            return userAccount.start();
+                        }]
+                    }
+                }).
                 when('/', {
                     templateUrl: 'templates/index.html',
                     controller: 'IndexCtrl',

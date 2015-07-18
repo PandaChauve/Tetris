@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href='http://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="bootswatch/slate.min.css" id="switchableTheme">
+    <link rel="stylesheet" type="text/css" href="http://www.whenwillyoulose.com/bootswatch/loader.php" id="switchableTheme">
     <!-- build:css app.min.css -->
     <link rel="stylesheet" type="text/css" href="css/angular-notify.css">
     <link rel="stylesheet" type="text/css" href="css/video-js.css">
@@ -62,7 +62,7 @@
             </ul>
             <ul class="nav navbar-nav navbar-right" ng-controller="UserMenuCtrl">
                 <li ng-cloak ng-if="registered" class="dropdown">
-                    <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" id="menuUsr">{{userName}}
+                    <a href="" ng-cloak class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" id="menuUsr">{{userName}}
                         <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu"  aria-labelledby="menuUsr">
                         <li><a href="#!/user/account">My account</a></li>
@@ -103,9 +103,9 @@
 <script language="JavaScript" src="js/externals/ext-SubdivisionModifier.js"></script>
 <script language="JavaScript" src="js/externals/ext-md5CryptoJs-3.1.2.js"></script>
 <script language="JavaScript" src="js/angularApp.js"></script>
-<script language="JavaScript" src="js/controllers/loginFormController.js"></script>
+<script language="JavaScript" src="js/controllers/user/loginFormController.js"></script>
 <script language="JavaScript" src="js/controllers/IndexController.js"></script>
-<script language="JavaScript" src="js/controllers/userMenuController.js"></script>
+<script language="JavaScript" src="js/controllers/user/userMenuController.js"></script>
 <script language="JavaScript" src="js/controllers/campaignController.js"></script>
 <script language="JavaScript" src="js/controllers/tetrisCampaignController.js"></script>
 <script language="JavaScript" src="js/controllers/gameController.js" ></script>
@@ -117,8 +117,8 @@
 <script language="JavaScript" src="js/controllers/endGameModalController.js"></script>
 <script language="JavaScript" src="js/controllers/achievementsController.js"></script>
 <script language="JavaScript" src="js/controllers/rulesController.js"></script>
-<script language="JavaScript" src="js/controllers/userAccountController.js"></script>
-<script language="JavaScript" src="js/controllers/userConfigController.js"></script>
+<script language="JavaScript" src="js/controllers/user/userAccountController.js"></script>
+<script language="JavaScript" src="js/controllers/user/userConfigController.js"></script>
 <script language="JavaScript" src="js/directives/ngEnter.js"></script>
 <script language="JavaScript" src="js/directives/mngTetrisGame.js"></script>
 <script language="JavaScript" src="js/directives/ngSvg.js"></script>

@@ -2,12 +2,11 @@ var sqlite3 = require('sqlite3');
 var db = new sqlite3.Database('tetrisApi.sqlite');
 var mail = require('./mailModule.js');
 var express = require('express');
-var app = express();
 var bodyParser = require('body-parser');
-
+var app = express();
 var crypto = require('crypto');
 
-mail.send("WWYL Api restarted", "Check if it's normal !", "sylvain.chevremont@gmail.com"); //test the mail system and alert me for api restart
+//mail.send("WWYL Api restarted", "Check if it's normal !", "sylvain.chevremont@gmail.com"); //test the mail system and alert me for api restart
 
 
 // configure app to use bodyParser()
@@ -118,6 +117,89 @@ function GetUser(req, res) {
         }
     });
 }
+
+var resets = {
+};
+
+router.route('/users/confirmreset/:username/:key').get(function (req, res) {
+    "use strict";
+    var state = resets[req.username];
+    var d = new Date();
+    var d2 = new Date();
+    d2.setMinutes(d.getMinutes() - 120);
+
+    if(!state || state.last < d2 || state.key != req.key){
+        res.json("Invalid reset configuration : please retry");
+    }
+    else{
+        var pswd = Math.random().toString(36).slice(-8);
+        var shasum = crypto.createHash('sha512');
+        shasum.update(state.salt + pswd);
+        var hash = shasum.digest('hex');
+
+        db.run("UPDATE users set hash=$hash where name=$name", {
+            $hash: req.params.hash,
+            $name: name
+        });
+
+        mail.send("WhenWillYouLose - Reset your password", "Hi "+ state.name+ ",\r\n" +
+            "Your new password is :\r\n" +
+            pswd +
+            "\r\n\r\n\r\n Have a nice day.",
+            state.email);
+        res.redirect('http://www.whenwillyouloose.com/#!/newpassword');
+    }
+});
+
+router.route('/users/reset/:username').get(function (req, res) {
+    "use strict";
+    db.get("SELECT * from users where name=$userId or email=$userId", {
+        $userId: req.params.username
+    }, function (err, row) {
+        if (err || !row) {
+            console.log( req.params.username + " reset " + err );
+            res.json(CreateError("Unknown user", err));
+        }
+        else{
+            if(!row.email){
+                res.json(CreateError("No email registered for this user"));
+            }
+            else{
+                var d = new Date();
+                var d2 = new Date();
+                d2.setMinutes(d.getMinutes() - 10);
+
+                if(resets[row.name] && resets[row.name].last > d2)
+                {
+                    res.json(CreateError("An email was send seconds ago, please wait a bit before retrying. (The previous one may be in your spam)"));
+                }
+                else{
+                    var shasum = crypto.createHash('sha256');
+                    shasum.update(row.salt+"regenpassword"+row.name); //serverside + requestsalt + uniqueness
+                    resets[row.name] = {
+                        last : d2,
+                        key: shasum.digest('hex'),
+                        email : row.email,
+                        name: row.name,
+                        salt: row.salt
+                    };
+
+                    mail.send("WhenWillYouLose - Reset your password", "Hi "+ row.name+ ",\r\n" +
+                        "Someone requested a new password for your account, if it's not you please ignore this email. \r\n" +
+                        "You can go to this url to generate a new password (valid 2 hours): \r\n" +
+                        "http://whenwillyoulose.com:1337/wwylApi/users/confirmreset/"+row.name+"/"+resets[row.name].key +
+                        "\r\n\r\n\r\n Have a nice day.",
+                        row.email);
+
+                    res.json({
+                        success: true
+                    });
+                }
+            }
+        }
+    });
+
+});
 router.route('/users/:userid').get(function (req, res) {
     db.get("SELECT * from users where user_id=$userId", {
         $userId: req.params.userid

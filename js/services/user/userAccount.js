@@ -2,6 +2,22 @@
 angular.module('angularApp.factories')
     .factory('userAccount', ['$q', '$rootScope', '$route', '$window', '$timeout', 'storage', 'api', function userFactory($q,$rootScope, $route, $window, $timeout, storage, api) {
         "use strict";
+        function createCookie(name,value,days) {
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime()+(days*24*60*60*1000));
+                var expires = "; expires="+date.toGMTString();
+            }
+            else var expires = "";
+            document.cookie = name+"="+value+expires+"; path=/";
+        }
+        function getCookie(name) {
+            var value = "; " + document.cookie;
+            var parts = value.split("; " + name + "=");
+            if (parts.length >= 2) return parts.pop().split(";").shift();
+            return null;
+        }
+
         function User() {
             this.eventHandler = [];
             this.username = null;
@@ -62,6 +78,11 @@ angular.module('angularApp.factories')
                     console.log(data.message);
                     cb(false);
                 }
+            }).error(function(err){
+                if(err){
+                    console.log(err + err.message);
+                }
+                cb(false, "An error occurred while contacting our server, please retry later.");
             });
         };
 
@@ -101,8 +122,14 @@ angular.module('angularApp.factories')
             return this.username !== null;
         };
         User.prototype.loadTheme = function(){
+
             var t = storage.get(storage.Keys.WebTheme) || "slate";
-            $("#switchableTheme").attr("href", "bootswatch/"+ t.toLowerCase()+".min.css");
+            t = t.toLowerCase();
+            var s = getCookie("csstheme");
+            createCookie("csstheme", t, 365);
+            if(s != t){ //already good don't reload
+                $("#switchableTheme").attr("href", "bootswatch/"+ t+".min.css");
+            }
         };
 
         User.prototype.setTheme = function(style){
@@ -127,10 +154,13 @@ angular.module('angularApp.factories')
                 }
                 else{
                     console.log(data.message);
-                    cb(false, data.message);
+                    cb(false);
                 }
             }).error(function(err){
-              console.log(err + err.message);
+                if(err){
+                    console.log(err + err.message);
+                }
+                cb(false, "An error occurred while contacting our server, please retry later.");
             });
         };
         return new User();

@@ -29,7 +29,7 @@
 
                 </div>
 
-                <button type="submit" ng-click="login()" class="btn btn-default" ngDisabled="!submitEnabled">Login</button>
+                <button type="submit" ng-click="login()" class="btn btn-default" ng-disabled="!submitEnabled">Login</button>
             </form>
         </div>
     </div>
@@ -77,11 +77,11 @@
                         Password different.</p>
                 </div>
 
-                <button type="submit" ng-click="register()" class="btn btn-default" ngDisabled="!submitEnabled">Register</button>
+                <button type="submit" ng-click="register()" class="btn btn-default" ng-disabled="!submitEnabled">Register</button>
             </form>
         </div>
     </div>
-    <div class="col-md-12">
+    <div class="col-md-8 col-md-push-2">
         <p class="has-error">
             {{message}}
         </p>
