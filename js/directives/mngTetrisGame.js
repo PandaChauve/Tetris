@@ -4,6 +4,10 @@ angular.module('angularApp.directives').directive("mngTetrisGame", ['$swipe', 'g
     return {
         restrict: "A",
         link: function(scope, element, attrs){
+            if(!Detector.webgl){
+                Detector.addGetWebGLMessage( document.getElementById('game'));
+                return;
+            }
             var startX, startY, endX, endY;
             var scale = 1;
             var lastClick = -1;
