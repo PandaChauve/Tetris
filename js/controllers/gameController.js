@@ -63,22 +63,24 @@ angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$htt
         };
         $scope.endCallBack = function (finishedGame) {
             gameFinished = true;
-            if(stateChecker.victory()){
-                storage.set(storage.MKeys.UserMap+$scope.gameName, true, false);
+            if(finishedGame.tetris.size === 1 ){
+                if(stateChecker.victory()){
+                    storage.set(storage.MKeys.UserMap+$scope.gameName, true, false);
+                }
+                userStats.getCurrentGame().setTime(finishedGame.last.tics); //FIXME accessor
+                userStats.getCurrentGame().setSwaps(finishedGame.tetris[0].counters.swap); //FIXME accessor
+                userStats.addGame(userStats.getCurrentGame(), $scope.gameName);
+                achievements.check(userStats.getCurrentGame(), $scope.gameName);
+                if(userAccount.isRegistered() && !campaign){
+                    api.addScore(userAccount.id, userStats.getCurrentGame().score, $scope.gameName).success(function(e) {
+                        console.log(e + e.message);
+                    }).
+                        error(function(e){
+                            console.log(e + e.message);
+                        });
+                }
+                $scope.openModal();
             }
-            userStats.getCurrentGame().setTime(finishedGame.last.tics); //FIXME accessor
-            userStats.getCurrentGame().setSwaps(finishedGame.tetris[0].counters.swap); //FIXME accessor
-            userStats.addGame(userStats.getCurrentGame(), $scope.gameName);
-            achievements.check(userStats.getCurrentGame(), $scope.gameName);
-            if(userAccount.isRegistered() && !campaign){
-                api.addScore(userAccount.id, userStats.getCurrentGame().score, $scope.gameName).success(function(e) {
-                    console.log(e + e.message);
-                }).
-                error(function(e){
-                    console.log(e + e.message);
-                });
-            }
-            $scope.openModal();
         };
         $scope.reset = function(){
             $scope.$broadcast('newGame', true);
