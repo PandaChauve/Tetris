@@ -63,7 +63,7 @@ angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$htt
         };
         $scope.endCallBack = function (finishedGame) {
             gameFinished = true;
-            if(finishedGame.tetris.size === 1 ){
+            if(finishedGame.tetris.length === 1 ){
                 if(stateChecker.victory()){
                     storage.set(storage.MKeys.UserMap+$scope.gameName, true, false);
                 }
