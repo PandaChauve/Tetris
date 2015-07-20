@@ -142,6 +142,15 @@ angular.module('angularApp.factories')
                             container[key] = game.score >= this.keyToScore(key);
                         }
                         break;
+                    case AchievementsState.List.Destroyer :
+                            container[key] = userStats.getTotalGameStats(gameName).blockDestroyed >= 10000;                        
+                        break;
+                    case AchievementsState.List.Restless :
+                            container[key] = userStats.getTotalGameStats(gameName).swapCount >= 100000;                        
+                        break;
+                    case AchievementsState.List.Veteran :
+                            container[key] = userStats.getTotalGameStats(gameName).gameCount > 99;                        
+                        break;
                     case AchievementsState.List.Ambidextrous :
                     case AchievementsState.List.Psychic :
                     case AchievementsState.List.Sorcerer :
@@ -195,7 +204,11 @@ angular.module('angularApp.factories')
                 XXL: 18, //points
                 XXS: 19, //points
                 SuperTeam: 20, //points
-                enumSize: 21
+                Destroyer: 21, //blocks
+                Restless: 22, //swaps
+                Veteran: 23, //swaps
+
+                enumSize: 24
             };
 
             AchievementsState.List.getName = function (key) {
@@ -251,6 +264,12 @@ angular.module('angularApp.factories')
                         return "Finish the arcade campaign";
                     case AchievementsState.List.Sherlock :
                         return "Finish the puzzle campaign";
+                    case AchievementsState.List.Destroyer :
+                        return "Destroy 10000 blocks in any game mode";
+                    case AchievementsState.List.Restless :
+                        return "Swap 100000 pairs of blocks in any game mode";
+                    case AchievementsState.List.Veteran :
+                        return "100 games any game mode";
                 }
                 return "";
             };
