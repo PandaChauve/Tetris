@@ -208,7 +208,7 @@ angular.module('angularApp.factories')
                     }
                 }
             }
-            if (gameConstants.columnCount <= 6) {
+            if (gameConstants.columnCount <= 6 && !this.zoom) { //disabled on mobile
                 for (i = 0; i < points.length; i += 1) {
                     if (!points[i].threeObject) {
                         points[i].threeObject = new scoreRenderElementFactory.create();
