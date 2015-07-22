@@ -182,12 +182,12 @@ angular.module('angularApp.factories')
 
                 var continueGame = true;
                 var count = 0;
-                var tickret = [];
+                var tickret;
                 while (this.last.tics < progress * TIC_PER_SEC / 1000 && continueGame) {
                     count += 1;
                     this.last.tics += 1;
                     for (i = 0; i < this.tetris.length; i += 1) {
-                        tickret.push(this.tetris[i].oneTick());
+                        tickret = this.tetris[i].oneTick();
                         stateChecker.check(this.tetris[i]);
                         if (stateChecker.defeat() || stateChecker.victory()) {
                             continueGame = false;
@@ -196,11 +196,11 @@ angular.module('angularApp.factories')
                     }
                     userInput.clear();
 
-                    if(tickret[0].score != 0 ||this.last.combo !=  tickret[0].combo ){//avoid useless broadcast
-                        this.last.score += tickret[0].score;
-                        this.last.combo =  tickret[0].combo;
+                    if(tickret.score != 0 ||this.last.combo !=  tickret.combo ){
+                        this.last.score += tickret.score;
+                        this.last.combo =  tickret.combo;
                     }
-                    this.scoreHandler.addScore(tickret[0].score);
+                    this.scoreHandler.addScore(tickret.score);
                 }
 
                 this.last.swaps = this.tetris[0].getSwaps();
