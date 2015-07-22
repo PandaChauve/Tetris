@@ -68,10 +68,10 @@ angular.module('angularApp.factories')
             this.blockDestroyed = (this.blockDestroyed > otherGameStat.blockDestroyed) ? this.blockDestroyed : otherGameStat.blockDestroyed;
             this.swapCount = (this.swapCount > otherGameStat.swapCount) ? this.swapCount : otherGameStat.swapCount;
 
-            for (var i = 0; i < this.multilines.length; i += 1) {
+            for (var i = 0; i < this.multilines.length && i < otherGameStat.multilines.length; i += 1) {
                 this.multilines[i] = (this.multilines[i] > otherGameStat.multilines[i]) ? this.multilines[i] : otherGameStat.multilines[i];
             }
-            for (i = 0; i < this.lineSizes.length; i += 1) {
+            for (i = 0; i < this.lineSizes.length && i < otherGameStat.lineSizes.length; i += 1) {
                 this.lineSizes[i] = (this.lineSizes[i] > otherGameStat.lineSizes[i]) ? this.lineSizes[i] : otherGameStat.lineSizes[i];
             }
         };
