@@ -131,9 +131,9 @@ angular.module('angularApp.controllers')
             };
             $timeout(function () {$('[data-toggle="tooltip"]').tooltip();}, 0);
 
-
+            var defaultColor = [0x000080,0x005000, 0x404040, 0x601010, 0x9c3e03, 0x281a42];
             $scope.resetColors = function(data){
-                var array = data || storage.get(storage.Keys.HexKeyColors);
+                var array = data || storage.get(storage.Keys.HexKeyColors) || defaultColor;
                 for(var i = 0; i < 6; ++i){
                     $("#picker_"+i).spectrum({
                         color: '#'+('000000'+ array[i].toString(16)).slice(-6),
@@ -145,6 +145,7 @@ angular.module('angularApp.controllers')
                 }
 
             };
+		
             $scope.saveColors = function(){
                 var colors = [];
                 for(var i = 0; i < 6; ++i){
@@ -154,9 +155,9 @@ angular.module('angularApp.controllers')
                 $scope.resetColors();
             };
             $scope.defaultColors = function(){
-                $scope.resetColors([0x000080,0x005000, 0x404040, 0x601010, 0x9c3e03, 0x281a42]);
+                $scope.resetColors(defaultColor );
                 $scope.saveColors();
             };
-            $scope.resetColors([0x000080,0x005000, 0x404040, 0x601010, 0x9c3e03, 0x281a42]);
+            $scope.resetColors(null);
 
         }]);
