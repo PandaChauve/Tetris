@@ -102,7 +102,7 @@ angular.module('angularApp.factories')
                 else {
                     ret = 2500 - (block.animationState - 50) * (block.animationState - 50);
                 }
-                ret = ret /= 80;
+                ret /= 80;
                 if (block.state === blockFactory.EState.SwappedRight) {
                     ret = -ret;
                 }
@@ -123,8 +123,8 @@ angular.module('angularApp.factories')
             var textMaterial = new THREE.MeshBasicMaterial({color: Math.random() * 0xffffff});
             var ret = new THREE.Mesh(text3d, textMaterial);
             var rad = Math.floor(Math.random() * 12);
-            ret.position.setX(((rad % 2) ? -240 : 150) + 25 - 50 * Math.random());
-            ret.position.setY(220 + 85 * (Math.floor(rad / 2) % 6) + 40 - 80 * Math.random());
+            ret.position.setX(((rad % 2) ? -215 : 175) - 50 * Math.random());
+            ret.position.setY(260 + 85 * (Math.floor(rad / 2) % 6 - Math.random()));
             return ret;
         };
 
@@ -206,21 +206,21 @@ angular.module('angularApp.factories')
                     }
                 }
             }
-            if (gameConstants.columnCount <= 6 && !this.zoom) { //disabled on mobile
+            if (gameConstants.columnCount <= 6 && !this.zoom) { 
                 for (i = 0; i < points.length; i += 1) {
                     if (!points[i].threeObject) {
-                        points[i].threeObject = new scoreRenderElementFactory.create();
+                        points[i].threeObject = scoreRenderElementFactory.create();
                         points[i].threeObject.createScore(points[i].value);
                         if(points[i].threeObject.mesh)
-                        this.scene.add(points[i].threeObject.mesh);
+							this.scene.add(points[i].threeObject.mesh);
                         if(points[i].threeObject.particles)
-                        this.scene.add(points[i].threeObject.particles);
+							this.scene.add(points[i].threeObject.particles);
                     }
                     if (points[i].opacity <= 0) {
                         if(points[i].threeObject.mesh)
-                        this.scene.remove(points[i].threeObject.mesh);
+							this.scene.remove(points[i].threeObject.mesh);
                         if(points[i].threeObject.particles)
-                        this.scene.remove(points[i].threeObject.particles);
+							this.scene.remove(points[i].threeObject.particles);
                         points.splice(i, 1);
                         i -= 1;
                     }
@@ -236,9 +236,8 @@ angular.module('angularApp.factories')
         };
 
         return {
-            newRenderer: function newRenderer(cursorsCount, type, scaleX, scaleY, zoom) {
-                var z = (zoom === 1 || (zoom === 2 && document.documentElement.clientWidth < 970)); // 0 never , 1 always, 2 auto //FIXME magic 800
-                return new ThreeRenderer(cursorsCount, type || 0, scaleX || 1, scaleY || 1, gameConstants.columnCount < 8 && z);
+            newRenderer: function newRenderer(cursorsCount, type, scaleX, scaleY) {
+                return new ThreeRenderer(cursorsCount, type || 0, scaleX || 1, scaleY || 1);
             }
         };
     }]);

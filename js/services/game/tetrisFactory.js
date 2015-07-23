@@ -24,6 +24,7 @@ angular.module('angularApp.factories')
             this.groundPos = 0;
             this.keyBoardMappings = [];
             this.tics = 0;
+
         }
 
         Tetris.prototype.slide = function(startX, startY, endX, endY) {

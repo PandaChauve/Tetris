@@ -4,9 +4,9 @@ angular.module('angularApp.factories')
             "use strict";
             function Score() {
                 this.scoreList = [];
-                this.addTics = function (count) {
+                this.addTics = function () {
                     for (var i = 0; i < this.scoreList.length; i += 1) {
-                        this.scoreList[i].opacity -= count / 4;
+                        this.scoreList[i].opacity -= 0.25;
                     }
                 };
                 this.addScore = function (s) {
@@ -48,6 +48,11 @@ angular.module('angularApp.factories')
                 this.reset();
                 this.scoreHandler = new Score();
 				this.statCounter = createStat();
+				this.progress = 0;
+                this.tetris = [];
+                this.startTime = null;
+				this.timeCounter = 0;
+				
             }
 
             Game.prototype.setConfiguration = function (config, grid, cb, scope) {
@@ -63,6 +68,7 @@ angular.module('angularApp.factories')
                     this.callback = cb;
                 }
                 this.started = true;
+				this.progress = 0;
                 this.tryToStart();
             };
 
@@ -75,6 +81,8 @@ angular.module('angularApp.factories')
                 this.pause = false;
                 this.scoreHandler = new Score();
                 this.last = {swaps:0, score:0, actions:0, combo:1, tics: 0};
+				this.progress = 0;
+				this.timeCounter = 0;
             };
 
             Game.prototype.startNewGame = function startNewGame() {
@@ -102,7 +110,8 @@ angular.module('angularApp.factories')
                     this.visual[i].renderTetris(this.tetris[i], []); //first render before loop to get everything smooth
                 }
                 userInput.clear();
-                this.id = requestAnimationFrame(this.createRenderingFct());
+				this.renderingFct = this.render.bind(this);
+                this.id = requestAnimationFrame(this.renderingFct);
 
             };
 
@@ -118,12 +127,6 @@ angular.module('angularApp.factories')
                 this.visual = [];
             };
 
-            Game.prototype.createRenderingFct = function () {
-                var that = this;
-                return function (timestamp) {
-                    that.render(timestamp);
-                };
-            };
 
             Game.prototype.tryToStart = function () {
                 if (!this.started || this.gridCount > this.availableGrids.length) {
@@ -184,7 +187,7 @@ angular.module('angularApp.factories')
                     window.cancelAnimationFrame(this.id);
                 }
                 else {
-                    this.id = requestAnimationFrame(this.createRenderingFct());
+                    this.id = requestAnimationFrame(this.renderingFct);
                     this.startTime = null;
                 }
                 userInput.clear();
@@ -192,45 +195,28 @@ angular.module('angularApp.factories')
 
             };
 
-			
-            Game.prototype.render = function (timestamp) {
-				this.statCounter.begin();
-                var i;
-
-                if (this.startTime === null) {
-                    this.startTime = timestamp - this.last.tics / TIC_PER_SEC * 1000;
+			Game.prototype.computeTic = function(){
+				var tickret;
+                for (var i = 0; i < this.tetris.length; i += 1) {
+                    tickret = this.tetris[i].oneTick();
+                    stateChecker.check(this.tetris[i]);    
                 }
-                var progress = timestamp - this.startTime;
-
-                var continueGame = true;
-                var count = 0;
-                var tickret;
-                while (this.last.tics < progress * TIC_PER_SEC / 1000 && continueGame) {
-                    count += 1;
-                    this.last.tics += 1;
-                    for (i = 0; i < this.tetris.length; i += 1) {
-                        tickret = this.tetris[i].oneTick();
-                        stateChecker.check(this.tetris[i]);
-                        if (stateChecker.defeat() || stateChecker.victory()) {
-                            continueGame = false;
-                            this.visual[i].freezeGame();
-                        }
+                userInput.clear();
+				
+				if(tickret.score != 0 ||this.last.combo !=  tickret.combo ){
+					this.last.score += tickret.score;
+					this.last.combo =  tickret.combo;
+				}
+				this.scoreHandler.addScore(tickret.score);
+				
+			    if (stateChecker.defeat() || stateChecker.victory()) {
+					for(i = 0; i < this.tetris.length; i+= 1){
+                        this.visual[i].freezeGame();
                     }
-                    userInput.clear();
-
-                    if(tickret.score != 0 ||this.last.combo !=  tickret.combo ){
-                        this.last.score += tickret.score;
-                        this.last.combo =  tickret.combo;
-                    }
-                    this.scoreHandler.addScore(tickret.score);
-                }
-
-                this.last.swaps = this.tetris[0].getSwaps();
-                this.last.actions = this.tetris[0].getActions();
-                this.scope.$broadcast('newTick', this.last);
-                if(count > 1){
-                    console.log("frame dropped : " + (count -1));
-                }
+					return false;
+				}
+				return true;
+			}
 
                 /* use that with the capture server
                 // renderer set preserveDrawingBuffer : true
@@ -240,16 +226,33 @@ angular.module('angularApp.factories')
                 var socket = io.connect('http://localhost');
                 socket.emit('image', dataUrl);
                 */
+				
+			var millisecpertic = 1000/TIC_PER_SEC;
+            Game.prototype.render = function (timestamp) {
+                var i;	
+				this.statCounter.begin();
 
-                this.scoreHandler.addTics(count);
+                if (this.startTime === null) {
+                    this.startTime = timestamp - this.last.tics * millisecpertic;
+                }
+                this.progress = timestamp - this.startTime;
 
-                if (continueGame) {
+                while (this.timeCounter < this.progress && this.computeTic()) {				
+					this.last.tics += 1;
+					this.timeCounter += millisecpertic;
+					this.scoreHandler.addTics();
+                }
+
+                this.last.swaps = this.tetris[0].getSwaps();
+                this.last.actions = this.tetris[0].getActions();
+                this.scope.$broadcast('newTick', this.last);
+                if (!stateChecker.defeat() && !stateChecker.victory()) {				
                     for (i = 0; i < this.tetris.length; i += 1) {
                         this.visual[i].renderTetris(this.tetris[i], this.scoreHandler.scoreList);
                     }
                     this.splitScreenQuickFix();
 					this.statCounter.end();
-                    this.id = requestAnimationFrame(this.createRenderingFct(this));
+                    this.id = requestAnimationFrame(this.renderingFct);
                 }
                 else if (this.callback !== null) {
                     this.callback(this);
