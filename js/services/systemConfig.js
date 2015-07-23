@@ -44,19 +44,19 @@ angular.module('angularApp.factories')
             switch (key) {
                 case this.Keys.antialiasing:
                     return true;
-                case this.useLambertMaterial:
+                case this.Keys.useLambertMaterial:
                     return true;
-                case this.sound:
+                case this.Keys.sound:
                     return true;
-                case this.scores:
+                case this.Keys.scores:
                     return true;
-                case this.explosions:
+                case this.Keys.explosions:
                     return true;
-                case this.zoom:
+                case this.Keys.zoom:
                     return false;
-                case this.cssScaling:
+                case this.Keys.cssScaling:
                     return false;
-                case this.fps:
+                case this.Keys.fps:
                     return false;
             }
             throw "what key is that";
@@ -65,19 +65,19 @@ angular.module('angularApp.factories')
             switch (key) {
                 case this.Keys.antialiasing:
                     return false;
-                case this.useLambertMaterial:
+                case this.Keys.useLambertMaterial:
                     return true;
-                case this.sound:
+                case this.Keys.sound:
                     return false;
-                case this.scores:
+                case this.Keys.scores:
                     return false;
-                case this.explosions:
+                case this.Keys.explosions:
                     return false;
-                case this.zoom:
+                case this.Keys.zoom:
                     return true;
-                case this.cssScaling:
+                case this.Keys.cssScaling:
                     return true;
-                case this.fps:
+                case this.Keys.fps:
                     return false;
             }
             throw "what key is that";

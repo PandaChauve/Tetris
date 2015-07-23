@@ -1,84 +1,5 @@
 <br/>
-<div class="container">
-    <div class="row">
-        <div class="panel panel-default" style="max-width:600px; margin:auto; ">
-            <div class="panel-heading">
-                <h3 class="panel-title">Block colors</h3></div>
-            <div class="panel-body" style="text-align: center">
-                <div class="row">
-                    <div class="col-xs-2">
-                        <input type='text' id="picker_0"/>
-                    </div>
-                    <div class="col-xs-2">
-                        <input type='text' id="picker_1"/>
-                    </div>
-                    <div class="col-xs-2">
-                        <input type='text' id="picker_2"/>
-                    </div>
-                    <div class="col-xs-2">
-                        <input type='text' id="picker_3"/>
-                    </div>
-                    <div class="col-xs-2">
-                        <input type='text' id="picker_4"/>
-                    </div>
-                    <div class="col-xs-2">
-                        <input type='text' id="picker_5"/>
-                    </div>
-                    <hr/>
-                    <div class="col-xs-12">
-                        <button type="button" class="btn btn-default btn-custom"
-                                ng-click="saveColors()">Save
-                        </button>
-                        <button type="button" class="btn btn-default btn-custom"
-                                ng-click="resetColors()">Reset
-                        </button>
-                        <button type="button" class="btn btn-default btn-custom"
-                                ng-click="defaultColors()">Default
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</div><br/><br/>
-
-<div class="container">
-    <div class="row">
-        <div class="panel panel-default" style="max-width:600px; margin:auto">
-            <div class="panel-heading">
-                <h3 class="panel-title">Block Style</h3></div>
-            <div class="panel-body">
-                <div class="col-md-4 col-xs-6" ng-repeat="elem in themes">
-                    <div class=" panel" data-toggle="tooltip" data-placement="top" title="{{requireText(elem.Require)}}"
-                         ng-class="{'panel-primary': cubeType == $index, 'panel-default': cubeType != $index, 'disabledPanel': !requireStatus(elem.Require), 'enabledPanel': requireStatus(elem.Require)}"
-                         ng-click='updateStyle($index)'>
-                        <div class="panel-heading">
-                            <h3 class="panel-title">{{::elem.Name}}</h3>
-                        </div>
-                        <div class="panel-body">
-                            <img ng-src="{{::elem.Picture}}" alt="{{::elem.Name}}" class="img-responsive themeSample"
-                                 style="float:left;margin-right:15px;"/>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div><br/><br/>
-<div class="container">
-    <div class="row">
-        <div class="panel panel-default" style="max-width:600px; margin:auto">
-            <div class="panel-heading">
-                <h3 class="panel-title">Global Theme</h3></div>
-            <div class="panel-body">
-                <select ng-options="a for a in cssThemes" ng-model="selectedCss" ng-change="loadStyle(selectedCss)"
-                        class="form-control"></select>
-            </div>
-        </div>
-    </div>
-</div><br/><br/>
-<div ng-controller="ComputerConfigCtrl">
+<div>
     <div class="row">
         <div class="panel panel-default" style="max-width:600px; margin:auto">
             <div class="panel-heading">
@@ -90,37 +11,61 @@
                     <h4>Effects</h4>
 
                     <div class="btn-group">
-                        <button type="button" class="btn btn-default btn-custom" ng-model="effects.explosionEffect"
+                        <button type="button" class="btn btn-default btn-custom" ng-model="data.explosion"
                                 btn-checkbox btn-checkbox-true="false" btn-checkbox-false="true"
-                                ng-click="updateCheckBox('explosionEffect')">
+                                ng-click="updateCheckBox(keys.explosions)">
                             Explosions
                         </button>
-                        <button type="button" class="btn btn-default btn-custom" ng-model="effects.scoreEffect"
+                        <button type="button" class="btn btn-default btn-custom" ng-model="data.score"
                                 btn-checkbox btn-checkbox-true="false" btn-checkbox-false="true"
-                                ng-click="updateCheckBox('scoreEffect')">
+                                ng-click="updateCheckBox(keys.scores)">
                             Scores
                         </button>
-                        <button type="button" class="btn btn-default btn-custom" ng-model="effects.soundEffect"
+                        <button type="button" class="btn btn-default btn-custom" ng-model="data.sound"
                                 btn-checkbox btn-checkbox-true="false" btn-checkbox-false="true"
-                                ng-click="updateCheckBox('soundEffect')">
+                                ng-click="updateCheckBox(keys.sound)">
                             Sound
                         </button>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <h4>Zoom</h4>
-
                     <div class="btn-group">
-                        <button type="button" class="btn btn-default btn-custom" ng-model="zoom" btn-radio="1"
-                                ng-click="updateZoom(true)">
-                            Always
-                        </button>
-                        <button type="button" class="btn btn-default btn-custom" ng-model="zoom" btn-radio="0"
-                                ng-click="updateZoom(false)">
-                            Never
+                        <button type="button" class="btn btn-default btn-custom" ng-model="data.zoom" btn-checkbox btn-checkbox-true="false" btn-checkbox-false="true"
+                                ng-click="updateCheckBox(keys.zoom)">
+                            Zoom
                         </button>
                     </div>
                 </div>
+				
+                <div class="col-md-6">
+                    <h4>Rendering</h4>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default btn-custom" ng-model="data.antialiasing" btn-checkbox btn-checkbox-true="false" btn-checkbox-false="true"
+                                ng-click="updateCheckBox(keys.antialiasing)">
+                            Antialiasing
+                        </button>
+                        <button type="button" class="btn btn-default btn-custom" ng-model="data.texture" btn-checkbox btn-checkbox-true="false" btn-checkbox-false="true"
+                                ng-click="updateCheckBox(keys.useLambertMaterial)">
+                            HD textures
+                        </button>
+                        <button type="button" class="btn btn-default btn-custom" ng-model="data.highRez" btn-checkbox btn-checkbox-true="false" btn-checkbox-false="true"
+                                ng-click="updateCheckBox(keys.cssScaling)">
+                            Low Resolution
+                        </button>
+                    </div>
+                </div>
+				
+                <div class="col-md-6">
+                    <h4>Debug</h4>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default btn-custom" ng-model="data.fps" btn-checkbox btn-checkbox-true="false" btn-checkbox-false="true"
+                                ng-click="updateCheckBox(keys.fps)">
+                            Display fps
+                        </button>
+                    </div>
+                </div>
+				
             </div>
         </div>
     </div>

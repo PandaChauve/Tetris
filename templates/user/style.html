@@ -1,0 +1,81 @@
+<br/>
+<div class="container">
+    <div class="row">
+        <div class="panel panel-default" style="max-width:600px; margin:auto; ">
+            <div class="panel-heading">
+                <h3 class="panel-title">Block colors</h3></div>
+            <div class="panel-body" style="text-align: center">
+                <div class="row">
+                    <div class="col-xs-2">
+                        <input type='text' id="picker_0"/>
+                    </div>
+                    <div class="col-xs-2">
+                        <input type='text' id="picker_1"/>
+                    </div>
+                    <div class="col-xs-2">
+                        <input type='text' id="picker_2"/>
+                    </div>
+                    <div class="col-xs-2">
+                        <input type='text' id="picker_3"/>
+                    </div>
+                    <div class="col-xs-2">
+                        <input type='text' id="picker_4"/>
+                    </div>
+                    <div class="col-xs-2">
+                        <input type='text' id="picker_5"/>
+                    </div>
+                    <hr/>
+                    <div class="col-xs-12">
+                        <button type="button" class="btn btn-default btn-custom"
+                                ng-click="saveColors()">Save
+                        </button>
+                        <button type="button" class="btn btn-default btn-custom"
+                                ng-click="resetColors()">Reset
+                        </button>
+                        <button type="button" class="btn btn-default btn-custom"
+                                ng-click="defaultColors()">Default
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div><br/><br/>
+
+<div class="container">
+    <div class="row">
+        <div class="panel panel-default" style="max-width:600px; margin:auto">
+            <div class="panel-heading">
+                <h3 class="panel-title">Block Style</h3></div>
+            <div class="panel-body">
+                <div class="col-md-4 col-xs-6" ng-repeat="elem in themes">
+                    <div class=" panel" data-toggle="tooltip" data-placement="top" title="{{requireText(elem.Require)}}"
+                         ng-class="{'panel-primary': cubeType == $index, 'panel-default': cubeType != $index, 'disabledPanel': !requireStatus(elem.Require), 'enabledPanel': requireStatus(elem.Require)}"
+                         ng-click='updateStyle($index)'>
+                        <div class="panel-heading">
+                            <h3 class="panel-title">{{::elem.Name}}</h3>
+                        </div>
+                        <div class="panel-body">
+                            <img ng-src="{{::elem.Picture}}" alt="{{::elem.Name}}" class="img-responsive themeSample"
+                                 style="float:left;margin-right:15px;"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><br/><br/>
+<div class="container">
+    <div class="row">
+        <div class="panel panel-default" style="max-width:600px; margin:auto">
+            <div class="panel-heading">
+                <h3 class="panel-title">Global Theme</h3></div>
+            <div class="panel-body">
+                <select ng-options="a for a in cssThemes" ng-model="selectedCss" ng-change="loadStyle(selectedCss)"
+                        class="form-control"></select>
+            </div>
+        </div>
+    </div>
+</div><br/><br/>
+</div><br/><br/>

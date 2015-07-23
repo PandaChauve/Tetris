@@ -80,11 +80,7 @@ angular.module('angularApp.factories')
             }
         };
 
-        UserStorage.prototype.Keys = {
-            scoreEffect :"scoreEffect",
-            soundEffect :"soundEffect",
-            explosionEffect :"explosionEffect",
-            ZoomConfig :"ZoomConfig",
+        UserStorage.prototype.Keys = {            
             CubeTheme :"CubeTheme",
             WebTheme :"WebTheme",
             Achievements :"Achievements",

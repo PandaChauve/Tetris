@@ -3,13 +3,11 @@
  */
 
 angular.module('angularApp.factories')
-    .factory('tetrisFactory', ['gameConstants', 'userInput', 'gridFactory', 'storage', 'audio', function tetrisFactoryCreator(gameConstants, userInput, gridFactory, storage, audio) {
+    .factory('tetrisFactory', ['gameConstants', 'userInput', 'gridFactory', 'systemConfig', 'audio', function tetrisFactoryCreator(gameConstants, userInput, gridFactory, systemConfig, audio) {
         'use strict';
 
         function Tetris(grid, cursors) {
-            var zoom = storage.get(storage.Keys.ZoomConfig) || 2;
-            zoom = gameConstants.columnCount < 8 && (zoom === 1 || (zoom === 2 && document.documentElement.clientWidth < 970)); // 0 never , 1 always, 2 auto //FIXME magic 800
-            this.zoom = zoom;
+            this.zoom = systemConfig.get(systemConfig.Keys.zoom) && gameConstants.columnCount < 8;
             this.grid = gridFactory.newGrid(grid);
             this.score = 0;
             this.cursor = [];

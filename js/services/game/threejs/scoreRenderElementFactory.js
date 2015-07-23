@@ -1,5 +1,5 @@
 angular.module('angularApp.factories')
-    .factory('scoreRenderElementFactory', ['storage', function cubeRenderElementFactoryCreator(storage) {
+    .factory('scoreRenderElementFactory', ['systemConfig', function cubeRenderElementFactoryCreator(systemConfig) {
         "use strict";
 
         function ScoreElement(){
@@ -34,13 +34,13 @@ angular.module('angularApp.factories')
             }
         };
 
-        ScoreElement.prototype.createScore = function createScore(v) {
-            var rad = Math.floor(Math.random() * 12);
-            var y = 220 + 85 * (Math.floor(rad / 2) % 6) + 40 - 80 * Math.random();
-            var x = ((rad % 2) ? -225 : 175)- 50 * Math.random();
+        ScoreElement.prototype.createScore = function createScore(v) {   
 
             var color = Math.random() * 0xffffff;
-            if(!storage.get(storage.Keys.scoreEffect)){
+            if(!systemConfig.get(systemConfig.Keys.scores)){
+				var rad = Math.floor(Math.random() * 12);
+                var y = 220 + 85 * (Math.floor(rad / 2) % 6) + 40 - 80 * Math.random();
+                var x = ((rad % 2) ? -225 : 175)- 50 * Math.random();
 
                 var text3d = new THREE.TextGeometry(v, {
                     size: 30,
@@ -57,14 +57,16 @@ angular.module('angularApp.factories')
                 this.mesh = ret;
             }
 
-            y = 220 + 80 * Math.random();
-            x = -250 + 500 * Math.random();
 
-            this.createParticles(x,y,color, v);
+            this.createParticles(color, v);
         };
 
-        ScoreElement.prototype.createParticles = function(x,y,color, value){
-            if(storage.get(storage.Keys.explosionEffect)){ return;}
+        ScoreElement.prototype.createParticles = function(color, value){
+            if(systemConfig.get(systemConfig.Keys.explosions)){ return;}
+			
+            var y = 220 + 80 * Math.random();
+            var x = -250 + 500 * Math.random();
+			
             var attributes = {
                 size: {type: 'f', value: []},
                 customColor: {type: 'c', value: []}

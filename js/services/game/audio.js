@@ -1,5 +1,5 @@
 angular.module('angularApp.factories')
-    .factory('audio', ['storage', function audioFactory(storage) {
+    .factory('audio', ['systemConfig', function audioFactory(systemConfig) {
         "use strict";
         function MyAudio(){
             this.audiochannels = [];
@@ -24,7 +24,7 @@ angular.module('angularApp.factories')
         };
 
         MyAudio.prototype.play = function(sound){
-            if(storage.get(storage.Keys.soundEffect)){ return;}
+            if(systemConfig.get(systemConfig.Keys.sound)){ return;}
             var thistime = new Date();
             for (var i = 0; i < this.audiochannels.length; i += 1) {
                 if (this.audiochannels[i].endTime < thistime.getTime()) {

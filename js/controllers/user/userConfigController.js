@@ -2,22 +2,7 @@ angular.module('angularApp.controllers')
 .controller('UserConfigCtrl', ['$scope', '$http', '$timeout', 'userAccount', 'storage','achievements',
         function ($scope, $http, $timeout, userAccount, storage, achievements) {
             "use strict";
-            var flush = false;
-            if (storage.get(storage.Keys.scoreEffect) == null) {
-                storage.set(storage.Keys.scoreEffect, false, false);
-                storage.set(storage.Keys.soundEffect, false, false);
-                storage.set(storage.Keys.explosionEffect, false, false);
-                flush = true;
-            }
 
-            if (storage.get(storage.Keys.ZoomConfig) == null) {
-                storage.set(storage.Keys.ZoomConfig, 2, false);
-                flush = true;
-            }
-            if(flush){
-                storage.flush();
-            }
-            $scope.zoom = storage.get(storage.Keys.ZoomConfig);
             $scope.cubeType = storage.get(storage.Keys.CubeTheme) || 0;
             $scope.selectedCss = storage.get(storage.Keys.WebTheme) || "Slate";
 
@@ -65,15 +50,7 @@ angular.module('angularApp.controllers')
                     Require : achievements.List.God
                 }
             ];
-            $scope.effects = {
-                scoreEffect: storage.get(storage.Keys.scoreEffect),
-                soundEffect: storage.get(storage.Keys.soundEffect),
-                explosionEffect: storage.get(storage.Keys.explosionEffect)
-            };
-
-            $scope.updateCheckBox = function (name) {
-                storage.set(name, !$scope.effects[name]);
-            };
+            
 
             $scope.requireStatus = function(key){
                 if(key === -1)
@@ -113,18 +90,13 @@ angular.module('angularApp.controllers')
                 }
             }
 
-
             $scope.requireText = function(key){
                 if(!$scope.requireStatus(key)){
                     return "Unlocked by success : "+ achievements.List.getName(key);
                 }
                 return "";
             };
-
-            $scope.updateZoom = function(val){
-                $scope.zoom = val;
-                storage.set(storage.Keys.ZoomConfig, $scope.zoom);
-            };
+            
 
             $scope.loadStyle = function (style) {
                 userAccount.setTheme(style);

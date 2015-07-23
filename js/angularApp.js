@@ -145,9 +145,19 @@ angularApp.config(['$routeProvider', '$locationProvider',
                         }]
                     }
                 }).
+                when('/user/style', {
+                    templateUrl: 'templates/user/style.html',
+                    controller: 'UserConfigCtrl',
+                    resolve: {
+                        user : ['userAccount', function(userAccount){
+                            "use strict";
+                            return userAccount.start();
+                        }]
+                    }
+                }).
                 when('/user/config', {
                     templateUrl: 'templates/user/config.html',
-                    controller: 'UserConfigCtrl',
+                    controller: 'ComputerConfigCtrl',
                     resolve: {
                         user : ['userAccount', function(userAccount){
                             "use strict";

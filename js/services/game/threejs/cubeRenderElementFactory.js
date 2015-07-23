@@ -1,5 +1,5 @@
 angular.module('angularApp.factories')
-    .factory('cubeRenderElementFactory', ['gameConstants', 'blockFactory', 'storage',  function cubeRenderElementFactoryCreator(gameConstants, blockFactory, storage) {
+    .factory('cubeRenderElementFactory', ['gameConstants', 'blockFactory', 'storage', 'systemConfig',  function cubeRenderElementFactoryCreator(gameConstants, blockFactory, storage, systemConfig) {
         "use strict";
         function CubeRenderer() {
             this.cube = null;
@@ -35,10 +35,19 @@ angular.module('angularApp.factories')
 
         CubeRenderer.prototype.createTexture = function (color) {
             if (!this.textures[color]) {
-                this.textures[color] = new THREE.MeshPhongMaterial({
-                    color: this.getHexColor(color),
-                    emissive: this.getHexColor(color)
-                });
+				if(systemConfig.get(systemConfig.Keys.useLambertMaterial))
+				{
+					this.textures[color] = new THREE.MeshLambertMaterial({
+						color: this.getHexColor(color),
+						emissive: this.getHexColor(color)
+					});					
+				}
+				else{
+					this.textures[color] = new THREE.MeshPhongMaterial({
+						color: this.getHexColor(color),
+						emissive: this.getHexColor(color)
+					});					
+				}
             }
             return this.textures[color];
         };

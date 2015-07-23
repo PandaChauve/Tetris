@@ -1,12 +1,12 @@
 angular.module('angularApp.factories')
-    .factory('threeRendererFactory', ['gameConstants', 'blockFactory', 'cubeRenderElementFactory', 'scoreRenderElementFactory',
-        function threeRendererFactoryCreator(gameConstants, blockFactory, cubeRenderElementFactory, scoreRenderElementFactory) {
+    .factory('threeRendererFactory', ['gameConstants', 'blockFactory', 'cubeRenderElementFactory', 'scoreRenderElementFactory', 'systemConfig', 
+        function threeRendererFactoryCreator(gameConstants, blockFactory, cubeRenderElementFactory, scoreRenderElementFactory, systemConfig) {
             "use strict";
 
-        function ThreeRenderer(cursors, type, scaleX, scaleY, zoom) {
+        function ThreeRenderer(cursors, type, scaleX, scaleY) {
             this.scale = {x : +scaleX, y : +scaleY};
             this.mode = +type;
-            this.zoom = zoom;
+            this.zoom = systemConfig.get(systemConfig.Keys.zoom) && gameConstants.columnCount < 8; //FIXME create a common function for this and the d&d
             if (cursors === undefined) {
                 cursors = 1;
             }
@@ -76,11 +76,9 @@ angular.module('angularApp.factories')
         };
 
         ThreeRenderer.prototype.createRenderer = function (canvas) {
-            var renderer = new THREE.WebGLRenderer({canvas: canvas, antialias: true/*, preserveDrawingBuffer : true*/});
+            var renderer = new THREE.WebGLRenderer({canvas: canvas, antialias: systemConfig.get(systemConfig.Keys.antialiasing)/*, preserveDrawingBuffer : true*/});
             renderer.setClearColor(0x000000);
             renderer.setSize(448*this.scale.x, 600*this.scale.y);
-            renderer.shadowMapEnabled = true;
-            renderer.shadowMapSoft = true;
             return renderer;
         };
 
