@@ -78,7 +78,14 @@ angular.module('angularApp.factories')
         ThreeRenderer.prototype.createRenderer = function (canvas) {
             var renderer = new THREE.WebGLRenderer({canvas: canvas, antialias: systemConfig.get(systemConfig.Keys.antialiasing)/*, preserveDrawingBuffer : true*/});
             renderer.setClearColor(0x000000);
-            renderer.setSize(448*this.scale.x, 600*this.scale.y);
+			if(systemConfig.get(systemConfig.Keys.cssScaling))
+			{				
+				renderer.setSize(448*this.scale.x/2, 600*this.scale.y/2);
+				$(canvas).closest(".gameHolder").addClass("scaledCanvas");
+			}
+			else{
+				renderer.setSize(448*this.scale.x, 600*this.scale.y);				
+			}
             return renderer;
         };
 
