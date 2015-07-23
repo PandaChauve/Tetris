@@ -3,21 +3,21 @@ angular.module('angularApp.controllers')
         function ($scope, systemConfig) {
             "use strict";
          
-			$scope.keys = storage.Keys;
+			$scope.keys = systemConfig.Keys;
 			
 			$scope.data = {
-				antialiasing : systemConfig.get(storage.Keys.antialiasing),
-				texture : systemConfig.get(storage.Keys.useLambertMaterial),
-				highRez : !systemConfig.get(storage.Keys.cssScaling),
-                score: systemConfig.get(storage.Keys.scores),
-                sound: systemConfig.get(storage.Keys.sound),
-                explosion: systemConfig.get(storage.Keys.explosions),
-				fps: systemConfig.get(storage.Keys.fps),
-				zoom : systemConfig.get(storage.Keys.zoom)
+				antialiasing : systemConfig.get(systemConfig.Keys.antialiasing),
+				lowtexture : systemConfig.get(systemConfig.Keys.useLambertMaterial),
+				lowRez : systemConfig.get(systemConfig.Keys.cssScaling),
+                score: systemConfig.get(systemConfig.Keys.scores),
+                sound: systemConfig.get(systemConfig.Keys.sound),
+                explosion: systemConfig.get(systemConfig.Keys.explosions),
+				fps: systemConfig.get(systemConfig.Keys.fps),
+				zoom : systemConfig.get(systemConfig.Keys.zoom)
             };
 
-            $scope.updateCheckBox = function (name) {
-                systemConfig.set(name, !$scope.data[name]);
+            $scope.updateCheckBox = function (name, value) {
+                systemConfig.set(name, !value);
             };
 			
 			

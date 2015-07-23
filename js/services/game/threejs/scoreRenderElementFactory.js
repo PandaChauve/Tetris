@@ -37,7 +37,7 @@ angular.module('angularApp.factories')
         ScoreElement.prototype.createScore = function createScore(v) {   
 
             var color = Math.random() * 0xffffff;
-            if(!systemConfig.get(systemConfig.Keys.scores)){
+            if(systemConfig.get(systemConfig.Keys.scores)){
 				var rad = Math.floor(Math.random() * 12);
                 var y = 220 + 85 * (Math.floor(rad / 2) % 6) + 40 - 80 * Math.random();
                 var x = ((rad % 2) ? -225 : 175)- 50 * Math.random();
@@ -62,7 +62,7 @@ angular.module('angularApp.factories')
         };
 
         ScoreElement.prototype.createParticles = function(color, value){
-            if(systemConfig.get(systemConfig.Keys.explosions)){ return;}
+            if(!systemConfig.get(systemConfig.Keys.explosions)){return;}
 			
             var y = 220 + 80 * Math.random();
             var x = -250 + 500 * Math.random();

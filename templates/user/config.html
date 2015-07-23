@@ -3,64 +3,59 @@
     <div class="row">
         <div class="panel panel-default" style="max-width:600px; margin:auto">
             <div class="panel-heading">
-                <h3 class="panel-title">Local configuration</h3></div>
+                <h3 class="panel-title">Device configuration</h3></div>
             <div class="panel-body row" style="text-align:center">
-                <p>This part is linked to this device, not this account !</p>
-
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <h4>Effects</h4>
 
                     <div class="btn-group">
                         <button type="button" class="btn btn-default btn-custom" ng-model="data.explosion"
-                                btn-checkbox btn-checkbox-true="false" btn-checkbox-false="true"
-                                ng-click="updateCheckBox(keys.explosions)">
+                                btn-checkbox btn-checkbox-true="true" btn-checkbox-false="false"
+                                ng-click="updateCheckBox(keys.explosions, data.explosion)">
                             Explosions
                         </button>
                         <button type="button" class="btn btn-default btn-custom" ng-model="data.score"
-                                btn-checkbox btn-checkbox-true="false" btn-checkbox-false="true"
-                                ng-click="updateCheckBox(keys.scores)">
+                                btn-checkbox btn-checkbox-true="true" btn-checkbox-false="false"
+                                ng-click="updateCheckBox(keys.scores, data.score)">
                             Scores
                         </button>
                         <button type="button" class="btn btn-default btn-custom" ng-model="data.sound"
-                                btn-checkbox btn-checkbox-true="false" btn-checkbox-false="true"
-                                ng-click="updateCheckBox(keys.sound)">
+                                btn-checkbox btn-checkbox-true="true" btn-checkbox-false="false"
+                                ng-click="updateCheckBox(keys.sound, data.sound)">
                             Sound
                         </button>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <h4>Zoom</h4>
+				
+				
+                <div class="col-md-12">
+                    <h4>Rendering</h4>
                     <div class="btn-group">
-                        <button type="button" class="btn btn-default btn-custom" ng-model="data.zoom" btn-checkbox btn-checkbox-true="false" btn-checkbox-false="true"
-                                ng-click="updateCheckBox(keys.zoom)">
+                        <button type="button" class="btn btn-default btn-custom" ng-model="data.antialiasing" btn-checkbox btn-checkbox-true="true" btn-checkbox-false="false"
+                                ng-click="updateCheckBox(keys.antialiasing, data.antialiasing)">
+                            Antialiasing
+                        </button>
+                        <button type="button" class="btn btn-default btn-custom" ng-model="data.lowtexture" btn-checkbox btn-checkbox-true="true" btn-checkbox-false="false"
+                                ng-click="updateCheckBox(keys.useLambertMaterial, data.lowtexture)">
+                            SD textures
+                        </button>
+                        <button type="button" class="btn btn-default btn-custom" ng-model="data.lowRez" btn-checkbox btn-checkbox-true="true" btn-checkbox-false="false"
+                                ng-click="updateCheckBox(keys.cssScaling, data.lowRez)">
+                            Low Resolution
+                        </button>
+                        <button type="button" class="btn btn-default btn-custom" ng-model="data.zoom" btn-checkbox btn-checkbox-true="true" btn-checkbox-false="false"
+                                ng-click="updateCheckBox(keys.zoom, data.zoom)">
                             Zoom
                         </button>
                     </div>
                 </div>
 				
-                <div class="col-md-6">
-                    <h4>Rendering</h4>
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-default btn-custom" ng-model="data.antialiasing" btn-checkbox btn-checkbox-true="false" btn-checkbox-false="true"
-                                ng-click="updateCheckBox(keys.antialiasing)">
-                            Antialiasing
-                        </button>
-                        <button type="button" class="btn btn-default btn-custom" ng-model="data.texture" btn-checkbox btn-checkbox-true="false" btn-checkbox-false="true"
-                                ng-click="updateCheckBox(keys.useLambertMaterial)">
-                            HD textures
-                        </button>
-                        <button type="button" class="btn btn-default btn-custom" ng-model="data.highRez" btn-checkbox btn-checkbox-true="false" btn-checkbox-false="true"
-                                ng-click="updateCheckBox(keys.cssScaling)">
-                            Low Resolution
-                        </button>
-                    </div>
-                </div>
 				
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <h4>Debug</h4>
                     <div class="btn-group">
-                        <button type="button" class="btn btn-default btn-custom" ng-model="data.fps" btn-checkbox btn-checkbox-true="false" btn-checkbox-false="true"
-                                ng-click="updateCheckBox(keys.fps)">
+                        <button type="button" class="btn btn-default btn-custom" ng-model="data.fps" btn-checkbox btn-checkbox-true="true" btn-checkbox-false="false"
+                                ng-click="updateCheckBox(keys.fps, data.fps)">
                             Display fps
                         </button>
                     </div>

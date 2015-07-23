@@ -1,6 +1,7 @@
 angular.module('angularApp.factories')
     .factory('audio', ['systemConfig', function audioFactory(systemConfig) {
         "use strict";
+		
         function MyAudio(){
             this.audiochannels = [];
             this.ext = !(document.createElement('audio').canPlayType('audio/mpeg;'))?'wav':'mp3';
@@ -8,6 +9,7 @@ angular.module('angularApp.factories')
         }
 
         MyAudio.prototype.preload = function(){
+            if(!systemConfig.get(systemConfig.Keys.sound)){ return;}
             var ret = [];
             var tmp;
             for (var prop in MyAudio.ESounds) {
@@ -23,31 +25,36 @@ angular.module('angularApp.factories')
             return ret;
         };
 
-        MyAudio.prototype.play = function(sound){
-            if(systemConfig.get(systemConfig.Keys.sound)){ return;}
-            var thistime = new Date();
-            for (var i = 0; i < this.audiochannels.length; i += 1) {
-                if (this.audiochannels[i].endTime < thistime.getTime()) {
-                    this.audiochannels[i].endTime = thistime.getTime() + sound.duration;
-                    this.audiochannels[i].channel.src = sound.path + this.ext;
-                    this.audiochannels[i].volume = 0.1;
-                    this.audiochannels[i].channel.load();
-                    this.audiochannels[i].channel.play();
-                    return;
-                }
-            }
-            //no space in the buffer
-            var audio = {
-                endTime : -1,
-                channel: new Audio()
-            };
-            audio.endTime = thistime.getTime() + sound.duration;
-            audio.channel.src = sound.path + this.ext;
-            audio.channel.volume=0.1;
-            audio.channel.load();
-            audio.channel.play();
-            this.audiochannels.push(audio);
-        };
+        if(!systemConfig.get(systemConfig.Keys.sound)){ 
+			MyAudio.prototype.play = function(sound){};		
+		}
+		else{
+			MyAudio.prototype.play = function(sound){
+				var thistime = new Date();
+				for (var i = 0; i < this.audiochannels.length; i += 1) {
+					if (this.audiochannels[i].endTime < thistime.getTime()) {
+						this.audiochannels[i].endTime = thistime.getTime() + sound.duration;
+						this.audiochannels[i].channel.src = sound.path + this.ext;
+						this.audiochannels[i].volume = 0.1;
+						this.audiochannels[i].channel.load();
+						this.audiochannels[i].channel.play();
+						return;
+					}
+				}
+				//no space in the buffer
+				var audio = {
+					endTime : -1,
+					channel: new Audio()
+				};
+				audio.endTime = thistime.getTime() + sound.duration;
+				audio.channel.src = sound.path + this.ext;
+				audio.channel.volume=0.1;
+				audio.channel.load();
+				audio.channel.play();
+				this.audiochannels.push(audio);
+			};
+			
+		}
 
         MyAudio.ESounds = {
             swap : {path:'resources/audio/jump.', duration:1000},

@@ -24,28 +24,38 @@ angular.module('angularApp.factories')
 
         function SystemConfig() {};
         SystemConfig.prototype.set = function(key, value) {
-            localstorage.setItem("systemConfig_" + key, JSON.stringify(value));
+			if(value == undefined)
+				value = null;
+            localStorage.setItem("systemConfig_" + key, JSON.stringify(value));
         };
         SystemConfig.prototype.get = function(key) {
-            var ret = localstorage.getItem("systemConfig_" + key);
+            var ret = localStorage.getItem("systemConfig_" + key);
             if (ret != null) {
-                ret = JSON.parse(ret);
+				try{
+					ret = JSON.parse(ret);					
+				}
+				catch(e){
+					console.log(e);
+					ret = null;
+				}
             }
             if (ret != null) {
                 return ret;
             }
             if (isMobile.any()) {
+				console.log("using mobile defaults");
                 return this.defaultMobile(key);
             }
+				console.log("using desktops defaults");
             return this.defaultDesktop(key);
 
         };
-        SystemConfig.prototype.defaultDestop = function(key) {
+        SystemConfig.prototype.defaultDesktop = function(key) {
             switch (key) {
                 case this.Keys.antialiasing:
                     return true;
                 case this.Keys.useLambertMaterial:
-                    return true;
+                    return false;
                 case this.Keys.sound:
                     return true;
                 case this.Keys.scores:
