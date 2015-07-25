@@ -81,7 +81,9 @@ angular.module('angularApp.factories')
 			if(systemConfig.get(systemConfig.Keys.cssScaling))
 			{				
 				renderer.setSize(448*this.scale.x/2, 600*this.scale.y/2);
-				$(canvas).closest(".gameHolder").addClass("scaledCanvas");
+				$(canvas).addClass('scaledCanvas');
+				$(canvas).closest(".gameResizer").css("width", 448*this.scale.x);
+				$(canvas).closest(".gameResizer").css("height", 600*this.scale.y);
 			}
 			else{
 				renderer.setSize(448*this.scale.x, 600*this.scale.y);				
