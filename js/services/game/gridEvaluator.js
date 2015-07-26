@@ -1,7 +1,21 @@
 angular.module('angularApp.factories')
     .factory('gridEvaluator', ['gameConstants','userStats','blockFactory', function gridEvaluatorFactory(gameConstants, userStats,blockFactory) {
         "use strict";
-
+		var ArrayPool = function(){ //need to check if it's effective
+			this.data = [];
+			this.free = function (array){
+				array.length = 0;
+				this.data.push(array);
+			};
+			this.get = function (){
+				if(this.data.length == 0)
+				{
+					return [];
+				}
+				return this.data.pop();
+			};
+		}
+		var pool = new ArrayPool();
         var GridEvaluator = function () {
             this.series = [];
             this.falling = 0;
@@ -31,7 +45,7 @@ angular.module('angularApp.factories')
                         container[i][j].setState(blockFactory.EState.Disappearing);
                         container[i][j - 1].setState(blockFactory.EState.Disappearing);
                         container[i][j - 2].setState(blockFactory.EState.Disappearing);
-                        this.series.push([]);
+                        this.series.push(pool.get());
                         serie = this.series.length - 1;
                         this.series[serie].push(container[i][j].id);
                         this.series[serie].push(container[i][j - 1].id);
@@ -99,7 +113,7 @@ angular.module('angularApp.factories')
                         container[i - 1][realJP].setState(blockFactory.EState.Disappearing);
                         container[i - 2][realJPP].setState(blockFactory.EState.Disappearing);
 
-                        this.series.push([]);
+                        this.series.push(pool.get());
                         serie = this.series.length - 1;
                         this.series[serie].push(container[i][realJ].id);
                         this.series[serie].push(container[i - 1][realJP].id);
@@ -140,7 +154,7 @@ angular.module('angularApp.factories')
         };
 
         GridEvaluator.prototype.getSerie = function (id, max) {
-            for (var i = max - 1; i >= 0; i -= 1) {
+            for (var i = 0; i < max; i += 1) {
                 for (var j = 0; j < this.series[i].length; j += 1) {
                     if (this.series[i][j] === id) {
                         return i;
@@ -150,15 +164,25 @@ angular.module('angularApp.factories')
             return -1;
         };
 
+		var spliceOne = function(arr, index) {
+			pool.free(arr[index]);
+			var len=arr.length;
+			while (index<len) { 
+			    arr[index] = arr[index+1];
+				index++;
+			}
+			arr.length--;
+		};
+				
         GridEvaluator.prototype.mergeSeries = function () {
-            for (var i = this.series.length - 1; i >= 0; i -= 1) {
-                for (var j = 0; j < this.series[i].length; j += 1) {
-                    var existingSerie = this.getSerie(this.series[i][j], i);
+            for (var i = this.series.length - 1; i >= 0; i -= 1) { //read the series from the end
+                for (var j = 0; j < this.series[i].length; j += 1) { //foreach block in the current one
+                    var existingSerie = this.getSerie(this.series[i][j], i); //find a lower one in the list containing the same id
                     if (existingSerie !== -1) {
                         var fall = this.series[existingSerie].falling || this.series[i].falling;
                         this.series[existingSerie] = this.series[existingSerie].concat(this.series[i]);
                         this.series[existingSerie].falling = fall;
-                        this.series.splice(i, 1);
+                        spliceOne(this.series, i); 
                         break;
                     }
                 }
@@ -171,7 +195,9 @@ angular.module('angularApp.factories')
             if(this.lastTriger <= 0){
                 this.combo = 1;
             }
-            this.series = [];
+			while(this.series.length){
+				pool.free(this.series.pop()); //gc friendly 
+			}
             this.evaluateVertical(container);
             this.evaluateHorizontal(container);
             this.mergeSeries();
