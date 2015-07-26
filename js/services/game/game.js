@@ -237,7 +237,7 @@ angular.module('angularApp.factories')
                 }
                 this.progress = timestamp - this.startTime;
 
-                while (this.timeCounter < this.progress && this.computeTic()) {				
+                while (this.timeCounter <= this.progress && this.computeTic()) {				
 					this.last.tics += 1;
 					this.timeCounter += millisecpertic;
 					this.scoreHandler.addTics();

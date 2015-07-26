@@ -1,8 +1,48 @@
 angular.module('angularApp.factories')
     .factory('scoreRenderElementFactory', ['systemConfig', function cubeRenderElementFactoryCreator(systemConfig) {
         "use strict";
-
+		function MeshCache(){
+			this.caches = {};
+			this.create = function(txt){
+				if(!this.caches[txt] || !this.caches[txt].length)
+				{
+					var t = new THREE.TextGeometry(txt, {
+						size: 30,
+						height: 2,
+						curveSegments: 2,
+						font: "helvetiker"
+					});
+					
+					return new THREE.Mesh(t, matGen.get());
+				}
+				this.caches[txt].material = matGen.get();
+				return this.caches[txt].pop();
+			}
+			this.release = function(mesh, txt){
+				if(!this.caches[txt])
+				{
+					this.caches[txt] = [];
+				}
+				mesh.scale.set(1);
+				this.caches[txt].push(mesh);
+			}
+		}
+		function MaterialGenerator(){
+			this.cache = [];
+			for(var i = 0; i < 20; ++i)
+			{				
+				this.cache.push(new THREE.MeshBasicMaterial({color: Math.random() * 0xffffff}));
+			}
+			this.get = function(){
+				return this.cache[Math.floor(Math.random()*20)];
+			}
+		}
+		
+		var txtCache = new MeshCache();
+		var matGen = new MaterialGenerator();
+		
         function ScoreElement(){
+			this.value = 0;
             this.mesh = null;
             this.particles = null;
         }
@@ -19,8 +59,8 @@ angular.module('angularApp.factories')
         ScoreElement.prototype.animate = function(percentLeft){
             var pc = percentLeft / 100;
             if(this.mesh){
-                this.mesh.material.transparent = true;
-                this.mesh.material.opacity = pc;
+                var scale = 1/ (1+Math.pow(100-percentLeft,2)/10000);
+                this.mesh.scale.set( scale, scale, scale);
             }
             if(this.particles){
                 pc*=0.7*12;
@@ -35,34 +75,30 @@ angular.module('angularApp.factories')
         };
 
         ScoreElement.prototype.createScore = function createScore(v) {   
-
-            var color = Math.random() * 0xffffff;
-            if(systemConfig.get(systemConfig.Keys.scores)){
-				var rad = Math.floor(Math.random() * 12);
-                var y = 220 + 85 * (Math.floor(rad / 2) % 6) + 40 - 80 * Math.random();
-                var x = ((rad % 2) ? -225 : 175)- 50 * Math.random();
-
-                var text3d = new THREE.TextGeometry(v, {
-                    size: 30,
-                    height: 2,
-                    curveSegments: 2,
-                    font: "helvetiker"
-                });
-                var textMaterial = new THREE.MeshBasicMaterial({color: color});
-                var ret = new THREE.Mesh(text3d, textMaterial);
-
-                ret.position.setX(x);
-                ret.position.setY(y);
-                ret.position.setZ(-5);
-                this.mesh = ret;
-            }
-
-
-            this.createParticles(color, v);
+			this.value = v;
+            this.createText(v);
+            this.createParticles(v);
         };
 
-        ScoreElement.prototype.createParticles = function(color, value){
+        ScoreElement.prototype.createText = function(value){
+			if(!systemConfig.get(systemConfig.Keys.scores)){return;}
+			
+			var rad = Math.floor(Math.random() * 12);
+			var y = 260 + 85 * (Math.floor(rad / 2) % 6) - 80 * Math.random();
+			var x = ((rad % 2) ? -225 : 175)- 50 * Math.random();
+
+			var ret = txtCache.create(value);
+
+			ret.position.setX(x);
+			ret.position.setY(y);
+			ret.position.setZ(-5);
+			this.mesh = ret;
+		}
+			
+        ScoreElement.prototype.createParticles = function(value){
             if(!systemConfig.get(systemConfig.Keys.explosions)){return;}
+			
+            var color = Math.random() * 0xffffff;
 			
             var y = 220 + 80 * Math.random();
             var x = -250 + 500 * Math.random();
@@ -104,10 +140,10 @@ angular.module('angularApp.factories')
             this.particles.position.setY(y);
 
             this.particles.attributes = attributes;
-            var vertices = this.particles.geometry.vertices;
             var values_size = attributes.size.value;
             var values_color = attributes.customColor.value;
             var c = new THREE.Color(color);
+            var vertices = this.particles.geometry.vertices;
             for (var v = 0; v < vertices.length; v += 1) {
                 values_size[v] = 8;
                 values_color[v] = c ;
@@ -116,7 +152,20 @@ angular.module('angularApp.factories')
 
 
         return {
-            create: function(){return new ScoreElement();}
+            create: function(){return new ScoreElement();},
+			free: function(obj){
+				if(obj.mesh){
+					txtCache.release(obj.mesh, obj.value);
+					obj.mesh = null;
+				}
+				if(obj.particles){
+					
+				}
+			},
+			clearCache: function(){
+				txtCache = new MeshCache();
+				matGen = new MaterialGenerator();				
+			}
         };
     }]);
 

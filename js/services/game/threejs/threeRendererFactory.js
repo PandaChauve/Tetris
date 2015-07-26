@@ -32,6 +32,7 @@ angular.module('angularApp.factories')
                 }
             }
             this.cubeFactory = cubeRenderElementFactory.createFactory(this.type);
+			scoreRenderElementFactory.clearCache();
             this.scene = null;
             this.camera = null;
             this.renderer = null;
@@ -121,23 +122,13 @@ angular.module('angularApp.factories')
             }
             return ret;
         }
-
-        ThreeRenderer.prototype.createScore = function createScore(v) {
-            var text3d = new THREE.TextGeometry(v, {
-                size: 30,
-                height: 2,
-                curveSegments: 2,
-                font: "helvetiker"
-            });
-            var textMaterial = new THREE.MeshBasicMaterial({color: Math.random() * 0xffffff});
-            var ret = new THREE.Mesh(text3d, textMaterial);
-            var rad = Math.floor(Math.random() * 12);
-            ret.position.setX(((rad % 2) ? -215 : 175) - 50 * Math.random());
-            ret.position.setY(260 + 85 * (Math.floor(rad / 2) % 6 - Math.random()));
-            return ret;
-        };
-
+		
         ThreeRenderer.prototype.updateCube = function (x, block) {
+			if (block.id === -1) {
+				block.threeObject = this.cubeFactory.createCube(block.type);
+				this.scene.add(block.threeObject);
+				block.id = block.threeObject.id;
+			}
             var cube = block.threeObject;
             cube.position.setY(block.verticalPosition + this.offset);
             cube.position.setX(computeX(block, x));
@@ -206,11 +197,6 @@ angular.module('angularApp.factories')
                 for (var j = 0; j < tetris.grid.container[i].length; j += 1) {
                     block = tetris.grid.container[i][j];
                     if (block.type !== blockFactory.EType.PlaceHolder) {
-                        if (block.id === -1) {
-                            block.threeObject = this.cubeFactory.createCube(block.type);
-                            this.scene.add(block.threeObject);
-                            block.id = block.threeObject.id;
-                        }
                         this.updateCube((i - gameConstants.columnCount / 2) * gameConstants.pixelPerBox, block);
                     }
                 }
@@ -228,8 +214,12 @@ angular.module('angularApp.factories')
                     if (points[i].opacity <= 0) {
                         if(points[i].threeObject.mesh)
 							this.scene.remove(points[i].threeObject.mesh);
+						
                         if(points[i].threeObject.particles)
 							this.scene.remove(points[i].threeObject.particles);
+						
+						scoreRenderElementFactory.free(points[i].threeObject);						
+						
                         points.splice(i, 1);
                         i -= 1;
                     }
