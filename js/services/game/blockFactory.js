@@ -11,6 +11,17 @@ angular.module('angularApp.factories')
             this.threeObject = null; //optimisation required to avoid the lookup in the scene
             this.wasFalling = false;
         }
+		
+		Block.prototype.reset = function(){
+			this.type = Block.EType.Random();
+            this.group = -1;
+            this.state = Block.EState.Blocked;
+            this.verticalPosition = 0;
+            this.animationState = 0;
+            this.id = -1;
+            this.threeObject = null; //optimisation required to avoid the lookup in the scene
+            this.wasFalling = false;
+		}
 
         Block.prototype.clone = function () {
             var ret = new Block();
@@ -26,6 +37,7 @@ angular.module('angularApp.factories')
             this.animationState = cpy.animationState;
             this.id = cpy.id;
             this.threeObject = cpy.threeObject;
+			this.wasFalling = cpy.wasFalling;
         };
 
         Block.prototype.setState = function (state) {
@@ -54,13 +66,24 @@ angular.module('angularApp.factories')
             }
         };
 
+		
+		var blockCache = [];
 
         return {
+			releaseBlock : function(b){
+				b.reset();
+				blockCache.push(b);
+				console.log("cached : " + blockCache.length);
+			},
             newBlock : function(){
-                return new Block();
+				if(blockCache.length == 0){
+					return new Block();					
+				}
+				console.log("used : " + blockCache.length);
+				return blockCache.pop();
             },
             cloneBlock : function(b){
-                var r = new Block();
+                var r = this.newBlock();
                 r.loadFrom(b);
                 return r;
             },

@@ -6,6 +6,15 @@ angular.module('angularApp.factories')
     .factory('gridFactory', ['gameConstants','blockFactory', 'gridEvaluator', function gridFactoryCreator(gameConstants, blockFactory, gridEvaluator) {
         "use strict";
 
+		var spliceOneBlock = function(arr, index) {
+			var len=arr.length;
+			while (index<len) { 
+			    arr[index] = arr[index+1];
+				index++;
+			}
+			arr.length--;
+		};
+		
         function Grid(content) {
             var i, j, random = gameConstants.groundUpSpeedPerTic !== 0 || gameConstants.groundSpeedPerTic !== 0;
             this.container = new Array(gameConstants.columnCount);
@@ -29,7 +38,6 @@ angular.module('angularApp.factories')
                         this.container[i][j].verticalPosition = j * gameConstants.pixelPerBox;
                     }
                 }
-                //this.save();//debug only
             }
             else {
                 this.load(content);
@@ -48,21 +56,12 @@ angular.module('angularApp.factories')
 
         //remove at pos in array
         Grid.prototype.removeBlockFixed = function (i, index) {
-            var block = this.container[i][index];
+            blockFactory.releaseBlock(this.container[i][index]);
             //remove the block from i
-            this.container[i].splice(index, 1);
+            spliceOneBlock(this.container[i], index);
             this.makeTopBlockFall(i, index);
-            return block;
         };
 
-        //remove at graphical pos
-        Grid.prototype.removeBlock = function (i, j) {
-            var index = this.findBlockIndex(i, j);
-            if (index === -1) {
-                throw "Not my day";
-            }
-            return this.removeBlockFixed(i, index);
-        };
 
         Grid.prototype.insertBlock = function (block, i) {
             for (var j = 0; j < this.container[i].length; j += 1) {
@@ -134,8 +133,7 @@ angular.module('angularApp.factories')
             block.animationState += gameConstants.disapearSpeedPerTic;
             if (block.animationState > 100 && block.id === -1) {
                 //remove it
-                this.container[i].splice(j, 1);
-                this.makeTopBlockFall(i, j);
+				this.removeBlockFixed(i, j);
                 return {min: minY, deltaY: -1};
             }
             return {min: block.verticalPosition + gameConstants.pixelPerBox, deltaY: 0};
@@ -251,26 +249,12 @@ angular.module('angularApp.factories')
             var tmp = blockFactory.cloneBlock(left);
             left.loadFrom(right);
             right.loadFrom(tmp);
+			blockFactory.releaseBlock(tmp);
             //tel the animation system to do it slow :)
             left.setState(blockFactory.EState.SwappedLeft);
             right.setState(blockFactory.EState.SwappedRight);
         };
 
-        Grid.prototype.save = function(){
-            var ret = {"grid":[]};
-            for(var i = 0; i < this.container.length; i+=1){
-                ret.grid.push([]);
-                for(var j = gameConstants.hiddenRowCount; j < this.container[i].length; j += 1){
-                    if(this.container[i][j].type !== blockFactory.EType.PlaceHolder){
-                        ret.grid[i].push({
-                            state: this.container[i][j].state,
-                            type: this.container[i][j].type
-                        })
-                    }
-                }
-            }
-            console.log(JSON.stringify(ret));
-        };
         Grid.prototype.load = function (content) {
             var i, j;
             for (i = 0; i < content.grid.length; i += 1) {
