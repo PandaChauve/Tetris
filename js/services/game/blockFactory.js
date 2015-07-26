@@ -2,26 +2,18 @@ angular.module('angularApp.factories')
     .factory('blockFactory', [function blockFactoryCreator() {
         "use strict";
         function Block() {
-            this.type = Block.EType.Random();
-            this.group = -1;
-            this.state = Block.EState.Blocked;
-            this.verticalPosition = 0;
-            this.animationState = 0;
-            this.id = -1;
-            this.threeObject = null; //optimisation required to avoid the lookup in the scene
-            this.wasFalling = false;
-        }
-		
-		Block.prototype.reset = function(){
-			this.type = Block.EType.Random();
-            this.group = -1;
-            this.state = Block.EState.Blocked;
-            this.verticalPosition = 0;
-            this.animationState = 0;
-            this.id = -1;
-            this.threeObject = null; //optimisation required to avoid the lookup in the scene
-            this.wasFalling = false;
-		}
+			this.reset = function(){
+				this.type = Block.EType.Random();
+				this.group = -1;
+				this.state = Block.EState.Blocked;
+				this.verticalPosition = 0;
+				this.animationState = 0;
+				this.id = -1;
+				this.threeObject = null; //optimisation required to avoid the lookup in the scene
+				this.wasFalling = false;
+			}
+			this.reset();
+        }		
 
         Block.prototype.clone = function () {
             var ret = new Block();
@@ -73,13 +65,11 @@ angular.module('angularApp.factories')
 			releaseBlock : function(b){
 				b.reset();
 				blockCache.push(b);
-				console.log("cached : " + blockCache.length);
 			},
             newBlock : function(){
 				if(blockCache.length == 0){
 					return new Block();					
 				}
-				console.log("used : " + blockCache.length);
 				return blockCache.pop();
             },
             cloneBlock : function(b){

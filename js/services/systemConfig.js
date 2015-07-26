@@ -43,10 +43,8 @@ angular.module('angularApp.factories')
                 return ret;
             }
             if (isMobile.any()) {
-				console.log("using mobile defaults");
                 return this.defaultMobile(key);
             }
-				console.log("using desktops defaults");
             return this.defaultDesktop(key);
 
         };

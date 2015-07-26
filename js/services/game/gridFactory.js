@@ -244,12 +244,12 @@ angular.module('angularApp.factories')
             return false;
         };
 
+		var swapTmpBlock = blockFactory.newBlock(); //avoid resizing the block cache
         Grid.prototype.swapBlocks = function (left, right) {
             //move them
-            var tmp = blockFactory.cloneBlock(left);
+            swapTmpBlock.loadFrom(left);
             left.loadFrom(right);
-            right.loadFrom(tmp);
-			blockFactory.releaseBlock(tmp);
+            right.loadFrom(swapTmpBlock);
             //tel the animation system to do it slow :)
             left.setState(blockFactory.EState.SwappedLeft);
             right.setState(blockFactory.EState.SwappedRight);
