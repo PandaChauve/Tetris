@@ -181,7 +181,6 @@ angular.module('angularApp.factories')
                 }
 
             };
-
             AchievementsState.List = {
                 Beginner: 0, //points
                 Expert: 1, //points
@@ -211,6 +210,32 @@ angular.module('angularApp.factories')
                 enumSize: 24
             };
 
+            AchievementsState.List.Ordered = [
+                AchievementsState.List.Beginner,
+                AchievementsState.List.Expert,
+                AchievementsState.List.Master,
+                AchievementsState.List.God,
+                AchievementsState.List.Titan,
+                AchievementsState.List.XXL,
+                AchievementsState.List.XXS,
+                AchievementsState.List.Cheater,
+                AchievementsState.List.SuperTeam,
+                AchievementsState.List.Ambidextrous,
+                AchievementsState.List.Psychic,
+                AchievementsState.List.Sorcerer,
+                AchievementsState.List.BiggerIsBetter,
+                AchievementsState.List.Nostalgic,
+                AchievementsState.List.RetroGamer,
+                AchievementsState.List.Dinosaur,
+                AchievementsState.List.Flash,
+                AchievementsState.List.Pacman,
+                AchievementsState.List.Sherlock,
+                AchievementsState.List.Destroyer,
+                AchievementsState.List.Stubborn,
+                AchievementsState.List.Tenacious,
+                AchievementsState.List.Restless,
+                AchievementsState.List.Veteran
+            ];
             AchievementsState.List.getName = function (key) {
                 for (var name in AchievementsState.List) {
                     if (AchievementsState.List[name] === key) {

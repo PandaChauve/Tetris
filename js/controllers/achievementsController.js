@@ -21,14 +21,14 @@ angular.module('angularApp.controllers')
         function load() {
             var successCount = 0;
             $scope.achievementsGridData = [];
-            for (var i = 0; i < achievements.List.enumSize; i += 1) {
+            for (var i = 0; i < achievements.List.Ordered.length; i += 1) {
                 $scope.achievementsGridData.push({
-                    Picture: "./resources/imgs/achievements/" + achievements.List.getName(i) + ".png",
-                    Name: achievements.List.getName(i),
-                    Success: achievements.isWon(i),
-                    Description: achievements.List.getDescription(i)
+                    Picture: "./resources/imgs/achievements/" + achievements.List.getName(achievements.List.Ordered[i]) + ".png",
+                    Name: achievements.List.getName(achievements.List.Ordered[i]),
+                    Success: achievements.isWon(achievements.List.Ordered[i]),
+                    Description: achievements.List.getDescription(achievements.List.Ordered[i])
                 });
-                if (achievements.isWon(i)) {
+                if (achievements.isWon(achievements.List.Ordered[i])) {
                     successCount += 1;
                 }
             }
