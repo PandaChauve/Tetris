@@ -1,5 +1,5 @@
 angular.module('angularApp.factories')
-    .factory('gameStatsFactory', [function gameStatsFactoryCreator() {
+    .factory('gameStatsFactory', ['TIC_PER_SEC', function gameStatsFactoryCreator(TIC_PER_SEC) {
         "use strict";
         function GameStats() {
             this.reset();
@@ -13,6 +13,7 @@ angular.module('angularApp.factories')
             this.lineSizes = [0, 0, 0, 0, 0, 0, 0, 0, 0];
             this.gameCount = 0;
             this.swapCount = 0;
+            this.actions = 0;
         };
 
         GameStats.prototype.addLines = function (series, score) { //no score logic here
@@ -38,21 +39,24 @@ angular.module('angularApp.factories')
             }
         };
 
-        GameStats.prototype.setTime = function (tics) {
+        GameStats.prototype.setTime = function setTime(tics) {
             this.time = tics;
         };
 
-        GameStats.prototype.setSwaps = function (swp) {
+        GameStats.prototype.setSwaps = function setSwaps (swp) {
             this.swapCount = swp;
         };
+        GameStats.prototype.setActions = function setActions(swp) {
+            this.actions = swp;
+        };
 
-        GameStats.prototype.append = function (otherGameStat) {
+        GameStats.prototype.append = function append(otherGameStat) {
             this.gameCount += otherGameStat.gameCount;
             this.score += otherGameStat.score;
             this.time += otherGameStat.time;
             this.blockDestroyed += otherGameStat.blockDestroyed;
             this.swapCount += otherGameStat.swapCount;
-
+            this.actions += otherGameStat.actions;
             for (var i = 0; i < this.multilines.length; i += 1) {
                 this.multilines[i] += otherGameStat.multilines[i];
             }
@@ -61,12 +65,23 @@ angular.module('angularApp.factories')
             }
         };
 
-        GameStats.prototype.keepBest = function (otherGameStat) {
+        GameStats.prototype.keepBest = function keepBest(otherGameStat) {
+            var fixedT = Math.max(10*TIC_PER_SEC, this.time);
+            var currentApm = this.actions / fixedT;
             this.gameCount += otherGameStat.gameCount;
             this.score = (this.score > otherGameStat.score) ? this.score : otherGameStat.score;
             this.time = (this.time > otherGameStat.time) ? this.time : otherGameStat.time;
             this.blockDestroyed = (this.blockDestroyed > otherGameStat.blockDestroyed) ? this.blockDestroyed : otherGameStat.blockDestroyed;
             this.swapCount = (this.swapCount > otherGameStat.swapCount) ? this.swapCount : otherGameStat.swapCount;
+            //this one is fun, what maters is the apm but i only keep the sum for mean purpose
+
+            var othTime = Math.max(10*TIC_PER_SEC, otherGameStat.time);
+            if(otherGameStat.actions/othTime > currentApm){
+                this.actions = otherGameStat.actions*this.time/othTime;
+            }
+            else{
+                this.actions = currentApm*this.time;
+            }
 
             for (var i = 0; i < this.multilines.length && i < otherGameStat.multilines.length; i += 1) {
                 this.multilines[i] = (this.multilines[i] > otherGameStat.multilines[i]) ? this.multilines[i] : otherGameStat.multilines[i];
@@ -77,10 +92,10 @@ angular.module('angularApp.factories')
         };
 
         return {
-            newGameStats : function(){
+            newGameStats : function newGameStats(){
                 return new GameStats();
             },
-            newGameStatsFrom : function(c){
+            newGameStatsFrom : function newGameStatsFrom(c){
                 var r = new GameStats();
                 r.keepBest(c);
                 return r;

@@ -1,6 +1,6 @@
 angular.module('angularApp.controllers')
-    .controller('ModalInstanceCtrl', ['$scope', '$modalInstance', 'gameName', 'userStats', 'stateChecker', 'helpers', 'audio',
-        function ($scope, $modalInstance, gameName, userStats, stateChecker, helpers, audio) {
+    .controller('ModalInstanceCtrl', ['$scope', '$modalInstance', 'gameName', 'userStats', 'stateChecker', 'helpers', 'audio','TIC_PER_SEC',
+        function ($scope, $modalInstance, gameName, userStats, stateChecker, helpers, audio, TIC_PER_SEC) {
             "use strict";
             $scope.isCampaign = gameName.indexOf("campaign") > -1;
             audio.play(audio.ESounds.end);
@@ -55,9 +55,21 @@ angular.module('angularApp.controllers')
                     sum: tg.swapCount,
                     mean: getMean(tg.swapCount, tg.gameCount)
                 });
+
+                var t = Math.max(10*TIC_PER_SEC, cu.time);
+                ret.push({
+                    name: "Apm",
+                    value: Math.floor(cu.actions*TIC_PER_SEC*60/t),
+                    best: Math.floor(bg.actions*TIC_PER_SEC*60/bg.time),
+                    sum: "/",
+                    mean: Math.floor(tg.actions*TIC_PER_SEC*60/tg.time)
+                });
+                var eff = (cu.score / cu.swapCount);
+                if(isNaN(eff) || !isFinite(eff))
+                    eff = 0;
                 ret.push({
                     name: "Efficiency",
-                    value: (cu.score / cu.swapCount).toFixed(2),
+                    value: eff.toFixed(2),
                     best: "/",
                     sum: "/",
                     mean: (tg.score / tg.swapCount).toFixed(2)
