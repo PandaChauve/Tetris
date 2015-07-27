@@ -106,6 +106,26 @@
                         <div class="circle bg-primary">{{::(map.sum.swapCount / map.sum.gameCount) | number:0}}</div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <h3 class="cube">Apm</h3>
+                    </div>
+                    <div class="col-md-3">
+                        <h4>Best</h4>
+
+                        <div class="circle bg-primary">{{::(map.best.actions/map.best.time*60*60)| number:0}}</div>
+                    </div>
+                    <div class="col-md-3">
+                        <h4>Total</h4>
+
+                        <div class="circle bg-primary">/</div>
+                    </div>
+                    <div class="col-md-3">
+                        <h4>Mean</h4>
+
+                        <div class="circle bg-primary">{{::(map.sum.actions/map.sum.time*60*60) | number:0}}</div>
+                    </div>
+                </div>
 
                 <div class="row">
                     <div class="col-md-3">
