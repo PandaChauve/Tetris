@@ -363,7 +363,14 @@ canvas {
         margin:-19px;
     }
 }
- /***
+
+.scaledCanvas{
+	/* Scale out 2X from the corner */
+	-webkit-transform: scale(2, 2);
+	-webkit-transform-origin: top center;
+	transform: scale(2, 2);
+	transform-origin: top center;
+} /***
 Spectrum Colorpicker v1.7.0
 https://github.com/bgrins/spectrum
 Author: Brian Grinstead

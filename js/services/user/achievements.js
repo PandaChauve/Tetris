@@ -237,7 +237,7 @@ angular.module('angularApp.factories')
                     case AchievementsState.List.SuperTeam :
                         return "Get 1000 points in coop";
                     case AchievementsState.List.Titan :
-                        return "An original God";
+                        return "As good as the game master, the mighty Panda !";
                     case AchievementsState.List.Cheater :
                         return "Get 1000 points in sandbox";
                     case AchievementsState.List.Ambidextrous :
