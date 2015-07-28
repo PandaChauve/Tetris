@@ -26,7 +26,7 @@ module.exports = function(grunt) {
                     'min/ext-angular-t*.min.js',
                     'min/ext-angular-*.min.js',
                     'min/ext-*.min.js'],
-                dest: 'externals.min.js'
+                dest: 'resources/externals.min.js'
             },
             unstable: {
                 src: ['min/angularApp.min.js',
