@@ -14,6 +14,8 @@ angular.module('angularApp.factories')
             this.gameCount = 0;
             this.swapCount = 0;
             this.actions = 0;
+            this.apm = 0;
+            this.efficiency = 0;
         };
 
         GameStats.prototype.addLines = function (series, score) { //no score logic here
@@ -41,13 +43,16 @@ angular.module('angularApp.factories')
 
         GameStats.prototype.setTime = function setTime(tics) {
             this.time = tics;
+            this.apm = this.actions/this.time*TIC_PER_SEC*60;
         };
 
         GameStats.prototype.setSwaps = function setSwaps (swp) {
             this.swapCount = swp;
+            this.efficiency = this.score/this.swapCount;
         };
         GameStats.prototype.setActions = function setActions(swp) {
             this.actions = swp;
+            this.apm = this.actions/this.time*TIC_PER_SEC*60;
         };
 
         GameStats.prototype.append = function append(otherGameStat) {
@@ -63,25 +68,21 @@ angular.module('angularApp.factories')
             for (i = 0; i < this.lineSizes.length; i += 1) {
                 this.lineSizes[i] += otherGameStat.lineSizes[i];
             }
+            this.apm = this.actions/this.time*TIC_PER_SEC*60;
+            this.efficiency = this.score/this.swapCount;
         };
 
         GameStats.prototype.keepBest = function keepBest(otherGameStat) {
-            var fixedT = Math.max(10*TIC_PER_SEC, this.time);
-            var currentApm = this.actions / fixedT;
+            this.efficiency = (this.efficiency > otherGameStat.efficiency) ? this.efficiency : otherGameStat.efficiency;
+            this.apm = (this.apm > otherGameStat.apm) ? this.apm : otherGameStat.apm;
+
+
             this.gameCount += otherGameStat.gameCount;
             this.score = (this.score > otherGameStat.score) ? this.score : otherGameStat.score;
             this.time = (this.time > otherGameStat.time) ? this.time : otherGameStat.time;
             this.blockDestroyed = (this.blockDestroyed > otherGameStat.blockDestroyed) ? this.blockDestroyed : otherGameStat.blockDestroyed;
             this.swapCount = (this.swapCount > otherGameStat.swapCount) ? this.swapCount : otherGameStat.swapCount;
-            //this one is fun, what maters is the apm but i only keep the sum for mean purpose
 
-            var othTime = Math.max(10*TIC_PER_SEC, otherGameStat.time);
-            if(otherGameStat.actions/othTime > currentApm){
-                this.actions = otherGameStat.actions*this.time/othTime;
-            }
-            else{
-                this.actions = currentApm*this.time;
-            }
 
             for (var i = 0; i < this.multilines.length && i < otherGameStat.multilines.length; i += 1) {
                 this.multilines[i] = (this.multilines[i] > otherGameStat.multilines[i]) ? this.multilines[i] : otherGameStat.multilines[i];
