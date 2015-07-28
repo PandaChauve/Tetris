@@ -341,6 +341,7 @@ canvas {
     font-size: 35px;
     opacity: 0.5;
     margin: 0px;
+    top: 20px;
 }
 
 @media (max-width: 510px) {
@@ -370,7 +371,8 @@ canvas {
 	-webkit-transform-origin: top center;
 	transform: scale(2, 2);
 	transform-origin: top center;
-} /***
+}
+ /***
 Spectrum Colorpicker v1.7.0
 https://github.com/bgrins/spectrum
 Author: Brian Grinstead

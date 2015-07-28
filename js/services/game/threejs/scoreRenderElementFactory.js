@@ -171,6 +171,8 @@ angular.module('angularApp.factories')
                     for(var i = 0; i < obj.particles.geometry.vertices.length; ++i){
                         vectorPool.push(obj.particles.geometry.vertices.pop());
                     }
+                    obj.particles.geometry = null;
+                    obj.particles = null;
 				}
 			},
 			clearCache: function(){
