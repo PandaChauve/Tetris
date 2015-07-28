@@ -17,7 +17,7 @@ angular.module('angularApp.factories')
 				}
 				this.caches[txt].material = matGen.get();
 				return this.caches[txt].pop();
-			}
+			};
 			this.release = function(mesh, txt){
 				if(!this.caches[txt])
 				{
@@ -40,7 +40,7 @@ angular.module('angularApp.factories')
 		
 		var txtCache = new MeshCache();
 		var matGen = new MaterialGenerator();
-		
+
         function ScoreElement(){
 			this.value = 0;
             this.mesh = null;
@@ -93,8 +93,16 @@ angular.module('angularApp.factories')
 			ret.position.setY(y);
 			ret.position.setZ(-5);
 			this.mesh = ret;
-		}
-			
+		};
+
+        var sparkTexture = THREE.ImageUtils.loadTexture("resources/imgs/spark.png");
+        var white = new THREE.Color(0xffffff);
+        var vectorPool = [];
+        function getVector(){
+            if(vectorPool.length)
+                return vectorPool.pop();
+            return new THREE.Vector3();
+        }
         ScoreElement.prototype.createParticles = function(value){
             if(!systemConfig.get(systemConfig.Keys.explosions)){return;}
 			
@@ -110,8 +118,8 @@ angular.module('angularApp.factories')
             var shaderMaterial = new THREE.ShaderMaterial({
                 uniforms: {
                     amplitude: {type: "f", value: 1.0},
-                    color: {type: "c", value: new THREE.Color(0xffffff)},
-                    texture: {type: "t", value: THREE.ImageUtils.loadTexture("resources/imgs/spark.png")}
+                    color: {type: "c", value: white},
+                    texture: {type: "t", value: sparkTexture}
                 },
                 attributes: attributes,
                 vertexShader: document.getElementById('vertexshader').textContent,
@@ -121,15 +129,16 @@ angular.module('angularApp.factories')
                 transparent: true
             });
 
+
             var geometry = new THREE.Geometry();
 
             for (var i = 0; i < 100+value*30; i++) {
-                var vertex = new THREE.Vector3();
-                do{
-                    vertex.x = Math.random()*2-1;
-                    vertex.y = Math.random()*2-1;
-                }
-                while(vertex.x*vertex.x+vertex.y*vertex.y>1);
+                var vertex = getVector();
+                vertex.x = Math.random()*2-1;
+                vertex.y = Math.random()*2-1;
+                if(vertex.x*vertex.x+vertex.y*vertex.y>1) //the previous loop was not safe
+                    continue;
+
                 vertex.multiplyScalar(70);
                 vertex.z = -50;
                 geometry.vertices.push(vertex);
@@ -159,12 +168,14 @@ angular.module('angularApp.factories')
 					obj.mesh = null;
 				}
 				if(obj.particles){
-					
+                    for(var i = 0; i < obj.particles.geometry.vertices.length; ++i){
+                        vectorPool.push(obj.particles.geometry.vertices.pop());
+                    }
 				}
 			},
 			clearCache: function(){
 				txtCache = new MeshCache();
-				matGen = new MaterialGenerator();				
+				matGen = new MaterialGenerator();
 			}
         };
     }]);
