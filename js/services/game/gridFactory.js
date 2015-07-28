@@ -177,7 +177,7 @@ angular.module('angularApp.factories')
         Grid.prototype.animateColumn = function (i) {
             var j, minY, tmp;
             minY = gameConstants.hiddenRowCount * gameConstants.pixelPerBox;
-            for (j = gameConstants.hiddenRowCount; j < this.container[i].length; j += 1) {
+            for (j = gameConstants.hiddenRowCount-1; j < this.container[i].length; j += 1) {
                 tmp = this.animateBlock(i, j, minY);
                 minY = tmp.min;
                 j += tmp.deltaY;
@@ -218,7 +218,8 @@ angular.module('angularApp.factories')
             var right = this.findBlock(x + 1, y);
             if (left !== null && right !== null) //just swap them
             {
-                if (left.state === blockFactory.EState.Blocked && right.state === blockFactory.EState.Blocked) {
+                if (left.state === blockFactory.EState.Blocked && right.state === blockFactory.EState.Blocked
+                        && (left.type !== blockFactory.EType.PlaceHolder || right.type !=  blockFactory.EType.PlaceHolder)) {
                     this.swapBlocks(left, right);
                     return true;
                 }

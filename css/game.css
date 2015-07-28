@@ -258,6 +258,7 @@ canvas {
     font-size: 35px;
     opacity: 0.5;
     margin: 0px;
+    top: 20px;
 }
 
 @media (max-width: 510px) {

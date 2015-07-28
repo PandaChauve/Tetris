@@ -64,7 +64,7 @@ angular.module('angularApp.factories')
             if(startX > endX){ //always swap the left one
                 i = i - 1;
             }
-            if(i < 0 || j < gameConstants.hiddenRowCount || i >= gameConstants.columnCount -1){
+            if(i < 0 || j < gameConstants.hiddenRowCount-1 || i >= gameConstants.columnCount -1){
                 return;
             }
             this.swap(i, j);
@@ -158,7 +158,7 @@ angular.module('angularApp.factories')
                    this.swap(cur.x, cur.y);
                 }
                 if (userInput.pressed(this.keyBoardMappings[i].down)) {
-                    cur.y = Math.max(gameConstants.hiddenRowCount, cur.y - 1);
+                    cur.y = Math.max(gameConstants.hiddenRowCount-1, cur.y - 1);
                 }
                 if (userInput.pressed(this.keyBoardMappings[i].up)) {
                     cur.y = Math.min(gameConstants.hiddenRowCount + gameConstants.displayedRowCount, cur.y + 1);
