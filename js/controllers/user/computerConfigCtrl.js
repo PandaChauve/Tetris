@@ -1,6 +1,6 @@
 angular.module('angularApp.controllers')
-.controller('ComputerConfigCtrl', ['$scope', 'systemConfig',
-        function ($scope, systemConfig) {
+.controller('ComputerConfigCtrl', ['$scope', 'systemConfig','audio',
+        function ($scope, systemConfig, audio) {
             "use strict";
          
 			$scope.keys = systemConfig.Keys;
@@ -16,8 +16,11 @@ angular.module('angularApp.controllers')
 				zoom : systemConfig.get(systemConfig.Keys.zoom)
             };
 
-            $scope.updateCheckBox = function (name, value) {
-                systemConfig.set(name, !value);
+            $scope.updateCheckBox = function (key, value) {
+                systemConfig.set(key, !value);
+                if(key === systemConfig.Keys.sound){
+                    audio.resetConfig();
+                }
             };
 			
 			
