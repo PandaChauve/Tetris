@@ -1,4 +1,4 @@
-<div class="container" ng-if="!config.splitScreen">
+<div class="container" ng-if="!config.splitScreen"  ng-controller="GameStateCtrl">
 
     <div class="row">
         <div class="col-md-8 col-sm-12 noPadding leftToMiddle">
@@ -9,8 +9,9 @@
             </div>
 			</div>
         </div>
-        <div class="col-md-4">
-            <div class="gameDetails jumbotron hidden-sm" ng-controller="GameStateCtrl">
+        <div class="col-md-12 hidden-md hidden-lg" id="smallDisplay" style="text-align:center">Score : {{state.score}} | Time : {{state.time | ticToTime}}</div>
+        <div class="col-md-4 col-sm-12">
+            <div class="gameDetails jumbotron hidden-sm hidden-xs">
                 <br />
                 <div class="gameDetailsElement">
                     <h3>Score</h3>

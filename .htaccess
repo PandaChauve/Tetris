@@ -49,7 +49,7 @@ AddOutputFilterByType DEFLATE image/x-icon image/svg+xml application/vnd.ms-font
  ExpiresByType image/ico "access plus 7 days"
  ExpiresByType image/icon "access plus 7 days"
  ExpiresByType image/x-icon "access plus 7 days"
- ExpiresByType text/css "access plus 7 days"
+ ExpiresByType text/css "access plus 1 days"
  ExpiresByType text/javascript "access plus 1 days"
  ExpiresByType text/html "access plus 1 days"
  ExpiresByType application/xhtml+xml "access plus 1 days"
