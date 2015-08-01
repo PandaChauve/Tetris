@@ -1,16 +1,33 @@
 angular.module('angularApp.factories')
     .factory('audio', ['systemConfig', function audioFactory(systemConfig) {
         "use strict";
-		
+
+        var tmpNode = document.createElement('audio');
+        var audioSupported = true;
+        try{ //ie...
+            audioSupported = (typeof tmpNode.canPlayType === "function");
+            if(audioSupported) //sometimes true when it's not a function .......
+                tmpNode.canPlayType('audio/mpeg;');
+        }
+        catch(e){
+            console.log(e + "disabling audio");
+            audioSupported = false;
+        }
+
+        var ext = 'wav';
+        if(audioSupported && tmpNode.canPlayType('audio/mpeg;')) //ie ...
+            ext = "mp3";
         function MyAudio(){
+            if(!audioSupported)
+                return;
             this.audiochannels = [];
-            this.ext = !(document.createElement('audio').canPlayType('audio/mpeg;'))?'wav':'mp3';
+            this.ext = ext;
             this.preload(); //canplaythrough on each element to check if finished
             this.play = function(){};
         }
 
         MyAudio.prototype.preload = function(){
-            if(!systemConfig.get(systemConfig.Keys.sound)){ return;}
+            if(!systemConfig.get(systemConfig.Keys.sound) || !audioSupported){ return;}
             var ret = [];
             var tmp;
             for (var prop in MyAudio.ESounds) {
@@ -31,7 +48,7 @@ angular.module('angularApp.factories')
         };
 
         MyAudio.prototype.playFactory = function playFactory(play){
-            if(!play){
+            if(!play || !audioSupported){
                 return function(){};
             }
             else{

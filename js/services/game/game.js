@@ -228,26 +228,7 @@ angular.module('angularApp.factories')
                 */
 				
 			var millisecpertic = 1000/TIC_PER_SEC;
-            var lastUsedHeap = 0;  // remember the heap size
-            var fcount = 0;
-            function checkMemory(drop)
-            {
-                // check if the heap size is this cycle is LESS than what we had last
-                // cycle; if so, then the garbage collector has kicked in
-                fcount++;
-                if (window.performance.memory.usedJSHeapSize < lastUsedHeap)
-                {
-
-                    console.log('Garbage collected! ' + fcount);
-                    console.log('no gc during ' + fcount);
-                    console.log("aprox mem collected " + (lastUsedHeap-window.performance.memory.usedJSHeapSize));
-                    console.log("dropped : " + drop);
-                    fcount = 0;;
-                }
-                lastUsedHeap = window.performance.memory.usedJSHeapSize;
-            }
             Game.prototype.render = function (timestamp) {
-                var i = 0;
 				this.statCounter.begin();
 
                 if (this.startTime === null) {
@@ -257,17 +238,15 @@ angular.module('angularApp.factories')
 
                 while (this.timeCounter <= this.progress && this.computeTic()) {				
 					this.last.tics += 1;
-                    i+=1;
 					this.timeCounter += millisecpertic;
 					this.scoreHandler.addTics();
                 }
-                checkMemory((i-1));
 
                 this.last.swaps = this.tetris[0].getSwaps();
                 this.last.actions = this.tetris[0].getActions();
                 this.scope.$broadcast('newTick', this.last);
                 if (!stateChecker.defeat() && !stateChecker.victory()) {				
-                    for (i = 0; i < this.tetris.length; i += 1) {
+                    for (var i = 0; i < this.tetris.length; i += 1) {
                         this.visual[i].renderTetris(this.tetris[i], this.scoreHandler.scoreList);
                     }
                     this.splitScreenQuickFix();
