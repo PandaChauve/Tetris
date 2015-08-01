@@ -140,6 +140,12 @@ canvas {
     width:448px;
     height:600px;
     border-radius:3px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .gameDetailsElement h3 {

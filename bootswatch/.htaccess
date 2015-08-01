@@ -1,0 +1,30 @@
+
+<IfModule filter_module>
+FilterDeclare COMPRESS
+FilterProvider COMPRESS DEFLATE "%{CONTENT_TYPE} = 'text/css'"
+FilterChain COMPRESS
+FilterProtocol COMPRESS DEFLATE change=yes;byteranges=no
+</IfModule>
+
+<IfModule !mod_filter.c>
+# Legacy versions of Apache
+AddOutputFilterByType DEFLATE text/html text/plain text/css application/json
+</IfModule>
+
+<IfModule mod_expires.c>
+ ExpiresActive On
+# php's mime is css and we want it to reload it ... i need to review this shit
+ ExpiresByType text/css "access plus 0 days"
+</IfModule>
+
+<ifModule mod_headers.c>
+  <filesMatch ".(css)$">
+    Header set Cache-Control "public"
+  </filesMatch>
+  <filesMatch ".(x?html?|php)$">
+    Header set Cache-Control "private, must-revalidate"
+  </filesMatch>
+</ifModule>
+# BEGIN Turn ETags Off
+FileETag None
+# END Turn ETags Off

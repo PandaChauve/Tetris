@@ -1,4 +1,9 @@
 <?php
+//avoid caching this one ^^
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
+
 //FIXME this was the sad but easy way
 //why php ? because i had to install it for other stuff on my apache server => it was the fastest way to do that ...
 //you should install what you want on your apache server to serve this

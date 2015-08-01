@@ -148,8 +148,11 @@ angular.module('angularApp.factories')
             t = t.toLowerCase();
             var s = getCookie("csstheme");
             createCookie("csstheme", t, 365);
+
             if (s != t) { //already good don't reload
-                $("#switchableTheme").attr("href", "bootswatch/" + t + ".min.css");
+                var url = "bootswatch/" + t + ".min.css";
+                $("#switchableTheme").attr("href", url);
+                //should do a full reload for ie but i need the data to be pushed to the server before//FIXME
             }
         };
 
