@@ -1,23 +1,6 @@
 angular.module('angularApp.factories')
     .factory('userAccount', ['$q', '$rootScope', '$route', '$window', '$timeout', 'storage', 'api', function userFactory($q, $rootScope, $route, $window, $timeout, storage, api) {
         "use strict";
-        function createCookie(name, value, days) {
-            if (days) {
-                var date = new Date();
-                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-                var expires = "; expires=" + date.toGMTString();
-            }
-            else var expires = "";
-            document.cookie = name + "=" + value + expires + "; path=/";
-        }
-
-        function getCookie(name) {
-            var value = "; " + document.cookie;
-            var parts = value.split("; " + name + "=");
-            if (parts.length >= 2) return parts.pop().split(";").shift();
-            return null;
-        }
-
         function User() {
             this.eventHandler = [];
             this.username = null;
@@ -144,15 +127,16 @@ angular.module('angularApp.factories')
         };
         User.prototype.loadTheme = function () {
 
-            var t = storage.get(storage.Keys.WebTheme) || "slate";
-            t = t.toLowerCase();
-            var s = getCookie("csstheme");
-            createCookie("csstheme", t, 365);
-
+            var t = storage.get(storage.Keys.WebTheme) || "cyborg";
+            var s = localStorage.getItem("dynamic_css_name");
             if (s != t) { //already good don't reload
                 var url = "bootswatch/" + t + ".min.css";
                 $("#switchableTheme").attr("href", url);
-                //should do a full reload for ie but i need the data to be pushed to the server before//FIXME
+                api.getTheme(t).success(function(data){
+                    localStorage.setItem("dynamic_css_name", t);
+                    localStorage.setItem("dynamic_css_content", data);
+                    document.getElementById("switchableTheme").innerHTML = data;
+                }).error(function(e){console.log("can't load theme "+ e);});
             }
         };
 

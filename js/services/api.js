@@ -14,7 +14,9 @@ angular.module('angularApp.factories')
         Api.prototype.resetPassword = function resetPassword(id){
             return $http.get(root+'user/reset/'+id);
         };
-
+        Api.prototype.getTheme = function(name){
+            return $http.get("bootswatch/"+name+".min.css");
+        };
         Api.prototype.updateUser = function(id, hash, data, name, password, email){
             if(!password){
                 password = null;

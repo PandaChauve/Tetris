@@ -1,3 +1,8 @@
+//load css before angular things first
+var css = localStorage.getItem("dynamic_css_content");
+if(css){
+    document.getElementById("switchableTheme").innerHTML = css;
+}
 
 angular.module('angularApp.base', ['cgNotify']);
 angular.module('angularApp.factories', ['angularApp.base']);
