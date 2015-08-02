@@ -89,7 +89,15 @@ html{
 body{
     height:100%;
 }
-
+.height300{
+    min-height:300px;
+    position:relative;
+}
+.cornered{
+    position: absolute;
+    bottom: 0px;
+    right:40px;
+}
 .body{
     min-height:100%;
     position: relative;

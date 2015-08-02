@@ -1,6 +1,6 @@
 //load css before angular things first
 var css = localStorage.getItem("dynamic_css_content");
-if(css){
+if (css) {
     document.getElementById("switchableTheme").innerHTML = css;
 }
 
@@ -34,7 +34,7 @@ angularApp.config(['$routeProvider', '$locationProvider',
                     templateUrl: 'templates/scores.html',
                     controller: 'ScoresCtrl',
                     resolve: {
-                        user : ['userAccount', function(userAccount){
+                        user: ['userAccount', function (userAccount) {
                             "use strict";
                             return userAccount.start();
                         }]
@@ -44,7 +44,7 @@ angularApp.config(['$routeProvider', '$locationProvider',
                     templateUrl: 'templates/user/achievements.html',
                     controller: 'AchievementsCtrl',
                     resolve: {
-                        user : ['userAccount', function(userAccount){
+                        user: ['userAccount', function (userAccount) {
                             "use strict";
                             return userAccount.start();
                         }]
@@ -54,7 +54,7 @@ angularApp.config(['$routeProvider', '$locationProvider',
                     templateUrl: 'templates/user/achievements.html',
                     controller: 'AchievementsCtrl',
                     resolve: {
-                        user : ['userAccount', function(userAccount){
+                        user: ['userAccount', function (userAccount) {
                             "use strict";
                             return userAccount.start();
                         }]
@@ -64,7 +64,7 @@ angularApp.config(['$routeProvider', '$locationProvider',
                     templateUrl: 'templates/rules.html',
                     controller: 'RulesCtrl',
                     resolve: {
-                        user : ['userAccount', function(userAccount){
+                        user: ['userAccount', function (userAccount) {
                             "use strict";
                             return userAccount.start();
                         }]
@@ -74,7 +74,7 @@ angularApp.config(['$routeProvider', '$locationProvider',
                     templateUrl: 'templates/game.html',
                     controller: 'GameCtrl',
                     resolve: {
-                        user : ['userAccount', function(userAccount){
+                        user: ['userAccount', function (userAccount) {
                             "use strict";
                             return userAccount.start();
                         }]
@@ -84,7 +84,7 @@ angularApp.config(['$routeProvider', '$locationProvider',
                     templateUrl: 'templates/campaign.html',
                     controller: 'CampaignCtrl',
                     resolve: {
-                        user : ['userAccount', function(userAccount){
+                        user: ['userAccount', function (userAccount) {
                             "use strict";
                             return userAccount.start();
                         }]
@@ -94,7 +94,7 @@ angularApp.config(['$routeProvider', '$locationProvider',
                     templateUrl: 'templates/campaign.html',
                     controller: 'CampaignCtrl',
                     resolve: {
-                        user : ['userAccount', function(userAccount){
+                        user: ['userAccount', function (userAccount) {
                             "use strict";
                             return userAccount.start();
                         }]
@@ -104,7 +104,7 @@ angularApp.config(['$routeProvider', '$locationProvider',
                     templateUrl: 'templates/campaign.html',
                     controller: 'CampaignCtrl',
                     resolve: {
-                        user : ['userAccount', function(userAccount){
+                        user: ['userAccount', function (userAccount) {
                             "use strict";
                             return userAccount.start();
                         }]
@@ -114,7 +114,7 @@ angularApp.config(['$routeProvider', '$locationProvider',
                     templateUrl: 'templates/tetrisCampaign.html',
                     controller: 'tetrisCampaignCtrl',
                     resolve: {
-                        user : ['userAccount', function(userAccount){
+                        user: ['userAccount', function (userAccount) {
                             "use strict";
                             return userAccount.start();
                         }]
@@ -124,7 +124,7 @@ angularApp.config(['$routeProvider', '$locationProvider',
                     templateUrl: 'templates/user/stats.html',
                     controller: 'StatCtrl',
                     resolve: {
-                        user : ['userAccount', function(userAccount){
+                        user: ['userAccount', function (userAccount) {
                             "use strict";
                             return userAccount.start();
                         }]
@@ -134,7 +134,7 @@ angularApp.config(['$routeProvider', '$locationProvider',
                     templateUrl: 'templates/user/stats.html',
                     controller: 'StatCtrl',
                     resolve: {
-                        user : ['userAccount', function(userAccount){
+                        user: ['userAccount', function (userAccount) {
                             "use strict";
                             return userAccount.start();
                         }]
@@ -144,7 +144,7 @@ angularApp.config(['$routeProvider', '$locationProvider',
                     templateUrl: 'templates/user/account.html',
                     controller: 'UserAccountCtrl',
                     resolve: {
-                        user : ['userAccount', function(userAccount){
+                        user: ['userAccount', function (userAccount) {
                             "use strict";
                             return userAccount.start();
                         }]
@@ -154,7 +154,7 @@ angularApp.config(['$routeProvider', '$locationProvider',
                     templateUrl: 'templates/user/style.html',
                     controller: 'UserConfigCtrl',
                     resolve: {
-                        user : ['userAccount', function(userAccount){
+                        user: ['userAccount', function (userAccount) {
                             "use strict";
                             return userAccount.start();
                         }]
@@ -164,7 +164,7 @@ angularApp.config(['$routeProvider', '$locationProvider',
                     templateUrl: 'templates/user/config.html',
                     controller: 'ComputerConfigCtrl',
                     resolve: {
-                        user : ['userAccount', function(userAccount){
+                        user: ['userAccount', function (userAccount) {
                             "use strict";
                             return userAccount.start();
                         }]
@@ -173,7 +173,7 @@ angularApp.config(['$routeProvider', '$locationProvider',
                 when('/about', {
                     templateUrl: 'templates/about.html',
                     resolve: {
-                        user : ['userAccount', function(userAccount){
+                        user: ['userAccount', function (userAccount) {
                             "use strict";
                             return userAccount.start();
                         }]
@@ -183,7 +183,7 @@ angularApp.config(['$routeProvider', '$locationProvider',
                     templateUrl: 'templates/user/passwordRecovery.html',
                     controller: 'PasswordRecoveryCtrl',
                     resolve: {
-                        user : ['userAccount', function(userAccount){
+                        user: ['userAccount', function (userAccount) {
                             "use strict";
                             return userAccount.start();
                         }]
@@ -192,7 +192,16 @@ angularApp.config(['$routeProvider', '$locationProvider',
                 when('/newpassword', {
                     templateUrl: 'templates/user/newpassword.html',
                     resolve: {
-                        user : ['userAccount', function(userAccount){
+                        user: ['userAccount', function (userAccount) {
+                            "use strict";
+                            return userAccount.start();
+                        }]
+                    }
+                }).
+                when('/devices', {
+                    templateUrl: 'templates/devices.html',
+                    resolve: {
+                        user: ['userAccount', function (userAccount) {
                             "use strict";
                             return userAccount.start();
                         }]
@@ -202,7 +211,7 @@ angularApp.config(['$routeProvider', '$locationProvider',
                     templateUrl: 'templates/index.html',
                     controller: 'IndexCtrl',
                     resolve: {
-                        user : ['userAccount', function(userAccount){
+                        user: ['userAccount', function (userAccount) {
                             "use strict";
                             return userAccount.start();
                         }]
@@ -218,6 +227,6 @@ angularApp.run(['notify', function (notify) {
     "use strict";
     notify.config({
         templateUrl: "templates/notification.html",
-        duration : 5000
+        duration: 5000
     });
 }]);
