@@ -15,7 +15,9 @@ angular.module('angularApp.factories')
             return $http.get(root+'user/reset/'+id);
         };
         Api.prototype.getTheme = function(name){
-            return $http.get("bootswatch/"+name+".min.css");
+            return $http.get("bootswatch/"+name+".min.css",{
+                cache: true
+            });
         };
         Api.prototype.updateUser = function(id, hash, data, name, password, email){
             if(!password){
