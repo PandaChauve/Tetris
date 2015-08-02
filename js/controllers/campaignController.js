@@ -11,7 +11,7 @@ angular.module('angularApp.controllers')
             }
             return "mapNode mapNodeActive_" + i;
         };
-        $scope.campaign = $routeParams.campaignName || "arcade";
+        $scope.campaign = $routeParams.campaignName || "tutorial";
         var count = $routeParams.subCampaignId || 1;
         updateScope();
         function updateScope(){
