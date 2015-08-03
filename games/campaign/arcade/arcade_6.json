@@ -12,6 +12,7 @@
   "victory": {
     "score": 25
   },
+  "tooltip": "Why not trying the Wide mode ?",
   "next": "campaign/arcade/arcade_5",
   "require": "campaign/arcade/arcade_7"
 }

@@ -12,6 +12,7 @@
   "victory": {
     "score": 50
   },
+  "tooltip": "This is the classic game after 5 minutes, the ground is going up quite fast and the rain is heavy.",
   "next": "campaign/arcade/arcade_5",
   "require": "campaign/arcade/arcade_3"
 }

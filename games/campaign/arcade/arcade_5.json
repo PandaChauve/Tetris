@@ -12,6 +12,7 @@
   "victory": {
     "score": 60
   },
+  "tooltip": "You first game in Narrow, take your time !",
   "next": "campaign/arcade/arcade_4",
   "require": "campaign/arcade/arcade_6"
 }

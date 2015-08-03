@@ -12,6 +12,7 @@
   "victory": {
     "score": 50
   },
+  "tooltip": "Are we still in a tutorial ? Its starting to be harder than the game...",
   "next": "campaign/arcade/arcade_8",
   "require": "campaign/arcade/arcade_6"
 }

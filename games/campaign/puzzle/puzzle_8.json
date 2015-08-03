@@ -12,6 +12,7 @@
   "victory": {
     "blocksLeft": 3
   },
+  "tooltip": "The ground is moving and you can press enter. The counted blocks are those after the green line.",
   "next": "campaign/puzzle/puzzle_9",
   "require": "campaign/puzzle/puzzle_7"
 }

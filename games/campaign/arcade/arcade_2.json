@@ -12,6 +12,7 @@
   "victory": {
     "score": 50
   },
+  "tooltip": "Blocks are falling this time.",
   "next": "campaign/arcade/arcade_3",
   "require": "campaign/arcade/arcade_1"
 }

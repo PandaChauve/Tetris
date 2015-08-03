@@ -12,5 +12,6 @@
   "victory": {
     "score": 50
   },
+  "tooltip": "Learn to play in a static environment, if you want more blocks press Enter.",
   "next": "campaign/arcade/arcade_2"
 }

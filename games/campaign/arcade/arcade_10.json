@@ -12,6 +12,7 @@
   "victory": {
     "score": 100
   },
+  "tooltip": "When will you lose ?",
   "next": "#!/campaign/arcade",
   "require": "campaign/arcade/arcade_9"
 }

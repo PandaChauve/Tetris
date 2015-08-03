@@ -12,6 +12,7 @@
   "victory": {
     "score": 40
   },
+  "tooltip": "Still here ! Congratulations !",
   "next": "campaign/arcade/arcade_10",
   "require": "campaign/arcade/arcade_8"
 }
