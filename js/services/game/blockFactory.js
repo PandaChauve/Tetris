@@ -11,7 +11,7 @@ angular.module('angularApp.factories')
 				this.id = -1;
 				this.threeObject = null; //optimisation required to avoid the lookup in the scene
 				this.wasFalling = false;
-			}
+			};
 			this.reset();
         }		
 

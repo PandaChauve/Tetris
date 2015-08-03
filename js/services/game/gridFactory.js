@@ -3,22 +3,23 @@
  */
 
 angular.module('angularApp.factories')
-    .factory('gridFactory', ['gameConstants','blockFactory', 'gridEvaluator', function gridFactoryCreator(gameConstants, blockFactory, gridEvaluator) {
+    .factory('gridFactory', ['gameConstants', 'blockFactory', 'gridEvaluator', function gridFactoryCreator(gameConstants, blockFactory, gridEvaluator) {
         "use strict";
 
-		var spliceOneBlock = function(arr, index) {
-			var len=arr.length;
-			while (index<len) { 
-			    arr[index] = arr[index+1];
-				index++;
-			}
-			arr.length--;
-		};
-		
+        var spliceOneBlock = function (arr, index) {
+            var len = arr.length;
+            while (index < len) {
+                arr[index] = arr[index + 1];
+                index++;
+            }
+            arr.length--;
+        };
+
         function Grid(content) {
             var i, j, random = gameConstants.groundUpSpeedPerTic !== 0 || gameConstants.groundSpeedPerTic !== 0;
             this.container = new Array(gameConstants.columnCount);
 
+            //fill hidden
             for (i = 0; i < gameConstants.columnCount; i += 1) { //move it to generic constructor
                 this.container[i] = new Array(gameConstants.hiddenRowCount);
                 for (j = 0; j < this.container[i].length; j += 1) {
@@ -31,10 +32,17 @@ angular.module('angularApp.factories')
                 }
             }
 
+            //fill visible
             if (!content) { //add random
+                var lastColor = -1;
                 for (i = 0; i < gameConstants.columnCount; i += 1) {
                     for (j = this.container[i].length; j < gameConstants.startRows; j += 1) {
                         this.container[i].push(blockFactory.newBlock());
+                        while ((j % 2 == 0 && lastColor === this.container[i][j].type) ||
+                        (i % 2 == 1 && this.container[i - 1][j].type == this.container[i][j].type )) { //never 3 at creation
+                            this.container[i][j].type = blockFactory.EType.Random();
+                        }
+                        lastColor = this.container[i][j].type;
                         this.container[i][j].verticalPosition = j * gameConstants.pixelPerBox;
                     }
                 }
@@ -133,7 +141,7 @@ angular.module('angularApp.factories')
             block.animationState += gameConstants.disapearSpeedPerTic;
             if (block.animationState > 100 && block.id === -1) {
                 //remove it
-				this.removeBlockFixed(i, j);
+                this.removeBlockFixed(i, j);
                 return {min: minY, deltaY: -1};
             }
             return {min: block.verticalPosition + gameConstants.pixelPerBox, deltaY: 0};
@@ -177,7 +185,7 @@ angular.module('angularApp.factories')
         Grid.prototype.animateColumn = function (i) {
             var j, minY, tmp;
             minY = gameConstants.hiddenRowCount * gameConstants.pixelPerBox;
-            for (j = gameConstants.hiddenRowCount-1; j < this.container[i].length; j += 1) {
+            for (j = gameConstants.hiddenRowCount - 1; j < this.container[i].length; j += 1) {
                 tmp = this.animateBlock(i, j, minY);
                 minY = tmp.min;
                 j += tmp.deltaY;
@@ -219,7 +227,7 @@ angular.module('angularApp.factories')
             if (left !== null && right !== null) //just swap them
             {
                 if (left.state === blockFactory.EState.Blocked && right.state === blockFactory.EState.Blocked
-                        && (left.type !== blockFactory.EType.PlaceHolder || right.type !=  blockFactory.EType.PlaceHolder)) {
+                    && (left.type !== blockFactory.EType.PlaceHolder || right.type != blockFactory.EType.PlaceHolder)) {
                     this.swapBlocks(left, right);
                     return true;
                 }
@@ -245,7 +253,7 @@ angular.module('angularApp.factories')
             return false;
         };
 
-		var swapTmpBlock = blockFactory.newBlock(); //avoid resizing the block cache
+        var swapTmpBlock = blockFactory.newBlock(); //avoid resizing the block cache
         Grid.prototype.swapBlocks = function (left, right) {
             //move them
             swapTmpBlock.loadFrom(left);
@@ -285,14 +293,14 @@ angular.module('angularApp.factories')
             var count = 0;
             for (var i = 0; i < this.container.length; i += 1) {
                 for (var j = gameConstants.hiddenRowCount; j < this.container[i].length; j += 1) {
-                    if(this.container[i][j].type === color)
+                    if (this.container[i][j].type === color)
                         count += 1;
                 }
             }
             return count;
         };
         return {
-            newGrid : function newGrid(content){
+            newGrid: function newGrid(content) {
                 return new Grid(content);
             }
         };
