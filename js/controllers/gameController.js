@@ -22,9 +22,6 @@ angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$htt
         $scope.load = function () {
             $http.get("games/" + $scope.gameName + ".json", {cache: true}).success(function (json) {
                 $scope.config.gameConfig = json;
-                if(campaign){
-                    $scope.openCampaignModal(json);
-                }
                 $scope.useGameConfig(json);
             }).error(function (data) {
                 console.log(data);
@@ -53,9 +50,19 @@ angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$htt
             $scope.$broadcast("newRulesSet", config.victory);
             if (config.grid == "") { // jshint ignore:line
                 game.setConfiguration(config, "", $scope.endCallBack, $scope);
+
+                if(campaign){
+                    $scope.openCampaignModal(config);
+                }
+
             } else {
                 $http.get("grids/" + config.grid + ".json", {cache: true}).success(function (json) {
                     game.setConfiguration(config, json, $scope.endCallBack, $scope);
+
+                    if(campaign){
+                        $scope.openCampaignModal(config);
+                    }
+
                 }).error(function (error) {
                     console.log(error);
                 });
@@ -116,7 +123,6 @@ angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$htt
                     $scope.gameName = $scope.config.gameConfig.next;
                     campaign = $scope.gameName.indexOf("campaign") > -1;
                     $route.updateParams({hash: CryptoJS.MD5($scope.gameName)});
-                    $scope.load();
                 }
                 else {
                     $scope.reset();
@@ -127,7 +133,8 @@ angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$htt
         };
 
         $scope.openCampaignModal = function (json) {
-            $modal.open({
+            game.togglePause();
+            var mod = $modal.open({
                 animation: true,
                 templateUrl: 'templates/objectivesModal.html',
                 controller: 'ObjectivesModalCtrl',
@@ -140,6 +147,11 @@ angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$htt
                         return json;
                     }
                 }
+            });
+            mod.result.then(function () {
+                game.togglePause();
+            }, function () {
+                game.togglePause();
             });
         };
     }]);
