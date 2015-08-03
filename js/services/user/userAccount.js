@@ -141,7 +141,7 @@ angular.module('angularApp.factories')
         };
 
         User.prototype.setTheme = function (style) {
-            storage.set(storage.Keys.WebTheme, style);
+            storage.set(storage.Keys.WebTheme, style.toLowerCase());
             this.loadTheme();
         };
 
