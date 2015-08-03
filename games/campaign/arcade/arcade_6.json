@@ -10,8 +10,8 @@
     }
   ],
   "victory": {
-    "score": 15
+    "score": 25
   },
-  "next": "campaign/arcade/arcade_7",
-  "require": "campaign/arcade/arcade_5"
+  "next": "campaign/arcade/arcade_5",
+  "require": "campaign/arcade/arcade_7"
 }

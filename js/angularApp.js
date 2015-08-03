@@ -160,7 +160,7 @@ angularApp.config(['$routeProvider', '$locationProvider',
                         }]
                     }
                 }).
-                when('/user/config', {
+                when('/machine/config', {
                     templateUrl: 'templates/user/config.html',
                     controller: 'ComputerConfigCtrl',
                     resolve: {

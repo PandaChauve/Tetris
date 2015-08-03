@@ -6,7 +6,8 @@
         <ul>
             <li ng-repeat="rule in rules" class="defeatCond" ng-class="{successCond: rule.success}">{{rule.message}}</li>
         </ul>
-    </div>
+    </div><br /><br />
+    <p>{{tips}}</p>
 </div>
 <div class="modal-footer">
     <button class="btn btn-warning" ng-click="continue()" ng-enter="continue()">Continue</button>
