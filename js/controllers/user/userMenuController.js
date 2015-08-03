@@ -10,9 +10,9 @@ angular.module('angularApp.controllers')
             }, 0);
         };
         $scope.loginPopup = function(){
-            var modalInstance = $modal.open({
+            $modal.open({
                 animation: true,
-                templateUrl: 'templates/user/login.html',
+                templateUrl: 'resources/templates/user/login.html',
                 controller: 'LoginFormCtrl',
                 size: 400
             });

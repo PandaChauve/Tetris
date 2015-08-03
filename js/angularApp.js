@@ -33,7 +33,7 @@ angularApp.config(['$routeProvider', '$locationProvider',
         function ($routeProvider, $locationProvider) {
             $routeProvider.
                 when('/scores', {
-                    templateUrl: 'templates/scores.html',
+                    templateUrl: 'resources/templates/scores.html',
                     controller: 'ScoresCtrl',
                     resolve: {
                         user: ['userAccount', function (userAccount) {
@@ -43,7 +43,7 @@ angularApp.config(['$routeProvider', '$locationProvider',
                     }
                 }).
                 when('/achievements', {
-                    templateUrl: 'templates/user/achievements.html',
+                    templateUrl: 'resources/templates/user/achievements.html',
                     controller: 'AchievementsCtrl',
                     resolve: {
                         user: ['userAccount', function (userAccount) {
@@ -53,7 +53,7 @@ angularApp.config(['$routeProvider', '$locationProvider',
                     }
                 }).
                 when('/achievements/:userid', {
-                    templateUrl: 'templates/user/achievements.html',
+                    templateUrl: 'resources/templates/user/achievements.html',
                     controller: 'AchievementsCtrl',
                     resolve: {
                         user: ['userAccount', function (userAccount) {
@@ -63,7 +63,7 @@ angularApp.config(['$routeProvider', '$locationProvider',
                     }
                 }).
                 when('/rules', {
-                    templateUrl: 'templates/rules.html',
+                    templateUrl: 'resources/templates/rules.html',
                     controller: 'RulesCtrl',
                     resolve: {
                         user: ['userAccount', function (userAccount) {
@@ -73,7 +73,7 @@ angularApp.config(['$routeProvider', '$locationProvider',
                     }
                 }).
                 when('/game/:hash', {
-                    templateUrl: 'templates/game.html',
+                    templateUrl: 'resources/templates/game.html',
                     controller: 'GameCtrl',
                     resolve: {
                         user: ['userAccount', function (userAccount) {
@@ -83,7 +83,7 @@ angularApp.config(['$routeProvider', '$locationProvider',
                     }
                 }).
                 when('/campaign', {
-                    templateUrl: 'templates/campaign.html',
+                    templateUrl: 'resources/templates/campaign.html',
                     controller: 'CampaignCtrl',
                     resolve: {
                         user: ['userAccount', function (userAccount) {
@@ -93,7 +93,7 @@ angularApp.config(['$routeProvider', '$locationProvider',
                     }
                 }).
                 when('/campaign/:campaignName', {
-                    templateUrl: 'templates/campaign.html',
+                    templateUrl: 'resources/templates/campaign.html',
                     controller: 'CampaignCtrl',
                     resolve: {
                         user: ['userAccount', function (userAccount) {
@@ -103,7 +103,7 @@ angularApp.config(['$routeProvider', '$locationProvider',
                     }
                 }).
                 when('/campaign/:campaignName/:subCampaignId', {
-                    templateUrl: 'templates/campaign.html',
+                    templateUrl: 'resources/templates/campaign.html',
                     controller: 'CampaignCtrl',
                     resolve: {
                         user: ['userAccount', function (userAccount) {
@@ -113,7 +113,7 @@ angularApp.config(['$routeProvider', '$locationProvider',
                     }
                 }).
                 when('/tetrisCampaign', {
-                    templateUrl: 'templates/tetrisCampaign.html',
+                    templateUrl: 'resources/templates/tetrisCampaign.html',
                     controller: 'tetrisCampaignCtrl',
                     resolve: {
                         user: ['userAccount', function (userAccount) {
@@ -123,7 +123,7 @@ angularApp.config(['$routeProvider', '$locationProvider',
                     }
                 }).
                 when('/stats', {
-                    templateUrl: 'templates/user/stats.html',
+                    templateUrl: 'resources/templates/user/stats.html',
                     controller: 'StatCtrl',
                     resolve: {
                         user: ['userAccount', function (userAccount) {
@@ -133,7 +133,7 @@ angularApp.config(['$routeProvider', '$locationProvider',
                     }
                 }).
                 when('/stats/:userid', {
-                    templateUrl: 'templates/user/stats.html',
+                    templateUrl: 'resources/templates/user/stats.html',
                     controller: 'StatCtrl',
                     resolve: {
                         user: ['userAccount', function (userAccount) {
@@ -143,7 +143,7 @@ angularApp.config(['$routeProvider', '$locationProvider',
                     }
                 }).
                 when('/user/account', {
-                    templateUrl: 'templates/user/account.html',
+                    templateUrl: 'resources/templates/user/account.html',
                     controller: 'UserAccountCtrl',
                     resolve: {
                         user: ['userAccount', function (userAccount) {
@@ -153,7 +153,7 @@ angularApp.config(['$routeProvider', '$locationProvider',
                     }
                 }).
                 when('/user/style', {
-                    templateUrl: 'templates/user/style.html',
+                    templateUrl: 'resources/templates/user/style.html',
                     controller: 'UserConfigCtrl',
                     resolve: {
                         user: ['userAccount', function (userAccount) {
@@ -163,7 +163,7 @@ angularApp.config(['$routeProvider', '$locationProvider',
                     }
                 }).
                 when('/machine/config', {
-                    templateUrl: 'templates/user/config.html',
+                    templateUrl: 'resources/templates/user/config.html',
                     controller: 'ComputerConfigCtrl',
                     resolve: {
                         user: ['userAccount', function (userAccount) {
@@ -173,7 +173,7 @@ angularApp.config(['$routeProvider', '$locationProvider',
                     }
                 }).
                 when('/about', {
-                    templateUrl: 'templates/about.html',
+                    templateUrl: 'resources/templates/about.html',
                     resolve: {
                         user: ['userAccount', function (userAccount) {
                             "use strict";
@@ -182,7 +182,7 @@ angularApp.config(['$routeProvider', '$locationProvider',
                     }
                 }).
                 when('/user/recovery', {
-                    templateUrl: 'templates/user/passwordRecovery.html',
+                    templateUrl: 'resources/templates/user/passwordRecovery.html',
                     controller: 'PasswordRecoveryCtrl',
                     resolve: {
                         user: ['userAccount', function (userAccount) {
@@ -192,7 +192,7 @@ angularApp.config(['$routeProvider', '$locationProvider',
                     }
                 }).
                 when('/newpassword', {
-                    templateUrl: 'templates/user/newpassword.html',
+                    templateUrl: 'resources/templates/user/newpassword.html',
                     resolve: {
                         user: ['userAccount', function (userAccount) {
                             "use strict";
@@ -201,7 +201,7 @@ angularApp.config(['$routeProvider', '$locationProvider',
                     }
                 }).
                 when('/devices', {
-                    templateUrl: 'templates/devices.html',
+                    templateUrl: 'resources/templates/devices.html',
                     resolve: {
                         user: ['userAccount', function (userAccount) {
                             "use strict";
@@ -210,7 +210,7 @@ angularApp.config(['$routeProvider', '$locationProvider',
                     }
                 }).
                 when('/', {
-                    templateUrl: 'templates/index.html',
+                    templateUrl: 'resources/templates/index.html',
                     controller: 'IndexCtrl',
                     resolve: {
                         user: ['userAccount', function (userAccount) {

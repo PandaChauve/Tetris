@@ -106,7 +106,7 @@ angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$htt
         $scope.openModal = function () {
             var modalInstance = $modal.open({
                 animation: true,
-                templateUrl: 'templates/endGameModal.html',
+                templateUrl: 'resources/templates/endGameModal.html',
                 controller: 'ModalInstanceCtrl',
                 resolve: {
                     gameName: function () {
@@ -136,7 +136,7 @@ angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$htt
             game.togglePause();
             var mod = $modal.open({
                 animation: true,
-                templateUrl: 'templates/objectivesModal.html',
+                templateUrl: 'resources/templates/objectivesModal.html',
                 controller: 'ObjectivesModalCtrl',
                 size: 300,
                 resolve: {

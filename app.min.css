@@ -82,72 +82,87 @@
     border: 0;
 }
  
-html{
+html {
     overflow-y: scroll;
-    height:100%;
+    height: 100%;
 }
-body{
-    height:100%;
+
+body {
+    height: 100%;
 }
-.height300{
-    min-height:300px;
-    position:relative;
-}
-.cornered{
-    position: absolute;
-    bottom: 0px;
-    right:40px;
-}
-.body{
-    min-height:100%;
+
+.height300 {
+    min-height: 300px;
     position: relative;
 }
-.leftToMiddle{
+
+.cornered {
+    position: absolute;
+    bottom: 0px;
+    right: 40px;
+}
+
+.body {
+    min-height: 100%;
+    position: relative;
+}
+
+.browserBox {
+    background: black;
+    border-radius: 5px;
+    padding: 2px;
+    display: inline-block;
+    color: white
+}
+
+.leftToMiddle {
     text-align: center;
 }
+
 @media (min-width: 992px) {
-    .leftToMiddle{
+    .leftToMiddle {
         text-align: right;
     }
 }
 
-.noPadding{
-    padding : 0;
+.noPadding {
+    padding: 0;
 }
+
 .centralGame {
     width: 950px;
     margin: auto;
 }
-.sideGame, .gameHolder{
-    margin:auto;
+
+.sideGame, .gameHolder {
+    margin: auto;
     text-align: center;
     display: inline-block;
-    position:relative;
-}
-.well.gameHolder{
-    border:0;
-    padding:0;
+    position: relative;
 }
 
-#gameMenu{
+.well.gameHolder {
+    border: 0;
+    padding: 0;
+}
+
+#gameMenu {
     text-align: center;
 }
-
-
 
 .row .gameDetails {
     font-family: 'Architects Daughter', cursive;
     max-width: 300px;
     min-height: 500px;
     margin: 10px auto;
-    padding:0 0 10px;
+    padding: 0 0 10px;
 
 }
 
 canvas {
-    width:448px;
-    height:600px;
-    border-radius:3px;
+    width: 448px;
+    height: 600px;
+    border-radius: 3px;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -191,7 +206,7 @@ canvas {
 }
 
 .cube {
-    padding-top:50px;
+    padding-top: 50px;
     height: 150px;
 }
 
@@ -205,148 +220,186 @@ canvas {
     font-size: 30px;
 }
 
-.notification{
-    cursor:pointer;
+.notification {
+    cursor: pointer;
     width: 400px;
     margin-left: -200px;
 }
-.notification img{
-    float:left;
-    width:60px;
+
+.notification img {
+    float: left;
+    width: 60px;
 }
-.notification div span{
-    font-size:1.5em;
+
+.notification div span {
+    font-size: 1.5em;
     line-height: 60px;
 }
-.mapNode{
+
+.mapNode {
     cursor: pointer;
 }
-.mapNodeActive_0{
-    fill:#ff6600;
+
+.mapNodeActive_0 {
+    fill: #ff6600;
 }
-.mapNodeActive_1{
-    fill:#0066ff;
+
+.mapNodeActive_1 {
+    fill: #0066ff;
 }
-.mapNodeActive_2{
-    fill:#008000;
+
+.mapNodeActive_2 {
+    fill: #008000;
 }
-.mapNodeActive_3{
-    fill:#800080;
+
+.mapNodeActive_3 {
+    fill: #800080;
 }
-.mapNodeActive_4{
-    fill:#ff0000;
+
+.mapNodeActive_4 {
+    fill: #ff0000;
 }
-.mapNodeActive_5{
-    fill:#ff00ff;
+
+.mapNodeActive_5 {
+    fill: #ff00ff;
 }
-.mapNodeActive_6{
-    fill:#00f000;
+
+.mapNodeActive_6 {
+    fill: #00f000;
 }
-.mapNodeActive_7{
-    fill:#008080;
+
+.mapNodeActive_7 {
+    fill: #008080;
 }
-.mapNodeActive_8{
-    fill:#8b0000;
+
+.mapNodeActive_8 {
+    fill: #8b0000;
 }
-.mapNodeActive_9{
-    fill:#000080;
+
+.mapNodeActive_9 {
+    fill: #000080;
 }
-.mapNodeDisabled{
-    fill:#000000;
+
+.mapNodeDisabled {
+    fill: #000000;
 }
-.campaignButton{
-    stroke:#000000;
-    stroke-width:1;
-    stroke-opacity:1;
-    cursor:pointer;
+
+.campaignButton {
+    stroke: #000000;
+    stroke-width: 1;
+    stroke-opacity: 1;
+    cursor: pointer;
     transform-origin: 50% 50%;
     animation: rotateOut 0.5s;
 }
-.campaignButton:hover{
+
+.campaignButton:hover {
     animation: rotateIn 1.5s;
 }
 
 @-webkit-keyframes rotateIn {
-    from{ transform: rotate(0deg)}
-    to{ transform: rotate(45deg)}
+    from {
+        transform: rotate(0deg)
+    }
+    to {
+        transform: rotate(45deg)
+    }
 }
 
 @-webkit-keyframes rotateOut {
-    from{ transform: rotate(45deg)}
-    to{ transform: rotate(0deg)}
-}
-.campaignEnable_1{
-    fill:#000080;
-}
-.campaignEnable_2{
-    fill:#008000;
-}
-.campaignEnable_3{
-    fill:#8b0000;
-}
-.campaignEnable_4{
-    fill:#008080;
+    from {
+        transform: rotate(45deg)
+    }
+    to {
+        transform: rotate(0deg)
+    }
 }
 
-.campaignEnable_5{
-    fill:#ff0000;
-}
-.campaignEnable_6{
-    fill:#800080;
+.campaignEnable_1 {
+    fill: #000080;
 }
 
-.campaignDisable{
-    fill:#000000;
-    cursor:default;
+.campaignEnable_2 {
+    fill: #008000;
+}
+
+.campaignEnable_3 {
+    fill: #8b0000;
+}
+
+.campaignEnable_4 {
+    fill: #008080;
+}
+
+.campaignEnable_5 {
+    fill: #ff0000;
+}
+
+.campaignEnable_6 {
+    fill: #800080;
+}
+
+.campaignDisable {
+    fill: #000000;
+    cursor: default;
     animation: none;
 }
 
-.campaignDisable:hover{
+.campaignDisable:hover {
     animation: none;
 }
-.mycarousel{
-    width:40%;
-    margin:150px auto;
-    height:150px;
+
+.mycarousel {
+    width: 40%;
+    margin: 150px auto;
+    height: 150px;
 }
-.mycarousel p{
+
+.mycarousel p {
     text-align: left;
 }
-.carousel-control.left{
-    cursor:pointer;
+
+.carousel-control.left {
+    cursor: pointer;
 }
 
-.carousel-control.right{
-    cursor:pointer;
+.carousel-control.right {
+    cursor: pointer;
 }
-.disabledPanel{
-    cursor:not-allowed;
+
+.disabledPanel {
+    cursor: not-allowed;
 }
-.enabledPanel{
-    cursor:pointer;
+
+.enabledPanel {
+    cursor: pointer;
 }
-.themeSample{
-    border:5px black solid; /*game background color to fit the screenshots*/
+
+.themeSample {
+    border: 5px black solid; /*game background color to fit the screenshots*/
     border-radius: 5px;
 }
 
-#footer{
+#footer {
     position: absolute;
     bottom: 0;
     width: 100%;
     line-height: 30px;
     min-height: 20px;
-    margin:0;
-    padding:0;
-    border:0;
-    border-radius:0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
     text-align: right;
 }
-#footer p {margin:0}
+
+#footer p {
+    margin: 0
+}
 
 .pauseShadow {
     font-family: 'Architects Daughter', cursive;
-   position: absolute;
+    position: absolute;
     width: 100%;
     height: 100%;
     text-align: center;
@@ -365,26 +418,27 @@ canvas {
     text-decoration: underline;
 }
 
-.modal-300{
+.modal-300 {
     max-width: 300px;
 }
 
 @media (min-width: 510px) {
-    .well.gameHolder{
-        border:1px;
-        padding:19px;
+    .well.gameHolder {
+        border: 1px;
+        padding: 19px;
     }
-    .pauseShadow{
-        margin:-19px;
+
+    .pauseShadow {
+        margin: -19px;
     }
 }
 
-.scaledCanvas{
-	/* Scale out 2X from the corner */
-	-webkit-transform: scale(2, 2);
-	-webkit-transform-origin: top center;
-	transform: scale(2, 2);
-	transform-origin: top center;
+.scaledCanvas {
+    /* Scale out 2X from the corner */
+    -webkit-transform: scale(2, 2);
+    -webkit-transform-origin: top center;
+    transform: scale(2, 2);
+    transform-origin: top center;
 }
  /***
 Spectrum Colorpicker v1.7.0

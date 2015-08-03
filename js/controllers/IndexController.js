@@ -6,7 +6,7 @@ angular.module('angularApp.controllers')
         $scope.loginPopup = function(){
             $modal.open({
                 animation: true,
-                templateUrl: 'templates/user/login.html',
+                templateUrl: 'resources/templates/user/login.html',
                 controller: 'LoginFormCtrl',
                 size: 400
             });
