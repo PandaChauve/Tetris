@@ -12,7 +12,7 @@ angular.module('angularApp.factories')
                 arr[index] = arr[index + 1];
                 index++;
             }
-            arr.length--;
+            arr.length -= 1;
         };
 
         function Grid(content) {
@@ -39,7 +39,7 @@ angular.module('angularApp.factories')
                     for (j = this.container[i].length; j < gameConstants.startRows; j += 1) {
                         this.container[i].push(blockFactory.newBlock());
                         while ((j % 2 == 0 && lastColor === this.container[i][j].type) ||
-                        (i % 2 == 1 && this.container[i - 1][j].type == this.container[i][j].type )) { //never 3 at creation
+                        (i % 2 == 1 && this.container[i - 1][j].type == this.container[i][j].type )) { //never 3 aligned at creation
                             this.container[i][j].type = blockFactory.EType.Random();
                         }
                         lastColor = this.container[i][j].type;
