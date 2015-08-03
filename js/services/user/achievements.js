@@ -286,9 +286,9 @@ angular.module('angularApp.factories')
                     case AchievementsState.List.Flash :
                         return "Finish the time attack campaign";
                     case AchievementsState.List.Pacman :
-                        return "Finish the arcade campaign";
+                        return "Finish the tutorial campaign";
                     case AchievementsState.List.Sherlock :
-                        return "Finish the puzzle campaign";
+                        return "Finish the challenge campaign";
                     case AchievementsState.List.Destroyer :
                         return "Destroy 10000 blocks in any game mode";
                     case AchievementsState.List.Restless :
