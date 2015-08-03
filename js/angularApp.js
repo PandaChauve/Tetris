@@ -2,6 +2,8 @@
 var css = localStorage.getItem("dynamic_css_content");
 if (css) {
     document.getElementById("switchableTheme").innerHTML = css;
+    var element = document.getElementById("switchableThemeCss");
+    element.parentNode.removeChild(element);
 }
 
 angular.module('angularApp.base', ['cgNotify']);

@@ -15,7 +15,7 @@ angular.module('angularApp.factories')
             return $http.get(root+'user/reset/'+id);
         };
         Api.prototype.getTheme = function(name){
-            return $http.get("bootswatch/"+name+".min.css",{
+            return $http.get("resources/bootswatch/"+name+".min.css",{
                 cache: true
             });
         };

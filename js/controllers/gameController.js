@@ -20,7 +20,7 @@ angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$htt
         };
 
         $scope.load = function () {
-            $http.get("games/" + $scope.gameName + ".json", {cache: true}).success(function (json) {
+            $http.get("resources/games/" + $scope.gameName + ".json", {cache: true}).success(function (json) {
                 $scope.config.gameConfig = json;
                 $scope.useGameConfig(json);
             }).error(function (data) {
@@ -56,7 +56,7 @@ angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$htt
                 }
 
             } else {
-                $http.get("grids/" + config.grid + ".json", {cache: true}).success(function (json) {
+                $http.get("resources/grids/" + config.grid + ".json", {cache: true}).success(function (json) {
                     game.setConfiguration(config, json, $scope.endCallBack, $scope);
 
                     if(campaign){
