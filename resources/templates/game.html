@@ -38,7 +38,7 @@
                     </div>
                 </div>
             </div>
-            <div id="gameMenu"> <!--FIXME why does ng-click create a focus effect on buttons and not on div ? -->
+            <div id="gameMenu">
                 <div type="button" class="btn btn-danger" ng-click="reset()" style="width:80px">Retry</div>
                 <div type="button" class="btn btn-success" ng-click="pause.toggle()" style="width:80px"><span
                         ng-if="!pause.active">Pause</span><span ng-if="pause.active">Play</span></div>
@@ -53,13 +53,24 @@
         <div id="game" class="sideGame well col-lg-5 col-md-6">
 			<div class="gameResizer">
             <canvas mng-tetris-game="0"></canvas>
+                <div class="pauseShadow" ng-cloak ng-if="pause.active" ng-click="pause.toggle()">Paused</div>
 			</div>
         </div>
 
         <div class="sideGame well col-lg-5 col-lg-push-2  col-md-6">
 			<div class="gameResizer">
             <canvas mng-tetris-game="1"></canvas>
+                <div class="pauseShadow" ng-cloak ng-if="pause.active" ng-click="pause.toggle()">Paused</div>
 			</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div id="gameMenu">
+                <div type="button" class="btn btn-danger" ng-click="reset()" style="width:80px">Retry</div>
+                <div type="button" class="btn btn-success" ng-click="pause.toggle()" style="width:80px"><span
+                        ng-if="!pause.active">Pause</span><span ng-if="pause.active">Play</span></div>
+            </div>
         </div>
     </div>
 </div>

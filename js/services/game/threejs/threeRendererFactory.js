@@ -33,7 +33,7 @@ angular.module('angularApp.factories')
                 }
             }
             this.cubeFactory = cubeRenderElementFactory.createFactory(this.type);
-			scoreRenderElementFactory.clearCache();
+			this.scoreFactory = scoreRenderElementFactory.createFactory();
             this.scene = null;
             this.camera = null;
             this.renderer = null;
