@@ -21,6 +21,7 @@ angular.module('angularApp.factories')
             this.scene = this.createScene();
             this.type = type;
             this.cubeFactory = cubeRenderElementFactory.createFactory(this.type);
+            this.scoreFactory = scoreRenderElementFactory.createFactory();
         }
 
         ThreeRenderer.prototype.clear = function () {
@@ -209,7 +210,7 @@ angular.module('angularApp.factories')
             if (gameConstants.columnCount <= 6 && !this.zoom) { 
                 for (i = 0; i < points.length; i += 1) {
                     if (!points[i].threeObject) {
-                        points[i].threeObject = scoreRenderElementFactory.create();
+                        points[i].threeObject = this.scoreFactory.create();
                         points[i].threeObject.createScore(points[i].value);
                         if(points[i].threeObject.mesh)
 							this.scene.add(points[i].threeObject.mesh);
@@ -222,8 +223,8 @@ angular.module('angularApp.factories')
 						
                         if(points[i].threeObject.particles)
 							this.scene.remove(points[i].threeObject.particles);
-						
-						scoreRenderElementFactory.free(points[i].threeObject);						
+
+                        this.scoreFactory.free(points[i].threeObject);
 						
                         points.splice(i, 1);
                         i -= 1;
