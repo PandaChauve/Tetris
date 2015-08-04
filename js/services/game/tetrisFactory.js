@@ -10,6 +10,7 @@ angular.module('angularApp.factories')
             this.zoom = systemConfig.get(systemConfig.Keys.zoom) && gameConstants.columnCount < 8;
             this.grid = gridFactory.newGrid(grid);
             this.score = 0;
+            this.blockDestroyed = 0;
             this.cursor = [];
             if (cursors === undefined) {
                 cursors = 1;
@@ -74,6 +75,9 @@ angular.module('angularApp.factories')
 
             //check if don't have new successful combo
             var evaluation = this.grid.evaluate();
+            for (var i = 0; i < evaluation.series.length; i += 1) { //for a given serie, remove duplicates
+                this.blockDestroyed += evaluation.series.length;
+            }
             this.score += evaluation.score;
 
 
@@ -119,6 +123,9 @@ angular.module('angularApp.factories')
 
         Tetris.prototype.getScore = function () {
             return this.score;
+        };
+        Tetris.prototype.getDestroyed = function () {
+            return this.blockDestroyed;
         };
 
         Tetris.prototype.getSwaps = function () {

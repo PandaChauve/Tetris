@@ -187,6 +187,11 @@ angular.module('angularApp.factories')
             for (var i = 0; i < this.cursor.length; i += 1) {
                 this.scene.remove(this.cursor[i]);
             }
+            this.camera.position.z += 100;
+            if(this.zoom)
+                this.camera.position.y += 60;
+            else
+                this.camera.position.y += 100;
             this.render();
         };
 

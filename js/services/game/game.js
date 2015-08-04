@@ -3,17 +3,19 @@ angular.module('angularApp.factories')
         function gameFactory(userInput, userStats, stateChecker, threeRendererFactory, tetrisFactory, TIC_PER_SEC, storage, systemConfig) {
             "use strict";
             function Score() {
-                this.scoreList = [];
+                this.scoreList = [[],[],[],[]];
                 this.addTics = function () {
                     for (var i = 0; i < this.scoreList.length; i += 1) {
-                        this.scoreList[i].opacity -= 0.25;
+                        for (var j = 0; j < this.scoreList[i].length; j += 1) {
+                            this.scoreList[i][j].opacity -= 0.25;
+                        }
                     }
                 };
-                this.addScore = function (s) {
+                this.addScore = function (s, i) {
                     if (s < 1) {
                         return;
                     }
-                    this.scoreList.push({
+                    this.scoreList[i].push({
                         opacity: 100,
                         value: s,
                         object: null
@@ -164,12 +166,12 @@ angular.module('angularApp.factories')
             Game.prototype.splitScreenQuickFix = function () {
                 //FIXME this function is a quickfix for duel
                 if (this.tetris.length === 2) {
-                    while (this.tobefixed[0] < this.tetris[1].getScore() / 3) {
+                    while (this.tobefixed[0] < this.tetris[1].getDestroyed() / 3) {
                         this.tobefixed[0] += 1;
                         this.tetris[0].randomFall();
                     }
 
-                    while (this.tobefixed[1] < this.tetris[0].getScore() / 3) {
+                    while (this.tobefixed[1] < this.tetris[0].getDestroyed() / 3) {
                         this.tobefixed[1] += 1;
                         this.tetris[1].randomFall();
                     }
@@ -197,9 +199,15 @@ angular.module('angularApp.factories')
 
 			Game.prototype.computeTic = function(){
 				var tickret;
+                var end = -1;
                 for (var i = 0; i < this.tetris.length; i += 1) {
                     tickret = this.tetris[i].oneTick();
-                    stateChecker.check(this.tetris[i]);    
+                    if(i == 0)
+                        userStats.getCurrentGame().addLines(tickret.series, tickret.score); //FIXME not working on multi
+                    stateChecker.check(this.tetris[i]);
+                    if(stateChecker.defeat() || stateChecker.victory())
+                        end = i;
+                    this.scoreHandler.addScore(tickret.score, i);
                 }
                 userInput.clear();
 				
@@ -207,12 +215,9 @@ angular.module('angularApp.factories')
 					this.last.score += tickret.score;
 					this.last.combo =  tickret.combo;
 				}
-				this.scoreHandler.addScore(tickret.score);
 				
-			    if (stateChecker.defeat() || stateChecker.victory()) {
-					for(i = 0; i < this.tetris.length; i+= 1){
-                        this.visual[i].freezeGame();
-                    }
+			    if (end != -1) {
+                    this.visual[end].freezeGame();
 					return false;
 				}
 				return true;
@@ -235,8 +240,9 @@ angular.module('angularApp.factories')
                     this.startTime = timestamp - this.last.tics * millisecpertic;
                 }
                 this.progress = timestamp - this.startTime;
-
-                while (this.timeCounter <= this.progress && this.computeTic()) {				
+                var ret = true;
+                while (this.timeCounter <= this.progress) {
+                    ret = this.computeTic();
 					this.last.tics += 1;
 					this.timeCounter += millisecpertic;
 					this.scoreHandler.addTics();
@@ -245,9 +251,9 @@ angular.module('angularApp.factories')
                 this.last.swaps = this.tetris[0].getSwaps();
                 this.last.actions = this.tetris[0].getActions();
                 this.scope.$broadcast('newTick', this.last);
-                if (!stateChecker.defeat() && !stateChecker.victory()) {				
+                if (ret) {
                     for (var i = 0; i < this.tetris.length; i += 1) {
-                        this.visual[i].renderTetris(this.tetris[i], this.scoreHandler.scoreList);
+                        this.visual[i].renderTetris(this.tetris[i], this.scoreHandler.scoreList[i]);
                     }
                     this.splitScreenQuickFix();
 					this.statCounter.end();

@@ -1,5 +1,5 @@
 angular.module('angularApp.factories')
-    .factory('gridEvaluator', ['gameConstants','userStats','blockFactory', function gridEvaluatorFactory(gameConstants, userStats,blockFactory) {
+    .factory('gridEvaluator', ['gameConstants','blockFactory', function gridEvaluatorFactory(gameConstants, blockFactory) {
         "use strict";
 		var ArrayPool = function(){ //need to check if it's effective
 			this.data = [];
@@ -209,8 +209,7 @@ angular.module('angularApp.factories')
                 this.lastTriger = 120; //FIXME magic number
                 this.combo += 1;
             }
-            userStats.getCurrentGame().addLines(this.series, score); //FIXME will do but i'd like an event system
-            return {score: score, combo: this.combo};
+            return {score: score, combo: this.combo, series: this.series};
         };
 
         return new GridEvaluator();
