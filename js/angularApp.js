@@ -174,6 +174,7 @@ angularApp.config(['$routeProvider', '$locationProvider',
                 }).
                 when('/about/', {
                     templateUrl: 'resources/templates/about.html',
+                    controller: 'AboutCtrl',
                     resolve: {
                         user: ['userAccount', function (userAccount) {
                             "use strict";
