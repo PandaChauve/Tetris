@@ -138,7 +138,7 @@ angular.module('angularApp.factories')
                         }
                         break;
                     case AchievementsState.List.SuperTeam :
-                        if (gameName === "coop") {
+                        if (gameName === "ultralargecoop") {
                             container[key] = game.score >= this.keyToScore(key);
                         }
                         break;
@@ -294,7 +294,7 @@ angular.module('angularApp.factories')
                     case AchievementsState.List.Restless :
                         return "Swap 100000 pairs of blocks in any game mode";
                     case AchievementsState.List.Veteran :
-                        return "100 games any game mode";
+                        return "100 games in any game mode";
                 }
                 return "";
             };
