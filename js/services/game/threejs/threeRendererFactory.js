@@ -27,6 +27,8 @@ angular.module('angularApp.factories')
         }
 
         ThreeRenderer.prototype.clear = function () {
+            this.renderer.clear();
+
             for(var i = this.scene.children.length -1; i >= 0; i-=1){
                 if(this.scene.children[i].customObject){
                     var obj = this.scene.children[i];

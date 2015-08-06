@@ -94,8 +94,6 @@ angular.module('angularApp.factories')
                         }
                     }
                 }
-
-                this.stopGame();
                 this.reset();
                 this.started = true;
                 userStats.getCurrentGame().reset();
@@ -119,13 +117,7 @@ angular.module('angularApp.factories')
             Game.prototype.stopGame = function stopGame() {
                 this.started = false;
                 window.cancelAnimationFrame(this.id);
-                for (var i = 0; i < this.visual.length; i += 1) {
-                    if (this.visual[i]) {
-                        this.visual[i].clear();
-                    }
-                    this.visual[i] = null;
-                }
-                this.visual = [];
+                this.gridCount = 0;
             };
 
 

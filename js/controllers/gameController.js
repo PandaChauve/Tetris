@@ -30,10 +30,6 @@ angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$htt
 
         $scope.load();
 
-        $scope.$on('$routeChangeStart', function () {
-            game.stopGame();
-        });
-
         angular.element($window).bind('blur', function () {
             return function () {
                 $scope.pause.active = true;
@@ -154,4 +150,8 @@ angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$htt
                 game.togglePause();
             });
         };
+
+        $scope.$on("$destroy", function() {
+            game.stopGame();
+        });
     }]);
