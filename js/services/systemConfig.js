@@ -22,7 +22,10 @@ angular.module('angularApp.factories')
             }
         };
 
-        function SystemConfig() {};
+        function SystemConfig() {
+            var ret = isMobile.any() != null;
+            this.isMobile = ret;
+        };
         SystemConfig.prototype.set = function(key, value) {
 			if(value == undefined)
 				value = null;
@@ -42,7 +45,7 @@ angular.module('angularApp.factories')
             if (ret != null) {
                 return ret;
             }
-            if (isMobile.any()) {
+            if (this.isMobile) {
                 return this.defaultMobile(key);
             }
             return this.defaultDesktop(key);

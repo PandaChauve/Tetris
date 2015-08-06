@@ -69,7 +69,6 @@ angular.module('angularApp.factories')
                 else {
                     this.callback = cb;
                 }
-                this.started = true;
 				this.progress = 0;
                 this.tryToStart();
             };
@@ -131,7 +130,7 @@ angular.module('angularApp.factories')
 
 
             Game.prototype.tryToStart = function () {
-                if (!this.started || this.gridCount > this.availableGrids.length) {
+                if (this.started || this.gridCount > this.availableGrids.length || this.gridCount == 0) {
                     return;
                 }
                 this.startNewGame();

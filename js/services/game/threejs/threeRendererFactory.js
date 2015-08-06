@@ -17,11 +17,13 @@ angular.module('angularApp.factories')
             }
             this.offset = 0;
             this.id = String.fromCharCode(65 + Math.floor(Math.random() * 26)) + Date.now();
-
-            this.scene = this.createScene();
             this.type = type;
             this.cubeFactory = cubeRenderElementFactory.createFactory(this.type);
             this.scoreFactory = scoreRenderElementFactory.createFactory();
+            this.displayCursor = !systemConfig.isMobile;
+
+
+            this.scene = this.createScene();
         }
 
         ThreeRenderer.prototype.clear = function () {
@@ -50,8 +52,10 @@ angular.module('angularApp.factories')
             dLight2.position.set(600, -100, 800);
             scene.add(dLight2);
 
-            for (var i = 0; i < this.cursor.length; i += 1) {
-                scene.add(this.cursor[i]);
+            if(this.displayCursor){
+                for (var i = 0; i < this.cursor.length; i += 1) {
+                    scene.add(this.cursor[i]);
+                }
             }
 
             var geometry = new THREE.BoxGeometry(1000, 3, 3);
