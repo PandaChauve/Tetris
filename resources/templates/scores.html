@@ -49,34 +49,3 @@
         </nav>
     </div>
 </div>
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:cocoon="http://cocoon.io/ns/1.0" id="com.whenwillyoulose.www" version="1.0.1">
-    <name>www.whenwillyoulose.com</name>
-    <description>
-        Your web site as a native mobile application
-    </description>
-    <author email="sylvain.chevremont@gmail.com" href="https://ludei.com/">sylvain.chevremont@gmail.com </author>
-    <content src="http://www.whenwillyoulose.com"/>
-    <preference name="Orientation" value="portrait"/>
-    <preference name="Fullscreen" value="true"/>
-    <cocoon:plugin name="com.ludei.webviewplus.ios"/>
-    <cocoon:plugin name="com.ludei.webviewplus.android"/>
-    <plugin name="cordova-plugin-whitelist" version="1"/>
-    <allow-navigation href="http://*/*"/>
-    <allow-navigation href="https://*/*"/>
-    <access origin="*"/>
-    <allow-intent href="http://*/*"/>
-    <allow-intent href="https://*/*"/>
-    <allow-intent href="tel:*"/>
-    <allow-intent href="sms:*"/>
-    <allow-intent href="mailto:*"/>
-    <allow-intent href="geo:*"/>
-    <platform name="android">
-        <allow-intent href="market:*"/>
-        <preference name="Orientation" value="portrait"/>
-    </platform>
-    <platform name="ios">
-        <allow-intent href="itms:*"/>
-        <allow-intent href="itms-apps:*"/>
-    </platform>
-    <cocoon:platform enabled="false" name="ios"/>
-</widget>
