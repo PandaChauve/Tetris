@@ -3,7 +3,8 @@ angular.module('angularApp.controllers')
         function ($scope, $modalInstance, userAccount) {
             "use strict";
             $scope.submitEnabled = true;
-            $scope.message = "";
+            $scope.messageLogin = "";
+            $scope.messageRegister = "";
             $scope.user = {login: "", password: ""};
             $scope.register = {login: "", password: ""};
             $scope.login = function () {
@@ -15,7 +16,7 @@ angular.module('angularApp.controllers')
                         }
                         else{
                             $scope.submitEnabled = true;
-                            $scope.message = msg ? msg : "Login failed : check your password !";
+                            $scope.messageLogin = msg ? msg : "Login failed : check your password !";
                         }
                     });
                 }
@@ -29,7 +30,7 @@ angular.module('angularApp.controllers')
                         }
                         else {
                             $scope.submitEnabled = true;
-                            $scope.message = msg ? msg : "Can't create user.";
+                            $scope.messageRegister = msg ? msg : "Can't create user.";
                         }
                     });
                 }

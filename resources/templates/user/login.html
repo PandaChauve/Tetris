@@ -1,7 +1,7 @@
 <div class="row">
 
-    <div ng-if="message" class="col-md-8 col-md-push-2 alert alert-danger" style="margin: 10px 0 0; text-align:center">
-            <p class="has-error">{{message}}</p>
+    <div ng-if="messageLogin" class="col-md-8 col-md-push-2 alert alert-danger" style="margin: 10px auto 0; max-width: 80%; text-align:center">
+            <p class="has-error">{{messageLogin}}</p>
     </div>
 
     <div class="col-md-6">
@@ -86,5 +86,9 @@
                 <button type="submit" ng-click="register()" class="btn btn-default" ng-disabled="!submitEnabled">Register</button>
             </form>
         </div>
+    </div>
+
+    <div ng-if="messageRegister" class="col-md-8 col-md-push-2 alert alert-danger" style="margin: 10px auto 0; max-width: 80%; text-align:center">
+        <p class="has-error">{{messageRegister}}</p>
     </div>
 </div>
