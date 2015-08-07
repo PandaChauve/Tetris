@@ -19,6 +19,7 @@
                 <th>#</th>
                 <th>Player</th>
                 <th>Score</th>
+                <th>Duration</th>
             </tr>
             </thead>
             <tbody>
@@ -26,8 +27,10 @@
                 <td>{{line.position}}</td>
                 <td>{{line.name}}</td>
                 <td>{{line.score}}</td>
+                <td>{{line.duration | ticToTime}}</td>
             </tr>
-            <tr>
+            <tr style="border-bottom: 2px solid white; border-top: 2px solid black">
+                <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -37,6 +40,7 @@
                 <td>{{line.position}}</td>
                 <td>{{line.name}}</td>
                 <td>{{line.score}}</td>
+                <td>{{line.duration | ticToTime}}</td>
             </tr>
             </tbody>
         </table>

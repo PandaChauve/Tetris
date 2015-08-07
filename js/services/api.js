@@ -5,8 +5,15 @@ angular.module('angularApp.factories')
         var root = "http://whenwillyoulose.com:1337/wwylApi/";
         //root = "http://localhost:1337/wwylApi/";
         function Api() {}
-        Api.prototype.addScore = function(userId, score, map){
-            return $http.post(root+'scores', {score: score, user: userId, map:map});
+        Api.prototype.addScore = function(userId, score, map, tics){
+            var zfaCryptedScore = score+"_";
+            var sum = 0;
+            for(var i = 0; i < zfaCryptedScore.length -1; i++)
+            {
+                sum += +zfaCryptedScore.charAt(i);
+            }
+            zfaCryptedScore += sum;
+            return $http.post(root+'scores', {score: zfaCryptedScore, user: userId, map:map, duration:tics});
         };
         Api.prototype.getScores = function(map){
             return $http.get(root+'scores/'+map);

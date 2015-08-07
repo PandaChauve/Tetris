@@ -27,10 +27,25 @@ router.get('/', function (req, res) {
 });
 
 router.route('/scores').post(function (req, res) {
-    db.run("INSERT INTO scores VALUES($score, $user, $map)", {
+    var t = req.body.score;
+    var arra = req.body.score.split("_");
+    var sum = 0;
+    for(var i = 0; i <arra[0].length; ++i){
+        sum += +arra[0].charAt(i);
+    }
+    if(sum == arra[1]){
+        req.body.score = sum;
+    }
+    else{
+        res.json(CreateError("Invalid score "+t+" "+arra[0]+" "+sum+" "+arra[1]));
+        return;
+    }
+
+    db.run("INSERT INTO scores VALUES($score, $user, $map, $duration)", {
         $score: req.body.score,
         $user: req.body.user,
-        $map: req.body.map
+        $map: req.body.map,
+        $duration: req.body.duration
     }, function(err){
         "use strict";
         if(err){
@@ -53,7 +68,7 @@ router.route('/scores').post(function (req, res) {
 });
 
 router.route('/scores/:map').get(function (req, res) {
-    db.all("SELECT s.score, u.name FROM scores as s, users as u WHERE s.user_id = u.rowid and s.map=$map ORDER BY score DESC limit 50", {$map: req.params.map},
+    db.all("SELECT s.score, u.name, s.duration FROM scores as s, users as u WHERE s.user_id = u.rowid and s.map=$map ORDER BY score DESC limit 50", {$map: req.params.map},
         function (err, rows) {
             if(err){
                 res.json(CreateError("can't read scores ...", err));

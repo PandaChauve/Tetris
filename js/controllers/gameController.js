@@ -78,12 +78,11 @@ angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$htt
                     achievements.check(userStats.getCurrentGame(), $scope.gameName);
                 }
                 if(userAccount.isRegistered() && !campaign){
-                    api.addScore(userAccount.id, userStats.getCurrentGame().score, $scope.gameName).success(function(e) {
+                    api.addScore(userAccount.id, userStats.getCurrentGame().score, $scope.gameName, userStats.getCurrentGame().time).success(function(e) {
                         console.log(e + e.message);
-                    }).
-                        error(function(e){
+                    }).error(function(e){
                             console.log(e + e.message);
-                        });
+                    });
                 }
                 $scope.openModal();
             }
