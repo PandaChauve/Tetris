@@ -77,7 +77,7 @@ angular.module('angularApp.factories')
                 this.started = false;
                 this.tetris = [];
                 this.visual = [];
-                this.tobefixed = [2, 2];
+                this.tobefixed = [1, 1];
                 this.startTime = null;
                 this.pause = false;
                 this.scoreHandler = new Score();
@@ -157,13 +157,13 @@ angular.module('angularApp.factories')
             Game.prototype.splitScreenQuickFix = function () {
                 //FIXME this function is a quickfix for duel
                 if (this.tetris.length === 2) {
-                    while (this.tobefixed[0] < this.tetris[1].getDestroyed() / 3) {
-                        this.tobefixed[0] += 1;
+                    while (this.tobefixed[0] < this.tetris[1].getDestroyed()/3 +this.tetris[1].getScore() / 10) {
+                        this.tobefixed[0] += 2;
                         this.tetris[0].randomFall();
                     }
 
-                    while (this.tobefixed[1] < this.tetris[0].getDestroyed() / 3) {
-                        this.tobefixed[1] += 1;
+                    while (this.tobefixed[1] < this.tetris[0].getDestroyed() / 3 +this.tetris[0].getScore() / 10) {
+                        this.tobefixed[1] += 2;
                         this.tetris[1].randomFall();
                     }
                 }
