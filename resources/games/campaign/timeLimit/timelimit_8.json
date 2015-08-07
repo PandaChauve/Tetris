@@ -10,9 +10,10 @@
     }
   ],
   "victory": {
-    "score": 30,
+    "score": 100,
     "time": 30
   },
+  "tooltip": "Use enter to get more blocks if required !",
   "require": "campaign/timeLimit/timelimit_7",
   "next": "campaign/timeLimit/timelimit_9"
 }
