@@ -244,7 +244,7 @@ angular.module('angularApp.factories')
                 this.scope.$broadcast('newTick', this.last);
                 if (ret) {
                     for (var i = 0; i < this.tetris.length; i += 1) {
-                        this.visual[i].renderTetris(this.tetris[i], this.scoreHandler.scoreList[i]);
+                        this.visual[i].renderTetris(this.tetris[i], this.scoreHandler.scoreList[i], stateChecker.getDangerLevel());
                     }
                     this.splitScreenQuickFix();
 					this.statCounter.end();

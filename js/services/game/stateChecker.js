@@ -14,6 +14,7 @@ angular.module('angularApp.factories')
             this.defeatComponents.push(new PillarSizeChecker()); //after make
             this.lastSuccessCheck = false;
             this.lastDefeatCheck = false;
+            this.lastDangerLevel = 0;
         };
 
         StateChecker.prototype.defeat = function () {
@@ -23,19 +24,26 @@ angular.module('angularApp.factories')
         StateChecker.prototype.victory = function () {
             return this.lastSuccessCheck;
         };
+        StateChecker.prototype.getDangerLevel = function () {
+            return this.lastDangerLevel;
+        };
 
         StateChecker.prototype.check = function (tetris) {
 
             this.lastSuccessCheck = this.succesComponents.length !== 0; // && start at true (except if you can't win)
             this.lastDefeatCheck = false;                         // ||
 
+            this.lastDangerLevel = 0;
             for (var i = 0; i < this.succesComponents.length; i += 1) {
                 this.lastSuccessCheck = this.succesComponents[i].check(tetris) && this.lastSuccessCheck; //make sure we always call check for memory based components
             }
 
             for (i = 0; i < this.defeatComponents.length; i += 1) {
                 this.lastDefeatCheck = this.defeatComponents[i].check(tetris) || this.lastDefeatCheck; //make sure we always call check for memory based components
+                this.lastDangerLevel = Math.max(this.lastDangerLevel, this.defeatComponents[i].getDangerLevel() );
+
             }
+
             return;
         };
 
@@ -65,10 +73,22 @@ angular.module('angularApp.factories')
         };
 
         function PillarSizeChecker() {
+            this.level = 0;
         }
 
         PillarSizeChecker.prototype.check = function (tetris) {
-            return tetris.getMaxFixed() >= gameConstants.lostThreshold;
+            if(tetris.getMaxFixed() >= gameConstants.lostThreshold)
+                this.level+=1;
+            else
+                this.level -= (gameConstants.lostThreshold-tetris.getMaxFixed())/TIC_PER_SEC;
+            if(this.level < 0 )
+                this.level = 0;
+
+            return this.level >= TIC_PER_SEC*3;
+        };
+
+        PillarSizeChecker.prototype.getDangerLevel = function () {
+            return this.level/(TIC_PER_SEC*3)*10;
         };
 
 
@@ -81,12 +101,20 @@ angular.module('angularApp.factories')
         };
 
 
+        ScoreChecker.prototype.getDangerLevel = function () {
+            return 0;
+        };
+
         function BlockChecker(val) {
             this.val = val;
         }
 
         BlockChecker.prototype.check = function (tetris) {
             return tetris.grid.blockCount() <= this.val;
+        };
+
+        BlockChecker.prototype.getDangerLevel = function () {
+            return 0;
         };
 
         function ColorDestroyChecker(val) { //FIXME always 1 for destroy, 3 for keep
@@ -96,12 +124,23 @@ angular.module('angularApp.factories')
         ColorDestroyChecker.prototype.check = function (tetris) {
             return tetris.grid.contains(1) <= this.val;
         };
+
+        ColorDestroyChecker.prototype.getDangerLevel = function () {
+            return 0;
+        };
+
         function ColorKeepChecker(val) { //FIXME always 1 for destroy, 3 for keep
             this.val = val;
         }
         ColorKeepChecker.prototype.check = function (tetris) {
             return tetris.grid.contains(3) < this.val;
         };
+
+        ColorKeepChecker.prototype.getDangerLevel = function () {
+            return 0;
+        };
+
+
         function SwapChecker(val) {
             this.val = val;
         }
@@ -110,12 +149,24 @@ angular.module('angularApp.factories')
             return tetris.getSwaps() > this.val;
         };
 
+        SwapChecker.prototype.getDangerLevel = function () {
+            return 0;
+        };
+
         function TimeChecker(val) {
             this.val = val;
+            this.danger = 0;
         }
 
         TimeChecker.prototype.check = function (tetris) {
+            this.danger = this.val - tetris.tics / TIC_PER_SEC;
             return tetris.tics / TIC_PER_SEC > this.val;
+        };
+
+        TimeChecker.prototype.getDangerLevel = function () {
+            if(this.danger < 10)
+                return 10- this.danger;
+            return 0;
         };
 
         StateChecker.prototype.createRuleSet = function(gconfig){

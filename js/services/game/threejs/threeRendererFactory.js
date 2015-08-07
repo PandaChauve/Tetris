@@ -191,6 +191,7 @@ angular.module('angularApp.factories')
         };
 
         ThreeRenderer.prototype.freezeGame = function () {
+            this.renderer.setClearColor( new THREE.Color(0, 0, 0 ), 1 );
             for (var i = 0; i < this.cursor.length; i += 1) {
                 this.scene.remove(this.cursor[i]);
             }
@@ -202,7 +203,9 @@ angular.module('angularApp.factories')
             this.render();
         };
 
-        ThreeRenderer.prototype.renderTetris = function (tetris, points) {
+        ThreeRenderer.prototype.renderTetris = function (tetris, points, dangerLevel) {
+            this.renderer.setClearColor( new THREE.Color( dangerLevel/50, 0, 0 ), 1 );
+            dangerLevel
             this.offset = tetris.groundPos;
             var block;
             for (var i = 0; i < gameConstants.columnCount; i += 1) {
