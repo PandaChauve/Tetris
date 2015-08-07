@@ -67,7 +67,7 @@ angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$htt
         $scope.endCallBack = function (finishedGame) {
             gameFinished = true;
             if(finishedGame.tetris.length === 1 ){
-                if(stateChecker.victory()){
+                if(stateChecker.victory(0)){
                     storage.set(storage.MKeys.UserMap+$scope.gameName, true, false);
                 }
                 userStats.getCurrentGame().setTime(finishedGame.last.tics); //FIXME accessor
@@ -111,7 +111,7 @@ angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$htt
             });
 
             modalInstance.result.then(function () {
-                if (stateChecker.victory() && $scope.config.gameConfig.next) {
+                if (stateChecker.victory(0) && $scope.config.gameConfig.next) {
                     if($scope.config.gameConfig.next[0] === '#'){
                         $window.location.href=($scope.config.gameConfig.next);
                     }

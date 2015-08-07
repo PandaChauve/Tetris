@@ -4,7 +4,7 @@ angular.module('angularApp.controllers')
             "use strict";
             $scope.isCampaign = gameName.indexOf("campaign") > -1;
             audio.play(audio.ESounds.end);
-            $scope.won = stateChecker.victory();
+            $scope.won = stateChecker.victory(0);
             $scope.published = false;
 
             $scope.nextGame = function () {
