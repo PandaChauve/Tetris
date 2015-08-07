@@ -180,14 +180,16 @@ angular.module('angularApp.factories')
                     }
                 }
                 this.checkers.push({check:new StateChecker(), used: true});
-                this.checkers[i].check.reset(this.checkers.length-1);
+                this.checkers[this.checkers.length-1].check.reset(gconfig);
                 return this.checkers.length-1
             },
             free:function(id){this.checkers[id].used = false;},
             defeat: function(id){return this.checkers[id].check.defeat()},
             victory: function(id){return this.checkers[id].check.victory()},
             getDangerLevel: function(id){return this.checkers[id].check.getDangerLevel()},
-            check: function(id, tetris){return this.checkers[id].check.check(tetris)},
+            check: function(id, tetris){
+                return this.checkers[id].check.check(tetris)
+            },
             createRuleSet : function(gconfig) {
                 var ret = [];
                 if (!gconfig) {
