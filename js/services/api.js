@@ -6,7 +6,7 @@ angular.module('angularApp.factories')
         //root = "http://localhost:1337/wwylApi/";
         function Api() {}
         Api.prototype.addScore = function(userId, score, map, tics){
-            var zfaCryptedScore = score+"_";
+            var zfaCryptedScore = (score*17)+"_";//this crypt is stupid but since the code is public... just want the kiddies to lose 5 min
             var sum = 0;
             for(var i = 0; i < zfaCryptedScore.length -1; i++)
             {

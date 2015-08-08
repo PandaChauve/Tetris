@@ -34,7 +34,7 @@ router.route('/scores').post(function (req, res) {
         sum += +arra[0].charAt(i);
     }
     if(sum == arra[1]){
-        req.body.score = sum;
+        req.body.score = arra[0]/17; //this crypt is stupid but since the code is public... just want the kiddies to lose 5 min
     }
     else{
         res.json(CreateError("Invalid score "+t+" "+arra[0]+" "+sum+" "+arra[1]));

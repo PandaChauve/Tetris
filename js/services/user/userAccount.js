@@ -135,7 +135,8 @@ angular.module('angularApp.factories')
                     localStorage.setItem("dynamic_css_content", data);
                     document.getElementById("switchableTheme").innerHTML = data;
                     var element = document.getElementById("switchableThemeCss");
-                    element.parentNode.removeChild(element);
+                    if(element) //may already be out
+                        element.parentNode.removeChild(element);
                 }).error(function(e){console.log("can't load theme "+ e);});
             }
         };
