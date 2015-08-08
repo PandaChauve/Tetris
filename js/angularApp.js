@@ -52,7 +52,7 @@ angularApp.config(['$routeProvider', '$locationProvider',
                         }]
                     }
                 }).
-                when('/achievements/:userid', {
+                when('/achievements/:userName', {
                     templateUrl: 'resources/templates/user/achievements.html',
                     controller: 'AchievementsCtrl',
                     resolve: {
@@ -132,7 +132,7 @@ angularApp.config(['$routeProvider', '$locationProvider',
                         }]
                     }
                 }).
-                when('/stats/:userid/', {
+                when('/stats/:userName/', {
                     templateUrl: 'resources/templates/user/stats.html',
                     controller: 'StatCtrl',
                     resolve: {

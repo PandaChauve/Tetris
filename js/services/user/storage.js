@@ -10,7 +10,11 @@ angular.module('angularApp.factories')
             this.hash = null;
             this.realStorage;
         }
-
+        UserStorage.prototype.createTemp  = function(json){
+            var ret = new UserStorage();
+            ret.storage = JSON.parse(json);
+            return ret;
+        };
         //debug
         UserStorage.prototype.impersonate = function(json){
             this.realStorage = this.storage;

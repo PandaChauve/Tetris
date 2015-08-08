@@ -1,22 +1,26 @@
 angular.module('angularApp.controllers')
-    .controller('AchievementsCtrl', ['$scope', '$routeParams', 'api', 'achievements', 'storage', 'userAccount', function ($scope, $routeParams, api, achievements, storage, userAccount) {
+    .controller('AchievementsCtrl', ['$window','$scope', '$routeParams', 'api', 'achievements', 'storage', 'userAccount', function ($window, $scope, $routeParams, api, achievements, storage, userAccount) {
     "use strict";
-        if($routeParams.userid && userAccount.id == 1) //admin only
+        $scope.redirect = function(){
+            $window.location.href="#!/stats/"+$scope.userName;
+        };
+        var store = storage;
+        if($routeParams.userName)
         {
-            api.loadExternalUser($routeParams.userid).success(function(data){
-                console.log("loading data from : "+ data.name);
-                storage.impersonate(data.data);
-                try{
+            api.loadExternalUser($routeParams.userName).success(function(data){
+                if(data.success){
+                    store = store.createTemp(data.data);
+                    $scope.userName = data.name;
                     load();
                 }
-                catch(e){
-                    console.log(e);
+                else{
+                    console.log(data.message);
                 }
-                storage.restore();
-            });
+            }).error(function(e){console.log("Failed to load data for user "+$routeParams.userid+" "+e);});
         }
         else{
             load();
+            $scope.userName = userAccount.username;
         }
         function load() {
             var successCount = 0;
@@ -25,10 +29,10 @@ angular.module('angularApp.controllers')
                 $scope.achievementsGridData.push({
                     Picture: "./resources/imgs/achievements/" + achievements.List.getName(achievements.List.Ordered[i]) + ".png",
                     Name: achievements.List.getName(achievements.List.Ordered[i]),
-                    Success: achievements.isWon(achievements.List.Ordered[i]),
+                    Success: achievements.isWon(achievements.List.Ordered[i], store),
                     Description: achievements.List.getDescription(achievements.List.Ordered[i])
                 });
-                if (achievements.isWon(achievements.List.Ordered[i])) {
+                if (achievements.isWon(achievements.List.Ordered[i], store)) {
                     successCount += 1;
                 }
             }

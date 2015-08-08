@@ -7,8 +7,8 @@ angular.module('angularApp.factories')
         function achievementsFactory($rootScope, storage, TIC_PER_SEC, SEC_PER_MIN, userStats, notify) {
             'use strict';
 
-            function getContainer(){
-                var r = storage.get(storage.Keys.Achievements) || [];
+            function getContainer(store){
+                var r = store.get(storage.Keys.Achievements) || [];
                 for (var i = r.length; i < AchievementsState.List.enumSize; i += 1) {
                     r[i] = false;
                 }
@@ -19,8 +19,11 @@ angular.module('angularApp.factories')
             }
 
 
-            AchievementsState.prototype.isWon = function (key) {
-                return getContainer()[key];
+            AchievementsState.prototype.isWon = function (key, store) {
+                if(store === undefined){
+                    store = storage;
+                }
+                return getContainer(store)[key];
             };
 
             AchievementsState.prototype.check = function (game, gameName) {

@@ -24,16 +24,23 @@ angular.module('angularApp.factories')
             storage.flush();
         };
 
-        UserStats.prototype.getBestGameStats = function (map) {
-            var raw = storage.get(storage.MKeys.BestGameStats+map);
+        UserStats.prototype.getBestGameStats = function (map, store) {
+            if(store === undefined){
+                store = storage;
+            }
+            var raw = store.get(storage.MKeys.BestGameStats+map);
             if (raw) {
                 return gameStatsFactory.newGameStatsFrom(raw);
             }
             return gameStatsFactory.newGameStats();
         };
 
-        UserStats.prototype.getTotalGameStats = function (map) {
-            var raw = storage.get(storage.MKeys.TotalGameStats+map);
+        UserStats.prototype.getTotalGameStats = function (map, store) {
+            if(store === undefined){
+                store = storage;
+            }
+
+            var raw = store.get(storage.MKeys.TotalGameStats+map);
             if (raw) {
                 return gameStatsFactory.newGameStatsFrom(raw);
             }

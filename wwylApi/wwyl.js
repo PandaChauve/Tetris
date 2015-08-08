@@ -220,9 +220,9 @@ router.route('/user/reset/:username').get(function (req, res) {
     });
 
 });
-router.route('/users/:userid').get(function (req, res) {
-    db.get("SELECT * from users where user_id=$userId", {
-        $userId: req.params.userid
+router.route('/users/:userName').get(function (req, res) {
+    db.get("SELECT * from users where name=$userId", {
+        $userId: req.params.userName
     }, function (err, row) {
         if (err || !row) {
             res.json(CreateError("Invalid user", err));
@@ -231,8 +231,8 @@ router.route('/users/:userid').get(function (req, res) {
             res.json({
                 id: row.user_id,
                 name: row.name,
-                email: "INVALID CREDENTIALS",
-                hash: "INVALID CREDENTIALS",
+                email: "Not available",
+                hash: "Not available",
                 data: row.data,
                 success: true
             });

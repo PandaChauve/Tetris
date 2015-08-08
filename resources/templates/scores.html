@@ -25,7 +25,7 @@
             <tbody>
             <tr ng-repeat="line in scoreGridData" ng-class="{info:isUser(line.name) && $index!=0, success:line.position==1}">
                 <td>{{line.position}}</td>
-                <td>{{line.name}}</td>
+                <td><a href="#!/stats/{{line.name}}" style="text-decoration: none">{{line.name}}</a></td>
                 <td>{{line.score}}</td>
                 <td>{{line.duration | ticToTime}}</td>
             </tr>
@@ -38,7 +38,7 @@
 
             <tr ng-repeat="line in userScores" class="info">
                 <td>{{line.position}}</td>
-                <td>{{line.name}}</td>
+                <td><a href="#!/stats/{{line.name}}" style="text-decoration: none">{{line.name}}</a></td>
                 <td>{{line.score}}</td>
                 <td>{{line.duration | ticToTime}}</td>
             </tr>

@@ -1,23 +1,28 @@
 angular.module('angularApp.controllers')
-    .controller('StatCtrl', ['$scope','$routeParams', 'userStats','gameStatsFactory', 'storage', 'api', 'userAccount', function ($scope, $routeParams, userStats, gameStatsFactory, storage, api, userAccount) {
+    .controller('StatCtrl', ['$window', '$scope','$routeParams', 'userStats','gameStatsFactory', 'storage', 'api', 'userAccount', function ($window, $scope, $routeParams, userStats, gameStatsFactory, storage, api, userAccount) {
     "use strict";
-        if($routeParams.userid && userAccount.id == 1) //admin only
+        $scope.redirect = function(){
+            $window.location.href="#!/achievements/"+$scope.userName;
+        };
+        var store = storage;
+        if($routeParams.userName)
         {
-            api.loadExternalUser($routeParams.userid).success(function(data){
-                console.log("loading data from : "+ data.name);
-                storage.impersonate(data.data);
-                try{
+            api.loadExternalUser($routeParams.userName).success(function(data){
+                if(data.success){
+                    store = store.createTemp(data.data);
+                    $scope.userName = data.name;
                     load();
                 }
-                catch(e){
-                    console.log(e);
+                else{
+                    console.log(data.message);
                 }
-                storage.restore();
-            });
+            }).error(function(e){console.log("Failed to load data for user "+$routeParams.userid+" "+e);});
         }
         else{
             load();
+            $scope.userName = userAccount.username;
         }
+
         function load(){
             $scope.isPositive = function (i) {
                 return i > 0;
@@ -29,8 +34,8 @@ angular.module('angularApp.controllers')
                 $scope.data.active = name;
             };
             var CompleteData = function CompleteData(data) {
-                data.best = userStats.getBestGameStats(data.link);
-                data.sum = userStats.getTotalGameStats(data.link);
+                data.best = userStats.getBestGameStats(data.link, store);
+                data.sum = userStats.getTotalGameStats(data.link, store);
                 return data;
             };
             var SumData = function SumData() {

@@ -7,7 +7,7 @@
                 <form novalidate class="simple-form" name="updateForm">
                     <div class="form-group"
                          ng-class="{'has-error': updateForm.$submitted && updateForm.name.$invalid, 'has-success': updateForm.$submitted && !updateForm.name.$invalid}">
-                        <label for="login">Username</label>
+                        <label for="userName">Username</label>
                         <input type="text" class="form-control" id="userName" name="userName" placeholder="Username"
                                ng-model="user.name" ng-pattern="/^[a-zA-Z0-9]*$/" ng-minlength="3" required/>
 

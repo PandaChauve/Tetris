@@ -44,8 +44,8 @@ angular.module('angularApp.factories')
         Api.prototype.loadUserId = function(userId, hash){
             return $http.get(root+'users/'+userId+'/'+hash);
         };
-        Api.prototype.loadExternalUser = function(userId){
-            return $http.get(root+'users/'+userId);
+        Api.prototype.loadExternalUser = function(userName){
+            return $http.get(root+'users/'+userName);
         };
         return new Api();
     }]);
