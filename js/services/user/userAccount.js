@@ -126,8 +126,8 @@ angular.module('angularApp.factories')
             return this.username !== null;
         };
         User.prototype.loadTheme = function () {
-            var t = storage.get(storage.Keys.WebTheme) || "cyborg";
-            var s = localStorage.getItem("dynamic_css_name");
+            var t = storage.get(storage.Keys.WebTheme).toLowerCase() || "cyborg";
+            var s = localStorage.getItem("dynamic_css_name").toLowerCase();
             if (s != t) { //already good don't reload
                 api.getTheme(t).success(function(data){
                     localStorage.setItem("dynamic_css_name", t);
