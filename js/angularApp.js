@@ -229,7 +229,7 @@ angularApp.config(['$routeProvider', '$locationProvider',
 angularApp.run(['notify', function (notify) {
     "use strict";
     notify.config({
-        templateUrl: "templates/notification.html",
+        templateUrl: "resources/templates/notification.html",
         duration: 5000
     });
 }]);

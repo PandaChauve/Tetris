@@ -8,6 +8,9 @@ angular.module('angularApp.factories')
             'use strict';
 
             function getContainer(store){
+                if(store === undefined){
+                    store = storage;
+                }
                 var r = store.get(storage.Keys.Achievements) || [];
                 for (var i = r.length; i < AchievementsState.List.enumSize; i += 1) {
                     r[i] = false;
@@ -20,9 +23,6 @@ angular.module('angularApp.factories')
 
 
             AchievementsState.prototype.isWon = function (key, store) {
-                if(store === undefined){
-                    store = storage;
-                }
                 return getContainer(store)[key];
             };
 
@@ -146,10 +146,10 @@ angular.module('angularApp.factories')
                         }
                         break;
                     case AchievementsState.List.Destroyer :
-                            container[key] = userStats.getTotalGameStats(gameName).blockDestroyed >= 10000;                        
+                            container[key] = userStats.getTotalGameStats(gameName).blockDestroyed >= 30000;
                         break;
                     case AchievementsState.List.Restless :
-                            container[key] = userStats.getTotalGameStats(gameName).swapCount >= 100000;                        
+                            container[key] = userStats.getTotalGameStats(gameName).swapCount >= 20000;
                         break;
                     case AchievementsState.List.Veteran :
                             container[key] = userStats.getTotalGameStats(gameName).gameCount > 99;                        
@@ -293,9 +293,9 @@ angular.module('angularApp.factories')
                     case AchievementsState.List.Sherlock :
                         return "Finish the challenge campaign";
                     case AchievementsState.List.Destroyer :
-                        return "Destroy 10000 blocks in any game mode";
+                        return "Destroy 30000 blocks in any game mode";
                     case AchievementsState.List.Restless :
-                        return "Swap 100000 pairs of blocks in any game mode";
+                        return "Swap 20000 pairs of blocks in any game mode";
                     case AchievementsState.List.Veteran :
                         return "100 games in any game mode";
                 }

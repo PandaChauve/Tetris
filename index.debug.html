@@ -60,7 +60,7 @@
                     </ul>
                 </li>
                 <li><a ng-class="{ active: isActive('/rules')}" href="#!/rules">Help</a></li>
-                <li><a ng-class="{ active: isActive('/scores')}" href="#!/scores">Rankings</a></li>
+                <li><a ng-class="{ active: isActive('/scores')}" href="#!/scores" ng-if="registered" >Rankings</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right" >
                 <li><a href="#!/machine/config" ng-class="{ active: isActive('/machine/config')}" >Configuration</a></li>
