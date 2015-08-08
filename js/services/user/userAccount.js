@@ -128,6 +128,7 @@ angular.module('angularApp.factories')
         User.prototype.loadTheme = function () {
             var t = storage.get(storage.Keys.WebTheme) || "cyborg";
             t = t.toLowerCase();
+            var s = localStorage.getItem("dynamic_css_name");
             if (s != t) { //already good don't reload
                 api.getTheme(t).success(function(data){
                     localStorage.setItem("dynamic_css_name", t);
