@@ -34,7 +34,7 @@ angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$htt
             return function () {
                 $scope.pause.active = true;
                 if (!game.pause) {
-                    game.togglePause();
+                    $scope.pause.active = game.togglePause();
                 }
                 $scope.$apply();
             };
@@ -93,7 +93,7 @@ angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$htt
 
             $scope.pause.active = false;
             if (game.pause) {
-                game.togglePause();
+                $scope.pause.active =game.togglePause();
             }
             game.startNewGame();
         };
@@ -128,7 +128,7 @@ angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$htt
         };
 
         $scope.openCampaignModal = function (json) {
-            game.togglePause();
+            $scope.pause.active = game.togglePause();
             var mod = $modal.open({
                 animation: true,
                 templateUrl: 'resources/templates/objectivesModal.html',
@@ -144,13 +144,15 @@ angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$htt
                 }
             });
             mod.result.then(function () {
-                game.togglePause();
+                $scope.pause.active = game.togglePause();
             }, function () {
-                game.togglePause();
+                $scope.pause.active = game.togglePause();
             });
         };
 
         $scope.$on("$destroy", function() {
             game.stopGame();
+
+            angular.element($window).unbind('blur');
         });
     }]);

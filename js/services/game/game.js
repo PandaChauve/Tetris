@@ -37,7 +37,7 @@ angular.module('angularApp.factories')
 				else{
 					return {
 						begin: function(){},
-						end: function(){},
+						end: function(){}
 					}
 				}
 			}
@@ -45,17 +45,9 @@ angular.module('angularApp.factories')
             function Game() {
                 this.last = {swaps:0, score:0, actions: 0, combo: 1, tics: 0};
                 this.availableGrids = [];
-                this.started = false;
                 this.gridCount = 0;
                 this.reset();
-                this.scoreHandler = new Score();
-				this.statCounter = createStat();
-				this.progress = 0;
-                this.tetris = [];
-                this.checkerId = [];
-                this.startTime = null;
-				this.timeCounter = 0;
-				
+                this.statCounter = createStat();
             }
 
             Game.prototype.setConfiguration = function (config, grid, cb, scope) {
@@ -63,6 +55,7 @@ angular.module('angularApp.factories')
                 this.grid = grid;
                 this.scope = scope;
                 this.gridCount = this.config.tetris.length;
+                this.checkerId = [];
                 for(var i = 0; i < this.gridCount; ++i){
                     this.checkerId.push(stateChecker.create(config.victory));
                 }
@@ -73,11 +66,12 @@ angular.module('angularApp.factories')
                 else {
                     this.callback = cb;
                 }
-				this.progress = 0;
                 this.tryToStart();
             };
 
             Game.prototype.reset = function () {
+                window.cancelAnimationFrame(this.id);
+                this.id = -1;
                 this.started = false;
                 this.tetris = [];
                 this.visual = [];
