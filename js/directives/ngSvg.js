@@ -11,4 +11,10 @@ angular.module('angularApp.directives')
                 elem.attr('cy', width);
             });
         };
+    }).directive('ngTransform', function() {
+        return function(scope, elem, attrs) {
+            attrs.$observe('ngTransform', function(width) {
+                elem.attr('transform', width);
+            });
+        };
     });

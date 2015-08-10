@@ -16,8 +16,10 @@ angular.module('angularApp.controllers')
         updateScope();
         function updateScope(){
             $scope.maps = [];
+            $scope.title = "";
             switch ($scope.campaign) {
                 case 'challenges':
+                    $scope.title = "Challenges";
                     $scope.maps.push({
                         name: CryptoJS.MD5('campaign/puzzle/puzzle_1'),
                         active: true
@@ -30,6 +32,7 @@ angular.module('angularApp.controllers')
                     }
                     break;
                 case 'timelimit':
+                    $scope.title = "Time Limit";
                     $scope.maps.push({
                         name: CryptoJS.MD5('campaign/timeLimit/timelimit_1'),
                         active: true
@@ -42,6 +45,7 @@ angular.module('angularApp.controllers')
                     }
                     break;
                 case 'tetris':
+                    $scope.title = "Tetris Attack - "+count;
                     i = count; //str
                     j = 1;
                     $scope.maps.push({
@@ -57,6 +61,7 @@ angular.module('angularApp.controllers')
                     }
                     break;
                 default:
+                    $scope.title = "Tutorial";
                     $scope.maps.push({
                         name: CryptoJS.MD5('campaign/arcade/arcade_1'),
                         active: true
