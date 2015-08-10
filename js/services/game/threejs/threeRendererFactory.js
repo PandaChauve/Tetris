@@ -156,6 +156,8 @@ angular.module('angularApp.factories')
         };
 
         ThreeRenderer.prototype.linkDom = function (canvas) {
+
+            canvas.scrollIntoView(true);
             this.renderer = this.createRenderer(canvas);
         };
 
