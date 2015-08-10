@@ -157,6 +157,10 @@ canvas {
     cursor: pointer;
 }
 
+.mapTextNode {
+    cursor: pointer;
+}
+
 .mapNodeActive_0 {
     fill: #ff6600;
 }
@@ -199,6 +203,10 @@ canvas {
 
 .mapNodeDisabled {
     fill: #000000;
+}
+
+.mapTextNodeDisabled {
+    cursor: default;
 }
 
 .campaignButton {

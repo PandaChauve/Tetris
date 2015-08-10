@@ -11,6 +11,13 @@ angular.module('angularApp.controllers')
             }
             return "mapNode mapNodeActive_" + i;
         };
+
+        $scope.getTextClass = function (i, active) {
+            if (!active) {
+                return "mapTextNodeDisabled";
+            }
+            return "mapTextNode";
+        };
         $scope.campaign = $routeParams.campaignName || "tutorial";
         var count = $routeParams.subCampaignId || 1;
         updateScope();
