@@ -8,7 +8,7 @@
             <g ng-transform="translate({{($index+1)*32}},{{($index+1)*32}})"  ng-repeat="map in maps" >
                 <circle ng-class="getClass($index, map.active)"   stroke="#ccc" stroke-width="2"
                        r="15" ng-click="map.active && startMap(map.name)"/>
-                <text ng-class="getTextClass($index, map.active)" dx="-4" dy="5" fill="white" ng-click="map.active && startMap(map.name)">{{$index}}</text>
+                <text ng-class="getTextClass($index, map.active)" ng-dx="{{$index == 9 ? '-8': '-4'}}" dy="5" fill="white" ng-click="map.active && startMap(map.name)">{{$index +1}}</text>
             </g>
 
         </svg>

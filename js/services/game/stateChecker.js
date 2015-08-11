@@ -213,7 +213,7 @@ angular.module('angularApp.factories')
                     ret.push({success: true, message: "Get " + gconfig.score + " points"});
                 }
                 if (gconfig.swaps !== undefined) {
-                    ret.push({success: false, message: "Max " + gconfig.swaps + " swaps"});
+                    ret.push({success: false, message: "Max " + gconfig.swaps + (gconfig.swaps > 1 ? " swaps":" swap")});
                 }
                 if (gconfig.time !== undefined) {
                     ret.push({success: false, message: "Max " + gconfig.time + " seconds"});

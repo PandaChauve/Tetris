@@ -5,6 +5,12 @@ angular.module('angularApp.directives')
                 elem.attr('cx', width);
             });
         };
+    }).directive('ngDx', function() {
+        return function(scope, elem, attrs) {
+            attrs.$observe('ngDx', function(width) {
+                elem.attr('dx', width);
+            });
+        };
     }).directive('ngCy', function() {
         return function(scope, elem, attrs) {
             attrs.$observe('ngCy', function(width) {
