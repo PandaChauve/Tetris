@@ -3,11 +3,6 @@
   "rules": "small",
   "tetris": [
     {
-
-      "mappings": [
-        "leftMapping",
-        "rightMapping"
-      ]
     }
   ],
   "message": "Try to stay alive !"

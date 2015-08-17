@@ -58,6 +58,15 @@ angular.module('angularApp.factories')
             else if (mode === "large") {
                 this.columnCount = 10;
             }
+            else if (mode ==="dual" ) {
+                this.gracePeriod = 0;
+                this.groundSpeedPerTic = 0.07*60/TIC_PER_SEC;
+            }
+            else if (mode === "largeDual"){
+                this.gracePeriod = 0;
+                this.groundSpeedPerTic = 0.07*60/TIC_PER_SEC;
+                this.columnCount = 10;
+            }
             else if (mode === "small") {
                 this.columnCount = 4;
             }

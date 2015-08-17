@@ -1,16 +1,18 @@
 {
   "grid": "",
-  "rules": "dual",
+  "rules": "largeDual",
   "tetris": [
     {
       "gameBox": "gameA",
       "scoreBox": "scoreA",
-      "swapBox": "swapsA"
+      "swapBox": "swapsA",
+      "cursors": 2
     },
     {
       "gameBox": "gameB",
       "scoreBox": "scoreB",
-      "swapBox": "swapsB"
+      "swapBox": "swapsB",
+      "cursors": 2
     }
   ],
   "message": "Try to stay alive !"

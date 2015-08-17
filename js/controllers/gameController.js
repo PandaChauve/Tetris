@@ -8,7 +8,7 @@ angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$htt
         $scope.gameName = map_hash[$routeParams.hash] || $routeParams.hash || "classic";
         var campaign = $scope.gameName.indexOf("campaign") > -1;
         $scope.config = {};
-        $scope.config.splitScreen = $scope.gameName === "classicSplitScreen";
+        $scope.config.splitScreen = $scope.gameName === "classicSplitScreen" || $scope.gameName === "2v2" ; //FIXME based on config
         $scope.gameConditions = null;
         $scope.pause = {
             toggle: function () {

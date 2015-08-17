@@ -10,7 +10,6 @@ module.exports = {
     secure: false,
     auth: {
         user: 'contact@whenwillyoulose.com',
-        pass: ''
     },
     ignoreTLS: false,
     tls:{rejectUnauthorized: false}

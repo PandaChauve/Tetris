@@ -1,5 +1,5 @@
 
-angular.module('angularApp.directives').directive("mngTetrisGame", ['$swipe', 'game', 'userInput', function($swipe, game, userInput){
+angular.module('angularApp.directives').directive("mngTetrisGame", ['$swipe', 'game', 'KeyboardInput', function($swipe, game, KeyboardInput){
     "use strict";
     return {
         restrict: "A",
@@ -15,7 +15,7 @@ angular.module('angularApp.directives').directive("mngTetrisGame", ['$swipe', 'g
             var tap = function(){
                 var current = new Date().getTime();
                 if(current - lastClick < 300){
-                    userInput.press(13);
+                    KeyboardInput.press(13);
                 }
                 lastClick = current;
             };

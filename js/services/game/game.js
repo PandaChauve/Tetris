@@ -1,5 +1,5 @@
 angular.module('angularApp.factories')
-    .factory('game', ['userInput', 'userStats', 'stateChecker', 'threeRendererFactory', 'tetrisFactory', 'TIC_PER_SEC','storage', 'systemConfig', 
+    .factory('game', ['userInput', 'userStats', 'stateChecker', 'threeRendererFactory', 'tetrisFactory', 'TIC_PER_SEC','storage', 'systemConfig',
         function gameFactory(userInput, userStats, stateChecker, threeRendererFactory, tetrisFactory, TIC_PER_SEC, storage, systemConfig) {
             "use strict";
             function Score() {
@@ -99,12 +99,26 @@ angular.module('angularApp.factories')
 
                 for (var i = 0; i < this.gridCount; i += 1) {
                     this.tetris.push(tetrisFactory.newTetris(this.grid, this.config.tetris[i].cursors));
-                    for (var j = 0; j < this.config.tetris[i].mappings.length; j += 1) {
-                        this.tetris[i].keyBoardMappings.push(userInput.getMapping(this.config.tetris[i].mappings[j]));
-                    }
                     this.visual.push(threeRendererFactory.newRenderer(this.config.tetris[i].cursors, storage.get(storage.Keys.CubeTheme), this.availableGrids[0].scaleX, this.availableGrids[0].scaleY)); //FIXME [0]
                     this.visual[i].linkDom(findDom(this.availableGrids, i));
                     this.visual[i].renderTetris(this.tetris[i], []); //first render before loop to get everything smooth
+                }
+
+                switch(this.tetris.length) {
+                    case 2 :
+                        this.tetris[0].playersId = [0, 1];
+                        this.tetris[1].playersId = [2, 3];
+                        break;
+                    case 4 :
+                        this.tetris[0].playersId = [0];
+                        this.tetris[1].playersId = [1];
+                        this.tetris[2].playersId = [2];
+                        this.tetris[3].playersId = [3];
+                        break;
+                    case 1 :
+                    default :
+                        this.tetris[0].playersId = [0, 1, 2, 3];
+                        break;
                 }
                 userInput.clear();
 				this.renderingFct = this.render.bind(this);

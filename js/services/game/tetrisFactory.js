@@ -3,7 +3,7 @@
  */
 
 angular.module('angularApp.factories')
-    .factory('tetrisFactory', ['gameConstants', 'userInput', 'gridFactory', 'systemConfig', 'audio', function tetrisFactoryCreator(gameConstants, userInput, gridFactory, systemConfig, audio) {
+    .factory('tetrisFactory', ['gameConstants', 'userInput', 'gridFactory', 'systemConfig', 'audio', 'EGameActions', function tetrisFactoryCreator(gameConstants, userInput, gridFactory, systemConfig, audio, EGameActions) {
         'use strict';
 
         function Tetris(grid, cursors) {
@@ -23,7 +23,7 @@ angular.module('angularApp.factories')
             this.groundSpeed = gameConstants.groundSpeedPerTic;
             this.baseGroundSpeed = gameConstants.groundSpeedPerTic;
             this.groundPos = 0;
-            this.keyBoardMappings = [];
+            this.playersId = [];
             this.tics = 0;
 
         }
@@ -156,34 +156,39 @@ angular.module('angularApp.factories')
         };
 
         Tetris.prototype.handleUserInput = function () {
-
-            for (var i = 0; i < this.keyBoardMappings.length; i += 1) {
+            var actions;
+            for (var i = 0; i < this.playersId.length; i += 1) {
                 var cur = this.cursor[i % this.cursor.length];
                 var x = cur.x;
                 var y = cur.y;
-                if (userInput.pressed(this.keyBoardMappings[i].swap)) {
-                   this.swap(cur.x, cur.y);
-                }
-                if (userInput.pressed(this.keyBoardMappings[i].down)) {
-                    cur.y = Math.max(gameConstants.hiddenRowCount-1, cur.y - 1);
-                }
-                if (userInput.pressed(this.keyBoardMappings[i].up)) {
-                    cur.y = Math.min(gameConstants.hiddenRowCount + gameConstants.displayedRowCount, cur.y + 1);
-                }
-                if (userInput.pressed(this.keyBoardMappings[i].left)) {
-                    cur.x = Math.max(0, cur.x - 1);
-                }
-                if (userInput.pressed(this.keyBoardMappings[i].right)) {
-                    cur.x = Math.min(gameConstants.columnCount - 2, cur.x + 1); //-1 for zero based -1 for dual block switcher
+                actions = userInput.getActions(this.playersId[i]);
+                for(var j = 0; j < actions.length; j += 1){
+                    switch(actions[j]){
+                        case EGameActions.swap:
+                            this.swap(cur.x, cur.y);
+                            break;
+                        case EGameActions.down:
+                                cur.y = Math.max(gameConstants.hiddenRowCount-1, cur.y - 1);
+                            break;
+                        case EGameActions.up:
+                                cur.y = Math.min(gameConstants.hiddenRowCount + gameConstants.displayedRowCount, cur.y + 1);
+                            break;
+                        case EGameActions.left:
+                                cur.x = Math.max(0, cur.x - 1);
+                            break;
+                        case EGameActions.right:
+                            cur.x = Math.min(gameConstants.columnCount - 2, cur.x + 1); //-1 for zero based -1 for dual block switcher
+                            break;
+                        case EGameActions.speed:
+                            if(this.groundSpeed != gameConstants.groundUpSpeedPerTic){
+                                this.counters.speed += 1;
+                                this.groundSpeed = gameConstants.groundUpSpeedPerTic;
+                            }
+                            break;
+                    }
                 }
                 if(y != cur.y || cur.x != x){
                     this.counters.move += 1;
-                }
-                if (userInput.pressed(this.keyBoardMappings[i].speed)) {
-                    if(this.groundSpeed != gameConstants.groundUpSpeedPerTic){
-                        this.counters.speed += 1;
-                    }
-                    this.groundSpeed = gameConstants.groundUpSpeedPerTic;
                 }
             }
         };

@@ -3,13 +3,6 @@
   "rules": "sandbox",
   "tetris": [
     {
-
-
-
-      "mappings": [
-        "leftMapping",
-        "rightMapping"
-      ]
     }
   ],
   "message": "Enjoy you work as a combo maker"

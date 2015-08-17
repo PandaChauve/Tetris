@@ -4,8 +4,8 @@
   "tetris": [
     {
       "mappings": [
-        "leftMapping",
-        "rightMapping"
+        0,
+        1
       ]
     }
   ],

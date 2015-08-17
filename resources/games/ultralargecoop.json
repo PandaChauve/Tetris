@@ -3,13 +3,6 @@
   "rules": "large",
   "tetris": [
     {
-
-
-
-      "mappings": [
-        "leftMapping",
-        "rightMapping"
-      ],
       "cursors": 2
     }
   ],

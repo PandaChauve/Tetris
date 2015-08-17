@@ -55,8 +55,9 @@
                     <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" id="menuMP">TwoPlayers
                         <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu" aria-labelledby="menuMP">
-                        <li><a href="#!/game/classicSplitScreen">SplitScreen</a></li>
                         <li><a href="#!/game/ultralargecoop">Coop</a></li>
+                        <li><a href="#!/game/classicSplitScreen">1v1</a></li>
+                        <li><a href="#!/game/2v2">2v2</a></li>
                     </ul>
                 </li>
                 <li><a ng-class="{ active: isActive('/rules')}" href="#!/rules">Help</a></li>
@@ -144,11 +145,13 @@
 <script language="JavaScript" src="js/services/game/gridFactory.js"></script>
 <script language="JavaScript" src="js/services/game/gridEvaluator.js"></script>
 <script language="JavaScript" src="js/services/game/stateChecker.js"></script>
-<script language="JavaScript" src="js/services/game/userInput.js"></script>
 <script language="JavaScript" src="js/services/game/tetrisFactory.js"></script>
 <script language="JavaScript" src="js/services/game/threejs/threeRendererFactory.js"></script>
 <script language="JavaScript" src="js/services/game/threejs/cubeRenderElementFactory.js"></script>
 <script language="JavaScript" src="js/services/game/threejs/scoreRenderElementFactory.js"></script>
+<script language="JavaScript" src="js/services/input/keyboardInput.js"></script>
+<script language="JavaScript" src="js/services/input/gamePadInput.js"></script>
+<script language="JavaScript" src="js/services/input/userInput.js"></script>
 <script language="JavaScript" src="js/services/api.js"></script>
 <script language="JavaScript" src="js/services/helpers.js"></script>
 <script language="JavaScript" src="js/services/constants.js"></script>
