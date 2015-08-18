@@ -13,9 +13,11 @@ angular.module('angularApp.factories')
             switch(userNbr){
                 case 0:
                     KeyboardInput.getActions(KeyboardInput.leftMapping, ret);
+                    gamePadInput.getActions(2, ret);
                     break;
                 case 1:
                     KeyboardInput.getActions(KeyboardInput.rightMapping, ret);
+                    gamePadInput.getActions(3, ret);
                     break;
                 case 2:
                     gamePadInput.getActions(0, ret);

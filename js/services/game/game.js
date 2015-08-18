@@ -106,8 +106,8 @@ angular.module('angularApp.factories')
 
                 switch(this.tetris.length) {
                     case 2 :
-                        this.tetris[0].playersId = [0, 1];
-                        this.tetris[1].playersId = [2, 3];
+                        this.tetris[0].playersId = [0, 2];
+                        this.tetris[1].playersId = [1, 3];
                         break;
                     case 4 :
                         this.tetris[0].playersId = [0];
