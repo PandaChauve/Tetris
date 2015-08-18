@@ -45,6 +45,11 @@ module.exports = function(grunt) {
                 files:{
                     'index.html' : ["index.debug.html"]
                 }
+            },
+            mobile: {
+                files:{
+                    'index.mobile.html' : ["index.debug.html"]
+                }
             }
         },
         clean: ["min"]
