@@ -27,12 +27,15 @@ router.get('/', function (req, res) {
 });
 
 router.route('/scores').post(function (req, res) {
+
     var t = req.body.score;
     var arra = req.body.score.split("_");
     var sum = 0;
     for(var i = 0; i <arra[0].length; ++i){
         sum += +arra[0].charAt(i);
     }
+    console.log("new score " + sum + " "+req.body.score + " "+ req.body.user + " " + req.body.map + " " + req.body.duration);
+
     if(sum == arra[1]){
         req.body.score = arra[0]/17; //this crypt is stupid but since the code is public... just want the kiddies to lose 5 min
     }
