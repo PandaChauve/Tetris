@@ -1,6 +1,6 @@
 var config = require("./mailModuleConfig.js");
 /* mailmoduleconfig content
- assword not on github ^^
+ password not on github ^^
 
  module.exports = {
  host: "whenwillyoulose.com",
