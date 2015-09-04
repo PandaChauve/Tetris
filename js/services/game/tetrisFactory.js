@@ -42,7 +42,7 @@ angular.module('angularApp.factories')
             var ret = 0;
             if(zoom){
                 ret = 45 + (6 - gameConstants.columnCount)*30 + (gameConstants.columnCount-1)*60; //for 4 blocks grid the margin is greater
-                return ret + 30;
+                return ret;
             }
             ret = 10 + (10 - gameConstants.columnCount)*21.5 + (gameConstants.columnCount-1)*43;
             return ret;
