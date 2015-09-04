@@ -28,6 +28,36 @@ angular.module('angularApp.factories')
 
         }
 
+        function computeTouchLeftMargin(zoom){
+            var ret = 0;
+            if(zoom){
+                ret = 45 + (6 - gameConstants.columnCount)*30; //for 4 blocks grid the margin is greater
+                return ret + 30;
+            }
+            ret = 10 + (10 - gameConstants.columnCount)*21.5;
+            return ret + 21.5; //+ touch delta
+        }
+
+        function computeTouchRightMargin(zoom){
+            var ret = 0;
+            if(zoom){
+                ret = 45 + (6 - gameConstants.columnCount)*30 + (gameConstants.columnCount-1)*60; //for 4 blocks grid the margin is greater
+                return ret + 30;
+            }
+            ret = 10 + (10 - gameConstants.columnCount)*21.5 + (gameConstants.columnCount-1)*43;
+            return ret;
+        }
+        Tetris.prototype.touchSwap = function(startX, startY) {
+
+            if(startX > computeTouchLeftMargin(this.zoom)) //click on left side of first block should work,
+                startX -= this.zoom ? 30 : 21.5; //move half a block since we swap from left
+
+            if(startX > computeTouchRightMargin(this.zoom)) //right side of the last block must trigger the previous since we swap from left
+                startX -= this.zoom ? 30 : 21.5; //move half a block since we swap from left
+
+            return this.slide(startX, startY, startX+1, startY);
+        };
+
         Tetris.prototype.slide = function(startX, startY, endX, endY) {
         //FIXME this is related to the rendering cause pixelperbox is not the displayed value :/
             var that = this;
@@ -35,12 +65,12 @@ angular.module('angularApp.factories')
                 if(that.zoom){ //this is for a size 6 grid zoomed
                     startX -= 45; //left margin
                     startX = startX / 60; //about  per block
-                    startX -= (6 - gameConstants.columnCount) / 2;
+                    startX -= (6 - gameConstants.columnCount) / 2; //from 6 to 6/4
                 }
                 else{ //this is for a size 10 grid
                     startX -= 10; //left margin
                     startX = startX / 43; //about 43 per block
-                    startX -= (10 - gameConstants.columnCount) / 2;
+                    startX -= (10 - gameConstants.columnCount) / 2; //from 10 to 10 / 6 / 4
                 }
                 return Math.floor(startX); //math inf float
             }
@@ -66,9 +96,9 @@ angular.module('angularApp.factories')
                 i = i - 1;
             }
             if(i < 0 || j < gameConstants.hiddenRowCount-1 || i >= gameConstants.columnCount -1){
-                return;
+                return false;
             }
-            this.swap(i, j);
+            return this.swap(i, j);
         };
 
         Tetris.prototype.oneTick = function () {

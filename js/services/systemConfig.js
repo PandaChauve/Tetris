@@ -69,6 +69,8 @@ angular.module('angularApp.factories')
                     return false;
                 case this.Keys.fps:
                     return false;
+                case this.Keys.touchAndSlide:
+                    return true;
             }
             throw "what key is that";
         };
@@ -90,6 +92,8 @@ angular.module('angularApp.factories')
                     return true;
                 case this.Keys.fps:
                     return false;
+                case this.Keys.touchAndSlide:
+                    return true;
             }
             throw "what key is that";
         };
@@ -102,7 +106,8 @@ angular.module('angularApp.factories')
             explosions: 4,
             zoom: 5,
             cssScaling: 6,
-            fps : 7
+            fps : 7,
+            touchMode : 8
 
         };
 

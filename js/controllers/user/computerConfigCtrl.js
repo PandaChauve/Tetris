@@ -13,7 +13,8 @@ angular.module('angularApp.controllers')
                 sound: systemConfig.get(systemConfig.Keys.sound),
                 explosion: systemConfig.get(systemConfig.Keys.explosions),
 				fps: systemConfig.get(systemConfig.Keys.fps),
-				zoom : systemConfig.get(systemConfig.Keys.zoom)
+                zoom : systemConfig.get(systemConfig.Keys.zoom),
+                touchAndSlide : systemConfig.get(systemConfig.Keys.touchAndSlide),
             };
 
             $scope.updateCheckBox = function (key, value) {

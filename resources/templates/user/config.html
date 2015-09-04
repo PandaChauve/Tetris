@@ -5,6 +5,17 @@
             <div class="panel-heading">
                 <h3 class="panel-title">Device configuration</h3></div>
             <div class="panel-body row" style="text-align:center">
+
+                <div class="col-md-12">
+                    <h4>Touch mode</h4>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default btn-custom" ng-model="data.touchAndSlide" btn-checkbox btn-checkbox-true="true" btn-checkbox-false="false"
+                                ng-click="updateCheckBox(keys.touchAndSlide, data.touchAndSlide)">
+                            Slide to swap
+                        </button>
+                    </div>
+                </div>
+
                 <div class="col-md-12">
                     <h4>Effects</h4>
 

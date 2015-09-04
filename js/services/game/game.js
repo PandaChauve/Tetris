@@ -272,9 +272,16 @@ angular.module('angularApp.factories')
 
             Game.prototype.slide = function(startX, startY, endX, endY){
                 if(this.tetris.length != 1){
-                    return;
+                    return false;
                 }
-                this.tetris[0].slide(startX, startY, endX, endY);
+                return this.tetris[0].slide(startX, startY, endX, endY);
+            };
+
+            Game.prototype.touchSwap = function(startX, startY){
+                if(this.tetris.length != 1){
+                    return false;
+                }
+                return this.tetris[0].touchSwap(startX, startY);
             };
 
             return new Game();
