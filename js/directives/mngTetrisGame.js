@@ -16,8 +16,8 @@ angular.module('angularApp.directives').directive("mngTetrisGame", ['$swipe', 'g
                 var swapped = false;
                 if(useSingleClick){
                     var bound = element[0].getBoundingClientRect();
-                    endX = coords.pageX - bound.left;
-                    endY = coords.pageY - bound.top;
+                    endX = coords.clientX - bound.left;
+                    endY = coords.clientY - bound.top;
                     swapped = game.touchSwap(endX / scale, 600 - endY / scale); //FIXME 600 is canvas height
                 }
                 if(!swapped){
