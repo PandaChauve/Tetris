@@ -161,10 +161,6 @@ angular.module('angularApp.factories')
             this.renderer = this.createRenderer(canvas);
         };
 
-        ThreeRenderer.prototype.unlinkDom = function () {
-            this.renderer = null;
-        };
-
         ThreeRenderer.prototype.createCursor = function (color) {
             var trackShape = new THREE.Shape();
 
@@ -207,7 +203,7 @@ angular.module('angularApp.factories')
 
         ThreeRenderer.prototype.renderTetris = function (tetris, points, dangerLevel) {
             this.renderer.setClearColor( new THREE.Color( dangerLevel/50, 0, 0 ), 1 );
-            dangerLevel
+
             this.offset = tetris.groundPos;
             var block;
             for (var i = 0; i < gameConstants.columnCount; i += 1) {

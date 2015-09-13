@@ -1,5 +1,6 @@
 angular.module('angularApp.factories')
-    .factory('cubeRenderElementFactory', ['gameConstants', 'blockFactory', 'storage', 'systemConfig',  function cubeRenderElementFactoryCreator(gameConstants, blockFactory, storage, systemConfig) {
+    .factory('cubeRenderElementFactory', ['gameConstants', 'blockFactory', 'storage', 'systemConfig',
+        function cubeRenderElementFactoryCreator(gameConstants, blockFactory, storage, systemConfig) {
         "use strict";
         function CubeRenderer() {
             this.cube = null;
