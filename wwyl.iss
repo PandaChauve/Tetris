@@ -9,7 +9,7 @@
 AppId={{03CDE76E-9A31-47F1-AFED-F811E5FE8A06}
 AppName=When Will You Lose
 AppVersion=1.0.5
-;AppVerName=When Will You Lose 1.0.4
+;AppVerName=When Will You Lose 1.0.5
 AppPublisher=PandaChauve Production
 AppPublisherURL=http://www.whenwillyoulose.com/
 AppSupportURL=http://www.whenwillyoulose.com/
