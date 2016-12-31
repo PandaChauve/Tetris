@@ -170,6 +170,7 @@ canvas {
     -ms-user-select: none;
     user-select: none;
     cursor: pointer;
+    background:black;
 }
 
 .gameDetailsElement h3 {
