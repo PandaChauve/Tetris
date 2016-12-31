@@ -96,9 +96,10 @@ angular.module('angularApp.factories')
             if (!this.cube) {
                 var points = [];
                 for ( var i = 0; i < 50; i ++ ) {
-                    points.push( new THREE.Vector3( Math.sin( i * 0.2 ) * Math.sin( i * 0.1 ) * 5.5 +15, 0, ( i - 5 ) * 0.7 ) );
+                    points.push( new THREE.Vector3( Math.sin( i * 0.2 ) * Math.sin( i * 0.1 ) * 5.5 +15, ( i - 5 ) * 0.7 ) );
                 }
                 this.cube = new THREE.LatheGeometry( points);
+                this.cube.rotateX(Math.PI / 2);
             }
             this.cube.center();
             return this.cube;
@@ -153,59 +154,63 @@ angular.module('angularApp.factories')
 
         LightCubeRenderer.prototype = new CubeRenderer();
         LightCubeRenderer.prototype.updateCubeDisplay = function updateCubeDisplay(block) {
-            var att = block.threeObject.material.attributes;
+            var att = block.threeObject.geometry.attributes.size.array;
             var time = Date.now() * 0.005;
-            for (var i = 0; i < att.size.value.length; i++) {
-                att.size.value[i] = 17 + 17 * Math.sin(0.1 * i + time);
+            for (var i = 0; i < att.length; i++) {
+                att[i] = 17 + 17 * Math.sin(0.1 * i + time);
             }
-            att.size.needsUpdate = true;
+            block.threeObject.geometry.attributes.size.needsUpdate = true;
         };
         LightCubeRenderer.prototype.releaseCube = function(cube){
             this.cache[cube.customColor].push(cube);
         };
+
         LightCubeRenderer.prototype.createCube = function (color) {
-            if(this.cache[color].length > 0){
-                return this.cache[color].pop();
-            }
-            if (!this.cubes[color]) {
-                var attributes = {
-                    size: {type: 'f', value: []},
-                    customColor: {type: 'c', value: []}
-                };
-                var shaderMaterial = new THREE.ShaderMaterial({
-                    uniforms: {
-                        amplitude: {type: "f", value: 1.0},
-                        color: {type: "c", value: new THREE.Color(0xffffff)},
-                        texture: {type: "t", value: THREE.ImageUtils.loadTexture("resources/imgs/spark.png")}
-                    },
-                    attributes: attributes,
-                    vertexShader: document.getElementById('vertexshader').textContent,
-                    fragmentShader: document.getElementById('fragmentshader').textContent,
-                    blending: THREE.AdditiveBlending,
-                    depthTest: false,
-                    transparent: true
-                });
-
-                var geometry = new THREE.Geometry();
-
-                for (var i = 0; i < 300; i++) {
-                    var vertex = new THREE.Vector3();
+            function createShaderGeometry(color){
+                var amount = 300;
+                var positions = new Float32Array( amount * 3 );
+                var colors = new Float32Array( amount * 3 );
+                var sizes = new Float32Array( amount );
+                var vertex = new THREE.Vector3();
+                for ( var i = 0; i < amount; i ++ ) {
                     vertex.x = Math.random() - 0.5;
                     vertex.y = Math.random() - 0.5;
                     vertex.z = Math.random() - 0.5;
                     vertex.multiplyScalar(gameConstants.pixelPerBox * 0.7);
-                    geometry.vertices.push(vertex);
+                    vertex.toArray( positions, i * 3 );
+                    color.toArray( colors, i * 3 );
+                    sizes[ i ] = 17;
                 }
-                this.cubes[color] = new THREE.PointCloud(geometry, shaderMaterial);
-                this.cubes[color].attributes = attributes;
-                var vertices = this.cubes[color].geometry.vertices;
-                var values_size = attributes.size.value;
-                var values_color = attributes.customColor.value;
+                var geometry = new THREE.BufferGeometry();
+                geometry.addAttribute( 'position', new THREE.BufferAttribute( positions, 3 ) );
+                geometry.addAttribute( 'customColor', new THREE.BufferAttribute( colors, 3 ) );
+                geometry.addAttribute( 'size', new THREE.BufferAttribute( sizes, 1 ) );
+                return geometry;
+            }
+            function createShaderMaterial(){
 
-                for (var v = 0; v < vertices.length; v += 1) {
-                    values_size[v] = 17;
-                    values_color[v] = this.getColor(color);
-                }
+                return new THREE.ShaderMaterial( {
+                    uniforms: {
+                        amplitude: { value: 1.0 },
+                        color:     { value: new THREE.Color( 0xffffff ) },
+                        texture:   { value: new THREE.TextureLoader().load( "resources/imgs/spark.png" ) }
+                    },
+                    vertexShader:   document.getElementById( 'vertexshader' ).textContent,
+                    fragmentShader: document.getElementById( 'fragmentshader' ).textContent,
+                    blending:       THREE.AdditiveBlending,
+                    depthTest:      false,
+                    transparent:    true
+                });
+
+            }
+
+            if(this.cache[color].length > 0){
+                return this.cache[color].pop();
+            }
+            if (!this.cubes[color]) {
+                var shaderMaterial = createShaderMaterial();
+                var geometry = createShaderGeometry(this.getColor(color));
+                this.cubes[color] = new THREE.Points(geometry, shaderMaterial);
             }
             var ret = this.cubes[color].clone();
             ret.customObject = true;

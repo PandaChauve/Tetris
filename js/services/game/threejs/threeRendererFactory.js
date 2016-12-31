@@ -164,9 +164,9 @@ angular.module('angularApp.factories')
         ThreeRenderer.prototype.createCursor = function (color) {
             var trackShape = new THREE.Shape();
 
-            trackShape.absarc(72, -13, 10, -Math.PI / 2, 0, true);
+            trackShape.absarc(72, -13, 10, -Math.PI / 2, 0, false);
             trackShape.lineTo(82, 0);
-            trackShape.absarc(72, 13, 10, 0, Math.PI / 2, true);
+            trackShape.absarc(72, 13, 10, 0, Math.PI / 2, false);
             trackShape.lineTo(35, 20);
             trackShape.lineTo(35, 0);
             trackShape.absarc(-2, -13, 10, 3 * Math.PI / 2, Math.PI, true);
@@ -174,7 +174,7 @@ angular.module('angularApp.factories')
             trackShape.absarc(-2, 13, 10, Math.PI, Math.PI / 2, true);
             trackShape.lineTo(35, -20);
 
-            return new THREE.PointCloud(trackShape.createPointsGeometry(), new THREE.PointCloudMaterial({
+            return new THREE.Points(trackShape.createPointsGeometry(), new THREE.PointsMaterial({
                 color: color,
                 size: 4
             }));

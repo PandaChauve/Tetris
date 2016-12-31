@@ -50,6 +50,11 @@ module.exports = function(grunt) {
                 files:{
                     'index.mobile.html' : ["index.debug.html"]
                 }
+            },
+            arcade: {
+                files:{
+                    'index.mobile.html' : ["index.debug.html"]
+                }
             }
         },
         clean: ["min"]

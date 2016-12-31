@@ -1,6 +1,12 @@
 angular.module('angularApp.factories')
     .factory('scoreRenderElementFactory', ['systemConfig', function cubeRenderElementFactoryCreator(systemConfig) {
         "use strict";
+        var loader = new THREE.FontLoader();
+        var font = false;
+        loader.load( 'https://threejs.org/examples/fonts/helvetiker_regular.typeface.json', function(f){
+            font = f;
+        });
+
         function MeshCache(matgen) {
             this.matGen = matgen;
             this.caches = {};
@@ -10,7 +16,7 @@ angular.module('angularApp.factories')
                         size: 30,
                         height: 2,
                         curveSegments: 2,
-                        font: "helvetiker"
+                        font: font
                     });
 
                     return new THREE.Mesh(t, this.matGen.get());
@@ -50,7 +56,7 @@ angular.module('angularApp.factories')
         };
         ScoreElement.prototype.updateVert = function (temp) {
             for (var i = 0; i < temp.length; i += 1) {
-                temp[i].multiplyScalar(1.02);
+                temp[i]*=(1.02);
             }
         };
 
@@ -62,12 +68,12 @@ angular.module('angularApp.factories')
             }
             if (this.particles) {
                 pc *= 0.7 * 12;
-                var att = this.particles.material.attributes.size;
+                var att = this.particles.geometry.attributes.size;
                 this.updateAttributes(att, pc);
 
-                var temp = this.particles.geometry.vertices;
+                var temp = this.particles.geometry.attributes.position.array;
                 this.updateVert(temp);
-                this.particles.geometry.verticesNeedUpdate = true;
+                this.particles.geometry.attributes.position.needsUpdate = true;
                 att.needsUpdate = true;
             }
         };
@@ -106,56 +112,58 @@ angular.module('angularApp.factories')
             var y = 220 + 80 * Math.random();
             var x = -250 + 500 * Math.random();
 
-            var attributes = {
-                size: {type: 'f', value: []},
-                customColor: {type: 'c', value: []}
-            };
             var shaderMaterial = new THREE.ShaderMaterial({
                 uniforms: {
                     amplitude: {type: "f", value: 1.0},
                     color: {type: "c", value: new THREE.Color(0xffffff)},
                     texture: {type: "t", value: this.factory.sparkTexture}
                 },
-                attributes: attributes,
                 vertexShader: document.getElementById('vertexshader').textContent,
                 fragmentShader: document.getElementById('fragmentshader').textContent,
                 blending: THREE.AdditiveBlending,
-                depthTest: true,
+                depthTest: true,//FIXME
                 transparent: true
             });
 
 
-            var geometry = new THREE.Geometry();
+            var count = (100 + value * 30);
+            var geometry = new THREE.BufferGeometry();
+            var c = new THREE.Color(color);
+            var colors = new Float32Array(3*count);
+            var sizes = new Float32Array( count);
+            geometry.addAttribute( 'customColor', new THREE.BufferAttribute( colors, 3 ) );
+            geometry.addAttribute( 'size', new THREE.BufferAttribute( sizes, 1 ) );
+
+            var positions = new Float32Array(count*3 );
+
 
             for (var i = 0; i < 100 + value * 30; i++) {
                 var vertex = new THREE.Vector3();
-                vertex.x = Math.random() * 2 - 1;
-                vertex.y = Math.random() * 2 - 1;
-                if (vertex.x * vertex.x + vertex.y * vertex.y > 1) //the previous loop was not safe
-                    continue;
+                do {
+                    vertex.x = Math.random() * 2 - 1;
+                    vertex.y = Math.random() * 2 - 1;
+                }
+                while(vertex.x * vertex.x + vertex.y * vertex.y > 1);
 
                 vertex.multiplyScalar(70);
                 vertex.z = -50;
-                geometry.vertices.push(vertex);
+                vertex.toArray( positions, i * 3 );
+                c.toArray( colors, i * 3 );
+                sizes[i] = 8;
             }
-            this.particles = new THREE.PointCloud(geometry, shaderMaterial);
+            geometry.addAttribute( 'position', new THREE.BufferAttribute( positions, 3 ) );
+
+            this.particles = new THREE.Points(geometry, shaderMaterial);
 
             this.particles.position.setX(x);
             this.particles.position.setY(y);
 
-            this.particles.attributes = attributes;
-            var values_size = attributes.size.value;
-            var values_color = attributes.customColor.value;
-            var c = new THREE.Color(color);
-            var vertices = this.particles.geometry.vertices;
-            for (var v = 0; v < vertices.length; v += 1) {
-                values_size[v] = 8;
-                values_color[v] = c;
-            }
         };
 
         function factory(){
-            this.sparkTexture = THREE.ImageUtils.loadTexture("resources/imgs/spark.png");
+            var that = this;
+            var loader = new THREE.TextureLoader();
+            loader.load("resources/imgs/spark.png", function(t){that.sparkTexture = t});
             this.matGen = new MaterialGenerator();
             this.txtCache = new MeshCache(this.matGen);
             this.create = function () {
@@ -166,11 +174,6 @@ angular.module('angularApp.factories')
                     this.txtCache.release(obj.mesh, obj.value);
                     obj.mesh = null;
                 }
-            };
-            this.clearCache = function () {
-                this.matGen = new MaterialGenerator();
-                this.txtCache = new MeshCache(this.matGen);
-                this.sparkTexture = THREE.ImageUtils.loadTexture("resources/imgs/spark.png");
             };
         }
 
