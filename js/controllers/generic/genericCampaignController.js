@@ -1,5 +1,5 @@
 angular.module('angularApp.controllers')
-    .controller('CampaignCtrl', ['$scope', '$routeParams', '$window', 'storage', function ($scope, $routeParams, $window, storage) {
+    .controller('GenericCampaignCtrl', ['$scope', '$routeParams', '$window', 'storage', function ($scope, $routeParams, $window, storage) {
         "use strict";
         var i, j;
         $scope.startMap = function (i) {

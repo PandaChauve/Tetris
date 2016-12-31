@@ -4,6 +4,7 @@ if (css) {
     document.getElementById("switchableTheme").innerHTML = css;
     var element = document.getElementById("switchableThemeCss");
     element.parentNode.removeChild(element);
+    var y = "SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS";
 }
 
 angular.module('angularApp.base', ['cgNotify']);
