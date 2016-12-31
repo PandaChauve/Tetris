@@ -1,6 +1,6 @@
 angular.module('angularApp.factories')
-    .factory('game', ['userInput', 'userStats', 'stateChecker', 'threeRendererFactory', 'pixiRendererFactory', 'tetrisFactory', 'TIC_PER_SEC','storage', 'systemConfig',
-        function gameFactory(userInput, userStats, stateChecker, threeRendererFactory, pixiRendererFactory, tetrisFactory, TIC_PER_SEC, storage, systemConfig) {
+    .factory('game', ['userInput', 'userStats', 'stateChecker', 'threeRendererFactory', 'tetrisFactory', 'TIC_PER_SEC','storage', 'systemConfig',
+        function gameFactory(userInput, userStats, stateChecker, threeRendererFactory, tetrisFactory, TIC_PER_SEC, storage, systemConfig) {
             "use strict";
             function Score() {
                 this.scoreList = [[],[],[],[]];
@@ -100,7 +100,6 @@ angular.module('angularApp.factories')
                 for (var i = 0; i < this.gridCount; i += 1) {
                     this.tetris.push(tetrisFactory.newTetris(this.grid, this.config.tetris[i].cursors));
                     this.visual.push(threeRendererFactory.newRenderer(this.config.tetris[i].cursors, storage.get(storage.Keys.CubeTheme), this.availableGrids[0].scaleX, this.availableGrids[0].scaleY)); //FIXME [0]
-                    //this.visual.push(pixiRendererFactory.newRenderer(this.config.tetris[i].cursors, storage.get(storage.Keys.CubeTheme), this.availableGrids[0].scaleX, this.availableGrids[0].scaleY)); //FIXME [0]
 
                     this.visual[i].linkDom(findDom(this.availableGrids, i));
                     this.visual[i].renderTetris(this.tetris[i], []); //first render before loop to get everything smooth

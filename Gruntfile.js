@@ -5,21 +5,21 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
         uglify_parallel: {
             basepackage: {
-                src: ['js/*.js','!js/*angularApp.js','js/*/*.js' ,'js/*/*/*.js' ,'js/*/*/*/*.js', '!js/controllers/arcade/*.js', '!js/controllers/generic/*.js' ],  // source files mask
+                src: ['js/*.js','js/*/*.js' ,'js/*/*/*.js' ,'js/*/*/*/*.js', '!js/controllers/arcade/*.js', '!js/controllers/generic/*.js','!js/*ngularApp.js' ],  // source files mask
                 dest: 'min/',    // destination folder
                 expand: true,    // allow dynamic building
                 flatten: true,   // remove all unnecessary nesting
                 ext: '.min.js'   // replace .js to .min.js
             },
             generic: {
-                src: ['js/controllers/generic/*.js' ],  // source files mask
+                src: ['js/controllers/generic/*.js', 'js/angularApp.js' ],  // source files mask
                 dest: 'min/generic/',    // destination folder
                 expand: true,    // allow dynamic building
                 flatten: true,   // remove all unnecessary nesting
                 ext: '.min.js'   // replace .js to .min.js
             },
             arcade: {
-                src: ['js/controllers/arcade/*.js'],  // source files mask
+                src: ['js/controllers/arcade/*.js', 'js/arcadeAngularApp.js' ],  // source files mask
                 dest: 'min/arcade/',    // destination folder
                 expand: true,    // allow dynamic building
                 flatten: true,   // remove all unnecessary nesting
@@ -43,19 +43,17 @@ module.exports = function(grunt) {
                 dest: 'resources/externals.min.js'
             },
             generic: {
-                src: ['min/angularApp.min.js',
-                    'min/*.min.js',
+                src: ['min/generic/angularApp.min.js',
                     'min/generic/*.min.js',
-                    '!min/arcadeAngularApp.min.js',
+                    'min/*.min.js',
                     '!min/ext*.min.js'
                 ],
-                dest: 'app.min.js'
+                dest: 'app.generic.min.js'
             },
             arcade: {
-                src: ['min/arcadeAngularApp.min.js',
-                    'min/*.min.js',
+                src: ['min/arcade/arcadeAngularApp.min.js',
                     'min/arcade/*.min.js',
-                    '!min/angularApp.min.js',
+                    'min/*.min.js',
                     '!min/ext*.min.js'
                 ],
                 dest: 'app.arcade.min.js'
@@ -66,19 +64,44 @@ module.exports = function(grunt) {
             }
         },
         processhtml: {
-            generic: {
+            arcade: {
+                options:{
+                    strip: true
+                },
                 files:{
-                    'index.html' : ["index.debug.html"]
+                    'index.arcade.html' : ["index.template.html"]
+                }
+            },
+            generic: {
+                options:{
+                    strip: true
+                },
+                files:{
+                    'index.generic.html' : ["index.template.html"]
                 }
             },
             mobile: {
+                options:{
+                    strip: true
+                },
                 files:{
-                    'index.mobile.html' : ["index.debug.html"]
+                    'index.mobile.html' : ["index.template.html"]
                 }
             },
             arcade: {
+                options:{
+                    strip: true
+                },
                 files:{
-                    'index.mobile.html' : ["index.debug.html"]
+                    'index.arcade.html' : ["index.template.html"]
+                }
+            },
+            debug: {
+                options:{
+                    strip: true
+                },
+                files:{
+                    'index.debug.html' : ["index.template.html"]
                 }
             }
         },
