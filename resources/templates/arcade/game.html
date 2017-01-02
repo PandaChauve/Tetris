@@ -1,0 +1,81 @@
+<div class="container" ng-if="!config.splitScreen"  ng-controller="GameStateCtrl">
+
+    <div class="row">
+        <div class="col-md-8 col-sm-12 noPadding leftToMiddle">
+            <div id="game" class="well gameHolder">
+			<div class="gameResizer">
+                <canvas mng-tetris-game="0" >Please upgrade your browser, it needs webgl support. <a href="http://caniuse.com/#feat=webgl">List of compatible browsers.</a></canvas>
+            </div>
+			</div>
+        </div>
+        <div class="col-md-4 col-sm-12">
+            <div class="gameDetails jumbotron hidden-sm hidden-xs">
+                <br />
+                <div class="gameDetailsElement">
+                    <h3>Score</h3>
+                    <span ng-if="state.combo > 1" style="float:left; color: lightgreen; margin-left:30px">{{state.combo}}x </span><span id="score"> {{state.score}} </span>
+                </div>
+                <div class="gameDetailsElement">
+                    <h3>Swaps</h3>
+                    <span id="swaps">{{state.swaps}}</span>
+                </div>
+                <div class="gameDetailsElement">
+                    <h3>APM</h3>
+                    <span id="apm">{{state.apm}}</span>
+                </div>
+                <div class="gameDetailsElement">
+                    <h3>Time</h3>
+                    <span id="time" class="timeBox">{{state.time | ticToTime}}</span>
+                </div>
+                <div class="gameDetailsElement">
+                    <h3>Objectives</h3><br/>
+                    <div id="rules">
+                        <ul>
+                            <li ng-repeat="rule in state.rules" class="defeatCond" ng-class="{successCond: rule.success}">{{rule.message}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container" ng-if="config.splitScreen">
+
+    <div class="row">
+        <div id="game" class="sideGame well col-lg-5 col-md-6">
+			<div class="gameResizer">
+            <canvas mng-tetris-game="0" ></canvas>
+			</div>
+        </div>
+
+        <div class="sideGame well col-lg-5 col-lg-push-2  col-md-6">
+			<div class="gameResizer">
+            <canvas mng-tetris-game="1"></canvas>
+			</div>
+        </div>
+    </div>
+</div>
+
+<script type="x-shader/x-vertex" id="vertexshader">
+			uniform float amplitude;
+			attribute float size;
+			attribute vec3 customColor;
+			varying vec3 vColor;
+			void main() {
+				vColor = customColor;
+				vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
+				gl_PointSize = size * ( 300.0 / -mvPosition.z );
+				gl_Position = projectionMatrix * mvPosition;
+			}
+		</script>
+
+<script type="x-shader/x-fragment" id="fragmentshader">
+			uniform vec3 color;
+			uniform sampler2D texture;
+			varying vec3 vColor;
+			void main() {
+				gl_FragColor = vec4( color * vColor, 1.0 );
+				gl_FragColor = gl_FragColor * texture2D( texture, gl_PointCoord );
+			}
+</script>

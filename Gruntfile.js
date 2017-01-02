@@ -77,7 +77,7 @@ module.exports = function(grunt) {
                     strip: true
                 },
                 files:{
-                    'index.generic.html' : ["index.template.html"]
+                    'index.html' : ["index.template.html"]
                 }
             },
             mobile: {
@@ -95,14 +95,6 @@ module.exports = function(grunt) {
                 files:{
                     'index.arcade.html' : ["index.template.html"]
                 }
-            },
-            debug: {
-                options:{
-                    strip: true
-                },
-                files:{
-                    'index.debug.html' : ["index.template.html"]
-                }
             }
         },
         clean: ["min"]
@@ -113,6 +105,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-processhtml');
     grunt.registerTask('default', ['clean', 'uglify_parallel', 'concat', 'processhtml']);
-    grunt.registerTask('arcadeOnly', ['clean', 'uglify_parallel:basepackage','uglify_parallel:generic', 'concat:externals', 'concat:css',  'concat:generic', 'processhtml:generic']);
-    grunt.registerTask('genericOnly', ['clean', 'uglify_parallel:basepackage', 'uglify_parallel:arcade', 'concat:externals',  'concat:css',  'concat:arcade', 'processhtml:arcade']);
+    grunt.registerTask('genericOnly', ['clean', 'uglify_parallel:basepackage','uglify_parallel:generic', 'concat:externals', 'concat:css',  'concat:generic', 'processhtml:generic']);
+    grunt.registerTask('arcadeOnly', ['clean', 'uglify_parallel:basepackage', 'uglify_parallel:arcade', 'concat:externals',  'concat:css',  'concat:arcade', 'processhtml:arcade']);
+    grunt.registerTask('dev', ['uglify_parallel:arcade', 'concat:arcade', 'processhtml:arcade']);
 };

@@ -25,8 +25,8 @@ angularApp.config(['$routeProvider', '$locationProvider',
         function ($routeProvider, $locationProvider) {
             $routeProvider.
                 when('/game/:hash/', {
-                    templateUrl: 'resources/templates/game.html',
-                    controller: 'GameCtrl',
+                    templateUrl: 'resources/templates/arcade/game.html',
+                    controller: 'ArcadeGameCtrl',
                     resolve: {
                         user: ['userAccount', function (userAccount) {
                             "use strict";
@@ -79,12 +79,12 @@ angularApp.config(['$routeProvider', '$locationProvider',
                     controller: 'ArcadeScoreCtrl'
                 }).
                 when('/menu/:menuName', {
-                    templateUrl: 'resources/templates/arcade_index.html',
+                    templateUrl: 'resources/templates/arcade/menu.html',
                     controller: 'ArcadeMenuCtrl'
 
                 }).
                 when('/', {
-                    templateUrl: 'resources/templates/arcade_index.html',
+                    templateUrl: 'resources/templates/arcade/menu.html',
                     controller: 'ArcadeMenuCtrl'
                 });
             $locationProvider.html5Mode(false);

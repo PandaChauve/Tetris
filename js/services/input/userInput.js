@@ -28,5 +28,16 @@ angular.module('angularApp.factories')
             }
             return ret;
         };
+
+        UserInput.prototype.getAllActions = function(){
+            var ret = [];
+            KeyboardInput.getActions(KeyboardInput.leftMapping, ret);
+            gamePadInput.getActions(2, ret);
+            KeyboardInput.getActions(KeyboardInput.rightMapping, ret);
+            gamePadInput.getActions(3, ret);
+            gamePadInput.getActions(0, ret);
+            gamePadInput.getActions(1, ret);
+            return ret;
+        };
         return new UserInput();
     }]);

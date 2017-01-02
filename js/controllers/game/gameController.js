@@ -32,6 +32,8 @@ angular.module('angularApp.controllers').controller('GameCtrl', ['$scope', '$htt
 
         angular.element($window).bind('blur', function () {
             return function () {
+                if(gameFinished)
+                    return;
                 $scope.pause.active = true;
                 if (!game.pause) {
                     $scope.pause.active = game.togglePause();

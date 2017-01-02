@@ -367,3 +367,21 @@ canvas {
     transform: scale(2, 2);
     transform-origin: top center;
 }
+
+.arcademenuselected {
+    border: 2px solid green;
+}
+.arcademenuimg {
+    display:inline;
+    margin: 5px;
+    padding: 5px;
+    overflow: hidden;
+}
+
+.arcademenu{
+    width: 2000%;
+    overflow: hidden;
+}
+.arcademenucontainer{
+    overflow:hidden;
+}
