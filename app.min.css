@@ -450,7 +450,33 @@ canvas {
     transform: scale(2, 2);
     transform-origin: top center;
 }
- /***
+
+.arcademenuselected {
+    border: 2px solid green;
+}
+.arcademenuimg {
+    display:inline;
+    margin: 5px;
+    padding: 5px;
+    overflow: hidden;
+}
+
+.arcademenu{
+    width: 2000%;
+    overflow: hidden;
+}
+.arcademenucontainer{
+    overflow:hidden;
+}
+
+.stickyfooter {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    background-image: linear-gradient(#484e55, #3a3f44 60%, #313539);
+} /***
 Spectrum Colorpicker v1.7.0
 https://github.com/bgrins/spectrum
 Author: Brian Grinstead

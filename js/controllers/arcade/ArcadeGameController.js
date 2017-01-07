@@ -5,7 +5,10 @@ angular.module('angularApp.controllers').controller('ArcadeGameCtrl', ['$scope',
         "use strict";
         //FIXME directive too much in the controller
         var gameFinished = false;
-        $scope.gameName = map_hash[$routeParams.hash] || $routeParams.hash || "classic";
+        $scope.gameName = $routeParams.hash || "classic";
+        $scope.gameName =  $scope.gameName.replace('__','/');
+        $scope.gameName =  $scope.gameName.replace('__','/');
+        $scope.gameName =  $scope.gameName.replace('__','/');
         var campaign = $scope.gameName.indexOf("campaign") > -1;
         $scope.config = {};
         $scope.config.splitScreen = $scope.gameName === "classicSplitScreen" || $scope.gameName === "2v2" ; //FIXME based on config
@@ -35,9 +38,6 @@ angular.module('angularApp.controllers').controller('ArcadeGameCtrl', ['$scope',
                 }).error(function (error) {
                     console.log(error);
                 });
-            }
-            if(campaign){
-                $scope.openCampaignModal(config);
             }
         };
 

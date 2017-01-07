@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui">
     <link href='http://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'> <!--FIXME need local for mobile and arcade-->
-    <link rel="stylesheet" type="text/css" href="resources/bootswatch/cyborg.min.css" id="switchableThemeCss">
+    <link rel="stylesheet" type="text/css" href="resources/bootswatch/slate.min.css" id="switchableThemeCss">
     <style type="text/css" id="switchableTheme"></style>
     <!-- build:css app.min.css -->
     <link rel="stylesheet" type="text/css" href="css/angular-notify.css">
@@ -19,6 +19,16 @@
 </head>
 <body ng-blur="blur()">
 <div class="body">
+
+    <!-- build:remove:mobile,generic -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <h1>When &nbsp; Will &nbsp; You</h1>
+            </div>
+        </div>
+    </nav>
+    <!-- /build -->
 
     <!-- build:remove:arcade -->
     <nav class="navbar navbar-default" ng-controller="HeaderCtrl">
@@ -106,6 +116,15 @@
         </div>
     </footer>
     <!-- /build -->
+
+    <!-- build:remove:mobile,generic -->
+    <footer class="footer stickyfooter ">
+        <div class="container">
+            <span>Lose ?!</span>
+        </div>
+    </footer>
+    <!-- /build -->
+
 </div>
 
 <!-- All the external libs used are available in www.whenwhilyoulose.com/js/externals/ with their respective license -->

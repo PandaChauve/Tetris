@@ -87,14 +87,6 @@ module.exports = function(grunt) {
                 files:{
                     'index.mobile.html' : ["index.template.html"]
                 }
-            },
-            arcade: {
-                options:{
-                    strip: true
-                },
-                files:{
-                    'index.arcade.html' : ["index.template.html"]
-                }
             }
         },
         clean: ["min"]

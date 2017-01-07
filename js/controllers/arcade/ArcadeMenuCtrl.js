@@ -1,43 +1,109 @@
 angular.module('angularApp.controllers')
     .controller('ArcadeMenuCtrl', ['$scope', '$routeParams','$interval','$location', 'userInput', 'EGameActions', function ($scope, $routeParams, $interval, $location, userInput, EGameActions) {
         "use strict";
+        function CreateCampaignTetrisMenu(world){
+            var ret = {
+                data :[],
+                link :[],
+                selected : 0
+            };
+            for(var i = 1; i <= 10; i++){
+                ret.data.push("tetris/tetris"+world+"/campaign_tetrisAttack_"+world+"_ta_"+world+"_"+i);
+                ret.link.push("/game/campaign__tetrisAttack__"+world+"__ta_"+world+"_"+i);
+            }
+            return ret;
+        }
         function createMenu(){
             switch($routeParams.menuName || "index")
             {
-                case "test" :
-                    return {///resources/imgs/arcade/menu/
-                        data :['narrow.png', 'wide.png', 'classic.png','./narrow.png', './wide.png', './classic.png'],
-                        link :['/menu/arcade2p', '/menu/arcade1p', '/menu/campaign','/menu/arcade2p', '/menu/arcade1p', '/menu/campaign','/menu/arcade2p', '/menu/arcade1p', '/menu/campaign'],
-                        selected : 5
-                    };
                 case "index" :
                     return {
-                        data :['Arcade 2p', 'Arcade 1p', 'Campaign'],
+                        data :['narrow', 'classic', 'wide'],
                         link :['/menu/arcade2p', '/menu/arcade1p', '/menu/campaign'],
                         selected : 1
                     };
                 case "arcade2p" :
                     return {
-                        data :['Coop', '1v1'],
+                        data :['wide', 'classic'],
                         link :['/game/ultralargecoop', '/game/classicSplitScreen'],
                         selected : 1
                     };
                 case "arcade1p" :
                     return {
-                        data :['Narrow', 'Classic', 'Wide', 'Sandbox'],
+                        data :['narrow', 'classic', 'wide', 'sandbox'],
                         link :['/game/small', '/game/classic', '/game/ultralarge', '/game/sandbox'],
                         selected : 1
                     };
                 case "campaign" :
                     return {
-                        data :['Tutorial', 'Challenges', 'Time Attack', 'Tetris Attack'],
-                        link :['campaign/tutorial', '/campaign/challenges', '/campaign/timelimit', '/tetrisCampaign'],
+                        data :['narrow', 'classic', 'wide', 'sandbox'],
+                        link :['/menu/campaign_tutorial', '/menu/campaign_time', '/menu/campaign_puzzle', '/menu/campaign_tetris'],
                         selected : 1
                     };
+                case "campaign_tutorial" :
+                    var ret = {
+                        data :[],
+                        link :[],
+                        selected : 0
+                    };
+                    for(var i = 1; i <= 10; i++){
+                        ret.data.push("arcade/arcade_"+i);
+                        ret.link.push("/game/campaign__arcade__arcade_"+i);
+                    }
+                    return ret;
+                case "campaign_timelimit" :
+                    var ret = {
+                        data :[],
+                        link :[],
+                        selected : 0
+                    };
+                    for(var i = 1; i <= 10; i++){
+                        ret.data.push("timelimit/campaign_timeLimit_timelimit_"+i);
+                        ret.link.push("/game/campaign__timeLimit__timelimit_"+i);
+                    }
+                    return ret;
+
+                case "campaign_puzzle" :
+                    var ret = {
+                        data :[],
+                        link :[],
+                        selected : 0
+                    };
+                    for(var i = 1; i <= 10; i++){
+                        ret.data.push("puzzle/campaign_puzzle_puzzle_"+i);
+                        ret.link.push("/game/campaign__puzzle__puzzle_"+i);
+                    }
+                    return ret;
+
+                case "campaign_tetris" :
+                    var ret = {
+                        data :[],
+                        link :[],
+                        selected : 0
+                    };
+                    for(var i = 1; i <= 6; i++){
+                        ret.data.push("puzzle/campaign_puzzle_puzzle_"+i);
+                        ret.link.push("/menu/campaign_tetris_"+i);
+                    }
+                    return ret;
+
+                case "campaign_tetris_1" :
+                    return CreateCampaignTetrisMenu(1);
+                case "campaign_tetris_2" :
+                    return CreateCampaignTetrisMenu(2);
+                case "campaign_tetris_3" :
+                    return CreateCampaignTetrisMenu(3);
+                case "campaign_tetris_4" :
+                    return CreateCampaignTetrisMenu(4);
+                case "campaign_tetris_5" :
+                    return CreateCampaignTetrisMenu(5);
+                case "campaign_tetris_6" :
+                    return CreateCampaignTetrisMenu(6);
             }
         }
         $scope.menu = createMenu();
-        var offset =(-$scope.menu.selected*400 +400);
+        var imgSize = 448+20;
+        var offset =(-$scope.menu.selected*imgSize +imgSize);
         var wantedOffset = offset;
         $scope.leftOffset = offset+('px');
         var interval = $interval(function() {
@@ -52,9 +118,9 @@ angular.module('angularApp.controllers')
             }
             userInput.clear();
             $scope.menu.selected = (($scope.menu.selected % $scope.menu.data.length) + $scope.menu.data.length)% $scope.menu.data.length; //negative handling
-            wantedOffset = (-$scope.menu.selected*400 +400);
+            wantedOffset = (-$scope.menu.selected*imgSize +imgSize);
             var inc = 20;
-            if(Math.abs(wantedOffset-offset) > 420)
+            if(Math.abs(wantedOffset-offset) > imgSize)
                 inc = 50;
             if(Math.abs(wantedOffset-offset) < inc)
                 inc = Math.abs(wantedOffset-offset);
