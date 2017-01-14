@@ -368,14 +368,16 @@ canvas {
     transform-origin: top center;
 }
 
-.arcademenuselected {
-    border: 2px solid green;
-}
 .arcademenuimg {
-    display:inline;
-    margin: 5px;
-    padding: 5px;
+    display:inline-block;
+    margin: 80px 30px;
     overflow: hidden;
+    border-radius:50px;
+    filter: grayscale(50%);
+}
+.arcademenuselected {
+    box-shadow: 0px 0px 50px 0px rgba(255,255,255,0.7);
+    filter: grayscale(0%);
 }
 
 .arcademenu{

@@ -2,61 +2,73 @@ angular.module('angularApp.controllers')
     .controller('ArcadeMenuCtrl', ['$scope', '$routeParams','$interval','$location', 'userInput', 'EGameActions', function ($scope, $routeParams, $interval, $location, userInput, EGameActions) {
         "use strict";
         function CreateCampaignTetrisMenu(world){
-            var ret = {
+            var ret = AddBackToMenu('campaign_tetris', {
+                title: "Tetris Attack campaign "+world,
                 data :[],
                 link :[],
-                selected : 0
-            };
+                selected : 1
+            });
             for(var i = 1; i <= 10; i++){
                 ret.data.push("tetris/tetris"+world+"/campaign_tetrisAttack_"+world+"_ta_"+world+"_"+i);
                 ret.link.push("/game/campaign__tetrisAttack__"+world+"__ta_"+world+"_"+i);
             }
             return ret;
         }
+        function AddBackToMenu(parent, menu){
+            menu.link.unshift("/menu/"+parent);
+            menu.data.unshift('back');
+            return menu;
+        }
         function createMenu(){
             switch($routeParams.menuName || "index")
             {
                 case "index" :
                     return {
-                        data :['narrow', 'classic', 'wide'],
+                        title: "Be ready !",
+                        data :['arcade2p', 'arcade', 'campaign'],
                         link :['/menu/arcade2p', '/menu/arcade1p', '/menu/campaign'],
                         selected : 1
                     };
                 case "arcade2p" :
-                    return {
-                        data :['wide', 'classic'],
+                    return AddBackToMenu("index", {
+                        title: "Two players",
+                        data :['1p/wide', '1p/classic'],
                         link :['/game/ultralargecoop', '/game/classicSplitScreen'],
                         selected : 1
-                    };
+                    });
                 case "arcade1p" :
-                    return {
-                        data :['narrow', 'classic', 'wide', 'sandbox'],
+                    return AddBackToMenu("index", {
+                        title: "Single player arcade",
+                        data :['1p/narrow', '1p/classic', '1p/wide', '1p/sandbox'],
                         link :['/game/small', '/game/classic', '/game/ultralarge', '/game/sandbox'],
                         selected : 1
-                    };
+                    });
                 case "campaign" :
-                    return {
+                    return AddBackToMenu("index", {
+                        title: "Single player campaign",
                         data :['narrow', 'classic', 'wide', 'sandbox'],
                         link :['/menu/campaign_tutorial', '/menu/campaign_time', '/menu/campaign_puzzle', '/menu/campaign_tetris'],
                         selected : 1
-                    };
+                    });
                 case "campaign_tutorial" :
-                    var ret = {
+                    var ret = AddBackToMenu("campaign", {
+                        title: "Starter campaign",
                         data :[],
                         link :[],
-                        selected : 0
-                    };
+                        selected : 1
+                    });
                     for(var i = 1; i <= 10; i++){
                         ret.data.push("arcade/arcade_"+i);
                         ret.link.push("/game/campaign__arcade__arcade_"+i);
                     }
                     return ret;
                 case "campaign_timelimit" :
-                    var ret = {
+                    var ret = AddBackToMenu("campaign", {
+                        title: "Time attack campaign",
                         data :[],
                         link :[],
-                        selected : 0
-                    };
+                        selected : 1
+                    });
                     for(var i = 1; i <= 10; i++){
                         ret.data.push("timelimit/campaign_timeLimit_timelimit_"+i);
                         ret.link.push("/game/campaign__timeLimit__timelimit_"+i);
@@ -64,11 +76,12 @@ angular.module('angularApp.controllers')
                     return ret;
 
                 case "campaign_puzzle" :
-                    var ret = {
+                    var ret = AddBackToMenu("campaign", {
+                        title: "Puzzles campaign",
                         data :[],
                         link :[],
-                        selected : 0
-                    };
+                        selected : 1
+                    });
                     for(var i = 1; i <= 10; i++){
                         ret.data.push("puzzle/campaign_puzzle_puzzle_"+i);
                         ret.link.push("/game/campaign__puzzle__puzzle_"+i);
@@ -76,11 +89,12 @@ angular.module('angularApp.controllers')
                     return ret;
 
                 case "campaign_tetris" :
-                    var ret = {
+                    var ret = AddBackToMenu("campaign", {
+                        title: "Tetris Attack campaign",
                         data :[],
                         link :[],
-                        selected : 0
-                    };
+                        selected : 1
+                    });
                     for(var i = 1; i <= 6; i++){
                         ret.data.push("puzzle/campaign_puzzle_puzzle_"+i);
                         ret.link.push("/menu/campaign_tetris_"+i);

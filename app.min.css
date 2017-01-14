@@ -452,13 +452,13 @@ canvas {
 }
 
 .arcademenuselected {
-    border: 2px solid green;
+    box-shadow: 0px 0px 50px 0px rgba(255,255,255,0.7);
 }
 .arcademenuimg {
-    display:inline;
-    margin: 5px;
-    padding: 5px;
+    display:inline-block;
+    margin: 80px 30px;
     overflow: hidden;
+    border-radius:50px;
 }
 
 .arcademenu{
@@ -474,8 +474,19 @@ canvas {
     bottom: 0;
     width: 100%;
     /* Set the fixed height of the footer here */
-    height: 60px;
+    height: 95px;
     background-image: linear-gradient(#484e55, #3a3f44 60%, #313539);
+}
+.navbar-header-arcade
+{
+    width: 100%;
+    font-size: xx-large;
+    text-align: center;
+}
+.navbar-header-arcade h1{
+    font-family: 'Architects Daughter', cursive;
+    font-size: 55px;
+    font-weight: bolder;
 } /***
 Spectrum Colorpicker v1.7.0
 https://github.com/bgrins/spectrum
