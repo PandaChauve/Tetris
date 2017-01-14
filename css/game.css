@@ -391,6 +391,17 @@ canvas {
     bottom: 0;
     width: 100%;
     /* Set the fixed height of the footer here */
-    height: 60px;
+    height: 95px;
     background-image: linear-gradient(#484e55, #3a3f44 60%, #313539);
+}
+.navbar-header-arcade
+{
+    width: 100%;
+    font-size: xx-large;
+    text-align: center;
+}
+.navbar-header-arcade h1{
+    font-family: 'Architects Daughter', cursive;
+    font-size: 55px;
+    font-weight: bolder;
 }
