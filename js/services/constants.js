@@ -7,5 +7,6 @@ angular.module('angularApp.base')
             up: 2,
             left: 3,
             right: 4,
-            speed: 5
+            speed: 5,
+            home : 6
         });

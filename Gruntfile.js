@@ -64,14 +64,6 @@ module.exports = function(grunt) {
             }
         },
         processhtml: {
-            arcade: {
-                options:{
-                    strip: true
-                },
-                files:{
-                    'index.arcade.html' : ["index.template.html"]
-                }
-            },
             generic: {
                 options:{
                     strip: true
@@ -98,6 +90,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-processhtml');
     grunt.registerTask('default', ['clean', 'uglify_parallel', 'concat', 'processhtml']);
     grunt.registerTask('genericOnly', ['clean', 'uglify_parallel:basepackage','uglify_parallel:generic', 'concat:externals', 'concat:css',  'concat:generic', 'processhtml:generic']);
-    grunt.registerTask('arcadeOnly', ['clean', 'uglify_parallel:basepackage', 'uglify_parallel:arcade', 'concat:externals',  'concat:css',  'concat:arcade', 'processhtml:arcade']);
+    grunt.registerTask('arcadeOnly', ['clean', 'uglify_parallel:basepackage', 'uglify_parallel:arcade', 'concat:externals',  'concat:css',  'concat:arcade']);
     grunt.registerTask('dev', ['uglify_parallel:arcade', 'concat:arcade', 'processhtml:arcade']);
 };

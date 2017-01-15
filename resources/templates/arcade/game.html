@@ -1,16 +1,9 @@
 <div class="container" ng-if="!config.splitScreen"  ng-controller="GameStateCtrl">
 
     <div class="row">
-        <div class="col-md-8 col-sm-12 noPadding leftToMiddle">
-            <div id="game" class="well gameHolder">
-			<div class="gameResizer">
-                <canvas mng-tetris-game="0" >Please upgrade your browser, it needs webgl support. <a href="http://caniuse.com/#feat=webgl">List of compatible browsers.</a></canvas>
-            </div>
-			</div>
-        </div>
-        <div class="col-md-4 col-sm-12">
+        <div class="col-md-3 col-sm-12">
             <div class="gameDetails jumbotron hidden-sm hidden-xs">
-                <br />
+
                 <div class="gameDetailsElement">
                     <h3>Score</h3>
                     <span ng-if="state.combo > 1" style="float:left; color: lightgreen; margin-left:30px">{{state.combo}}x </span><span id="score"> {{state.score}} </span>
@@ -23,11 +16,23 @@
                     <h3>APM</h3>
                     <span id="apm">{{state.apm}}</span>
                 </div>
+            </div>
+        </div>
+        <div class="col-md-6 noPadding center">
+            <div id="game" class="well gameHolder">
+			<div class="gameResizer">
+                <canvas mng-tetris-game="0" >Please upgrade your browser, it needs webgl support. <a href="http://caniuse.com/#feat=webgl">List of compatible browsers.</a></canvas>
+            </div>
+			</div>
+        </div>
+        <div class="col-md-3 col-sm-12">
+            <div class="gameDetails jumbotron hidden-sm hidden-xs">
+
                 <div class="gameDetailsElement">
                     <h3>Time</h3>
                     <span id="time" class="timeBox">{{state.time | ticToTime}}</span>
                 </div>
-                <div class="gameDetailsElement">
+                <div class="gameDetailsElement" style="padding-top: 180px">
                     <h3>Objectives</h3><br/>
                     <div id="rules">
                         <ul>

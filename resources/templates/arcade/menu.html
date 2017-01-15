@@ -1,8 +1,10 @@
 ﻿
-<h2>{{menu.title}}</h2>
-<br /><br /><br />
+
 <div class="arcademenucontainer ">
     <div class="arcademenu " ng-style="{'margin-left': leftOffset}">
-        <img ng-repeat="elem in menu.data" class="arcademenuimg" src="resources/imgs/arcade/menu/{{elem}}.png" ng-class="{arcademenuselected: menu.selected == $index}"  />
+        <div ng-repeat="elem in menu.data" style="display: inline-block">
+            <img  class="arcademenuimg" ng-src="resources/imgs/arcade/menu/{{elem.picture}}.png" ng-class="{arcademenuselected: menu.selected == $index}"  />
+            <div class="stamp-div"  ng-class="{arcademenuselected: menu.selected == $index}"> <span class="stamp-txt">{{elem.name}}</span></div>
+        </div>
     </div>
 </div>

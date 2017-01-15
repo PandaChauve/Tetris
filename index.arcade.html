@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="angularApp" ng-strict-di>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui">
+    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet"><!--FIXME need local for mobile and arcade-->
+    <link rel="stylesheet" type="text/css" href="resources/bootswatch/slate.min.css" id="switchableThemeCss">
+    <link rel="stylesheet" href="css/game.css"/>
+    <link rel="icon" href="favicon.ico"/>
+<style type="text/css">
+    body::-webkit-scrollbar { width: 0 !important }
+</style>
+    <title>When Will You Lose</title>
+</head>
+<body ng-blur="blur()" class="arcade">
+
+<div id="header_svg"><div>When Will You</div></div>
+
+<div >
+    <div ng-view ></div>
+</div>
+<div id="footer_svg">
+    <div>!? Lose ?!</div>
+</div>
+<!-- All the external libs used are available in www.whenwhilyoulose.com/js/externals/ with their respective license -->
+
+<script src="resources/externals.min.js"></script>
+<script src="app.arcade.min.js"></script>
+
+
+</body>
+</html>

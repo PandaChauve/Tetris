@@ -31,13 +31,24 @@ angular.module('angularApp.factories')
             'pageup': 33,
             'pagedown': 34,
             'tab': 9,
-            'enter': 13
+            'enter': 13,
+            'esc': 27
         };
 
         KeyboardInput.prototype.clear = function () {
-            this.keyCodes = {};
+            if(this.keyCodes[KeyboardInput.ALIAS.esc]) {
+                this.keyCodes = {};
+                this.keyCodes[KeyboardInput.ALIAS.esc] = true;
+            }else
+                this.keyCodes = {};
         };
 
+        KeyboardInput.prototype.clearReset = function () {
+            this.keyCodes[KeyboardInput.ALIAS.esc] = false;
+        };
+        KeyboardInput.prototype.getReset = function () {
+            return this.keyCodes[KeyboardInput.ALIAS.esc];
+        };
 
         KeyboardInput.prototype.onKeyChange = function (event) {
             // update this.keyCodes
@@ -76,6 +87,9 @@ angular.module('angularApp.factories')
             if (this.pressed(mapping.speed)) {
                 ret.push(EGameActions.speed);
             }
+            if (this.pressed(mapping.home)) {
+                ret.push(EGameActions.home);
+            }
         };
 
         KeyboardInput.prototype.leftMapping = {
@@ -84,7 +98,8 @@ angular.module('angularApp.factories')
             up: 90, //z
             left: 81, //q
             right: 68, //d
-            speed: 65 //a
+            speed: 65, //a
+            home : KeyboardInput.ALIAS.esc
         };
 
         KeyboardInput.prototype.rightMapping = {
@@ -93,7 +108,8 @@ angular.module('angularApp.factories')
             up: KeyboardInput.ALIAS.up,
             left: KeyboardInput.ALIAS.left,
             right: KeyboardInput.ALIAS.right,
-            speed: KeyboardInput.ALIAS.enter
+            speed: KeyboardInput.ALIAS.enter,
+            home : KeyboardInput.ALIAS.esc
         };
 
         return new KeyboardInput();

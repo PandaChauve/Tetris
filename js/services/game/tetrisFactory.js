@@ -215,6 +215,10 @@ angular.module('angularApp.factories')
                                 this.groundSpeed = gameConstants.groundUpSpeedPerTic;
                             }
                             break;
+                        case EGameActions.home: //FIXME nothing to do here
+                        {
+
+                        }
                     }
                 }
                 if(y != cur.y || cur.x != x){

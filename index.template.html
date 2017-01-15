@@ -20,17 +20,7 @@
 <body ng-blur="blur()">
 <div class="body">
 
-    <!-- build:remove:mobile,generic -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header navbar-header-arcade">
-                <h1>When &nbsp; Will &nbsp; You</h1>
-            </div>
-        </div>
-    </nav>
-    <!-- /build -->
 
-    <!-- build:remove:arcade -->
     <nav class="navbar navbar-default" ng-controller="HeaderCtrl">
         <div class="container">
             <div class="navbar-header">
@@ -104,11 +94,10 @@
             </div>
         </div>
     </nav>
-    <!-- /build -->
 
     <div ng-view style="padding-bottom: 80px"></div>
 
-    <!-- build:remove:mobile,arcade -->
+    <!-- build:remove:mobile -->
     <footer class="well" id="footer">
         <div class="container">
             <p><a href="https://github.com/PandaChauve/Tetris/issues">Bug report - Request</a> | <a href="#!/about">About
@@ -117,13 +106,6 @@
     </footer>
     <!-- /build -->
 
-    <!-- build:remove:mobile,generic -->
-    <footer class="footer stickyfooter ">
-        <div class="container navbar-header-arcade">
-            <h1>Lose ?!</h1>
-        </div>
-    </footer>
-    <!-- /build -->
 
 </div>
 
@@ -153,7 +135,7 @@
 <!-- /build -->
 
 <!-- build:js:generic,mobile app.generic.min.js -->
-<!--
+
 <script language="JavaScript" src="js/angularApp.js"></script>
 <script language="JavaScript" src="js/controllers/generic/IndexController.js"></script>
 <script language="JavaScript" src="js/controllers/generic/genericCampaignController.js"></script>
@@ -165,20 +147,6 @@
 <script language="JavaScript" src="js/controllers/generic/objectivesModalController.js"></script>
 <script language="JavaScript" src="js/controllers/generic/achievementsController.js"></script>
 <script language="JavaScript" src="js/controllers/generic/rulesController.js"></script>
--->
-<!-- /build -->
-
-<!-- build:js:arcade app.arcade.min.js -->
-<!--
-<script language="JavaScript" src="js/arcadeAngularApp.js"></script>
-<script language="JavaScript" src="js/controllers/arcade/ArcadeMenuCtrl.js"></script>
--->
-<!-- /build -->
-
-
-
-
-<!--
 <script language="JavaScript" src="js/controllers/user/loginFormController.js"></script>
 <script language="JavaScript" src="js/controllers/user/passwordRecoveryCtrl.js"></script>
 <script language="JavaScript" src="js/controllers/user/userMenuController.js"></script>
@@ -216,7 +184,8 @@
 <script language="JavaScript" src="js/services/user/gameStatsFactory.js"></script>
 <script language="JavaScript" src="js/services/user/userAccount.js"></script>
 <script language="JavaScript" src="js/services/systemConfig.js"></script>
--->
+
+<!-- /build -->
 
 
 </body>

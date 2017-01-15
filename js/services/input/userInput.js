@@ -7,6 +7,14 @@ angular.module('angularApp.factories')
             KeyboardInput.clear();
             gamePadInput.clear();
         };
+        UserInput.prototype.clearReset = function(){
+            KeyboardInput.clearReset();
+            gamePadInput.clearReset();
+        };
+
+        UserInput.prototype.getReset  = function(){
+            return KeyboardInput.getReset() || gamePadInput.getReset();
+        };
 
         UserInput.prototype.getActions = function(userNbr){
             var ret = [];

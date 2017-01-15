@@ -1,7 +1,7 @@
 //FIXME the move to angular is way too partial, some work is needed !
 
-angular.module('angularApp.controllers').controller('ArcadeGameCtrl', ['$scope', '$http', '$route', '$routeParams', '$modal', '$window', 'game', 'gameConstants', 'storage', 'stateChecker', 'map_hash',
-    function ($scope, $http, $route, $routeParams, $modal, $window, game, gameConstants, storage, stateChecker, map_hash) {
+angular.module('angularApp.controllers').controller('ArcadeGameCtrl', ['$scope', '$interval', '$http', '$route', '$timeout', '$routeParams', '$modal', '$window', '$location', 'game', 'gameConstants',
+'stateChecker', 'userInput', 'EGameActions',    function ($scope, $interval,$http, $route, $timeout, $routeParams, $modal, $window, $location,  game, gameConstants, stateChecker, userInput, EGameActions) {
         "use strict";
         //FIXME directive too much in the controller
         var gameFinished = false;
@@ -43,9 +43,36 @@ angular.module('angularApp.controllers').controller('ArcadeGameCtrl', ['$scope',
 
         $scope.endCallBack = function (finishedGame) {
             gameFinished = true;
+            var str = JSON.stringify(finishedGame.last, true);
+            localStorage.setItem('ArcadeLastGame', str);
+            localStorage.setItem('ArcadeLastGameUri', $location.path());
+            if(($scope.config.gameConfig.next && stateChecker.victory(0))) {
+                if($scope.config.gameConfig.next[0] === '#')
+                    $timeout(function () {  $window.location.href=("#!/lost/campaign");}, 1000);
+                else
+                {
+                    var path = $scope.config.gameConfig.next.replace('/', '__');
+                    path = path.replace('/', '__');
+                    path = path.replace('/', '__');
+                    $window.location.href = ("#!/game/" + path);
+                }
+            }
+            else
+                $timeout(function () {  $window.location.href=("#!/lost");}, 1000);
         };
+        var interval = $interval(function() {
+            var reset = userInput.getReset();
+            userInput.clearReset();
+            if(reset)
+                $window.location.href="#!/";
+        }, 500);
+
 
         $scope.$on("$destroy", function() {
             game.stopGame();
+            if (angular.isDefined(interval)) {
+                $interval.cancel(interval);
+                interval = undefined;
+            }
         });
     }]);

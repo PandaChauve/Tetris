@@ -1,0 +1,19 @@
+<div class="container">
+    <div id="lostSvg"></div>
+    <div ng-if="type != 'campaign'">
+        <div class="well" style="text-align: center; font-size:35px; font-family: 'VT323'; width:45%; margin:auto"><p>Press any key to retry</p></div>
+        <div style=" text-align: center;
+         font-size: 35px;
+         font-family: 'vt323';
+    margin: 55px;" >You only scored {{lastGame.score}} points in {{lastGame.tics  | ticToTime}} !</div>
+
+    </div>
+    <div ng-if="type == 'campaign'">
+        <div class="well" style="text-align: center; font-size:35px; font-family: 'VT323'; width:45%; margin:auto"><p>Press home to quit !</p></div>
+        <div style=" text-align: center;
+         font-size: 35px;
+         font-family: 'vt323';
+    margin: 55px;" >There's nothing left to do ... You lost anyway !</div>
+
+    </div>
+</div>

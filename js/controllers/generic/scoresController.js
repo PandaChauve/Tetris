@@ -1,5 +1,5 @@
 angular.module('angularApp.controllers')
-    .controller('ScoresCtrl', ['$scope', '$http', '$timeout', 'userAccount', 'api', function ($scope, $http, $timeout, userAccount, api) {
+    .controller('ScoresCtrl', ['$scope', '$http', 'userAccount', 'api', function ($scope, $http, userAccount, api) {
         "use strict";
         var perPage = 15; //FIXME server side once there's more than 100 inputs !!!
         $scope.pagination = {

@@ -24,64 +24,19 @@ angularApp.filter('ticToTime', ['helpers', function (helpers) {
 angularApp.config(['$routeProvider', '$locationProvider',
         function ($routeProvider, $locationProvider) {
             $routeProvider.
-                when('/game/:hash/', {
-                    templateUrl: 'resources/templates/arcade/game.html',
-                    controller: 'ArcadeGameCtrl',
-                    resolve: {
-                        user: ['userAccount', function (userAccount) {
-                            "use strict";
-                            return userAccount.start();
-                        }]
-                    }
-                }).
-                when('/campaign/', {
-                    templateUrl: 'resources/templates/campaign.html',
-                    controller: 'GenericCampaignCtrl',
-                    resolve: {
-                        user: ['userAccount', function (userAccount) {
-                            "use strict";
-                            return userAccount.start();
-                        }]
-                    }
-                }).
-                when('/campaign/:campaignName/', {
-                    templateUrl: 'resources/templates/campaign.html',
-                    controller: 'GenericCampaignCtrl',
-                    resolve: {
-                        user: ['userAccount', function (userAccount) {
-                            "use strict";
-                            return userAccount.start();
-                        }]
-                    }
-                }).
-                when('/campaign/:campaignName/:subCampaignId/', {
-                    templateUrl: 'resources/templates/campaign.html',
-                    controller: 'GenericCampaignCtrl',
-                    resolve: {
-                        user: ['userAccount', function (userAccount) {
-                            "use strict";
-                            return userAccount.start();
-                        }]
-                    }
-                }).
-                when('/tetrisCampaign/', {
-                    templateUrl: 'resources/templates/tetrisCampaign.html',
-                    controller: 'tetrisCampaignCtrl',
-                    resolve: {
-                        user: ['userAccount', function (userAccount) {
-                            "use strict";
-                            return userAccount.start();
-                        }]
-                    }
-                }).
-                when('/scores/:gametype', {
-                    templateUrl: 'resources/templates/user/stats.html',
-                    controller: 'ArcadeScoreCtrl'
-                }).
+            when('/game/:hash/', {
+                templateUrl: 'resources/templates/arcade/game.html',
+                controller: 'ArcadeGameCtrl'
+            }).when('/lost/', {
+                templateUrl: 'resources/templates/arcade/lost.html',
+                controller: 'ArcadeLostController'
+            }).when('/lost/:type', {
+                templateUrl: 'resources/templates/arcade/lost.html',
+                controller: 'ArcadeLostController'
+            }).
                 when('/menu/:menuName', {
                     templateUrl: 'resources/templates/arcade/menu.html',
                     controller: 'ArcadeMenuCtrl'
-
                 }).
                 when('/', {
                     templateUrl: 'resources/templates/arcade/menu.html',

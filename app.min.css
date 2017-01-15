@@ -151,7 +151,7 @@ body {
 }
 
 .row .gameDetails {
-    font-family: 'Architects Daughter', cursive;
+    font-family: 'Architects Daughter', 'VT323', cursive;
     max-width: 300px;
     min-height: 500px;
     margin: 10px auto;
@@ -176,9 +176,16 @@ canvas {
 .gameDetailsElement h3 {
     font-size: 2em;
     margin: 10px 20px 0;
-    font-family: 'Architects Daughter', cursive;
+    font-family: 'Architects Daughter','VT323', cursive;
     clear: both;
 
+}
+.arcade .gameDetailsElement h3{
+    font-size: 3em;
+    letter-spacing: 5px;
+}
+.center{
+    text-align: center;
 }
 
 .gameDetailsElement span {
@@ -188,6 +195,15 @@ canvas {
     margin-bottom: 15px;
     text-align: right;
     float: right;
+}
+.arcade .gameDetailsElement span{
+    font-family: 'Architects Daughter','VT323', monospace;
+    letter-spacing: 5px;
+}
+
+.arcade .row .gameDetails{
+    min-height:380px;
+    margin-top: 130px;
 }
 
 #rules {
@@ -402,13 +418,12 @@ canvas {
     border-radius: 0;
     text-align: right;
 }
-
 #footer p {
     margin: 0
 }
 
 .pauseShadow {
-    font-family: 'Architects Daughter', cursive;
+    font-family: 'Architects Daughter','VT323', cursive;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -451,16 +466,13 @@ canvas {
     transform-origin: top center;
 }
 
-.arcademenuselected {
-    box-shadow: 0px 0px 50px 0px rgba(255,255,255,0.7);
-}
 .arcademenuimg {
     display:inline-block;
-    margin: 80px 30px;
+    margin: 40px 30px;
     overflow: hidden;
     border-radius:50px;
+    filter: grayscale(50%);
 }
-
 .arcademenu{
     width: 2000%;
     overflow: hidden;
@@ -468,25 +480,80 @@ canvas {
 .arcademenucontainer{
     overflow:hidden;
 }
-
-.stickyfooter {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    /* Set the fixed height of the footer here */
-    height: 95px;
-    background-image: linear-gradient(#484e55, #3a3f44 60%, #313539);
+body.arcade{
+    background:#050505;
 }
-.navbar-header-arcade
-{
+#header_svg, #footer_svg{
     width: 100%;
-    font-size: xx-large;
+    background: black;
+    padding: 0px;
+    margin-bottom: 35px;
+    font-family: 'VT323';
+    font-size: 120px;
+    line-height: 120px;
+    text-transform: uppercase;
+    color:white;
     text-align: center;
+    letter-spacing: 13px;
 }
-.navbar-header-arcade h1{
-    font-family: 'Architects Daughter', cursive;
-    font-size: 55px;
-    font-weight: bolder;
+#header_svg{
+    border-bottom: 1px solid darkred;
+    box-shadow: 0px 0px 50px darkred;
+}
+#header_svg div{
+    width:60%;
+    margin: 0 auto;
+}
+#footer_svg{
+    position: absolute;
+    bottom:0;
+
+    margin-bottom: 0px;
+    border-bottom: 1px solid darkgreen;
+    box-shadow: 0px 0px 50px darkgreen;
+}
+
+#footer_svg div{
+    width:60%;
+    margin: 0 auto;
+}
+
+
+.stamp-div{
+    text-align: center;
+    position: relative;
+    left: 30px;
+    width: 448px;
+    top: -500px;
+    filter: grayscale(50%);
+}
+.stamp-txt{
+    font-family: 'VT323', cursive;
+    display: inline-block;
+    border-radius: 20px;
+    border:15px solid red;
+    color: #ef3e42;
+    text-transform: uppercase;
+    margin: 0 auto;
+    font-size: 60px;
+    letter-spacing: 3px;
+    padding: 0 24px;
+    transform: rotate(-20deg);
+    background:rgba(0,0,0,0.7);
+    border-image: url("../resources/imgs/arcade/grunge-stamp-30.png") 30;
+}
+
+.arcademenuselected {
+    filter: grayscale(0%);
+}
+
+ img.arcademenuselected{
+    box-shadow: 0px 0px 50px 0px rgba(255,255,255,0.7);
+}
+
+
+#lostSvg {
+    margin:0 auto;
 } /***
 Spectrum Colorpicker v1.7.0
 https://github.com/bgrins/spectrum

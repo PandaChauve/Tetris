@@ -85,6 +85,7 @@ angular.module('angularApp.factories')
                     btnAction(controller, 5, EGameActions.swap);
                     btnAction(controller, 6, EGameActions.swap);
                     btnAction(controller, 7, EGameActions.swap);
+                    btnAction(controller, 8, EGameActions.home);
                     btnAction(controller, 1, EGameActions.speed);
                     btnAction(controller, 12, EGameActions.up);
                     btnAction(controller, 14, EGameActions.left);
@@ -104,7 +105,18 @@ angular.module('angularApp.factories')
 
 
         GamePadInput.prototype.clear = function () {
-            this.actions = [{}, {}, {}, {}];
+            if( this.pressed(0, EGameActions.home)) {
+                this.actions = [{}, {}, {}, {}];
+                this.press(0, EGameActions.home);
+            }else
+                this.actions = [{}, {}, {}, {}];
+        };
+
+        GamePadInput.prototype.clearReset = function () {
+            this.actions[0][EGameActions.home] = false;
+        };
+        GamePadInput.prototype.getReset = function () {
+            return this.actions[0][EGameActions.home];
         };
 
         GamePadInput.prototype.press = function (ctrl, key) {
