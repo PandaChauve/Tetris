@@ -48,7 +48,7 @@ angular.module('angularApp.controllers').controller('ArcadeGameCtrl', ['$scope',
             localStorage.setItem('ArcadeLastGameUri', $location.path());
             if(($scope.config.gameConfig.next && stateChecker.victory(0))) {
                 if($scope.config.gameConfig.next[0] === '#')
-                    $timeout(function () {  $window.location.href=("#!/lost/campaign");}, 1000);
+                    $timeout(function () {  $window.location.href=("#!/lost/campaign");}, 2000);
                 else
                 {
                     var path = $scope.config.gameConfig.next.replace('/', '__');

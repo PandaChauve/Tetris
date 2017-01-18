@@ -81,6 +81,137 @@
     clip: rect(0,0,0,0);
     border: 0;
 }
+ /*! * * * * * * * * * * * * * * * * * * * *\
+  CSShake :: shake-little
+  v1.5.0
+  CSS classes to move your DOM
+  (c) 2015 @elrumordelaluz
+  http://elrumordelaluz.github.io/csshake/
+  Licensed under MIT
+\* * * * * * * * * * * * * * * * * * * * */
+.shake-little {
+    display: inline-block;
+    transform-origin: center center; }
+
+.shake-freeze,
+.shake-constant.shake-constant--hover:hover,
+.shake-trigger:hover .shake-constant.shake-constant--hover {
+    animation-play-state: paused; }
+
+.shake-freeze:hover,
+.shake-trigger:hover .shake-freeze, .shake-little:hover,
+.shake-trigger:hover .shake-little {
+    animation-play-state: running; }
+
+@keyframes shake-little {
+    2% {
+        transform: translate(1px, 0px) rotate(0.5deg); }
+    4% {
+        transform: translate(1px, 0px) rotate(0.5deg); }
+    6% {
+        transform: translate(1px, 1px) rotate(0.5deg); }
+    8% {
+        transform: translate(0px, 0px) rotate(0.5deg); }
+    10% {
+        transform: translate(1px, 0px) rotate(0.5deg); }
+    12% {
+        transform: translate(0px, 0px) rotate(0.5deg); }
+    14% {
+        transform: translate(1px, 1px) rotate(0.5deg); }
+    16% {
+        transform: translate(0px, 1px) rotate(0.5deg); }
+    18% {
+        transform: translate(1px, 0px) rotate(0.5deg); }
+    20% {
+        transform: translate(0px, 1px) rotate(0.5deg); }
+    22% {
+        transform: translate(0px, 0px) rotate(0.5deg); }
+    24% {
+        transform: translate(0px, 0px) rotate(0.5deg); }
+    26% {
+        transform: translate(1px, 1px) rotate(0.5deg); }
+    28% {
+        transform: translate(0px, 1px) rotate(0.5deg); }
+    30% {
+        transform: translate(0px, 0px) rotate(0.5deg); }
+    32% {
+        transform: translate(1px, 1px) rotate(0.5deg); }
+    34% {
+        transform: translate(0px, 1px) rotate(0.5deg); }
+    36% {
+        transform: translate(0px, 1px) rotate(0.5deg); }
+    38% {
+        transform: translate(0px, 0px) rotate(0.5deg); }
+    40% {
+        transform: translate(1px, 0px) rotate(0.5deg); }
+    42% {
+        transform: translate(0px, 1px) rotate(0.5deg); }
+    44% {
+        transform: translate(0px, 1px) rotate(0.5deg); }
+    46% {
+        transform: translate(0px, 0px) rotate(0.5deg); }
+    48% {
+        transform: translate(1px, 0px) rotate(0.5deg); }
+    50% {
+        transform: translate(1px, 1px) rotate(0.5deg); }
+    52% {
+        transform: translate(0px, 0px) rotate(0.5deg); }
+    54% {
+        transform: translate(1px, 1px) rotate(0.5deg); }
+    56% {
+        transform: translate(0px, 1px) rotate(0.5deg); }
+    58% {
+        transform: translate(1px, 0px) rotate(0.5deg); }
+    60% {
+        transform: translate(1px, 1px) rotate(0.5deg); }
+    62% {
+        transform: translate(0px, 1px) rotate(0.5deg); }
+    64% {
+        transform: translate(0px, 0px) rotate(0.5deg); }
+    66% {
+        transform: translate(1px, 0px) rotate(0.5deg); }
+    68% {
+        transform: translate(0px, 0px) rotate(0.5deg); }
+    70% {
+        transform: translate(1px, 0px) rotate(0.5deg); }
+    72% {
+        transform: translate(1px, 1px) rotate(0.5deg); }
+    74% {
+        transform: translate(1px, 1px) rotate(0.5deg); }
+    76% {
+        transform: translate(0px, 0px) rotate(0.5deg); }
+    78% {
+        transform: translate(0px, 0px) rotate(0.5deg); }
+    80% {
+        transform: translate(1px, 0px) rotate(0.5deg); }
+    82% {
+        transform: translate(1px, 1px) rotate(0.5deg); }
+    84% {
+        transform: translate(0px, 1px) rotate(0.5deg); }
+    86% {
+        transform: translate(1px, 1px) rotate(0.5deg); }
+    88% {
+        transform: translate(1px, 1px) rotate(0.5deg); }
+    90% {
+        transform: translate(0px, 1px) rotate(0.5deg); }
+    92% {
+        transform: translate(1px, 0px) rotate(0.5deg); }
+    94% {
+        transform: translate(1px, 0px) rotate(0.5deg); }
+    96% {
+        transform: translate(1px, 0px) rotate(0.5deg); }
+    98% {
+        transform: translate(1px, 1px) rotate(0.5deg); }
+    0%, 100% {
+        transform: translate(0, 0) rotate(0); } }
+
+.shake-little:hover,
+.shake-trigger:hover .shake-little, .shake-little.shake-freeze, .shake-little.shake-constant {
+    animation-name: shake-little;
+    animation-duration: 100ms;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
  
 html {
     overflow-y: scroll;
@@ -199,6 +330,7 @@ canvas {
 .arcade .gameDetailsElement span{
     font-family: 'Architects Daughter','VT323', monospace;
     letter-spacing: 5px;
+    color: goldenrod;
 }
 
 .arcade .row .gameDetails{
@@ -471,7 +603,7 @@ canvas {
     margin: 40px 30px;
     overflow: hidden;
     border-radius:50px;
-    filter: grayscale(50%);
+    filter: grayscale(70%);
 }
 .arcademenu{
     width: 2000%;
@@ -525,13 +657,13 @@ body.arcade{
     left: 30px;
     width: 448px;
     top: -500px;
-    filter: grayscale(50%);
+    filter: grayscale(70%);
 }
 .stamp-txt{
     font-family: 'VT323', cursive;
     display: inline-block;
     border-radius: 20px;
-    border:15px solid red;
+    border:15px solid #ef3e42;
     color: #ef3e42;
     text-transform: uppercase;
     margin: 0 auto;
@@ -545,15 +677,50 @@ body.arcade{
 
 .arcademenuselected {
     filter: grayscale(0%);
+    animation-name: shake-little;
+    animation-duration: 100ms;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
 }
 
  img.arcademenuselected{
     box-shadow: 0px 0px 50px 0px rgba(255,255,255,0.7);
-}
+ }
 
 
 #lostSvg {
     margin:0 auto;
+}
+.scoreBox {
+    font-family: 'VT323', cursive;
+    font-size:40px;
+    width: 200px;
+    position: absolute;
+    top: 200px;
+    height: 500px;
+    border : 1px solid darkturquoise;
+}
+
+.scoreBox.left{
+    left:150px;
+    text-align: right;
+}
+.scoreBox.right{
+    right:150px;
+    text-align: left;
+}
+
+.scoreBox ul{
+    list-style-type: none;
+    padding:0;
+}
+.right span.scoreBoardValue{
+    float:right;
+    color: goldenrod;
+}
+.left span.scoreBoardValue{
+    float:left;
+    color: goldenrod;
 } /***
 Spectrum Colorpicker v1.7.0
 https://github.com/bgrins/spectrum
