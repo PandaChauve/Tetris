@@ -1,30 +1,27 @@
 <div class="container">
     <div id="lostSvg"></div>
     <div ng-if="type != 'campaign'">
-        <div class="well" style="text-align: center; font-size:35px; font-family: 'VT323'; width:45%; margin:auto"><p>Press any key to retry</p></div>
+        <div ng-if="displayNameSelector" class="well" style="text-align: center; font-size:35px; font-family: 'VT323'; color:gold; width:45%; margin:auto">
+            <p>Who are you ?
+                <span ng-class="{'shake': currentLetter==0}">{{letters[0]}}</span>
+                <span ng-class="{'shake': currentLetter==1}">{{letters[1]}}</span>
+                <span ng-class="{'shake': currentLetter==2}">{{letters[2]}}</span></p>
+        </div>
+        <div class="well" style="text-align: center; font-size:35px; font-family: 'VT323'; width:45%; margin:auto" ng-if="!displayNameSelector">
+            <p>Press "grow" to retry </span></p>
+        </div>
+        <div class="well" style="text-align: center; font-size:35px; font-family: 'VT323'; width:45%; margin:auto"  ng-if="displayNameSelector">
+            <p>Press "Swap" to save</p>
+        </div>
         <div style=" text-align: center;
          font-size: 35px;
          font-family: 'vt323';
     margin: 55px;" >You only scored {{lastGame.score}} points in {{lastGame.tics  | ticToTime}} !</div>
-        <div class="well scoreBox left"><ul>
-            <li><span>SCH</span> <span class="scoreBoardValue">2450</span></li>
-            <li><span>999</span> <span class="scoreBoardValue">2450</span></li>
-            <li><span>S1H</span> <span class="scoreBoardValue">240</span></li>
-            <li><span>S3H</span> <span class="scoreBoardValue">240</span></li>
-            <li><span>S4H</span> <span class="scoreBoardValue">240</span></li>
-            <li><span>1CH</span> <span class="scoreBoardValue">20</span></li>
-            <li><span>SC1</span> <span class="scoreBoardValue">20</span></li>
-            <li><span>SC9</span> <span class="scoreBoardValue">1</span></li>
+        <div class="well scoreBox left" ng-if="scores"><ul>
+            <li ng-repeat="line in scores track by $index"><span>{{line.name}}</span> <span class="scoreBoardValue">{{line.score}}</span></li>
         </ul></div>
-        <div class="well scoreBox right"><ul>
-            <li><span>SCH</span> <span class="scoreBoardValue">2450</span></li>
-            <li><span>999</span> <span class="scoreBoardValue">2450</span></li>
-            <li><span>S1H</span> <span class="scoreBoardValue">240</span></li>
-            <li><span>S3H</span> <span class="scoreBoardValue">240</span></li>
-            <li><span>S4H</span> <span class="scoreBoardValue">240</span></li>
-            <li><span>1CH</span> <span class="scoreBoardValue">20</span></li>
-            <li><span>SC1</span> <span class="scoreBoardValue">20</span></li>
-            <li><span>SC9</span> <span class="scoreBoardValue">1</span></li>
+        <div class="well scoreBox right" ng-if="scores"><ul>
+            <li ng-repeat="line in scores track by $index"><span>{{line.name}}</span> <span class="scoreBoardValue">{{line.score}}</span></li>
         </ul></div>
     </div>
     <div ng-if="type == 'campaign'">

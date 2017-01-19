@@ -1,7 +1,7 @@
 //FIXME the move to angular is way too partial, some work is needed !
 
-angular.module('angularApp.controllers').controller('ArcadeLostController', ['$scope', '$interval', '$window', '$routeParams','userInput',
-    function ($scope, $interval,$window, $routeParams, userInput) {
+angular.module('angularApp.controllers').controller('ArcadeLostController', ['$scope', '$interval', '$window', '$routeParams','userInput', 'EGameActions',
+    function ($scope, $interval,$window, $routeParams, userInput, EGameActions) {
 
         function animate(){
                 // parameters
@@ -116,16 +116,70 @@ angular.module('angularApp.controllers').controller('ArcadeLostController', ['$s
         userInput.clear();
         $scope.lastGame = JSON.parse(localStorage.getItem("ArcadeLastGame"));
         $scope.type = $routeParams.type || "";
+        if($scope.type != 'campaign' && $scope.type.length < 8) //yes < 8 i'm lasy
+        {
+            var d =  JSON.parse(localStorage.getItem("ArcadeScores_"+$scope.type)) ||[];
+            while(d.length < 8)
+                d.push({score : 0, name: '???'});
+            while(d.length > 8)
+                d.pop();
+            $scope.scores = d;
+            $scope.displayNameSelector = $scope.scores[7].score < $scope.lastGame.score;
+            var letters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','0','1','2','3','4','5','6','7','8','9','-','!','?'];
+            var lettersPosition = [0,0,0];
+            $scope.currentLetter = 0;
+            $scope.letters = ['A','A', 'A'];
+        }
+        else $scope.scores = false;
+
         var interval = $interval(function() {
                 var reset = userInput.getReset();
                 userInput.clearReset();
+
                 if(reset)
                     $window.location.href="#!/";
                 else {
                     var actions = userInput.getAllActions();
                     userInput.clear();
-                    if (actions.length > 0) {
-                        $window.location.href = "#!" + localStorage.getItem("ArcadeLastGameUri");
+                    for(var i = 0; i < actions.length; ++i){
+                        if($scope.displayNameSelector) {
+                            if (actions[i] == EGameActions.left)
+                                $scope.currentLetter--;
+                            if (actions[i] == EGameActions.right)
+                                $scope.currentLetter++;
+                            if ($scope.currentLetter < 0)
+                                $scope.currentLetter += 3;
+                            $scope.currentLetter = $scope.currentLetter % 3;
+
+                            if (actions[i] == EGameActions.up)
+                                lettersPosition[$scope.currentLetter]++;
+                            if (actions[i] == EGameActions.down)
+                                lettersPosition[$scope.currentLetter]--;
+
+
+                            if (lettersPosition[$scope.currentLetter] < 0)
+                                lettersPosition[$scope.currentLetter] += letters.length;
+                            lettersPosition[$scope.currentLetter] = lettersPosition[$scope.currentLetter] % letters.length;
+
+
+                            $scope.letters[$scope.currentLetter] = letters[lettersPosition[$scope.currentLetter]];
+
+                            if (actions[i] == EGameActions.swap) {
+                                $scope.displayNameSelector = false;
+                                $scope.scores[7] = ({
+                                    score: $scope.lastGame.score,
+                                    name: $scope.letters[0] + $scope.letters[1] + $scope.letters[2]
+                                });
+                                $scope.scores = $scope.scores.sort(function (a, b) {
+                                    return b.score - a.score
+                                });
+                                localStorage.setItem("ArcadeScores_" + $scope.type, JSON.stringify($scope.scores));
+                            }
+                        }
+                        else if(actions[i] == EGameActions.speed)
+                        {
+                            $window.location.href = "#!" + localStorage.getItem("ArcadeLastGameUri");
+                        }
                     }
                 }
 

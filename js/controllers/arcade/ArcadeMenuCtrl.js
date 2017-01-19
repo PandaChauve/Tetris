@@ -61,7 +61,7 @@ angular.module('angularApp.controllers')
                                 name : "Duel"
                             }
                         ],
-                        selected : 1
+                        selected : 2
                     });
                 case "arcade1p" :
                     return AddBackToMenu("index", {
@@ -87,7 +87,7 @@ angular.module('angularApp.controllers')
                                 name : "sandbox"
                             }
                         ],
-                        selected : 1
+                        selected : 2
                     });
                 case "campaign" :
                     return AddBackToMenu("index", {
@@ -113,7 +113,7 @@ angular.module('angularApp.controllers')
                                 name : "TetrisAttack"
                             }
                         ],
-                        selected : 1
+                        selected : 3
                     });
                 case "campaign_tutorial" :
                     var ret = AddBackToMenu("campaign", {

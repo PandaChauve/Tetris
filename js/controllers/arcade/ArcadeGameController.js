@@ -57,8 +57,13 @@ angular.module('angularApp.controllers').controller('ArcadeGameCtrl', ['$scope',
                     $window.location.href = ("#!/game/" + path);
                 }
             }
-            else
-                $timeout(function () {  $window.location.href=("#!/lost");}, 1000);
+            else {
+                $timeout(function () {
+
+                    var path = $routeParams.hash || "classic";
+                    $window.location.href = ("#!/lost/" + path);
+                }, 2000);
+            }
         };
         var interval = $interval(function() {
             var reset = userInput.getReset();

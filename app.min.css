@@ -721,6 +721,15 @@ body.arcade{
 .left span.scoreBoardValue{
     float:left;
     color: goldenrod;
+}
+.shake{
+    color: goldenrod;
+    text-decoration: underline;
+    display: inline-block;
+    animation-name: shake-little;
+    animation-duration: 100ms;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
 } /***
 Spectrum Colorpicker v1.7.0
 https://github.com/bgrins/spectrum
