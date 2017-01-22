@@ -3,7 +3,7 @@
  */
 
 angular.module('angularApp.factories')
-    .factory('stateChecker', ['gameConstants','TIC_PER_SEC', function stateCheckerFactory(gameConstants, TIC_PER_SEC) {
+    .factory('stateChecker', ['$timeout', 'gameConstants','TIC_PER_SEC', function stateCheckerFactory($timeout, gameConstants, TIC_PER_SEC) {
         "use strict";
         function StateChecker() {}
 
@@ -44,7 +44,6 @@ angular.module('angularApp.factories')
 
             }
 
-            return;
         };
 
         StateChecker.prototype.makeComponents = function (gconfig) {
@@ -141,12 +140,30 @@ angular.module('angularApp.factories')
         };
 
 
+        var swapInterval = undefined;
         function SwapChecker(val) {
             this.val = val;
+            this.swapLost = false;
+            if (angular.isDefined(swapInterval)) {
+                $timeout.cancel(swapInterval);
+                swapInterval = undefined;
+            }
         }
 
         SwapChecker.prototype.check = function (tetris) {
-            return tetris.getSwaps() > this.val;
+            if(tetris.getSwaps() == this.val && swapInterval == undefined) {
+                var that = this;
+
+                swapInterval = $timeout(function() {
+                    that.swapLost = true;
+                }, 1000);
+            }
+            var ret = tetris.getSwaps() > this.val || this.swapLost;
+            if(this.swapLost) {
+                this.swapLost = false; //reset for retry ;)
+                swapInterval = undefined;
+            }
+            return  ret ;
         };
 
         SwapChecker.prototype.getDangerLevel = function () {

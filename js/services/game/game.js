@@ -206,14 +206,14 @@ angular.module('angularApp.factories')
 
 			Game.prototype.computeTic = function(){
 				var tickret;
-                var end = -1;
+                var losingPlayer = -1;
                 for (var i = 0; i < this.tetris.length; i += 1) {
                     tickret = this.tetris[i].oneTick();
                     if(i == 0)
                         userStats.getCurrentGame().addLines(tickret.series, tickret.score); //FIXME not working on multi
                     stateChecker.check(this.checkerId[i], this.tetris[i]);
                     if(stateChecker.defeat(this.checkerId[i]) || stateChecker.victory(this.checkerId[i]))
-                        end = i;
+                        losingPlayer = i;
                     this.scoreHandler.addScore(tickret.score, i);
                 }
                 userInput.clear();
@@ -223,8 +223,8 @@ angular.module('angularApp.factories')
 					this.last.combo =  tickret.combo;
 				}
 				
-			    if (end != -1) {
-                    this.visual[end].freezeGame();
+			    if (losingPlayer != -1) {
+                    this.visual[losingPlayer].freezeGame();
 					return false;
 				}
 				return true;
